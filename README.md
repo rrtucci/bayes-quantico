@@ -1,4 +1,4 @@
-# Bayesuvius Quantico
+# Welcome to Bayesuvius Quantico
 
 This is a free, open source book about quantum Bayesian networks (qbnets). 
 It complements the free, open source book 
