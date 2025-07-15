@@ -3,7 +3,7 @@
 This is a free, open source book about quantum Bayesian networks (qbnets). 
 It complements the free, open source book 
 [Bayesuvius](https://github.com/rrtucci/Bayesuvius)
-about classical Bayesian Networks.
+about classical Bayesian Networks (bnets).
 
 A different qbnet topic is discussed in each chapter.
 Chapter titles are in alphabetical order.
