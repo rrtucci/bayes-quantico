@@ -12,6 +12,6 @@ THIS BOOK IS CONTINUOUSLY BEING IMPROVED AND EXPANDED. MAKE SURE YOU HAVE
 THE LATEST VERSION FOR MAXIMUM SATISFACTION.
 
 Link to pdf of book:
-https://github.com/rrtucci/bayes-quantico/raw/master/main.pdf
+https://github.com/rrtucci/bayes-quantico/raw/master/q-main.pdf
 
 Brought to you by www.ar-tiste.xyz
