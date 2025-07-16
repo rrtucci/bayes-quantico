@@ -1,0 +1,174 @@
+\chapter{Tensor and Diagrammatic Notation}
+\label{ch-tensor-dia-not}
+\beqa
+P(y) &=&\sum_x P(y|x)P(x)
+\\
+\av{y|\psi} &=& \sum_x \underbrace{\av{y|A|x}}_{A(y|x)}\av{x|\psi}
+\eeqa
+
+\beq
+\xymatrix{&\ar[l]}=\xymatrix{&\ar[l]^{\sum a}} =\sum_a \ket{a}\bra{a}
+\eeq
+
+\beqa
+\av{a|q} &=& \sum_b\av{a|G|b}\av{b|q}
+\\
+q_a &=&  \sum_b G^b_a q_b
+\\
+\xymatrix{
+&q\ar[l]^a}
+&=&
+\xymatrix{&G\ar[l]^a & q\ar[l]^{\Sigma b}
+}
+\eeqa
+
+
+
+
+\beqa
+\av{q|a} &=& \sum_b\av{b|G^\dagger|a}\av{q|b}
+\\
+q^a &=&  \sum_b (G^\dagger)_b^a q^b
+\\
+\xymatrix{
+q&\ar[l]^a}
+&=&
+\xymatrix{q&G^\dagger\ar[l]^{\sum b}&\ar[l]^a
+}
+\eeqa
+
+\beq\xymatrix{
+&q\ar[l]^a}
+=
+\xymatrix{a&q\ar[l]}
+\eeq
+
+\beq\xymatrix{
+q&\ar[l]^a}
+=
+\xymatrix{
+q&a\ar[l]
+}\eeq
+
+\beq
+G_{a,b,c}^{d,e} = \av{a,b,c|G| d,e} =
+\xymatrix{a & G\ar[l]\ar[ld]\ar[ldd] & d\ar[l]
+\\
+b&&e\ar[lu]
+\\
+c}
+\eeq
+
+\beqa
+\av{b_1, b_2|h|a_1, a_2}
+&=&
+\av{G^\dagger b_1, G^\dagger b_2|h|Ga_1, Ga_2}
+\\
+\xymatrix{
+a_1\ar[dr]
+&&a_2\ar[dl]
+\\
+&h\ar[dl]\ar[dr]
+\\
+b_1 & & b_2
+}
+&=&
+\xymatrix@R=15pt{
+a_1\ar[d]
+&&a_2\ar[d]
+\\
+G \ar[dr]
+&& G\ar[dl]
+\\
+&h\ar[dl]\ar[dr]
+\\
+G^\dagger \ar[d]
+&& G^\dagger \ar[d]
+\\
+b_1 & & b_2
+}
+\eeqa
+
+\beqa
+G_b^a &=& \delta_b^a + i\sum_j\eps_j
+(T_j)_b^a
+\\
+\xymatrix{&G\ar[l]^b&\ar[l]^a}
+&=&
+\xymatrix{&\delta\ar[l]^b&\ar[l]^a}
++i\sum_j\eps_j
+\xymatrix{&T_j\ar[l]^b&\ar[l]^a}
+\eeqa
+Assume $T^\dagger_j = T_j$.
+To first order in $\eps_j$, 
+\beqa
+0
+ &=& i\sum_j \eps_j
+\left(\begin{array}{c}
+\xymatrix@R=15pt{
+a_1\ar[d]
+&&a_2\ar[d]
+\\
+T_j \ar[dr]
+&& \delta\ar[dl]
+\\
+&h\ar[dl]\ar[dr]
+\\
+\delta \ar[d]
+&& \delta \ar[d]
+\\
+b_1 & & b_2
+}  \xymatrix{\\
+\\+}
+\xymatrix@R=15pt{
+a_1\ar[d]
+&&a_2\ar[d]
+\\
+\delta \ar[dr]
+&& T_j\ar[dl]
+\\
+&h\ar[dl]\ar[dr]
+\\
+\delta \ar[d]
+&&\delta \ar[d]
+\\
+b_1 & & b_2
+}
+\end{array}
+ \right)
+ \\
+ &-& i\sum_j \eps_j
+\left(\begin{array}{c}
+\xymatrix@R=15pt{
+a_1\ar[d]
+&&a_2\ar[d]
+\\
+\delta \ar[dr]
+&& \delta\ar[dl]
+\\
+&h\ar[dl]\ar[dr]
+\\
+T_j \ar[d]
+&& \delta \ar[d]
+\\
+b_1 & & b_2
+}  \xymatrix{\\
+\\+}
+\xymatrix@R=15pt{
+a_1\ar[d]
+&&a_2\ar[d]
+\\
+\delta \ar[dr]
+&& \delta\ar[dl]
+\\
+&h\ar[dl]\ar[dr]
+\\
+\delta \ar[d]
+&&T_j \ar[d]
+\\
+b_1 & & b_2
+}
+\end{array}
+ \right)
+\eeqa
+from which we get one equation for each $\eps_j$.
