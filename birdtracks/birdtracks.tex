@@ -1,0 +1,204 @@
+\chapter{Birdtracks: COMING SOON}
+\label{ch-birdtracks}
+
+\beq
+\delta(b,a)=\indi(a=b)=
+\delta^b_a =
+\xymatrix{a&\ar[l]|\bullet b}
+\eeq
+
+\beq
+X_{a,\bullet,b, \bullet}^{\bullet,c,\bullet,d}
+=
+\bcen
+\xymatrix@R=1pc{
+a
+&X_{\rva,\bullet,\rvb, \bullet}
+^{\bullet,\rvc,\bullet,\rvd}
+\ar[dl]\ar[l]
+\\
+b
+\\
+c\ar[ruu]
+\\
+d\ar[ruuu]
+}\ecen
+\eeq
+
+\beq
+\bra{a,b}
+X_{\rva,\bullet,\rvb, \bullet}^{\bullet,\rvc,\bullet,\rvd}
+\ket{c,d}
+=
+\bcen
+\xymatrix@R=1pc{
+a
+&X_{\rva,\bullet,\rvb, \bullet}
+^{\bullet,\rvc,\bullet,\rvd}
+\ar[dl]\ar[l]
+\\
+b
+\\
+c\ar[ruu]
+\\
+d\ar[ruuu]
+}\ecen
+\rarrow
+\bcen
+\xymatrix@R=1pc{
+a,b
+&X_{\rva,\bullet,\rvb, \bullet}
+^{\bullet,\rvc,\bullet,\rvd}
+\ar[dl]\ar[l]
+\\
+a,b
+\\
+c\ar[ruu]
+\\
+d\ar[ruuu]
+}\ecen
+\eeq
+$X_{\rva,\bullet,\rvb, \bullet}
+^{\bullet,\rvc,\bullet,\rvd}\in V^2 \otimes V_2$.
+Sometimes, 
+we will omit denote
+this node simply b y $X$.
+This if okay as long as
+we are not using,
+$X$ to also denote
+a different version of $X^{\rva,\bullet,\rvb, \bullet}
+_{\bullet,\rvc,\bullet,\rvd}$
+with some of the indices
+raised or lowered or 
+their order has been changed.
+
+\beq
+(X^\dagger)^{a,\bullet,b, \bullet}_{\bullet,c,\bullet,d}
+=
+\bcen
+\xymatrix@R=1pc{
+a
+&(X^\dagger)^{\rva,\bullet,\rvb, \bullet}
+_{\bullet,\rvc,\bullet,\rvd}
+\ar@{<-}[dl]
+\ar@{<-}[l]
+\\
+b
+\\
+c\ar@{<-}[ruu]
+\\
+d\ar@{<-}[ruuu]
+}\ecen
+\eeq
+
+
+\beqa
+(X^\dagger)^{a,\bullet,b, \bullet}_{\bullet,c,\bullet,d}
+X_{a,\bullet,b, \bullet}^{\bullet,c,\bullet,d}
+&=&
+\bcen
+\xymatrix@R=1pc{
+(X^\dagger)^{\rva,\bullet,\rvb, \bullet}_{\bullet,\rvc,\bullet,\rvd}
+&\sum a\ar[l]\ar@{<-}[r]
+&
+X_{\rva,\bullet,\rvb, \bullet}^{\bullet,\rvc,\bullet,\rvd}
+\\
+&\sum b\ar[ul]\ar@{<-}[ur]
+&
+\\
+&\sum c\ar@{<-}[luu]
+\ar[ruu]
+&
+\\
+&\sum d\ar@{<-}[luuu]
+\ar[ruuu]
+&
+}
+\ecen
+\\
+&=&
+\bcen
+\xymatrix@R=1pc{
+X^\dagger
+&\ar[l]\ar@{<-}[r]
+&
+X
+\\
+&\ar[ul]\ar@{<-}[ur]
+&
+\\
+&\ar@{<-}[luu]
+\ar[ruu]
+&
+\\
+&\ar@{<-}[luuu]
+\ar[ruuu]
+&
+}
+\ecen
+\eeqa
+
+$a^m\in \ZZ_+^m$
+
+\beq
+R^{a_3^{m_3}, b_2^{n_2}}
+_{b_3^{n_3}, a_2^{m_2}}
+S^{a_2^{m_2}, b_1^{n_1}}
+_{b_2^{n_2}, a_1^{m_1}} =
+\bcen
+\xymatrix{
+b_3^{n_3}
+&R\ar[l]\ar@{<-}[ld]
+&\sum  b_2^{n_2}\ar[l]
+&S\ar[l]\ar@{<-}[ld]
+&b_1^{n_1}\ar[l]
+\\
+a_3^{m_3}
+&
+&\sum a_2^{m_2}\ar@{<-}[lu]
+&
+&a_1^{m_1}\ar@{<-}[lu]
+}
+\ecen
+\eeq
+
+\beq
+\tr_\rvb X_{a,\bullet,\rvb, \bullet}^{\bullet,\rvb,\bullet,d}
+=
+\sum_b X_{a,\bullet,b, \bullet}^{\bullet,b,\bullet,d}
+=
+\bcen
+\xymatrix@R=1pc{
+a
+&X_{\rva,\bullet,\rvb, \bullet}
+^{\bullet,\rvc,\bullet,\rvd}
+\ar[dl]\ar[l]
+\\
+\ar@[red]@{-}[d]
+&
+\\
+\ar[ruu]
+\\
+d\ar[ruuu]
+}\ecen
+\eeq
+
+
+\beq
+\xymatrix{
+&\ar[d]
+&
+&\ar@{<-}[d]\ar@[red]@{-}[ll]
+&
+\\
+&R\ar[l]\ar@{<-}[ld]
+&
+&S\ar@{<-}[ld]
+&\ar[l]
+\\
+&
+&\ar@{<-}[lu]
+&
+&\ar@{<-}[lu]
+}
+\eeq
