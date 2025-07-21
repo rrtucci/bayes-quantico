@@ -1,71 +1,165 @@
-\chapter{Quantum Bayesian Networks and their Birdtracks: COMING SOON}
+\chapter{Birdtracks: COMING SOON}
 \label{ch-birdtracks}
 
-$\xymatrix@R=.5pc{% clebsch lambda left
-&& a \ar[dl]
-\\
-\lam 
-&C^\lam\ar@{--}[l]\ar[dr]
-&b\ar[l]
-\\
-&&c
-}$
-$\xymatrix@R=.5pc{%clebsch gordan lambda right
-a
-\\
-b
-& (C^\dagger )^\lam\ar[lu]\ar[l]
-&\lam\ar@{--}[l]
-\\
-c\ar[ru]
-}$
+\section{Classical Bayesian Networks and their Instantiations}
 
+TPM (Transition Probability Matrix) $P(y|x)\in [0,1]$
+where  $x\in val(\rvx)$ and $y\in val(\rvy)$
 
+\beq
+\sum_{y\in val(\rvy)}P(y|x) = 1
+\eeq
 
-
-% T_A
+\beq
+\calc=
+\bcen
 \xymatrix{
-&b\ar[d]
+&\rvb\ar[ld]
 \\
-A
-&T^A\ar@{--}[l]\ar[d]
-\\
-&a
+\rvc
+&&\rva\ar[ll]\ar[lu]
 }
+\ecen
+\eeq
 
-%antisymmetrizer
-\xymatrix@R=.5pc{
-a&\cala\ar@2{-}[dd]\ar@{-}[l]
-&x\ar@{-}[l]
+\beq
+\calc(a,b,c)
+=
+P(c|b,a)P(b|a)P(a)
+=
+\bcen
+\xymatrix{
+&b\ar[ld]
 \\
-b&\ar@{-}[l]
-&y\ar@{-}[l]
-\\
-c&\ar@{-}[l]
-&z\ar@{-}[l]
+c
+&&a\ar[ll]\ar[lu]
 }
+\ecen
+P(a)
+\eeq
 
-%symmetrizer
-\xymatrix@R=.5pc{
-a
-&\cals\ar@2{-}[dd]\ar@{-}[l]
-&x\ar@{-}[l]
+$a^2 = (a_1, a_2)$
+\beq
+\calc'=
+\bcen
+\xymatrix{
+&\rvb\ar[ld]
 \\
-b&\ar@{-}[l]
-&y\ar@{-}[l]
-\\
-c&\ar@{-}[l]
-&z\ar@{-}[l]
+\rvc
+&&\rva^2\ar[ll]|{\rva_2}\ar[lu]|{\rva_1}
 }
+\ecen
+\eeq
 
-\section{Quantum Bayesian Networks}
+\beq
+\calc'(a^2,b,c)
+=
+P(c|b,a_2)P(a_2|a^2)P(b|a_1)P(a_1|a^2)P(a^2)
+=
+\bcen
+\xymatrix{
+&b\ar[ld]
+\\
+c
+&&a^2
+\ar[ll]|{a_2}\ar[lu]|{a_1}
+}
+\ecen
+P(a^2)
+\eeq
+
+Marginalizer nodes  $\rva_1$ and $\rva_2$
+have the TPMs
+\beq \color{blue}
+P(a'_i|\rva^2=(a_1,a_2)) = \delta(a'_i, a_i)
+\eeq
+for $i=1,2$
+
+
+\section{Quantum Bayesian Networks and
+their Instantiations}
+
+TPM (Transition Probability Matrix) 
+$A(y|x)\in\CC$
+where  $x\in val(\rvx)$ and $y\in val(\rvy)$
+
+\beq
+\sum_{y\in val(\rvy)}|A(y|x)|^2 = 1
+\eeq
+
+\beq
+\calq=
+\bcen
+\xymatrix{
+&\rvb\ar[ld]
+\\
+\rvc
+&&\rva\ar[ll]\ar[lu]
+}
+\ecen
+\eeq
+
+\beq
+\calq(a,b,c)
+=
+A(c|b,a)A(b|a)A(a)
+=
+\bcen
+\xymatrix{
+&b\ar[ld]
+\\
+c
+&&a\ar[ll]\ar[lu]
+}
+\ecen
+A(a)
+\eeq
+
+$a^2 = (a_1, a_2)$
+\beq
+\calq'=
+\bcen
+\xymatrix{
+&\rvb\ar[ld]
+\\
+\rvc
+&&\rva^2\ar[ll]|{\rva_2}\ar[lu]|{\rva_1}
+}
+\ecen
+\eeq
+
+\beq
+\calq'(a^2,b,c)
+=
+A(c|b,a_2)A(a_2|a^2)A(b|a_1)A(a_1|a^2)A(a^2)
+=
+\bcen
+\xymatrix{
+&b\ar[ld]
+\\
+c
+&&a^2
+\ar[ll]|{a_2}\ar[lu]|{a_1}
+}
+\ecen
+A(a^2)
+\eeq
+
+Marginalizer nodes  $\rva_1$ and $\rva_2$
+have the TAMs
+\beq \color{blue}
+A(a'_i|\rva^2=(a_1,a_2)) = \delta(a'_i, a_i)
+\eeq
+for $i=1,2$
 
 \section{Birdtracks}
+
 \beq
 \delta(b,a)=\indi(a=b)=
 \delta^b_a =
 \xymatrix{a&\ar[l]|\bullet b}
 \eeq
+
 
 \beq
 \bra{a,b}
