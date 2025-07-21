@@ -2,61 +2,170 @@
 \label{ch-clebsch-gordan}
 
 
-$\xymatrix{% clebsch lambda left
-&& a \ar[dl]
+\beq
+\left[
+\begin{array}{c}
+0
 \\
-\lam 
-&C^\lam\ar@{--}[l]\ar[dr]
-&b\ar[l]
+C_\lam^{d_\lam\times d}
 \\
-&&c
-}$
-$\xymatrix{%clebsch gordan lambda right
-a
+0
+\end{array}
+\right]^{d \times d}
+=
+\left[
+\begin{array}{ccc}
+0
+&0
+&0
 \\
-b
-& (C^\dagger )^\lam\ar[lu]\ar[l]
-&\lam\ar@{--}[l]
+0
+&I^{d_\lam\times d_\lam}
+&0
 \\
-c\ar[ru]
-}$
+0
+&0
+&0
+\end{array}
+\right]^{d\times d}
+C^{d\times d}
+\eeq
+Let $b^{nb}=(b_1, b_2, \ldots, b_{nb})$ where $b_i\in Z_{[0,nb_i]}$  and 
+$a^{na}=(a_1, a_2, \ldots, a_{na})
+$ where $a_i\in \ZZ_{[0,na_i]}$.
+Hence,
 
+\beq
+d = \prod_{i=1}^{na}na_i, \;\;
+d_\lam = \prod_{i=1}^{nb}nb_i
+\eeq
 
-
-
-% T_A
+\beq
+(C_\lam)_{a^{na}}^ {b^{nb}}=
+\bcen
 \xymatrix{
-&b\ar[d]
+&&b_1\ar[dl]
 \\
-A
-&T^A\ar@{--}[l]\ar[d]
+\lam, a^{na} 
+& C_\lam\ar[l]
+&b_2\ar[l]
 \\
-&a
+&&b_{nb}\ar[lu]
 }
+\ecen
+\eeq
 
-%antisymmetrizer
+
+
+\beq
+\left[
+\begin{array}{ccc}
+0
+&(C^\dagger)_\lam^{d\times d_\lam}
+&0
+\end{array}
+\right]^{d \times d}
+=
+(C^\dagger)^{d\times d}
+\left[
+\begin{array}{ccc}
+0
+&0
+&0
+\\
+0
+&I^{d_\lam\times d_\lam}
+&0
+\\
+0
+&0
+&0
+\end{array}
+\right]^{d\times d}
+\eeq
+
+\beq
+(C^\dagger_\lam)^{a^{na}}_{b^{nb}}=
+\bcen
 \xymatrix{
-a&\cala\ar@2{-}[dd]\ar@{-}[l]
-&x\ar@{-}[l]
+b_1
 \\
-b&\ar@{-}[l]
-&y\ar@{-}[l]
+b_2
+&(C^\dagger_\lam)
+\ar[lu]\ar[l]\ar[ld]
+& \lam, a^{na}\ar[l]
 \\
-c&\ar@{-}[l]
-&z\ar@{-}[l]
+b_{nb}
 }
+\ecen
+\eeq
+Each $b_i$ 
+represents a different
+rep (or irrep)
 
-%symmetrizer
+\beq
+(C_\lam^\dagger)^{b^{nb}}_{a^{na}}
+(C_\lam)_{(b')^{nb}}^{a^{na}}=
+(P_\lam ) _{(b')^{nb}}^{b^{nb}}
+\eeq
+
+\beq
+\bcen
 \xymatrix{
-a
-&\cals\ar@2{-}[dd]\ar@{-}[l]
-&x\ar@{-}[l]
+b_1
 \\
-b&\ar@{-}[l]
-&y\ar@{-}[l]
+b_2
+&(C^\dagger_\lam)
+\ar[lu]\ar[l]\ar[ld]
+& \lam, \sum a^{na}\ar[l]
 \\
-c&\ar@{-}[l]
-&z\ar@{-}[l]
+b_{nb}}
+\xymatrix{
+&&(b')_1\ar[dl]
+\\
+& C_\lam\ar[l]
+&(b')_2\ar[l]
+\\
+&&(b')_{nb}\ar[lu]
 }
+\ecen
+=
+\xymatrix{
+b^{nb}
+&P_\lam\ar[l]
+&(b')^{nb}\ar[l]
+}
+\eeq
 
+\beq
+(C_\lam)_{b^{nb}}^{(a')^{na}} (C^\dagger _\mu)_{a^{na}}^{b^{nb}} = \delta(\lam, \mu)
+\delta_{a^{na}}^{(a')^{na}}
+\eeq
 
+\beq
+\bcen
+\xymatrix{
+&&\sum b_1\ar[dl]
+\\
+\lam, a^{na} 
+& C_\lam\ar[l]
+&
+\sum b_2\ar[l]
+\\
+&&\sum b_{nb}\ar[lu]
+}
+\xymatrix{
+\\
+&(C^\dagger_\mu)
+\ar[lu]\ar[l]\ar[ld]
+& \mu, (a')^{na}\ar[l]
+\\
+&
+}
+\ecen =
+\xymatrix{
+\lam, a^{na}
+&\mu, (a')^{na}
+\ar[l]|\bullet
+}
+\eeq

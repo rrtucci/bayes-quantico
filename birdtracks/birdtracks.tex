@@ -1,6 +1,66 @@
-\chapter{Birdtracks: COMING SOON}
+\chapter{Quantum Bayesian Networks and their Birdtracks: COMING SOON}
 \label{ch-birdtracks}
 
+$\xymatrix@R=.5pc{% clebsch lambda left
+&& a \ar[dl]
+\\
+\lam 
+&C^\lam\ar@{--}[l]\ar[dr]
+&b\ar[l]
+\\
+&&c
+}$
+$\xymatrix@R=.5pc{%clebsch gordan lambda right
+a
+\\
+b
+& (C^\dagger )^\lam\ar[lu]\ar[l]
+&\lam\ar@{--}[l]
+\\
+c\ar[ru]
+}$
+
+
+
+
+% T_A
+\xymatrix{
+&b\ar[d]
+\\
+A
+&T^A\ar@{--}[l]\ar[d]
+\\
+&a
+}
+
+%antisymmetrizer
+\xymatrix@R=.5pc{
+a&\cala\ar@2{-}[dd]\ar@{-}[l]
+&x\ar@{-}[l]
+\\
+b&\ar@{-}[l]
+&y\ar@{-}[l]
+\\
+c&\ar@{-}[l]
+&z\ar@{-}[l]
+}
+
+%symmetrizer
+\xymatrix@R=.5pc{
+a
+&\cals\ar@2{-}[dd]\ar@{-}[l]
+&x\ar@{-}[l]
+\\
+b&\ar@{-}[l]
+&y\ar@{-}[l]
+\\
+c&\ar@{-}[l]
+&z\ar@{-}[l]
+}
+
+\section{Quantum Bayesian Networks}
+
+\section{Birdtracks}
 \beq
 \delta(b,a)=\indi(a=b)=
 \delta^b_a =
@@ -8,6 +68,10 @@
 \eeq
 
 \beq
+\bra{a,b}
+X_{\rva,\bullet,\rvb, \bullet}^{\bullet,\rvc,\bullet,\rvd}
+\ket{c,d}
+=
 X_{a,\bullet,b, \bullet}^{\bullet,c,\bullet,d}
 =
 \bcen
@@ -26,10 +90,6 @@ d\ar[ruuu]
 \eeq
 
 \beq
-\bra{a,b}
-X_{\rva,\bullet,\rvb, \bullet}^{\bullet,\rvc,\bullet,\rvd}
-\ket{c,d}
-=
 \bcen
 \xymatrix@R=1pc{
 a

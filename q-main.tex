@@ -1,7 +1,7 @@
 \documentclass[12pt]{report}
 \input{bayesuvius.sty}
 
-\includeonly{birdtracks/birdtracks, unitary-groups/unitary-groups}
+\includeonly{birdtracks/birdtracks, spectral-decom/spectral-decom, clebsch-gordan/clebsch-gordan}
 
 
 \title{\textbf{Bayesuvius Quantico},
@@ -41,10 +41,13 @@ or send a letter to Creative Commons,
 \newpage
 \setcounter{tocdepth}{10}
 \tableofcontents
-\include{antisym/antisym}
+\begin{appendices}
+\include{spectral-decom/spectral-decom}
 \include{birdtracks/birdtracks}
-\include{casimir/casimir}
 \include{clebsch-gordan/clebsch-gordan}
+\end{appendices}
+\include{antisym/antisym}
+\include{casimir/casimir}
 \include{determinants/determinants}
 \include{gen-rel/gen-rel}
 \include{group-integrals/group-integrals}
@@ -55,7 +58,6 @@ or send a letter to Creative Commons,
 \include{quantum-sit/quantum-sit}
 \include{recoupling/recoupling}
 \include{reducibility/reducibility}
-\include{spectral-decom/spectral-decom}
 \include{spinors/spinors}
 \include{squashed-ent/squashed-ent}
 \include{symp-groups/symp-groups}
