@@ -30,23 +30,20 @@ C_\lam^{d_\lam\times d}
 \right]^{d\times d}
 C^{d\times d}
 \eeq
-Let $b^{nb}=(b_1, b_2, \ldots, b_{nb})$ where $b_i\in Z_{[0,nb_i]}$  and 
-$a^{na}=(a_1, a_2, \ldots, a_{na})
-$ where $a_i\in \ZZ_{[0,na_i]}$.
+Let $b^{nb}=(b_1, b_2, \ldots, b_{nb})$ where $b_i\in Z_{[0,nb_i]}$  and $a\in Z_{[1,d_\lam]}$.
 Hence,
 
 \beq
-d = \prod_{i=1}^{na}na_i, \;\;
 d_\lam = \prod_{i=1}^{nb}nb_i
 \eeq
 
 \beq
-(C_\lam)_{a^{na}}^ {b^{nb}}=
+(C_\lam)_{a}^ {b^{nb}}=
 \bcen
 \xymatrix{
 &&b_1\ar[dl]
 \\
-\lam, a^{na} 
+a
 & C_\lam\ar[l]
 &b_2\ar[l]
 \\
@@ -85,7 +82,7 @@ d_\lam = \prod_{i=1}^{nb}nb_i
 \eeq
 
 \beq
-(C^\dagger_\lam)^{a^{na}}_{b^{nb}}=
+(C^\dagger_\lam)^{a}_{b^{nb}}=
 \bcen
 \xymatrix{
 b_1
@@ -93,19 +90,22 @@ b_1
 b_2
 &(C^\dagger_\lam)
 \ar[lu]\ar[l]\ar[ld]
-& \lam, a^{na}\ar[l]
+& \lam, a\ar[l]
 \\
 b_{nb}
 }
 \ecen
 \eeq
+More generally, some of the $b_i$ indices
+may lowered and their arrows
+changed to outgoing instead of ingoing.
 Each $b_i$ 
 represents a different
 rep (or irrep)
 
 \beq
-(C_\lam^\dagger)^{b^{nb}}_{a^{na}}
-(C_\lam)_{(b')^{nb}}^{a^{na}}=
+(C_\lam^\dagger)^{b^{nb}}_{a}
+(C_\lam)_{(b')^{nb}}^{a}=
 (P_\lam ) _{(b')^{nb}}^{b^{nb}}
 \eeq
 
@@ -117,16 +117,16 @@ b_1
 b_2
 &(C^\dagger_\lam)
 \ar[lu]\ar[l]\ar[ld]
-& \lam, \sum a^{na}\ar[l]
+& \sum a\ar[l]
 \\
 b_{nb}}
 \xymatrix{
-&&(b')_1\ar[dl]
+&&b'_1\ar[dl]
 \\
 & C_\lam\ar[l]
-&(b')_2\ar[l]
+&b'_2\ar[l]
 \\
-&&(b')_{nb}\ar[lu]
+&&b'_{nb}\ar[lu]
 }
 \ecen
 =
@@ -138,8 +138,8 @@ b^{nb}
 \eeq
 
 \beq
-(C_\lam)_{b^{nb}}^{(a')^{na}} (C^\dagger _\mu)_{a^{na}}^{b^{nb}} = \delta(\lam, \mu)
-\delta_{a^{na}}^{(a')^{na}}
+(C_\lam)_{b^{nb}}^{(a')^{na}} (C^\dagger _\mu)_{a}^{b^{nb}} = \delta(\lam, \mu)
+\delta_{a}^{(a')^{na}}
 \eeq
 
 \beq
@@ -147,7 +147,7 @@ b^{nb}
 \xymatrix{
 &&\sum b_1\ar[dl]
 \\
-\lam, a^{na} 
+a
 & C_\lam\ar[l]
 &
 \sum b_2\ar[l]
@@ -158,14 +158,15 @@ b^{nb}
 \\
 &(C^\dagger_\mu)
 \ar[lu]\ar[l]\ar[ld]
-& \mu, (a')^{na}\ar[l]
+& a'\ar[l]
 \\
 &
 }
 \ecen =
+\delta(\mu, \lam)
 \xymatrix{
-\lam, a^{na}
-&\mu, (a')^{na}
+a
+&a'
 \ar[l]|\bullet
 }
 \eeq
