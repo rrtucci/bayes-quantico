@@ -154,6 +154,8 @@ for $i=1,2$
 
 \section{Birdtracks}
 
+
+
 \beq
 \delta(b,a)=\indi(a=b)=
 \delta^b_a =
@@ -163,16 +165,15 @@ for $i=1,2$
 
 \beq
 \bra{a,b}
-X_{\rva,\bullet,\rvb, \bullet}^{\bullet,\rvc,\bullet,\rvd}
+X\indices{_\rva_\rvb^\rvc^\rvd}
 \ket{c,d}
 =
-X_{a,\bullet,b, \bullet}^{\bullet,c,\bullet,d}
+X\indices{_a_b^c^d}
 =
 \bcen
 \xymatrix@R=1pc{
 a
-&X_{\rva,\bullet,\rvb, \bullet}
-^{\bullet,\rvc,\bullet,\rvd}
+&X\indices{_\rva_\rvb^\rvc^\rvd}
 \ar[dl]\ar[l]
 \\
 b
@@ -187,8 +188,7 @@ d\ar[ruuu]
 \bcen
 \xymatrix@R=1pc{
 a
-&X_{\rva,\bullet,\rvb, \bullet}
-^{\bullet,\rvc,\bullet,\rvd}
+&X\indices{_\rva_\rvb^\rvc^\rvd}
 \ar[dl]\ar[l]
 \\
 b
@@ -201,8 +201,7 @@ d\ar[ruuu]
 \bcen
 \xymatrix@R=1pc{
 a,b
-&X_{\rva,\bullet,\rvb, \bullet}
-^{\bullet,\rvc,\bullet,\rvd}
+&X\indices{_\rva_\rvb^\rvc^\rvd}
 \ar[dl]\ar[l]
 \\
 a,b
@@ -212,28 +211,25 @@ c\ar[ruu]
 d\ar[ruuu]
 }\ecen
 \eeq
-$X_{\rva,\bullet,\rvb, \bullet}
-^{\bullet,\rvc,\bullet,\rvd}\in V^2 \otimes V_2$.
+$X\indices{_\rva_\rvb^\rvc^\rvd}\in V^2 \otimes V_2$.
 Sometimes, 
 we will omit denote
-this node simply b y $X$.
+this node simply by $X$.
 This if okay as long as
 we are not using,
 $X$ to also denote
-a different version of $X^{\rva,\bullet,\rvb, \bullet}
-_{\bullet,\rvc,\bullet,\rvd}$
+a different version of $X\indices{_\rva_\rvb^\rvc^\rvd}$
 with some of the indices
 raised or lowered or 
 their order has been changed.
 
 \beq
-(X^\dagger)^{a,\bullet,b, \bullet}_{\bullet,c,\bullet,d}
+(X^\dagger)\indices{^a^b_c_d}
 =
 \bcen
 \xymatrix@R=1pc{
 a
-&(X^\dagger)^{\rva,\bullet,\rvb, \bullet}
-_{\bullet,\rvc,\bullet,\rvd}
+&(X^\dagger)\indices{^\rva^\rvb_\rvc_\rvd}
 \ar@{<-}[dl]
 \ar@{<-}[l]
 \\
@@ -247,15 +243,15 @@ d\ar@{<-}[ruuu]
 
 
 \beqa
-(X^\dagger)^{a,\bullet,b, \bullet}_{\bullet,c,\bullet,d}
-X_{a,\bullet,b, \bullet}^{\bullet,c,\bullet,d}
+(X^\dagger)\indices{^a^b_c_d}
+X\indices{_a_b^c^d}
 &=&
 \bcen
 \xymatrix@R=1pc{
-(X^\dagger)^{\rva,\bullet,\rvb, \bullet}_{\bullet,\rvc,\bullet,\rvd}
+(X^\dagger)\indices{^\rva^\rvb_\rvc_\rvd}
 &\sum a\ar[l]\ar@{<-}[r]
 &
-X_{\rva,\bullet,\rvb, \bullet}^{\bullet,\rvc,\bullet,\rvd}
+X\indices{_\rva_\rvb^\rvc^\rvd}
 \\
 &\sum b\ar[ul]\ar@{<-}[ur]
 &
@@ -292,6 +288,38 @@ X
 \ecen
 \eeqa
 
+Birdtracks originated as a graphical
+way to represent the tensors in General Relativity (Gravitation). In General Relativity, one deals with tensors such as
+$T\indices{_a^b_c}$ which have some indices raised
+and some lowered. One can use the metric 
+$g^{a,b}$ to raise all the lowered indices
+to get $T^{abc}$. If we represent this
+graphically as a node with incoming arrows 
+$a,b,c$, we need to either
+\begin{enumerate}
+\item label the arrows 
+as $\rva$, $\rvb, \rvc$, 
+and define the node as
+$T^{\rva\rvb\rvc}$,
+or
+\item
+instead of labelling the
+arrows explicitly $\rva, \rvb, \rvc$, 
+ indicate in the node
+where is the first arrow
+$\rva$, and draw the
+arrows $\rva, \rvb, \rvc$
+so that they enter the node
+in counterclockwise order.
+\end{enumerate}
+If we don't do either 1 or 2, we won't
+be able to distinguish between
+the graphical
+representations of $T^{1,2,3}$
+and $T^{2,1,3}$, for example.
+Most of the time, we will do the explicit labeling
+(alternative 1)
+
 $a^m\in \ZZ_+^m$
 
 \beq
@@ -317,15 +345,14 @@ a_3^{m_3}
 \eeq
 
 \beq
-\tr_\rvb X_{a,\bullet,\rvb, \bullet}^{\bullet,\rvb,\bullet,d}
+\tr_\rvb X\indices{_a_\rvb^\rvb^d}
 =
-\sum_b X_{a,\bullet,b, \bullet}^{\bullet,b,\bullet,d}
+\sum_b X\indices{_a_b^b^d}
 =
 \bcen
 \xymatrix@R=1pc{
 a
-&X_{\rva,\bullet,\rvb, \bullet}
-^{\bullet,\rvc,\bullet,\rvd}
+&X\indices{_\rva_\rvb^\rvc^\rvd}
 \ar[dl]\ar[l]
 \\
 \ar@[red]@{-}[d]
