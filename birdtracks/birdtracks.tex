@@ -1,6 +1,13 @@
 \chapter{Birdtracks: COMING SOON}
 \label{ch-birdtracks}
 
+Cvitanovic Birdtracks book \cite{birdtracks-book}
+
+
+Elliott-Dawber book \cite{eli-daw-book}
+
+My paper \qt{Quantum Bayesian Nets} \cite{tucci-qbnets}
+
 \section{Classical Bayesian Networks and their Instantiations}
 
 TPM (Transition Probability Matrix) $P(y|x)\in [0,1]$
@@ -172,15 +179,15 @@ X\indices{_a_b^c^d}
 =
 \bcen
 \xymatrix@R=1pc{
-a
+\rva=a
 &X\indices{_\rva_\rvb^\rvc^\rvd}
 \ar[dl]\ar[l]
 \\
-b
+\rvb=b
 \\
-c\ar[ruu]
+\rvc=c\ar[ruu]
 \\
-d\ar[ruuu]
+\rvd=d\ar[ruuu]
 }\ecen
 \eeq
 
@@ -222,33 +229,43 @@ a different version of $X\indices{_\rva_\rvb^\rvc^\rvd}$
 with some of the indices
 raised or lowered or 
 their order has been changed.
+\footnote{For matrices,
+$(A^\dagger)_{i,j} = (A_{j, i})^*$
+so
+taking a Hermitian conjugate
+involves both taking
+the complex conjugate of
+the matrix element and reversing the left-to-right (L2R) order of its indices.
+This generalizes to 
+$(X^\dagger)\indices{_d_c^b^a}=
+(X\indices{_a_b^c^d})^*$.
+Besides raising and lowering indices, we reverse their L2R order.
+}
 
 \beq
-(X^\dagger)\indices{^a^b_c_d}
+(X^\dagger)\indices{_d_c^b^a}
 =
 \bcen
 \xymatrix@R=1pc{
-a
-&(X^\dagger)\indices{^\rva^\rvb_\rvc_\rvd}
-\ar@{<-}[dl]
-\ar@{<-}[l]
+(X^\dagger)\indices{_\rvd_\rvc^\rvb^\rva}
+&\rva=a\ar[l]
 \\
-b
+&\rvb=b\ar[lu]
 \\
-c\ar@{<-}[ruu]
+&\rvc=c\ar[luu]
 \\
-d\ar@{<-}[ruuu]
+&\rvd=d\ar[luuu]
 }\ecen
 \eeq
 
 
 \beqa
-(X^\dagger)\indices{^a^b_c_d}
+(X^\dagger)\indices{_d_c^b^a}
 X\indices{_a_b^c^d}
 &=&
 \bcen
 \xymatrix@R=1pc{
-(X^\dagger)\indices{^\rva^\rvb_\rvc_\rvd}
+(X^\dagger)\indices{_\rvd_\rvc^\rvb^\rva}
 &\sum a\ar[l]\ar@{<-}[r]
 &
 X\indices{_\rva_\rvb^\rvc^\rvd}
@@ -295,9 +312,12 @@ and some lowered. One can use the metric
 $g^{a,b}$ to raise all the lowered indices
 to get $T^{abc}$. If we represent this
 graphically as a node with incoming arrows 
-$a,b,c$, we need to either
+$a,b,c$, we need to 
+follow one of the following
+2 conventions: either
 \begin{enumerate}
-\item label the arrows 
+\item
+label the arrows 
 as $\rva$, $\rvb, \rvc$, 
 and define the node as
 $T^{\rva\rvb\rvc}$,
@@ -310,15 +330,28 @@ where is the first arrow
 $\rva$, and draw the
 arrows $\rva, \rvb, \rvc$
 so that they enter the node
-in counterclockwise order.
+in {\bf counterclockwise} (CC) order.
+The {\bf left-to-right} (L2R) order
+of the indices on $T$ corresponds
+the CC order of the arrows.
 \end{enumerate}
 If we don't do either 1 or 2, we won't
 be able to distinguish between
 the graphical
 representations of $T^{1,2,3}$
 and $T^{2,1,3}$, for example.
-Most of the time, we will do the explicit labeling
-(alternative 1)
+Most of the time, we will follow
+Convention 1 \footnote{If we follow Convention 1,
+we don't need to reverse the L2R order of the indices
+when taking a Hermitian conjugate. 
+$(X^\dagger)\indices{^\rva^\rvb_\rvc_\rvd}=
+X\indices{_\rva_\rvb^\rvc^\rvd}=
+X\indices{^\rvd^\rvc_\rvb_\rva}$.
+As long as $\rva, \rvb$ are lower indices and $\rvc,\rvd$ are upper
+indices, any L2R
+order of $\rva, \rvb, \rvc, \rvd$ 
+is equivalent
+under Convention 1.}
 
 Another issue that arises in using  birdtracks is this.
 When is it permissible to represent 
