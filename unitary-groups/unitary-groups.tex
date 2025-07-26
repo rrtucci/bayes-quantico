@@ -24,7 +24,7 @@ a\ar[r]|\bullet
 \eeq
 
 \beq
-\XX^{a,c}_{d,b}=
+\twoarrows^{a,c}_{d,b}=
 \delta_d^a\delta_b^c
 =
 \begin{array}{c}
@@ -37,10 +37,11 @@ a\ar[u]|\bullet
 \eeq
 
 \beq
-\XX^2 = n\XX
-\eeq
-
-\beq
+\begin{array}{ll}
+\boxed{
+\twoarrows^2 = n\twoarrows
+}
+&
 \bcen
 \xymatrix{d
 &\ar@/_1pc/[d]|\bullet
@@ -55,14 +56,15 @@ a\ar[u]|\bullet
 \ecen
 =
 n
-\begin{array}{c}
+\bcen
 \xymatrix{d
 &c\ar[d]|\bullet
 \\
 a\ar[u]|\bullet
 &b}
-\end{array}
-\eeq
+\ecen
+\end{array}\eeq
+
 
 \beq 
 P_i = \sum_{j\neq i}
@@ -72,11 +74,11 @@ P_i = \sum_{j\neq i}
 $\lam_1=n$
 
 \beq
-P_1 = \frac{\XX-n}{0-n}=
-1 -\frac{1}{n}\XX
-\eeq
-
-\beq
+\begin{array}{ll}
+\boxed{
+P_1 = \frac{\twoarrows-n}{0-n}=
+1 -\frac{1}{n}\twoarrows
+}&
 \bcen
 \xymatrix@R=1pc{
 a\ar[dr]
@@ -104,16 +106,19 @@ a
 c\ar[u]|\bullet
 &d}
 \ecen
+\end{array}
 \eeq
 
 
 $\lam_2 = 0$
 
 \beq
-P_2 =\frac{\XX-0}{n-0}= \frac{1}{n} \XX 
-\eeq
-
-\beq\bcen
+\begin{array}{ll}
+\boxed{
+P_2 =\frac{\twoarrows-0}{n-0}= \frac{1}{n} \twoarrows 
+}
+&
+\bcen
 \xymatrix@R=1pc{
 a\ar[dr]
 &&b\ar[dl]
@@ -133,7 +138,7 @@ a
 c\ar[u]|\bullet
 &d}
 \ecen
-\eeq
+\end{array}\eeq
 
 \beqa
 \tr P_1 &=&
