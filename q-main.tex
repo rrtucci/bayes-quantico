@@ -1,10 +1,12 @@
 \documentclass[12pt]{report}
 \input{bayesuvius.sty}
-%\includeonly{birdtracks/birdtracks,spectral-decom/spectral-decom,clebsch-gordan/clebsch-gordan}
+%\includeonly{birdtracks/birdtracks,spectral-decom/spectral-decom}
 
+%\includeonly{clebsch-gordan/clebsch-gordan}
 %\includeonly{sym/sym, levi-civita/levi-civita}
 %\includeonly{unitary/unitary}
 %\includeonly{lie-alg-def/lie-alg-def}
+%\includeonly{abstract-alg/abstract-alg}
 
 \title{\textbf{Bayesuvius Quantico},
  \\a visual dictionary of
@@ -44,11 +46,12 @@ or send a letter to Creative Commons,
 \setcounter{tocdepth}{10}
 \tableofcontents
 \begin{appendices}
+\include{abstract-alg/abstract-alg}
 \include{spectral-decom/spectral-decom}
 \include{birdtracks/birdtracks}
-\include{clebsch-gordan/clebsch-gordan}
 \end{appendices}
 \include{casimir/casimir}
+\include{clebsch-gordan/clebsch-gordan}
 \include{determinants/determinants}
 \include{gen-rel/gen-rel}
 \include{group-integrals/group-integrals}

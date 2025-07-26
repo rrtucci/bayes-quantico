@@ -30,15 +30,15 @@ C_\lam^{d_\lam\times d}
 \right]^{d\times d}
 C^{d\times d}
 \eeq
-Let $b^{nb}=(b_1, b_2, \ldots, b_{nb})$ where $b_i\in Z_{[0,db_i]}$  and $a\in Z_{[1,d_\lam]}$.
+Let $b^{:nb}=(b_1, b_2, \ldots, b_{nb})$ where $b_i\in Z_{[0,db_i]}$  and $a\in Z_{[1,d_\lam]}$.
 Hence,
 
 \beq
-d_\lam = \prod_{i=1}^{nb}db_i
+d_\lam = \prod_{i=1}^{:nb}db_i
 \eeq
 
 \beq
-(C_\lam)_{a}^ {b^{nb}}=
+(C_\lam)_{a}^ {b^{:nb}}=
 \bcen
 \xymatrix{
 &&b_1\ar[dl]
@@ -82,7 +82,7 @@ a
 \eeq
 
 \beq
-(C^\dagger_\lam)^{a}_{b^{nb}}=
+(C^\dagger_\lam)^{a}_{b^{:nb}}=
 \bcen
 \xymatrix{
 b_1
@@ -108,9 +108,9 @@ rep (or irrep)
 \beq
 \begin{array}{l}
 \boxed{
-(C_\lam^\dagger)^{b^{nb}}_{a}
-(C_\lam)_{(b')^{nb}}^{a}=
-(P_\lam ) _{(b')^{nb}}^{b^{nb}}
+(C_\lam^\dagger)^{b^{:nb}}_{a}
+(C_\lam)_{(b')^{:nb}}^{a}=
+(P_\lam ) _{(b')^{:nb}}^{b^{:nb}}
 }
 \\
 \bcen
@@ -134,9 +134,9 @@ b_{nb}}
 \ecen
 =
 \xymatrix{
-b^{nb}
+b^{:nb}
 &P_\lam\ar[l]
-&(b')^{nb}\ar[l]
+&(b')^{:nb}\ar[l]
 }
 \end{array}
 \eeq
@@ -146,8 +146,8 @@ b^{nb}
 \beq
 \begin{array}{l}
 \boxed{
-(C_\lam)_{b^{nb}}^{(a')^{na}} (C^\dagger _\mu)_{a}^{b^{nb}} = \delta(\lam, \mu)
-\delta_{a}^{(a')^{na}}
+(C_\lam)_{b^{:nb}}^{a'} (C^\dagger _\mu)_{a}^{b^{:nb}} = \delta(\lam, \mu)
+\delta_{a}^{a'}
 }
 \\
 \bcen

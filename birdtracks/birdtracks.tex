@@ -45,7 +45,7 @@ c
 P(a)
 \eeq
 
-$a^2 = (a_1, a_2)$
+$a^{:2} = (a_1, a_2)$
 \beq
 \calc'=
 \bcen
@@ -53,32 +53,33 @@ $a^2 = (a_1, a_2)$
 &\rvb\ar[ld]
 \\
 \rvc
-&&\rva^2\ar[ll]|{\rva_2}\ar[lu]|{\rva_1}
+&&\rva^{:2}\ar[ll]|{\rva_2}\ar[lu]|{\rva_1}
 }
 \ecen
 \eeq
 
 \beq
-\calc'(a^2,b,c)
+\calc'(a^{:2},b,c)
 =
-P(c|b,a_2)P(a_2|a^2)P(b|a_1)P(a_1|a^2)P(a^2)
+P(c|b,a_2)P(a_2|a^{:2})P(b|a_1)P(a_1|a^{:2})P(a^{:2}
+)
 =
 \bcen
 \xymatrix{
 &b\ar[ld]
 \\
 c
-&&a^2
+&&a^{:2}
 \ar[ll]|{a_2}\ar[lu]|{a_1}
 }
 \ecen
-P(a^2)
+P(a^{:2})
 \eeq
 
 Marginalizer nodes  $\rva_1$ and $\rva_2$
 have the TPMs
 \beq \color{blue}
-P(a'_i|\rva^2=(a_1,a_2)) = \delta(a'_i, a_i)
+P(a'_i|\rva^{:2}=(a_1,a_2)) = \delta(a'_i, a_i)
 \eeq
 for $i=1,2$
 
@@ -122,7 +123,7 @@ c
 A(a)
 \eeq
 
-$a^2 = (a_1, a_2)$
+$a^{:2} = (a_1, a_2)$
 \beq
 \calq'=
 \bcen
@@ -130,32 +131,32 @@ $a^2 = (a_1, a_2)$
 &\rvb\ar[ld]
 \\
 \rvc
-&&\rva^2\ar[ll]|{\rva_2}\ar[lu]|{\rva_1}
+&&\rva^{:2}\ar[ll]|{\rva_2}\ar[lu]|{\rva_1}
 }
 \ecen
 \eeq
 
 \beq
-\calq'(a^2,b,c)
+\calq'(a^{:2},b,c)
 =
-A(c|b,a_2)A(a_2|a^2)A(b|a_1)A(a_1|a^2)A(a^2)
+A(c|b,a_2)A(a_2|a^{:2})A(b|a_1)A(a_1|a^{:2})A(a^{:2})
 =
 \bcen
 \xymatrix{
 &b\ar[ld]
 \\
 c
-&&a^2
+&&a^{:2}
 \ar[ll]|{a_2}\ar[lu]|{a_1}
 }
 \ecen
-A(a^2)
+A(a^{:2})
 \eeq
 
 Marginalizer nodes  $\rva_1$ and $\rva_2$
 have the TAMs
 \beq \color{blue}
-A(a'_i|\rva^2=(a_1,a_2)) = \delta(a'_i, a_i)
+A(a'_i|\rva^{:2}=(a_1,a_2)) = \delta(a'_i, a_i)
 \eeq
 for $i=1,2$
 
@@ -404,26 +405,26 @@ use a lot of raising and lowering of indices, it might not be
 too elegantly concise.
 
 
-$a^m\in \ZZ_+^m$
+$a^{:m}\in \ZZ_+^m$
 
 \beq
-R^{a_3^{m_3}, b_2^{n_2}}
-_{b_3^{n_3}, a_2^{m_2}}
-S^{a_2^{m_2}, b_1^{n_1}}
-_{b_2^{n_2}, a_1^{m_1}} =
+R^{a_3^{:m_3}, b_2^{:n_2}}
+_{b_3^{:n_3}, a_2^{:m_2}}
+S^{a_2^{:m_2}, b_1^{:n_1}}
+_{b_2^{:n_2}, a_1^{:m_1}} =
 \bcen
 \xymatrix{
-b_3^{n_3}
+b_3^{:n_3}
 &R\ar[l]\ar@{<-}[ld]
-&\sum  b_2^{n_2}\ar[l]
+&\sum  b_2^{:n_2}\ar[l]
 &S\ar[l]\ar@{<-}[ld]
-&b_1^{n_1}\ar[l]
+&b_1^{:n_1}\ar[l]
 \\
-a_3^{m_3}
+a_3^{:m_3}
 &
-&\sum a_2^{m_2}\ar@{<-}[lu]
+&\sum a_2^{:m_2}\ar@{<-}[lu]
 &
-&a_1^{m_1}\ar@{<-}[lu]
+&a_1^{:m_1}\ar@{<-}[lu]
 }
 \ecen
 \eeq
