@@ -1,27 +1,6 @@
 \chapter{Notational Conventions and Preliminaries}
 \label{ch-conventions}
 
-\section{Vector Notation}
-
-$(x_1, x_2, \ldots, x_n) = x^{:n}$
-
-$y^b = \sum_b g^{ba}x^{:n}$
-
-$(y^1, y^2, \ldots, y^n)= gx^{:n}$
-
-Reverse of vector $rev(x^{:n})=
-(x_n, x_{n-1},
-\ldots, x_1)$
-
-Implicit Summation Convention
-
-\beq
-G_a^bx_b = \sum_{b=1}^n
-G_a^bx_b
-\eeq
-
-\section{Tensors}
-
 \section{Group}
 
 A {\bf group}
@@ -81,6 +60,8 @@ contains the identity
 and is {\bf closed 
 under multiplication} (i.e., $ab\in \calh$ for all $a,b\in \calh$) 
 
+
+
 \section{Group  Representation}
 
 A {\bf group representation}
@@ -111,8 +92,259 @@ is defined by
 GL(n, \CC)=
 \{M\in \CC^{n\times n}: \det{M}\neq 0\}
 \eeq
+\section{Vector Notation}
+
+$(x_1, x_2, \ldots, x_n) = x^{:n}\in V^n=\CC^{n\times 1}$
+
+$y^b = \sum_b g^{ba}x^{:n}$
+
+$(y^1, y^2, \ldots, y^n)= \bar{y}^{:n}\in \bar{V}^n=\CC^{n\times 1}$. $V^n$ and
+$\bar{V}^n$ are {\bf dual vector spaces}.
+
+Reverse of vector $rev(x_1, x_2, \ldots, x_n)=
+(x_n, x_{n-1},
+\ldots, x_1)$
+
+Implicit Summation Convention
+
+\beq
+G_a^bx_b = \sum_{b=1}^n
+G_a^bx_b
+\eeq
+
+Suppose $G\in \calg\subset GL(n, \CC)$ and $a_i, b_i\in \ZZ_{[1,n]}$.
+For $x\in V^{n}$, 
+
+\beq
+(x')_a = G\indices{_a^b} x_b
+\eeq
+For $x\in \bar{V}^{n}$, 
+
+
+
+\beq
+(x')^a = x^b (G^\dagger)\indices{_b^a} = G\indices{^a_b}x^b
+\eeq
+so
+
+\beqa
+(G^\dagger)\indices{_b^a} &=& G\indices{^a_b}
+\\
+&=&
+(G\indices{_a^b})^* 
+\quad \text{(only if $G$ is a unitary matrix)}
+\eeqa
+
+
+\section{Tensors}
+
+Suppose $a_i, b_i, c_i, d_i\in \ZZ_{[1,n]}$.
+
+Note that
+for $x\in V^n$, $y\in \bar{V}^n$, and $G\in \calg\subset GL(n, \CC)$,
+
+
+\beq
+(x')_b (y')^a= G\indices{^a_c} 
+G\indices{_b^d}x_dy^c
+\eeq
+
+
+For $x\in V^{n^p}\otimes \bar{V}^{n^q}$, $\GG\in \calg\subset GL(n^{p+q}, \CC)$,
+
+\beq
+(x')\indices{
+_{b^{:p}}
+^{a^{:q}}
+}
+=
+\GG\indices{
+_{b^{:p}}
+^{a^{:q}}
+_{rev(c^{:q})}
+^{rev(d^{:p})}
+}
+x\indices{
+_{d^{:p}}
+^{c^{:q}}
+}
+\eeq
+where we define
+
+\beq
+\GG\indices{
+_{b^{:p}}
+^{a^{:q}}
+_{rev(c^{:q})}
+^{rev(d^{:p})}
+}
+\eqdef
+\prod_{i=1}^q
+G\indices{
+^{a_i}
+_{c_i}
+}
+\prod_{i=1}^p
+G\indices{
+_{b_i}
+^{d_i}
+}
+\eeq
+
+Hermitian conjugation
+
+\beq
+(M^\dagger)\indices{_a^b}=
+(M\indices{_b^a})^*
+\eeq
+Hermitian matrix
+ 
+\beq
+M^\dagger
+ = M,\quad
+(M^\dagger)\indices
+{_a^b }
+= M\indices{_a^b}
+\eeq
+
+
+\beq
+(M^\dagger)\indices{_a_b^c^d^e}=
+(M\indices{_e_d^c^b^a})^*
+\eeq
+
+
+\hrule
+An issue that arises with tensors is this:
+When is it permissible to represent 
+a tensor by $T_{ab}^{cd}$?
+If we define
+$T_{ab}^{cd}$  by
+\beq
+T_{ab}^{cd} = T\indices{_a_b^c^d}
+\eeq
+then it's always permissible.
+Then one can define
+tensors like
+$T\indices{_a^b^c^d}$
+as 
+
+\beq
+T\indices{_a^b^c^d}=
+g^{bb'}T\indices{_a_{b'}^c^d}
+=
+g^{bb'}T_{ab'}^{cd}
+\eeq
+Hence, one drawback of
+using the notation
+$T_{ab}^{cd}$
+is that if one is interested 
+in using versions of
+$T_{ab}^{cd}$ with
+some indices raised or 
+lowered, one has to 
+write down explicitly the metric tensors 
+that do the lowering and
+raising.
+Instead of writing
+$T\indices{_a^b^c^d}$,
+you'll have to write
+$g^{bb'}T_{ab'}^{cd}$.
+This is not very onerous when 
+explaining a topic
+in which not much
+lowering and raising of indices is
+done. But in topics like
+General Relativity that do
+use a lot of raising and lowering of indices, it might not be 
+too elegantly concise.
+
+
+
+
 
 \section{Invariance}
+Given a {\bf bilinear form} 
+
+\beq
+m(\bar{x}^{:n}, y^{:n})=
+x^a M\indices{
+_a^b
+} y_b
+\eeq
+is invariant if 
+
+\beq
+m(\bar{x}^{:n}, y^{:n})
+=
+m(\bar{x}^{:n}G^\dagger, Gy^{:n})
+\eeq
+
+{\bf invariant matrix}
+
+\beq
+M\indices{
+_a^b
+} =
+(G^\dagger)\indices{_a^{a'}}
+G\indices{
+_{b'}^b
+}
+M\indices{
+_{a'}^{b'}
+}
+\eeq
+
+\beq
+M= G^\dagger  M G
+\eeq
+
+\beq
+GM=MG, \quad [G, M] =0
+\eeq
+
+{\bf multilinear form}
+
+\beq
+h(\bar{w}, \bar{x}, y, z)
+=
+h\indices{_a_b^c^d}
+w^a
+x^b
+y_c
+z_d
+\eeq
+is invariant if
+
+\beq
+h(\bar{w}, \bar{x}, y, z)=
+h(\bar{w}G^\dagger, \bar{x}G^\dagger, Gy, Gz)
+\eeq
+
+
+{\bf invariant tensor}
+
+\beq
+h\indices{_a_b^c^d}
+=
+(G^\dagger)\indices{
+_a^{a'}
+}
+(G^\dagger)\indices{
+_b^{b'}
+}
+h\indices{_{a'}_{b'}^{c'}^{d'}}
+G\indices{
+_{c'}^c
+}
+G\indices{
+_{d'}^d
+}
+\eeq
+
+\section{Algebras}
+
+
 
 \section{Spectral Decomposition and Eigenvalue Projection Operators}
 \label{ch-spectral-decom}
