@@ -1,0 +1,315 @@
+\chapter{Notational Conventions and Preliminaries}
+\label{ch-conventions}
+
+\section{Vector Notation}
+
+$(x_1, x_2, \ldots, x_n) = x^{:n}$
+
+$y^b = \sum_b g^{ba}x^{:n}$
+
+$(y^1, y^2, \ldots, y^n)= gx^{:n}$
+
+Reverse of vector $rev(x^{:n})=
+(x_n, x_{n-1},
+\ldots, x_1)$
+
+Implicit Summation Convention
+
+\beq
+G_a^bx_b = \sum_{b=1}^n
+G_a^bx_b
+\eeq
+
+\section{Tensors}
+
+\section{Group}
+
+A {\bf group}
+$\calg$
+is a set of elements
+with a multiplication map $\calg\times \calg
+\rarrow \calg$
+such that
+
+
+\begin{enumerate}
+\item 
+the multiplication is {\bf associative
+}; i.e., 
+
+\beq
+(ab)c = a(bc)
+\eeq
+for $a,b,c\in\calg$.
+
+\item
+there exists an {\bf identity element}
+$e\in \calg$
+such that 
+
+\beq
+ea=ae=a
+\eeq
+for all $a\in \calg$
+
+\item
+for any $g\in\calg$,
+there exists an {\bf inverse} $a^{-1}\in \calg$ such that
+
+\beq
+aa^{-1}=a^{-1}a=e
+\eeq
+\end{enumerate}
+
+The number of elements in any set $S$ is denoted by $|S|$. 
+$|\calg|$
+is called the {\bf order}
+of the group.
+
+If multiplication is
+{\bf commutative}
+(i.e., $ab=ba$ for all $a,b\in\calg$,
+the group is said to be {\bf abelian}.
+
+A {\bf subgroup} $\calh$ 
+of $\calg$
+is a subset of $\calg$
+($\calh \subset \calg$)
+which is also a group.
+It's easy to show that any $\calh\subset \calg$ is a group if it
+contains the identity
+and is {\bf closed 
+under multiplication} (i.e., $ab\in \calh$ for all $a,b\in \calh$) 
+
+\section{Group  Representation}
+
+A {\bf group representation}
+of a group $\calg$
+is a map $\phi: \calg\rarrow \CC^{n\times n}$\footnote{More generally, the $\CC^{n\times n}$ can be replaced by $\RR^{n\times n}$ or by $\FF^{n\times n}$ for any field $\FF$} such that
+
+\beq
+\phi(a)\phi(b)=
+\phi(ab)
+\eeq
+Such a map is called a {\bf homomorphism}.
+When a group is 
+defined using matrices, those
+matrices are called the {\bf defining representation}.
+The map $\phi$ 
+partitions $\calg$
+into disjoints subsets (equivalence classes),
+such that all elements of $\calg$ in a disjoint set 
+are represented by the same matrix.
+
+
+For example,
+the group
+of {\bf General Linear Transformations}
+is defined by
+
+\beq
+GL(n, \CC)=
+\{M\in \CC^{n\times n}: \det{M}\neq 0\}
+\eeq
+
+\section{Invariance}
+
+\section{Spectral Decomposition and Eigenvalue Projection Operators}
+\label{ch-spectral-decom}
+
+$M\in \CC^{d\times d }$
+
+\beq
+M\ket{v}=\lam \ket{v}
+\eeq
+If $M$ is Hermitian ($H^\dagger=H$), its eigenvalues are real. ( $\lam =
+\av{\lam|M\lam}\in\RR$)
+
+
+\beq
+cp(\lam)\eqdef \det(M-\lam)=0
+\eeq
+
+If $M$ is a Hermitain  matrix, then there exists
+a unitary matric ($CC^\dagger = C^\dagger C =1$)
+such that
+
+\beq
+CMC^\dagger=
+\left[
+\begin{array}{cccc}
+D_{\lam_1}
+&0
+&0
+&0
+\\
+0
+&D_{\lam_2}
+&0
+&0
+\\
+0
+&0
+&\ddots
+&0
+\\
+0
+&0
+&0
+&D_{\lam_r}
+\end{array}
+\right]
+\eeq
+where
+
+\beq
+D_{\lam_i} =
+\text{diag}\underbrace{(\lam_i,\lam_i, \dots,\lam_i)}_{d_i\text{ times}}
+\eeq
+
+\beq
+d=\sum_{i=1}^r d_i
+\eeq
+
+
+\beq
+CMC^\dagger =
+\left[
+\begin{array}{cc}
+\lam_1 &0
+\\
+0&\lam_2
+\end{array}
+\right]
+\eeq
+
+\beq
+C P_1 C^\dagger=
+\left[
+\begin{array}{cc}
+1&0
+\\
+0&0
+\end{array}
+\right]
+=
+\frac{CMC^\dagger -\lam_2}{\lam_1-\lam_2}
+\eeq
+
+\beq
+CP_2 C^\dagger =
+\left[
+\begin{array}{cc}
+0&0
+\\
+0&1
+\end{array}
+\right]
+=
+\frac{CMC^\dagger-\lam_1}{\lam_2-\lam_1}
+\eeq
+
+If $I^{d_i\times d_i}$
+is the $d_i$
+dimensional unit matrix,
+\beqa
+P_i &=&
+C^\dagger
+diag(0,\ldots,0, I^{d_i\times d_i},0, \dots, 0)C
+\\
+&=&
+\prod_{j\neq i}
+\frac{M -\lam_j}{\lam_i -\lam_j}
+\eeqa
+
+Note that $P_i$ are Hermitian
+($P_i^\dagger = P_i$)
+because $M$
+is Hermitian and
+its eigenvalues are real.)
+
+Note that
+$P_i$ and $M$
+commute
+
+\beq
+[P_i, M]=
+P_iM-MP_i=0
+\eeq
+
+orthogonal
+\beq
+P_i P_j =\delta(i,j)P_j
+\eeq
+
+complete
+\beq
+\sum_i P_i =1
+\eeq
+
+\beq
+M= \sum_{i=1}^r
+P_iM P_i
+\eeq
+
+\beq
+d_i = \tr P_i
+\eeq
+
+\beqa
+CMP_1C^\dagger &=&
+\left[
+\begin{array}{cc}
+\lam_1&0
+\\
+0&\lam_2
+\end{array}
+\right] 
+\left[
+\begin{array}{cc}
+1&0
+\\
+0&0
+\end{array}
+\right] 
+\\
+&=&
+\lam_1
+\left[
+\begin{array}{cc}
+1&0
+\\
+0&0
+\end{array}
+\right] 
+\eeqa
+
+\beq
+MP_i = \lam_i P_i \;
+\text{(no $i$ sum)}
+\eeq
+
+\beq
+f(M) P_i = f(\lam_i)P_i \;
+\text{(no $i$ sum)}
+\eeq
+
+$M^{(1)}, M^{(2)}$
+
+\beq
+[M^{(1)}, M^{(2)}]  =0
+\eeq
+Use $M^{(1)}$ to decompose $V$
+into $\bigoplus_i V_i$.
+Use  $M^{(2)}$ to decompose $V_i$ into
+$\bigoplus_j V_{i,j}$. 
+If $M^{(1)}$ and $M^{(2)}$ don't
+commute, let $P^{(1)}_i$ be the eigenvalue 
+projection operators of $M^{(1)}$. The replace $M^{(2)}$ by $P^{(1)}_i M^{(2)}P_i^{(1)}$
+
+\beq
+[M^{(1)}, P^{(1)}_iM^{(2)}P^{(1)}_i]  =0
+\eeq
+
+
+
