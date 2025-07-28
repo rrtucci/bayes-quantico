@@ -342,6 +342,40 @@ _{d'}^d
 }
 \eeq
 
+Let $\calp=(p_1, p_2, \ldots, p_k)$ be a full set of invariant
+multilinear forms (\qt{primitives}). By \qt{full}, we mean no others exist.
+
+An {\bf invariance group} $\calg$ is the set of all linear transformation $G\in \calg$ such that
+
+\beqa
+p_1(x, \bar{y})&=&
+p_1(Gx, \bar{y}G^\dagger)
+\\
+p_2(w, x, \bar{y}, \bar{z})&=&
+p_2(Gw, Gx, \bar{y}G^\dagger,
+\bar{z}G^\dagger)
+\\
+&&\text{etc.}
+\eeqa
+
+Example
+
+\beq
+p(\bar{x}, y) = \delta_a^b x^a y_b=x^by_b
+\eeq
+
+\beq
+(x')^a (y')_a=
+x^b (G^\dagger G)\indices{_b^c}y_c = x^by_b
+\eeq
+So $G$ must be unitary
+\beq
+G^\dagger G=1
+\eeq
+ 
+The group of $n$ dimensional unitary matrices is called $U(n)$
+
+
 \section{Algebras}
 
 
