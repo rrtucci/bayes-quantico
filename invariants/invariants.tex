@@ -99,7 +99,7 @@ h(\bar{w}G^\dagger, \bar{x}G^\dagger, Gy, Gz)
 \eeq
 
 
-{\bf tensor invariant}
+{\bf tensor invariant}  (TI)
 
 \beq
 \boxed{
@@ -149,8 +149,177 @@ a
 \ecen
 \eeq
 
-Let $\calp=(p_1, p_2, \ldots, p_k)$ be a full set of invariant
-multilinear forms (\qt{primitives}). By \qt{full}, we mean no others exist.
+A {\bf composed TI} is a TI that can
+be written as a product or contraction
+of TIs.
+
+A {\bf tree TI}
+is a composed TIs
+without any loops.
+
+A {\bf primitive TI}
+is a TI that can be expressed as a linear
+combination of
+a finite number of tree TIs.
+
+
+The {\bf primitiveness assumption}: All TI are primitive.
+\hrule
+Consider $\RR^3$ vector space.
+
+\beq
+length(x)
+=
+\delta_{ij}x_i x_i
+\;
+\quad
+volume(x,y,z)
+=
+\eps_{ijk}x_iy_jz_k
+\eeq
+
+Primitive TIs
+
+\beq
+\delta_{ij}=
+\xymatrix{
+i
+&j\ar@{-}[l]
+}
+\;,\quad
+\eps_{ijk}=
+\bcen
+\xymatrix{
+&\eps
+\ar@{-}[dl]
+\ar@{-}[d]
+\ar@{-}[dr]
+\\
+i
+&j
+&k
+}
+\ecen
+\eeq
+Tree TIs
+
+
+\beq
+\delta_{ij}\eps_{klm}=
+\bcen
+\xymatrix{
+i\ar@{-}[d]
+&& \eps
+\ar@{-}[dl]
+\ar@{-}[d]
+\ar@{-}[dr]
+\\
+j
+&k
+&l
+&m
+}
+\ecen
+\eeq
+
+\beq
+\eps_{ijm}\delta_{mn}\eps_{nkl}
+=
+\bcen
+\xymatrix{
+&\eps_{ijm}\ar@{-}[dl] \ar@{-}[d]
+&\eps_{nkl}\ar@{-}[l]
+\ar@{-}[d]
+\ar@{-}[dr]
+\\
+i
+&j
+&k
+&l
+}
+\ecen
+\eeq
+Non-tree TI
+
+\beq
+\eps_{ims}
+\eps_{jnm}
+\eps_{krn}
+\eps_{lsr}
+=
+\bcen
+\xymatrix{
+i
+&\eps_{ims}\ar@{-}[l]
+\ar@{-}[d]|{\sum m}
+&\eps_{lsr}\ar@{-}[l]|{\sum s}
+\ar@{-}[d]|{\sum r}
+&l\ar@{-}[l]
+\\
+j
+&\eps_{jnm}\ar@{-}[l]
+&\eps_{krn}\ar@{-}[l]|{\sum n}
+&k\ar@{-}[l]
+}
+\ecen
+\eeq
+
+\beq
+\begin{array}{l}
+\boxed{
+\eps_{ims}
+\eps_{jnm}
+\eps_{krn}
+\eps_{lsr}=
+\delta_{ij}
+\delta_{kl}
++
+\delta_{il}
+\delta_{jk}
+}
+\\
+\bcen
+\xymatrix{
+i
+&\eps_{ims}\ar@{-}[l]
+\ar@{-}[d]|{\sum m}
+&\eps_{lsr}\ar@{-}[l]|{\sum s}
+\ar@{-}[d]|{\sum r}
+&l\ar@{-}[l]
+\\
+j
+&\eps_{jnm}\ar@{-}[l]
+&\eps_{krn}\ar@{-}[l]|{\sum n}
+&k\ar@{-}[l]
+}
+\ecen
+=
+\bcen
+\xymatrix{
+i\ar@{-}[d]
+&l\ar@{-}[d]
+\\
+j
+&k
+}
+\ecen
++
+\bcen
+\xymatrix{
+i\ar@{-}[r]
+&l
+\\
+j\ar@{-}[r]
+&k
+}
+\ecen
+\end{array}
+\eeq
+
+\hrule
+An {\bf algebra of invariants}
+
+Let $\calp=(p_1, p_2, \ldots, p_k)$ be a full set of primitives. By \qt{full}, we mean no others exist.
 
 An {\bf invariance group} $\calg$ is the set of all linear transformation $G\in \calg$ such that
 
