@@ -92,75 +92,174 @@ is defined by
 GL(n, \CC)=
 \{M\in \CC^{n\times n}: \det{M}\neq 0\}
 \eeq
-\section{Vector Notation}
+\section{Vectors and Tensors}
 
 $(x_1, x_2, \ldots, x_n) = x^{:n}\in V^n=\CC^{n\times 1}$
+
+Reverse of vector $rev(x_1, x_2, \ldots, x_n)=
+(x_n, x_{n-1},
+\ldots, x_1)$
 
 $y^b = \sum_b g^{ba}x^{:n}$
 
 $(y^1, y^2, \ldots, y^n)= \bar{y}^{:n}\in \bar{V}^n=\CC^{n\times 1}$. $V^n$ and
 $\bar{V}^n$ are {\bf dual vector spaces}.
 
-Reverse of vector $rev(x_1, x_2, \ldots, x_n)=
-(x_n, x_{n-1},
-\ldots, x_1)$
+
+
+$M\indices{_a^b}\in \CC^{n\times n}$, $a, b\in\ZZ_{[1,n]}$
 
 Implicit Summation Convention
 
 \beq
-G_a^bx_b = \sum_{b=1}^n
-G_a^bx_b
+M\indices{_a^b}x_b = \sum_{b=1}^n
+M\indices{_a^b}x_b
 \eeq
-
-Suppose $G\in \calg\subset GL(n, \CC)$ and $a_i, b_i\in \ZZ_{[1,n]}$.
-For $x\in V^{n}$, 
-
-\beq
-(x')_a = G\indices{_a^b} x_b
-\eeq
-For $x\in \bar{V}^{n}$, 
-
-
-
-\beq
-(x')^a = x^b (G^\dagger)\indices{_b^a} = G\indices{^a_b}x^b
-\eeq
-so
 
 \beqa
-(G^\dagger)\indices{_b^a} &=& G\indices{^a_b}
+(M^\dagger)\indices{_b^a} &=& (M^*)\indices{_a^b}
 \\
 &=&
-(G\indices{_a^b})^* 
-\quad \text{(only if $G$ is a unitary matrix)}
+M\indices{_b^a}
+\quad \text{(only if $M$ is a unitary matrix)}
 \eeqa
 
-
-\section{Tensors}
-
-Suppose $a_i, b_i, c_i, d_i\in \ZZ_{[1,n]}$.
-
-Note that
-for $x\in V^n$, $y\in \bar{V}^n$, and $G\in \calg\subset GL(n, \CC)$,
-
+For $x_a\in V^n$,
 
 \beq
-(x')_b (y')^a= G\indices{^a_c} 
-G\indices{_b^d}x_dy^c
+(x')_a = M\indices{_a^b} x_b
+\eeq
+For $x^a\in \bar{V}^{n}$, 
+
+
+
+\beqa
+(x'^*)^a &=& x^{*b} (M^*)\indices{^a_b}
+\\
+&=&
+x^{*b} (M^\dagger)\indices{_b^a}
+\eeqa
+so
+
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=2.7in]
+{conventions/index-labels-Mx.png}
+\caption{Index labels for $Mx$
+where $M
+\in \CC^{n^{p+q}\times n^{p+q}}$ and
+$x\in V^{n^p}\otimes \bar{V}^{n^q}$}
+\label{fig-index-labels-Mx}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=4in]
+{conventions/index-labels-hermitian.png}
+\caption{Index labels for $M^\dagger$
+where $M
+\in \CC^{n^{p+q}\times n^{p+q}}$}
+\label{fig-index-labels-hermitian}
+\end{figure}
+
+
+Suppose $a_i, b_i, c_i, d_i\in \ZZ_{[1,n]}$.
+From Fig.\ref{fig-index-labels-Mx}
+
+\beq
+y\indices{
+_{a^{:p}}
+^{b^{:q}}}=
+M\indices{
+_{a^{:p}}
+^{b^{:q}}
+_{rev(c^{:q})}
+^{rev(d^{:p})}
+}
+x\indices{
+_{d^{:p}}
+^{c^{:q}}
+}
+\eeq
+
+\beq
+X\indices{_\alp} = X\indices{
+_{a^{:p}}
+^{b^{:q}}
+}
+,\quad
+X\indices{^\alp}
+=
+X\indices{
+_{rev(b^{:q})}
+^{rev(a^{:p})}
+}
+\eeq
+
+\beq
+x_\alp = M\indices{_\alp^\beta}x_\beta
 \eeq
 
 
-For $x\in V^{n^p}\otimes \bar{V}^{n^q}$, $\GG\in \calg\subset GL(n^{p+q}, \CC)$,
+\hrule
+
+Hermitian conjugation (see Fig.\ref{fig-index-labels-hermitian})
+
+\beq
+\left\{
+\begin{array}{l}
+(M^\dagger)\indices{_a^d}=
+(M\indices{^d_a})^*
+\\
+(M^\dagger)\indices{_\alp^{\delta}}=
+(M\indices{
+^{rev(\delta)}
+_{rev(\alp)}
+}
+)^*
+\end{array}\right.
+\eeq
+Hermitian matrix
+ 
+\beq
+M^\dagger
+ = M,\quad
+ \left\{
+ \begin{array}{l}
+(M\indices
+{^d_a })^*
+= M\indices{_a^d}
+\\
+(M\indices{^{rev(\delta)}_{rev(\alp)}})^*=
+M\indices{_\alp^{\delta}}
+\end{array}
+\right.
+\eeq
+
+\hrule
+
+Note that
+for $x\in V^n{}$, $y\in \bar{V}^n$, and $G\in \calg\subset GL(n, \CC)$,
+
+\beq
+(x')_a (y')^b= G\indices{^b_c} 
+G\indices{_a^d}x_dy^c
+\eeq
+
+
+If $x\in V^{n^p}\otimes \bar{V}^{n^q}$, $\GG\in \calg\subset GL(n^{p+q}, \CC)$,
 
 \beq
 (x')\indices{
-_{b^{:p}}
-^{a^{:q}}
+_{a^{:p}}
+^{b^{:q}}
 }
 =
 \GG\indices{
-_{b^{:p}}
-^{a^{:q}}
+_{a^{:p}}
+^{b^{:q}}
 _{rev(c^{:q})}
 ^{rev(d^{:p})}
 }
@@ -173,44 +272,22 @@ where we define
 
 \beq
 \GG\indices{
-_{b^{:p}}
-^{a^{:q}}
+_{a^{:p}}
+^{b^{:q}}
 _{rev(c^{:q})}
 ^{rev(d^{:p})}
 }
 \eqdef
 \prod_{i=1}^q
 G\indices{
-^{a_i}
+^{b_i}
 _{c_i}
 }
 \prod_{i=1}^p
 G\indices{
-_{b_i}
+_{a_i}
 ^{d_i}
 }
-\eeq
-
-Hermitian conjugation
-
-\beq
-(M^\dagger)\indices{_a^b}=
-(M\indices{_b^a})^*
-\eeq
-Hermitian matrix
- 
-\beq
-M^\dagger
- = M,\quad
-(M^\dagger)\indices
-{_a^b }
-= M\indices{_a^b}
-\eeq
-
-
-\beq
-(M^\dagger)\indices{_a_b^c^d^e}=
-(M\indices{_e_d^c^b^a})^*
 \eeq
 
 
@@ -263,7 +340,7 @@ too elegantly concise.
 
 
 
-\section{Invariance}
+\section{Invariants}
 Given a {\bf bilinear form} 
 
 \beq
@@ -280,7 +357,7 @@ m(\bar{x}^{:n}, y^{:n})
 m(\bar{x}^{:n}G^\dagger, Gy^{:n})
 \eeq
 
-{\bf invariant matrix}
+{\bf matrix invariant}
 
 \beq
 M\indices{
@@ -322,7 +399,7 @@ h(\bar{w}G^\dagger, \bar{x}G^\dagger, Gy, Gz)
 \eeq
 
 
-{\bf invariant tensor}
+{\bf tensor invariant}
 
 \beq
 h\indices{_a_b^c^d}
@@ -376,7 +453,6 @@ G^\dagger G=1
 The group of $n$ dimensional unitary matrices is called $U(n)$
 
 
-\section{Algebras}
 
 
 
@@ -396,7 +472,7 @@ If $M$ is Hermitian ($H^\dagger=H$), its eigenvalues are real. ( $\lam =
 cp(\lam)\eqdef \det(M-\lam)=0
 \eeq
 
-If $M$ is a Hermitain  matrix, then there exists
+If $M$ is a Hermitian  matrix, then there exists
 a unitary matric ($CC^\dagger = C^\dagger C =1$)
 such that
 
@@ -577,5 +653,87 @@ projection operators of $M^{(1)}$. The replace $M^{(2)}$ by $P^{(1)}_i M^{(2)}P_
 [M^{(1)}, P^{(1)}_iM^{(2)}P^{(1)}_i]  =0
 \eeq
 
+\section{Vector Space and Algebra over a field $\FF$}
+
+A vector (or linear)  space $\calv$
+is defined as a set endowed with
+two operations: vector addition $+:\calv\times\calv\rarrow \calv$,
+and scalar multiplication $\FF\times\calv\rarrow \calv$,
+such that
+
+\begin{itemize}
+\item $\calv$ is an abelian group under $+$
+with identity $0$ and inverse of $x\in\calv$ equal to $-x\in\calv$
+
+\item
+For $\alp, \beta\in\FF$ and
+$x,y\in\calv$
+\beqa
+\alp(x+y) &=& \alp x + \alp y
+\\
+(\alp +\beta)x &=& \alp x + \beta y
+\\
+\alp(\beta x)
+&=&
+(\alp\beta)x
+\\
+1x &=& x
+\\
+0x &=& 0
+\eeqa
+\end{itemize}
+ In this book, we will always use either $\CC$ or $\RR$ for $\FF$. Both 
+ of these fields are infinite but some fields are finite.
 
 
+An {\bf algebra} $\cala$ is a
+vector space  
+which, 
+besides being endowed with vector addition
+and scalar multiplication
+with which all vector spaces are,
+it has
+a {\bf bilinear vector product}.
+A bilinear vector product is a product that is linear on both sides; i.e., 
+
+\beq
+(\alp x + \beta y)\cdot z =
+\alp x\cdot z +
+\beta y\cdot z
+\eeq
+and 
+\beq
+z\cdot(\alp x + \beta y)=
+\alp z \cdot x +
+\beta z\cdot y
+\eeq
+for $x,y, z\in \cala$ and 
+$\alp, \beta\in\CC$.
+The cross product (but not the dot product)
+for vectors in $\RR^3$,
+the multiplication of 2 complex numbers,
+and the commutator for
+square matrices, are all good examples of
+bilinear vector products.
+
+Let $B = \{\tau_i: i=1, 2, \ldots, r\}$
+be a basis for the vector space $\cala$. 
+Then note that
+$B$ is closed under vector multiplication. 
+
+\beq
+\tau_i\cdot \tau_j=
+\sum_k c\indices{_{ij}^k} \tau_k
+\eeq
+where $c\indices{_{ij}^k}\in\CC$.
+The $c\indices{_{ij}^k}$ are called 
+{\bf structure constants} of $B$.
+
+An {\bf associative algebra} satisfies 
+$(x\cdot y)\cdot z = x\cdot(y\cdot z)$ for
+$x,y,z\in \cala$.
+\begin{itemize}
+\item Not associative: cross product for vectors in  $\RR^3$.
+\item Associative:
+the commutator for square matrices and product of complex numbers
+\end{itemize}
