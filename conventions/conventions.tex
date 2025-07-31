@@ -92,7 +92,93 @@ is defined by
 GL(n, \CC)=
 \{M\in \CC^{n\times n}: \det{M}\neq 0\}
 \eeq
-\section{Vectors and Tensors}
+
+\section{Vector Space and Algebra over a field $\FF$}
+
+A vector (or linear)  space $\calv$
+is defined as a set endowed with
+two operations: vector addition $+:\calv\times\calv\rarrow \calv$,
+and scalar multiplication $\FF\times\calv\rarrow \calv$,
+such that
+
+\begin{itemize}
+\item $\calv$ is an abelian group under $+$
+with identity $0$ and inverse of $x\in\calv$ equal to $-x\in\calv$
+
+\item
+For $\alp, \beta\in\FF$ and
+$x,y\in\calv$
+\beqa
+\alp(x+y) &=& \alp x + \alp y
+\\
+(\alp +\beta)x &=& \alp x + \beta y
+\\
+\alp(\beta x)
+&=&
+(\alp\beta)x
+\\
+1x &=& x
+\\
+0x &=& 0
+\eeqa
+\end{itemize}
+ In this book, we will always use either $\CC$ or $\RR$ for $\FF$. Both 
+ of these fields are infinite but some fields are finite.
+
+
+An {\bf algebra} $\cala$ is a
+vector space  
+which, 
+besides being endowed with vector addition
+and scalar multiplication
+with which all vector spaces are,
+it has
+a {\bf bilinear vector product}.
+A bilinear vector product is a product that is linear on both sides; i.e., 
+
+\beq
+(\alp x + \beta y)\cdot z =
+\alp x\cdot z +
+\beta y\cdot z
+\eeq
+and 
+\beq
+z\cdot(\alp x + \beta y)=
+\alp z \cdot x +
+\beta z\cdot y
+\eeq
+for $x,y, z\in \cala$ and 
+$\alp, \beta\in\CC$.
+The cross product (but not the dot product)
+for vectors in $\RR^3$,
+the multiplication of 2 complex numbers,
+and the commutator for
+square matrices, are all good examples of
+bilinear vector products.
+
+Let $B = \{\tau_i: i=1, 2, \ldots, r\}$
+be a basis for the vector space $\cala$. 
+Then note that
+$B$ is closed under vector multiplication. 
+
+\beq
+\tau_i\cdot \tau_j=
+\sum_k c\indices{_{ij}^k} \tau_k
+\eeq
+where $c\indices{_{ij}^k}\in\CC$.
+The $c\indices{_{ij}^k}$ are called 
+{\bf structure constants} of $B$.
+
+An {\bf associative algebra} satisfies 
+$(x\cdot y)\cdot z = x\cdot(y\cdot z)$ for
+$x,y,z\in \cala$.
+\begin{itemize}
+\item Not associative: cross product for vectors in  $\RR^3$.
+\item Associative:
+the commutator for square matrices and product of complex numbers
+\end{itemize}
+
+\section{Tensors}
 
 $(x_1, x_2, \ldots, x_n) = x^{:n}\in V^n=\CC^{n\times 1}$
 
@@ -340,120 +426,6 @@ too elegantly concise.
 
 
 
-\section{Invariants}
-Given a {\bf bilinear form} 
-
-\beq
-m(\bar{x}^{:n}, y^{:n})=
-x^a M\indices{
-_a^b
-} y_b
-\eeq
-is invariant if 
-
-\beq
-m(\bar{x}^{:n}, y^{:n})
-=
-m(\bar{x}^{:n}G^\dagger, Gy^{:n})
-\eeq
-
-{\bf matrix invariant}
-
-\beq
-M\indices{
-_a^b
-} =
-(G^\dagger)\indices{_a^{a'}}
-G\indices{
-_{b'}^b
-}
-M\indices{
-_{a'}^{b'}
-}
-\eeq
-
-\beq
-M= G^\dagger  M G
-\eeq
-
-\beq
-GM=MG, \quad [G, M] =0
-\eeq
-
-{\bf multilinear form}
-
-\beq
-h(\bar{w}, \bar{x}, y, z)
-=
-h\indices{_a_b^c^d}
-w^a
-x^b
-y_c
-z_d
-\eeq
-is invariant if
-
-\beq
-h(\bar{w}, \bar{x}, y, z)=
-h(\bar{w}G^\dagger, \bar{x}G^\dagger, Gy, Gz)
-\eeq
-
-
-{\bf tensor invariant}
-
-\beq
-h\indices{_a_b^c^d}
-=
-(G^\dagger)\indices{
-_a^{a'}
-}
-(G^\dagger)\indices{
-_b^{b'}
-}
-h\indices{_{a'}_{b'}^{c'}^{d'}}
-G\indices{
-_{c'}^c
-}
-G\indices{
-_{d'}^d
-}
-\eeq
-
-Let $\calp=(p_1, p_2, \ldots, p_k)$ be a full set of invariant
-multilinear forms (\qt{primitives}). By \qt{full}, we mean no others exist.
-
-An {\bf invariance group} $\calg$ is the set of all linear transformation $G\in \calg$ such that
-
-\beqa
-p_1(x, \bar{y})&=&
-p_1(Gx, \bar{y}G^\dagger)
-\\
-p_2(w, x, \bar{y}, \bar{z})&=&
-p_2(Gw, Gx, \bar{y}G^\dagger,
-\bar{z}G^\dagger)
-\\
-&&\text{etc.}
-\eeqa
-
-Example
-
-\beq
-p(\bar{x}, y) = \delta_a^b x^a y_b=x^by_b
-\eeq
-
-\beq
-(x')^a (y')_a=
-x^b (G^\dagger G)\indices{_b^c}y_c = x^by_b
-\eeq
-So $G$ must be unitary
-\beq
-G^\dagger G=1
-\eeq
- 
-The group of $n$ dimensional unitary matrices is called $U(n)$
-
-
-
 
 
 \section{Spectral Decomposition and Eigenvalue Projection Operators}
@@ -653,87 +625,3 @@ projection operators of $M^{(1)}$. The replace $M^{(2)}$ by $P^{(1)}_i M^{(2)}P_
 [M^{(1)}, P^{(1)}_iM^{(2)}P^{(1)}_i]  =0
 \eeq
 
-\section{Vector Space and Algebra over a field $\FF$}
-
-A vector (or linear)  space $\calv$
-is defined as a set endowed with
-two operations: vector addition $+:\calv\times\calv\rarrow \calv$,
-and scalar multiplication $\FF\times\calv\rarrow \calv$,
-such that
-
-\begin{itemize}
-\item $\calv$ is an abelian group under $+$
-with identity $0$ and inverse of $x\in\calv$ equal to $-x\in\calv$
-
-\item
-For $\alp, \beta\in\FF$ and
-$x,y\in\calv$
-\beqa
-\alp(x+y) &=& \alp x + \alp y
-\\
-(\alp +\beta)x &=& \alp x + \beta y
-\\
-\alp(\beta x)
-&=&
-(\alp\beta)x
-\\
-1x &=& x
-\\
-0x &=& 0
-\eeqa
-\end{itemize}
- In this book, we will always use either $\CC$ or $\RR$ for $\FF$. Both 
- of these fields are infinite but some fields are finite.
-
-
-An {\bf algebra} $\cala$ is a
-vector space  
-which, 
-besides being endowed with vector addition
-and scalar multiplication
-with which all vector spaces are,
-it has
-a {\bf bilinear vector product}.
-A bilinear vector product is a product that is linear on both sides; i.e., 
-
-\beq
-(\alp x + \beta y)\cdot z =
-\alp x\cdot z +
-\beta y\cdot z
-\eeq
-and 
-\beq
-z\cdot(\alp x + \beta y)=
-\alp z \cdot x +
-\beta z\cdot y
-\eeq
-for $x,y, z\in \cala$ and 
-$\alp, \beta\in\CC$.
-The cross product (but not the dot product)
-for vectors in $\RR^3$,
-the multiplication of 2 complex numbers,
-and the commutator for
-square matrices, are all good examples of
-bilinear vector products.
-
-Let $B = \{\tau_i: i=1, 2, \ldots, r\}$
-be a basis for the vector space $\cala$. 
-Then note that
-$B$ is closed under vector multiplication. 
-
-\beq
-\tau_i\cdot \tau_j=
-\sum_k c\indices{_{ij}^k} \tau_k
-\eeq
-where $c\indices{_{ij}^k}\in\CC$.
-The $c\indices{_{ij}^k}$ are called 
-{\bf structure constants} of $B$.
-
-An {\bf associative algebra} satisfies 
-$(x\cdot y)\cdot z = x\cdot(y\cdot z)$ for
-$x,y,z\in \cala$.
-\begin{itemize}
-\item Not associative: cross product for vectors in  $\RR^3$.
-\item Associative:
-the commutator for square matrices and product of complex numbers
-\end{itemize}

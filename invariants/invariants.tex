@@ -1,0 +1,186 @@
+\chapter{Invariants}
+\label{ch-invariants}
+
+Given a {\bf bilinear form} 
+
+\beq
+m(\bar{x}^{:n}, y^{:n})=
+x^a M\indices{
+_a^b
+} y_b
+\xymatrix@R=1pc@C=1pc{
+&M\ar[dl]
+\ar@{<-}[dr]
+\\
+a&&b
+}
+\eeq
+is invariant if 
+
+\beq
+m(\bar{x}^{:n}, y^{:n})
+=
+m(\bar{x}^{:n}G^\dagger, Gy^{:n})
+\eeq
+
+{\bf matrix invariant}
+
+\beq
+\boxed
+{
+M\indices{
+_a^b
+} =
+(G^\dagger)\indices{_a^{a'}}
+G\indices{
+_{b'}^b
+}
+M\indices{
+_{a'}^{b'}
+}}
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&M\ar[dl]
+\ar@{<-}[dr]
+\\
+a&&b
+}
+\ecen
+=
+\bcen
+\xymatrix@R=2pc@C=1pc{
+&M\ar[dl]|{G^\dagger}
+\ar@{<-}[dr]|G
+\\
+a&&b
+}
+\ecen
+\eeq
+
+\beq
+M= G^\dagger  M G
+\eeq
+
+\beq
+GM=MG, \quad [G, M] =0
+\eeq
+
+{\bf multilinear form}
+
+\beq
+h(\bar{w}, \bar{x}, y, z)
+=
+h\indices{_a_b^c^d}
+w^a
+x^b
+y_c
+z_d
+\quad\quad
+\bcen
+\xymatrix@R=1pc@C=1pc{
+h
+\ar[d]
+\ar[dr]
+\ar@{<-}[drr]
+\ar@{<-}[drrr]
+\\
+a
+&b
+&c
+&d
+}
+\ecen
+\eeq
+is invariant if
+
+\beq
+h(\bar{w}, \bar{x}, y, z)=
+h(\bar{w}G^\dagger, \bar{x}G^\dagger, Gy, Gz)
+\eeq
+
+
+{\bf tensor invariant}
+
+\beq
+\boxed{
+h\indices{_a_b^c^d}
+=
+(G^\dagger)\indices{
+_a^{a'}
+}
+(G^\dagger)\indices{
+_b^{b'}
+}
+h\indices{_{a'}_{b'}^{c'}^{d'}}
+G\indices{
+_{c'}^c
+}
+G\indices{
+_{d'}^d
+}}
+\bcen
+\xymatrix@R=1pc@C=1pc{
+h
+\ar[d]
+\ar[dr]
+\ar@{<-}[drr]
+\ar@{<-}[drrr]
+\\
+a
+&b
+&c
+&d
+}
+\ecen
+=
+\bcen
+\xymatrix@R=2pc@C=1pc{
+h
+\ar[d]|{G^\dagger}
+\ar[dr]|{G^\dagger}
+\ar@{<-}[drr]|G
+\ar@{<-}[drrr]|G
+\\
+a
+&b
+&c
+&d
+}
+\ecen
+\eeq
+
+Let $\calp=(p_1, p_2, \ldots, p_k)$ be a full set of invariant
+multilinear forms (\qt{primitives}). By \qt{full}, we mean no others exist.
+
+An {\bf invariance group} $\calg$ is the set of all linear transformation $G\in \calg$ such that
+
+\beqa
+p_1(x, \bar{y})&=&
+p_1(Gx, \bar{y}G^\dagger)
+\\
+p_2(w, x, \bar{y}, \bar{z})&=&
+p_2(Gw, Gx, \bar{y}G^\dagger,
+\bar{z}G^\dagger)
+\\
+&&\text{etc.}
+\eeqa
+
+Example
+
+\beq
+p(\bar{x}, y) = \delta_a^b x^a y_b=x^by_b
+\eeq
+
+\beq
+(x')^a (y')_a=
+x^b (G^\dagger G)\indices{_b^c}y_c = x^by_b
+\eeq
+So $G$ must be unitary
+\beq
+G^\dagger G=1
+\eeq
+ 
+The group of $n$ dimensional unitary matrices is called $U(n)$
+
+
+
