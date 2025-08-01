@@ -38,9 +38,9 @@ d_\lam = \prod_{i=1}^{:nb}db_i
 \eeq
 
 \beq
-(C_\lam)_{a}^ {b^{:nb}}=
+(C_\lam)_{a}^{rev(b^{:nb})}=
 \bcen
-\xymatrix{
+\xymatrix@C=1pc@R=1pc{
 &&b_1\ar[dl]
 \\
 a
@@ -84,7 +84,7 @@ a
 \beq
 (C^\dagger_\lam)^{a}_{b^{:nb}}=
 \bcen
-\xymatrix{
+\xymatrix@C=1pc@R=1pc{
 b_1
 \\
 b_2
@@ -108,13 +108,16 @@ rep (or irrep)
 \beq
 \begin{array}{l}
 \boxed{
-(C_\lam^\dagger)^{b^{:nb}}_{a}
-(C_\lam)_{(b')^{:nb}}^{a}=
-(P_\lam ) _{(b')^{:nb}}^{b^{:nb}}
+(C_\lam^\dagger)_{b^{:nb}}^{a}
+(C_\lam)^{rev((b')^{:nb})}_{a}=
+(P_\lam)^{rev((b')^{:nb})}_{b^{:nb}},
+\quad
+C^\dagger_\lam 
+C_\lam = P_\lam
 }
 \\
 \bcen
-\xymatrix{
+\xymatrix@C=1pc@R=1pc{
 b_1
 \\
 b_2
@@ -123,7 +126,7 @@ b_2
 & \sum a\ar[l]
 \\
 b_{nb}}
-\xymatrix{
+\xymatrix@C=1pc@R=1pc{
 &&b'_1\ar[dl]
 \\
 & C_\lam\ar[l]
@@ -133,11 +136,23 @@ b_{nb}}
 }
 \ecen
 =
-\xymatrix{
-b^{:nb}
+\bcen
+\xymatrix@C=1pc@R=1pc{
+b_1
+&
+&b'_1\ar[ld]
+\\
+b_2
 &P_\lam\ar[l]
-&(b')^{:nb}\ar[l]
+\ar[ld]\ar[lu]
+&b'_2
+\ar[l]
+\\
+b_{nb}
+&
+&b'_{nb}\ar[lu]
 }
+\ecen
 \end{array}
 \eeq
 
@@ -146,12 +161,16 @@ b^{:nb}
 \beq
 \begin{array}{l}
 \boxed{
-(C_\lam)_{b^{:nb}}^{a'} (C^\dagger _\mu)_{a}^{b^{:nb}} = \delta(\lam, \mu)
-\delta_{a}^{a'}
+(C_\lam)^{rev(b^{:nb})}_{a} 
+(C^\dagger _\mu)^{a'}_{b^{:nb}} = \delta(\lam, \mu)
+\delta_{a}^{a'},
+\quad
+C_\lam C_\mu^\dagger =
+\delta(\mu, \lam)
 }
 \\
 \bcen
-\xymatrix{
+\xymatrix@C=1pc@R=1pc{
 &&\sum b_1\ar[dl]
 \\
 a
@@ -161,7 +180,7 @@ a
 \\
 &&\sum b_{nb}\ar[lu]
 }
-\xymatrix{
+\xymatrix@C=1pc@R=1pc{
 \\
 &(C^\dagger_\mu)
 \ar[lu]\ar[l]\ar[ld]
@@ -177,3 +196,168 @@ a
 \ar[l]|\bullet
 }
 \end{array}\eeq
+
+Completeness relation
+
+\beq
+\begin{array}{l}
+\boxed{
+\sum_\lam
+(C_\lam^\dagger)_{b^{:nb}}^{a}
+(C_\lam)^{rev((b')^{:nb})}_{a}=
+\delta^{rev((b')^{:nb})}_{b^{:nb}}
+,\quad
+\sum_\lam C^\dagger_\lam C_\lam = 1
+}
+\\
+\sum_\lam
+\bcen
+\xymatrix@C=1pc@R=1pc{
+b_1
+\\
+b_2
+&(C^\dagger_\lam)
+\ar[lu]\ar[l]\ar[ld]
+& \sum a\ar[l]
+\\
+b_{nb}}
+\xymatrix@C=1pc@R=1pc{
+&
+&b'_1\ar[dl]
+\\
+& C_\lam\ar[l]
+&b'_2\ar[l]
+\\
+&
+&b'_{nb}\ar[lu]
+}
+\ecen
+=
+\bcen
+\xymatrix@C=1pc@R=1pc{
+b_1
+&\bullet
+&b'_1\ar[ll]
+\\
+b_2
+&\bullet
+&b'_2
+\ar[ll]
+\\
+b_{nb}
+&\bullet
+&b'_{nb}\ar[ll]
+}
+\ecen
+\end{array}
+\eeq
+
+\beq
+\begin{array}{l}
+\boxed{
+(C_\lam)_a^{rev((b')^{:nb})}
+(P_\mu)^{rev(b^{:nb})}_{(b')^{:nb}} 
+=
+\delta(\mu,\lam) 
+(C_\mu)_a^{rev(b^{:nb})}
+,\quad
+C_\lam P_\mu =
+\delta(\mu,\lam) C_\mu}
+\\
+\bcen
+\xymatrix@C=1pc@R=1pc{
+&
+&\sum b'_1\ar[dl]
+\\
+a& C_\lam\ar[l]
+&\sum b'_2\ar[l]
+\\
+&
+&\sum b'_{nb}\ar[lu]
+}
+\xymatrix@C=1pc@R=1pc{
+&
+&b_1\ar[ld]
+\\
+&P_\mu\ar[l]
+\ar[ld]\ar[lu]
+&b_2
+\ar[l]
+\\
+&
+&b_{nb}\ar[lu]
+}
+\ecen
+=
+\delta(\mu, \lam)
+\bcen
+\xymatrix@C=1pc@R=1pc{
+&
+&b_1\ar[dl]
+\\
+a& C_\lam\ar[l]
+&b_2\ar[l]
+\\
+&
+&b_{nb}\ar[lu]
+}
+\ecen
+\end{array}
+\eeq
+
+\beq
+\begin{array}{l}
+\boxed{
+(P_\mu)^{rev((b')^{:nb})}_{b^{:nb}}
+(C_\lam^\dagger)_{(b')^{:nb}}^a
+=
+\delta(\mu, \lam) 
+(C_\mu^\dagger)_{b^{:nb}}^a
+,\quad
+P_\mu C_\lam^\dagger=
+\delta(\mu, \lam) C_\mu^\dagger}
+\\
+\bcen
+\xymatrix@C=1pc@R=1pc{
+b_1
+&
+&\sum b'_1\ar[ld]
+\\
+b_2
+&P_\mu\ar[l]
+\ar[ld]\ar[lu]
+&\sum b'_2
+\ar[l]
+\\
+b_{nb}
+&
+&\sum b'_{nb}\ar[lu]
+}
+\ecen\bcen
+\xymatrix@C=1pc@R=2pc{
+\\
+&(C^\dagger_\lam)
+\ar[lu]\ar[l]\ar[ld]
+& a\ar[l]
+\\
+&
+}
+\ecen
+=
+\delta(\mu, \lam)
+\bcen
+\xymatrix@C=1pc@R=1pc{
+b_1
+\\
+b_2
+&(C^\dagger_\lam)
+\ar[lu]\ar[l]\ar[ld]
+& a\ar[l]
+\\
+b_{nb}
+}
+\ecen
+\end{array}
+\eeq
+
+
