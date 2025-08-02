@@ -1,0 +1,216 @@
+\chapter{Lie Algebras}
+\label{ch-lie-alg}
+
+$i\in\ZZ_{[1,N]}$, $a,b\in\ZZ_{[1,n]}$
+
+\beq
+(C_{Adj}^i)\indices{_b^a}=
+\frac{1}{\sqrt{K}}
+(T^i)\indices{_b^a}=
+\bcen
+\xymatrix{
+&a\ar[d]
+\\
+i\ar@{~}[r]
+&C_{Adj}^i
+\ar[d]
+\\
+&b
+}
+\ecen
+\eeq
+Note that we list the indices of
+$T^i$ in the counter-clockwise (CC)
+direction, starting at the $i$ leg.
+The matrices $T^i$ are called
+the generators.
+It's customary to choose them so that they are 
+Hermitian and $K=\frac{1}{2}$.
+\footnote{For $SU(2)$,
+it is customary to
+use $T^i =\frac{1}{2}\s_i$,
+where $\s_i$ for $i=1,2,3$ are the Pauli matrices.
+For $SU(3)$,
+it is customary to choose $T^i=
+\frac{1}{2}\lam_i$
+where $\lam_i$
+for $i=1,2, \ldots, 8$ are the Gelll-Mann matrices.}
+
+\beq
+\begin{array}{ll}
+\boxed{
+(T^i)\indices{_b^a}(T^j)\indices{_a^b}=
+\tr(T^iT^j)=
+K \delta(i,j)
+}
+&
+\xymatrix{
+i
+&T^i\ar@{~}[l]
+\ar@/^2pc/[r]|{\sum a}
+&T^j
+\ar@/^2pc/[l]|{\sum b}
+&j\ar@{~}[l]
+}
+=K
+\xymatrix{&\ar[l]|\bullet}
+\end{array}
+\eeq
+
+\beq
+(P_{Adj})_{b,d}^{a,c}
+=
+\sum_i
+\frac{1}{K}
+(T^i)\indices{_b^a}
+(T^i)\indices{_d^c}
+=
+\frac{1}{K}
+\bcen
+\xymatrix@R=1pc@C=1pc{
+a\ar[dd]
+&
+&d
+\\
+&
+&\ar@{~}[ll]
+\\
+b
+&
+&c\ar[uu]}
+\ecen
+\eeq
+
+$H\in V^n\otimes \bar{V}^n$
+
+\beq
+(P_{Adj})_{bd}^{ac}H\indices{_c^d}
+=
+\sum_i (T^i)\indices{_b^a}
+\underbrace{
+\left[\frac{1}{K}(T^i)\indices{_d^c}
+ H\indices{_c^d}
+\right]}_{h_i\in\RR}
+\eeq
+
+$
+G = 1 + i D \in \calg
+$
+
+$\eps_i\in\RR $, $|\eps_i|<<1$
+
+$D=\sum_i \eps_i T^i =V^n\otimes \bar{V}^n 
+$
+
+Recall Eq.(\ref{eq-xprime-eq-gg-x}).
+If $x\in V^{n^p}\otimes \bar{V}^{n^q}$, $\GG\in \calg\subset GL(n^{p+q}, \CC)$,
+
+\beq
+(x')\indices{
+_{a^{:p}}
+^{b^{:q}}
+}
+=
+\GG\indices{
+_{a^{:p}}
+^{b^{:q}}
+_{rev(c^{:q})}
+^{rev(d^{:p})}
+}
+x\indices{
+_{d^{:p}}
+^{c^{:q}}
+},
+\quad
+(x'_\alp=\GG\indices{_\alp^\beta}x_\beta)
+\eeq
+where we define
+
+\beq
+\GG\indices{
+_\alp
+^\beta
+}
+\eqdef
+\prod_{i=1}^q
+G\indices{
+^{b_i}
+_{c_i}
+}
+\prod_{i=1}^p
+G\indices{
+_{a_i}
+^{d_i}
+}
+\eeq
+
+\beqa
+\GG\indices{
+_\alp
+^\beta}
+&=&
+ 1+i\sum_j\eps_j(\TT^j)
+\indices{_\alp^\beta}
+\\
+G\indices{^{b_i}_{c_i}}
+&=&
+1+i\sum_j \eps_j 
+(T^j)\indices{^{b_i}_{c_i}}
+\\
+G\indices{_{a_i}^{d_i}}
+&=&
+(G^*)\indices{^{d_i}_{a_i}}
+=
+1-i\sum_j\eps_j
+(T^{j*})\indices{^{d_i}_{a_i}}
+=
+1-i\sum_j\eps_j
+(T^j)\indices{_{a_i}^{d_i}}
+\eeqa
+
+When $x_\alp' =x_\alp$, 
+to first order in $\eps_i$,
+
+
+
+\beq
+0=(\TT^j)\indices{_\alp^\beta}x_\beta=
+\left[(T^j)\indices{^{b_i}_{c_i}}
+\frac{1}{\delta^{b_i}_{c_i}}
+-
+(T^j)\indices{_{a_i}^{d_i}}
+\frac{1}{\delta_{a_i}^{d_i}}
+\right]
+\delta
+^{b^{:q}}
+_{c^{:q}}
+\delta
+^{d^{:p}}
+_{a^{:p}}
+x\indices{
+_{d^{:p}}
+^{c^{:q}}
+}
+\eeq
+
+\beq
+\boxed{
+(\TT^j)
+\indices{_\alp^\beta}
+=
+\left[(T^j)\indices{^{b_i}_{c_i}}
+\frac{1}{\delta^{b_i}_{c_i}}
+-
+(T^j)\indices{_{a_i}^{d_i}}
+\frac{1}{\delta_{a_i}^{d_i}}
+\right]
+\delta
+^{b^{:q}}
+_{c^{:q}}
+\delta
+^{d^{:p}}
+_{a^{:p}}
+}
+\eeq
+
+

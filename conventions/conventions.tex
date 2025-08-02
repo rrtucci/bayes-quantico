@@ -227,7 +227,18 @@ x^{*b} (M^\dagger)\indices{_b^a}
 \eeqa
 so
 
+\beq
+(M^\dagger)\indices{_b^a}=
+(M^*)\indices{^a_b}
+\eeq
+If the Hermitian conjugate $\dagger$
+equals $*T$ where $*$ is complex conjugation and $T$ is transpose,
 
+\beq
+(M^T)\indices{_b^a}= M\indices{^a_b}
+\eeq
+This corresponds to flipping $M$ 
+along its horizontal.
 
 \begin{figure}[h!]
 \centering
@@ -236,7 +247,9 @@ so
 \caption{Index labels for $Mx$
 where $M
 \in \CC^{n^{p+q}\times n^{p+q}}$ and
-$x\in V^{n^p}\otimes \bar{V}^{n^q}$}
+$x\in V^{n^p}\otimes \bar{V}^{n^q}$.
+Note that we  list indices in counterclockwise (CC) direction, 
+starting at the top.}
 \label{fig-index-labels-Mx}
 \end{figure}
 
@@ -246,7 +259,9 @@ $x\in V^{n^p}\otimes \bar{V}^{n^q}$}
 {conventions/index-labels-hermitian.png}
 \caption{Index labels for $M^\dagger$
 where $M
-\in \CC^{n^{p+q}\times n^{p+q}}$}
+\in \CC^{n^{p+q}\times n^{p+q}}$.
+Note that we  list indices in counterclockwise (CC) direction, 
+starting at the top.}
 \label{fig-index-labels-hermitian}
 \end{figure}
 
@@ -352,7 +367,10 @@ _{rev(c^{:q})}
 x\indices{
 _{d^{:p}}
 ^{c^{:q}}
-}
+},
+\quad
+(x'_\alp=\GG\indices{_\alp^\beta}x_\beta)
+\label{eq-xprime-eq-gg-x}
 \eeq
 where we define
 
