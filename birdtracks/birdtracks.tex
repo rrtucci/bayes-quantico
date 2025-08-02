@@ -93,7 +93,17 @@ where  $x\in val(\rvx)$ and $y\in val(\rvy)$
 
 \beq
 \sum_{y\in val(\rvy)}|A(y|x)|^2 = 1
+\label{eq-bnet-normalization}
 \eeq
+Note that if $A$ is the matrix with entries
+$\av{y|A|x}=A(y|x)$, then
+
+\beq
+\av{y|A^\dagger A|x}=\sum_{y\in val(\rvy)}|A(y|x)|^2 = 1
+\eeq
+If $A$ is a unitary matrix, then $A^\dagger A= AA^\dagger =1$ so this
+Eq.(\ref{eq-bnet-normalization})
+is satisfied.
 
 \beq
 \calq=

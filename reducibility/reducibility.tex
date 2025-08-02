@@ -195,3 +195,65 @@ projection operators of $M^{(1)}$. The replace $M^{(2)}$ by $P^{(1)}_i M^{(2)}P_
 [M^{(1)}, P^{(1)}_iM^{(2)}P^{(1)}_i]  =0
 \eeq
 
+An invariant matrix (see Ch.\ref{ch-invariants}) commutes with 
+all the elements $G$ of a group $\calg$
+
+\beq
+[G, M] =0
+\eeq
+for all $G\in\calg$.
+If $P_i$ are 
+the projection operators of $M$, then $P_i=f_i(M)$ so
+
+\beq
+[G, P_i]=0
+\eeq
+for all $G$ and $i$.
+Hence,
+
+\beq
+G = 1G1 =\sum_i\sum_j P_i G P_j
+=
+\sum_i \underbrace{P_i G P_i}_
+{\eqdef G_i}
+\eeq
+
+\beq
+G = C^\dagger 
+diag(G_1, G_2, \ldots)C
+=
+\sum_i
+C^\dagger_i
+G_i C_i
+\eeq
+where the matrices $C_i$
+are the Clebsch Gordan 
+coefficients (see Ch. \ref{ch-clebsch-gordan}).
+
+A {\bf representation (rep)} $G_i$ acts only
+on a $d_i$ dimensional vector space $V^{d_i}=P_i V^d$.
+In this way, an invariant
+matrix $M\in \CC^{d\times d}$
+with $r$ 
+distinct eigenvalues,
+induces a decomposition of $V^d$
+into a direct sum of vector spaces
+
+\beq
+V^d\xymatrix{\ar[r]_M&}
+V_1^{d_1}
+\oplus 
+V_2^{d_2}
+\oplus
+\ldots
+\oplus 
+V_r^{d_r}
+\eeq
+If a representation $G_i$ cannot itself be
+reduced further, it is said to 
+be an {\bf irreducible representation (irrep)}.
+
+Note that sometimes the term representation
+is used to refer to the 
+vector space $V_i^{d_i}$
+instead of the matrix $G_i$.
