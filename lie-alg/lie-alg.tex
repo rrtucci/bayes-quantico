@@ -58,33 +58,60 @@ i
 \eeq
 
 \beq
-(P_{Adj})_{b,d}^{a,c}
+\boxed
+{(P_{Adj})\indices{
+_b^a_d^c
+}
 =
-\sum_i
 \frac{1}{K}
+\sum_i
 (T^i)\indices{_b^a}
-(T^i)\indices{_d^c}
+(T^i)\indices{_d^c}}
+\bcen
+\xymatrix@R=1pc@C=1pc{
+b
+&&c
+\\
+&P_{Adj}
+\ar@{<-}[ur]
+\ar@{|->}[ul]
+\ar@{<-}[dl]
+\ar[dr]
+\\
+a
+&&d
+}
+\ecen
 =
 \frac{1}{K}
 \bcen
-\xymatrix@R=1pc@C=1pc{
-a\ar[dd]
-&
-&d
-\\
-&
-&\ar@{~}[ll]
-\\
+\xymatrix@R=1pc@C=2pc{
 b
 &
-&c\ar[uu]}
+&c\ar[dd]
+\\
+&
+&\ar@{~}[ll]|
+{\sum i}
+\\
+a\ar[uu]
+&
+&d}
 \ecen
 \eeq
+The 
+arrow that starts with a
+ bar as in $\xymatrix{&\ar@{|->}[l]}$ indicates 
+this is the first index in the CC 
+convention.
 
 $H\in V^n\otimes \bar{V}^n$
 
 \beq
-(P_{Adj})_{bd}^{ac}H\indices{_c^d}
+(P_{Adj})\indices{
+_b^a_d^c
+}
+H\indices{_c^d}
 =
 \sum_i (T^i)\indices{_b^a}
 \underbrace{
@@ -1143,9 +1170,7 @@ b\ar[u]
 }
 \ecen
 \eeq
-The $\xymatrix{&\ar@{|->}[l]}$ indicates 
-this is the first index in the CC 
-convention.
+
 
 \beq
 0=
