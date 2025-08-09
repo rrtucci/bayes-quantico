@@ -37,6 +37,7 @@ known as a Conditional Probability Table (CPT).} if
 
 \beq
 \sum_{y\in val(\rvy)}P_{\rvy|\rvx}(y|x) = 1
+\label{eq-cbnet-unitarity}
 \eeq
 In other words,
 a TPM is a conditional PD. A TPM of the form
@@ -198,17 +199,17 @@ Quantum Bayesian Networks
 qbnets are closely
 analogous to classical
 bnets, but the TPM
-are replaced by Transition Probability 
-Amplitudes (TPA).
+are replaced by {\bf Transition Amplitude 
+Matrices (TAM)}.
 
 Let PA stand for probability amplitude. We call $A_{\rvy|\rvx}:val(\rvy)
 \times val(\rvx)
 \rarrow  \CC$ a
-TPA if
+TAM if
 
 \beq
 \sum_{y\in val(\rvy)}|A(y|x)|^2 = 1
-\label{eq-bnet-normalization}
+\label{eq-qbnet-unitarity}
 \eeq
 Note that if $A$ is the matrix with entries
 $\av{y|A|x}=A(y|x)$, then
@@ -229,7 +230,7 @@ with the nodes labelled by
 random variables. Each
 qbnet stands for a full 
 PA  of the node random variables expressed
-as a product of a TPA for each node.
+as a product of a TAM for each node.
 For example, the qbnet
 
 
@@ -322,7 +323,7 @@ of qbnet $\calq'$
 are called 
 {\bf marginalizer nodes}.
 We assign to them
-the following TPAs (printed in blue):
+the following TAMs (printed in blue):
 
 \beq \color{blue}
 A[a'_i|\rva^{:2}=(a_1,a_2)] = \delta(a'_i, a_i)
@@ -351,9 +352,104 @@ A(a^{:2})
 
 \section{Birdtracks}
 
+Tensors written in 
+{\bf algebraic notation}
+such as $T\indices{_a^b^c}$
+were already discussed in
+Section \ref{sec-tensors}
+
+Birdtracks are a 
+DAG used to represent tensor equations. 
+The labelled nodes of the DAG
+are the tensors and the 
+labelled arrows are the indices of 
+the tensors: upper indices of a tensor are 
+pictured as incoming arrows of the node,
+and lower indices as outgoing arrows. 
+
+We've
+already discussed
+in Section \ref{sec-tensors}
+what we will
+call the {\bf Counter Clockwise (CC) convention}  of drawing 
+birdtrack nodes.
+Now that we have 
+discussed classical
+and quantum bnets,
+we would like to introduce an equivalent, more bnet like, convention that
+we will call the {\bf Fully Label (FL) convention}.
+Cvitanovic's
+birdtracks book Ref.\cite{birdtracks-book}
+uses the CC convention. 
+We will use both.
+No confusion will arise,
+as long as it is clear
+from context 
+which convention
+is being used.
+
+Next we review 
+the CC convention
+and describe the
+FL convention for the first time. 
+\hrule
+\begin{enumerate}
+
+\item {\bf CC convention}
+
+In the CC convention,
+we must specify on the node, which arrow is first,
+and then the CC 
+order in which
+the arrows 
+enter or leave the node
+is meaningful,
+because it must
+correspond to 
+the horizontal order
+of the indices in the
+algebraic notation for the tensor.
+
+For example,
+\beq
+\delta(b,a)=\indi(a=b)=
+\delta^b_a =
+\xymatrix{a&\ar[l]|\bullet b}
+\eeq
+
+
+\beq
+X\indices{_a_b^c}
+=
+\bcen
+\xymatrix@R=1pc{
+a
+&X\indices{_\rva_\rvb^\rvc}
+\ar[dl]
+\ar[l]|\circone
+\\
+b
+\\
+c\ar[ruu]
+}\ecen
+\eeq
 
 
 
+
+\item {\bf FL convention}
+
+In the FL convention,
+the arrows must be labelled
+by random (underlined)
+variables, and
+the names of the nodes
+must also indicate
+by underlined variables
+what is the the order of
+the indices
+
+For example,
 \beq
 \delta(b,a)=\indi(a=b)=
 \delta^b_a =
@@ -363,103 +459,140 @@ A(a^{:2})
 
 \beq
 \bra{a,b}
-X\indices{_\rva_\rvb^\rvc^\rvd}
-\ket{c,d}
+X\indices{_\rva_\rvb^\rvc}
+\ket{c}
 =
-X\indices{_a_b^c^d}
+X\indices{_a_b^c}
 =
 \bcen
 \xymatrix@R=1pc{
 \rva=a
-&X\indices{_\rva_\rvb^\rvc^\rvd}
+&X\indices{_\rva_\rvb^\rvc}
 \ar[dl]\ar[l]
 \\
 \rvb=b
 \\
 \rvc=c\ar[ruu]
-\\
-\rvd=d\ar[ruuu]
 }\ecen
 \eeq
+Sometimes, 
+we will denote
+this node simply by $X$.
+This if okay as long as
+we state that $X=X\indices{_\rva_\rvb^\rvc^\rvd}$, and we 
+don't start using $X$ 
+to represent 
+a different version of $X\indices{_\rva_\rvb^\rvc^\rvd}$
+with some of the indices
+raised or lowered or 
+their horizontal order changed.
+
+Often, we will
+write simply $a$ instead
+of $\rva=a$. This
+is similar to
+the shorthand
+$P(\rva=a)=P(a)$.
+
+Note that,
+unlike in the CC 
+convention, in the FL
+convention, the CC 
+order in which the
+arrows enter or leave
+the node, is meaningless.
+All orders are all equivalent. This is
+akin to the notation
+for bnets and qbnets.
+
+
+\end{enumerate}
+\hrule
+
+If we don't do either 1 or 2, we won't
+be able to distinguish between
+the graphical
+representations of $T^{1,2,3}$
+and $T^{2,1,3}$, for example.
+
+Two other features
+of the CC and FL
+conventions that 
+we would like to
+discuss before 
+ending this section are
+how to indicate 
+
+\begin{itemize}
+\item
+{\bf noncyclic index contractions}; i.e., index 
+contractions 
+(i.e.,
+summations)
+that do not
+introduce cycles, and
+\item
+{\bf traces}; i.e., 
+index contractions
+that do introduce cycles.
+\end{itemize}
+
+Noncyclic index contractions
+will be indicated 
+by an arrow connecting
+two nodes,
+with the symbol
+$\sum a$ 
+midway
+in the arrow if 
+the index $a$
+is being contracted.
+For simplicity,
+we often omit
+writing the $\sum a$
+altogether.
+
+For example (in CC convention),
 
 \beq
+X\indices{_a_b^c}
+=
 \bcen
 \xymatrix@R=1pc{
 a
-&X\indices{_\rva_\rvb^\rvc^\rvd}
-\ar[dl]\ar[l]
+&X\indices{_\rva_\rvb^\rvc}
+\ar[dl]
+\ar[l]|\circone
 \\
 b
 \\
 c\ar[ruu]
-\\
-d\ar[ruuu]
-}\ecen
-\rarrow
-\bcen
-\xymatrix@R=1pc{
-a,b
-&X\indices{_\rva_\rvb^\rvc^\rvd}
-\ar[dl]\ar[l]
-\\
-a,b
-\\
-c\ar[ruu]
-\\
-d\ar[ruuu]
-}\ecen
-\eeq
-$X\indices{_\rva_\rvb^\rvc^\rvd}\in V^2 \otimes V_2$.
-Sometimes, 
-we will omit denote
-this node simply by $X$.
-This if okay as long as
-we are not using,
-$X$ to also denote
-a different version of $X\indices{_\rva_\rvb^\rvc^\rvd}$
-with some of the indices
-raised or lowered or 
-their order has been changed.
-\footnote{For matrices,
-$(A^\dagger)_{i,j} = (A_{j, i})^*$
-so
-taking a Hermitian conjugate
-involves both taking
-the complex conjugate of
-the matrix element and reversing the left-to-right (L2R) order of its indices.
-This generalizes to 
-$(X^\dagger)\indices{_d_c^b^a}=
-(X\indices{_a_b^c^d})^*$.
-Besides raising and lowering indices, we reverse their L2R order.
-}
-
-\beq
-(X^\dagger)\indices{_d_c^b^a}
+}\ecen,
+\quad
+(X^\dagger)\indices{_c^b^a}
 =
 \bcen
 \xymatrix@R=1pc{
-(X^\dagger)\indices{_\rvd_\rvc^\rvb^\rva}
-&\rva=a\ar[l]
+(X^\dagger)\indices{_\rvc^\rvb^\rva}
+&a\ar[l]
 \\
-&\rvb=b\ar[lu]
+&b\ar[lu]
 \\
-&\rvc=c\ar[luu]
-\\
-&\rvd=d\ar[luuu]
+&c\ar[luu]|\circone
 }\ecen
 \eeq
 
 
 \beqa
-(X^\dagger)\indices{_d_c^b^a}
-X\indices{_a_b^c^d}
+(X^\dagger)\indices{_c^b^a}
+X\indices{_a_b^c}
 &=&
 \bcen
 \xymatrix@R=1pc{
-(X^\dagger)\indices{_\rvd_\rvc^\rvb^\rva}
+(X^\dagger)\indices{_\rvc^\rvb^\rva}
 &\sum a\ar[l]\ar@{<-}[r]
 &
-X\indices{_\rva_\rvb^\rvc^\rvd}
+X\indices{_\rva_\rvb^\rvc}
 \\
 &\sum b\ar[ul]\ar@{<-}[ur]
 &
@@ -468,8 +601,7 @@ X\indices{_\rva_\rvb^\rvc^\rvd}
 \ar[ruu]
 &
 \\
-&\sum d\ar@{<-}[luuu]
-\ar[ruuu]
+&
 &
 }
 \ecen
@@ -489,116 +621,104 @@ X
 \ar[ruu]
 &
 \\
-&\ar@{<-}[luuu]
-\ar[ruuu]
+&
 &
 }
 \ecen
 \eeqa
 
-Birdtracks originated as a graphical
-way to represent the tensors in General Relativity (Gravitation). In General Relativity, one deals with tensors such as
-$T\indices{_a^b_c}$ which have some indices raised
-and some lowered. One can use the metric 
-$g^{a,b}$ to raise all the lowered indices
-to get $T^{abc}$. If we represent this
-graphically as a node with incoming arrows 
-$a,b,c$, we need to 
-follow one of the following
-2 conventions: either
-\begin{enumerate}
-\item
-label the arrows 
-as $\rva$, $\rvb, \rvc$, 
-and define the node as
-$T^{\rva\rvb\rvc}$,
-or
-\item
-instead of labelling the
-arrows explicitly $\rva, \rvb, \rvc$, 
- indicate in the node
-where is the first arrow
-$\rva$, and draw the
-arrows $\rva, \rvb, \rvc$
-so that they enter the node
-in {\bf counterclockwise} (CC) order.
-The {\bf left-to-right} (L2R) order
-of the indices on $T$ corresponds
-the CC order of the arrows.
-\end{enumerate}
-If we don't do either 1 or 2, we won't
-be able to distinguish between
-the graphical
-representations of $T^{1,2,3}$
-and $T^{2,1,3}$, for example.
-Cvitanovic's Birdtracks book
-Ref.\cite{birdtracks-book} follows Convention 2, but
-most of the time, in this book, we will follow
-Convention 1 \footnote{If we follow Convention 1,
-we don't need to reverse the L2R order of the indices
-when taking a Hermitian conjugate. Thus,
-$(X^\dagger)\indices{^\rva^\rvb_\rvc_\rvd}=
-X\indices{_\rva_\rvb^\rvc^\rvd}=
-X\indices{^\rvd^\rvc_\rvb_\rva}$.
-As long as $\rva, \rvb$ are lower indices and $\rvc,\rvd$ are upper
-indices of $X$, any L2R
-order of $\rva, \rvb, \rvc, \rvd$ 
-is equivalent
-under Convention 1.}
-The reason I chose to do so is for the sake of consistency:
-Convention 2 
-is closer to the quantum bnet conventions. 
+Birdtracks are
+DAGs until
+we are asked to
+take a trace of 
+one of their
+indices. Tracing
+ruins their acyclicity.
+Since DAGs are 
+acyclic to
+be consistent 
+with causality,
+this hints to the acausal
+(or feedback) nature of tracing.
+
+In this book,
+we will indicate tracing
+with a red undirected arrow. 
+For example, in the CC
+convention,
+ 
 
 
-
-
-
-$a^{:m}\in \ZZ_+^m$
 
 \beq
-R^{a_3^{:m_3}, b_2^{:n_2}}
-_{b_3^{:n_3}, a_2^{:m_2}}
-S^{a_2^{:m_2}, b_1^{:n_1}}
-_{b_2^{:n_2}, a_1^{:m_1}} =
-\bcen
-\xymatrix{
-b_3^{:n_3}
-&R\ar[l]\ar@{<-}[ld]
-&\sum  b_2^{:n_2}\ar[l]
-&S\ar[l]\ar@{<-}[ld]
-&b_1^{:n_1}\ar[l]
-\\
-a_3^{:m_3}
-&
-&\sum a_2^{:m_2}\ar@{<-}[lu]
-&
-&a_1^{:m_1}\ar@{<-}[lu]
-}
-\ecen
-\eeq
-
-\beq
-\tr_\rvb X\indices{_a_\rvb^\rvb^d}
+\tr_\rvb X\indices{_a_\rvb^\rvb}
 =
-\sum_b X\indices{_a_b^b^d}
+\sum_b X\indices{_a_b^b}
 =
 \bcen
 \xymatrix@R=1pc{
 a
-&X\indices{_\rva_\rvb^\rvc^\rvd}
+&X\indices{_\rva_\rvb^\rvc}
 \ar[dl]\ar[l]
 \\
 \ar@[red]@{-}[d]
 &
 \\
 \ar[ruu]
-\\
-d\ar[ruuu]
 }\ecen
 \eeq
 
+If
 
 \beq
+R\indices{
+^x_{b_3}^{a_3}
+_{a_2}^{b_2}
+}
+S\indices{
+_{x'}
+_{b_2}
+^{a_2}
+_{a_1}
+^{b_1}
+} =
+\bcen
+\xymatrix{
+&x\ar[d]
+&
+&x'\ar@{<-}[d]
+\\
+b_3
+&R\ar[l]\ar@{<-}[ld]
+&\sum  b_2\ar[l]
+&S\ar[l]\ar@{<-}[ld]
+&b_1\ar[l]
+\\
+a_3
+&
+&\sum a_2\ar@{<-}[lu]
+&
+&a_1\ar@{<-}[lu]
+}
+\ecen
+\eeq
+then
+
+\beq
+\tr_\rvx
+R\indices{
+^\rvx_{b_3}^{a_3}
+_{a_2}^{b_2}
+}
+S\indices{
+_\rvx
+_{b_2}
+^{a_2}
+_{a_1}
+^{b_1}
+} 
+=
+\bcen
 \xymatrix{
 &\ar[d]
 &
@@ -608,6 +728,7 @@ d\ar[ruuu]
 &R\ar[l]\ar@{<-}[ld]
 &
 &S\ar@{<-}[ld]
+\ar[ll]
 &\ar[l]
 \\
 &
@@ -615,4 +736,33 @@ d\ar[ruuu]
 &
 &\ar@{<-}[lu]
 }
+\ecen
 \eeq
+
+When using the FL convention,
+it becomes clear that
+birdtracks can
+be understood
+as instantiations of
+qbnets, provided that we
+weaken slightly the definition
+of qbnets, by
+not requiring
+that the 
+unitarity condition
+Eq.(\ref{eq-qbnet-unitarity})
+be satisfied. Also,
+the outgoing arrows
+of the nodes
+of a birdtrack
+must be understood
+as the result of marginalizer nodes.
+For example,
+if the arrows leaving
+a node are labelled $a_1$ and $a_2$,
+then
+these two arrows
+must be understood 
+as the result
+of marginalizing
+an arrow $a^{:2}=(a_1, a_2)$.
