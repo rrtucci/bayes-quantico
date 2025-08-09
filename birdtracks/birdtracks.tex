@@ -6,15 +6,16 @@ and my paper Ref. \cite{tucci-qbnets}
 
 
 The tensor notation 
-(see Sec.\ref{sec-tensors})
- is succinct and easy to follow,
+discussed in Sec.\ref{sec-tensors}
+ is succinct and straightforward,
 but it's not
 visually
-illuminating. The birdtrack notation is not as succinct
-as the tensor notation and can lead to sign 
+illuminating. The birdtrack notation
+that we shall discuss in this chapter, is not as succinct
+as the tensor notation, and can lead to sign 
 errors if you are careless,
-but it is very visually illuminating. Thus, the tensor notation
-and birdtrack notation complement each other well.
+but it is very visually illuminating. Thus, the tensor
+and birdtrack notations complement each other well.
 We will often display results
 using both, side by side.
 
@@ -29,6 +30,7 @@ to remind the reader
 of how they are defined.
 
 Let PD stand for probability distribution.
+
 We call $P_{\rvy|\rvx}:val(\rvy)
 \times val(\rvx)
 \rarrow  [0,1]$ a
@@ -83,17 +85,18 @@ PD
 P(a,b,c)=
 P(c|b,a)P(b|a)P(a)
 \eeq
+
 Bnets 
 do not have free
 indices
 because 
 their nodes are labelled by random
 variables. It is convenient
-to use the DAG for a 
+to draw the DAG for a 
 bnet but with the
 underlining
 removed from the random variables,
-and
+and then to
 assign a numerical value to this new DAG.
 The resultant DAG now
 has free indices. We call it an
@@ -138,7 +141,7 @@ define a new bnet $\calc'$
 as follows
 
 \beq
-P'=
+\calc'=
 \bcen
 \xymatrix{
 &\rvb\ar[ld]
@@ -202,7 +205,9 @@ bnets, but the TPM
 are replaced by {\bf Transition Amplitude 
 Matrices (TAM)}.
 
-Let PA stand for probability amplitude. We call $A_{\rvy|\rvx}:val(\rvy)
+Let PA stand for probability amplitude. 
+
+We call $A_{\rvy|\rvx}:val(\rvy)
 \times val(\rvx)
 \rarrow  \CC$ a
 TAM if
@@ -220,7 +225,8 @@ $\av{y|A|x}=A(y|x)$, then
 If $A$ is a unitary matrix, then $A^\dagger A= AA^\dagger =1$ so 
 \qt{half} ($A^\dagger A=1$) of
 the definition
-of unitary matrix is satisfied.
+of unitary matrix is satisfied
+by a TAM.
 If both parts were 
 satisfied, $A$ would have to be a square matrix.
 
@@ -253,17 +259,18 @@ A(a,b,c)
 =
 A(c|b,a)A(b|a)A(a)
 \eeq
+
 Qbnets 
 do not have free
 indices
 because 
 their nodes are labelled by random
 variables. It is convenient
-to use the DAG for a 
+to draw the DAG for a 
 qbnet but with the
 underlining
 removed from the random variables,
-and
+and then to
 assign a numerical value to this new DAG.
 The resultant DAG now
 has free indices. We call it an
@@ -359,10 +366,11 @@ were already discussed in
 Section \ref{sec-tensors}
 
 Birdtracks are a 
-DAG used to represent tensor equations. 
-The labelled nodes of the DAG
-are the tensors and the 
-labelled arrows are the indices of 
+DAG used to represent 
+algebraic tensor equations. 
+The nodes of the DAG
+are labelled by tensors and the 
+arrows are labeled by the indices of 
 the tensors: upper indices of a tensor are 
 pictured as incoming arrows of the node,
 and lower indices as outgoing arrows. 
@@ -390,7 +398,7 @@ is being used.
 
 Next we review 
 the CC convention
-and describe the
+and then describe the
 FL convention for the first time. 
 \hrule
 \begin{enumerate}
@@ -398,14 +406,13 @@ FL convention for the first time.
 \item {\bf CC convention}
 
 In the CC convention,
-we must specify on the node, which arrow is first,
+we must specify for each the node, which arrow is first,
 and then the CC 
 order in which
 the arrows 
 enter or leave the node
-is meaningful,
-because it must
-correspond to 
+is drawn so that it
+reproduces 
 the horizontal order
 of the indices in the
 algebraic notation for the tensor.
@@ -433,9 +440,11 @@ b
 c\ar[ruu]
 }\ecen
 \eeq
-
-
-
+In this picture, the
+$\circone$ indicates
+which tensor index is first
+horizontally in the algebraic
+representation of the tensor.
 
 \item {\bf FL convention}
 
@@ -478,7 +487,7 @@ X\indices{_a_b^c}
 Sometimes, 
 we will denote
 this node simply by $X$.
-This if okay as long as
+This is okay as long as
 we state that $X=X\indices{_\rva_\rvb^\rvc^\rvd}$, and we 
 don't start using $X$ 
 to represent 
@@ -501,7 +510,7 @@ convention, the CC
 order in which the
 arrows enter or leave
 the node, is meaningless.
-All orders are all equivalent. This is
+All orders are  equivalent. This is
 akin to the notation
 for bnets and qbnets.
 
@@ -634,12 +643,11 @@ take a trace of
 one of their
 indices. Tracing
 ruins their acyclicity.
-Since DAGs are 
-acyclic to
-be consistent 
-with causality,
-this hints to the acausal
-(or feedback) nature of tracing.
+The acyclicity of DAGs
+is mandated by causality.
+The acyclicity of tracing
+hints to its acausal
+(or feedback) nature.
 
 In this book,
 we will indicate tracing
