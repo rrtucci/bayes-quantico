@@ -1,5 +1,32 @@
 \chapter{Notational Conventions and Preliminaries}
 \label{ch-conventions}
+This book is a sequel to
+my book entitled \qt{Bayesuvius}
+(see Ref.\cite{bayesuvius}). 
+For consistency, 
+I have tried to follow in this book the 
+same notational conventions
+used in the prior book.
+If any notation is not defined in this book,
+check in the prior book. It might be
+defined there.  
+
+\section{Set notation}
+
+The number of elements in any set $S$ is denoted by $|S|$.
+
+$\ZZ$ = integers
+
+$\ZZ_>0$ = positive integers
+
+$\ZZ_{[a,b]} = a, a+1, \ldots, b$
+for some integers $a, b$ such that $a\leq b$
+
+$\RR$ = reals
+
+$\CC$= complex numbers
+
+$\CC^{n\times m}$ = $n\times m$ matrices of complex numbers
 
 \section{Group}
 
@@ -40,14 +67,14 @@ aa^{-1}=a^{-1}a=e
 \eeq
 \end{enumerate}
 
-The number of elements in any set $S$ is denoted by $|S|$. 
-$|\calg|$
+$|\calg|$ (i.e., number of
+elements in $\calg$)
 is called the {\bf order}
 of the group.
 
 If multiplication is
 {\bf commutative}
-(i.e., $ab=ba$ for all $a,b\in\calg$,
+(i.e., $ab=ba$ for all $a,b\in\calg$),
 the group is said to be {\bf abelian}.
 
 A {\bf subgroup} $\calh$ 
@@ -79,7 +106,7 @@ matrices are called the {\bf defining representation}.
 The map $\phi$ 
 partitions $\calg$
 into disjoints subsets (equivalence classes),
-such that all elements of $\calg$ in a disjoint set 
+such that all elements of $\calg$ in each disjoint subset 
 are represented by the same matrix.
 
 
@@ -93,9 +120,73 @@ GL(n, \CC)=
 \{M\in \CC^{n\times n}: \det{M}\neq 0\}
 \eeq
 
+
+
+\section{Group Theory References}
+Much of this book
+deals with Group Theory (GT).
+
+
+GT is a vast subject. Who would have thought
+that the simple definition of 
+a group would generate so many elegant, highly applicable and useful results and
+consequences.
+
+GT books by mathematicians are very
+different from GT
+books by physicists,
+even though, of course,
+they agree on the definitions. 
+Mathematicians
+are, as to be expected, more rigorous and abstract. But it goes much further than that. Physicists are much
+more interested in applications
+to physical systems,
+especially Quantum Mechanics (QM).
+Soon after QM was invented,
+it was realized that Linear Algebra (LA) and GT  (especially Group Representation Theory,
+which combines GT and LA)
+are extremely
+relevant and useful in QM.
+Hermann Weyl,
+Eugene Wigner, Hans Bethe, Linus Pauling, etc.
+combined QM and GT to understand the spectra and chemistry of atoms and molecules,
+and later GT was heavily used in Quantum Field Theory and Particle Physics to devise 
+the Standard Model. Condensed Matter physicists have also used it to understand crystalline solids and to devise quasi particles that can be detected in the lab. 
+
+My PhD is in physics
+so in this book I cover 
+GT topics that are  mainly of interests to
+physicists and engineers. Furthermore,
+I am nowhere as abstract and
+rigorous as mathematicians 
+usually are.
+
+My favorite books about GT 
+for physicists are the Elliott \& Dawber's (ED)
+2 volume series Ref. \cite{eli-daw-book}
+and Predrag Cvitanovic's Birdtracks book
+Ref.\cite{birdtracks-book}. I highly
+recommend both of these references. I think
+both of them are excellent.
+
+The Birdtracks book explains key 
+concepts in GT representation theory
+using network diagrams 
+(Cvitanovic calls 
+such diagrams birdtracks) whereas the ED book doesn't use any diagrams. Many people don't use diagrams either, they only use algebra.
+But since this is a book
+about visualization using network diagrams (quantum 
+bnets), we use birdtracks.
+In fact, many
+of the chapters in this
+book were heavily influenced 
+by Ref.\cite{birdtracks-book}
+by Cvitanovic. I hope he doesn't mind. I really love his  book.
+
 \section{Vector Space and Algebra over a field $\FF$}
 
-A vector (or linear)  space $\calv$
+A vector  space
+(a.k.a. linear space)  $\calv$
 is defined as a set endowed with
 two operations: vector addition $+:\calv\times\calv\rarrow \calv$,
 and scalar multiplication $\FF\times\calv\rarrow \calv$,
@@ -111,7 +202,7 @@ $x,y\in\calv$
 \beqa
 \alp(x+y) &=& \alp x + \alp y
 \\
-(\alp +\beta)x &=& \alp x + \beta y
+(\alp +\beta)x &=& \alp x + \beta x
 \\
 \alp(\beta x)
 &=&
@@ -131,7 +222,7 @@ vector space
 which, 
 besides being endowed with vector addition
 and scalar multiplication
-with which all vector spaces are,
+as all vector spaces are,
 it has
 a {\bf bilinear vector product}.
 A bilinear vector product is a product that is linear on both sides; i.e., 
@@ -151,8 +242,7 @@ for $x,y, z\in \cala$ and
 $\alp, \beta\in\CC$.
 The cross product (but not the dot product)
 for vectors in $\RR^3$,
-the multiplication of 2 complex numbers,
-and the commutator for
+the multiplication of 2 complex numbers, the product or commutator of 2
 square matrices, are all good examples of
 bilinear vector products.
 
@@ -175,21 +265,23 @@ $x,y,z\in \cala$.
 \begin{itemize}
 \item Not associative: cross product for vectors in  $\RR^3$.
 \item Associative:
-the commutator for square matrices and product of complex numbers
+the product or commutator of 2  square matrices and the product of complex numbers
 \end{itemize}
 
 \section{Tensors}
+\label{sec-tensors}
+Let 
 
-$(x_1, x_2, \ldots, x_n) = x^{:n}\in V^n=\CC^{n\times 1}$
+$(x_a)=(x_1, x_2, \ldots, x_n) = x^{:n}\in V^n=\CC^{n\times 1}$
 
 Reverse of vector $rev(x_1, x_2, \ldots, x_n)=
 (x_n, x_{n-1},
 \ldots, x_1)$
 
-$y^b = \sum_b g^{ba}x^{:n}$
+$y^b = \sum_a g^{ba} x_a$
 
-$(y^1, y^2, \ldots, y^n)= \bar{y}^{:n}\in \bar{V}^n=\CC^{n\times 1}$. $V^n$ and
-$\bar{V}^n$ are {\bf dual vector spaces}.
+$(y^b)=(y^1, y^2, \ldots, y^n)= \bar{y}^{:n}\in \bar{V}^n=\CC^{n\times 1}$. $V^n$ is the lower indices vector space and
+$\bar{V}^n$ is its {\bf dual vector space} (i.e., with upper indices).
 
 
 
@@ -202,43 +294,36 @@ M\indices{_a^b}x_b = \sum_{b=1}^n
 M\indices{_a^b}x_b
 \eeq
 
-\beqa
-(M^\dagger)\indices{_b^a} &=& (M^*)\indices{_a^b}
-\\
-&=&
-M\indices{_b^a}
-\quad \text{(only if $M$ is a unitary matrix)}
-\eeqa
-
-For $x_a\in V^n$,
-
-\beq
-(x')_a = M\indices{_a^b} x_b
-\eeq
-For $x^a\in \bar{V}^{n}$, 
 
 
-
-\beqa
-(x'^*)^a &=& x^{*b} (M^*)\indices{^a_b}
-\\
-&=&
-x^{*b} (M^\dagger)\indices{_b^a}
-\eeqa
-so
-
-\beq
-(M^\dagger)\indices{_b^a}=
-(M^*)\indices{^a_b}
-\eeq
 If the Hermitian conjugate $\dagger$
 equals $*T$ where $*$ is complex conjugation and $T$ is transpose,
+then define
 
 \beq
-(M^T)\indices{_b^a}= M\indices{^a_b}
+(M^\dagger)\indices{_b^a}= M\indices{^a_b},\quad
+(M^T)\indices{_b^a}= (M^*)\indices{^a_b},
 \eeq
-This corresponds to flipping $M$ 
-along its horizontal.
+Thus, $\dagger$ aand $T$ only move
+the indices horizontally, to change their horizontal order. To move indices vertically, up or down,
+we use the metric $g$ (i.e.,
+$x^b=g^{ba}x_a$).
+Complex conjugation has no power 
+to move the indices either vertically or horizontally.
+
+If $M$ is a Hermitian matrix (i.e., $M^\dagger =M$),
+
+\beq
+M\indices{^b_a}= M\indices{_a^b}
+\eeq
+Thus, when $M$ is Hermitian, 
+it is possible to define
+
+\beq
+M^b_a=M\indices{^b_a}= M\indices{_a^b}
+\eeq
+
+
 
 \begin{figure}[h!]
 \centering
@@ -261,7 +346,9 @@ starting at the top.}
 where $M
 \in \CC^{n^{p+q}\times n^{p+q}}$.
 Note that we  list indices in counterclockwise (CC) direction, 
-starting at the top.}
+starting at the top. Note that
+$\dagger$ flips the 
+horizontal axis of the page.}
 \label{fig-index-labels-hermitian}
 \end{figure}
 
@@ -284,6 +371,8 @@ _{d^{:p}}
 ^{c^{:q}}
 }
 \eeq
+If we define $X_\alp$
+and $x^\alp$ by
 
 \beq
 X\indices{_\alp} = X\indices{
@@ -298,6 +387,7 @@ _{rev(b^{:q})}
 ^{rev(a^{:p})}
 }
 \eeq
+then
 
 \beq
 x_\alp = M\indices{_\alp^\beta}x_\beta
@@ -312,14 +402,13 @@ Hermitian conjugation (see Fig.\ref{fig-index-labels-hermitian})
 \left\{
 \begin{array}{l}
 (M^\dagger)\indices{_a^d}=
-(M\indices{^d_a})^*
+M\indices{^d_a}
 \\
 (M^\dagger)\indices{_\alp^{\delta}}=
-(M\indices{
+M\indices{
 ^{rev(\delta)}
 _{rev(\alp)}
 }
-)^*
 \end{array}\right.
 \eeq
 Hermitian matrix
@@ -329,11 +418,11 @@ M^\dagger
  = M,\quad
  \left\{
  \begin{array}{l}
-(M\indices
-{^d_a })^*
+M\indices
+{^d_a }
 = M\indices{_a^d}
 \\
-(M\indices{^{rev(\delta)}_{rev(\alp)}})^*=
+M\indices{^{rev(\delta)}_{rev(\alp)}}=
 M\indices{_\alp^{\delta}}
 \end{array}
 \right.
@@ -438,5 +527,5 @@ lowering and raising of indices is
 done. But in topics like
 General Relativity that do
 use a lot of raising and lowering of indices, it might not be 
-too elegantly concise.
+too succinct.
 

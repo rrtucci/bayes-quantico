@@ -19,12 +19,18 @@ i\ar@{~}[r]
 }
 \ecen
 \eeq
+In the CC convention, we will always
+start reading the indices at the wavy undirected leg.
 Note that we list the indices of
 $T^i$ in the counter-clockwise (CC)
 direction, starting at the $i$ leg.
+
 The matrices $T^i$ are called
 the generators.
-It's customary to choose them so that they are 
+
+
+It's customary to choose 
+generators so that they are 
 Hermitian and $K=\frac{1}{2}$.
 \footnote{For $SU(2)$,
 it is customary to
@@ -35,6 +41,18 @@ it is customary to choose $T^i=
 \frac{1}{2}\lam_i$
 where $\lam_i$
 for $i=1,2, \ldots, 8$ are the Gelll-Mann matrices.}
+However, we will often set $K=1$
+for intermediate calculations
+and restore $K\neq 1$ at the end by dimensional analysis. 
+Just remember that each $T^j$ scales as $\sqrt{K}$. 
+For example, if
+an equation says
+$\tr(T^iT^j)=\delta(i,j)$,
+we know that when $K\neq 1$,
+$\tr(T^iT^j)=K\delta(i,j)$
+so both sides of the equation scale as $K$.
+
+
 
 \beq
 \begin{array}{ll}
@@ -115,7 +133,7 @@ H\indices{_c^d}
 =
 \sum_i (T^i)\indices{_b^a}
 \underbrace{
-\left[\frac{1}{K}(T^i)\indices{_d^c}
+\left[(T^i)\indices{_d^c}
  H\indices{_c^d}
 \right]}_{h_i\in\RR}
 \eeq
@@ -329,7 +347,7 @@ a_2
 &d_2\ar[ll]
 \\
 b_1
-&(T^j)^T\ar@{<-}[l]
+&T^j\ar@{<-}[l]
 &c_1\ar@{<-}[l]
 }
 \ecen
@@ -431,7 +449,7 @@ a_2
 &\ar[ll]
 \\
 b_1
-&(T^j)^T\ar@{<-}[l]
+&T^j\ar@{<-}[l]
 &\ar@{<-}[l]
 }
 \ecen
@@ -593,7 +611,7 @@ a&C_\lam\ar[l]
 &
 \\
 &
-&(T^j)^T\ar@{<-}[lu]
+&T^j\ar@{<-}[lu]
 &b_1\ar@{<-}[l]
 }
 \ecen
@@ -695,7 +713,7 @@ a
 &a'\ar[l]
 \\
 &
-&(T^j)^T
+&T^j
 &
 &
 }
@@ -1226,7 +1244,7 @@ a\ar[r]
 \ar@2{->}[ddll]
 &b
 \\
-i\ar@{~}@[red][ur]
+i\ar@[red]@{~}[ur]
 &
 &
 &
@@ -1392,13 +1410,13 @@ a\ar[r]
 &\PP
 \ar@{|->}[r]
 \ar@2{->}[ddl]
-&T^i\ar[r]
+&T^j\ar[r]
 \ar@{~}[d]
 &b
 \\
 c\ar[rr]
 &\ar[r]
-&T^i\ar[r]
+&T^j\ar[r]
 &d
 \\
 \beta
@@ -1411,18 +1429,26 @@ c\ar[rr]
 \end{array}
 \eeq
 
-\beq
+\begin{align}
+\sum_{i,j}
 (T_\lam^i)\indices{_\beta^\nu}
 (T_\lam^j)\indices{_\nu^\gamma}
 \left[
 (T^i)\indices{_d^c}
 (T^j)\indices{_b^a}
 -
-(T^j)\indices{_b^a}
-(T^i)\indices{_d^c}
+(T^i)\indices{_b^a}
+(T^j)\indices{_d^c}
 \right]
-=
+&=
+\sum_k
+(T^k_\lam)\indices{_\beta^\gamma}
 \left[
+\begin{array}{l}
+(T^k)\indices{
+	_b
+	^x
+}
 (P_{Adj})\indices
 {
 _x
@@ -1430,23 +1456,137 @@ _x
 _d
 ^c
 }
-(T)\indices{
-_b
-^x
-}
+\\
 -
-(T)\indices{
-_x
-^a
-}
 (P_{Adj})\indices{
 _b
 ^x
 _d
 ^c
 }
+(T^k)\indices{
+	_x
+	^a
+}
+\end{array}
 \right]
-(T_\lam)\indices{_\beta^\gamma}
+\\
+&=
+\sum_{k,i}
+(T^i)\indices{
+_d^c
+}
+(T^k_\lam)\indices{_\beta^\gamma}
+\left[
+\begin{array}{l}
+(T^k)\indices{
+	_b
+	^x
+}
+(T^i)\indices
+{
+_x
+^a
+}
+\\
+-
+(T^i)\indices{
+	_b
+	^x
+}
+(T^k)\indices{
+_x
+^a
+}
+\end{array}
+\right]
+\end{align}
+
+
+
+
+
+\beq
+\sum_{ijk}
+\frac{1}{2}iC_{ijk}(T^k_\lam)
+\indices{_\beta^\gamma}
+\left[
+(T^i)\indices{_d^c}
+(T^j)\indices{_b^a}
+-
+(T^i)\indices{_b^a}
+(T^j)\indices{_d^c}
+\right]
+=
+\sum_k
+(T^k_\lam)\indices{_\beta^\gamma}
+\left[
+\begin{array}{l}
+(T^k)\indices{
+	_b
+	^x
+}
+(P_{Adj})\indices
+{
+_x
+^a
+_d
+^c
+}
+\\
+-
+(P_{Adj})\indices{
+_b
+^x
+_d
+^c
+}
+(T^k)\indices{
+	_x
+	^a
+}
+\end{array}
+\right]
+\eeq
+
+\beq
+\sum_{ij}
+\frac{1}{2}iC_{ijk}
+\left[
+(T^i)\indices{_d^c}
+(T^j)\indices{_b^a}
+-
+(T^i)\indices{_b^a}
+(T^j)\indices{_d^c}
+\right]
+=
+\left[
+\begin{array}{l}
+(T^k)\indices{
+	_b
+	^x
+}
+(P_{Adj})\indices
+{
+_x
+^a
+_d
+^c
+}
+\\
+-
+(P_{Adj})\indices{
+_b
+^x
+_d
+^c
+}
+(T^k)\indices{
+	_x
+	^a
+}
+\end{array}
+\right]
 \eeq
 
 \beq
@@ -1483,10 +1623,46 @@ _b^a^x_d
 }
 \eeq
 
+\beq
+T\indices{
+^c_d
+}
+T\indices{
+^a_b
+}
+-
+T\indices{
+^a_b
+}
+T\indices{
+^c_d
+}
+=
+T\indices{
+^a_d
+}
+\delta_b^c
+-
+T\indices{
+^c_b
+}
+\delta_d^a
+\eeq
 
+For $SU(N)$,
 
-
-
+\beq
+(P_{Adj})\indices{
+_b
+^x
+_d
+^c
+}
+=
+\delta_{bd}^{xc}
+-
+\delta_{db}^{xc}
+\eeq
 
 \beq
 T\indices{

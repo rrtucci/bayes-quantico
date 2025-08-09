@@ -1,21 +1,67 @@
 \chapter{Birdtracks}
 \label{ch-birdtracks}
 
-Cvitanovic Birdtracks book \cite{birdtracks-book}
+This chapter is based on Cvitanovic Birdtracks book Ref. \cite{birdtracks-book}
+and my paper Ref. \cite{tucci-qbnets}
 
 
-Elliott-Dawber book \cite{eli-daw-book}
-
-My paper \qt{Quantum Bayesian Nets} \cite{tucci-qbnets}
+The tensor notation 
+(see Sec.\ref{sec-tensors})
+ is succinct and easy to follow,
+but it's not
+visually
+illuminating. The birdtrack notation is not as succinct
+as the tensor notation and can lead to sign 
+errors if you are careless,
+but it is very visually illuminating. Thus, the tensor notation
+and birdtrack notation complement each other well.
+We will often display results
+using both, side by side.
 
 \section{Classical Bayesian Networks and their Instantiations}
 
-TPM (Transition Probability Matrix) $P(y|x)\in [0,1]$
-where  $x\in val(\rvx)$ and $y\in val(\rvy)$
+Classical Bayesian Networks (bnets)
+are discussed exhaustively
+in the first book of this 
+series, Ref.\cite{bayesuvius}.
+This is a brief section
+to remind the reader
+of how they are defined.
+
+Let PD stand for probability distribution.
+We call $P_{\rvy|\rvx}:val(\rvy)
+\times val(\rvx)
+\rarrow  [0,1]$ a
+{\bf Transition Probability Matrix} (TPM)\footnote{A TPM is also
+known as a Conditional Probability Table (CPT).} if 
 
 \beq
-\sum_{y\in val(\rvy)}P(y|x) = 1
+\sum_{y\in val(\rvy)}P_{\rvy|\rvx}(y|x) = 1
 \eeq
+In other words,
+a TPM is a conditional PD. A TPM of the form
+
+\beq
+P(y|x)= 
+\delta(y, f(x))
+\eeq
+for some function
+$f:val(\rvx)
+\rarrow val(\rvy)$
+is said to be {\bf deterministic}.
+
+
+
+A bnet is a 
+{\bf Directed Acyclic Graph} (DAG) 
+with the nodes labelled by
+random variables\footnote{As in
+the first volume of this series, 
+we indicate random variables by underlined letters}. Each
+bnet stands for a full 
+PD  of the node random variables expressed
+as a product of a TPM for each node.
+For example, the bnet
 
 \beq
 \calc=
@@ -27,10 +73,48 @@ where  $x\in val(\rvx)$ and $y\in val(\rvy)$
 &&\rva\ar[ll]\ar[lu]
 }
 \ecen
+\label{eq-c-bnet-def}
 \eeq
+stands for the full 
+PD
 
 \beq
-\calc(a,b,c)
+P(a,b,c)=
+P(c|b,a)P(b|a)P(a)
+\eeq
+Bnets 
+do not have free
+indices
+because 
+their nodes are labelled by random
+variables. It is convenient
+to use the DAG for a 
+bnet but with the
+underlining
+removed from the random variables,
+and
+assign a numerical value to this new DAG.
+The resultant DAG now
+has free indices. We call it an
+{\bf instantiation of the 
+bnet}.
+For example, from the
+bnet $\calc$ 
+of Eq.(\ref{eq-c-bnet-def}),
+we get the
+instantiation\footnote{
+Note that we don't
+include the root node
+probabilities as part of 
+the graph value. Thus,
+ 
+$P(a,b) =
+\underbrace{\xymatrix{ b\rarrow a}}_{P(b|a)}
+P(a)$}
+
+
+\beq
+P(a,b,c)
 =
 P(c|b,a)P(b|a)P(a)
 =
@@ -45,9 +129,15 @@ c
 P(a)
 \eeq
 
-$a^{:2} = (a_1, a_2)$
+Let $a^{:2} = (a_1, a_2)$.
+Based on
+the bnet $\calc$ of
+Eq.(\ref{eq-c-bnet-def}),
+define a new bnet $\calc'$
+as follows
+
 \beq
-\calc'=
+P'=
 \bcen
 \xymatrix{
 &\rvb\ar[ld]
@@ -57,12 +147,31 @@ $a^{:2} = (a_1, a_2)$
 }
 \ecen
 \eeq
+$\calc'$ represents the 
+the full PD 
 
 \beq
-\calc'(a^{:2},b,c)
-=
+P(a^{:2}, b, c)=
 P(c|b,a_2)P(a_2|a^{:2})P(b|a_1)P(a_1|a^{:2})P(a^{:2}
 )
+\eeq
+The 2 new nodes
+$\rva_1$ and $\rva_2$
+of bnet $\calc'$
+are called 
+{\bf marginalizer nodes}.
+We assign to them
+the following TPMs (printed in blue):
+
+\beq \color{blue}
+P[a'_i|\rva^{:2}=(a_1,a_2)] = \delta(a'_i, a_i)
+\eeq
+for $i=1,2$.
+We can also
+define an instantiation of $\calc'$ as follows:
+
+\beq
+P'(a^{:2}, b, c)
 =
 \bcen
 \xymatrix{
@@ -76,20 +185,26 @@ c
 P(a^{:2})
 \eeq
 
-Marginalizer nodes  $\rva_1$ and $\rva_2$
-have the TPMs
-\beq \color{blue}
-P(a'_i|\rva^{:2}=(a_1,a_2)) = \delta(a'_i, a_i)
-\eeq
-for $i=1,2$
+
 
 
 \section{Quantum Bayesian Networks and
 their Instantiations}
 
-TPM (Transition Probability Matrix) 
-$A(y|x)\in\CC$
-where  $x\in val(\rvx)$ and $y\in val(\rvy)$
+As far as I know,
+Quantum Bayesian Networks
+(qbnets) were invented by me in Ref.\cite{tucci-qbnets}.
+
+qbnets are closely
+analogous to classical
+bnets, but the TPM
+are replaced by Transition Probability 
+Amplitudes (TPA).
+
+Let PA stand for probability amplitude. We call $A_{\rvy|\rvx}:val(\rvy)
+\times val(\rvx)
+\rarrow  \CC$ a
+TPA if
 
 \beq
 \sum_{y\in val(\rvy)}|A(y|x)|^2 = 1
@@ -101,9 +216,22 @@ $\av{y|A|x}=A(y|x)$, then
 \beq
 \av{y|A^\dagger A|x}=\sum_{y\in val(\rvy)}|A(y|x)|^2 = 1
 \eeq
-If $A$ is a unitary matrix, then $A^\dagger A= AA^\dagger =1$ so this
-Eq.(\ref{eq-bnet-normalization})
-is satisfied.
+If $A$ is a unitary matrix, then $A^\dagger A= AA^\dagger =1$ so 
+\qt{half} ($A^\dagger A=1$) of
+the definition
+of unitary matrix is satisfied.
+If both parts were 
+satisfied, $A$ would have to be a square matrix.
+
+A qbnet is a 
+DAG
+with the nodes labelled by
+random variables. Each
+qbnet stands for a full 
+PA  of the node random variables expressed
+as a product of a TPA for each node.
+For example, the qbnet
+
 
 \beq
 \calq=
@@ -115,10 +243,39 @@ is satisfied.
 &&\rva\ar[ll]\ar[lu]
 }
 \ecen
+\label{eq-q-bnet-def}
 \eeq
+stands for the full PA
 
 \beq
-\calq(a,b,c)
+A(a,b,c)
+=
+A(c|b,a)A(b|a)A(a)
+\eeq
+Qbnets 
+do not have free
+indices
+because 
+their nodes are labelled by random
+variables. It is convenient
+to use the DAG for a 
+qbnet but with the
+underlining
+removed from the random variables,
+and
+assign a numerical value to this new DAG.
+The resultant DAG now
+has free indices. We call it an
+{\bf instantiation of the 
+qbnet}.
+For example, from the
+bnet $\calq$ 
+of Eq.(\ref{eq-q-bnet-def}),
+we get the
+instantiation
+
+\beq
+A(a,b,c)
 =
 A(c|b,a)A(b|a)A(a)
 =
@@ -133,7 +290,13 @@ c
 A(a)
 \eeq
 
-$a^{:2} = (a_1, a_2)$
+Let $a^{:2} = (a_1, a_2)$.
+Based on
+the qbnet $\calq$ of
+Eq.(\ref{eq-q-bnet-def}),
+define a new qbnet $\calq'$
+as follows
+
 \beq
 \calq'=
 \bcen
@@ -145,11 +308,31 @@ $a^{:2} = (a_1, a_2)$
 }
 \ecen
 \eeq
+$\calq'$  represents the 
+the full PA 
 
 \beq
-\calq'(a^{:2},b,c)
-=
-A(c|b,a_2)A(a_2|a^{:2})A(b|a_1)A(a_1|a^{:2})A(a^{:2})
+A(a^{:2}, b, c)=
+A(c|b,a_2)A(a_2|a^{:2})A(b|a_1)A(a_1|a^{:2})A(a^{:2}
+)
+\eeq
+The 2 new nodes
+$\rva_1$ and $\rva_2$
+of qbnet $\calq'$
+are called 
+{\bf marginalizer nodes}.
+We assign to them
+the following TPAs (printed in blue):
+
+\beq \color{blue}
+A[a'_i|\rva^{:2}=(a_1,a_2)] = \delta(a'_i, a_i)
+\eeq
+for $i=1,2$.
+We can also
+define an instantiation of $\calq'$ as follows:
+
+\beq
+A(a^{:2}, b, c)
 =
 \bcen
 \xymatrix{
@@ -163,14 +346,11 @@ c
 A(a^{:2})
 \eeq
 
-Marginalizer nodes  $\rva_1$ and $\rva_2$
-have the TAMs
-\beq \color{blue}
-A(a'_i|\rva^{:2}=(a_1,a_2)) = \delta(a'_i, a_i)
-\eeq
-for $i=1,2$
+
+
 
 \section{Birdtracks}
+
 
 
 
