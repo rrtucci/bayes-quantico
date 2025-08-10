@@ -1,39 +1,36 @@
 \chapter{Symmetrization
 and Antisymmetrization}
 \label{ch-sym}
+This chapter is based on Ref.\cite{birdtracks-book}
 
-$(1,2)$ transposition, swaps 1 and 2, $1\rarrow 2\rarrow 1$.
-$(3,2,1)$ means $3\rarrow 2\rarrow 1\rarrow 3$. A
-reordering of $(1,2,3,\ldots, p)$
-is a permutation on $p$ letters.
-A permutation can be expressed as a product of transpositions
- $(3,2,1)=(3,2)(2,1)$ is an
-even permutation because
-it can be expressed as a product of an even number of
-transpositions. An odd permutation can be expressed as a product of an odd
-number of permutations.
+As preparation for
+this chapter, read Sec.\ref{sec-permutation-group}.
+
+
 
 \section{Symmetrization}
+
+
+The set of permutations
+of 2 elements can be
+represented by the following $2!=2$ birdtracks\footnote{Note
+that the set of values that
+$a_i$
+and $b_i$
+can assume can be anything,
+as long as, for some set $V$, 
+$val(\rva_i)=val(\rvb_i)=V$
+for all $i$.}  
 \beq
-\indi_{a_1,{a_2}}^{{b_2},{b_1}}
+\indi\indices{
+_{a_1,a_2}
+^{{b_2},{b_1}}
+}
 =
 \delta_{a_1}^{b_1} \delta _{a_2}^{b_2}=
 \bcen
 \xymatrix@R=1pc@C=1pc{a_1
-&{b_1}\ar[l]
-\\
-{a_2}
-&{b_2}\ar[l]}
-\ecen
-\eeq
-
-\beq
-(\s_{(1,2)})_{a_1,{a_2}}^{{b_2},{b_1}}
-=
-\delta_{a_1}^{b_2} \delta _{a_2}^{b_1}=
-\bcen
-\xymatrix@R=1pc@C=1pc{a_1
-&\bullet\ar@{<->}[d]\ar[l]
+&\bullet\ar[l]_\circone
 &{b_1}\ar[l]
 \\
 {a_2}
@@ -43,14 +40,43 @@ number of permutations.
 \eeq
 
 \beq
+(\s_{(1,2)})\indices{
+_{a_1,a_2}
+^{{b_2},{b_1}}
+}
+=
+\delta_{a_1}^{b_2} \delta _{a_2}^{b_1}=
+\bcen
+\xymatrix@R=1pc@C=1pc{a_1
+&\bullet\ar@{<->}[d]
+\ar[l]_\circone
+&{b_1}\ar[l]
+\\
+{a_2}
+&\bullet \ar[l]
+&{b_2}\ar[l]}
+\ecen
+\eeq
+
+
+The set of permutations
+of 3 elements can be
+represented by the following $3!=6$ birdtracks:
+\beq
 \indi =
 \bcen
-\xymatrix@R=1pc@C=1pc{
-&&\ar[ll]
+\xymatrix@R=.8pc@C=1.5pc{
+a_1
+&\bullet\ar[l]_\circone
+&b_1\ar[l]
 \\
-&&\ar[ll]
+a_2
+&\bullet\ar[l]
+&b_2\ar[l]
 \\
-&&\ar[ll]
+a_3
+&\bullet\ar[l]
+&b_3\ar[l]
 }
 \ecen
 \eeq
@@ -169,6 +195,8 @@ number of permutations.
 \ecen
 \eeq
 
+The {\bf $p$-element symmetrizer} $\cals_p$ is defined as the
+birdtrack
 \beq
 \bcen
 \xymatrix@R=1pc@C=1pc{
@@ -233,7 +261,9 @@ number of permutations.
 \right\}
 \eeq
 
-
+Note that
+$\cals_p$ satisfies 
+the following identities
 \beq
 \begin{array}{ll}
 \boxed{
@@ -414,6 +444,7 @@ number of permutations.
 \end{array}\eeq
 
 \begin{claim}
+\label{claim-sym-p}
 \beq
 \bcen
 \xymatrix@R=1pc@C=1pc{
@@ -755,6 +786,8 @@ We only prove it for $p=3$.
 \end{align}
 \qed
 
+Tracing over the identity
+of Claim \ref{claim-sym-p}, we get
 \begin{align}
 \bcen
 \xymatrix@R=1pc@C=1pc{
@@ -850,6 +883,7 @@ We only prove it for $p=3$.
 \right)
 \end{align}
 
+Hence
 
 \beq
 \tr_{\rva_1}\cals_p = \frac{n+p-1}{p}\cals_{p-1}
@@ -876,6 +910,9 @@ d_{\cals_2}=
 \eeq
 
 \section{Antisymmetrization}
+
+The {\bf $p$-element antisymmetrizer} $\cala_p$ is defined as the
+birdtrack
 
 \beq
 \bcen
@@ -940,6 +977,10 @@ d_{\cals_2}=
 + \cdots
 \right\}
 \eeq
+
+Note that
+$\cala_p$ satisfies 
+the following identities
 
 \beq
 \begin{array}{ll}
@@ -1244,6 +1285,7 @@ d_{\cals_2}=
 \eeq
 
 \begin{claim}
+\label{claim-antisym-p}
 \beq
 \bcen
 \xymatrix@R=1pc@C=1pc{
@@ -1585,6 +1627,9 @@ We only prove it for $p=3$.
 \end{align}
 \qed
 
+Tracing over the identity
+of Claim \ref{claim-antisym-p}, we get
+
 \begin{align}
 \bcen
 \xymatrix@R=1pc@C=1pc{
@@ -1679,6 +1724,8 @@ We only prove it for $p=3$.
 \ecen
 \right)
 \end{align}
+
+Hence,
 
 \beq
 \tr_{\rva_1}\cala_p = \frac{n-p+1}{p}\cala_{p-1}
@@ -1850,6 +1897,181 @@ For example, for $n=2$ and $p=3$
 \\
 &=& 0
 \eeqa
+
+\section{Levi-Civita Tensor}
+
+The {\bf Levi-Civita tensor}
+$\eps_{a^{:p}}$ where 
+$a_i\in \{1,2, \ldots, p\}$
+equals $+1$ (resp., $-1$) if 
+$a^{:p}$ is
+an even (resp., odd ) permutation
+of $(1,2, \ldots, p)$.
+Thus
+
+
+\beq
+\eps^{123\ldots p}=
+\eps_{123\ldots p}=1
+\eeq
+and
+
+\beq
+\eps_{rev(a^{:p})} =
+(-1)^{p\choose 2}\eps_{a^{:p}}
+\eeq
+Define
+
+\beq
+(C_{\cala_p})_{a^{:p}}^1
+=
+e^{i\phi}\frac{\eps_{a^{:p}}}{\sqrt{p!}}
+=
+\xymatrix@C=1pc@R=1pc{
+ a_1
+&{\cala_p}\ar[l]_\circone
+\ar@2{-}[ddd]
+\\
+a_2
+&\ar[l]
+\\
+\vdots
+&
+\\
+a_p
+&\ar[l]
+}
+\eeq
+and
+
+\beq
+(C_{\cala_p}^\dagger)^{
+rev(a^{:p})
+}_1
+=
+e^{-i\phi}\frac{\eps^{rev(a^{:p})}}{\sqrt{p!}}
+=
+\xymatrix@C=1pc@R=1pc{
+{\cala_p} \ar@2{-}[ddd]
+&a_1\ar[l]
+\\
+&a_2\ar[l]
+\\
+&\vdots
+\\
+&a_p\ar[l]_\circone
+}
+\eeq
+Then
+
+\beq \begin{array}{ll}
+\boxed{
+\frac{1}{p!}
+\eps_{a^{:p}}\eps^{rev(b^{:p})}=
+(\cala_p)
+\indices{
+_{a^{:p}}
+^{rev(b^{:p})}
+}
+}
+&
+\bcen
+\xymatrix@C=1pc@R=1pc{
+ a_1
+&{\cala_p}\ar[l]
+\ar@2{-}[ddd]
+\\
+a_2
+&\ar[l]
+\\
+\vdots
+&
+\\
+a_p
+&\ar[l]
+}
+\xymatrix@C=1pc@R=1pc{
+{\cala_p} \ar@2{-}[ddd]
+&b_1\ar[l]
+\\
+&b_2\ar[l]
+\\
+&\vdots
+\\
+&b_p\ar[l]
+}
+\ecen
+=\bcen
+\xymatrix@C=1pc@R=1pc{
+a_1&\ar[l]
+{\cala_p} \ar@2{-}[ddd]
+&b_1\ar[l]
+\\
+a_2&\ar[l]
+&b_2\ar[l]
+\\
+\vdots
+&
+&\vdots
+\\
+a_p&\ar[l]
+&b_p\ar[l]
+}
+\ecen
+\end{array}\eeq
+and
+
+\beq \begin{array}{ll}
+\boxed{
+e^{i2\phi}\frac{1}{p!}\eps^{
+rev(a^{:n})}
+\eps_{a^{:n}}=
+\delta_1^1 = 1}
+&
+\bcen
+\xymatrix@R=1pc@C=1pc{
+\cala_p\ar@2{-}[ddd]
+&
+&\cala_p\ar@2{-}[ddd]
+\ar[ll]
+\\
+&
+&\ar[ll]
+\\
+&\vdots
+&
+\\
+&
+&\ar[ll]
+}
+\ecen
+=
+1
+\end{array}
+\eeq
+
+
+
+For the L Convention, we will use $\phi=0$.
+
+For the CC Convention, we must choose
+
+\beq e^{i2\phi}
+=
+(-1)^{p\choose 2}
+=
+e^{i \pi \frac{p(p-1)}{2}}
+\eeq
+so
+
+\beq
+\phi = \frac{\pi}{4}p(p-1)
+\eeq
+
+
+
+
+
 
 
 
