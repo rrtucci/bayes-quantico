@@ -1,6 +1,22 @@
 \chapter{Clebsch-Gordan Coefficients}
 \label{ch-clebsch-gordan}
+This chapter is based on Ref.\cite{birdtracks-book}.
 
+Suppose that for some $M\in\CC^{d\times d}$, we have
+
+\beq
+M = C^\dagger D C
+\eeq
+where $D$ is a diagonal matrix and $C=C^{d\times d}$ is unitary.
+Then one can partition 
+$C$ into rectangular submatrices $C_\lam$ that have $d_\lam < d$ rows, 
+with one $C_\lam$
+for each eigenvalue $\lam$ of $C$.
+Likewise, we can partition 
+$C^\dagger$ into rectangular submatrices $C_\lam^\dagger$ that have $d_\lam < d$ columns, with one $C^\dagger_\lam$
+for each eigenvalue $\lam$ of $C$. Thus, if $I^{d_\lam\times d_\lam}$
+is the $d_\lam\times d_\lam$
+identity matrix,
 
 \beq
 \left[
@@ -30,30 +46,6 @@ C_\lam^{d_\lam\times d}
 \right]^{d\times d}
 C^{d\times d}
 \eeq
-Let $b^{:nb}=(b_1, b_2, \ldots, b_{nb})$ where $b_i\in Z_{[0,db_i]}$  and $a\in Z_{[1,d_\lam]}$.
-Hence,
-
-\beq
-d_\lam = \prod_{i=1}^{:nb}db_i
-\eeq
-
-\beq
-(C_\lam)_{a}^{rev(b^{:nb})}=
-\bcen
-\xymatrix@C=1pc@R=1pc{
-&&b_1\ar[dl]
-\\
-a
-& C_\lam\ar[l]
-&b_2\ar[l]
-\\
-&&b_{nb}\ar[lu]
-}
-\ecen
-\eeq
-
-
-
 \beq
 \left[
 \begin{array}{ccc}
@@ -80,6 +72,33 @@ a
 \end{array}
 \right]^{d\times d}
 \eeq
+Let $b^{:nb}=(b_1, b_2, \ldots, b_{nb})$ where $b_i\in Z_{[0,N_i]}$  and $a\in Z_{[1,d_\lam]}$.
+Hence,
+
+\beq
+d_\lam = \prod_{i=1}^{:nb}N_i
+\eeq
+
+Now define the birdtracks
+
+
+\beq
+(C_\lam)_{a}^{rev(b^{:nb})}=
+\bcen
+\xymatrix@C=1pc@R=1pc{
+&&b_1\ar[dl]
+\\
+a
+& C_\lam\ar[l]
+&b_2\ar[l]
+\\
+&&b_{nb}\ar[lu]
+}
+\ecen
+\eeq
+and
+
+
 
 \beq
 (C^\dagger_\lam)^{a}_{b^{:nb}}=
@@ -96,65 +115,59 @@ b_{nb}
 }
 \ecen
 \eeq
-More generally, some of the $b_i$ indices
-may lowered and their arrows
-changed to outgoing instead of ingoing.
+More generally, some of the $b_i$ indices of $C_\lam$
+and $C_\lam^\dagger$
+may be lowered or raised and their arrows
+changed from outgoing to  incomming or vice versa.
 Each $b_i$ 
 represents a different
-rep (or irrep)
+representation of the group (not necessarily an irep).
 
-
+Recall that if $\ket{x}$ for
+$x\in val(\rvx)$ is a complete, orthonormal
+basis in Quantum Mechanics, then
 
 \beq
-\begin{array}{l}
-\boxed{
-(C_\lam^\dagger)_{b^{:nb}}^{a}
-(C_\lam)^{rev((b')^{:nb})}_{a}=
-(P_\lam)^{rev((b')^{:nb})}_{b^{:nb}},
+\av{x|y} =  \delta(x, y)
 \quad
-C^\dagger_\lam 
-C_\lam = P_\lam
-}
-\\
-\bcen
-\xymatrix@C=1pc@R=1pc{
-b_1
-\\
-b_2
-&(C^\dagger_\lam)
-\ar[lu]\ar[l]\ar[ld]
-& \sum a\ar[l]
-\\
-b_{nb}}
-\xymatrix@C=1pc@R=1pc{
-&&b'_1\ar[dl]
-\\
-& C_\lam\ar[l]
-&b'_2\ar[l]
-\\
-&&b'_{nb}\ar[lu]
-}
-\ecen
-=
-\bcen
-\xymatrix@C=1pc@R=1pc{
-b_1
-&
-&b'_1\ar[ld]
-\\
-b_2
-&P_\lam\ar[l]
-\ar[ld]\ar[lu]
-&b'_2
-\ar[l]
-\\
-b_{nb}
-&
-&b'_{nb}\ar[lu]
-}
-\ecen
-\end{array}
+\text{(orthonormality)}
 \eeq
+and
+
+\beq
+\sum_x \ket{x}\bra{x} = 1
+\quad
+\text{(completeness)}
+\eeq
+Furthermore, if we define
+
+\beq
+\pi_x = \ket{x}\bra{x}
+\eeq
+then $\pi_x$ is a
+is a projection operator so
+
+\beq
+\pi_x\pi_x=\pi_x
+\eeq
+and
+
+\beq
+\pi_x \ket{y}=  \ket{y}
+\delta(x, y),\quad
+\bra{y}\pi_x = \bra{y}
+\delta(x, y)
+\eeq
+
+
+If we identify $C_\lam$
+with $\bra{x}$,
+and $C^\dagger_\lam$
+with
+$\ket{x}$,
+then $C_\lam$ and $C_\lam ^\dagger$
+satisfy analogous identities:
+
 
 
 
@@ -196,8 +209,6 @@ a
 \ar[l]|\bullet
 }
 \end{array}\eeq
-
-Completeness relation
 
 \beq
 \begin{array}{l}
@@ -304,6 +315,7 @@ a& C_\lam\ar[l]
 \ecen
 \end{array}
 \eeq
+
 
 \beq
 \begin{array}{l}
