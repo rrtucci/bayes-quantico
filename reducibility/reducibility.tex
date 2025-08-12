@@ -1,22 +1,43 @@
 \chapter{Reducibility}
 \label{ch-reducibility}
 
-$M\in \CC^{d\times d }$
+This chapter is based on
+Ref.\cite{birdtracks-book}.
+
+\section{Eigenvalue Projectors}
+
+Suppose $M\in \CC^{d\times d }$ 
+has eigenvalues 
+$\lam_i$ with corresponding eigenvectors $\ket{\lam_i}$
 
 \beq
-M\ket{v}=\lam \ket{v}
+M\ket{\lam_i}=\lam_i \ket{\lam_i}
 \eeq
-If $M$ is Hermitian ($H^\dagger=H$), its eigenvalues are real. ( $\lam =
-\av{\lam|M\lam}\in\RR$)
-
+for $i\in \ZZ_{[1,r]}$.
+The characteristic polynomial of $M$ is
+defined as
 
 \beq
-cp(\lam)\eqdef \det(M-\lam)=0
+cp(\lam)\eqdef \det(M-\lam)= \prod_{i=1}^r (\lam-\lam_i)^{d_i}
+\eeq
+It must satisfy
+
+\beq
+cp(\lam) =0
 \eeq
 
-If $M$ is a Hermitian  matrix, then there exists
-a unitary matric ($CC^\dagger = C^\dagger C =1$)
-such that
+Note 
+that if $M$ is Hermitian 
+($M^\dagger=M$),
+then all its eigenvalues  are real. (because $\lam_i =
+\av{\lam_i|M|\lam_i}\in\RR$)
+
+
+
+
+If $M$ is a Hermitian, then there exists
+a matrix $C$ that is a unitary ($CC^\dagger = C^\dagger C =1$)
+and diagonalizes $M$
 
 \beq
 CMC^\dagger=
@@ -54,6 +75,8 @@ D_{\lam_i} =
 \beq
 d=\sum_{i=1}^r d_i
 \eeq
+For example,
+when $d=2$, 
 
 
 \beq
@@ -66,6 +89,7 @@ CMC^\dagger =
 \end{array}
 \right]
 \eeq
+Note that for $d=2$,
 
 \beq
 C P_1 C^\dagger=
@@ -92,10 +116,28 @@ CP_2 C^\dagger =
 =
 \frac{CMC^\dagger-\lam_1}{\lam_2-\lam_1}
 \eeq
+$P_1$ and $P_2$ are a 
+set of complete
+orthogonal projection operators
 
+\beq
+P_1 + P_2 =1
+\eeq
+
+\beq
+P_1^2=P_1,\; P_2^2=P_2,\; P_1P_2=P_2P_1=0
+\eeq
+
+Similarly, for $d>2$, we can 
+define
+one projection
+operator $P_i$ 
+for each eigenvalue
+ $\lam_i$.
 If $I^{d_i\times d_i}$
 is the $d_i$
 dimensional unit matrix,
+then
 \beqa
 P_i &=&
 C^\dagger
@@ -105,14 +147,38 @@ diag(0,\ldots,0, I^{d_i\times d_i},0, \dots, 0)C
 \prod_{j\neq i}
 \frac{M -\lam_j}{\lam_i -\lam_j}
 \eeqa
+As for $d=2$, the $P_i$
+just defined are 
+a complete set of 
+orthogonal projection operators:
 
-Note that $P_i$ are Hermitian
+\beq
+\sum_{i=1}^r P_i=1
+\quad\text{(completeness)}
+\eeq
+
+\beq
+P_iP_j =P_i\delta(i,j)
+\quad \text{(orthonormality)}
+\eeq
+for all $i,j\in \ZZ_{[1,r]}$
+
+Note that
+\beqa
+d_i &=&\tr [C^\dagger P_i C]
+\\
+&=& \tr P_i
+\eeqa
+
+Note that the $P_i$'s are Hermitian
 ($P_i^\dagger = P_i$)
 because $M$
 is Hermitian and
-its eigenvalues are real.)
+its eigenvalues are real.
 
-Note that
+\section{Commuting with a Projector}
+
+Note that for any $i$,
 $P_i$ and $M$
 commute
 
@@ -120,25 +186,27 @@ commute
 [P_i, M]=
 P_iM-MP_i=0
 \eeq
+From the $P_i$'s completeness and
+commutativity with $M$, we get
 
-orthogonal
-\beq
-P_i P_j =\delta(i,j)P_j
-\eeq
-
-complete
-\beq
-\sum_i P_i =1
-\eeq
-
-\beq
-M= \sum_{i=1}^r
+\beqa
+M&=& \sum_{i=1}^r\sum_{j=1}^r
+P_iM P_j
+\\
+&=&
+\sum_{i=1}^r
 P_iM P_i
-\eeq
+\eeqa
 
+\begin{claim}
+For all $i$,
 \beq
-d_i = \tr P_i
+MP_i = \lam_i P_i \;
+\text{(no $i$ sum)}
 \eeq
+\end{claim}
+\proof
+We only show it for $d=2$
 
 \beqa
 CMP_1C^\dagger &=&
@@ -166,30 +234,43 @@ CMP_1C^\dagger &=&
 0&0
 \end{array}
 \right] 
+\\
+&=&  \lam_i C P_i C^\dagger
 \eeqa
+\qed
 
-\beq
-MP_i = \lam_i P_i \;
-\text{(no $i$ sum)}
-\eeq
+
+From the 
+last claim, it immediately follows that if  $f(x)$ can be
+expressed as a 
+power series in
+$x$, then
+\footnote{$M$ must also satisfy
+some
+convergence conditions
+that we won't get into.}
 
 \beq
 f(M) P_i = f(\lam_i)P_i \;
 \text{(no $i$ sum)}
 \eeq
 
-$M^{(1)}, M^{(2)}$
+Suppose 
+$M^{(1)}, M^{(2)}\in \CC^{d\times d}$
+are Hermitian matrices that
+commute
 
 \beq
 [M^{(1)}, M^{(2)}]  =0
 \eeq
-Use $M^{(1)}$ to decompose $V$
-into $\bigoplus_i V_i$.
-Use  $M^{(2)}$ to decompose $V_i$ into
+Use $M^{(1)}$ to decompose $V=\CC^{d\times d}$
+into 
+a direct sum of vector spaces $\bigoplus_i V_i$.
+Then we can use  $M^{(2)}$ to decompose $V_i$ into
 $\bigoplus_j V_{i,j}$. 
 If $M^{(1)}$ and $M^{(2)}$ don't
-commute, let $P^{(1)}_i$ be the eigenvalue 
-projection operators of $M^{(1)}$. The replace $M^{(2)}$ by $P^{(1)}_i M^{(2)}P_i^{(1)}$
+commute, let $P^{(1)}_i$ be an eigenvalue 
+projection operator of $M^{(1)}$. Then replace $M^{(2)}$ by $P^{(1)}_i M^{(2)}P_i^{(1)}$. Now
 
 \beq
 [M^{(1)}, P^{(1)}_iM^{(2)}P^{(1)}_i]  =0
@@ -201,34 +282,51 @@ all the elements $G$ of a group $\calg$
 \beq
 [G, M] =0
 \eeq
-for all $G\in\calg$.
 If $P_i$ are 
 the projection operators of $M$, then $P_i=f_i(M)$ so
 
 \beq
 [G, P_i]=0
 \eeq
-for all $G$ and $i$.
-Hence,
+for all $G\in \calg$ and $i$.
+
 
 \beq
 G = 1G1 =\sum_i\sum_j P_i G P_j
 =
-\sum_i \underbrace{P_i G P_i}_
-{\eqdef G_i}
+\sum_j \underbrace{P_j G P_j}_
+{\eqdef G_j}
+\eeq
+
+\begin{claim}
+\beq
+ G = C^\dagger
+diag(G_1, G_2, \ldots)C
 \eeq
 
 \beq
-G = C^\dagger 
-diag(G_1, G_2, \ldots)C
-=
+G=
 \sum_i
 C^\dagger_i
-G_i C_i
+G_i C_i 
 \eeq
 where the matrices $C_i$
 are the Clebsch Gordan 
-matrices (see Ch. \ref{ch-clebsch-gordan}).
+matrices of $M$ (see Ch. \ref{ch-clebsch-gordan})
+\end{claim}
+\proof
+
+\beq
+C_i G C^\dagger_i = 
+\sum_j 
+C_i P_jG P_j C_i^\dagger
+=C_i G_i C_i^\dagger
+= G_i
+\eeq
+\qed
+
+
+\section{Irreps}
 
 A {\bf representation (rep)} $G_i$ acts only
 on a $d_i$ dimensional vector space $V^{d_i}=P_i V^d$.
