@@ -184,6 +184,7 @@ by Ref.\cite{birdtracks-book}
 by Cvitanovic. I hope he doesn't mind. I really love his  book.
 
 \section{Vector Space and Algebra over a field $\FF$}
+\label{sec-algebra-over-f}
 
 A vector  space
 (a.k.a. linear space)  $\calv$
@@ -280,8 +281,8 @@ Reverse of vector $rev(x_1, x_2, \ldots, x_n)=
 
 $y^b = \sum_a g^{ba} x_a$
 
-$(y^b)=(y^1, y^2, \ldots, y^n)= \bar{y}^{:n}\in \bar{V}^n=\CC^{n\times 1}$. $V^n$ is the lower indices vector space and
-$\bar{V}^n$ is its {\bf dual vector space} (i.e., with upper indices).
+$(y^b)=(y^1, y^2, \ldots, y^n)= \dual{y}^{:n}\in \dual{V}^n=\CC^{n\times 1}$. $V^n$ is the lower indices vector space and
+$\dual{V}^n$ is its {\bf dual vector space} (i.e., with upper indices).
 
 
 
@@ -330,7 +331,7 @@ it is possible to define
 \caption{Index labels for $Mx$
 where $M
 \in \CC^{n^{p+q}\times n^{p+q}}$ and
-$x\in V^{n^p}\otimes \bar{V}^{n^q}$.
+$x\in V^{n^p}\otimes \dual{V}^{n^q}$.
 Note that we  list indices in counterclockwise (CC) direction, 
 starting at the top.}
 \label{fig-index-labels-Mx}
@@ -467,7 +468,7 @@ M\indices{_\alp^{\delta}}=1
 \hrule
 
 Note that
-for $x\in V^n{}$, $y\in \bar{V}^n$, and $G\in \calg\subset GL(n, \CC)$,
+for $x\in V^n{}$, $y\in \dual{V}^n$, and $G\in \calg\subset GL(n, \CC)$,
 
 \beq
 (x')_a (y')^b= G\indices{^b_c} 
@@ -475,7 +476,7 @@ G\indices{_a^d}x_dy^c
 \eeq
 
 
-If $x\in V^{n^p}\otimes \bar{V}^{n^q}$, $\GG\in \calg\subset GL(n^{p+q}, \CC)$,
+If $x\in V^{n^p}\otimes \dual{V}^{n^q}$, $\GG\in \calg\subset GL(n^{p+q}, \CC)$,
 
 \beq
 (x')\indices{

@@ -1,11 +1,16 @@
 \chapter{Invariants}
 \label{ch-invariants}
+This chapter is based on
+Ref.\cite{birdtracks-book}.
 
-Given a {\bf bilinear form} 
+A {\bf bilinear form}
+is a linear function $m:\dual{V}^n\times V^n\rarrow \CC$ with
+$\dual{V}^n, V^n=\CC^n$.
+For example, 
 
 \beq
-m(\bar{x}^{:n}, y^{:n})=
-x^a M\indices{
+m(\dual{x}^{:n}, y^{:n})=
+\dual{x}^a M\indices{
 _a^b
 } y_b
 \xymatrix@R=1pc@C=1pc{
@@ -15,15 +20,15 @@ _a^b
 a&&b
 }
 \eeq
-is invariant if 
+$m()$ is said to be invariant if 
 
 \beq
-m(\bar{x}^{:n}, y^{:n})
+m(\dual{x}^{:n}, y^{:n})
 =
-m(\bar{x}^{:n}G^\dagger, Gy^{:n})
+m(\dual{x}^{:n}G^\dagger, Gy^{:n})
 \eeq
-
-{\bf matrix invariant}
+$m()$ is invariant iff matrix $M$ is a 
+{\bf matrix invariant}; i.e., iff
 
 \beq
 \boxed
@@ -60,19 +65,23 @@ a&&b
 \beq
 M= G^\dagger  M G
 \eeq
-
+If $G$ is unitary,
 \beq
 GM=MG, \quad [G, M] =0
 \eeq
 
-{\bf multilinear form}
+A {\bf multilinear form}
+is a linear function $h:\dual{V}^{n^p}\times V^{n^q}\rarrow \CC$ with
+$\dual{V}^d, V^d=\CC^d$.
+For example,
+
 
 \beq
-h(\bar{w}, \bar{x}, y, z)
+h(\dual{w}, \dual{x}, y, z)
 =
 h\indices{_a_b^c^d}
-w^a
-x^b
+\dual{w}^a
+\dual{x}^b
 y_c
 z_d
 \quad\quad
@@ -91,15 +100,16 @@ a
 }
 \ecen
 \eeq
-is invariant if
+$h()$ is said to be
+invariant if
 
 \beq
-h(\bar{w}, \bar{x}, y, z)=
-h(\bar{w}G^\dagger, \bar{x}G^\dagger, Gy, Gz)
+h(\dual{w}, \dual{x}, y, z)=
+h(\dual{w}G^\dagger, \dual{x}G^\dagger, Gy, Gz)
 \eeq
-
-
-{\bf tensor invariant}  (TI)
+$h()$ is invariant iff tensor $h\indices{_a_b^c^d}$
+is a
+{\bf tensor invariant}  (TI); i.e., iff
 
 \beq
 \boxed{
@@ -165,7 +175,8 @@ a finite number of tree TIs.
 
 The {\bf primitiveness assumption}: All TI are primitive.
 \hrule
-Examples. Consider $\RR^3$ vector space.
+Examples. Suppose $x, y, z \in\RR^3$
+and $i,j,k\in\{1,2,3\}$.
 \begin{itemize}
 \item Primitive TIs
 \beq
@@ -230,7 +241,7 @@ j
 \bcen
 \xymatrix{
 &\eps_{ijm}\ar@{-}[dl] \ar@{-}[d]
-&\eps_{nkl}\ar@{-}[l]
+&\eps_{mkl}\ar@{-}[l]|{\sum m}
 \ar@{-}[d]
 \ar@{-}[dr]
 \\
@@ -322,7 +333,8 @@ j\ar@{-}[r]
 \item Primitiveness Assumption
 
 Suppose $\calp=\{\delta_{ij}, f_{ijk}\}$
-where $f_{ijk}$ is not $\eps_{ijk}$
+where $f_{ijk}$ is not $\eps_{ijk}$. For 
+some $A, B, C, \ldots H\in\CC$, one has
 
 \beq
 \xymatrix@C=1pc@R=1pc{
@@ -439,34 +451,42 @@ C
 \end{itemize}
 
 \hrule
-An {\bf algebra of invariants}
 
-Let $\calp=(p_1, p_2, \ldots, p_k)$ be a full set of primitive TIs. By \qt{full}, we mean no others exist.
+
+Let $\calp=(p_1, p_2, \ldots, p_k)$ be a {\bf full set of primitive TIs}. By \qt{full}, we mean no others exist.
+$\calp$ is 
+a basis for an {\bf algebra of invariants}.\footnote{An algebra over a field
+is defined in Sec.\ref{sec-algebra-over-f}}
 
 An {\bf invariance group} $\calg$ is the set of all linear transformation $G\in \calg$ such that
 
 \beqa
-p_1(x, \bar{y})&=&
-p_1(Gx, \bar{y}G^\dagger)
+p_1(\dual{x}, y)&=&
+p_1(\dual{x}G^\dagger, Gy)
 \\
-p_2(w, x, \bar{y}, \bar{z})&=&
-p_2(Gw, Gx, \bar{y}G^\dagger,
-\bar{z}G^\dagger)
+p_2(\dual{w}, \dual{x}, {y}, {z})&=&
+p_2(\dual{w}\dual{G}, 
+\dual{x}\dual{G}, Gy,
+Gz)
 \\
 &&\text{etc.}
 \eeqa
 
-Example
+Example. Consider
+an invariance group
+with a single
+primitive TI $p()$ defined by 
 
 \beq
-p(\bar{x}, y) = \delta_a^b x^a y_b=x^by_b
+p(\dual{x}, y) = \delta_a^b \dual{x}^a y_b=\dual{x}^by_b
 \eeq
+Then
 
 \beq
-(x')^a (y')_a=
-x^b (G^\dagger G)\indices{_b^c}y_c = x^by_b
+\dual{(x')}^a (y')_a=
+\dual{x}^b (G^\dagger G)\indices{_b^c}y_c = \dual{x}^by_b
 \eeq
-So $G$ must be unitary
+so $G$ must be unitary
 \beq
 G^\dagger G=1
 \eeq
