@@ -5,29 +5,45 @@ This chapter is based on
 Ref.\cite{birdtracks-book}.
 \section{Generators (infinitesimal transformations)}
 
-Consider Hermitian matrices $T^i\in \CC^{n\times n}$
-for $i=1,2, \ldots, N$
-that satisfy
+For some group
+$\calg$, assume that any group element $G\in\calg$
+that is infinitesimal 
+close to the identity
+$1$ can be parametrized by
+
+
+\beq
+G = 1 + i \sum_i 
+\eps_i T^i
+\eeq
+where $T^i\in \CC^{n\times n}$
+for $i=1,2, \ldots, N$,
+$\eps_i\in\RR $
+and $|\eps_i|<<1$.
+
+Assume that the $T^i$ matrices are Hermitian and
+that they satisfy
 
 \beq
 \tr(T^i T^j)=K\delta(i, j)
 \label{eq-gluon-mass}
 \eeq
 
-These matrices are called
+We will call these matrices 
 the {\bf generators}
-of infinitesimal transformations.
+of infinitesimal transformations
+for group $\calg$.
 
 It's customary to choose 
 generators so that  $K=\frac{1}{2}$.\footnote{For $SU(2)$,
 it is customary to
-use $T^i =\frac{1}{2}\s_i$,
+choose $T^i =\frac{1}{2}\s_i$,
 where $\s_i$ for $i=1,2,3$ are the Pauli matrices.
 For $SU(3)$,
 it is customary to choose $T^i=
 \frac{1}{2}\lam_i$
 where $\lam_i$
-for $i=1,2, \ldots, 8$ are the Gelll-Mann matrices.
+for $i=1,2, \ldots, 8$ are the Gell-Mann matrices.
 For both of these choices,
 $K=\frac{1}{2}$.}
 However, we will often set $K=1$
@@ -170,18 +186,7 @@ x\indices{_c^d}
 \right]}_{\eps_i\in\RR}
 \eeq
 
-An group element $G\in\calg$
-that is infinitesimal 
-close to the the identity
-$1$ can be parametrized by
 
-
-\beq
-G = 1 + i \sum_i 
-\eps_i T^i
-\eeq
-where $\eps_i\in\RR $
-and $|\eps_i|<<1$.
 
 Recall Eq.(\ref{eq-xprime-eq-gg-x}).
 If $x\in V^{n^p}\otimes \dual{V}^{n^q}$, and $\GG\in \calg\subset GL(n^{p+q}, \CC)$,
@@ -203,7 +208,7 @@ _{d^{:p}}
 ^{c^{:q}}
 },
 \quad
-(x'_\alp=\GG\indices{_\alp^\beta}x_\beta)
+x'_\alp=\GG\indices{_\alp^\beta}x_\beta
 \eeq
 where we define
 
@@ -687,7 +692,7 @@ a&C_\lam\ar[l]
 \end{array}
 \right\}
 \eeq
-Multiplying on the left $C^\dagger_\lam$, we obtain
+Multiplying on the left by $C^\dagger_\lam$, we obtain
 an expression
 for the generator  $T_\lam^i$
 in term
@@ -798,7 +803,7 @@ a
 \section{Structure Constants
 (3 gluon vertex)}
 
-See Sec.\ref{sec-algebra-over-f})
+See Sec.\ref{sec-algebra-over-f}
 for the definition of an algebra over a field.
 
 
@@ -806,9 +811,10 @@ for the definition of an algebra over a field.
 \begin{array}{l}
 \boxed{
 \underbrace{T^i T^j-T^j T^i}_{[T^i, T^j]}
-= i C_{ijk}T^k
-} 
-\text{({\bf Lie Algebra} commutation relations)}
+= i f_{ijk}T^k
+\quad
+\text{(\bf Lie Algebra commutation relations)}
+}
 \\
 \bcen
 \xymatrix@R=2pc@C=1pc{
@@ -846,7 +852,7 @@ i
 &
 &j
 \\
-&C_{ijk}
+&f_{ijk}
 \ar@{~}[d]
 \ar@{~}[ul]
 \ar@{~}[ur]
@@ -860,31 +866,42 @@ a
 \end{array}
 \label{eq-lie-alg-com-rels}
 \eeq
-The $C_{ijk}$ tensors are called the {\bf structure constants} of the Lie Algebra. They define
+The $f_{ijk}$ tensors are called the {\bf structure constants} of the Lie Algebra. They define
 a 3 gluon vertex
 in term of the generators
-$T^i$.
+$T^i$.\footnote{It's possible
+to distinguish between upper and lower gluon indices (i.e., to give the gluon arrows a direction. In that case, the Lie Algebra commutation relations would be $[T^i, T^j]= f\indices{^{ij}_k}T^k$
+and the gluon
+indices could be lowered
+and raised using the metric
+$g_{ij}=\tr(T^i T^j)$.
+But since we are assuming 
+$g_{ij}=K\delta_i^j$,
+there is no need to do
+this.
+}
 
 
 If $(T^j)\indices{_a^b}$ are the matrix rep (the funrep) of the generators
 of a group $\calg$, then Eq.(\ref{eq-lie-alg-com-rels}
 ) shows that
 the matrices $(M^k)_{ij}=
-C_{ijk}$
+-iC_{ijk}$
 are also a matrix rep (the adrep) of
 the generators of $\calg$.
 
 Since $\tr(T^k T^{k'})=\delta(k, k')$,
+Eq.(\ref{eq-lie-alg-com-rels}) implies
 
 \beq
 \tr([T^i, T^j]T^k)=
-iC_{ijk}
+if_{ijk}
 \eeq
 
 \beq
 \begin{array}{l}
 \boxed{
-iC_{ijk}
+if_{ijk}
 =\tr([T^i, T^j]T^k)
 =
 (T^i)\indices{_a^c}
@@ -901,7 +918,7 @@ i
 \xymatrix@R=1pc@C=1pc{
 &i\ar@{~}[d]
 \\
-&C_{ijk}
+&f_{ijk}
 &
 \\
 j\ar@{~}[ur]
@@ -966,14 +983,14 @@ Note that
 \beq
 \begin{array}{l}
 \boxed{
-C_{ijk}=-C_{jik}
+f_{ijk}=-f_{jik}
 }
 \\
 \bcen
 \xymatrix@R=1pc@C=1pc{
 &k\ar@{~}[d]
 \\
-&C_{ijk}
+&f_{ijk}
 &
 \\
 i\ar@{~}[ur]
@@ -987,7 +1004,7 @@ i\ar@{~}[ur]
 \xymatrix@R=1pc@C=1pc{
 &k\ar@{~}[d]
 \\
-&C_{ijk}
+&f_{ijk}
 \ar@{~}[dl]
 \ar@{~}[dr]
 &
@@ -1006,7 +1023,7 @@ i\ar@{~}[urr]
 \xymatrix@R=1pc@C=1pc{
 &k\ar@{~}[d]
 \\
-&C_{\rvi\rvj k}
+&f_{\rvi\rvj k}
 &
 \\
 i\ar@{~}[ur]
@@ -1020,7 +1037,7 @@ i\ar@{~}[ur]
 \xymatrix@R=1pc@C=1pc{
 &k\ar@{~}[d]
 \\
-&C_{\rvj\rvi k}
+&f_{\rvj\rvi k}
 &
 \\
 i\ar@{~}[ur]
@@ -1031,13 +1048,13 @@ i\ar@{~}[ur]
 \text{(Convention L)}
 \end{array}
 \eeq
-In fact, the tensor $C_{ijk}$
+In fact, the tensor $f_{ijk}$
 is {\bf totally antisymmetric} (i.e., it changes
 sign under a transposition
 of any two indices).
 
 \begin{claim}
-$C_{ijk}$ is 
+$f_{ijk}$ is 
 a real number.
 \end{claim}
 \proof
@@ -1102,7 +1119,7 @@ i
 &
 &j
 \\
-&C_{ijk}
+&f_{ijk}
 \ar@{~}[d]
 \ar@{~}@[red][ul]
 \ar@{~}[ur]
@@ -1123,20 +1140,20 @@ a
 \beq
 \begin{array}{l}
 \boxed{
-C_{ijm}C_{mkl}
+f_{ijm}f_{mkl}
 -
-C_{ljm}C_{mki}
+f_{ljm}f_{mki}
 =
-C_{iml}C_{jkm}
-}
+f_{iml}f_{jkm}\quad
+\text{\bf(Jacobi identity)}} 
 \\
 \bcen
 \xymatrix@C=3pc{
 i\ar@{~}[d]
 &l\ar@{~}[d]
 \\
-C_{ijm}
-&C_{mkl}\ar@{~}[l]|{\sum m}
+f_{ijm}
+&f_{mkl}\ar@{~}[l]|{\sum m}
 \\
 j\ar@{~}[u]
 &
@@ -1149,8 +1166,8 @@ k\ar@{~}[u]
 i\ar@{~}[dr]
 &l\ar@{~}[dl]
 \\
-C_{ijm}
-&C_{mkl}\ar@{~}[l]|{\sum m}
+f_{ijm}
+&f_{mkl}\ar@{~}[l]|{\sum m}
 \\
 j\ar@{~}[u]
 &
@@ -1164,9 +1181,9 @@ i\ar@{~}[rd]
 &
 &l\ar@{~}[ld]
 \\
-&C_{iml}\ar@{~}[d]|{\sum m}
+&f_{iml}\ar@{~}[d]|{\sum m}
 \\
-&C_{jkm}
+&f_{jkm}
 \\
 j\ar@{~}[ur]
 &&k\ar@{~}[ul]
@@ -1176,7 +1193,58 @@ j\ar@{~}[ur]
 \eeq
 \end{claim}
 \proof
-One can prove this algebraically.
+
+Note that
+
+\beqa
+\tr\left(
+[[T^i, T^j],T^k]T^l
+\right)
+&=&
+\tr\left(
+f_{ijm}[T^m, T^k]
+\right)
+\\
+&=&
+\tr\left(
+f_{ijm}f_{mkl'}T^{l'}T^l
+\right)
+\\
+&=&
+f_{ijm}f_{mkl}
+\eeqa
+so
+the Jacobi identity 
+can be restated as
+
+\beq
+\tr\left(
+\left\{
+[[T^i, T^j], T^k]
++
+[[T^j, T^k], T^i]
++
+[[T^k, T^i], T^j]
+\right\}T^l 
+\right)=0
+\eeq
+Hence,
+the claim follows if we can prove that
+
+\beq
+\underbrace{[[T^i, T^j], T^k]
++
+[[T^j, T^k], T^i]
++
+[[T^k, T^i], T^j]}_{
+\text{cyclic permutations of $ijk$}}
+=0
+\label{eq-ttt-cyclic}
+\eeq
+If we expand
+the left hand side on Eq.(\ref{eq-ttt-cyclic}),
+we find 6 terms that cancel
+in pairs.
 \qed
 
 Note Claim
@@ -1184,21 +1252,36 @@ Note Claim
 can be undertood
 as the Lie Algebra commutation relations
 Eq.(\ref{eq-lie-alg-com-rels}), but stated in the adrep
-instead of the funrep.
+instead of the funrep. Indeed,
+if 
+
+\beq
+\TT^i_{jk} = -iC_{ijk}
+\eeq
+then Claim
+\ref{cl-cijk-is-invariant}
+becomes
+
+\beq
+(\TT^i \TT^l - \TT^l \TT^i)_{jk}
+=
+iC_{ilm}(\TT^m)_{jk}
+\eeq
+
 
 Note that Claim
 \ref{cl-cijk-is-invariant}
-can be understood as a statement of the fact that $C_{ijk}$ is a tensor invariant.
+can be understood as a statement of the fact that $f_{ijk}$ is a tensor invariant.
 
 \beq
 \begin{array}{l}
 \boxed{
 0=
-C_{ijm}C_{mkl}
+f_{ijm}f_{mkl}
 -
-C_{ljm}C_{mki}
+f_{ljm}f_{mki}
 -
-C_{iml}C_{jkm}
+f_{iml}f_{jkm}
 }
 \\
 0=
@@ -1207,8 +1290,8 @@ C_{iml}C_{jkm}
 i\ar@{~}@[red][d]
 &l\ar@{~}[d]
 \\
-C_{ijm}
-&C_{mkl}\ar@{~}[l]|{\sum m}
+f_{ijm}
+&f_{mkl}\ar@{~}[l]|{\sum m}
 \\
 j\ar@{~}[u]
 &
@@ -1221,8 +1304,8 @@ k\ar@{~}[u]
 i\ar@{~}@[red][dr]
 &l\ar@{~}[dl]
 \\
-C_{ljm}
-&C_{mki}\ar@{~}[l]|{\sum m}
+f_{ljm}
+&f_{mki}\ar@{~}[l]|{\sum m}
 \\
 j\ar@{~}[u]
 &
@@ -1236,9 +1319,9 @@ i\ar@{~}@[red][rd]
 &
 &l\ar@{~}[ld]
 \\
-&C_{iml}\ar@{~}[d]|{\sum m}
+&f_{iml}\ar@{~}[d]|{\sum m}
 \\
-&C_{jkm}
+&f_{jkm}
 \\
 j\ar@{~}[ur]
 &&k\ar@{~}[ul]
