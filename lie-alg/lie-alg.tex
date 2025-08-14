@@ -1,38 +1,25 @@
 \chapter{Lie Algebras}
 \label{ch-lie-alg}
 
-$i\in\ZZ_{[1,N]}$, $a,b\in\ZZ_{[1,n]}$
+This chapter is based on 
+Ref.\cite{birdtracks-book}.
+\section{Generators (infinitesimal transformations)}
+
+Consider Hermitian matrices $T^i\in \CC^{n\times n}$
+for $i=1,2, \ldots, N$
+that satisfy
 
 \beq
-(C_{Adj}^i)\indices{_b^a}=
-\frac{1}{\sqrt{K}}
-(T^i)\indices{_b^a}=
-\bcen
-\xymatrix{
-&a\ar[d]
-\\
-i\ar@{~}[r]
-&C_{Adj}^i
-\ar[d]
-\\
-&b
-}
-\ecen
+\tr(T^i T^j)=K\delta(i, j)
+\label{eq-gluon-mass}
 \eeq
-In the CC convention, we will always
-start reading the indices at the wavy undirected leg.
-Note that we list the indices of
-$T^i$ in the counter-clockwise (CC)
-direction, starting at the $i$ leg.
 
-The matrices $T^i$ are called
-the generators.
-
+These matrices are called
+the {\bf generators}
+of infinitesimal transformations.
 
 It's customary to choose 
-generators so that they are 
-Hermitian and $K=\frac{1}{2}$.
-\footnote{For $SU(2)$,
+generators so that  $K=\frac{1}{2}$.\footnote{For $SU(2)$,
 it is customary to
 use $T^i =\frac{1}{2}\s_i$,
 where $\s_i$ for $i=1,2,3$ are the Pauli matrices.
@@ -40,26 +27,68 @@ For $SU(3)$,
 it is customary to choose $T^i=
 \frac{1}{2}\lam_i$
 where $\lam_i$
-for $i=1,2, \ldots, 8$ are the Gelll-Mann matrices.}
+for $i=1,2, \ldots, 8$ are the Gelll-Mann matrices.
+For both of these choices,
+$K=\frac{1}{2}$.}
 However, we will often set $K=1$
 for intermediate calculations
 and restore $K\neq 1$ at the end by dimensional analysis. 
 Just remember that each $T^j$ scales as $\sqrt{K}$. 
-For example, if
-an equation says
+For example, given
+the equation 
 $\tr(T^iT^j)=\delta(i,j)$,
 we know that when $K\neq 1$,
 $\tr(T^iT^j)=K\delta(i,j)$
 so both sides of the equation scale as $K$.
 
+We will use
+the following
+scaled version of $T^j$
+as a birdtrack. Define
+
+\beq
+(C_{Adj}^i)\indices{_b^a}=
+\frac{1}{\sqrt{K}}
+(T^i)\indices{_b^a}=
+\frac{1}{\sqrt{K}}
+\bcen
+\xymatrix{
+&a\ar[d]
+\\
+i\ar@{~}[r]
+&T^i
+\ar[d]
+\\
+&b
+}
+\ecen
+\eeq
+In the CC convention, we will always
+start reading the indices 
+of this node at the wavy undirected leg.
+
+$Adj$ stands the 
+Adjoint. In this node (vertex), an adjoint representation (adrep) particle (wavy line, gluon) is generated (released) by
+a fundamental representation (funrep)
+particle 
+(straight solid line, arrow).
+
+
+
+In terms of
+birdtracks, Eq.(\ref{eq-gluon-mass})
+becomes
 
 
 \beq
 \begin{array}{ll}
 \boxed{
-(T^i)\indices{_b^a}(T^j)\indices{_a^b}=
+(T^i)\indices{
+^b_a}
+(T^j)\indices{
+^a_b}=
 \tr(T^iT^j)=
-K \delta(i,j)
+\delta(i,j)
 }
 &
 \xymatrix{
@@ -70,18 +99,20 @@ i
 \ar@/^2pc/[l]|{\sum b}
 &j\ar@{~}[l]
 }
-=K
+=
 \xymatrix{&\ar[l]|\bullet}
 \end{array}
 \eeq
 
+We can now define the projection operator
+for the adrep
+(gluon exchange between 2 funrep particles)
 \beq
 \boxed
 {(P_{Adj})\indices{
 _b^a_d^c
 }
 =
-\frac{1}{K}
 \sum_i
 (T^i)\indices{_b^a}
 (T^i)\indices{_d^c}}
@@ -101,7 +132,6 @@ a
 }
 \ecen
 =
-\frac{1}{K}
 \bcen
 \xymatrix@R=1pc@C=2pc{
 b
@@ -123,32 +153,38 @@ arrow that starts with a
 this is the first index in the CC 
 convention.
 
-$H\in V^n\otimes \dual{V}^n$
+Note that if
+$x\in V^n\otimes \dual{V}^n$,
+then
 
 \beq
 (P_{Adj})\indices{
 _b^a_d^c
 }
-H\indices{_c^d}
+x\indices{_c^d}
 =
 \sum_i (T^i)\indices{_b^a}
 \underbrace{
 \left[(T^i)\indices{_d^c}
- H\indices{_c^d}
-\right]}_{h_i\in\RR}
+ x\indices{_c^d}
+\right]}_{\eps_i\in\RR}
 \eeq
 
-$
-G = 1 + i D \in \calg
-$
+An group element $G\in\calg$
+that is infinitesimal 
+close to the the identity
+$1$ can be parametrized by
 
-$\eps_i\in\RR $, $|\eps_i|<<1$
 
-$D=\sum_i \eps_i T^i =V^n\otimes \dual{V}^n
-$
+\beq
+G = 1 + i \sum_i 
+\eps_i T^i
+\eeq
+where $\eps_i\in\RR $
+and $|\eps_i|<<1$.
 
 Recall Eq.(\ref{eq-xprime-eq-gg-x}).
-If $x\in V^{n^p}\otimes \dual{V}^{n^q}$, $\GG\in \calg\subset GL(n^{p+q}, \CC)$,
+If $x\in V^{n^p}\otimes \dual{V}^{n^q}$, and $\GG\in \calg\subset GL(n^{p+q}, \CC)$,
 
 \beq
 (x')\indices{
@@ -183,11 +219,15 @@ _{a_i}
 ^{d_i}
 }
 \prod_{i=1}^q
-G\indices{
+\dual{G}\indices{
 ^{b_i}
 _{c_i}
 }
 \eeq
+If $\GG$
+is infinitesimally
+close to the identity,
+then we can parametrize it as
 
 \beqa
 \GG\indices{
@@ -202,21 +242,36 @@ G\indices{_{a_i}^{d_i}}
 1+i\sum_j \eps_j 
 (T^j)\indices{_{a_i}^{d_i}}
 \\
-G\indices{^{b_i}_{c_i}}
+\dual{G}\indices{^{b_i}_{c_i}}
 &=&
-(G^*)\indices{_{b_i}^{c_i}}
-=
-1-i\sum_j\eps_j
-(T^{j*})\indices{_{b_i}^{c_i}}
-=
 1-i\sum_j\eps_j
 (T^j)\indices{^{b_i}_{c_i}}
 \eeqa
 
+
+
+Define
+
+\beq
+(\TT^j)
+\indices{_\alp^\beta}
+=
+\left[
+(T^j)\indices{_{a_i}^{d_i}}
+\frac{1}{\delta_{a_i}^{d_i}}
+-
+(T^j)\indices{^{b_i}_{c_i}}
+\frac{1}{\delta^{b_i}_{c_i}}
+\right]
+\delta
+^{d^{:p}}
+_{a^{:p}}
+\delta
+^{b^{:q}}
+_{c^{:q}}
+\eeq
 When $x_\alp' =x_\alp$, 
 to first order in $\eps_i$,
-
-
 
 \beq
 0=(\TT^j)\indices{_\alp^\beta}x_\beta=
@@ -238,25 +293,9 @@ _{d^{:p}}
 ^{c^{:q}}
 }
 \eeq
+For example,
+if we define
 
-\beq
-(\TT^j)
-\indices{_\alp^\beta}
-=
-\left[
-(T^j)\indices{_{a_i}^{d_i}}
-\frac{1}{\delta_{a_i}^{d_i}}
--
-(T^j)\indices{^{b_i}_{c_i}}
-\frac{1}{\delta^{b_i}_{c_i}}
-\right]
-\delta
-^{d^{:p}}
-_{a^{:p}}
-\delta
-^{b^{:q}}
-_{c^{:q}}
-\eeq
 
 \beq
 \begin{array}{l}
@@ -353,6 +392,7 @@ b_1
 \ecen
 \end{array}
 \eeq
+then
 
 \beq
 \begin{array}{l}
@@ -456,6 +496,38 @@ b_1
 \end{array}
 \eeq
 
+\section{Clebsch-Gordan matrices}
+The Clebsch Gordan (CG) matrices are 
+introduced in 
+Ch.\ref{ch-clebsch-gordan}.
+Note
+that 
+the generators
+$(T^i)\indices{_a^b}$
+are a simple
+kind of CG matrix,
+one with 
+\begin{itemize}
+\item a gluon
+(adrep) particle 
+instead of
+a general $\lam$ rep
+particle emanating 
+from the $i$
+index,
+\item 
+a particle
+of the funrep
+entering
+and another leaving
+the node,
+instead of 
+any number of
+funrep particles entering and leaving.
+\end{itemize}
+
+
+
 Since $\GG= 1 +i\sum_j \eps_j \TT^j$,
 generators decompose in the same way as
 the group elements
@@ -519,18 +591,15 @@ C_\lam}
 \end{array}
 \eeq
 
-Clebsch-Gordan
-matrices are invariant matrices.
+The CG matrices 
+are matrix invariants.
 
 \beq
-[G, C_\lam]=GC_\lam - C_\lam G=0
-\eeq
-
-\beq
-C_\lam =G^\dagger C_\lam G =
+C_\lam =
  G_\lam^\dagger C_\lam
  G
 \eeq
+Hence,
 
 \beq
 0 = -T_\lam^j C_\lam
@@ -618,13 +687,18 @@ a&C_\lam\ar[l]
 \end{array}
 \right\}
 \eeq
-Multiplying on the left $C^\dagger_\lam$, we get
+Multiplying on the left $C^\dagger_\lam$, we obtain
+an expression
+for the generator  $T_\lam^i$
+in term
+the generators $T^j$
+(and $C_\lam$ CG matrices).
 
 \beq
 \begin{array}{l}
 \bcen
 \xymatrix@R=1pc@C=1.5pc{
-&j\ar@{~}[d]
+&j\ar@{~}@[red][d]
 &
 \\
 a
@@ -637,7 +711,7 @@ a
 \\
 \bcen
 \xymatrix@C=1pc@R=1pc{
-&&j\ar@{~}[d]
+&&j\ar@{~}@[red][d]
 \\
 &
 &T^j
@@ -665,7 +739,7 @@ a
 +
 \bcen
 \xymatrix@C=1pc@R=1pc{
-&&j\ar@/_1pc/@{~}[dd]
+&&j\ar@/_1pc/@{~}@[red][dd]
 \\
 &
 &
@@ -693,7 +767,7 @@ a
 -
 \bcen
 \xymatrix@C=.6pc@R=1pc{
-&&j\ar@/_1pc/@{~}[ddd]
+&&j\ar@/_1pc/@{~}@[red][ddd]
 \\
 &
 &
@@ -721,26 +795,113 @@ a
 \end{array}
 \eeq
 
+\section{Structure Constants
+(3 gluon vertex)}
+
+See Sec.\ref{sec-algebra-over-f})
+for the definition of an algebra over a field.
+
 
 \beq
 \begin{array}{l}
 \boxed{
-(\TT^i)_{jk}
+\underbrace{T^i T^j-T^j T^i}_{[T^i, T^j]}
+= i C_{ijk}T^k
+} 
+\text{({\bf Lie Algebra} commutation relations)}
+\\
+\bcen
+\xymatrix@R=2pc@C=1pc{
+&i\ar@{~}[d]
+&j\ar@{~}[d]
+&
+&
+\\
+a
+&T^i\ar[l]
+&T^j\ar[l]
+&c\ar[l]
+}
+\ecen
+-
+\bcen
+\xymatrix@R=2pc@C=1pc{
+&i\ar@{~}[dr]
+&j\ar@{~}[dl]
+&
+&
+\\
+a
+&T^j\ar[l]
+&T^i\ar[l]
+&c\ar[l]
+}
+\ecen
+=
+i
+\bcen
+\xymatrix@R=2pc@C=1pc
+{
+i
+&
+&j
+\\
+&C_{ijk}
+\ar@{~}[d]
+\ar@{~}[ul]
+\ar@{~}[ur]
+&
+\\
+a
+&T^k\ar[l]
+&c\ar[l]
+}
+\ecen
+\end{array}
+\label{eq-lie-alg-com-rels}
+\eeq
+The $C_{ijk}$ tensors are called the {\bf structure constants} of the Lie Algebra. They define
+a 3 gluon vertex
+in term of the generators
+$T^i$.
+
+
+If $(T^j)\indices{_a^b}$ are the matrix rep (the funrep) of the generators
+of a group $\calg$, then Eq.(\ref{eq-lie-alg-com-rels}
+) shows that
+the matrices $(M^k)_{ij}=
+C_{ijk}$
+are also a matrix rep (the adrep) of
+the generators of $\calg$.
+
+Since $\tr(T^k T^{k'})=\delta(k, k')$,
+
+\beq
+\tr([T^i, T^j]T^k)=
+iC_{ijk}
+\eeq
+
+\beq
+\begin{array}{l}
+\boxed{
+iC_{ijk}
+=\tr([T^i, T^j]T^k)
 =
 (T^i)\indices{_a^c}
-(T^k)\indices{_c^b}
 (T^j)\indices{_b^a}
+(T^k)\indices{_c^b}
 -
-(T^i)\indices{_a^c}
 (T^j)\indices{_c^b}
+(T^i)\indices{_a^c}
 (T^k)\indices{_b^a}
 }
 \\
+i
 \bcen
 \xymatrix@R=1pc@C=1pc{
 &i\ar@{~}[d]
 \\
-&\TT^i
+&C_{ijk}
 &
 \\
 j\ar@{~}[ur]
@@ -805,28 +966,28 @@ Note that
 \beq
 \begin{array}{l}
 \boxed{
-(\TT^i)_{jk}=-(\TT^i)_{kj}
+C_{ijk}=-C_{jik}
 }
 \\
 \bcen
 \xymatrix@R=1pc@C=1pc{
-&i\ar@{~}[d]
+&k\ar@{~}[d]
 \\
-&\TT^i
+&C_{ijk}
 &
 \\
-j\ar@{~}[ur]
+i\ar@{~}[ur]
 &
-&k\ar@{~}[lu]
+&j\ar@{~}[lu]
 }
 \ecen
 =
 -
 \bcen
 \xymatrix@R=1pc@C=1pc{
-&i\ar@{~}[d]
+&k\ar@{~}[d]
 \\
-&\TT^i
+&C_{ijk}
 \ar@{~}[dl]
 \ar@{~}[dr]
 &
@@ -834,51 +995,75 @@ j\ar@{~}[ur]
 &
 &
 \\
-j\ar@{~}[urr]
+i\ar@{~}[urr]
 &
-&k\ar@{~}[ull]
+&j\ar@{~}[ull]
 }
 \ecen
 \text{(Convention CC)}
 \\
 \bcen
 \xymatrix@R=1pc@C=1pc{
-&i\ar@{~}[d]
+&k\ar@{~}[d]
 \\
-&\TT^i_{\rvj\rvk}
+&C_{\rvi\rvj k}
 &
 \\
-j\ar@{~}[ur]
+i\ar@{~}[ur]
 &
-&k\ar@{~}[lu]
+&j\ar@{~}[lu]
 }
 \ecen
 =
 -
 \bcen
 \xymatrix@R=1pc@C=1pc{
-&i\ar@{~}[d]
+&k\ar@{~}[d]
 \\
-&\TT^i_{\rvk\rvj}
+&C_{\rvj\rvi k}
 &
 \\
-j\ar@{~}[ur]
+i\ar@{~}[ur]
 &
-&k\ar@{~}[lu]
+&j\ar@{~}[lu]
 }
 \ecen
 \text{(Convention L)}
 \end{array}
 \eeq
+In fact, the tensor $C_{ijk}$
+is {\bf totally antisymmetric} (i.e., it changes
+sign under a transposition
+of any two indices).
 
-\beq
-(\TT^i)_{jk}
-\eqdef 
--iC_{ijk}
-=
--\frac{1}{K}\tr([T^i, T^j]T^k)
-\eeq
-$C_{ijk}$, called the {bf structure constants}, is totally antisymmetric
+\begin{claim}
+$C_{ijk}$ is 
+a real number.
+\end{claim}
+\proof
+
+\beqa
+\left[i\tr([T^i, T^j]T^k)\right]^\dagger
+&=&
+(-i)\tr(T^k[T^j, T^i])
+\\
+&=&
+(-i)\tr([T^j, T^i]T^k)
+\\
+&=&
+i\tr([T^j, T^k]T^k)
+\eeqa
+\qed
+
+Note that the birdtrack for the Lie Algebra 
+commutation
+relations Eq.(\ref{eq-lie-alg-com-rels})
+can be understood as 
+the statement 
+that the generators $T^j$
+are matrix invariants.
+Below we restate 
+Eq.(\ref{eq-lie-alg-com-rels}) to make that obvious
 
 \beq
 0=
@@ -909,7 +1094,7 @@ a
 &c\ar[l]
 }
 \ecen
--
+-i
 \bcen
 \xymatrix@R=2pc@C=1pc
 {
@@ -917,7 +1102,7 @@ i
 &
 &j
 \\
-&\TT^i
+&C_{ijk}
 \ar@{~}[d]
 \ar@{~}@[red][ul]
 \ar@{~}[ur]
@@ -930,122 +1115,11 @@ a
 \ecen
 \eeq
 
-\beq
-\begin{array}{l}
-\boxed{
-\underbrace{T^i T^j-T^j T^i}_{[T^i, T^j]}
-= i C_{ijk}T^k
-} 
-\text{({\bf Lie Algebra} commutation relations)}
-\\
-\bcen
-\xymatrix@R=2pc@C=1pc{
-&i\ar@{~}[d]
-&j\ar@{~}[d]
-&
-&
-\\
-a
-&T^i\ar[l]
-&T^j\ar[l]
-&c\ar[l]
-}
-\ecen
--
-\bcen
-\xymatrix@R=2pc@C=1pc{
-&i\ar@{~}[dr]
-&j\ar@{~}[dl]
-&
-&
-\\
-a
-&T^j\ar[l]
-&T^i\ar[l]
-&c\ar[l]
-}
-\ecen
-=
-(-i)
-\bcen
-\xymatrix@R=2pc@C=1pc
-{
-i
-&
-&j
-\\
-&C_{ijk}
-\ar@{~}[d]
-\ar@{~}[ul]
-\ar@{~}[ur]
-&
-\\
-a
-&T^k\ar[l]
-&c\ar[l]
-}
-\ecen
-\end{array}
-\eeq
-
-\beq
-\begin{array}{l}
-\boxed{
-0=
-(\TT^i)_{jm} C_{mkl}
--
- C_{ljm} (\TT^i)_{mk}
--
- C_{jkm}(\TT^i)_{ml}
-}
-\\
-0=
-\bcen
-\xymatrix@C=3pc{
-i\ar@{~}@[red][d]
-&l\ar@{~}[d]
-\\
-\TT^i
-&C_{mkl}\ar@{~}[l]|{\sum m}
-\\
-j\ar@{~}[u]
-&
-k\ar@{~}[u]
-}
-\ecen
--
-\bcen
-\xymatrix@C=3pc{
-i\ar@{~}@[red][dr]
-&l\ar@{~}[dl]
-\\
-C_{ljm}
-&\TT^i\ar@{~}[l]|{\sum m}
-\\
-j\ar@{~}[u]
-&
-k\ar@{~}[u]
-}
-\ecen
--
-\bcen
-\xymatrix{
-i\ar@{~}@[red][rd]
-&
-&l\ar@{~}[ld]
-\\
-&\TT^i\ar@{~}[d]|{\sum m}
-\\
-&C_{jkm}
-\\
-j\ar@{~}[ur]
-&&k\ar@{~}[ul]
-}
-\ecen
-\end{array}
-\eeq
 
 
+
+\begin{claim}
+\label{cl-cijk-is-invariant}
 \beq
 \begin{array}{l}
 \boxed{
@@ -1100,12 +1174,86 @@ j\ar@{~}[ur]
 \ecen
 \end{array}
 \eeq
+\end{claim}
+\proof
+One can prove this algebraically.
+\qed
+
+Note Claim
+\ref{cl-cijk-is-invariant}
+can be undertood
+as the Lie Algebra commutation relations
+Eq.(\ref{eq-lie-alg-com-rels}), but stated in the adrep
+instead of the funrep.
+
+Note that Claim
+\ref{cl-cijk-is-invariant}
+can be understood as a statement of the fact that $C_{ijk}$ is a tensor invariant.
+
+\beq
+\begin{array}{l}
+\boxed{
+0=
+C_{ijm}C_{mkl}
+-
+C_{ljm}C_{mki}
+-
+C_{iml}C_{jkm}
+}
+\\
+0=
+\bcen
+\xymatrix@C=3pc{
+i\ar@{~}@[red][d]
+&l\ar@{~}[d]
+\\
+C_{ijm}
+&C_{mkl}\ar@{~}[l]|{\sum m}
+\\
+j\ar@{~}[u]
+&
+k\ar@{~}[u]
+}
+\ecen
+-
+\bcen
+\xymatrix@C=3pc{
+i\ar@{~}@[red][dr]
+&l\ar@{~}[dl]
+\\
+C_{ljm}
+&C_{mki}\ar@{~}[l]|{\sum m}
+\\
+j\ar@{~}[u]
+&
+k\ar@{~}[u]
+}
+\ecen
+-
+\bcen
+\xymatrix{
+i\ar@{~}@[red][rd]
+&
+&l\ar@{~}[ld]
+\\
+&C_{iml}\ar@{~}[d]|{\sum m}
+\\
+&C_{jkm}
+\\
+j\ar@{~}[ur]
+&&k\ar@{~}[ul]
+}
+\ecen
+\end{array}
+\eeq
+
+
+\section{Two types of gluon exchanges}
 
 \beq
 \boxed
 {{(P_{Adj})}\indices{_a^b_c^d}
 =
-\frac{1}{K}
 \sum_i (T^i)\indices{_a^b}
 (T^i)\indices{_c^d}}
 \bcen
@@ -1125,7 +1273,6 @@ b\ar[ur]
 }
 \ecen
 =
-\frac{1}{K}
 \bcen
 \xymatrix@C=3pc{
 a
@@ -1149,7 +1296,6 @@ b\ar[u]
 \beq
 \boxed{\PP\indices{_a^b_\beta^\gamma}
 =
-\frac{1}{K}
 \sum_i
 (T^i)\indices{_a^b}
 (T^i_\lam)\indices{_\beta^\gamma}
@@ -1171,7 +1317,6 @@ b\ar[ur]
 }
 \ecen
 =
-\frac{1}{K}
 \bcen
 \xymatrix@C=3pc{
 a
