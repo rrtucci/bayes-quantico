@@ -21,6 +21,18 @@ for $i=1,2, \ldots, N$,
 $\eps_i\in\RR $
 and $|\eps_i|<<1$.
 
+The $T^i$ matrices are called
+the {\bf generators}
+of infinitesimal transformations
+for group $\calg$.
+The generators of a group $\calg$ span a vector space 
+called a Lie algebra $\mathfrak{g}$.\footnote{See Sec.\ref{sec-algebra-over-f}
+for the definition of an algebra over a field.
+} For example,
+the generators of the group SU(2) 
+span the {\bf Lie algebra} $\mathfrak{su(2)}$.
+
+
 Assume that the $T^i$ matrices are Hermitian and
 that they satisfy
 
@@ -29,10 +41,6 @@ that they satisfy
 \label{eq-gluon-mass}
 \eeq
 
-We will call these matrices 
-the {\bf generators}
-of infinitesimal transformations
-for group $\calg$.
 
 It's customary to choose 
 generators so that  $K=\frac{1}{2}$.\footnote{For $SU(2)$,
@@ -84,8 +92,9 @@ start reading the indices
 of this node at the wavy undirected leg.
 
 $Adj$ stands the 
-Adjoint. In this node (vertex), an adjoint representation (adrep) particle (wavy line, gluon) is generated (released) by
-a fundamental representation (funrep)
+Adjoint. In this node (vertex), an adjoint representation (adjrep) particle
+(wavy line, gluon) is generated (released) by
+a defining representation (defrep)
 particle 
 (straight solid line, arrow).
 
@@ -122,7 +131,7 @@ i
 
 We can now define the projection operator
 for the adrep
-(gluon exchange between 2 funrep particles)
+(gluon exchange between 2 defrep particles)
 \beq
 \boxed
 {(P_{Adj})\indices{
@@ -514,7 +523,7 @@ kind of CGC matrix,
 one with 
 \begin{itemize}
 \item a gluon
-(adrep) particle 
+(adjrep) particle 
 instead of
 a general $\lam$ rep
 particle emanating 
@@ -522,13 +531,13 @@ from the $i$
 index,
 \item 
 a particle
-of the funrep
+of the defrep
 entering
 and another leaving
 the node,
 instead of 
 any number of
-funrep particles entering and leaving.
+defrep particles entering and leaving.
 \end{itemize}
 
 
@@ -803,8 +812,6 @@ a
 \section{Structure Constants
 (3 gluon vertex)}
 
-See Sec.\ref{sec-algebra-over-f}
-for the definition of an algebra over a field.
 
 
 \beq
@@ -874,7 +881,8 @@ to distinguish between upper and lower gluon indices (i.e., to give the gluon ar
 and the gluon
 indices could be lowered
 and raised using the metric
-$g_{ij}=\tr(T^i T^j)$.
+(called the {\bf Cartan-Killing form})
+$g_{ij}=\tr((T^i)^\dagger T^j)$. 
 But since we are assuming 
 $g_{ij}=K\delta_i^j$,
 there is no need to do
@@ -882,7 +890,7 @@ this.
 }
 
 
-If $(T^j)\indices{_a^b}$ are the matrix rep (the funrep) of the generators
+If $(T^j)\indices{_a^b}$ are the matrix rep (the defrep) of the generators
 of a group $\calg$, then Eq.(\ref{eq-lie-alg-com-rels}
 ) shows that
 the matrices $(M^k)_{ij}=
@@ -1252,11 +1260,11 @@ Note Claim
 can be undertood
 as the Lie Algebra commutation relations
 Eq.(\ref{eq-lie-alg-com-rels}), but stated in the adrep
-instead of the funrep. Indeed,
+instead of the defrep. Indeed,
 if 
 
 \beq
-\TT^i_{jk} = -iC_{ijk}
+\TT^i_{jk} = -if_{ijk}
 \eeq
 then Claim
 \ref{cl-cijk-is-invariant}
@@ -1333,9 +1341,17 @@ j\ar@{~}[ur]
 
 \section{Two types of gluon exchanges}
 
+Consider the following two gluon exchange
+operators. Note that
+$\PP^2=\PP$,  but $\QQ^2\neq \QQ$,
+so $\PP$ is a bonafide projection operator
+but not $\QQ$. $\QQ\QQ^\dagger =\PP$ so
+$\QQ$ is like half of a projection operator.
+ 
+
 \beq
 \boxed
-{{(P_{Adj})}\indices{_a^b_c^d}
+{{\PP}\indices{_a^b_c^d}
 =
 \sum_i (T^i)\indices{_a^b}
 (T^i)\indices{_c^d}}
@@ -1345,7 +1361,7 @@ a
 &
 &d
 \\
-&P_{Adj}\ar@{|->}[ul]
+&\PP\ar@{|->}[ul]
 \ar@{<-}[ur]
 \ar[dr]
 &
@@ -1377,7 +1393,7 @@ b\ar[u]
 
 
 \beq
-\boxed{\PP\indices{_a^b_\beta^\gamma}
+\boxed{\QQ\indices{_a^b_\beta^\gamma}
 =
 \sum_i
 (T^i)\indices{_a^b}
@@ -1389,7 +1405,7 @@ a
 &
 &\gamma
 \\
-&\PP\ar@{|->}[ul]
+&\QQ\ar@{|->}[ul]
 \ar@2{<-}[ur]
 \ar@2{->}[dr]
 &
@@ -1417,6 +1433,73 @@ b\ar[u]
 \ecen
 \eeq
 
+\begin{claim}
+If $\QQ\indices{_b^a}$ is
+the matrix with $(\nu, \gamma)$ entries 
+$\QQ\indices{_b^a_\nu^\gamma}$, then
+ \beq
+ [
+ \QQ\indices{_b^a},
+ \QQ\indices{_d^c}
+ ]=
+\PP\indices
+{
+_{b'}
+^a
+_d
+^c
+}
+\QQ\indices{
+_b
+^{b'}
+}
+-
+\QQ\indices{
+_{a'}
+^a
+}
+\PP\indices{
+_b
+^{a'}
+_c
+^d
+}
+\eeq
+
+\end{claim}
+\proof
+ 
+\beq
+(T^j)\indices{_b^a}
+(T^i)\indices{_d^c}
+[T^j_\lam, T^i_\lam
+]=
+\left[
+(T^i)\indices{_{b'}^a}
+(T^k)\indices{_b^{b'}}
+-
+(T^k)\indices{_{a'}^{a}}
+(T^i)\indices{_b^{a'}}
+\right]
+(T^i)\indices{_d^c}
+T^k_\lam
+\eeq
+
+
+\beq
+(T^j)\indices{_b^a}
+(T^i)\indices{_d^c}
+if_{jik}T^k_\lam
+=
+if_{ikj}(T^j)\indices{_b^a}
+(T^i)\indices{_d^c}
+T^k_\lam
+\eeq
+\qed
+
+This claim can be visualized as follows.
+$\QQ$ is a tensor invariant so
+
 
 \beq
 0=
@@ -1436,7 +1519,7 @@ i\ar@{~}@[red][dr]
 \\
 \beta
 &T_\lam^i\ar@2{->}[l]
-&\PP\ar@2{->}[l]
+&\QQ\ar@2{->}[l]
 \ar@{|->}[ruu]
 &\gamma\ar@2{->}[l]
 }
@@ -1455,7 +1538,7 @@ i\ar@{~}@[red][drr]
 &
 \\
 \beta
-&\PP\ar@2{->}[l]
+&\QQ\ar@2{->}[l]
 \ar@{|->}[rruu]
 &T_\lam^i\ar@2{->}[l]
 &\gamma\ar@2{->}[l]
@@ -1468,7 +1551,7 @@ i\ar@{~}@[red][drr]
 a\ar[r]
 &T^i
 \ar[r]
-&\PP\ar@{|->}[r]
+&\QQ\ar@{|->}[r]
 \ar@2{->}[ddll]
 &b
 \\
@@ -1487,7 +1570,7 @@ i\ar@[red]@{~}[ur]
 \bcen
 \xymatrix{
 a\ar[r]
-&\PP
+&\QQ
 \ar[r]
 \ar@2{->}[ddl]
 &T^i\ar@{|->}[r]
@@ -1507,59 +1590,60 @@ i\ar@{~}@[red][urr]
 \end{array}
 \right\}
 \eeq
+Now multiplying by $(T^i)\indices{_c^d}$, we get
 
 \beq
 \begin{array}{l}
 \boxed{
-\PP\indices{
+\QQ\indices{
 _d
 ^c
 _\beta
 ^{\nu}
 }
-\PP\indices{
+\QQ\indices{
 _b
 ^a
 _{\nu}
 ^\gamma
 }
 -
-\PP\indices{
+\QQ\indices{
 _b
 ^a
 _\beta
 ^{\nu}
 }
-\PP\indices{
+\QQ\indices{
 _d
 ^c
 _\nu
 ^\gamma
 }
 =
-(P_{Adj})\indices
+\PP\indices
 {
-_x
+_{a'}
 ^a
 _d
 ^c
 }
-\PP\indices{
+\QQ\indices{
 _b
-^x
+^{a'}
 _\beta
 ^\gamma
 }
 -
-\PP\indices{
-_x
+\QQ\indices{
+_{b'}
 ^a
 _\beta
 ^\gamma
 }
-(P_{Adj})\indices{
+\PP\indices{
 _b
-^x
+^{b'}
 _d
 ^c
 }
@@ -1579,9 +1663,9 @@ c\ar[dr]
 &d
 \\
 \beta
-&\PP\ar@2{->}[l]
+&\QQ\ar@2{->}[l]
 \ar@{|->}[rru]
-&\PP\ar@2{->}[l]
+&\QQ\ar@2{->}[l]
 \ar@{|->}[ruu]
 &\gamma\ar@2{->}[l]
 }
@@ -1600,9 +1684,9 @@ c\ar[drr]
 &d
 \\
 \beta
-&\PP\ar@2{->}[l]
+&\QQ\ar@2{->}[l]
 \ar@{|->}[rruu]
-&\PP\ar@2{->}[l]
+&\QQ\ar@2{->}[l]
 \ar@{|->}[ur]
 &\gamma\ar@2{->}[l]
 }
@@ -1616,7 +1700,7 @@ a\ar[r]
 &T^i
 \ar[r]
 \ar@{~}[d]
-&\PP\ar@{|->}[r]
+&\QQ\ar@{|->}[r]
 \ar@2{->}@/_1pc/[ddll]
 &b
 \\
@@ -1635,7 +1719,7 @@ c\ar[r]
 \bcen
 \xymatrix{
 a\ar[r]
-&\PP
+&\QQ
 \ar@{|->}[r]
 \ar@2{->}[ddl]
 &T^j\ar[r]
@@ -1657,263 +1741,6 @@ c\ar[rr]
 \end{array}
 \eeq
 
-\begin{align}
-\sum_{i,j}
-(T_\lam^i)\indices{_\beta^\nu}
-(T_\lam^j)\indices{_\nu^\gamma}
-\left[
-(T^i)\indices{_d^c}
-(T^j)\indices{_b^a}
--
-(T^i)\indices{_b^a}
-(T^j)\indices{_d^c}
-\right]
-&=
-\sum_k
-(T^k_\lam)\indices{_\beta^\gamma}
-\left[
-\begin{array}{l}
-(T^k)\indices{
-	_b
-	^x
-}
-(P_{Adj})\indices
-{
-_x
-^a
-_d
-^c
-}
-\\
--
-(P_{Adj})\indices{
-_b
-^x
-_d
-^c
-}
-(T^k)\indices{
-	_x
-	^a
-}
-\end{array}
-\right]
-\\
-&=
-\sum_{k,i}
-(T^i)\indices{
-_d^c
-}
-(T^k_\lam)\indices{_\beta^\gamma}
-\left[
-\begin{array}{l}
-(T^k)\indices{
-	_b
-	^x
-}
-(T^i)\indices
-{
-_x
-^a
-}
-\\
--
-(T^i)\indices{
-	_b
-	^x
-}
-(T^k)\indices{
-_x
-^a
-}
-\end{array}
-\right]
-\end{align}
 
 
 
-
-
-\beq
-\sum_{ijk}
-\frac{1}{2}iC_{ijk}(T^k_\lam)
-\indices{_\beta^\gamma}
-\left[
-(T^i)\indices{_d^c}
-(T^j)\indices{_b^a}
--
-(T^i)\indices{_b^a}
-(T^j)\indices{_d^c}
-\right]
-=
-\sum_k
-(T^k_\lam)\indices{_\beta^\gamma}
-\left[
-\begin{array}{l}
-(T^k)\indices{
-	_b
-	^x
-}
-(P_{Adj})\indices
-{
-_x
-^a
-_d
-^c
-}
-\\
--
-(P_{Adj})\indices{
-_b
-^x
-_d
-^c
-}
-(T^k)\indices{
-	_x
-	^a
-}
-\end{array}
-\right]
-\eeq
-
-\beq
-\sum_{ij}
-\frac{1}{2}iC_{ijk}
-\left[
-(T^i)\indices{_d^c}
-(T^j)\indices{_b^a}
--
-(T^i)\indices{_b^a}
-(T^j)\indices{_d^c}
-\right]
-=
-\left[
-\begin{array}{l}
-(T^k)\indices{
-	_b
-	^x
-}
-(P_{Adj})\indices
-{
-_x
-^a
-_d
-^c
-}
-\\
--
-(P_{Adj})\indices{
-_b
-^x
-_d
-^c
-}
-(T^k)\indices{
-	_x
-	^a
-}
-\end{array}
-\right]
-\eeq
-
-\beq
-T\indices{
-_d
-^c
-}
-T\indices{
-_b
-^a
-}
--
-T\indices{
-_b
-^a
-}
-T\indices{
-_d
-^c
-}
-=
-(P_{Adj})\indices{
-^a_b^c_x
-}
-T\indices{
-^x_d
-}
--
-T\indices{
-_x^c
-}
-(P_{Adj})\indices{
-_b^a^x_d
-}
-\eeq
-
-\beq
-T\indices{
-^c_d
-}
-T\indices{
-^a_b
-}
--
-T\indices{
-^a_b
-}
-T\indices{
-^c_d
-}
-=
-T\indices{
-^a_d
-}
-\delta_b^c
--
-T\indices{
-^c_b
-}
-\delta_d^a
-\eeq
-
-For $SU(N)$,
-
-\beq
-(P_{Adj})\indices{
-_b
-^x
-_d
-^c
-}
-=
-\delta_{bd}^{xc}
--
-\delta_{db}^{xc}
-\eeq
-
-\beq
-T\indices{
-^c_d
-}
-T\indices{
-^a_b
-}
--
-T\indices{
-^a_b
-}
-T\indices{
-^c_d
-}
-=
-T\indices{
-^a_d
-}
-\delta_b^c
--
-T\indices{
-^c_b
-}
-\delta_d^a
-\eeq

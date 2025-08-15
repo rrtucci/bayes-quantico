@@ -97,20 +97,28 @@ is a map $\phi: \calg\rarrow \CC^{n\times n}$\footnote{More generally, the $\CC^
 
 \beq
 \phi(a)\phi(b)=
-\phi(ab)
+\phi(ab),
+\quad \phi(e) = I
 \eeq
-Such a map is called a {\bf homomorphism}.
-When a group is 
-defined using matrices, those
-matrices are called the {\bf defining representation}.
+where $e$ is the
+identity of the group
+and $I$ 
+is the identity matrix.
+Such a map is called a {\bf homomorphism}
+(because it preserves an operation).
 The map $\phi$ 
 partitions $\calg$
 into disjoints subsets (equivalence classes),
 such that all elements of $\calg$ in each disjoint subset 
 are represented by the same matrix.
 
+If the map $\phi$
+is 1-1, onto, we call it a {\bf faithful representation} 
 
-For example,
+
+When a group is 
+defined using matrices, those
+matrices are called the {\bf defining representation} (defrep). For example,
 the group
 of {\bf General Linear Transformations}
 is defined by
@@ -119,6 +127,21 @@ is defined by
 GL(n, \CC)=
 \{M\in \CC^{n\times n}: \det{M}\neq 0\}
 \eeq
+
+The {\bf adjoint representation} (adjrep)
+is defined in terms of the structure constants
+of the Lie Algebra. If the Lie Algebra satisfies
+$[T^i, T^j]= if_{ijk}T^k$,
+then the adjrep is given by the matrices 
+with $i,j$ entries $M^k_{ij}=-if\indices{^k_i_j}$.
+
+{\bf Irreducible representations} (irreps)
+are define in Ch. \ref{ch-reducibility}
+
+The {\bf fundamental representation} (funrep)
+is defined as the smallest irrep.. 
+The defrep equals the funrep for
+$SU(n), SO(n), SP(n)$, but not for $E_8$.
 
 
 
