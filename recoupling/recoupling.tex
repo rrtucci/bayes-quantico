@@ -33,69 +33,102 @@
 
 
 
-\beq
+\beq P_\lam
 C\indices{
-_{\rv{\lam}a}
-^{\rv{\nu}b}
-^{\rv{\mu}c}
+_{\lam a}
+^{\nu b}
+^{\mu c}
 }
 =
 \bcen
 \xymatrix{
-&&\rv{\mu}c\ar@[green][ld]
+&&\mu c\ar@[green][ld]
 \\
-\rv{\lam}a
-&C\indices{
-_{\rv{\lam}}
-^{\rv{\nu}}
-^{\rv{\mu}}
+\lam a
+&P_\lam C\indices{
+_{\lam}
+^{\nu}
+^{\mu}
 }\ar@[red][l]
 \\
-&&\rv{\nu}b\ar@[blue][lu]
+&&\nu b\ar@[blue][lu]
 }
 \ecen
 =
 \bcen
 \xymatrix{
-&&\rv{\mu}c\ar@[green][l]
+&&\mu c\ar@[green][l]
 \\
-\rv{\lam}a
-&C\indices{
-_{\rv{\lam}}
-^{\rv{\nu}}
-^{\rv{\mu}}
+\lam a
+&P_\lam C\indices{
+_{\lam}
+^{\nu}
+^{\mu}
 }\ar@[red][l]
 \ar@2{-}[u]
 \ar@2{-}[d]
 \\
-&&\rv{\nu}b\ar@[blue][l]
+&&\nu b\ar@[blue][l]
 }
 \ecen
 \eeq
 
+\beq
+\calc\indices{
+_\lam
+^\nu
+^\mu
+} = P_\lam
+C\indices{
+_\lam
+^\nu
+^\mu
+}
+\eeq
 
 \beq
-{\color{red}P_\rvlam}
+\calc_\lam \calc^\dagger_\lam=P_\lam^2 = P_\lam
+\eeq
+
+\beq
+\tr(P_\lam)=d_\lam
+\eeq
+where $d_\lam$ is the dimension of rep $\lam$.
+Actually, $\calc_\lam=P_\lam C_\lam=C_\lam$,
+but we make the $P_\lam$ explicit
+for pedagogical purposes.
+
+Note that if we divide
+$\calc_\lam$ by $\sqrt{d_\lam}$,
+then
+
+\beq
+\tr\left(\frac{\calc_\lam}
+{\sqrt{d_\lam}} 
+\frac{\calc^\dagger_\lam}
+{\sqrt{d_\lam}} 
+\right)=1
+\eeq
+
+
+
+\beq
+{\color{red}\calp_\lam}
 =
+\frac{1}{d_\lam}
 \bcen
 \xymatrix@C=3pc{
 &\ar@[green][l]
 &
 &\ar@[green][l]
 \\
-&(C^\dagger)
-\indices{
-^\rvlam
-_\rvmu
-_\rvnu
-}
+&\calc^\dagger
+_\lam
 \ar@2{-}[u]
 \ar@2{-}[d]
-&C\indices{
-_\rvlam
-^\rvnu
-^\rvmu
-}
+&
+\calc
+_\lam
 \ar@2{-}[u]
 \ar@2{-}[d]
 \ar@[red][l]
@@ -107,10 +140,15 @@ _\rvlam
 \ecen
 \eeq
 
+\beq
+\calp_\lam^2=
+\calp_\lam
+\eeq
+
 
 \beq
-{\color{blue}P_\rvnu}
-=\frac{d_\rvnu}{d_\rvlam}
+{\color{blue}\calp_\nu}
+=\frac{d_\nu}{d_\lam}
 \bcen
 \xymatrix@R=1pc{
 \\
@@ -128,11 +166,11 @@ _\rvlam
 &
 &\ar@[green][l]
 \\
-&C^\dagger
+&\calc^\dagger_\lam
 \ar@2{-}[u]
 \ar@2{-}[d]
 &
-&C
+&\calc_\lam
 \ar@2{-}[u]
 \ar@2{-}[d]
 \ar@[red]
@@ -158,8 +196,14 @@ _\rvlam
 \eeq
 
 \beq
-{\color{green}P_\rvmu}
-=\frac{d_\rvmu}{d_\rvlam}
+\calp_\nu^2=\calp_\nu
+\eeq
+
+
+
+\beq
+{\color{green}\calp_\mu}
+=\frac{d_\mu}{d_\lam}
 \bcen
 \xymatrix@R=1pc{
 &&&&&
@@ -174,11 +218,11 @@ _\rvlam
 &
 &
 \\
-&C^\dagger
+&\calc^\dagger_\lam
 \ar@2{-}[u]
 \ar@2{-}[d]
 &
-&C
+&\calc_\lam
 \ar@2{-}[u]
 \ar@2{-}[d]
 \ar@[red]
@@ -205,3 +249,16 @@ _\rvlam
 \ecen
 \eeq
 
+\beq
+\calp_\mu^2=\calp_\mu
+\eeq
+The normalization of the projectors $\calp_\lam, \calp_\nu, \calp_\mu$ can be remembered if 
+one takes the denominator $d_\lam$ and splits it into two factors of $\sqrt{d_\lam}$
+and puts one $\sqrt{d_\lam}$
+under $\calc_\lam$
+and the other under $\calc^\dagger_\lam$. Then
+one \qt{trades} $\frac{\calc_\lam}{\sqrt{d_\lam}}$
+by
+$\frac{\calc_\nu}{\sqrt{d_\nu}}$
+or
+$\frac{\calc_\mu}{\sqrt{d_\mu}}$.
