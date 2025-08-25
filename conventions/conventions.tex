@@ -325,25 +325,23 @@ equals $*T$ where $*$ is complex conjugation and $T$ is transpose,
 then define
 
 \beq
-(M^\dagger)\indices{_b^a}= M\indices{_a^b},
+(M^\dagger)\indices{_b^a}= (M\indices{_a^b})^*,
 \quad
-(M^T)\indices{_b^a}= (M^*)\indices{_a^b},
+(M^T)\indices{_b^a}= M\indices{_a^b},
 \eeq
 Thus, $\dagger$ and $T$ 
 do two things: (1) reverse the horizontal order of the indices (2)
 reverse vertical positions
 of the indices; i.e., 
 lower upper indices and raise lower indices.
-Complex conjugation has no power 
-to move the indices either vertically or horizontally.
+Hermitian conjugation 
+also complex conjugates the tensor components.
 
 If $M$ is a Hermitian matrix (i.e., $M^\dagger =M$),
 
 \beq
-M\indices{^b_a}= M\indices{_a^b}
+M\indices{^b_a}= (M\indices{_a^b})^*
 \eeq
-Thus, when $M$ is Hermitian, 
-it is possible to define
 
 
 
@@ -421,17 +419,17 @@ Hermitian conjugation (see Fig.\ref{fig-index-labels-hermitian})
 \left\{
 \begin{array}{l}
 (M^\dagger)\indices{_a^d}=
-M\indices{_d^a}
+(M\indices{_d^a})^*
 \\
 (M^\dagger)\indices{_\alp^{\delta}}=
-M\indices{
+(M\indices{
 _{rev(\delta)}
 ^{rev(\alp)}
-}
+})^*
 \end{array}\right.
 \eeq
 Note that
-$\dagger$ does 2 things
+$\dagger$ does 3 things
 to the birdtrack:
 
 \begin{enumerate}
@@ -452,6 +450,10 @@ positions of the indices; i.e.,
 lowering upper indices
 and raising lower ones.)
 
+\item
+It replaces the tensor component
+by its complex conjugate
+
 \end{enumerate}
 
 
@@ -462,11 +464,12 @@ M^\dagger
  = M,\quad
  \left\{
  \begin{array}{l}
-M\indices
-{_d^a }
+(M\indices
+{_d^a })^*
 = M\indices{_a^d}
 \\
-M\indices{_{rev(\delta)}^{rev(\alp)}}=
+(M\indices{_{rev(\delta)}^{rev(\alp)}})^*
+=
 M\indices{_\alp^{\delta}}
 \end{array}
 \right.
@@ -478,11 +481,11 @@ M^\dagger
  M=1,\quad
  \left\{
  \begin{array}{l}
-M\indices
-{_d^a }
+(M\indices
+{_d^a })^*
 M\indices{_a^d}=1
 \\
-M\indices{_{rev(\delta)}^{rev(\alp)}}
+(M\indices{_{rev(\delta)}^{rev(\alp)}})^*
 M\indices{_\alp^{\delta}}=1
 \end{array}
 \right.

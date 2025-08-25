@@ -88,7 +88,9 @@ Now define the birdtracks
 
 
 \beq
-(C_\lam)_{a}^{rev(b^{:nb})}=
+(C_\lam)\indices{
+_{a}^{rev(b^{:nb})}
+}=
 \bcen
 \xymatrix@C=1pc@R=1pc{
 &&b_1\ar[dl]
@@ -106,13 +108,16 @@ and
 
 
 \beq
-(C^\dagger_\lam)^{a}_{b^{:nb}}=
+(C^*_\lam)
+\indices{
+^{a}_{b^{:nb}}
+}=
 \bcen
 \xymatrix@C=1pc@R=1pc{
 b_1
 \\
 b_2
-&(C^\dagger_\lam)
+&(C^*_\lam)
 \ar[lu]\ar[l]\ar[ld]
 & a\ar[l]
 \\
@@ -179,8 +184,14 @@ satisfy analogous identities:
 \beq
 \begin{array}{l}
 \boxed{
-(C_\lam)^{rev(b^{:nb})}_{a} 
-(C^\dagger _\mu)^{a'}_{b^{:nb}} = \delta(\lam, \mu)
+(C_\lam)\indices{
+_a
+^{rev(b^{:nb})}
+} 
+(C^* _\mu)\indices{
+^{a'}_{b^{:nb}} 
+}
+= \delta(\lam, \mu)
 \delta_{a}^{a'},
 \quad
 C_\lam C_\mu^\dagger =
@@ -200,7 +211,7 @@ a
 }
 \xymatrix@C=1pc@R=1pc{
 \\
-&(C^\dagger_\mu)
+&(C^*_\mu)
 \ar[lu]\ar[l]\ar[ld]
 & a'\ar[l]
 \\
@@ -219,8 +230,14 @@ a
 \begin{array}{l}
 \boxed{
 \sum_\lam
-(C_\lam^\dagger)_{b^{:nb}}^{a}
-(C_\lam)^{rev((b')^{:nb})}_{a}=
+(C_\lam^*)\indices{
+^a
+_{b^{:nb}}
+}
+(C_\lam)
+\indices{_a
+^{rev((b')^{:nb})}
+}=
 \delta^{rev((b')^{:nb})}_{b^{:nb}}
 ,\quad
 \sum_\lam C^\dagger_\lam C_\lam = 1
@@ -232,7 +249,7 @@ a
 b_1
 \\
 b_2
-&(C^\dagger_\lam)
+&(C^*_\lam)
 \ar[lu]\ar[l]\ar[ld]
 & \sum a\ar[l]
 \\
@@ -271,11 +288,19 @@ b_{nb}
 \beq
 \begin{array}{l}
 \boxed{
-(C_\lam)_a^{rev((b')^{:nb})}
-(P_\mu)^{rev(b^{:nb})}_{(b')^{:nb}} 
-=
+(C_\lam)\indices{
+_a
+^{rev((b')^{:nb})}
+}
+(P_\mu)\indices{
+_{(b')^{:nb}} 
+^{rev(b^{:nb})}
+}=
 \delta(\mu,\lam) 
-(C_\mu)_a^{rev(b^{:nb})}
+(C_\mu)\indices{
+_a
+^{rev(b^{:nb})}
+}
 ,\quad
 C_\lam P_\mu =
 \delta(\mu,\lam) C_\mu}
@@ -325,11 +350,19 @@ a& C_\lam\ar[l]
 \beq
 \begin{array}{l}
 \boxed{
-(P_\mu)^{rev((b')^{:nb})}_{b^{:nb}}
-(C_\lam^\dagger)_{(b')^{:nb}}^a
-=
+(P_\mu)\indices{
+_{b^{:nb}}
+^{rev((b')^{:nb})}
+}
+(C_\lam^*)\indices{
+^a
+_{(b')^{:nb}}
+}=
 \delta(\mu, \lam) 
-(C_\mu^\dagger)_{b^{:nb}}^a
+(C_\mu^*)\indices{
+^a
+_{b^{:nb}}
+}
 ,\quad
 P_\mu C_\lam^\dagger=
 \delta(\mu, \lam) C_\mu^\dagger}
@@ -353,7 +386,7 @@ b_{nb}
 \ecen\bcen
 \xymatrix@C=1pc@R=2pc{
 \\
-&(C^\dagger_\lam)
+&(C^*_\lam)
 \ar[lu]\ar[l]\ar[ld]
 & a\ar[l]
 \\
@@ -367,7 +400,7 @@ b_{nb}
 b_1
 \\
 b_2
-&(C^\dagger_\lam)
+&(C^*_\lam)
 \ar[lu]\ar[l]\ar[ld]
 & a\ar[l]
 \\

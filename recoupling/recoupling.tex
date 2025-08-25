@@ -31,7 +31,7 @@
 \nu=blue
 \eeq
 
-
+no implicit sum over Greek indices
 
 \beq P_\lam
 C\indices{
@@ -265,10 +265,10 @@ $\frac{\calc_\mu}{\sqrt{d_\mu}}$.
 
 \newcommand{\trij}[3]{
 \xymatrix{
-T
-\ar@{-}@/^1pc/[r]|#1
-\ar@{-}@/_1pc/[r]|#3
-&T\ar@{-}[l]|#2
+T_#2^\dagger
+\ar@/^1pc/[r]|#1
+\ar@/_1pc/[r]|#3
+&T_#2\ar[l]|#2
 }
 }
 
@@ -276,24 +276,34 @@ $
 \trij{\mu}{\lam}{\nu}
 $
 
+\newcommand{\kten}[3]{
+K\indices{
+_#1^#2^#3}
+}
+
 \newcommand{\sixj}[6]{
-\xymatrix@R=1pc@C=1pc{
-&T\ar@{-}[d]|#1
-\ar@{-}@/_1pc/[ddl]|#6
-\ar@{-}@/^1pc/[ddr]|#5
+\xymatrix@R=2pc@C=2pc{
+&T_#5^\dagger\ar[d]|#1
+\ar@/_1pc/[ddl]|#6
+\ar@/^1pc/@{<-}[ddr]|#5
 \\
-&T
-\ar@{-}[dl]|#2
-\ar@{-}[dr]|#3
+&T_#3
+\ar@{<-}[dl]|#2
+\ar[dr]|#3
 \\
-T
+T_#2
 &
-&T
-\ar@{-}@/^1pc/[ll]|#4
+&T_#3^\dagger
+\ar[ll]|#4
 }
 }
 
 \sixj{\lam}{\mu}{\nu}{\omega}{\rho}{\s}
+
+arrow directions 
+for specific case being
+considered.
+they can be changed
 
 \beq
 \bcen
@@ -309,7 +319,10 @@ T
 }
 \ecen
 =
-\frac{1}{\sqrt{K_{\lam \nu\mu}}}
+\frac{1}
+{\sqrt{
+\kten{\lam}{\nu}{\mu}
+}}
 \bcen
 \xymatrix{
 &&\mu \ar@[green][l]
@@ -351,6 +364,75 @@ T_\lam\ar@[red][l]
 \ar@2{-}[d]
 \\
 &&\nu\ar@[blue][luu]
+}
+\ecen
+\eeq
+
+
+\beq
+\xymatrix{
+&T_\lam
+\ar[l]|\lam
+&T_\s^\dagger
+\ar@/_1.5pc/[l]|\mu
+\ar@/^1.5pc/[l]|\nu
+&\ar[l]|\s
+}
+=
+\kten{\lam}{\nu}{\mu}
+\xymatrix{
+&\bullet\ar[l]|\lam
+&\ar[l]|\s
+}
+\eeq
+
+
+\beq
+\trij{\mu}{\lam}{\nu}=
+\kten{\lam}{\nu}{\mu} d_\lam 
+\eeq
+
+
+\beq
+\calp_\lam=
+\frac{1}{\kten{\lam}{\nu}{\mu}}
+\bcen
+\xymatrix{
+&
+&
+&\ar[dl]|\nu
+\\
+&T_\lam^\dagger
+\ar[lu]
+\ar[ld]
+&T_\lam\ar[l]|\lam
+&
+\\
+&
+&
+&\ar[ul]|\nu
+}
+\ecen
+\eeq
+
+\beq
+\calp_\mu=
+\frac{1}{\kten{\mu}{\lam}{\nu}}
+\bcen
+\xymatrix{
+&
+&
+&\ar[dl]|\nu
+\\
+&T_\mu^\dagger
+\ar[lu]
+\ar[ld]
+&T_\mu\ar[l]|\mu
+&
+\\
+&
+&
+&\ar[ul]|\lam
 }
 \ecen
 \eeq
