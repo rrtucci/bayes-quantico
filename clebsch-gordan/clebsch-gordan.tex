@@ -77,11 +77,11 @@ are called the {\bf Clebsch-Gordan Coefficient} (CGC) matrices.
 
 
 
-Let $b^{:nb}=(b_1, b_2, \ldots, b_{nb})$ where $b_i\in Z_{[0,N_i]}$  and $a\in Z_{[1,d_\lam]}$.
+Let $b^{:nb}=(b_1, b_2, \ldots, b_{nb})$ where $b_i\in Z_{[0,d_{\mu_i}]}$  and $a\in Z_{[1,d_\lam]}$.
 Hence,
 
 \beq
-d_\lam = \prod_{i=1}^{:nb}N_i
+d_\lam = \prod_{i=1}^{:nb}d_{\mu_i}
 \eeq
 
 Now define the birdtracks
@@ -93,13 +93,13 @@ _{a}^{rev(b^{:nb})}
 }=
 \bcen
 \xymatrix@C=1pc@R=1pc{
-&&b_1\ar[dl]
+&&\mu_1 b_1\ar[dl]
 \\
-a
+\lam a
 & C_\lam\ar[l]
-&b_2\ar[l]
+&\mu_2 b_2\ar[l]
 \\
-&&b_{nb}\ar[lu]
+&&\mu_{nb} b_{nb}\ar[lu]
 }
 \ecen
 \eeq
@@ -108,30 +108,44 @@ and
 
 
 \beq
-(C^*_\lam)
+(C^\dagger_\lam)
 \indices{
 ^{a}_{b^{:nb}}
 }=
 \bcen
 \xymatrix@C=1pc@R=1pc{
-b_1
+\mu_1 b_1
 \\
-b_2
-&(C^*_\lam)
+\mu_2 b_2
+&(C^\dagger_\lam)
 \ar[lu]\ar[l]\ar[ld]
-& a\ar[l]
+&\lam a\ar[l]
 \\
-b_{nb}
+\mu_{nb} b_{nb}
 }
 \ecen
 \eeq
-More generally, some of the $b_i$ indices of $C_\lam$
+ We will
+assume  there is no
+difference
+between when a Greek letter is lowered or raised. Also, all summations over a Greek letter will be 
+stated explicitly;
+i.e., no implicit summations
+over repeated Greek letters.
+
+On the other hand, the Latin letter indices $b_i$ of $C_\lam$
 and $C_\lam^\dagger$
 may be lowered or raised and their arrows
-changed from outgoing to  incomming or vice versa.
+changed from outgoing to  incoming or vice versa. Furthermore,
+we will use implicit
+summation over
+repeated Latin letters.
+
+The Greek letters label representation
+of the group (not necessarily irreps).
 Each $b_i$ 
-represents a different
-representation of the group (not necessarily an irep).
+labels a subcategory 
+of $\mu_i$.
 
 Recall that if $\ket{x}$ for
 $x\in val(\rvx)$ is a complete, orthonormal
@@ -188,7 +202,7 @@ satisfy analogous identities:
 _a
 ^{rev(b^{:nb})}
 } 
-(C^* _\mu)\indices{
+(C^\dagger _\mu)\indices{
 ^{a'}_{b^{:nb}} 
 }
 = \delta(\lam, \mu)
@@ -211,7 +225,7 @@ a
 }
 \xymatrix@C=1pc@R=1pc{
 \\
-&(C^*_\mu)
+&(C^\dagger_\mu)
 \ar[lu]\ar[l]\ar[ld]
 & a'\ar[l]
 \\
@@ -230,7 +244,7 @@ a
 \begin{array}{l}
 \boxed{
 \sum_\lam
-(C_\lam^*)\indices{
+(C_\lam^\dagger)\indices{
 ^a
 _{b^{:nb}}
 }
@@ -249,7 +263,7 @@ _{b^{:nb}}
 b_1
 \\
 b_2
-&(C^*_\lam)
+&(C^\dagger_\lam)
 \ar[lu]\ar[l]\ar[ld]
 & \sum a\ar[l]
 \\
@@ -354,12 +368,12 @@ a& C_\lam\ar[l]
 _{b^{:nb}}
 ^{rev((b')^{:nb})}
 }
-(C_\lam^*)\indices{
+(C_\lam^\dagger)\indices{
 ^a
 _{(b')^{:nb}}
 }=
 \delta(\mu, \lam) 
-(C_\mu^*)\indices{
+(C_\mu^\dagger)\indices{
 ^a
 _{b^{:nb}}
 }
@@ -386,7 +400,7 @@ b_{nb}
 \ecen\bcen
 \xymatrix@C=1pc@R=2pc{
 \\
-&(C^*_\lam)
+&(C^\dagger_\lam)
 \ar[lu]\ar[l]\ar[ld]
 & a\ar[l]
 \\
@@ -400,7 +414,7 @@ b_{nb}
 b_1
 \\
 b_2
-&(C^*_\lam)
+&(C^\dagger_\lam)
 \ar[lu]\ar[l]\ar[ld]
 & a\ar[l]
 \\
