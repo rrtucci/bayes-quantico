@@ -1,2 +1,110 @@
 \chapter{Wigner-Ekart Theorem: COMING SOON}
 \label{ch-wigner-ekart}
+
+$\lam=J$, $\lam_i=J_i$ for $i=1,2$.
+We will use Greek letters instead of $J$
+for to keep
+convention
+of using Greek
+letters for rep labels. 
+
+$m, m'= -\lam, \
+-\lam+1,\ldots, \lam-1, \lam$. Note
+$d_\lam = 2\lam + 1$
+ 
+for $i=1,2$, $m_i= -\lam_i, -\lam_i +1,\ldots, \lam_i-1, \lam_i$.  Note
+$d_{\lam_i} = 2\lam_i + 1$ 
+
+
+
+
+\beq
+\bcen
+\xymatrix{
+&
+&\ar[l]
+\lam_1 m_1
+\\
+\lam m
+&\ar[l]
+C_\lam
+\ar@2{-}[u]
+\ar@2{-}[d]
+&
+\\
+&
+&\lam_2 m_2
+\ar[l]
+\\
+}
+\ecen
+\quad
+=\quad
+\av{
+\lam_1\lam_2\lam m|
+\lam_1 m_1
+\lam_2 m_2
+}
+\eeq
+
+\beq
+\\
+\xymatrix{
+m
+&D^\lam
+\ar[l]
+&\ar[l]m'
+}
+\quad =\quad
+D^\lam_{m m'}(g)
+\eeq
+
+
+\beq
+\begin{array}{l}
+\boxed{
+D^{\lam_1}_{m_1 m_1'}(g)
+D^{\lam_2}_{m_2 m_2'}(g)=
+\sum_{\lam, m, m'}
+\av{\lam_1 m_1 \lam_2 m_2|
+\lam_1 \lam_2 \lam m}
+D^\lam_{m m'}(g)
+\av{\lam_1 \lam_2 \lam m'
+|
+\lam_1 m_1' \lam_2 m_2'}
+}
+\\
+\bcen
+\xymatrix{
+&D^ {\lam_1}
+\ar[l]
+&\ar[l]
+\\
+&D^ {\lam_2}\ar[l]
+&\ar[l]
+}
+\ecen
+=
+\sum_\lam
+\bcen
+\xymatrix{
+&\ar[l]&&&\ar[l]
+\\
+&C_\lam^\dagger
+\ar@2{-}[u]
+\ar@2{-}[d]
+&
+D^\lam\ar[l]
+&C_\lam\ar[l]
+\ar@2{-}[u]
+\ar@2{-}[d]
+&
+\\
+&\ar[l]&&&\ar[l]
+}
+\ecen
+\end{array}
+\eeq
+
+
+
