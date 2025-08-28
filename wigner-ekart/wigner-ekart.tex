@@ -1,4 +1,4 @@
-\chapter{Wigner-Ekart Theorem: COMING SOON}
+\chapter{Wigner-Ekart Theorem}
 \label{ch-wigner-ekart}
 
 $\lam=J$, $\lam_i=J_i$ for $i=1,2$.
@@ -41,7 +41,7 @@ C_\lam
 \quad
 =\quad
 \av{
-\lam_1\lam_2\lam m|
+(\lam_1\lam_2)\lam m|
 \lam_1 m_1
 \lam_2 m_2
 }
@@ -105,6 +105,111 @@ D^\lam\ar[l]
 \ecen
 \end{array}
 \eeq
+
+tensor operator $T^\lam_m$
+
+\beq
+\av{
+\lam_2 m_2 |
+T^\lam_m
+|
+\lam_1 m_1}
+=
+\bcen
+\xymatrix{
+&&\ar
+`l[dl]
+[dl]\lam m
+\\
+\lam_2 m_2
+&T^\lam_m
+\ar[l]&
+\ar[l]\lam_1 m_1
+}
+\ecen
+\eeq
+
+
+\beq\begin{array}{l}
+\boxed{
+\av{\lam_2 m_2 | T^\lam_m |
+\lam_1 m_1}=
+\av{(\lam \lam_1 )\lam_2 m_2|\lam m 
+\lam_1 m_1
+}
+\tau(\lam, \lam_1, \lam_2)
+}\\
+\bcen
+\xymatrix{
+&&\ar
+`l[dl]
+[dl]\lam m
+\\
+\lam_2 m_2
+&T^\lam_m
+\ar[l]&
+\ar[l]\lam_1 m_1
+}
+\ecen
+=
+\bcen
+\xymatrix{
+&&\ar
+`l[dl]
+[dl]\lam m
+\\
+\lam_2 m_2
+&C_\lam
+\ar[l]&
+\ar[l]\lam_1 m_1
+}\ecen
+\tau(\lam, \lam_1, \lam_2)
+\end{array}
+\eeq
+
+\beqa
+\tau(\lam, \lam_1, \lam_2)
+&=&
+\frac{1}{d_{\lam_2}}
+\sum_{m_1, m_2, m}
+\av{\lam m \lam_1 n_1|
+(\lam \lam_1)
+\lam_2 m_2}
+\av{
+\lam_2 m_2|
+T^\lam_m
+|
+\lam_1 m_1
+}
+\\
+&=&
+\frac{1}{d_{\lam_2}}
+\bcen
+\xymatrix{
+&&\ar
+`l[dl]
+[ddl]|\lam
+&
+\\
+&&
+C_{\lam_2}^\dagger
+\ar@2{-}[u]
+\ar@2{-}[d]
+&
+\\
+&T^\lam_m
+\ar`l[ld]
+`[dr]
+`[rr]|{\lam_2}
+`[ru]
+[ru]
+&
+\ar[l]|{\lam_1}
+&
+\\
+&&&
+}\ecen
+\eeqa
 
 
 
