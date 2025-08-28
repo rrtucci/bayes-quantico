@@ -20,7 +20,7 @@ $d_{\lam_i} = 2\lam_i + 1$
 
 \beq
 \bcen
-\xymatrix{
+\xymatrix@R=1pc{
 &
 &\ar[l]
 \lam_1 m_1
@@ -75,7 +75,7 @@ D^\lam_{m m'}(g)
 }
 \\
 \bcen
-\xymatrix{
+\xymatrix@R=1pc{
 &D^ {\lam_1}
 \ar[l]
 &\ar[l]
@@ -87,7 +87,7 @@ D^\lam_{m m'}(g)
 =
 \sum_\lam
 \bcen
-\xymatrix{
+\xymatrix@R=1pc{
 &\ar[l]&&&\ar[l]
 \\
 &C_\lam^\dagger
@@ -153,15 +153,16 @@ T^\lam_m
 \ecen
 =
 \bcen
-\xymatrix{
-&&\ar
-`l[dl]
-[dl]\lam m
+\xymatrix@R=1pc{
+&&\ar[l]|\lam
 \\
-\lam_2 m_2
-&C_\lam
-\ar[l]&
-\ar[l]\lam_1 m_1
+&C_\lam\ar[l]|{\lam_2}
+\ar@2{-}[u]
+\ar@2{-}[d]
+&
+\\
+&
+&\ar[l]|{\lam_1}
 }\ecen
 \tau(\lam, \lam_1, \lam_2)
 \end{array}
@@ -185,10 +186,10 @@ T^\lam_m
 &=&
 \frac{1}{d_{\lam_2}}
 \bcen
-\xymatrix{
+\xymatrix@R=1pc{
 &&\ar
-`l[dl]
-[ddl]|\lam
+`l[dl]|\lam
+[ddl]
 &
 \\
 &&
