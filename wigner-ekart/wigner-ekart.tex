@@ -1,6 +1,331 @@
 \chapter{Wigner-Ekart Theorem}
 \label{ch-wigner-ekart}
 
+\section{WE in general}
+
+\beq
+Q=
+\bcen
+\xymatrix@R=1pc{
+&Q\ar@2{-}[dddddd]
+\ar[l]|\mu
+\\&
+\\
+&\ar[l]|\nu
+\\&
+\\
+\ar[r]|\rho&
+\\&
+\\
+\ar[r]|\omega&
+}
+\ecen
+\eeq
+
+\begin{align}
+\bcen
+\xymatrix@R=1pc{
+&Q\ar@2{-}[dddddd]
+\ar[l]|\mu
+\\&
+\\
+&\ar[l]|\nu
+\\&
+\\
+\ar[r]|\rho&
+\\&
+\\
+\ar[r]|\omega&
+}
+\ecen
+&=
+\sum_{\alp, \beta}
+\frac{1}{K_\alp K_\beta}
+\bcen
+\xymatrix@R=1pc{
+&\ar[l]&&Q
+\ar@2{-}[ddddd]
+\ar[l]
+\\
+&T_\alp^\dagger\ar@2{-}[u]
+\ar@2{-}[d]&T_\alp\ar@2{-}[u]
+\ar@2{-}[d]
+\ar[l]
+&
+\\
+&\ar[l]&&\ar[l]
+\\
+\ar[r]&&\ar[r]&
+\\
+&T_\beta
+\ar@2{-}[u]
+\ar@2{-}[d]
+\ar[r]
+&T_\beta^\dagger\ar@2{-}[u]
+\ar@2{-}[d]
+&
+\\
+\ar[r]&&\ar[r]&
+}
+\ecen
+\\
+&=
+\sum_{\alp}
+\frac{1}{K^2_\alp d_\alp}
+\bcen
+\xymatrix@R=1pc{
+&\ar[l]&
+\\
+&T_\alp^\dagger\ar@2{-}[u]
+\ar@2{-}[d]
+&
+\\
+&\ar[l]&
+\\
+\ar[r]&&
+\\
+&T_\alp
+\ar@2{-}[u]
+\ar@2{-}[d]
+\ar`r[ruuu]
+`[uuu][uuu]
+&
+\\
+\ar[r]&&
+}
+\xymatrix@R=1pc{
+&&Q
+\ar@2{-}[ddddd]
+\ar[l]
+\\
+&T_\alp\ar@2{-}[u]
+\ar@2{-}[d]
+\ar`l[ld]
+`[ddd][ddd]
+&
+\\
+&&\ar[l]
+\\
+&\ar[r]&
+\\
+&T_\alp^\dagger\ar@2{-}[u]
+\ar@2{-}[d]
+&
+\\
+&\ar[r]&
+}
+\ecen
+\end{align}
+
+
+\beq
+\bcen
+\xymatrix@R=1pc{
+&&Q
+\ar@2{-}[ddddd]
+\ar[l]
+\\
+&T_\alp\ar@2{-}[u]
+\ar@2{-}[d]
+\ar[l]
+&
+\\
+&&\ar[l]
+\\
+&\ar[r]&
+\\
+\ar[r]
+&T_\alp^\dagger\ar@2{-}[u]
+\ar@2{-}[d]
+&
+\\
+&\ar[r]&
+}
+\ecen
+=\frac{1}{d_\alp}
+\bcen
+\xymatrix{
+&
+\\
+&
+\\
+&
+\\
+\ar
+`r[ur]`[uu][uu]&
+\\
+&
+}\ecen
+\bcen
+\xymatrix@R=1pc{
+&&Q
+\ar@2{-}[ddddd]
+\ar[l]
+\\
+&T_\alp\ar@2{-}[u]
+\ar@2{-}[d]
+\ar`l[ld]
+`[ddd][ddd]
+&
+\\
+&&\ar[l]
+\\
+&\ar[r]&
+\\
+&T_\alp^\dagger\ar@2{-}[u]
+\ar@2{-}[d]
+&
+\\
+&\ar[r]&
+}
+\ecen
+\eeq
+
+
+
+
+\beq Q_a =
+\sum_\lam
+\xymatrix{
+\lam a&\ar[l]
+T_\lam
+}
+\eeq
+
+\beq
+Q\indices{_\lam_a^\mu^b}=
+\xymatrix{
+&\ar[l]|\lam
+Q
+&\ar[l]|\mu
+}
+\eeq
+
+\beq
+(Q^{\lam i})
+\indices{
+_{\lam_2 a}
+^{\lam_1 b}
+}=
+\frac{1}{d_\mu}
+\bcen
+\xymatrix{
+Q\loopdown{5}{|\mu}
+}
+\ecen
+\quad
+\delta(\mu, \lam)
+\eeq
+
+
+\beq
+(Q^{\lam i})
+\indices{
+_{\lam_2 a}
+^{\lam_1 b}
+}=
+\bcen
+\xymatrix@C=3pc{
+&&\ar
+`l[dl]|\lam
+[dl]
+\\
+&Q^\lam
+\ar[l]|{\lam_2}
+&
+\ar[l]|{\lam_1}
+}
+\ecen
+\eeq
+
+\begin{align}
+(Q^{\lam })
+\indices{
+_{\lam_2 }
+^{\lam_1 }
+}
+&=
+\sum_{\lam_2}
+\frac{d_{\lam_2}}
+{
+\trij
+{\lam}
+{\lam_2}
+{\lam_1}
+}
+\bcen
+\xymatrix@R=1pc{
+&&\ar
+`l[dl]|\lam
+[ddl]
+&&\ar[l]
+\\
+&&
+C_{\lam_2}^\dagger
+\ar@2{-}[u]
+\ar@2{-}[d]
+&\ar[l]
+C_{\lam_2}
+\ar@2{-}[u]
+\ar@2{-}[d]
+&
+&&
+\\
+&Q^\lam
+\ar[l]|{\lam_2}
+&
+\ar[l]|{\lam_1}
+&&\ar[l]
+}\ecen
+\\
+&=
+\frac{
+\bcen
+\xymatrix@R=1pc{
+&&\ar
+`l[dl]|\lam
+[ddl]
+&
+\\
+&&
+C_{\lam_2}^\dagger
+\ar@2{-}[u]
+\ar@2{-}[d]
+&
+\\
+&Q^\lam
+\ar`l[ld]
+`[dr]
+`[rr]|{\lam_2}
+`[ru]
+[ru]
+&
+\ar[l]|{\lam_1}
+&
+\\
+&&&
+}\ecen
+}{
+\trij
+{\lam}
+{\lam_2}
+{\lam_1}
+}
+\bcen
+\xymatrix@C=3pc{
+&&\ar
+`l[dl]|\lam
+[dl]
+\\
+&T_{\lam_2}
+\ar[l]|{\lam_2}
+&
+\ar[l]|{\lam_1}
+}
+\ecen
+\end{align}
+
+\section{WE for angular momentum}
 $\lam=J$, $\lam_i=J_i$ for $i=1,2$.
 We will use Greek letters instead of $J$
 so as to keep
@@ -106,12 +431,12 @@ D^\lam\ar[l]
 \end{array}
 \eeq
 
-tensor operator $T^\lam_m$
+tensor operator $Q^\lam_m$
 
 \beq
 \av{
 \lam_2 m_2 |
-T^\lam_m
+Q^\lam_m
 |
 \lam_1 m_1}
 =
@@ -122,7 +447,7 @@ T^\lam_m
 [dl]\lam m
 \\
 \lam_2 m_2
-&T^\lam_m
+&Q^\lam_m
 \ar[l]&
 \ar[l]\lam_1 m_1
 }
@@ -132,12 +457,12 @@ T^\lam_m
 
 \beq\begin{array}{l}
 \boxed{
-\av{\lam_2 m_2 | T^\lam_m |
+\av{\lam_2 m_2 | Q^\lam_m |
 \lam_1 m_1}=
 \av{(\lam \lam_1 )\lam_2 m_2|\lam m 
 \lam_1 m_1
 }
-\tau(\lam, \lam_1, \lam_2)
+q(\lam, \lam_1, \lam_2)
 }\\
 \bcen
 \xymatrix{
@@ -146,12 +471,13 @@ T^\lam_m
 [dl]\lam m
 \\
 \lam_2 m_2
-&T^\lam_m
+&Q^\lam_m
 \ar[l]&
 \ar[l]\lam_1 m_1
 }
 \ecen
 =
+q(\lam, \lam_1, \lam_2)
 \bcen
 \xymatrix@R=1pc{
 &&\ar[l]|\lam
@@ -164,12 +490,11 @@ T^\lam_m
 &
 &\ar[l]|{\lam_1}
 }\ecen
-\tau(\lam, \lam_1, \lam_2)
 \end{array}
 \eeq
 
 \beqa
-\tau(\lam, \lam_1, \lam_2)
+q(\lam, \lam_1, \lam_2)
 &=&
 \frac{1}{d_{\lam_2}}
 \sum_{m_1, m_2, m}
@@ -178,7 +503,7 @@ T^\lam_m
 \lam_2 m_2}
 \av{
 \lam_2 m_2|
-T^\lam_m
+Q^\lam_m
 |
 \lam_1 m_1
 }
@@ -198,7 +523,7 @@ C_{\lam_2}^\dagger
 \ar@2{-}[d]
 &
 \\
-&T^\lam_m
+&Q^\lam_m
 \ar`l[ld]
 `[dr]
 `[rr]|{\lam_2}
@@ -211,182 +536,3 @@ C_{\lam_2}^\dagger
 &&&
 }\ecen
 \eeqa
-
-\beq
-T=
-\bcen
-\xymatrix@R=1pc{
-&T\ar@2{-}[dddddd]
-\ar[l]|\mu
-\\&
-\\
-&\ar[l]|\nu
-\\&
-\\
-\ar[r]|\rho&
-\\&
-\\
-\ar[r]|\omega&
-}
-\ecen
-\eeq
-
-\begin{align}
-\bcen
-\xymatrix@R=1pc{
-&T\ar@2{-}[dddddd]
-\ar[l]|\mu
-\\&
-\\
-&\ar[l]|\nu
-\\&
-\\
-\ar[r]|\rho&
-\\&
-\\
-\ar[r]|\omega&
-}
-\ecen
-&=
-\sum_{\alp, \beta}
-\frac{1}{K_\alp K_\beta}
-\bcen
-\xymatrix@R=1pc{
-&\ar[l]&&T
-\ar@2{-}[ddddd]
-\ar[l]
-\\
-&T_\alp^\dagger\ar@2{-}[u]
-\ar@2{-}[d]&T_\alp\ar@2{-}[u]
-\ar@2{-}[d]
-\ar[l]
-&
-\\
-&\ar[l]&&\ar[l]
-\\
-\ar[r]&&\ar[r]&
-\\
-&T_\beta
-\ar@2{-}[u]
-\ar@2{-}[d]
-\ar[r]
-&T_\beta^\dagger\ar@2{-}[u]
-\ar@2{-}[d]
-&
-\\
-\ar[r]&&\ar[r]&
-}
-\ecen
-\\
-&=
-\sum_{\alp}
-\frac{1}{K^2_\alp d_\alp}
-\bcen
-\xymatrix@R=1pc{
-&\ar[l]&
-\\
-&T_\alp^\dagger\ar@2{-}[u]
-\ar@2{-}[d]
-&
-\\
-&\ar[l]&
-\\
-\ar[r]&&
-\\
-&T_\alp
-\ar@2{-}[u]
-\ar@2{-}[d]
-\ar`r[ruuu]
-`[uuu][uuu]
-&
-\\
-\ar[r]&&
-}
-\xymatrix@R=1pc{
-&&T
-\ar@2{-}[ddddd]
-\ar[l]
-\\
-&T_\alp\ar@2{-}[u]
-\ar@2{-}[d]
-\ar`l[ld]
-`[ddd][ddd]
-&
-\\
-&&\ar[l]
-\\
-&\ar[r]&
-\\
-&T_\alp^\dagger\ar@2{-}[u]
-\ar@2{-}[d]
-&
-\\
-&\ar[r]&
-}
-\ecen
-\end{align}
-
-
-\beq
-\bcen
-\xymatrix@R=1pc{
-&&T
-\ar@2{-}[ddddd]
-\ar[l]
-\\
-&T_\alp\ar@2{-}[u]
-\ar@2{-}[d]
-\ar[l]
-&
-\\
-&&\ar[l]
-\\
-&\ar[r]&
-\\
-\ar[r]
-&T_\alp^\dagger\ar@2{-}[u]
-\ar@2{-}[d]
-&
-\\
-&\ar[r]&
-}
-\ecen
-=\frac{1}{d_\alp}
-\bcen
-\xymatrix{
-&
-\\
-&
-\\
-&
-\\
-\ar
-`r[ur]`[uu][uu]&
-\\
-&
-}\ecen
-\bcen
-\xymatrix@R=1pc{
-&&T
-\ar@2{-}[ddddd]
-\ar[l]
-\\
-&T_\alp\ar@2{-}[u]
-\ar@2{-}[d]
-\ar`l[ld]
-`[ddd][ddd]
-&
-\\
-&&\ar[l]
-\\
-&\ar[r]&
-\\
-&T_\alp^\dagger\ar@2{-}[u]
-\ar@2{-}[d]
-&
-\\
-&\ar[r]&
-}
-\ecen
-\eeq
-
