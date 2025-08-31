@@ -44,7 +44,7 @@ t-channel, particles have tea
 \eeq
 
 \section{Parallel channels to 
-t-channels}
+sum of t-channels}
 \xymatrix{
 {\circ} \ar 
 `r[d] ^a
@@ -594,7 +594,12 @@ T_\nu^\dagger
 &&&&\ar[lll]
 }
 \ecen
+\label{eq-four-to-one-loop}
 \eeq
+Dropping two upper representation labels from
+$K\indices{_\nu^{\mu\lam}}$
+for succinctness, but
+their dependance still there.
 
 \beq
 \bcen
@@ -688,7 +693,7 @@ T_\mu^\dagger
 \eeq
 
 
-\section{t-channel to s-channels}
+\section{t-channel to sum of s-channels}
 \begin{align}
 \bcen
 \xymatrix{
@@ -748,19 +753,20 @@ T_\mu^\dagger
 &=
 \sum_\lam
 \left[
-\begin{array}{l}
-\frac{d_\lam}
-{\trij{\s}{\lam}{\rho}
-}
-\frac{d_\lam}
-{\trij{\mu}{\lam}{\nu}
-}
-\frac{
-\sixj{\omega}{\rho}{\nu}{\lam}{\mu}{\s}
-}
-{d_\lam}
+S_\lam\left(
+\bcen
+\xymatrix{
+&T^\dagger_\mu
+\ar[l]|\s
+\ar[d]|\omega
+&\ar[l]|\mu
 \\
-*
+&T_\rho
+\ar[l]|\rho
+&\ar[l]|\nu
+}
+\ecen
+\right)
 \bcen
 \xymatrix{
 &&&\ar[ld]|\mu
@@ -775,8 +781,46 @@ T_\mu^\dagger
 &&&\ar[lu]|\nu
 }
 \ecen
-\end{array}
 \right]
+\label{eq-gen-t-to-sum-of-s}
+\end{align}
+
+
+\begin{align}
+S_\lam\left(
+\bcen
+\xymatrix{
+&T^\dagger_\mu
+\ar[l]|\s
+\ar[d]|\omega
+&\ar[l]|\mu
+\\
+&T_\rho
+\ar[l]|\rho
+&\ar[l]|\nu
+}
+\ecen
+\right)
+&=
+\frac{d_\lam}
+{\trij{\s}{\lam}{\rho}
+}
+\frac{d_\lam}
+{\trij{\mu}{\lam}{\nu}
+}
+\frac{
+\sixj{\omega}{\rho}{\nu}{\lam}{\mu}{\s}
+}
+{d_\lam}
+\\
+&=
+d_\lam
+\frac{
+\sixj{\omega}{\rho}{\nu}{\lam}{\mu}{\s}
+}
+{\trij{\s}{\lam}{\rho}
+\trij{\mu}{\lam}{\nu}
+}
 \end{align}
 
 \section{Wigner $3n-j$ coefficients}
@@ -800,3 +844,127 @@ We only show
 one $3-j$
 and one $6-j$.
 
+
+Similar to Eq.(\ref{eq-four-to-one-loop})
+but here we use the most general 
+t-channel to sum of s-channels conversion Eq.(\ref{eq-gen-t-to-sum-of-s})
+\beq
+\bcen
+\xymatrix@R=1pc{
+&\ar[l]\ar[dd]&
+\\&&
+\\&\ar[l]\ar[dd]&
+\\&&
+\\&\ar[l]\ar[dd]&
+\\&&
+\\&\ar[l]
+\ar`r[ru]
+`[uuuuuu]
+[uuuuuu]
+&
+}
+\ecen
+=
+\sum_{\lam, \mu, \nu}
+{S_\lam}
+{S_\mu}
+{S_\nu}
+\bcen
+\xymatrix@R=1pc{
+&\ar[l]
+&&&&
+\\
+&T_\lam^\dagger
+\ar@2{-}[u]
+\ar@2{-}[d]
+&\ar[l]
+&
+&
+\\
+&\ar[l]
+&T_\mu^\dagger
+\ar@2{-}[u]
+\ar@2{-}[d]
+&\ar[l]
+&&
+\\
+&&\ar[ll]
+&
+T_\nu^\dagger
+\ar@2{-}[u]
+\ar@2{-}[d]
+&T_\nu\ar[l]
+\ar@2{-}[u]
+\ar@2{-}[d]
+&
+\\
+&&&\ar[lll]
+&
+\ar`r[ru]
+`[uu]
+[uu]
+&
+}
+\ecen
+\eeq
+
+\beq
+\bcen
+\xymatrix@R=1pc{
+&\ar[l]\ar[dd]&
+\\&&
+\\&\ar[l]\ar[dd]&
+\\&&
+\\&\ar[l]\ar[dd]&
+\\&&
+\\&\ar[l]
+\ar`r[ru]
+`[uuuuuu]
+[uuuuuu]
+&
+}
+\ecen
+=
+\sum_{\lam, \mu}
+{S_\lam}
+{S_\mu}
+\bcen
+\xymatrix@R=1pc{
+&\ar[l]
+&
+&
+\\
+&T_\lam^\dagger
+\ar@2{-}[u]
+\ar@2{-}[d]
+&\ar[l]&
+\\
+&\ar[l]
+&T_\mu^\dagger
+\ar@2{-}[u]
+\ar@2{-}[d]
+&\ar[dd]\ar[l]
+\\
+&&\ar[ll]
+&
+&
+\\
+&&&\ar[lll]
+\ar`r[ru]`[uu][uu]
+&
+}
+\ecen
+\eeq
+
+\beq
+3n-j \text{ coefficient}
+=
+\sum (\text{product of $S_\lam$'s})
+(\text{tree graph with one-point loop})
+\eeq
+
+4-point loop $\rarrow$ one-point loop
+
+one-point loop , self energy loop?
+
+zero point loop =  vacuum bubble
