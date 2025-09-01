@@ -1,5 +1,5 @@
-\chapter{Determinants}
-\label{ch-determinants}
+\chapter{Characteristic Equations}
+\label{ch-char-eqs}
 
 \beq
 M\indices{_a^b}=
@@ -78,13 +78,13 @@ M\indices{_{a_p}^{b_p}}}
 \ecen
 \end{array}
 \eeq
-where $a_i, b_i\in \ZZ_{[1,n]}$
+where $a_i, b_i\in \ZZ_{[1, n]}$
 
 
 
 
 \beqa
-\tr_{[1,p]}\cala[M^{\otimes p}]
+\tr_{1\ldots p}\cala[M^{\otimes p}]
 &=&
 \cala\indices{
 _{a^{:p}}
@@ -147,7 +147,7 @@ _{b_i}
 
 \beq
 det M = 
-\tr_{[1,n]} \cala[ M^{\otimes n}]
+\tr_{1\ldots n} \cala[ M^{\otimes n}]
 \eeq
 
 \beq
@@ -414,12 +414,19 @@ det M =
 \end{array}\right.
 \eeq
 
+Let
+
+\beq
+\tau = \tr(M)
+\eeq
+
+
 \beq
 \tr_{1,2,3}\cala_3(M^{\otimes 3})=
 \frac{1}{3}
 \left[
-\tr(M) \tr_{1,2}\cala_2(M^{\otimes 2})
--\tr(M^2)\tr(M)
+\tau  \tr_{1,2}\cala_2(M^{\otimes 2})
+-\tr(M^2)\tau 
 +\tr M^3
 \right]
 \eeq
@@ -429,7 +436,7 @@ det M =
 \cala_2 M^{\otimes 2}=
 \frac{1}{2}
 \left[
-\tr^2(M)-\tr(M^2)
+\tau^2-\tr(M^2)
 \right]
 \eeq
 
@@ -438,16 +445,101 @@ det M =
 &=&
 \frac{1}{3}
 \left[
-\frac{1}{2}\tr^3(M) 
--\frac{3}{2}\tr(M^2)\tr(M)
+\frac{1}{2}\tau^3 
+-\frac{3}{2}\tr(M^2)\tau 
 +\tr M^3
 \right]
 \\
 &=&
 \frac{1}{3!}
 \left[
-\tr^3(M) 
--3\tr(M^2)\tr(M)
+\tau^3
+-3\tr(M^2)\tau 
 +2\tr M^3
 \right]
+\eeqa
+
+\beq
+\tr_{1\ldots p}\cala_p M=
+\frac{1}{p}
+\sum_{k=1}^p
+(-1)^{k-1}
+\left(\tr_{1\ldots p-k}\cala_{p-k}M^{\otimes p-k}
+\right)
+\tr(M^k)
+\eeq
+
+\beq
+\cala_{p}=0
+\quad \text{if $p>n$}
+\eeq
+
+\beq
+\eps_{a_1, a_2, \ldots, a_{n+1}} =0
+\eeq
+Two of the $a_i$ must be
+equal, so
+that element of the
+$\eps$ is zero
+ 
+$I$ is the $n\times n$
+identity matrix
+\beq
+\begin{array}{cc}
+\boxed{
+\tr_{2\ldots n+1}
+\cala_{n+1}I\otimes M^{\otimes n}=0}
+&
+\bcen
+\xymatrix@R=1.5pc{
+&\cala_{n+1}\ar[l]
+\ar@2{-}[ddd]&&\ar[ll]
+\\
+&
+\ar[l]
+&M\ar[l]
+&\ar[l]
+\ar@/_1pc/@[red]@{-}[lll]
+\\
+&\ar[l]
+&M\ar[l]
+&\ar[l]
+\ar@/_1pc/@[red]@{-}[lll]
+\\
+&\ar[l]
+&M\ar[l]
+&\ar[l]
+\ar@/_1pc/@[red]@{-}[lll]
+}
+\ecen
+=0
+\end{array}
+\eeq
+
+\beqa
+0&=&
+\sum_{k=0}^n
+(-1)^k \left(
+\tr_{1\ldots n-k}
+\cala_{n-k}
+M^{\otimes n-k}
+\right)
+M^k
+\\
+&=&
+\left\{
+\begin{array}{l}
+M^n
+\\
+- M^{n-1}(\tr M)
+\\
++M^{n-2}
+(\tr_{1\ldots 2}
+\cala_2 M^{\otimes 2})
+\\
+\ldots
+\\
+(-1)^n det(M)
+\end{array}
+\right.
 \eeqa
