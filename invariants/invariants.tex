@@ -1,4 +1,4 @@
-\chapter{Invariants}
+\chapter{Invariant Tensors}
 \label{ch-invariants}
 This chapter is based on
 Ref.\cite{birdtracks-book}.
@@ -27,8 +27,8 @@ m(\dual{x}^{:n}, y^{:n})
 =
 m(\dual{x}^{:n}G^\dagger, Gy^{:n})
 \eeq
-$m()$ is invariant iff matrix $M$ is a 
-{\bf matrix invariant}; i.e., iff
+$m()$ is invariant iff matrix $M$ is an
+{\bf invariant matrix}; i.e., iff
 
 \beq
 \boxed
@@ -109,7 +109,7 @@ h(\dual{w}G^\dagger, \dual{x}G^\dagger, Gy, Gz)
 \eeq
 $h()$ is invariant iff tensor $h\indices{_a_b^c^d}$
 is a
-{\bf tensor invariant}  (TI); i.e., iff
+{\bf invariant tensor}  (IT); i.e., iff
 
 \beq
 \boxed{
@@ -159,26 +159,26 @@ a
 \ecen
 \eeq
 
-A {\bf composed TI} is a TI that can
+A {\bf composed IT} is a IT that can
 be written as a product or contraction
-of TIs.
+of ITs.
 
-A {\bf tree TI}
-is a composed TIs
+A {\bf tree IT}
+is a composed ITs
 without any loops.
 
-A {\bf primitive TI}
-is a TI that can be expressed as a linear
+A {\bf primitive IT}
+is a IT that can be expressed as a linear
 combination of
-a finite number of tree TIs.
+a finite number of tree ITs.
 
 
-The {\bf primitiveness assumption}: All TI are primitive.
+The {\bf primitiveness assumption}: All IT are primitive.
 \hrule
 Examples. Suppose $x, y, z \in\RR^3$
 and $i,j,k\in\{1,2,3\}$.
 \begin{itemize}
-\item Primitive TIs
+\item Primitive ITs
 \beq
 length(x)
 =
@@ -214,7 +214,7 @@ i
 \eeq
 
 
-\item Tree TIs
+\item Tree ITs
 
 
 \beq
@@ -253,7 +253,7 @@ i
 \ecen
 \eeq
 
-\item Non-tree TI
+\item Non-tree IT
 
 \beq
 \eps_{ims}
@@ -453,7 +453,7 @@ C
 \hrule
 
 
-Let $\calp=(p_1, p_2, \ldots, p_k)$ be a {\bf full set of primitive TIs}. By \qt{full}, we mean no others exist.
+Let $\calp=(p_1, p_2, \ldots, p_k)$ be a {\bf full set of primitive ITs}. By \qt{full}, we mean no others exist.
 $\calp$ is 
 a basis for an {\bf algebra of invariants}.\footnote{An algebra over a field
 is defined in Sec.\ref{sec-algebra-over-f}}
@@ -475,7 +475,7 @@ Gz)
 Example. Consider
 an invariance group
 with a single
-primitive TI $p()$ defined by 
+primitive IT $p()$ defined by
 
 \beq
 p(\dual{x}, y) = \delta_a^b \dual{x}^a y_b=\dual{x}^by_b
