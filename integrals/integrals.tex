@@ -1,2 +1,335 @@
-\chapter{Integrals over a Group}
+\chapter{Integrals over a Group: COMING SOON}
 \label{ch-integrals}
+
+\beq
+\int dg 
+G\indices{_a^b}
+G\indices{_c^d}
+\ldots
+(G^\dagger)\indices{_e^f}
+(G^\dagger)\indices{_g^h}
+\eeq
+
+\beq
+\int dg =1, \quad
+\int dg G = 0
+\eeq
+where $G$ is a non-trivial
+representation of $\calg$.
+
+
+\beq
+G\indices{_a^b}=
+\xymatrix{a&G\ar[l]&b\ar[l]},\quad
+(G^\dagger)\indices{_b^a}=
+\xymatrix{b&G^\dagger\ar[l]&\ar[l]a}
+\eeq
+Out arrow always first
+
+We assume that $G$
+is unitary ($G^\dagger G=G G^\dagger =1$) 
+
+\beq
+\xymatrix{&G^\dagger
+\ar[l]&G\ar[l]&\ar[l]}
+=
+\xymatrix{&G\ar[l]&G^\dagger\ar[l]&\ar[l]}=
+\xymatrix{&\bullet\ar[l]&\ar[l]}
+\eeq
+
+\beq
+G\otimes G\otimes G^\dagger=
+\bcen
+\xymatrix@R=1pc{
+&\ar[l]G&\ar[l]
+\\
+&\ar[l]G&\ar[l]
+\\
+&\ar[l]G^\dagger&\ar[l]
+}
+\ecen
+\eeq
+
+
+\beq
+\begin{array}{l}
+\boxed{
+\delta_a^d \delta_c^b=
+\frac{1}{d}
+\delta_a^b \delta_c^d
++
+\frac{1}{\kappa}
+(T^i)\indices{_a^b}
+(T^i)\indices{_c^d}
+}
+\\
+\bcen
+\xymatrix@R=1pc{
+a&\bullet\ar[l]&d\ar[l]
+\\
+b\ar[r]&\bullet\ar[r]&c
+}
+\ecen
+=
+\frac{1}{d}
+\bcen
+\xymatrix@R=1pc{
+&&&\ar`l[ldd]`[dd][dd]
+\\
+&&&
+\\
+\ar`r[ruu]`[uu][uu]&&&
+}
+\ecen
++
+\frac{1}{\kappa}
+\bcen
+\xymatrix@R=1pc{
+&&&\ar`l[ld][dl]
+\\
+&T^i
+\ar`u[ul][ul]
+&T^i\ar@{~}[l]
+\ar`d[rd][rd]&
+\\
+\ar`r[ru][ur]&&&
+}
+\ecen
+\end{array}
+\eeq
+Will set $\kappa=1$
+from here on.
+
+\beq
+\begin{array}{l}
+\boxed{
+\delta_a^d \delta_c^b=
+\frac{1}{d}
+\delta_a^b \delta_c^d
++
+\frac{1}{\kappa}
+(T^i)\indices{_a^b}
+(T^i)\indices{_c^d}
+}
+\\
+\bcen
+\xymatrix@R=1pc{
+a&G\ar[l]&d\ar[l]
+\\
+b\ar[r]&G^\dagger\ar[r]&c
+}
+\ecen
+=
+\frac{1}{d}
+\bcen
+\xymatrix@R=1pc{
+&&&\ar`l[ldd]`[dd][dd]
+\\
+&&&
+\\
+\ar`r[ruu]`[uu][uu]&&&
+}
+\ecen
++
+
+\bcen
+\xymatrix@R=1pc{
+&G\ar[l]&&&\ar`l[ld][dl]
+\\
+&&T^i
+\ar`u[ul][ul]
+&T^i\ar@{~}[l]
+\ar`d[rd][rd]&
+\\
+\ar[r]&G^\dagger \ar`r[ru][ur]&&&
+}
+\ecen
+\end{array}
+\eeq
+
+\beq
+\begin{array}{l}
+\boxed{
+G\indices{_a^{a'}}
+(G^\dagger)\indices{
+_{b'}^b}(T^i)\indices{
+_{a'}
+^{b'}}
+=
+(T^i)\indices{_a^b}
+G_{ii'}
+}
+\\
+\bcen
+\xymatrix@R=1pc{
+&G\ar[l]&&
+\\
+&&T^i
+\ar`u[ul][ul]
+&\ar@{~}[l]
+\\
+\ar[r]&G^\dagger \ar`r[ru][ur]&&
+}
+\ecen
+=
+\bcen
+\xymatrix@R=1pc{
+&G\ar[l]&&&
+\\
+&&T^i
+\ar`u[ul][ul]
+&G\ar@{~}[l]
+&\ar@{~}[l]
+\\
+\ar[r]&G^\dagger \ar`r[ru][ur]&&&
+}
+\ecen
+\end{array}
+\eeq
+
+\beq
+\bcen
+\xymatrix@R=1pc{
+a&G\ar[l]&d\ar[l]
+\\
+b\ar[r]&G^\dagger\ar[r]&c
+}
+\ecen
+=
+\frac{1}{d}
+\bcen
+\xymatrix@R=1pc{
+&&&\ar`l[ldd]`[dd][dd]
+\\
+&&&
+\\
+\ar`r[ruu]`[uu][uu]&&&
+}
+\ecen
++
+\bcen
+\xymatrix@R=1pc{
+&&&&\ar`l[ld][dl]
+\\
+&T^i
+\ar`u[ul][ul]
+&G\ar@{~}[l]
+&T^i\ar@{~}[l]
+\ar`d[rd][rd]&
+\\
+ \ar`r[ru][ur]&&&&
+}
+\ecen
+\eeq
+
+
+\beq
+\boxed{
+\int dg\;
+G\indices{_a^d}
+(G^\dagger)\indices{_b^c}
+=
+\frac{1}{d}
+\delta_a^b \delta_c^d
+}
+\quad
+\int dg \;
+\bcen
+\xymatrix@R=1pc{
+a&G\ar[l]&d\ar[l]
+\\
+b\ar[r]&G^\dagger\ar[r]&c
+}
+\ecen
+=
+\frac{1}{d}
+\bcen
+\xymatrix@R=1pc{
+&&&\ar`l[ldd]`[dd][dd]
+\\
+&&&
+\\
+\ar`r[ruu]`[uu][uu]&&&
+}
+\ecen
+\eeq
+
+\beq
+\int dg \;
+\bcen
+\xymatrix@R=1pc{
+a&G_\mu\ar[l]&d\ar[l]
+\\
+b\ar[r]&G_\lam^\dagger\ar[r]&c
+}
+\ecen
+=0
+\quad \text{ if $\mu\neq \lam$}
+\eeq
+
+$\cals=$ singlets, $\cals^c=$ nonsinglets
+
+\beq
+\begin{array}{l}
+\boxed{
+\delta_a^d \delta_c^b=
+\frac{1}{d}
+\delta_a^b \delta_c^d
++
+\sum_{\lam\in \cals^c}
+\frac{1}{\kappa}
+(T^i_\lam)\indices{_a^b}
+(T^i_\lam)\indices{_c^d}
+}
+\\
+\bcen
+\xymatrix@R=1pc{
+a&\bullet\ar[l]&d\ar[l]
+\\
+b\ar[r]&\bullet\ar[r]&c
+}
+\ecen
+=
+\frac{1}{d}
+\bcen
+\xymatrix@R=1pc{
+&&&\ar`l[ldd]`[dd][dd]
+\\
+&&&
+\\
+\ar`r[ruu]`[uu][uu]&&&
+}
+\ecen
++
+\frac{1}{\kappa}
+\bcen
+\xymatrix@R=1pc{
+&&&\ar`l[ld][dl]
+\\
+&T^i_\lam
+\ar`u[ul][ul]
+&T^i_\lam\ar@{~}[l]|\lam
+\ar`d[rd][rd]&
+\\
+\ar`r[ru][ur]&&&
+}
+\ecen
+\end{array}
+\eeq
+
+\beqa
+\int dg\; G
+&=&
+\sum_\lam
+C^\dagger_\lam
+\left[\int dg\; G_\lam
+\right]
+C_\lam
+\\
+&=& \sum_{\lam\in \cals}
+C^\dagger_\lam C_\lam
+\\
+&=&
+\sum_{\lam\in \cals}
+P_\lam
+\eeqa

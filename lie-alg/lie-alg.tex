@@ -37,13 +37,13 @@ Assume that the $T^i$ matrices are Hermitian and
 that they satisfy
 
 \beq
-\tr(T^i T^j)=K\delta(i, j)
+\tr(T^i T^j)=\kappa\delta(i, j)
 \label{eq-gluon-mass}
 \eeq
 
 
 It's customary to choose 
-generators so that  $K=\frac{1}{2}$.\footnote{For $SU(2)$,
+generators so that  $\kappa=\frac{1}{2}$.\footnote{For $SU(2)$,
 it is customary to
 choose $T^i =\frac{1}{2}\s_i$,
 where $\s_i$ for $i=1,2,3$ are the Pauli matrices.
@@ -53,17 +53,17 @@ it is customary to choose $T^i=
 where $\lam_i$
 for $i=1,2, \ldots, 8$ are the Gell-Mann matrices.
 For both of these choices,
-$K=\frac{1}{2}$.}
-However, we will often set $K=1$
+$\kappa=\frac{1}{2}$.}
+However, we will often set $\kappa=1$
 for intermediate calculations
-and restore $K\neq 1$ at the end by dimensional analysis. 
-Just remember that each $T^j$ scales as $\sqrt{K}$. 
+and restore $\kappa\neq 1$ at the end by dimensional analysis.
+Just remember that each $T^j$ scales as $\sqrt{\kappa}$.
 For example, given
 the equation 
 $\tr(T^iT^j)=\delta(i,j)$,
-we know that when $K\neq 1$,
-$\tr(T^iT^j)=K\delta(i,j)$
-so both sides of the equation scale as $K$.
+we know that when $\kappa\neq 1$,
+$\tr(T^iT^j)=\kappa\delta(i,j)$
+so both sides of the equation scale as $\kappa$.
 
 We will use
 the following
@@ -72,9 +72,9 @@ as a birdtrack. Define
 
 \beq
 (C_{Adj}^i)\indices{_b^a}=
-\frac{1}{\sqrt{K}}
+\frac{1}{\sqrt{\kappa}}
 (T^i)\indices{_b^a}=
-\frac{1}{\sqrt{K}}
+\frac{1}{\sqrt{\kappa}}
 \bcen
 \xymatrix{
 &a\ar[d]
@@ -884,7 +884,7 @@ and raised using the metric
 (called the {\bf Cartan-Killing form})
 $g_{ij}=\tr((T^i)^\dagger T^j)$. 
 But since we are assuming 
-$g_{ij}=K\delta_i^j$,
+$g_{ij}=\kappa\delta_i^j$,
 there is no need to do
 this.
 }
