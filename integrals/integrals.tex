@@ -152,6 +152,46 @@ b\ar[r]&G^\dagger\ar[r]&c
 \boxed{
 G\indices{_a^{a'}}
 (G^\dagger)\indices{
+_{b'}^b}(T^{i'})\indices{
+_{a'}
+^{b'}}
+G_{i'i}
+=
+(T^i)\indices{_a^b}
+}
+\\
+\bcen
+\xymatrix@R=1pc{
+&G\ar[l]&&
+\\
+&&T^i
+\ar`u[ul][ul]
+&\ar@{~}[l] G
+&\ar@{~}[l]
+\\
+\ar[r]&G^\dagger \ar`r[ru][ur]&&
+}
+\ecen
+=
+\bcen
+\xymatrix@R=1pc{
+&&&
+\\
+&T^i
+\ar`u[ul][ul]
+&\ar@{~}[l]
+\\
+ \ar`r[ru][ur]&&&
+}
+\ecen
+\end{array}
+\eeq
+
+\beq
+\begin{array}{l}
+\boxed{
+G\indices{_a^{a'}}
+(G^\dagger)\indices{
 _{b'}^b}(T^i)\indices{
 _{a'}
 ^{b'}}
@@ -174,14 +214,14 @@ G_{ii'}
 =
 \bcen
 \xymatrix@R=1pc{
-&G\ar[l]&&&
+&&&
 \\
-&&T^i
+&T^i
 \ar`u[ul][ul]
 &G\ar@{~}[l]
 &\ar@{~}[l]
 \\
-\ar[r]&G^\dagger \ar`r[ru][ur]&&&
+\ar`r[ru][ur]&&&
 }
 \ecen
 \end{array}
@@ -333,3 +373,116 @@ C^\dagger_\lam C_\lam
 \sum_{\lam\in \cals}
 P_\lam
 \eeqa
+
+\beq
+(C^\dagger_{\lam i})
+\indices{
+_{ac}
+}
+=
+\bcen
+\xymatrix@R=1pc{
+a&&&
+\\
+&C^\dagger_{\lam i}
+\ar`u[ul][ul]
+\ar`d[dl][dl]
+&\ar[l]
+\\
+c&&&
+}
+\ecen
+\eeq
+
+\beq
+\begin{array}{l}
+\boxed{
+(G_\mu)\indices{_a^{a'}}
+(G_\nu)\indices{
+_{b'}^b}(C^\dagger_{\lam i})\indices{
+_{a'}
+^{b'}}
+=
+(C^\dagger_{\lam i})\indices{_a^b}
+(G_\lam)_{ii'}
+}
+\\
+\bcen
+\xymatrix@R=1pc{
+&G_\mu\ar[l]&&
+\\
+&&C^\dagger_{\lam i}
+\ar`u[ul][ul]
+\ar`d[dl][dl]
+&\ar[l]
+\\
+&G_\nu\ar[l] &&
+}
+\ecen
+=
+\bcen
+\xymatrix@R=1pc{
+&&&
+\\
+&C^\dagger_{\lam i}
+\ar`u[ul][ul]
+\ar`d[dl][dl]
+&G_\lam\ar[l]
+&\ar[l]
+\\
+&&&
+}
+\ecen
+\end{array}
+\eeq
+
+\begin{align}
+\int dg\;
+\bcen
+\xymatrix@R=1pc{
+&G_\mu\ar[l]&\ar[l]
+\\
+&G_\nu\ar[l]&\ar[l]
+}
+\ecen
+&=
+\int dg\;
+\sum_\lam
+\frac{d_\lam}
+{\trij{\mu}{\lam}{\nu}}
+\bcen
+\xymatrix@R=1pc{
+&&&&
+\ar`l[ld][ld]
+\\
+&C_{\lam i}^\dagger
+\ar`u[lu][lu]
+\ar`d[dl][ld]
+&G_\lam\ar[l]&\ar[l]
+C_{\lam i}
+&
+\\
+&&&&\ar`l[ul][ul]
+}
+\ecen
+\\
+&=
+\sum_\lam
+(C^\dagger_{\lam i})_{ab}
+(C_{\lam j})^{cd}
+\int dg
+(G_{\lam })_{ij}
+\end{align}
+
+\beq
+\int dg \;
+(G_\lam)_{ij}
+=
+\left\{
+\begin{array}{ll}
+1&\text{ if } \lam\in\cals
+\\
+0&\text{ if }\lam \in \cals^c
+\end{array}
+\right.
+\eeq
