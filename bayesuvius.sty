@@ -62,6 +62,8 @@
 %\usepackage{underscore}
 \usepackage{bigints}
 
+
+
 \paperheight=11in
 \topmargin=0in
 \headheight=0in
@@ -112,6 +114,13 @@ T_{#4}
 &
 &T_{#4}^\dagger
 \ar@{<-}[ll]|{#4}
+}
+}
+\newcommand{\myboxed}[1]{
+\fcolorbox{blue!20}
+    {blue!10}
+{
+$\displaystyle #1$
 }
 }
 

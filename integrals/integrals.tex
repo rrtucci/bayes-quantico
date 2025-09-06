@@ -58,7 +58,7 @@ G\otimes G\otimes G^\dagger=
 
 \beq
 \begin{array}{l}
-\boxed{
+\myboxed{
 \delta_a^d \delta_c^b=
 \frac{1}{d}
 \delta_a^b \delta_c^d
@@ -107,7 +107,7 @@ from here on.
 
 \beq
 \begin{array}{l}
-\boxed{
+\myboxed{
 \delta_a^d \delta_c^b=
 \frac{1}{d}
 \delta_a^b \delta_c^d
@@ -154,7 +154,7 @@ b\ar[r]&G^\dagger\ar[r]&c
 
 \beq
 \begin{array}{l}
-\boxed{
+\myboxed{
 G\indices{_a^{a'}}
 (G^\dagger)\indices{
 _{b'}^b}(T^{i'})\indices{
@@ -194,7 +194,7 @@ G_{i'i}
 
 \beq
 \begin{array}{l}
-\boxed{
+\myboxed{
 G\indices{_a^{a'}}
 (G^\dagger)\indices{
 _{b'}^b}(T^i)\indices{
@@ -269,7 +269,8 @@ b\ar[r]&G^\dagger\ar[r]&c
 
 
 \beq
-\boxed{
+\begin{array}{l}
+\myboxed{
 \int dg\;
 G\indices{_a^d}
 (G^\dagger)\indices{_b^c}
@@ -277,7 +278,8 @@ G\indices{_a^d}
 \frac{1}{d}
 \delta_a^b \delta_c^d
 }
-\quad
+\\
+\displaystyle
 \int dg \;
 \bcen
 \xymatrix@R=1pc{
@@ -297,6 +299,7 @@ b\ar[r]&G^\dagger\ar[r]&c
 \ar`r[ruu]`[uu][uu]&&&
 }
 \ecen
+\end{array}
 \eeq
 
 \beq
@@ -315,7 +318,7 @@ b\ar[r]&G_\lam^\dagger\ar[r]&c
 
 \beq
 \begin{array}{l}
-\boxed{
+\myboxed{
 \delta_a^d \delta_c^b=
 \frac{1}{d}
 \delta_a^b \delta_c^d
@@ -420,7 +423,7 @@ c&&&
 
 \beq
 \begin{array}{l}
-\boxed{
+\myboxed{
 (G_\mu)\indices{_a^{a'}}
 (G_\nu)\indices{
 _{b'}^b}(C^\dagger_{\lam i})\indices{
@@ -515,3 +518,67 @@ C_{\lam}
 \delta(i,j)\indi(\lam\in \cals)
 \eeq
 \qed
+
+\section{Character Orthonormality Relation}
+
+\beq
+\chi_\lam(g)
+\eqdef
+\tr G_\lam
+=
+(G_\lam)\indices{_a^a}
+\eeq
+
+\beq
+\tr G^\dagger_\lam
+=
+(G\indices{_a^a})^*=
+\chi_\lam(g)^*
+\eeq
+
+\beq
+\begin{array}{l}
+\myboxed{
+\int dg\;
+\chi_\lam(hg)
+\chi_\mu^*(gf)
+=
+\delta(\mu, \lam)
+\frac{1}{d_\lam}
+\chi_\lam(hf^\dagger)
+}
+\\
+\displaystyle
+\int dg
+\bcen
+\xymatrix{
+&h\ar@2{-}[l]&\ar@2{-}[l]
+\ar`d[dl][dl]
+\\
+&G_\lam
+\ar`l[lu][lu]
+&
+\\
+&G^\dagger_\mu
+\ar`r[dr][dr]&
+\\
+\ar`u[ur][ur]
+&f^\dagger\ar@2{-}[l]
+&\ar@2{-}[l]
+}
+\ecen
+=
+\frac{1}{d_\lam}
+\bcen
+\xymatrix{
+&h\ar@2{-}[l]&
+\ar@2{-}[l]\ar[d]
+\\
+\ar[u]&f^\dagger\ar@2{-}[l]&\ar@2{-}[l]
+}
+\ecen
+\end{array}
+\quad
+\text{if $\mu$ and $\lam$ are irreps}
+\eeq
+
