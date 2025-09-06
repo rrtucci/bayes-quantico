@@ -10,12 +10,17 @@ G\indices{_c^d}
 (G^\dagger)\indices{_g^h}
 \eeq
 
+$\cals=$ singlets
+(in a singlet or trivial rep, all $g\in \calg$
+are represented by the same matrix, a diagonal
+matrix of ones), $\cals^c=$ nonsinglets
+
 \beq
 \int dg =1, \quad
-\int dg G = 0
+\int dg \;G_\lam
+=
+\indi(\lam\in \cals)
 \eeq
-where $G$ is a non-trivial
-representation of $\calg$.
 
 
 \beq
@@ -307,7 +312,6 @@ b\ar[r]&G_\lam^\dagger\ar[r]&c
 \quad \text{ if $\mu\neq \lam$}
 \eeq
 
-$\cals=$ singlets, $\cals^c=$ nonsinglets
 
 \beq
 \begin{array}{l}
@@ -357,6 +361,26 @@ b\ar[r]&\bullet\ar[r]&c
 \end{array}
 \eeq
 
+\begin{claim}
+\beq
+\int dg\; G = 
+\sum_{\lam\in \cals}
+P_\lam
+\eeq
+
+\beq
+\int dg\;
+(G_\mu)_{ab}(G_\nu)^{cd}
+=
+\sum_{\lam \in \cals}
+(P_\lam)\indices{_{ab}
+^{cd}
+}
+\eeq
+
+\end{claim}
+\proof
+
 \beqa
 \int dg\; G
 &=&
@@ -387,7 +411,7 @@ a&&&
 &C^\dagger_{\lam i}
 \ar`u[ul][ul]
 \ar`d[dl][dl]
-&\ar[l]
+&\ar[l]i
 \\
 c&&&
 }
@@ -403,15 +427,15 @@ _{b'}^b}(C^\dagger_{\lam i})\indices{
 _{a'}
 ^{b'}}
 =
-(C^\dagger_{\lam i})\indices{_a^b}
-(G_\lam)_{ii'}
+(C^\dagger_{\lam i'})\indices{_a^b}
+(G_\lam)_{i'i}
 }
 \\
 \bcen
 \xymatrix@R=1pc{
 &G_\mu\ar[l]&&
 \\
-&&C^\dagger_{\lam i}
+&&C^\dagger_{\lam }
 \ar`u[ul][ul]
 \ar`d[dl][dl]
 &\ar[l]
@@ -424,7 +448,7 @@ _{a'}
 \xymatrix@R=1pc{
 &&&
 \\
-&C^\dagger_{\lam i}
+&C^\dagger_{\lam }
 \ar`u[ul][ul]
 \ar`d[dl][dl]
 &G_\lam\ar[l]
@@ -448,18 +472,16 @@ _{a'}
 &=
 \int dg\;
 \sum_\lam
-\frac{d_\lam}
-{\trij{\mu}{\lam}{\nu}}
 \bcen
 \xymatrix@R=1pc{
 &&&&
 \ar`l[ld][ld]
 \\
-&C_{\lam i}^\dagger
+&C_{\lam}^\dagger
 \ar`u[lu][lu]
 \ar`d[dl][ld]
 &G_\lam\ar[l]&\ar[l]
-C_{\lam i}
+C_{\lam}
 &
 \\
 &&&&\ar`l[ul][ul]
@@ -467,22 +489,29 @@ C_{\lam i}
 \ecen
 \\
 &=
+\sum_{ij}
 \sum_\lam
 (C^\dagger_{\lam i})_{ab}
 (C_{\lam j})^{cd}
 \int dg
 (G_{\lam })_{ij}
+\\
+&=
+\sum_{i}
+\sum_{\lam \in \cals}
+(C^\dagger_{\lam i})_{ab}
+(C_{\lam i})^{cd}
+\\
+&=
+\sum_{\lam \in \cals}
+(P_\lam)\indices{_{ab}
+^{cd}}
 \end{align}
 
 \beq
 \int dg \;
 (G_\lam)_{ij}
 =
-\left\{
-\begin{array}{ll}
-1&\text{ if } \lam\in\cals
-\\
-0&\text{ if }\lam \in \cals^c
-\end{array}
-\right.
+\delta(i,j)\indi(\lam\in \cals)
 \eeq
+\qed
