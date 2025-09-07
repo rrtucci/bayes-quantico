@@ -91,7 +91,7 @@ under multiplication} (i.e., $ab\in \calh$ for all $a,b\in \calh$)
 
 \section{Group  Representation}
 
-A {\bf group representation}
+A {\bf group representation} (rep)
 of a group $\calg$
 is a map $\phi: \calg\rarrow \CC^{n\times n}$\footnote{More generally, the $\CC^{n\times n}$ can be replaced by $\RR^{n\times n}$ or by $\FF^{n\times n}$ for any field $\FF$} such that
 
@@ -115,6 +115,26 @@ are represented by the same matrix.
 If the map $\phi$
 is 1-1, onto, we call it a {\bf faithful representation} 
 
+The {\bf trivial representation} 
+represents all $g\in \calg$
+by  $diag(1,1, \dots, 1)$.
+It's dimension is $d_\lam=0$.
+It's not a faithful rep.
+
+A {\bf singlet representation}
+represents all
+$g\in \calg$
+by  $ z(g) diag(1,1, \dots, 1)$
+for some $z(g)\in\CC$.
+It's dimension is $d_\lam=1$.
+The projection operator
+$\delta_a^b \delta_c^d$
+when acting on $G\indices{_c^d}$
+gives a $ z(G) diag(1,1, \dots, 1)$
+where $z(G)=\tr(G)$, so it
+projects to a singlet rep.
+
+
 
 When a group is 
 defined using matrices, those
@@ -136,7 +156,7 @@ then the adjrep is given by the matrices
 with $i,j$ entries $M^k_{ij}=-if\indices{^k_i_j}$.
 
 {\bf Irreducible representations} (irreps)
-are define in Ch. \ref{ch-reducibility}
+are defined in Ch. \ref{ch-reducibility}
 
 The {\bf fundamental representation} (funrep)
 is defined as the smallest irrep.. 
