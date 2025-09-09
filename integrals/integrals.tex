@@ -539,7 +539,7 @@ C_{\lam}
 \myboxed{
 \int dg\;
 \chi_\lam(hg)
-\chi_\mu^*(gf)
+\chi_\mu^*(gf^\dagger)
 =
 \delta(\mu, \lam)
 \frac{1}{d_\lam}
@@ -590,8 +590,19 @@ G\indices{_a^b}
 _{(h^\dagger)
 \indices{_b^a}G\indices{_a^b}}
 \eeq
+\section{$SU(n)$ examples}
 
-$SU(2)$
+In $SU(n)$,
+
+\beq
+n=d_{\lam_0}
+\eeq
+where $\lam_0$
+is the defining rep.
+($\calg\subset \CC^{n\times n})$
+
+
+$SU(n)$
 $G\otimes G$
 
 \beq
@@ -779,3 +790,335 @@ for $SU(n)$
 \int dg\; G\otimes G=0\quad
 \text{if $n>2$}
 \eeq
+
+$
+G^\dagger \otimes G^\dagger
+\otimes  G\otimes G$
+
+\begin{align}
+\bcen
+\xymatrix@R=1pc{
+\ar[r]&
+\\
+\ar[r]&
+\\
+&\ar[l]
+\\
+&\ar[l]
+}
+\ecen
+&=
+\bcen
+\xymatrix@R=1pc@C=1.5pc{
+\ar[r]&\cals_2
+\ar@2{-}[d]\ar[r]&
+\\
+\ar[r]&\ar[r]&
+\\
+&&\ar[ll]
+\\
+&&\ar[ll]
+}
+\ecen
++
+\bcen
+\xymatrix@R=1pc@C=1.5pc{
+\ar[r]&\cala_2
+\ar@2{-}[d]\ar[r]&
+\\
+\ar[r]&\ar[r]&
+\\
+&&\ar[ll]
+\\
+&&\ar[ll]
+}
+\ecen
+\\
+\\
+&=
+\underbrace{\bcen
+\xymatrix@R=1pc@C=1.5pc{
+\ar[r]&\cals_2
+\ar@2{-}[d]\ar[r]&
+\\
+\ar[r]&\ar[r]&
+\\
+&\cals_2\ar[l]
+\ar@2{-}[d]&\ar[l]
+\\
+&\ar[l]&\ar[l]
+}
+\ecen}_{\cals_2\otimes\cals_2}
++
+\underbrace{\bcen
+\xymatrix@R=1pc@C=1.5pc{
+\ar[r]&\cala_2
+\ar@2{-}[d]\ar[r]&
+\\
+\ar[r]&\ar[r]&
+\\
+&\cala_2\ar[l]
+\ar@2{-}[d]&\ar[l]
+\\
+&\ar[l]&\ar[l]
+}
+\ecen}_{\cala_2\otimes\cala_2}
++
+\underbrace{\bcen
+\xymatrix@R=1pc@C=1.5pc{
+\ar[r]&\cals_2
+\ar@2{-}[d]\ar[r]&
+\\
+\ar[r]&\ar[r]&
+\\
+&\cala_2\ar[l]
+\ar@2{-}[d]&\ar[l]
+\\
+&\ar[l]&\ar[l]
+}
+\ecen}_{\cals_2\otimes\cala_2}
++
+\underbrace{\bcen
+\xymatrix@R=1pc@C=1.5pc{
+\ar[r]&\cala_2
+\ar@2{-}[d]\ar[r]&
+\\
+\ar[r]&\ar[r]&
+\\
+&\cals_2\ar[l]
+\ar@2{-}[d]&\ar[l]
+\\
+&\ar[l]&\ar[l]
+}
+\ecen}_{\cala_2\otimes\cals_2}
+\end{align}
+
+\beq
+P_1 =
+\frac{1}{n^2}
+\bcen
+\xymatrix{
+\ar[r]&
+\ar@/^2pc/[ddd]
+&&\ar@/_2pc/@{<-}[ddd]
+\ar[r]&
+\\
+\ar[r]&
+\ar@/^1pc/[d]
+&&\ar@/_1pc/@{<-}[d]
+\ar[r]&
+\\
+&\ar[l]
+&&&\ar[l]
+\\
+&\ar[l]
+&&&\ar[l]
+}
+\ecen
+\eeq
+
+\beq
+P_2 =\frac{1}{n^2}
+\bcen
+\xymatrix{
+\ar[r]&
+\ar@/^2pc/[dd]
+&&\ar@/_2pc/@{<-}[dd]
+\ar[r]&
+\\
+\ar[r]&
+\ar@/^2pc/[dd]
+&&\ar@/_2pc/@{<-}[dd]
+\ar[r]&
+\\
+&\ar[l]&&&\ar[l]
+\\
+&\ar[l]&&&\ar[l]
+}
+\ecen
+=
+\frac{1}{n^2}
+\bcen
+\xymatrix{
+\ar[r]&
+\ar@/^2pc/[ddd]
+&&\ar@/_2pc/@{<-}[ddd]
+\ar[r]&
+\\
+\ar[r]&
+\ar@/^1pc/[d]
+&&\ar@/_1pc/@{<-}[d]
+\ar[r]&
+\\
+&\ar[l]\ar@{<->}[d]
+&&&\ar[l]
+\\
+&\ar[l]
+&&&\ar[l]
+}
+\ecen
+\eeq
+
+
+\beq
+\pi_\cals
+=
+\frac{1}{d_\cals}
+\bcen
+\xymatrix@R=1pc@C=1.5pc{
+\ar[r]
+&\cals_2
+\ar@2{-}[d]
+\ar@/^2pc/[ddd]
+&&\cals_2
+\ar@2{-}[d]
+\ar@/_2pc/@{<-}[ddd]
+\ar[r]&
+\\
+\ar[r]
+&\ar@/^1pc/[d]
+&&\ar@/_1pc/@{<-}[d]
+\ar[r]&
+\\
+&\ar[l]
+&&&\ar[l]
+\\
+&\ar[l]
+&&&\ar[l]
+}
+\ecen
+,\quad 
+\pi_\cala
+=
+\frac{1}{d_\cala}
+\bcen
+\xymatrix@R=1pc@C=1.5pc{
+\ar[r]
+&\cala_2
+\ar@2{-}[d]
+\ar@/^2pc/[ddd]
+&&\cala_2
+\ar@2{-}[d]
+\ar@/_2pc/@{<-}[ddd]
+\ar[r]&
+\\
+\ar[r]
+&\ar@/^1pc/[d]
+&&\ar@/_1pc/@{<-}[d]
+\ar[r]&
+\\
+&\ar[l]
+&&&\ar[l]
+\\
+&\ar[l]
+&&&\ar[l]
+}
+\ecen
+\eeq
+$P_1, P_2, \pi_\cala, \pi_\cals$
+are all properly  normalized projectors
+
+\beq
+dim(\pi_\cals)= \tr \pi_\cals=
+\frac{1}{d_\cals}
+\bcen
+\xymatrix@R=1pc@C=1.5pc{
+\ar[r]
+&\cals_2
+\ar@2{-}[d]
+\ar@/^2pc/[ddd]
+&&\cals_2
+\ar@2{-}[d]
+\ar@/_2pc/@{<-}[ddd]
+\ar[r]&
+\ar@{-}@[red]@/_1pc/[llll]
+\\
+\ar[r]
+&\ar@/^1pc/[d]
+&&\ar@/_1pc/@{<-}[d]
+\ar[r]&\ar@{-}@[red]@/_1pc/[llll]
+\\
+&\ar[l]
+&&&\ar[l]\ar@{-}@[red]@/_1pc/[llll]
+\\
+&\ar[l]
+&&&\ar[l]\ar@{-}@[red]@/_1pc/[llll]
+}
+\ecen
+=1
+\eeq
+
+\beq
+dim(\pi_\cala)=1
+\eeq
+
+\beq
+\pi_\cala \pi_\cals=1
+\eeq
+
+
+
+\beq
+P_i(\cals_2\otimes
+\cala_2)P_i =0, 
+\quad
+P_i(\cala_2\otimes
+\cals_2)P_i =0
+\eeq
+
+\beq
+P_i(\cals_2\otimes
+\cals_2)P_i =P_i \pi_\cals P_i, 
+\quad
+P_i(\cala_2\otimes
+\cala_2)P_i
+=P_i \pi_\cala P_i
+\eeq
+
+\beq
+\bcen
+\xymatrix@R=1pc{
+\ar[r]&
+\\
+\ar[r]&
+\\
+&\ar[l]
+\\
+&\ar[l]
+}
+\ecen
+=\pi_\cals + \pi_\cala + \ldots
+\eeq
+
+\beqa
+\int dg\;
+\bcen
+\xymatrix@R=1pc{
+\ar[r]&G^\dagger\ar[r]&
+\\
+\ar[r]&G^\dagger\ar[r]&
+\\
+&\ar[l]G&\ar[l]
+\\
+&\ar[l]G&\ar[l]
+}
+\ecen
+&=&
+\int dg\;(\pi_\cals + \pi_\cals)
+\bcen
+\xymatrix@R=1pc{
+\ar[r]& G^\dagger\ar[r]&
+\\
+\ar[r]& G^\dagger\ar[r]&
+\\
+&\ar[l]G &\ar[l]
+\\
+&\ar[l] G &\ar[l]
+}
+\ecen
+(\pi_\cals + \pi_\cals)
+\\
+&=&
+\pi_\cals + \pi_\cala
+\eeqa
+
