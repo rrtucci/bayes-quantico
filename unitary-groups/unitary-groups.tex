@@ -2,7 +2,16 @@
 \label{ch-unitary-groups}
 
 
-\section{SU(n)}
+\section{$SU(n)$}
+
+In $SU(n)$,
+
+\beq
+n=d_{\lam_0}
+\eeq
+where $\lam_0$
+is the defining rep.
+($\calg\subset \CC^{n\times n})$
 
 \beq
 m(p,q) = \delta_b^a 
@@ -24,14 +33,14 @@ a\ar[r]|\bullet
 \eeq
 
 \beq
-\twoarrows^{a,c}_{d,b}=
+M^{a,c}_{d,b}=
 \delta_d^a\delta_b^c
 =
 \begin{array}{c}
 \xymatrix{d
-&c\ar[d]|\bullet
+&c\ar@/_1pc/[d]|\bullet
 \\
-a\ar[u]|\bullet
+a\ar@/_1pc/[u]|\bullet
 &b}
 \end{array}
 \eeq
@@ -39,17 +48,17 @@ a\ar[u]|\bullet
 \beq
 \begin{array}{ll}
 \myboxed{
-\twoarrows^2 = n\twoarrows
+M^2 = nM
 }
 &
 \bcen
 \xymatrix{d
 &\ar@/_1pc/[d]|\bullet
 \\
-a\ar[u]|\bullet
+a\ar@/_1pc/[u]|\bullet
 &}
 \xymatrix{
-&c\ar[d]|\bullet
+&c\ar@/_1pc/[d]|\bullet
 \\
 \ar@/_1pc/[u]|\bullet
 &b}
@@ -58,9 +67,9 @@ a\ar[u]|\bullet
 n
 \bcen
 \xymatrix{d
-&c\ar[d]|\bullet
+&c\ar@/_1pc/[d]|\bullet
 \\
-a\ar[u]|\bullet
+a\ar@/_1pc/[u]|\bullet
 &b}
 \ecen
 \end{array}\eeq
@@ -76,17 +85,17 @@ $\lam_1=n$
 \beq
 \begin{array}{ll}
 \myboxed{
-P_1 = \frac{\twoarrows-n}{0-n}=
-1 -\frac{1}{n}\twoarrows
+P_1 = \frac{M-n}{0-n}=
+1 -\frac{1}{n}M
 }&
 \bcen
-\xymatrix@R=1pc{
-a\ar[dr]
+\xymatrix@C=1pc@R=1pc{
+a
 &&b\ar[dl]
 \\
-&P_1\ar[dl]\ar[dr]
+&P_1\ar[dr]\ar[lu]
 \\
-c&&d
+c\ar[ru]&&d
 }
 \ecen
 =
@@ -94,20 +103,22 @@ c&&d
 \xymatrix@C=3pc{
 a&b\ar[l]|\bullet
 \\
-c&d\ar[l]|\bullet}
+c\ar[r]|\bullet&d
+}
 \ecen
 -
 \frac{1}{n}
 \bcen
 \xymatrix{
 a
-&b\ar[d]|\bullet
+&b\ar@/_1pc/[d]|\bullet
 \\
-c\ar[u]|\bullet
+c\ar@/_1pc/[u]|\bullet
 &d}
 \ecen
 \end{array}
 \eeq
+
 
 
 $\lam_2 = 0$
@@ -115,33 +126,33 @@ $\lam_2 = 0$
 \beq
 \begin{array}{ll}
 \myboxed{
-P_2 =\frac{\twoarrows-0}{n-0}= \frac{1}{n} \twoarrows 
+P_2 =\frac{M-0}{n-0}= \frac{1}{n} M 
 }
 &
 \bcen
-\xymatrix@R=1pc{
-a\ar[dr]
+\xymatrix@C=1pc@R=1pc{
+a
 &&b\ar[dl]
 \\
-&P_2\ar[dl]\ar[dr]
+&P_2\ar[dr]\ar[lu]
 \\
-c&&d
+c\ar[ru]&&d
 }
 \ecen
 =
 \frac{1}{n}
 \bcen
-\xymatrix{
+\xymatrix@C=3pc{
 a
-&b\ar[d]|\bullet
+&b\ar@/_1pc/[d]|\bullet
 \\
-c\ar[u]|\bullet
+c\ar@/_1pc/[u]|\bullet
 &d}
 \ecen
 \end{array}\eeq
 
 \beqa
-\tr P_1 &=&
+dim(P_1)=\tr P_1 &=&
 \bcen
 \xymatrix@C=3pc{
 &\ar[l]|\bullet\ar@[red]@{-}@/_1pc/[l]
@@ -151,10 +162,10 @@ c\ar[u]|\bullet
 -
 \frac{1}{n}
 \bcen
-\xymatrix{
-&\ar[d]|\bullet\ar@[red]@{-}@/_1pc/[l]
+\xymatrix@C=3pc{
+&\ar@/_1pc/[d]|\bullet\ar@[red]@{-}@/_1pc/[l]
 \\
-\ar[u]|\bullet
+\ar@/_1pc/[u]|\bullet
 &\ar@[red]@{-}@/_1pc/[l]
 }
 \ecen
@@ -163,13 +174,13 @@ c\ar[u]|\bullet
 \eeqa
 
 \beqa
-\tr P_2 &=&
+dim(P_2)=\tr P_2 &=&
 \frac{1}{n}
 \bcen
-\xymatrix{
-&\ar[d]|\bullet\ar@[red]@{-}@/_1pc/[l]
+\xymatrix@C=3pc{
+&\ar@/_1pc/[d]|\bullet\ar@[red]@{-}@/_1pc/[l]
 \\
-\ar[u]|\bullet
+\ar@/_1pc/[u]|\bullet
 &\ar@[red]@{-}@/_1pc/[l]
 }
 \ecen
@@ -179,15 +190,183 @@ c\ar[u]|\bullet
 \eeqa
 
 
+
+
+
+
 \beq
-(T_i)^b_a = 
 \bcen
 \xymatrix{
-&b\ar[d]
+&\ar[l]
 \\
-i&T_i\ar[d]\ar@{~}[l]
+&\ar[l]
+}
+\ecen
+=
+\bcen
+\xymatrix{
+&\ar[l] \cals_2
+\ar@2{-}[d]
+&\ar[l]
 \\
-&a
+&\ar[l]&\ar[l]
+}
+\ecen
++
+\bcen
+\xymatrix{
+&\ar[l] \cala_2
+\ar@2{-}[d]
+&\ar[l]
+\\
+&\ar[l]&\ar[l]
+}
+\ecen
+\eeq
+
+\beq
+\bcen
+\xymatrix{
+&\ar[l] \cals_2
+\ar@2{-}[d]
+&\ar[l]
+\\
+&\ar[l]&\ar[l]
+}
+\ecen
+=
+\frac{1}{2}
+\left\{
+\bcen
+\xymatrix{
+&
+&\ar[ll]
+\\
+&&\ar[ll]
+}
+\ecen
++
+\bcen
+\xymatrix{
+&\ar[l] \ar
+@{<->}[d]
+&\ar[l]
+\\
+&\ar[l]&\ar[l]
+}
+\ecen
+\right\}
+\eeq
+
+\beq
+\bcen
+\xymatrix{
+&\ar[l] \cala_2
+\ar@2{-}[d]
+&\ar[l]
+\\
+&\ar[l]&\ar[l]
+}
+\ecen
+=
+\frac{1}{2}
+\left\{
+\bcen
+\xymatrix{
+&
+&\ar[ll]
+\\
+&&\ar[ll]
+}
+\ecen
+-
+\bcen
+\xymatrix{
+&\ar[l] \ar
+@{<->}[d]
+&\ar[l]
+\\
+&\ar[l]&\ar[l]
+}
+\ecen
+\right\}
+\eeq
+
+
+\beqa
+dim(\cals_2)
+&=&
+\frac{1}{2}
+\left\{
+\bcen
+\xymatrix{
+&
+&\ar[ll]
+\ar@[red]@/_1pc/@{-}[ll]
+\\
+&&\ar[ll]
+\ar@[red]@/_1pc/@{-}[ll]
+}
+\ecen
++
+\bcen
+\xymatrix{
+&\ar[l] \ar
+@{<->}[d]
+&\ar[l]
+\ar@[red]@/_1pc/@{-}[ll]
+\\
+&\ar[l]&\ar[l]
+\ar@[red]@/_1pc/@{-}[ll]
+}
+\ecen
+\right\}
+\\
+&=&
+\frac{n(n+1)}{2}
+\eeqa
+
+\beqa
+dim(\cala_2)
+&=&
+\frac{1}{2}
+\left\{
+\bcen
+\xymatrix{
+&
+&\ar[ll]
+\ar@[red]@/_1pc/@{-}[ll]
+\\
+&&\ar[ll]
+\ar@[red]@/_1pc/@{-}[ll]
+}
+\ecen
+-
+\bcen
+\xymatrix{
+&\ar[l] \ar
+@{<->}[d]
+&\ar[l]
+\ar@[red]@/_1pc/@{-}[ll]
+\\
+&\ar[l]&\ar[l]
+\ar@[red]@/_1pc/@{-}[ll]
+}
+\ecen
+\right\}
+\\
+&=&
+\frac{n(n-1)}{2}
+\eeqa
+
+
+\beq
+(T_i)\indices{^b_a} = 
+\bcen
+\xymatrix{
+&i\ar@{~}[d]
+\\
+a&T^i\ar[l]&b\ar[l]
 }
 \ecen
 \eeq
@@ -196,49 +375,93 @@ i&T_i\ar[d]\ar@{~}[l]
 T_i^\dagger = T_i
 \eeq
 
+\beq
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&&&\ar@/_1pc/[ld]
+\\
+&T_i\ar@/_1pc/[lu]&T_i\ar@{~}[l]\ar@/_1pc/[rd]&
+\\
+\ar@/_1pc/[ru]&&&
+}
+\ecen
+\eqdef P_1
+=
+\bcen
+\xymatrix@C=3pc{
+&\ar[l]|\bullet
+\\
+\ar[r]|\bullet&}
+\ecen
+-
+\frac{1}{n}
+\bcen
+\xymatrix@C=3pc{
+&\ar@/_1pc/[d]|\bullet
+\\
+\ar@/_1pc/[u]|\bullet
+&}
+\ecen
+\eeq
+
 \begin{claim}
 \beq
 C_F\delta^b_a=
-(T_iT_i)_a^b = \frac{n^2-1}{n}\delta_a^b
+(T_iT_i)\indices{_a^b}
+ = \frac{n^2-1}{n}\delta_a^b
 \eeq
 \end{claim}
 \proof
 
 \beqa
-(T_iT_i)_a^b
+(T_iT_i)\indices{_a^b}
 &=&
 \sum_i
 \bcen
 \xymatrix{
-&\ar@/_1pc/[d]
-\\
-i&T_i\ar[d]\ar@{~}[l]
-\\
-&a
+a&T_i\ar[l]&T_i\ar@{~}@/_2pc/[l]|i\ar[l]&
+\ar[l]b
 }\ecen
-\bcen
-\xymatrix{
-&
-\\
-T_i\ar@{~}[r]
-\ar@/_1pc/[u]&i
-\\
-b\ar[u]&
-}
-\ecen
 \\
 &=&
-\sum_i
 \bcen
-\xymatrix{
-i
-&T_i\ar@{~}[l]
-\ar@/_1pc/[r]
-&T_i\ar@{~}[r]
-\ar@/_1pc/[l]
-&i
+\xymatrix@R=1pc@C=1pc{
+a&&&\ar@/_1pc/[ld]b
+\\
+&T_i\ar@/_1pc/[lu]&T_i\ar@{~}[l]\ar@/_1pc/[rd]&
+\\
+\ar@/_1pc/[ru]&&&
+\ar@/^1pc/[lll]
 }
 \ecen
+\\
+&&\nonumber
+\\
+&=&
+\bcen
+\xymatrix@C=3pc{
+&\ar[l]|\bullet
+\\
+\ar[r]|\bullet&
+\ar@/^1pc/[l]}
+\ecen
+-
+\frac{1}{n}
+\bcen
+\xymatrix@C=3pc{
+&\ar@/_1pc/[d]|\bullet
+\\
+\ar@/_1pc/[u]|\bullet
+&
+\ar@/^1pc/[l]}
+\ecen
+\\
+&&\nonumber
+\\
+&=&\left(n-\frac{1}{n}\right)
+\xymatrix{
+a&\ar[l]|\bullet b 
+}
 \eeqa
 
 
