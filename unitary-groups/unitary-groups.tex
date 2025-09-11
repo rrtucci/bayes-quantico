@@ -376,6 +376,26 @@ T_i^\dagger = T_i
 \eeq
 
 \beq
+\begin{array}{l}
+\myboxed{\tr(T_i T_j)=\kappa \delta(i,j)}
+\\
+\\
+\xymatrix{
+i&\ar@{~}[l] T_i
+\ar@/_1pc/[r]
+&T_j\ar@/_1pc/[l]
+&\ar@{~}[l]j
+}
+=
+\delta(i,j)\kappa
+\xymatrix{
+i&\ar@{~}[l]i
+}
+\end{array}
+\eeq
+Usually set $\kappa=1$
+
+\beq
 \bcen
 \xymatrix@R=1pc@C=1pc{
 &&&\ar@/_1pc/[ld]
@@ -406,9 +426,25 @@ T_i^\dagger = T_i
 
 \begin{claim}
 \beq
+\begin{array}{l}
+\myboxed{
 C_F\delta^b_a=
+\sum_i
 (T_iT_i)\indices{_a^b}
- = \frac{n^2-1}{n}\delta_a^b
+ = \frac{n^2-1}{n}\delta_a^b}
+\\
+\sum_i
+\bcen
+\xymatrix{
+a&T_i\ar[l]&T_i\ar@{~}@/_2pc/[l]|i\ar[l]&
+\ar[l]b
+}\ecen
+=
+\left(\frac{n^2-1}{n}\right)
+\xymatrix{
+a&\ar[l]|\bullet b 
+}
+\end{array}
 \eeq
 \end{claim}
 \proof
@@ -463,9 +499,116 @@ a&&&\ar@/_1pc/[ld]b
 a&\ar[l]|\bullet b 
 }
 \eeqa
-
-
-
-
 \qed
 
+
+\beq
+\begin{array}{l}
+\myboxed{
+T_i T_j - T_j T_i = i f_{ijk}T_k
+}
+\\
+\bcen
+\xymatrix{
+&\ar@{~}[d]i
+&\ar@{~}[d]j
+&
+\\
+&\ar[l]T_i
+&\ar[l]T_j
+&\ar[l]
+}
+\ecen
+-
+\bcen
+\xymatrix{
+&\ar@{~}[dr]i
+&\ar@{~}[dl]j
+&
+\\
+&\ar[l]T_j
+&\ar[l]T_i
+&\ar[l]
+}
+\ecen
+=
+-\bcen
+\xymatrix{
+\ar@{~}@[green][rd]i&&\ar@{~}[ld]j
+\\
+&\ar@{~}[d] f
+&
+\\
+&\ar[l]T_k
+&\ar[l]
+}
+\ecen
+\end{array}
+\eeq
+$f_{ijk}$
+is totally antisymmetric. First index in green
+
+\beq
+\begin{array}{l}
+\myboxed{
+if_{ijk}= 
+\tr(T_i T_j T_k)
+-
+\tr(T_j T_i T_k)
+}
+\\
+\bcen
+\xymatrix{
+&\ar@{~}[d]&
+\\
+&f\ar@{~}@[green][dl]\ar@{~}[dr]&
+\\
+&&
+}
+\ecen
+=
+\bcen
+\xymatrix@R=1.5pc@C=1.5pc{
+&&\ar@{~}[d]&&
+\\
+&&\ar[dl]T_k&&
+\\
+&T_i\ar[rr]&&\ar[ul]T_j&
+\\
+\ar@{~}@[green][ur]&&&&\ar@{~}[ul]
+}
+\ecen
+-
+\bcen
+\xymatrix@R=1.5pc@C=1.5pc{
+&&\ar@{~}[d]&&
+\\
+&&\ar@{<-}[dl]T_k&&
+\\
+&\ar@{<-}[rr]T_i&&\ar@{<-}[ul]T_j&
+\\
+\ar@{~}@[green][ur]&&&&\ar@{~}[ul]
+}
+\ecen
+\end{array}
+\eeq
+
+\begin{claim}
+\beq
+\delta(i,j) C_A
+\;
+=
+\;
+\xymatrix{
+i&\ar@{~}@[green][l]f
+&\ar@{~}@/_1pc/[l]|n
+\ar@{~}@/^1pc/[l]|m
+f
+&\ar@{~}@[green][l] j
+}
+= 2n
+\eeq
+
+\end{claim}
+\proof
+\qed
