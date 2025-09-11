@@ -190,7 +190,35 @@ dim(P_2)=\tr P_2 &=&
 \eeqa
 
 
+\begin{claim}
+\beq
+\myboxed{\tr(T_i)=0}
+\quad
+\xymatrix{
+&\ar@{~}[l] T_i
+\loopright{5}{}
+&
+}=0
+\eeq
+\end{claim}
+\proof
 
+\beq
+0=P_1 P_2=
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&&&\ar@/_1pc/[ld]
+&&\ar`l[ldd]`[dd][dd]
+\\
+&T_i\ar@/_1pc/[lu]&T_i\ar@{~}[l]\ar@/_1pc/[rd]&&&
+\\
+\ar@/_1pc/[ru]&&&\ar[uu]
+&&
+}
+\ecen
+\eeq
+
+\qed
 
 
 
@@ -593,22 +621,166 @@ if_{ijk}=
 \end{array}
 \eeq
 
+
+
+
+
 \begin{claim}
 \beq
-\delta(i,j) C_A
-\;
+\bcen
+\xymatrix@R=1pc{
+&&T_k\ar[ld]
+\ar@{~}[dd]
+&&
+\\
+&T_i\ar[rd]\ar@{~}[l]|i
+&&T_j\ar[lu]&\ar@{~}[l]|j
+\\
+&&T_k\ar[ru]&&
+}
+\ecen
 =
-\;
+-\frac{1}{n}\delta(i,j)
 \xymatrix{
-i&\ar@{~}@[green][l]f
+&\ar@{~}[l]}
+\eeq
+\end{claim}
+\proof
+\beq
+\bcen
+\xymatrix@R=1pc{
+&&T_k\ar[ld]
+\ar@{~}[dd]
+&&
+\\
+&T_i\ar[rd]\ar@{~}[l]|i
+&&T_j\ar[lu]&\ar@{~}[l]|j
+\\
+&&T_k\ar[ru]&&
+}
+\ecen
+=
+\underbrace
+{\bcen
+\xymatrix@C=1pc{
+&
+\ar[d]&\ar@/_1pc/[dd]
+\\
+&\ar@{~}[l]T_i
+\ar[d]&T_j\ar[u]&
+\ar@{~}[l]
+\\
+&\ar@/_1pc/[uu]
+&\ar[u]
+}
+\ecen}_{=0}
+-
+\frac{1}{n}
+\bcen
+\xymatrix{
+&T_i\ar@{~}[l]
+\ar@/_1pc/[r]
+&T_i\ar@/_1pc/[l]
+&\ar@{~}[l]
+}
+\ecen
+\eeq
+\qed
+
+
+
+\begin{claim}
+\beq
+\begin{array}{l}
+\myboxed{
+\delta(i,j) C_A
+=
+-f_{imn}f_{jnm} = 2n\delta(i,j)}
+\\ (-1)
+\xymatrix{
+&\ar@{~}@[green][l]|i f
 &\ar@{~}@/_1pc/[l]|n
 \ar@{~}@/^1pc/[l]|m
 f
-&\ar@{~}@[green][l] j
+&\ar@{~}@[green][l]| j
 }
-= 2n
+= 2n\delta(i,j)
+\end{array}
 \eeq
 
 \end{claim}
 \proof
+
+\beq
+\xymatrix{
+&\ar@{~}@[green][l]|i f
+&\ar@{~}@/_1pc/[l]|n
+\ar@{~}@/^1pc/[l]|m
+f
+&\ar@{~}@[green][l]| j
+}
+=2
+\bcen
+\xymatrix@C=2pc{
+&\ar@{~}[l]|i T_i
+\ar[rd]
+&\ar[l]T_n
+&f
+\ar@{~}[l]
+\ar@{~}[ld]
+&\ar@{~}@[green][l]|j
+\\
+&&T_m\ar[u]
+}
+\ecen
+=A
+\eeq
+
+\beq
+\frac{1}{2}A=
+\underbrace{\bcen
+\xymatrix@C=2pc{
+&&T_k\ar[ld]
+\ar@{~}@/_1pc/[dd]
+&
+\\
+&\ar@{~}[l]|i T_i
+\ar[rd]
+&\ar[u]T_n
+&\ar@{~}@[green][l]|j
+\\
+&&T_m\ar[u]
+}
+\ecen}_{A_1}
+-
+\underbrace{\bcen
+\xymatrix{
+&&T_k\ar[ld]
+&\ar@{~}@[green][l]|j
+\\
+&\ar@{~}[l]|i T_i
+\ar[rd]
+&\ar[u]T_n
+\ar@{~}@/_1pc/[d]
+\\
+&&T_m\ar[u]
+}
+\ecen}_{A_2}
+\eeq
+
+\beq
+A_1 =
+\frac{n^2-1}{n}\delta(i,j)
+\eeq
+
+\beq
+A_2 = -\frac{1}{n}\delta(i,j)
+\eeq
+
+\beq
+A = 2 (A_1 - A_2)= 2n
+\delta(i, j)
+\eeq
+
 \qed
+
