@@ -234,4 +234,535 @@ j&\ar@{~}[l]&\ar[ur]
 \ecen
 \eeq
 
-\section{Independent Casimirs of Semi-Simple Groups}
+\section{Independent Casimirs of Simple Groups}
+
+
+
+
+\beq
+\myboxed{
+M =\sum_i  T_i x_i}
+\quad
+\xymatrix{
+&M\ar[l]&\ar[l]
+}
+=
+\sum_i x_i
+\bcen
+\xymatrix{
+&&
+\\
+a&\ar[l] T_i
+\ar@{~}[u]
+&\ar[l]b
+}
+\ecen
+\eeq
+
+\beqa
+\tr(M^k)
+&=&
+\xymatrix@C=1pc{
+&M\ar[l]
+&M\ar[l]
+&\ldots
+&M\ar[l]
+&\ar[l]
+\ar@[red]@{-}@/_1pc/[lllll]
+}
+\\
+\nonumber
+\\
+&=&
+\sum_{i_1 i_2 \ldots i_k}
+\bcen
+\xymatrix@C=1pc{
+&T_{i_1}\ar[l]\ar@{~}[d]
+&T_{i_2}\ar[l]\ar@{~}[d]
+&\ldots
+&T_{i_k}\ar[l]\ar@{~}[d]
+&\ar[l]
+\ar@[red]@{-}@/_1pc/[lllll]
+\\
+&&&&
+}
+\ecen
+x_{i_1}
+x_{i_2}
+\ldots
+x_{i_k}
+\\
+&=&
+\sum_{i_1 i_2 \ldots i_k}
+\bcen
+\underbrace
+{\xymatrix@C=1pc{
+&T_{i'_1}\ar[l]\ar@{~}[d]
+&T_{i'_2}\ar[l]\ar@{~}[d]
+&\ldots
+&T_{i'_k}\ar[l]\ar@{~}[d]
+&\ar[l]
+\ar@[red]@{-}@/_1pc/[lllll]
+\\
+&&&&\ar@2{-}[lll]
+\cals_k
+\\
+&\ar@{~}[u] i_1
+&\ar@{~}[u]i_2
+&
+&\ar@{~}[u]i_{k}
+}}_{h_{i_1 i_2 \ldots i_k}}
+\ecen
+x_{i_1}
+x_{i_2}
+\ldots
+x_{i_k}
+\eeqa
+
+Recall Eq.(\ref{eq-char-eq-gen}) for
+the general characteristic equation of a matrix $M$
+
+\beqa
+0&=&
+\sum_{k=0}^n
+(-1)^k \left(
+\tr_{1\ldots n-k}
+\cala_{n-k}
+M^{\otimes n-k}
+\right)
+M^k
+\\
+&=&
+\left\{
+\begin{array}{l}
+M^n
+\\
+- M^{n-1}(\tr M)
+\\
++M^{n-2}
+(\tr_{1\ldots 2}
+\cala_2 M^{\otimes 2})
+\\
+\ldots
+\\
+(-1)^n det(M)
+\end{array}
+\right.
+\eeqa
+
+The coefficients of $M^k$ are products of traces of a single $T_i$. If we calculate 
+the trace of $M^k$,
+then that will entail
+calculating traces with $k$ matrices $T_i$.
+
+\begin{table}[h!]
+\begin{tabular}{|
+>{\columncolor[HTML]{FFFFC7}}l |l|}
+\hline
+$A_r = \mathfrak{su}(r+1)$ & $2,3, \ldots, r+1$ \\ \hline
+$B_r = \mathfrak{so}(2r+1)$ & $2,4,6, \ldots, 2r$ \\ \hline
+$C_r=\mathfrak{sp}(2r)$ & $2,4,6, \ldots, 2r$ \\ \hline
+$D_r=\mathfrak {so}(2r)$ & $2,4,\ldots, 2r-2, 2r$ \\ \hline
+$G_2$ & $2,6$ \\ \hline
+$F_4$ & $2,6,8,12$ \\ \hline
+$E_6$ & $2,5,6,8,9,12$ \\ \hline
+$E_7$ & $6,8,10,12,14,18$ \\ \hline
+$E_8$ & $8,12,14,18,20,24,30$ \\ \hline
+\end{tabular}
+\caption{Betti numbers for the simple Lie Algebras}
+\label{tab-betti}
+\end{table}
+
+Betti number of a Casimir is the number
+of $T_i$ being traced over (i.e., in the loop). Note that the Betti numbers are
+all even except for
+$SU(n)$.
+
+For all Simple Lie Groups except for
+$SU(n)$,
+there is a invertible symmetric or
+skew-symmetric 
+bilinear invariant matrix $g_{ab}$ 
+satisfying
+$g_{ab}G^{bc}=\delta_a^c$. Hence
+
+
+\beq
+\bcen\xymatrix@C=1.3pc@R=1pc{
+&g\ar@{<-}[d]
+\\
+&g\ar[d]
+\\
+&T_{i_2}\ar@{~}[l]\ar[d]
+\\
+&T_{i_3}\ar@{~}[l]\ar[d]
+\\
+&T_{i_4}\ar@{~}[l]\ar[d]
+\\
+&T_{i_5}\ar@{~}[l]\ar[d]
+\\
+&\ar@[red]@/_1.3pc/[uuuuuu]
+}
+\ecen
+= (-1)
+\bcen\xymatrix@C=1.3pc@R=1pc{
+&g\ar@{<-}[d]
+\\
+&T_{i_1}\ar@{~}[l]\ar@{<-}[d]
+\\
+&g\ar[d]
+\\
+&T_{i_3}\ar@{~}[l]\ar[d]
+\\
+&T_{i_4}\ar@{~}[l]\ar[d]
+\\
+&T_{i_5}\ar@{~}[l]\ar[d]
+\\
+&\ar@[red]@/_1.3pc/[uuuuuu]
+}
+\ecen
+= (-1)^2
+\bcen\xymatrix@C=1.3pc@R=1pc{
+&g\ar@{<-}[d]
+\\
+&T_{i_1}\ar@{~}[l]\ar@{<-}[d]
+\\
+&T_{i_2}\ar@{~}[l]\ar@{<-}[d]
+\\
+&g\ar[d]
+\\
+&T_{i_4}\ar@{~}[l]\ar[d]
+\\
+&T_{i_5}\ar@{~}[l]\ar[d]
+\\
+&\ar@[red]@/_1.3pc/[uuuuuu]
+}
+\ecen
+= (-1)^3
+\bcen\xymatrix@C=1.3pc@R=1pc{
+&g\ar@{<-}[d]
+\\
+&T_{i_1}\ar@{~}[l]\ar@{<-}[d]
+\\
+&T_{i_2}\ar@{~}[l]\ar@{<-}[d]
+\\
+&T_{i_3}\ar@{~}[l]\ar@{<-}[d]
+\\
+&g\ar[d]
+\\
+&T_{i_5}\ar@{~}[l]\ar[d]
+\\
+&\ar@[red]@/_1.3pc/[uuuuuu]
+}
+\ecen
+= (-1)^4
+\bcen\xymatrix@C=1.3pc@R=1pc{
+&g\ar[d]
+\\
+&T_{i_1}\ar@{~}[l]\ar@{<-}[d]
+\\
+&T_{i_2}\ar@{~}[l]\ar@{<-}[d]
+\\
+&T_{i_3}\ar@{~}[l]\ar@{<-}[d]
+\\
+&T_{i_4}\ar@{~}[l]\ar@{<-}[d]
+\\
+&g\ar[d]
+\\
+&\ar@[red]@/_1.3pc/[uuuuuu]
+}
+\ecen
+\eeq
+
+In general, a Casimir with $k$ $T_i$
+equals itself times $(-1)^k$.
+So only Casimirs with even $k$
+are non-zero.
+
+
+\begin{claim}
+The following are a complete set
+of Casimir operators for the given Groups
+\beq
+\begin{array}{lllll}
+GL(n, \CC):
+\\
+\bcen
+\xymatrix@C=.7pc{
+&T_i\ar[l]&\ar[l]
+\ar@{-}@[red]@/_1pc/[ll]
+\\
+&\ar@{~}[u]
+}
+\ecen
+,
+&
+\bcen
+\xymatrix@C=.7pc{
+&T_i\ar[l]&T_j\ar[l]&\ar[l]
+\ar@{-}@[red]@/_1pc/[lll]
+\\
+&\ar@{~}[u]&\ar@{~}[u]
+}
+\ecen
+,
+&
+\bcen
+\xymatrix@C=.7pc{
+&T_i\ar[l]&T_j\ar[l]&T_k\ar[l]
+&\ar[l]
+\ar@{-}@[red]@/_1pc/[llll]
+\\
+&\ar@{~}[u]&\ar@{~}[u]&\ar@{~}[u]
+\cals_3\ar@2{-}[ll]
+\\
+&\ar@{~}[u]&\ar@{~}[u]&\ar@{~}[u]
+}
+\ecen
+,
+&
+\ldots
+&
+\bcen
+\xymatrix@C=.7pc{
+&T_{i_1}\ar[l]&T_{i_2}\ar[l]&\ldots\ar[l]&T_{i_n}\ar[l]
+&\ar[l]
+\ar@{-}@[red]@/_1pc/[lllll]
+\\
+&\ar@{~}[u]&\ar@{~}[u]&&\ar@{~}[u]
+\cals_n\ar@2{-}[lll]
+\\
+&\ar@{~}[u]&\ar@{~}[u]&\dots&\ar@{~}[u]
+}
+\ecen
+
+\end{array}
+\eeq
+
+\beq
+\begin{array}{lllll}
+SU(n):
+\\
+\bcen
+\xymatrix@C=.7pc{
+&T_i\ar[l]&T_j\ar[l]&\ar[l]
+\ar@{-}@[red]@/_1pc/[lll]
+\\
+&\ar@{~}[u]&\ar@{~}[u]
+}
+\ecen
+,
+&
+\bcen
+\xymatrix@C=.7pc{
+&T_i\ar[l]&T_j\ar[l]&T_k\ar[l]
+&\ar[l]
+\ar@{-}@[red]@/_1pc/[llll]
+\\
+&\ar@{~}[u]&\ar@{~}[u]&\ar@{~}[u]
+\cals_3\ar@2{-}[ll]
+\\
+&\ar@{~}[u]&\ar@{~}[u]&\ar@{~}[u]
+}
+\ecen
+,
+&
+\ldots
+&
+\bcen
+\xymatrix@C=.7pc{
+&T_{i_1}\ar[l]&T_{i_2}\ar[l]&\ldots\ar[l]&T_{i_n}\ar[l]
+&\ar[l]
+\ar@{-}@[red]@/_1pc/[lllll]
+\\
+&\ar@{~}[u]&\ar@{~}[u]&&\ar@{~}[u]
+\cals_n\ar@2{-}[lll]
+\\
+&\ar@{~}[u]&\ar@{~}[u]&\dots&\ar@{~}[u]
+}
+\ecen
+
+\end{array}
+\eeq
+
+\beq
+\begin{array}{lllll}
+SO(2r+1) \text{ and } Sp(2r):
+\\
+\bcen
+\xymatrix@C=.7pc{
+&T_i\ar[l]&T_j\ar[l]&\ar[l]
+\ar@{-}@[red]@/_1pc/[lll]
+\\
+&\ar@{~}[u]&\ar@{~}[u]
+}
+\ecen
+,
+&
+\bcen
+\xymatrix@C=.7pc{
+&T_{i}\ar[l]&T_j\ar[l]&T_k\ar[l]
+&T_l\ar[l]&\ar[l]
+\ar@{-}@[red]@/_1pc/[lllll]
+\\
+&\ar@{~}[u]&\ar@{~}[u]&\ar@{~}[u]&\ar@{~}[u]
+\cals_4\ar@2{-}[lll]
+\\
+&\ar@{~}[u]&\ar@{~}[u]&\ar@{~}[u]&\ar@{~}[u]
+}
+\ecen
+,
+&
+\ldots
+&
+\bcen
+\xymatrix@C=.7pc{
+&T_{i_1}\ar[l]&T_{i_2}\ar[l]&\ldots\ar[l]&T_{i_{2r}}\ar[l]
+&\ar[l]
+\ar@{-}@[red]@/_1pc/[lllll]
+\\
+&\ar@{~}[u]&\ar@{~}[u]&&\ar@{~}[u]
+\cals_{2r}\ar@2{-}[lll]
+\\
+&\ar@{~}[u]&\ar@{~}[u]&\dots&\ar@{~}[u]
+}
+\ecen
+
+\end{array}
+\eeq
+
+\beq
+\begin{array}{c}
+\begin{array}{lllll}
+SO(2r):
+\\
+\bcen
+\xymatrix@C=.7pc{
+&T_i\ar[l]&T_j\ar[l]&\ar[l]
+\ar@{-}@[red]@/_1pc/[lll]
+\\
+&\ar@{~}[u]&\ar@{~}[u]
+}
+\ecen
+,
+&
+\bcen
+\xymatrix@C=.7pc{
+&T_{i}\ar[l]&T_j\ar[l]&T_k\ar[l]
+&T_l\ar[l]&\ar[l]
+\ar@{-}@[red]@/_1pc/[lllll]
+\\
+&\ar@{~}[u]&\ar@{~}[u]&\ar@{~}[u]&\ar@{~}[u]
+\cals_4\ar@2{-}[lll]
+\\
+&\ar@{~}[u]&\ar@{~}[u]&\ar@{~}[u]&\ar@{~}[u]
+}
+\ecen
+,
+&
+\ldots
+&
+\bcen
+\xymatrix@C=.7pc{
+&T_{i_1}\ar[l]&T_{i_2}\ar[l]&\ldots\ar[l]&T_{i_{2r-2}}\ar[l]
+&\ar[l]
+\ar@{-}@[red]@/_1pc/[lllll]
+\\
+&\ar@{~}[u]&\ar@{~}[u]&&\ar@{~}[u]
+\cals_{2r-2}\ar@2{-}[lll]
+\\
+&\ar@{~}[u]&\ar@{~}[u]&\dots&\ar@{~}[u]
+}
+\ecen
+\end{array}
+\\
+\bcen
+\xymatrix@C=1pc@R=1pc{
+\ar@{<-}[dr]
+&
+&\ar[dl]
+&\ar@{<-}[dr]
+&
+&\ar[dl]
+&
+&\ar@{<-}[dr]
+&
+&\ar[dl]
+\ar@2{-}[lllllllll]\cala^{\frac{1}{2}}_{2r}
+\\
+&\ar@{~}[d] T_{i_1}
+&
+&
+&\ar@{~}[d] T_{i_2}
+&
+&
+&
+&\ar@{~}[d] T_{i_{r}}
+&
+\\
+&&&&&&\ldots&&
+}
+\ecen
+\end{array}
+\eeq
+\end{claim}
+\proof
+\beq
+I_r(x)=
+\bcen
+\xymatrix@R=.7pc@C=1.3pc{
+&\ar@2{-}[ddddddddd]\cala^{\frac{1}{2}}_{2r}
+\\
+M\ar[ur]&
+\\
+&\ar[ul]
+\\
+&
+\\
+M\ar[ur]&
+\\
+&\ar[ul]
+\\
+\ldots&
+\\
+&
+\\
+M\ar[ur]&
+\\
+&\ar[ul]
+}
+\ecen
+\eeq
+
+\beq
+I_r^2(x)=
+\bcen
+\xymatrix@R=.7pc@C=1.3pc{
+&\ar@2{-}[ddddddddd]\cala_{2r}
+\ar[rd]&
+\\
+M\ar[ur]&&M\ar[ld]
+\\
+&\ar[ul]&
+\\
+&\ar[rd]&
+\\
+M\ar[ur]&&M\ar[ld]
+\\
+&\ar[ul]&
+\\
+\ldots&&
+\\
+&\ar[rd]&
+\\
+M\ar[ur]&&M\ar[ld]
+\\
+&\ar[ul]&
+}
+\ecen
+=
+\tr(M^{2r}) +\ldots
+\eeq
+\qed
+
+
