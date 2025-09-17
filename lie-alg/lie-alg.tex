@@ -40,6 +40,12 @@ that they satisfy
 \tr(T^i T^j)=\kappa\delta(i, j)
 \label{eq-gluon-mass}
 \eeq
+A Lie algebra that satisfies Eq.(\ref{eq-gluon-mass})
+is called a {\bf simple Lie algebra}.
+$g_{ij}=\tr(T^\dagger_i T_j)$
+is called the {\bf Cartan-Killing form}.
+A {\bf semi-simple Lie algebra} is a direct
+sum of simple Lie algebras.
 
 
 It's customary to choose 
@@ -720,7 +726,66 @@ a
 }
 \ecen
 =
+\underbrace{
+\bcen
+\xymatrix@C=1pc@R=1pc{
+&\ar@{~}@[red][d] j
+&
+&
+&
+&
 \\
+a
+&\ar[l]T_j
+&C_\lam\ar[l]
+\ar@{<-}[ru]
+\ar@{<-}[r]
+\ar[rd]
+&
+&C^\dagger_\lam
+\ar[lu]
+\ar[l]
+\ar@{<-}[ld]
+&a'\ar[l]
+\\
+&
+&
+&
+&
+&
+}
+\ecen
+-
+\bcen
+\xymatrix@C=1pc@R=1pc{
+&
+&
+&
+&\ar@{~}@[red][d] j
+&
+\\
+a
+&C_\lam\ar[l]
+\ar@{<-}[ru]
+\ar@{<-}[r]
+\ar[rd]
+&
+&C^\dagger_\lam
+\ar[lu]
+\ar[l]
+\ar@{<-}[ld]
+&\ar[l]T_j
+&a'\ar[l]
+\\
+&
+&
+&
+&
+&
+}
+\ecen}_{=0}
+\\
++
 \bcen
 \xymatrix@C=1pc@R=1pc{
 &&j\ar@{~}@[red][d]
