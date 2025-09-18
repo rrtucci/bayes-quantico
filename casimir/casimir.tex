@@ -1139,10 +1139,10 @@ J^2 - L^2 - S^2
 [A(\lam, \mu, \rho)]^p 
 \bcen
 \xymatrix{
-a&\ar[l]|\mu C_\rho
+a&\ar[l]|\rho C_\rho
 &\ar@/_1.5pc/[l]|\lam
-\ar@/^1.5pc/[l]|\rho C^\dagger_\rho
-&\ar[l]|\mu b
+\ar@{<-}@/^1.5pc/[l]|\mu C^\dagger_\rho
+&\ar[l]|\rho b
 }
 \ecen
 \eeqa
@@ -1152,14 +1152,20 @@ If $\mu$ is an irrep,
 \beqa
 \bcen
 \xymatrix{
-&\ar[l]|\mu C_\rho
+&\ar[l]|\rho C_\rho
 &\ar@/_1.5pc/[l]|\lam
-\ar@/^1.5pc/[l]|\rho C^\dagger_\rho
-&\ar[l]|\mu 
+\ar@{<-}@/^1.5pc/[l]|\mu C^\dagger_\rho
+&\ar[l]|\rho
 }
 \ecen
 &=&
-\frac{\trij{\lam}{\rho}{\mu}}
+\frac{
+\xymatrix{
+T_{\rho}
+\ar@/^1pc/[r]|{\rho}
+\ar@/_1pc/[r]|{\mu}
+&T_{\rho}\ar[l]|{\lam}
+}}
 {d_\mu} 
 \xymatrix{&\ar[l]|\mu}
 \\
@@ -1228,4 +1234,77 @@ T_i
 }
 =n\Gamma_{fun}=
 N\kappa
+\eeq
+
+\beq
+\bcen
+\xymatrix@C=1.5pc{
+&&&&
+\\
+&T_i\ar[l]&\ar@{~}[u]\ar[l]&\ar[l]T_i\ar[l]
+\ar@{~}@/^1.5pc/[ll]&\ar[l]
+}
+\ecen
+=
+\left(
+\frac{\kappa N}{n}
+-\frac{\Gamma_{adj}}{2}
+\right)
+\bcen
+\xymatrix@C=1.5pc{
+&&
+\\
+&\ar@{~}[u]\ar[l] T_k&\ar[l]
+}
+\ecen
+\eeq
+
+\beq
+\bcen
+\xymatrix@C=1.5pc{
+&&&&
+\\
+&&f\ar@{~}[u]
+\ar@{~}[dl]
+\ar@{~}[dr]
+&&
+\\
+&T_i\ar[l]&&T_i\ar[ll]
+&\ar[l]
+}
+\ecen
+=
+\frac{\Gamma_{adj}}{2}
+\bcen
+\xymatrix@C=1.5pc{
+&&
+\\
+&\ar@{~}[u]\ar[l] T_k&\ar[l]
+}
+\ecen
+\eeq
+
+\beq
+\bcen
+\xymatrix@C=1.5pc{
+&&&&
+\\
+&&f\ar@{~}[u]
+\ar@{~}[dl]
+\ar@{~}[dr]
+&&
+\\
+&f\ar@{~}[l]&&f\ar@{~}[ll]
+&\ar@{~}[l]
+}
+\ecen
+=
+\frac{\Gamma_{adj}}{2}
+\bcen
+\xymatrix@C=1.5pc{
+&&
+\\
+&\ar@{~}[u]\ar[l] T_k&\ar[l]
+}
+\ecen
 \eeq
