@@ -879,7 +879,7 @@ T_{\rho}
 \begin{claim}
 If 
 \beq
-CA_2(\rho)=
+\Gamma_2(\rho)=
 \xymatrix{
 &\ar[l]T_\rho&\ar[l]T_\rho\ar@{~}@/_1.5pc/[l]&\ar[l]
 }
@@ -890,11 +890,11 @@ then
 A(\lam, \mu, \rho)= -\;
 \frac{1}{2}
 \left[
-CA_2(\rho)
+\Gamma_2(\rho)
 -
-CA_2(\lam)
+\Gamma_2(\lam)
 -
-CA_2(\mu)
+\Gamma_2(\mu)
 \right]
 \eeq
 \end{claim}
@@ -1046,12 +1046,12 @@ Square both sides of the equation.
 
 
 \beq
-CA_2(\rho)
+\Gamma_2(\rho)
 \xymatrix{
 &\ar[l]|\rho
 }
 =
-CA_2(\lam)
+\Gamma_2(\lam)
 \xymatrix{
 &\ar[l]|\rho
 }
@@ -1076,7 +1076,7 @@ CA_2(\lam)
 }
 \ecen
 +
-CA_2(\mu)
+\Gamma_2(\mu)
 \xymatrix{
 &\ar[l]|\rho
 }
@@ -1108,9 +1108,9 @@ CA_2(\mu)
 =
 -\;\frac{1}{2}
 \left[
-CA_2(\rho)
--CA_2(\lam)
--CA_2(\mu)
+\Gamma_2(\rho)
+-\Gamma_2(\lam)
+-\Gamma_2(\mu)
 \right]
 \eeq
 
@@ -1127,5 +1127,105 @@ J^2 - L^2 - S^2
 \right]
 \eeq
 
-
 \qed
+
+\beqa
+(I_p)\indices{_a^b}
+&=&
+(M^p)\indices{^c_a^b_c} 
+\\
+&=&
+\sum_{\rho\in irreps}
+[A(\lam, \mu, \rho)]^p 
+\bcen
+\xymatrix{
+a&\ar[l]|\mu C_\rho
+&\ar@/_1.5pc/[l]|\lam
+\ar@/^1.5pc/[l]|\rho C^\dagger_\rho
+&\ar[l]|\mu b
+}
+\ecen
+\eeqa
+
+If $\mu$ is an irrep, 
+
+\beqa
+\bcen
+\xymatrix{
+&\ar[l]|\mu C_\rho
+&\ar@/_1.5pc/[l]|\lam
+\ar@/^1.5pc/[l]|\rho C^\dagger_\rho
+&\ar[l]|\mu 
+}
+\ecen
+&=&
+\frac{\trij{\lam}{\rho}{\mu}}
+{d_\mu} 
+\xymatrix{&\ar[l]|\mu}
+\\
+&=&
+\
+\frac{d_\rho}{d_\lam}\xymatrix{&\ar[l]|\mu} \text{(because $\rho\in irreps$)}
+\eeqa
+
+\section{$\Gamma_2$ and $\Gamma_3$}
+
+Three quadratic Casimirs ($\Gamma_2$)
+
+\begin{enumerate}
+\item
+
+\beq
+\myboxed{(T_i T_i) \indices{_a^b}= \Gamma_{fun}\delta_a^b}
+\xymatrix{
+&\ar[l]T_i
+&
+\ar[l]
+\ar@/_1.5pc/@{~}[l]T_i
+&\ar[l]
+}
+=\Gamma_{fun} \xymatrix{&\ar[l]}
+\eeq
+
+\item
+
+\beq
+\myboxed{\tr(T_i T_j)=\kappa \delta_i^j}
+\xymatrix{
+&\ar@{~}[l]T_i
+&
+\ar@/^1.5pc/@{<-}[l]
+\ar@/_1.5pc/[l]
+T_j
+&\ar@{~}[l]
+}=\kappa \xymatrix{&\ar@{~}[l]}
+\eeq
+
+\item
+
+\beq
+\myboxed{
+f_{ijk}f_{kji'} = \Gamma_{adj}\delta_i^{i'}
+}
+\xymatrix{
+&\ar@{~}[l]f
+&
+\ar@/^1.5pc/@{~}[l]
+\ar@/_1.5pc/@{~}[l]f
+&\ar@{~}[l]
+}=\Gamma_{adj}
+\xymatrix{&\ar@{~}[l]}
+\eeq
+
+
+\end{enumerate}
+
+\beq
+\xymatrix{
+T_i
+\ar@/_1.5pc/[r]
+&T_i\ar@/_1.5pc/[l]\ar@{~}[l]
+}
+=n\Gamma_{fun}=
+N\kappa
+\eeq
