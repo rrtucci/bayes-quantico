@@ -112,6 +112,15 @@ into disjoints subsets (equivalence classes),
 such that all elements of $\calg$ in each disjoint subset 
 are represented by the same matrix.
 
+One  way to specify a representation is
+to give the effect of each group element $a\in \calg$ on a basis of vectors $\{\ket{1}, \ket{2}, \dots, \ket{n}\}$.
+
+
+\beq
+\phi (a)\ket{i}= \sum_j M_{ij}\ket{j}
+\implies \av{i|\phi(a)|j} = M_{ij}
+\eeq
+
 If the map $\phi$
 is 1-1, onto, we call it a {\bf faithful representation} 
 
@@ -126,6 +135,8 @@ represents all
 $g\in \calg$
 by  $ z(g) diag(1,1, \dots, 1)$
 for some $z(g)\in\CC$.
+For the singlet rep, $\av{i|\phi(a)|j}=z(g)
+\delta(i,j)$.
 It's dimension is $d_\lam=1$.
 The projection operator
 $\delta_a^b \delta_c^d$
@@ -154,6 +165,16 @@ of the Lie Algebra. If the Lie Algebra satisfies
 $[T^i, T^j]= if_{ijk}T^k$,
 then the adjrep is given by the matrices 
 with $i,j$ entries $M^k_{ij}=-if\indices{^k_i_j}$.
+Write $\ket{T^i}$ instead of $T^i$
+and  $\ket{x} = x_i \ket{T^i}$.
+Then
+
+\beq
+[\ket{x}, \cdot]\ket{T^j}   = i f_{ijk}\ket{T^k} \implies
+\bra{T^k}[\ket{x}, \cdot]\ket{T^j}= 
+i x_i f_{ijk}
+\eeq
+
 
 {\bf Irreducible representations} (irreps)
 are defined in Ch. \ref{ch-reducibility}
@@ -216,7 +237,7 @@ The Birdtracks book explains key
 concepts in GT representation theory
 using network diagrams 
 (Cvitanovic calls 
-such diagrams birdtracks) whereas the ED book doesn't use any diagrams. Many people don't use diagrams either, they only use algebra.
+such diagrams birdtracks) whereas the ED book doesn't use that type of diagram. Many people don't use birdtracks either, they only use algebra.
 But since this is a book
 about visualization using network diagrams (quantum 
 bnets), we use birdtracks.

@@ -1,6 +1,118 @@
 \chapter{Young Tableau}
 \label{ch-young-tableau}
 
+A {\bf Young Diagram} $YD=[\lam_1, \lam_2, \ldots, \lam_D]$ 
+consists of $\lam_1$ left-aligned empty boxes
+over $\lam_2$, over 
+$\lam_3$ left-aligned empty boxes, up to
+$\lam_D$ boxes,
+where $\lam_1\geq \lam2\geq \ldots\geq \lam_D\geq 1$.
+For example,
+
+\beq
+[4, 2,1,1]=
+\ydiagram{4,2,1,1}
+\eeq
+A alternative labelling of YD are called the {\bf Dynkin labels}.
+These labels list the change in number of columns as 
+we go down the YD.
+For example,
+
+\beq
+\ydiagram{4,2,1,1}
+=
+(2,1,0,1, 0\ldots)
+\eeq
+
+
+A {\bf Young Tableau} YT is a YD in which integers from 1 to $n$ where $n\leq n_b$ and $n_b$ is the number boxes, are inserted according to some rules. The rules for insertion are that integers must increase when reading a row  left to right and
+when reading a column from top to bottom. Obviously, for $n<n_b$, some integers are repeated.
+
+A {\bf Standard Young Tableau} is a YT such that $n=n_b$ and 
+no integer is repeated. For example, the following are Standard YT
+
+\beq
+\begin{ytableau}
+1&2
+\\
+3
+\\
+4
+\end{ytableau}
+,\quad
+\begin{ytableau}
+1&3
+\\
+2
+\\
+4
+\end{ytableau}
+,\quad
+\begin{ytableau}
+1&4
+\\
+2
+\\
+3
+\end{ytableau}
+\eeq
+
+The {\bf transpose of a YT} is defined as if it were a matrix. For example
+\beq
+transpose\left(
+\bcen
+\begin{ytableau}
+1&3& 5
+\\
+2&6
+\\
+4
+\end{ytableau}
+\ecen
+\right)
+=
+\bcen
+\begin{ytableau}
+1&2&4
+\\
+3&6
+\\
+5
+\end{ytableau}\ecen
+\eeq
+
+{\bf n-dim General   Linear group} $GL(n)=\{ M\in\CC^{n\times n}:
+det(M)\neq 0\}$
+
+{\bf n-dim Special Linear group} $SL(n)=\{ M\in GL(n):
+det(M)=1\}$
+
+{\bf n-dim Unitary group}, $U(n)=\{ M\in GL(n):
+M M^\dagger =M^\dagger M =1\}$
+
+{\bf n-dim Special Unitary group}
+$SU(n)=\{ M\in U(n):
+det(M)=1\}$
+
+
+\begin{claim}\
+\begin{enumerate}
+\item
+The YD with $n_b$ boxes label all irreps of the symmetric group 
+$S_{n_b}$.
+
+\item
+The standard YT with $n_b$ boxes and no more than $n_b$ rows,
+label the irreps of $GL(n_b)$ and of $U(n_b)$
+\item
+The standard YT with $n_b$ boxes and
+no more than $n_b-1$
+rows, label the irreps of $SL(n_b)$ and $SU(n_b)$.
+\end{enumerate}
+\end{claim}
+\proof
+\qed
+
 
 \begin{itemize}
 
@@ -82,19 +194,19 @@
 \end{tabular}
 \\
 \\
-\begin{tabular}{|>{$}c<{$}|>{$}c<{$}|}
+\begin{tabular}{|>{$}c<{$}|}
 \hline
-\color{red} x1 & \color{red}a1 \\ \hline
-x2 & b1 \\ \hline
-x3 & c1 \\ \hline
-x4 & d1 \\ \hline
-x5 & e1 \\ \hline
-y1 & a2 \\ \hline
-y2 & b2 \\ \hline
-\color{red} y3 & \color{red} c2 \\ \hline
-y4 & d2 \\ \hline
-z1 & a3 \\ \hline
-z2 & b3 \\ \hline
+\color{red} x1 \xymatrix{&\ar@{<->}[l]} \color{red}a1 \\ \hline
+x2 \xymatrix{&\ar@{<->}[l]} b1 \\ \hline
+x3 \xymatrix{&\ar@{<->}[l]} c1 \\ \hline
+x4 \xymatrix{&\ar@{<->}[l]} d1 \\ \hline
+x5 \xymatrix{&\ar@{<->}[l]} e1 \\ \hline
+y1 \xymatrix{&\ar@{<->}[l]} a2 \\ \hline
+y2 \xymatrix{&\ar@{<->}[l]} b2 \\ \hline
+\color{red} y3 \xymatrix{&\ar@{<->}[l]} \color{red} c2 \\ \hline
+y4 \xymatrix{&\ar@{<->}[l]} d2 \\ \hline
+z1 \xymatrix{&\ar@{<->}[l]} a3 \\ \hline
+z2 \xymatrix{&\ar@{<->}[l]} b3 \\ \hline
 \end{tabular}
 
 \end{array}
@@ -155,3 +267,129 @@ A_e&\ar@{-}[l]
 \ecen
 \end{array}
 \eeq
+
+\section{Symmetric group $S_{n_b}$}
+
+$YD_{n_b}=$ set of YD with $n_b$ boxes
+
+$SYT(\caly)=$ standard YT for a $\caly\in YD_{n_b}$.
+
+The irreps of the symmetric group in $n_b$ letters (or $n_b$ boxes) are labelled by the $\caly\in YD_{n_b}$.  The dimension 
+of an irrep $\caly$ equals $|SYT(\caly)|$, i.e., the number of standard YT for $\caly$ .
+For example, the 
+irrep 
+
+\beq
+\caly=
+\ydiagram{2,1,1}
+\eeq
+has dimension 3 because its 3 possible standard YT are
+
+\beq
+\begin{ytableau}
+1&2
+\\
+3
+\\
+4
+\end{ytableau}
+,\quad
+\begin{ytableau}
+1&3
+\\
+2
+\\
+4
+\end{ytableau}
+,\quad
+\begin{ytableau}
+1&4
+\\
+2
+\\
+3
+\end{ytableau}
+\eeq
+Thus, we can denote the
+basis vectors of this irrep by
+
+\beq
+\ket{\bcen\begin{ytableau}
+1&2
+\\
+3
+\\
+4
+\end{ytableau}\ecen}
+,\quad
+\ket{\bcen\begin{ytableau}
+1&3
+\\
+2
+\\
+4
+\end{ytableau}\ecen}
+,\quad
+\ket{\bcen\begin{ytableau}
+1&4
+\\
+2
+\\
+3
+\end{ytableau}\ecen}
+\eeq
+
+To compute $hook(\caly)$:
+
+\begin{enumerate}
+\item Fill each box of the YD with the number of boxes below and to the right of the box, including the
+box itself. 
+\item Multiply
+the numbers in
+all the boxes.
+\end{enumerate}
+For example,
+
+\beq
+\caly=
+\bcen
+\ydiagram{4,3,2}
+\ecen
+\implies
+hook(\caly)=
+\bcen
+\begin{ytableau}
+6&5&3&1
+\\
+4&3&1
+\\
+2&1
+\end{ytableau}
+\ecen
+=6! 3
+\eeq
+
+{\bf hook rule}
+
+\beq
+dim(\caly)=
+\frac{n_b!}{hook(\caly)}
+\eeq
+For example
+
+\beq
+\caly=\ydiagram{2,1,1}
+\implies
+hook(\caly)=
+\begin{ytableau}
+4&2
+\\
+1
+\end{ytableau}=
+8
+\eeq
+so
+\beq
+dim(\caly)= \frac{4!}{4(2)}=3
+\eeq
+
