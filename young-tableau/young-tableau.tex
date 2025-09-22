@@ -270,12 +270,28 @@ A_e&\ar@{-}[l]
 
 \section{Symmetric group $S_{n_b}$}
 
+Let
+
+$S_{n_b}=$ the symmetric group in $n_b$ letters (or $n_b$ boxes)
+
+$irreps(S_{n_b})=$
+the set of all
+irreps of $S_{n_b}$.
+
+
 $YD_{n_b}=$ set of YD with $n_b$ boxes
 
-$SYT(\caly)=$ standard YT for a $\caly\in YD_{n_b}$.
+The irreps of $S_{n_b}$  are labelled by the $\caly\in YD_{n_b}$. 
+Hence, there is a 1-1 onto map between $irreps(S_{n_b})$ and $YD_{n_b}$
 
-The irreps of the symmetric group in $n_b$ letters (or $n_b$ boxes) are labelled by the $\caly\in YD_{n_b}$.  The dimension 
-of an irrep $\caly$ equals $|SYT(\caly)|$, i.e., the number of standard YT for $\caly$ .
+$SYT(\caly)=$ set of standard YT for a $\caly\in YD_{n_b}$.
+
+
+$dim(\caly)=$ dimension of irrep $\caly$.
+
+\beq
+dim(\caly)=|SYT(\caly)|
+\eeq
 For example, the 
 irrep 
 
@@ -283,7 +299,7 @@ irrep
 \caly=
 \ydiagram{2,1,1}
 \eeq
-has dimension 3 because its 3 possible standard YT are
+has dimension 3 because there are 3 possible standard YT for this YD:
 
 \beq
 \begin{ytableau}
@@ -309,6 +325,7 @@ has dimension 3 because its 3 possible standard YT are
 \\
 3
 \end{ytableau}
+\implies dim(\caly)=3
 \eeq
 Thus, we can denote the
 basis vectors of this irrep by
@@ -369,12 +386,16 @@ hook(\caly)=
 =6! 3
 \eeq
 
-{\bf hook rule}
 
+\begin{claim} ({\bf hook rule} for computing $dim(\caly)$)
 \beq
 dim(\caly)=
 \frac{n_b!}{hook(\caly)}
 \eeq
+\end{claim}
+\proof
+\qed
+
 For example
 
 \beq
@@ -382,7 +403,9 @@ For example
 \implies
 hook(\caly)=
 \begin{ytableau}
-4&2
+4&1
+\\
+2
 \\
 1
 \end{ytableau}=
@@ -393,3 +416,109 @@ so
 dim(\caly)= \frac{4!}{4(2)}=3
 \eeq
 
+The {\bf regular representation} of the
+symmetric group $S_{n_b}$ is defined as follows.
+For each permutation $\s \in S_{n_b}$, define
+an independent vector $\ket{\s}$
+in a vector space $\calv=\{\ket{\s}: \s \in S_{n_b}\}=\{\ket{\s_i} : i=1, 2, \ldots , n_b!\}$. Let 
+
+
+\beq
+\ket{x}= \sum_i x_i
+\ket{\s_i}
+\eeq
+For any $\tau\in S_{n_b}$, suppose
+
+\beq
+\bra{\s_j}\tau\ket{\s_i}=
+\av{\tau^{-1}\s_j|
+\s_i}
+\eeq
+
+
+\beq
+\bra{\s_j}\tau\ket{x}=
+\av{\tau^{-1}\s_j|
+x}
+\eeq
+The regular
+rep is $n_b!$ dimensional
+and reducible.
+
+\begin{claim}
+The regular rep of $S_{n_b}$
+decomposes into each $\lam\in rreps(S_{n_b})$,
+appearing $dim(\lam)$ times. Thus
+
+\begin{align}
+n_b! = |S_{n_b}| &=\sum_{\lam\in irreps(S_{n_b})}[dim(\lam)]^2
+\\
+&=[n_b!]^2\sum_{\caly \in YD_{n_b}}
+\frac{1}{[hook(\caly)]^2}\quad
+\text{(Because  $irreps(S_{n_b})=YD_{n_b}$)}
+\end{align}
+Hence,
+
+\beq
+1 = n_b!\sum_{\caly \in YD_{n_b}}
+\frac{1}{[hook(\caly)]^2}
+\eeq
+
+
+\end{claim}
+\proof
+\qed
+
+\beq
+1 = \sum_{\caly \in YD_{n_b}} P_\caly
+\eeq
+
+\beq
+P_\caly = \sum_{\alp \in SYT(\caly)} \ket{\alp}\bra{\alp}
+\eeq
+The projection operators  
+are complete and orthogonal.
+
+\section{Unitary group $U(n)$}
+
+$YD(n_b, R\leq n)=$ YD with $n_b$ boxes and less then $n$ rows
+
+\beq
+irreps(U(n))=
+\cup_{n_b\leq n}
+\cup_{\caly \in YD(n_b, R\leq n)} YT(\caly)
+\eeq
+
+A $\caly$ with $n_b$ boxes represents a 
+tensor with $n_b$ indices ($n_b$-particles state). Each index ranges from $1$ to $n$.
+
+$n_b=1$: A 1-index, 1-box tensor is a 1-particle
+with $n$ states. This corresponds to the
+fundamental representation.
+
+$n_b=2$: A 2-index, 2-box tensor is a 2-particle
+with $n^2$ states. These $n^2$ states 
+break into two sets, symmetric and anti-symmetric. 
+
+\beqa
+\bcen\ydiagram{1}\ecen\otimes \bcen\ydiagram{1}\ecen &=&
+\ydiagram{1,1} \oplus \ydiagram{2}
+\\
+\xymatrix@R=1pc@C=1pc{
+&&\ar[ll]
+\\
+&&\ar[ll]
+}
+&=&
+\bcen\xymatrix@R=1pc@C=1pc{
+&\ar[l]\ar@2{-}[d]\cala_2&\ar[l]
+\\
+&\ar[l]&\ar[l]
+}\ecen
++
+\bcen\xymatrix@R=1pc@C=1pc{
+&\ar[l]\ar@2{-}[d]\cals_2&\ar[l]
+\\
+&\ar[l]&\ar[l]
+}\ecen
+\eeqa
