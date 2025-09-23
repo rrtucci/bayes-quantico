@@ -106,90 +106,7 @@ no integer is repeated.
 \end{figure}
 
 
-\beq
-\begin{array}{cc}
-\begin{array}{l}
-\begin{tabular}{llllll}
- & $A_a$ & $A_b$ & $A_c$ & $A_d$ & $A_e$ \\ \cline{2-6} 
-\multicolumn{1}{l|}{$S_x$} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{5} \\ \cline{2-6} 
-\multicolumn{1}{l|}{$S_y$} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{8} & \multicolumn{1}{l|}{9} &  \\ \cline{2-5}
-\multicolumn{1}{l|}{$S_z$} & \multicolumn{1}{l|}{10} & \multicolumn{1}{l|}{11} &  &  &  \\ \cline{2-3}
-\end{tabular}
-\\
-\\
-\begin{tabular}{|>{$}c<{$}|}
-\hline
-\color{red} x1 \xymatrix{&\ar@{<->}[l]} \color{red}a1 \\ \hline
-x2 \xymatrix{&\ar@{<->}[l]} b1 \\ \hline
-x3 \xymatrix{&\ar@{<->}[l]} c1 \\ \hline
-x4 \xymatrix{&\ar@{<->}[l]} d1 \\ \hline
-x5 \xymatrix{&\ar@{<->}[l]} e1 \\ \hline
-y1 \xymatrix{&\ar@{<->}[l]} a2 \\ \hline
-y2 \xymatrix{&\ar@{<->}[l]} b2 \\ \hline
-\color{red} y3 \xymatrix{&\ar@{<->}[l]} \color{red} c2 \\ \hline
-y4 \xymatrix{&\ar@{<->}[l]} d2 \\ \hline
-z1 \xymatrix{&\ar@{<->}[l]} a3 \\ \hline
-z2 \xymatrix{&\ar@{<->}[l]} b3 \\ \hline
-\end{tabular}
 
-\end{array}
-&
-\sqrt{P}=
-\bcen
-\xymatrix@R=1pc@C=.7pc{
-\scriptstyle
-1 (x1,a1)&\ar@{-}[l]
-S_x \ar@2{-}[dddd]
-&&&&&&&&&\ar@{-}[lllllllll]
-A_a\ar@2{-}[dd]
-&\ar@{-}[l]
-\\ \scriptstyle 2 (x2,a2)
-&\ar@{-}[l]
-&\ar@{<->}[dd]&&&&&&&&\ar@{-}[lllllllll]
-&\ar@{-}[l]
-\\\scriptstyle 3 (x3,a3)
-&\ar@{-}[l]
-&&\ar@{<->}[dddd]&&&&&&&\ar@{-}[lllllllll]
-&\ar@{-}[l]
-\\\scriptstyle 4 (x4, b1)
-&\ar@{-}[l]
-&&&\ar@{<->}[ddddd]&&&&&&\ar@{-}[lllllllll]
-A_b\ar@2{-}[dd]
-&\ar@{-}[l]
-\\\scriptstyle 5 (x5, b2)
-&\ar@{-}[l]
-&&&&\ar@{<->}[dddddd]&&&&&\ar@{-}[lllllllll]&\ar@{-}[l]
-\\\scriptstyle 6  (y1, b3)
-&\ar@{-}[l]
-S_y \ar@2{-}[ddd]
-&&&&&\ar@{<->}[uuuu]&&&&\ar@{-}[lllllllll]
-&\ar@{-}[l]
-\\\scriptstyle 7 (y2, c1)
-&\ar@{-}[l]
-&&&&&&\ar@{<->}[uu]&&&\ar@{-}[lllllllll]
-A_c\ar@2{-}[d]&\ar@{-}[l]
-\\\scriptstyle 8 (y3,c2)
-&\ar@{-}[l]
-&&&&&&&&&\ar@{-}[lllllllll]&\ar@{-}[l]
-\\\scriptstyle 9 (y4,d1)
-&\ar@{-}[l]
-&&&&&&
-\ar@{<->}[d]
-&&
-&\ar@{-}[lllllllll]A_d\ar@2{-}[d]
-&\ar@{-}[l]
-\\\scriptstyle 10 (z1, d2)
-&\ar@{-}[l]
-S_z \ar@2{-}[d]
-&&&&&&&\ar@{<->}[uuuuuuu]&&\ar@{-}[lllllllll] &\ar@{-}[l]
-\\\scriptstyle 11 (z2, e1)
-&\ar@{-}[l]
-&&&&&&&&\ar@{<->}[uuuuu]&\ar@{-}[lllllllll]
-A_e&\ar@{-}[l]
-}
-\ecen
-\end{array}
-\eeq
 
 \section{Symmetric group $S_{n_b}$}
 
@@ -1020,3 +937,100 @@ $
 SYT
 and corresponding square root of projection operators for $n_b=1, 2,3,4$
 
+\section{Young Projection Operator with swaps}
+\beq
+\begin{array}{cc}
+\begin{array}{l}
+\begin{tabular}{llllll}
+ & $A_a$ & $A_b$ & $A_c$ & $A_d$ & $A_e$ \\ \cline{2-6} 
+\multicolumn{1}{l|}{$S_x$} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{5} \\ \cline{2-6} 
+\multicolumn{1}{l|}{$S_y$} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{8} & \multicolumn{1}{l|}{9} &  \\ \cline{2-5}
+\multicolumn{1}{l|}{$S_z$} & \multicolumn{1}{l|}{10} & \multicolumn{1}{l|}{11} &  &  &  \\ \cline{2-3}
+\end{tabular}
+\\
+\\
+\begin{tabular}{|>{$}c<{$}|}
+\hline
+a1 \xymatrix{&\ar@{<->}[l]} 1 \\ \hline
+a2 \xymatrix{&\ar@{<->}[l]} 6 \\ \hline
+a3 \xymatrix{&\ar@{<->}[l]} 10 \\ \hline
+b1 \xymatrix{&\ar@{<->}[l]} 2 \\ \hline
+b2 \xymatrix{&\ar@{<->}[l]} 7 \\ \hline
+b3 \xymatrix{&\ar@{<->}[l]} 11 \\ \hline
+c1 \xymatrix{&\ar@{<->}[l]} 3 \\ \hline
+c2 \xymatrix{&\ar@{<->}[l]} 8 \\ \hline
+d1 \xymatrix{&\ar@{<->}[l]} 4 \\ \hline
+d2 \xymatrix{&\ar@{<->}[l]} 9 \\ \hline
+e1 \xymatrix{&\ar@{<->}[l]} 5 \\ \hline
+\end{tabular}
+
+\end{array}
+&
+\sqrt{P}=
+\bcen
+\xymatrix@R=1pc@C=.7pc{
+\scriptstyle
+1 (x1,a1)
+&\ar@{-}[l]
+S_x \ar@2{-}[dddd]
+&&&&&&&&&&\ar@{-}[llllllllll]
+A_a\ar@2{-}[dd]
+&\ar@{-}[l]
+\\ \scriptstyle 2 (x2,a2)
+&\ar@{-}[l]
+&\ar@{<->}[dddd]
+&&&&&&&&&\ar@{-}[llllllllll]
+&\ar@{-}[l]
+\\\scriptstyle 3 (x3,a3)
+&\ar@{-}[l]
+&&\ar@{<->}[ddddddd]
+&&&&&&&&\ar@{-}[llllllllll]
+&\ar@{-}[l]
+\\\scriptstyle 4 (x4, b1)
+&\ar@{-}[l]
+&&&\ar@{<->}[uu]
+&&&&&&&\ar@{-}[llllllllll]
+A_b\ar@2{-}[dd]
+&\ar@{-}[l]
+\\\scriptstyle 5 (x5, b2)
+&\ar@{-}[l]
+&&&&\ar@{<->}[dd]
+&&&&&&\ar@{-}[llllllllll]
+&\ar@{-}[l]
+\\\scriptstyle 6  (y1, b3)
+&\ar@{-}[l]
+S_y \ar@2{-}[ddd]
+&&&&&\ar@{<->}[ddddd]
+&&&&&\ar@{-}[llllllllll]
+&\ar@{-}[l]
+\\\scriptstyle 7 (y2, c1)
+&\ar@{-}[l]
+&&&&&&\ar@{<->}[uuuu]
+&&&&\ar@{-}[llllllllll]
+A_c\ar@2{-}[d]&\ar@{-}[l]
+\\\scriptstyle 8 (y3,c2)
+&\ar@{-}[l]
+&&&&&&&&&&\ar@{-}[llllllllll]
+&\ar@{-}[l]
+\\\scriptstyle 9 (y4,d1)
+&\ar@{-}[l]
+&&&&&&
+&\ar@{<->}[uuuuu]
+&&
+&\ar@{-}[llllllllll]A_d\ar@2{-}[d]
+&\ar@{-}[l]
+\\\scriptstyle 10 (z1, d2)
+&\ar@{-}[l]
+S_z \ar@2{-}[d]
+&&&&&&&&\ar@{<->}[u]
+&&\ar@{-}[llllllllll] 
+&\ar@{-}[l]
+\\\scriptstyle 11 (z2, e1)
+&\ar@{-}[l]
+&&&&&&&&&\ar@{<->}[uuuuuu]&\ar@{-}[llllllllll]
+A_e
+&\ar@{-}[l]
+}
+\ecen
+\end{array}
+\eeq
