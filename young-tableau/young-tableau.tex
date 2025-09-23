@@ -1,12 +1,12 @@
 \chapter{Young Tableau}
 \label{ch-young-tableau}
 
-A {\bf Young Diagram} $YD=[\lam_1, \lam_2, \ldots, \lam_D]$ 
+A {\bf Young Diagram} (YD) $\caly=[\lam_1, \lam_2, \ldots, \lam_D]$ 
 consists of $\lam_1$ left-aligned empty boxes
 over $\lam_2$, over 
 $\lam_3$ left-aligned empty boxes, up to
 $\lam_D$ boxes,
-where $\lam_1\geq \lam2\geq \ldots\geq \lam_D\geq 1$.
+where $\lam_1\geq \lam_2\geq \ldots\geq \lam_D\geq 1$.
 For example,
 
 \beq
@@ -25,10 +25,12 @@ For example,
 \eeq
 
 
-A {\bf Young Tableau} YT is a YD in which integers from 1 to $n$ where $n\leq n_b$ and $n_b$ is the number boxes, are inserted according to some rules. The rules for insertion are that integers must increase when reading a row  left to right and
+A {\bf Young Tableau} (YT)
+$\caly_\alp$ is a YD in which integers from 1 to $n$ where $n\leq n_b$ and $n_b$ is the number boxes, are inserted according to some rules. The rules for insertion are that integers must increase when reading a row  left to right and
 when reading a column from top to bottom. Obviously, for $n<n_b$, some integers are repeated.
 
-A {\bf Standard Young Tableau} (SYT) is a YT such that $n=n_b$ and 
+A {\bf Standard Young Tableau} (SYT)
+$\caly_\alp$  is a YT such that $n=n_b$ and 
 no integer is repeated. 
 \begin{figure}
 \begin{itemize}
@@ -187,6 +189,7 @@ Hence, there is a 1-1 onto map between $irreps(S_{n_b})$ and $YD_{n_b}$
 irreps(S_{n_b})=YD_{n_b}
 \eeq
 
+$YT(\caly)=$ set of YT for a $\caly\in YD_{n_b}$.
 
 $SYT(\caly)=$ set of SYT for a $\caly\in YD_{n_b}$.
 
@@ -378,7 +381,7 @@ Hence,
 \eeq
 
 \beq
-P_\caly = \sum_{\alp \in SYT(\caly)} \ket{\alp}\bra{\alp}
+P_\caly = \sum_{\caly_\alp \in SYT(\caly)} \ket{\caly_\alp}\bra{\caly_\alp}
 \eeq
 The projection operators  
 are complete and orthogonal.
@@ -449,6 +452,50 @@ to fill all boxes so more
 than $n$ rows would require a  repetition
 in of an integer in a column, and
 such a column, after antisymetrizing, equals zero.
+
+$YD_{n_b}=$ set of YD with $n_b$ boxes
+
+$YT(\caly)=$ set of YT for a $\caly\in YD_{n_b}$.
+
+If $\caly_\alp$ is a SYT in $irreps(U(n))$
+and the YD of $\caly_\alp$
+is  $\caly$, then
+\beq
+dim(\caly_\alp)= |YT(\caly)|
+\eeq
+Hence, $\{\ket{\alp}:  \alp\in YT(\caly)\}$
+are a basis for the 
+irrep $\caly_\alp$.
+Note that the irreps of $U(n)$ are given by SYT  $\caly_\alp$,
+whereas the basis vectors of an irrep are given by YT (not just STY).
+For example,
+or
+
+\beq
+\caly_\alp=
+\begin{ytableau}1&2
+\end{ytableau}
+\eeq
+the basis vectors are
+
+
+
+\beq
+\ket{\begin{ytableau}1&1
+\end{ytableau}}
+,\quad
+\ket{\begin{ytableau}1&2
+\end{ytableau}}
+,\quad
+\ket{\begin{ytableau}2&2
+\end{ytableau}}
+\eeq
+do
+\beq
+dim(\caly_\alp)=
+3
+\eeq
+
 
 
 \section{Young Projection operators for $n_b=1,2,3,4$}
