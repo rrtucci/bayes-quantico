@@ -369,6 +369,7 @@ Hence,
 \beq
 1 = n_b!\sum_{\caly \in YD_{n_b}}
 \frac{1}{[hook(\caly)]^2}
+\label{eq-1-hook-sq}
 \eeq
 
 
@@ -469,7 +470,7 @@ irrep $\caly_\alp$.
 Note that the irreps of $U(n)$ are given by SYT  $\caly_\alp$,
 whereas the basis vectors of an irrep are given by YT (not just STY).
 For example,
-or
+for
 
 \beq
 \caly_\alp=
@@ -495,6 +496,123 @@ do
 dim(\caly_\alp)=
 3
 \eeq
+
+\section{Young Projection operators}
+
+For each in the SYT $\caly_\alp\in irreps(U(n))$, we have
+
+\beq
+P_{\caly\alp}=
+\caln_\caly
+\left(\prod_i S_i\right)
+\left(\prod_j A_j
+\right)
+\eeq
+Note that the normalization
+constant $\caln_\caly$
+depends only on the
+YD $\caly$.
+
+These projection
+operators are not
+unique.
+
+\begin{claim}
+Let 
+\beq
+\caln_\caly
+=
+\frac{
+\left(\prod_i |S_{i}|!\right)
+\left(\prod_j |A_j|!
+\right)
+}{hook(\caly)}
+\label{eq-n-caly}
+\eeq
+where $|S_i|$
+and $|A_j|$ are
+the number of arrows entering 
+the symmetrizer or
+anti-symmetrizer. Then the operators $P_{\caly_\alp}$ are idempotent 
+(i.e., their square equals themselves) mutually orthogonal and complete:
+\beq
+P_{\caly_\alp}
+P_{\caly_\beta}=
+P_{\caly_\alp}
+\delta(\alp, 
+\beta)
+\eeq
+\beq
+1 =\sum_{\caly_\alp\in SYT(n_b, R<n)}
+P_{\caly_\alp}
+\label{eq-complete-un-proj}
+\eeq
+\end{claim}
+\proof
+
+\beq
+P_{\caly_\alp}=
+\caln_\caly
+\frac{1}
+{\prod_i |S_i|!
+\prod_jj |A_j|!}
+\left(
+\bcen
+\underbrace
+{\xymatrix@C=1pc@R=1pc{
+&&\ar[ll]
+\\
+&&\ar[ll]
+\\
+\vdots
+\\
+&&\ar[ll]
+}}_\indi
+\ecen
++
+\cdots
+\right)
+\eeq
+From Eq.(\ref{eq-complete-un-proj})
+
+\beqa
+\indi
+&=&
+\sum_{\caly_\alp\in SYT(n_b, R<n)}
+\caln_\caly
+\frac{1}
+{\prod_i |S_i|!
+\prod_j |A_j|!}
+\quad\indi
+\\
+&=&
+\sum_{\caly}
+\frac{n_b!}{hook(\caly)}
+\caln_\caly
+\frac{1}
+{\prod_i |S_i|!
+\prod_j |A_j|!}
+\quad \indi
+\\
+&=&
+\sum_\caly
+\frac{n_b!}{
+[hook(\caly)]^2}
+\frac{1}
+{\prod_i |S_i|!
+\prod_j |A_j|!}
+\quad \indi
+\quad
+\text{(if assume Eq.(\ref{eq-n-caly}))}
+\\
+&=& \indi \quad\text{
+(by Eq.(\ref{eq-1-hook-sq}))}
+\eeqa
+
+
+\qed
+
+
 
 
 
@@ -982,12 +1100,14 @@ $
 \YTaaa
 \end{itemize}
 SYT
-and corresponding square root of projection operators for $n_b=1, 2,3,4$
+and corresponding unnormalized projection operators for $n_b=1, 2,3,4$
 
 \section{Young Projection Operator with swaps}
 \beq
 \begin{array}{cc}
 \begin{array}{l}
+\caly_\alp=
+\\
 \begin{tabular}{llllll}
  & $A_a$ & $A_b$ & $A_c$ & $A_d$ & $A_e$ \\ \cline{2-6} 
 \multicolumn{1}{l|}{$S_x$} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{5} \\ \cline{2-6} 
@@ -1013,9 +1133,9 @@ e1 \xymatrix{&\ar@{<->}[l]} 5 \\ \hline
 
 \end{array}
 &
-\sqrt{P}=
+P_{\caly_\alp}=
 \bcen
-\xymatrix@R=1pc@C=.7pc{
+\xymatrix@R=1pc@C=.5pc{
 \scriptstyle
 1 (x1,a1)
 &\ar@{-}[l]
