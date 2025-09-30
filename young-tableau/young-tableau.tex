@@ -13,7 +13,12 @@ For example,
 [4, 2,1,1]=
 \ydiagram{4,2,1,1}
 \eeq
-A alternative labelling of YD are called the {\bf Dynkin labels}.
+We will call $[4, 2,1,1]$ the
+{\bf row lengths} (RL) method 
+of labeling YD.
+
+A alternative method o labelling YD is called the {\bf Dynkin labels}
+or {\bf row changes (RC)}.
 These labels list the change in number of columns as 
 we go down the YD.
 For example,
@@ -21,8 +26,9 @@ For example,
 \beq
 \ydiagram{4,2,1,1}
 =
-(2,1,0,1, 0\ldots)
+[2,1,0,1, 0\ldots]_{RC}
 \eeq
+
 
 
 A {\bf Young Tableau} (YT)
@@ -387,6 +393,30 @@ P_\caly = \sum_{\caly_\alp \in SYT(\caly)} \ket{\caly_\alp}\bra{\caly_\alp}
 The projection operators  
 are complete and orthogonal.
 
+
+\beq
+\ydiagram{1}\otimes \ydiagram{1}=
+\ydiagram{2} \oplus \ydiagram{1,1}
+\eeq
+
+
+\beq
+\begin{array}{l}
+\ydiagram{3}
+\otimes\ydiagram{2,1}=
+\\
+\\
+\ydiagram{5,1}
+\oplus
+\ydiagram{4,2}
+\oplus
+\ydiagram{4,1,1}
+\oplus
+\ydiagram{3,2,1}
+\end{array}
+\eeq
+
+
 \section{Unitary group $U(n)$}
 
 $SYT(n_b, R\leq n)=$ SYTs with $n_b$ boxes and less then $n$ rows
@@ -463,6 +493,7 @@ and the YD of $\caly_\alp$
 is  $\caly$, then
 \beq
 dim(\caly_\alp)= |YT(\caly)|
+\label{eq-dim-yalp}
 \eeq
 Hence, $\{\ket{\alp}:  \alp\in YT(\caly)\}$
 are a basis for the 
@@ -491,11 +522,14 @@ the basis vectors are
 \ket{\begin{ytableau}2&2
 \end{ytableau}}
 \eeq
-do
+so
 \beq
 dim(\caly_\alp)=
 3
 \eeq
+
+
+
 
 \section{Young Projection operators}
 
@@ -608,10 +642,165 @@ From Eq.(\ref{eq-complete-un-proj})
 &=& \indi \quad\text{
 (by Eq.(\ref{eq-1-hook-sq}))}
 \eeqa
-
-
 \qed
 
+Let $dim(\caly_\alp)$
+be the dimension of an irrep 
+of $U(n)$
+with STY given by $\caly_\alp\in STY(n_\rvb, R<n)$. In Eq.(\ref{eq-dim-yalp})
+we gave a way of finding $dim(\caly_\alp)$
+A second way is by taking the trace of
+the corresponding projection operator
+\beq
+dim(\caly_\alp)=
+\tr(P_{\caly_\alp})\eeq
+For example, if
+
+\beq
+\caly_\alp=
+\begin{ytableau}
+1&2
+\end{ytableau}
+\eeq
+then
+
+\beqa
+d_{\caly_\alp}
+&=&
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&\ar[l]\ar@2{-}[d]\cals_2
+&\ar[l]\ar@{-}@[red]@/_1pc/[ll]
+\\ 
+&\ar[l]&\ar[l]\ar@{-}@[red]@/_1pc/[ll]
+}\ecen
+\\
+&=&
+\frac{1}{2}
+\left(
+\bcen
+\xymatrix@R=1.5pc@C=1pc{
+&
+&\ar[ll]\ar@{-}@[red]@/_1pc/[ll]
+\\ 
+&
+&\ar[ll]\ar@{-}@[red]@/_1pc/[ll]
+}\ecen
++
+\bcen
+\xymatrix@R=1.5pc@C=1pc{
+&\ar[l]\ar@{<->}[d]
+&\ar[l]\ar@{-}@[red]@/_1pc/[ll]
+\\ 
+&\ar[l]&\ar[l]\ar@{-}@[red]@/_1pc/[ll]
+}\ecen\right)
+\\
+&=& \frac{1}{2}(n^2 + n)
+\\
+&=&3 \text{ for $U(n=2)$}
+\eeqa
+
+A third way of computing $dim(\caly_\alp)$
+is by computing the hook and coat functions
+and using the formula
+
+\beq
+dim(\caly_\alp)=
+\frac{coat(\caly)}{hook(\caly)}
+\eeq
+Note that right
+hand side is independent of $\alp$; it 
+depends only on the YD.
+We've already discussed how to compute
+$hook(\caly)$.
+$coat (\caly)$ is
+calculated as follows.\footnote{
+I invented that name. I don't know if  it has a name.}
+
+\begin{enumerate}
+\item Fill $\caly$
+with 
+\begin{itemize}
+\item $n$ at the diagonal blocks
+\item $n$ increments
+increasing by 1 when reading from left to right
+\item
+$n$ increments
+decreasing by 1 
+when reading from
+top to bottom
+\end{itemize}
+\item multiply all
+the boxes
+\end{enumerate}
+
+Examples
+
+\beq
+dim(\begin{ytableau}
+1&2
+\end{ytableau}
+)  =
+\frac{\begin{ytableau}
+$\scriptsize n$& $\scriptsize n+1$
+\end{ytableau}
+}{
+\begin{ytableau}
+2&1
+\end{ytableau}
+}
+= \frac{n(n+1)}{2}
+\eeq
+
+
+\beq
+dim(\begin{ytableau}
+1\\2
+\end{ytableau}
+)  =
+\frac{\begin{ytableau}
+$\scriptsize n$\\ $\scriptsize n-1$
+\end{ytableau}
+}{
+\begin{ytableau}
+2\\1
+\end{ytableau}
+}
+= \frac{n(n-1)}{2}
+\eeq
+
+\beq
+dim(\begin{ytableau}
+1&2&3&4
+\\
+5&6
+\\
+7
+\end{ytableau}
+)  =
+\frac{\begin{ytableau}
+$\scriptsize n$
+&$\scriptsize n+1$
+&$\scriptsize n+2$
+&$\scriptsize n+3$
+\\
+$\scriptsize n-1$
+&$\scriptsize n$
+\\
+$\scriptsize n-2$
+\end{ytableau}
+}{
+\begin{ytableau}
+6&4&2&1
+\\
+3&1
+\\
+1
+\end{ytableau}
+}
+= \frac{n^2(n^2-1)(n^2-4)(n+3)}
+{144}
+\eeq
 
 
 
@@ -648,6 +837,8 @@ From Eq.(\ref{eq-complete-un-proj})
 }
 \ecen
 \eeq
+
+
 
 
 \newcommand{\YTone}[0]{
@@ -782,7 +973,7 @@ $
 &\ar[l]\ar@2{-}[d]\cals_2
 &\ar[l]\ar@2{-}[d]\cala_2
 &\ar[l]
-\\
+\\ 4/3
 &\ar[l]&\ar[l]\ar@2{-}[d] \square&\ar[l]
 \\
 &\ar[l]&\ar[l]&\ar[l]
@@ -802,7 +993,7 @@ $
 &\ar[l]\ar@2{-}[d]\cals_2
 &\ar[l]\ar@2{-}[d]\cala_2
 &\ar[l]
-\\
+\\ 4/3
 &\ar[l]\ar@2{-}[d] \square
 &\ar[l]
 &\ar[l]
@@ -825,7 +1016,7 @@ $
 &\ar[l]\ar@2{-}[d]\cals_2
 &\ar[l]\ar@2{-}[d]\cala_2
 &\ar[l]
-\\
+\\ 3/2
 &\ar[l]\ar@2{-}[dd] \square
 &\ar[l]
 &\ar[l]
@@ -850,7 +1041,7 @@ $
 &\ar[l]\ar@2{-}[dd]\cals_2
 &\ar[l]\ar@2{-}[d]\cala_2
 &\ar[l]
-\\
+\\ 3/2
 &\ar[l]
 &\ar[l]\square \ar@2{-}[d]
 &\ar[l]
@@ -878,11 +1069,11 @@ $
 &\ar[l]\ar@2{-}[dd]\cals_2
 &\ar[l]\ar@2{-}[d]\cala_2
 &\ar[l]
-\\
+\\ 3/2
 &\ar[l]
 &\ar[l]\square \ar@2{-}[d]
 &\ar[l]
-\\
+\\ 
 &\ar[l]&\ar[l]\square \ar@2{-}[d]
 &\ar[l]
 \\
@@ -907,7 +1098,7 @@ $
 &\ar[l]\ar@2{-}[d]\cala_2
 &\ar[l]
 &\ar[l]
-\\
+\\ 4/3
 &\ar[l]
 &\ar[l]
 &\ar[l]\square\ar@2{-}[d]
@@ -941,21 +1132,21 @@ $
 \\
 \xymatrix@R=1pc@C=1pc{
 &\ar[l]
-&\ar[l]
 &\ar[l]\ar@2{-}[d]\cals_2
 &\ar[l]
 &\ar[l]\ar@2{-}[d]\cala_2
-\\
 &\ar[l]
+\\ 4/3
 &\ar[l]\ar@2{-}[d]\cals_2
 &\ar[l]\square\ar@2{-}[d]
 &\ar[l]
 &\ar[l]
-\\
 &\ar[l]
+\\
 &\ar[l]\ar@2{-}[d]\square
 &\ar[l]
 &\ar[l]\ar@2{-}[d]\cala_2
+&\ar[l]
 &\ar[l]
 \\
 &\ar[l]
@@ -984,7 +1175,7 @@ $
 &\ar[l]\ar@2{-}[d]\cals_2
 &\ar[l]\ar@2{-}[d]\cala_2
 &\ar[l]
-\\
+\\ 3/2
 &\ar[l]
 &\ar[l]\square \ar@2{-}[dd]
 &\ar[l]
@@ -1015,7 +1206,7 @@ $
 &\ar[l]\ar@2{-}[d]\cals_2
 &\ar[l]\ar@2{-}[dd]\cala_2
 &\ar[l]
-\\
+\\ 3/2
 &\ar[l]\square \ar@2{-}[d]
 &\ar[l]
 &\ar[l]
@@ -1046,7 +1237,7 @@ $
 &\ar[l]\ar@2{-}[d]\cals_2
 &\ar[l]\ar@2{-}[dd]\cala_2
 &\ar[l]
-\\
+\\ 3/2
 &\ar[l]\square \ar@2{-}[d]
 &\ar[l]
 &\ar[l]
@@ -1201,3 +1392,224 @@ A_e
 \ecen
 \end{array}
 \eeq
+
+\section{Tensor product decompositions}
+
+\beqa
+\begin{ytableau}
+1
+\end{ytableau}
+\otimes
+\begin{ytableau}
+2
+\end{ytableau}
+\otimes
+\begin{ytableau}
+3
+\end{ytableau}
+&=&
+\left(
+\begin{ytableau}
+1 & 2
+\end{ytableau}
+\oplus
+\begin{ytableau}
+1 \\ 2
+\end{ytableau}
+\right)
+\otimes 
+\begin{ytableau}
+3
+\end{ytableau}
+\\
+&=&
+\begin{ytableau}
+1 & 2 & 3
+\end{ytableau}
+\oplus
+\begin{ytableau}
+1 & 2 \\ 3
+\end{ytableau}
+\oplus
+\begin{ytableau}
+1 & 3 \\ 2
+\end{ytableau}
+\oplus
+\begin{ytableau}
+1 \\ 2 \\3
+\end{ytableau}
+\eeqa
+
+\beq
+\begin{array}{l}
+\bcen\xymatrix@R=1pc@C=1pc{
+&&\ar[ll]
+\\
+&&\ar[ll]
+\\
+&&\ar[ll]
+}\ecen
+=
+\\ \\
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&\ar[l]\ar@2{-}[dd]\cals_2&\ar[l]
+\\
+&\ar[l]&\ar[l]
+\\
+&\ar[l]&\ar[l]
+}\ecen
++
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&\ar[l]\ar@2{-}[d]\cals_2
+&\ar[l]\ar@2{-}[d]\cala_2
+&\ar[l]
+\\ 4/3
+&\ar[l]&\ar[l]\ar@2{-}[d] \square&\ar[l]
+\\
+&\ar[l]&\ar[l]&\ar[l]
+}\ecen
++
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&\ar[l]\ar@2{-}[d]\cals_2
+&\ar[l]\ar@2{-}[d]\cala_2
+&\ar[l]
+\\ 4/3
+&\ar[l]\ar@2{-}[d] \square
+&\ar[l]
+&\ar[l]
+\\
+&\ar[l]&\ar[l]&\ar[l]
+}\ecen
++
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&\ar[l]\ar@2{-}[dd]\cala_2&\ar[l]
+\\
+&\ar[l]&\ar[l]
+\\
+&\ar[l]&\ar[l]
+}
+\ecen
+\end{array}
+\eeq
+
+
+\beq
+n^3 =
+\frac{n(n+1)(n+2)}{6}
++
+\frac{n(n^2-1)}{3}
++
+\frac{n(n^2-1)}{3}
+=
+\frac{(n-2)(n-1)n }
+{6}
+\eeq
+
+\beq
+\begin{array}{l}
+\begin{ytableau}
+1&2&3
+\end{ytableau}
+\otimes
+\begin{ytableau}
+4&5
+\\
+6
+\end{ytableau}
+=
+\\
+\\
+\left\{
+\begin{array}{l}
+\begin{ytableau}
+1&2&3&4&5
+\\
+6
+\end{ytableau}
+\oplus
+\begin{ytableau}
+1&2&3&4
+\\
+5&6
+\end{ytableau}
+\oplus
+\begin{ytableau}
+1&2&3&5
+\\
+4&6
+\end{ytableau}
+\\ \\
+\oplus
+\begin{ytableau}[*(blue!20)]
+1&2&3&5
+\\
+4
+\\
+6
+\end{ytableau}
+\oplus
+\begin{ytableau}[*(blue!20)]
+1&2&3&4
+\\
+5
+\\
+6
+\end{ytableau}
+\oplus
+\begin{ytableau}[*(blue!20)]
+1&2&3
+\\
+4&5
+\\
+6
+\end{ytableau}
+\end{array}
+\right\}
+\end{array}
+\eeq
+For $U(n)$, the blue YT are zero for $n_b=2$,
+and non-zero otherwise.
+
+\section{$SU(n)$}
+A third way,
+besides RL and RC,
+ of labelling YD (reps of 
+$SU(n)$)
+is
+by their dimension, and then adding
+a  subscript or overline
+if there are more than one 
+reps with a different YD but
+the same dimension.
+This method is used mostly
+by physicists for $SU(3)$ (The Eightfold  Way).
+Note that all YT
+with the same YD have the
+same dimension, so
+this really labels YD instead
+of YT. For example, for $SU(3)$  we have
+
+\beq
+\begin{array}{ccc}
+\ydiagram{1}=[1,0]_{RC}= 3
+&\quad\quad&
+\ydiagram{2}=[0,1]_{RC}= \ol{3}
+\\
+\\
+\ydiagram{2}=[2,0]_{RC}= 6
+&\quad\quad&
+\ydiagram{2,2}=[0,2]_{RC}= \ol{6}
+\\
+\\
+\ydiagram{2,1}=[1,1]_{RC}= 8
+&\quad\quad&
+\ydiagram{3,1}=[2,1]_{RC}= 15
+\end{array}
+\eeq
+
+
+
