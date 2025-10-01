@@ -17,7 +17,7 @@ We will call $[4, 2,1,1]$ the
 {\bf row lengths} (RL) method 
 of labeling YD.
 
-A alternative method o labelling YD is called the {\bf Dynkin labels}
+A alternative method of labelling YD is called the {\bf Dynkin (D) labels} 
 or {\bf row changes (RC)}.
 These labels list the change in number of columns as 
 we go down the YD.
@@ -26,7 +26,7 @@ For example,
 \beq
 \ydiagram{4,2,1,1}
 =
-[2,1,0,1, 0\ldots]_{RC}
+[2,1,0,1, 0\ldots]_{D}
 \eeq
 
 
@@ -1544,7 +1544,7 @@ n^3 =
 \end{ytableau}
 \\ \\
 \oplus
-\begin{ytableau}[*(blue!20)]
+\begin{ytableau}[*(yellow!40)]
 1&2&3&5
 \\
 4
@@ -1552,7 +1552,7 @@ n^3 =
 6
 \end{ytableau}
 \oplus
-\begin{ytableau}[*(blue!20)]
+\begin{ytableau}[*(yellow!40)]
 1&2&3&4
 \\
 5
@@ -1560,7 +1560,7 @@ n^3 =
 6
 \end{ytableau}
 \oplus
-\begin{ytableau}[*(blue!20)]
+\begin{ytableau}[*(yellow!40)]
 1&2&3
 \\
 4&5
@@ -1575,8 +1575,78 @@ For $U(n)$, the blue YT are zero for $n_b=2$,
 and non-zero otherwise.
 
 \section{$SU(n)$}
-A third way,
-besides RL and RC,
+
+$\mathfrak  su(n)$ $A_n$
+\beq
+\eps_{a_1 a_2 \ldots a_n}=
+G\indices{_{a_1}^{a_1'}}
+G\indices{_{a_2}^{a_2'}}
+\cdots
+G\indices{_{a_n}^{a_n'}}\;
+\eps_{a_1' a_2' \ldots  a_n'}
+\eeq
+YD for $SU(n)$ has a maximum of $n-1$ rows. For $SU(4)$
+
+\beq
+\begin{ytableau}
+*(yellow!40)\;&*(yellow!40)\;&\;&\;&\;&\;&\;
+\\
+*(yellow!40)\;&*(yellow!40)\;&\;&\;&\;
+\\
+*(yellow!40)\;&*(yellow!40)\;&\;&\;
+\\
+*(yellow!40)\;&*(yellow!40)\;
+\end{ytableau}
+\quad\rarrow\quad
+\ydiagram{5,3,2}
+\eeq
+
+$[5,3,2]_{RL}$ row lengths, $[2,1,2,0,\ldots]_{D}$ row changes (Dynkin labels).
+
+$[b_1,b_2, \ldots, b_{n-1}]$
+
+
+For $SU(6)$,
+\beq
+\begin{ytableau}
+\;&\;&\;
+\\
+\;&\;
+\\
+\;
+\\
+\;
+\end{ytableau}
+\quad\rarrow\quad
+\begin{ytableau}
+\;&\;&\;
+\\
+\;&\;&*(yellow!40)\;
+\\
+\;&*(yellow!40)\;&*(yellow!40)\;
+\\
+\;&*(yellow!40)\;&*(yellow!40)\;
+\\
+*(yellow!40)\;&*(yellow!40)\;&*(yellow!40)\;
+\\
+*(yellow!40)\;&*(yellow!40)\;&*(yellow!40)\;
+\end{ytableau}
+\quad\rarrow\quad
+\begin{ytableau}
+*(yellow!40)\;&*(yellow!40)\;&*(yellow!40)\;
+\\
+*(yellow!40)\;&*(yellow!40)\;&*(yellow!40)\;
+\\
+*(yellow!40)\;&*(yellow!40)\;
+\\
+*(yellow!40)\;&*(yellow!40)\;
+\\
+*(yellow!40)\;
+\end{ytableau}
+\eeq
+
+Besides RL and RC,
+a third way
  of labelling YD (reps of 
 $SU(n)$)
 is
@@ -1595,21 +1665,76 @@ of YT. For example, for $SU(3)$  we have
 
 \beq
 \begin{array}{ccc}
-\ydiagram{1}=[1,0]_{RC}= 3
+\ydiagram{1}=[1,0]_{D}= 3
 &\quad\quad&
-\ydiagram{2}=[0,1]_{RC}= \ol{3}
+\ydiagram{2}=[0,1]_{D}= \ol{3}
 \\
 \\
-\ydiagram{2}=[2,0]_{RC}= 6
+\ydiagram{2}=[2,0]_{D}= 6
 &\quad\quad&
-\ydiagram{2,2}=[0,2]_{RC}= \ol{6}
+\ydiagram{2,2}=[0,2]_{D}= \ol{6}
 \\
 \\
-\ydiagram{2,1}=[1,1]_{RC}= 8
+\ydiagram{2,1}=[1,1]_{D}= 8
 &\quad\quad&
-\ydiagram{3,1}=[2,1]_{RC}= 15
+\ydiagram{3,1}=[2,1]_{D}= 15
 \end{array}
 \eeq
 
 
+\beqa
+\ydiagram{1} 
+\otimes
+\left.\bcen\begin{ytableau}
+\;
+\\
+\;
+\\
+\none [\vdots]
+\\
+\;
+\end{ytableau}\ecen\right\} n-1
+&=&
+1
+\oplus
+\left.\bcen\begin{ytableau}
+\;&\;
+\\
+\;
+\\
+\none [\vdots]
+\\
+\;
+\end{ytableau}\ecen\right\} n-1
+\\
+n \otimes \ol{n}
+&=&
+1 \oplus (n^2-1)
+\\
+\text{fun rep}
+\otimes 
+\text{conjugate rep}&=&
+\text{singlet rep}
+\oplus \text{adjoint rep}
+\eeqa
 
+\beq
+P_{adj}=
+\frac{2(n-1)}{n}
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&\ar[l]
+\ar@2{-}[d]\cals_{2}
+&\ar@2{-}[d]\cala_{n-1}\ar[l]
+&\ar[l]
+\\
+&\ar[l]&\ar[l]\ar@2{-}[ddd]\square&\ar[l]
+\\
+&&\ar[ll]&\ar[l]
+\\
+&&\ar[ll]&\ar[l]
+\\
+&&\ar[ll]&\ar[l]
+}
+\ecen
+\eeq
