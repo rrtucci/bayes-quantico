@@ -274,7 +274,7 @@ T_\beta^\dagger
 \end{claim}
 \proof
 
-\beq
+\beqa
 \bcen
 \xymatrix@C=2pc{
 &\caly_\beta
@@ -286,7 +286,7 @@ T_\beta^\dagger
 &\ar@[red]@{-}@/_1pc/[lll]\ar[l]
 }
 \ecen
-=
+&=&
 \bcen
 \xymatrix@C=2pc{
 &\caly_\beta
@@ -300,29 +300,135 @@ T_\beta^\dagger
 &\ar@[red]@{-}@/_1pc/[llll]\ar[l]
 }
 \ecen
-\eeq
+\\
+&=& M dim(\caly_\beta)
+\eeqa
 \qed
 
 \section{$6-j$ coefficients}
 
-\beq
+
+\begin{claim}
+\beqa
 \bcen
 \sixj{\lam}{\mu}{\nu}{\omega}{\rho}{\s}
 \ecen
-=
-m
+&=&
 \bcen
-\xymatrix{
-&T^\dagger_\rho\ar[d]|\lam
-\ar@/_3pc/[ddd]|\s
+\xymatrix@C=1pc@R=1pc{
+&
+&\caly_\nu\ar[ll]
+&\caly_\mu\ar@2{-}[d]
+\ar[l]
+&\caly_\omega
+\ar@2{-}[dd]\ar[l]
+&\ar[l]
+\ar@[red]@{-}@/_1pc/
+[lllll]
 \\
-&T_\mu\ar@/_1.5pc/[d]|\mu
+&\caly_\rho\ar[l]
+\ar@2{-}[d]
+&\caly_\lam\ar[l]
+&
+&\ar[ll]
+&\ar[l]
+\ar@[red]@{-}@/_1pc/
+[lllll]
 \\
-&\caly_\omega\ar@2{-}[d]
-\ar@/_1.5pc/[u]|\nu
-\\
-&\ar@/_3pc/[uuu]|\rho
+&\ar[l]
+&\caly_\s \ar[l]
+&
+&\ar[ll]
+&\ar[l]
+\ar@[red]@{-}@/_1pc/
+[lllll]
 }
 \ecen
-\eeq
+\\
+&=&
+M dim(\caly_\omega)
+\eeqa
+\end{claim}
+\proof
+Replace each of the 6 Young projectors $\caly_\alp$
+of the right hand side  (RHS) by its square. That gives
+12 Young projectors on the RHS.
+Each of the 4 generators $T_\lam$
+on the left hand side (LHS) is composed of
+3 Young projectors  so
+there are 12 Young projectors
+on the LHS too.
+
+\beqa
+\bcen
+\xymatrix@C=1pc@R=1pc{
+&
+&\caly_\nu\ar[ll]
+&\caly_\mu\ar@2{-}[d]
+\ar[l]
+&\caly_\omega
+\ar@2{-}[dd]\ar[l]
+&\ar[l]
+\ar@[red]@{-}@/_1pc/
+[lllll]
+\\
+&\caly_\rho\ar[l]
+\ar@2{-}[d]
+&\caly_\lam\ar[l]
+&
+&\ar[ll]
+&\ar[l]
+\ar@[red]@{-}@/_1pc/
+[lllll]
+\\
+&\ar[l]
+&\caly_\s \ar[l]
+&
+&\ar[ll]
+&\ar[l]
+\ar@[red]@{-}@/_1pc/
+[lllll]
+}
+\ecen
+&=&
+\bcen
+\xymatrix@C=1pc@R=1pc{
+&\ar@2{-}[dd]\caly_\omega\ar[l]
+&
+&\caly_\nu\ar[ll]
+&\caly_\mu\ar@2{-}[d]
+\ar[l]
+&\caly_\omega
+\ar@2{-}[dd]\ar[l]
+&\ar[l]
+\ar@[red]@{-}@/_1pc/
+[llllll]
+\\
+&\ar[l]
+&\caly_\rho\ar[l]
+\ar@2{-}[d]
+&\caly_\lam\ar[l]
+&
+&\ar[ll]
+&\ar[l]
+\ar@[red]@{-}@/_1pc/
+[llllll]
+\\
+&\ar[l]
+&\ar[l]
+&\caly_\s \ar[l]
+&
+&\ar[ll]
+&\ar[l]
+\ar@[red]@{-}@/_1pc/
+[llllll]
+}
+\ecen
+\\
+&=& M dim(\caly_\omega)
+\eeqa
+
+\qed
+
+
 \section{Sum rules}
