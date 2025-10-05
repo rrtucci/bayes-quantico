@@ -153,6 +153,7 @@
 }
 \ecen
 \eeq
+where $m_\s \in \{ -1,0,1\}$.
 
 \beq
 \bcen
@@ -216,7 +217,12 @@ M
 \ecen
 \eeq
 
+$M$ is independent on $n$ for  $U(n)$.
+
 \section{$3-j$ coefficients}
+
+Recall that $|\caly_\alp|$ or $|\alp|$
+is the number of boxes (or number of outgoing legs in its birdtrack) in the YT $\caly_\alp$.  
 
 \beq
 T_\beta=
@@ -234,18 +240,29 @@ T_\beta=
 \xymatrix@C=2pc{
 &\caly_\beta
 \ar@2{-}[d]
-&\caly_\alp\ar[l]|{\ell_\alp}
+&\caly_\alp\ar[l]|{|\alp|}
 &\ar[l]
 \\
-&\ar[l]|{\ell_\beta}&\caly_\gamma\ar[l]|{\ell_\gamma}&\ar[l]
+&\ar[l]|{|\beta|}&\caly_\gamma\ar[l]|{|\gamma|}&\ar[l]
 }
 \ecen
 \eeq
-where $\ell_\beta =
-\ell_\alp +\ell_\gamma
+where $|\beta| =
+|\alp| +|\gamma|
 $
 
 \begin{claim}
+For $U(n)$, we have\footnote{
+Ref.\cite{birdtracks-book},
+on which this claim
+is based, uses different labels
+for the Young projectors.
+Their labels and ours are related as follows:
+ 
+$\caly_\alpha\rarrow X$,
+$\caly_\beta\rarrow  Y$,
+$\caly_\gamma\rarrow  Z$.
+} 
 \beqa
 \tr(T^\dagger_\beta T_\beta)=
 \bcen
@@ -271,6 +288,7 @@ T_\beta^\dagger
 \\
 &=& M dim(\caly_\beta)
 \eeqa
+where $M$ is independent of $n$.
 \end{claim}
 \proof
 
@@ -305,10 +323,27 @@ T_\beta^\dagger
 \eeqa
 \qed
 
+Ref. \cite{birdtracks-book}
+shows that for this example, $M=1$.
+
+
 \section{$6-j$ coefficients}
 
-
 \begin{claim}
+For $U(n)$, we have\footnote{
+Ref.\cite{birdtracks-book},
+on which this claim
+is based, uses different labels
+for the Young projectors.
+Their labels and ours are related as follows:
+ 
+$\caly_\s\rarrow X$,
+$\caly_\omega\rarrow  Y$,
+$\caly_\rho\rarrow  U$,
+$\caly_\lam\rarrow W$,
+$\caly_\nu\rarrow V$,
+$\caly_\mu\rarrow Z$.
+}
 \beqa
 \bcen
 \sixj{\lam}{\mu}{\nu}{\omega}{\rho}{\s}
@@ -348,6 +383,7 @@ T_\beta^\dagger
 &=&
 M dim(\caly_\omega)
 \eeqa
+where $M$ is independent of $n$
 \end{claim}
 \proof
 Replace each of the 6 Young projectors $\caly_\alp$
@@ -430,5 +466,179 @@ on the LHS too.
 
 \qed
 
+For example, Ref.\cite{birdtracks-book} shows that
+for
+
+\beq
+\caly_\rho=
+\begin{ytableau}
+2&3
+\\
+4
+\end{ytableau}
+,\quad\quad
+\caly_\nu=
+\begin{ytableau}
+1
+\end{ytableau}
+,\quad\quad
+\caly_\lam=
+\begin{ytableau}
+2
+\end{ytableau}
+\eeq
+
+\beq
+\caly_\s=
+\begin{ytableau}
+3
+\\
+4
+\end{ytableau}
+,\quad\quad
+\caly_\omega=
+\begin{ytableau}
+1&3
+\\
+2
+\\
+4
+\end{ytableau}
+,\quad\quad
+\caly_\mu=
+\begin{ytableau}
+1
+\\
+2
+\end{ytableau}
+\eeq
+we have
+
+\beq 
+M =\frac{1}{3},
+\quad 
+dim{\caly_\omega}
+=\frac{n(n^2-1)(n^2-2)}{8}
+\eeq
+
+
+
 
 \section{Sum rules}
+
+Let
+
+$STY(n_b)=$ set of 
+STY with $n_b$ boxes
+
+$STY_+=$ set of STY with one or more boxes. Hence, SYT $\caly_\alp$ with $|\alp|=0$  is excluded.
+
+\begin{claim}
+
+\beq
+\sum_{\alp, \gamma \in SYT_+}\indi(|\alp|+|\gamma|=|\beta|)
+\trij{\alp}{\beta}
+{\gamma}
+=
+(|\beta|-1)dim(\caly_\beta)
+\eeq
+
+\end{claim}
+\proof
+
+\beq
+\sum_{\alp\in SYT(|\alp_0|)}\caly_\alp = 1
+,\quad
+\sum_{\gamma\in SYT(|\gamma_0|)}\caly_\gamma = 1
+\eeq
+
+\begin{align}
+\sum_{\alp, \gamma \in SYT_+}
+\indi(|\alp| + |\gamma| = |\beta|)
+\trij{\alp}{\beta}
+{\gamma}
+&=
+\sum_{|\alp|=1}^{|\beta|-1}
+\begin{array}{c}
+\sum
+\\
+\scriptstyle
+\alp \in SYT(|\alp|)
+\\
+\scriptstyle
+\gamma\in
+SYT(|\beta|-|\alp| )
+\end{array}
+\bcen
+\xymatrix@C=1pc{
+&\caly_\beta
+\ar@2{-}[d]\ar[l]
+&\caly_\alp\ar[l]
+&\ar@[red]@{-}@/_1pc/[lll]\ar[l]
+\\
+&\ar[l]&\caly_\gamma\ar[l]
+&\ar@[red]@{-}@/_1pc/[lll]\ar[l]
+}
+\ecen
+\\
+&=
+\sum_{|\alp|=1}^{|\beta|-1}
+\bcen
+\xymatrix@C=2pc{
+&\caly_\beta
+\ar@2{-}[d]\ar[l]
+&\ar@[red]@{-}@/_1pc/[ll]\ar[l]
+\\
+&\ar[l]
+&\ar@[red]@{-}@/_1pc/[ll]\ar[l]
+}
+\ecen
+\\
+&= (|\beta|-1)dim(\caly_\beta)
+\end{align}
+
+\qed
+
+Let 
+
+\beq
+A = \{\rho, \nu, \lam, \s, \omega, \mu\},
+\quad 
+A(\omega)= A-\{\omega\}
+\eeq
+
+\beq
+J(A)=
+\indi
+\left(
+\begin{array}{l}
+|\s|+|\mu|=|\omega|,
+\\
+|\nu|+|\rho|=|\omega|,
+\\
+|\s|+|\lam|=|\rho|,
+\\
+|\lam|+|\nu|=|\mu|
+\end{array}
+\right)
+\eeq
+
+
+\begin{claim}
+\beq
+\prod_{\alp \in A(\omega)}
+\left[\sum_{\alp \in SYT(|\alp|)}\right]
+J(A)
+\bcen
+\sixj{\lam}{\mu}{\nu}{\omega}{\rho}{\s}
+\ecen
+=
+\frac{1}{2}
+(|\omega|-1)(|\omega|-2)dim{\caly_\omega}
+\eeq
+\end{claim}
+\proof
+
+See Ref.\cite{birdtracks-book}
+for proof.
+\qed

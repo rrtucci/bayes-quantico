@@ -113,7 +113,15 @@ no integer is repeated.
 \label{fig-syt-1234.}
 \end{figure}
 
-
+We will use
+$|\caly|$, or $|\caly_\alp|$
+or $|\alp|$ to denote the number
+of boxes in a YD or YT.
+Sometimes $|S|$
+means the number of elements
+in a finite set $S$, but
+that should not
+lead to confusion.
 
 
 \section{Symmetric group $S_{n_b}$}
@@ -185,19 +193,21 @@ rows, label the irreps of $SL(n_b)$ and $SU(n_b)$.
 
 
 
-$YD_{n_b}=$ set of YD with $n_b$ boxes
+$YD(n_b)=$ set of YD with $n_b$ boxes
 
-The irreps of $S_{n_b}$  are labelled by the $\caly\in YD_{n_b}$. 
-Hence, there is a 1-1 onto map between $irreps(S_{n_b})$ and $YD_{n_b}$
+$SYD(n_b)=$ set of SYD with $n_b$ boxes
+
+The irreps of $S_{n_b}$  are labelled by the $\caly\in YD(n_b)$. 
+Hence, there is a 1-1 onto map between $irreps(S_{n_b})$ and $YD(n_b)$
 
 
 \beq
-irreps(S_{n_b})=YD_{n_b}
+irreps(S_{n_b})=YD(n_b)
 \eeq
 
-$YT(\caly)=$ set of YT for a $\caly\in YD_{n_b}$.
+$YT(\caly)=$ set of YT for a $\caly\in YD(n_b)$.
 
-$SYT(\caly)=$ set of SYT for a $\caly\in YD_{n_b}$.
+$SYT(\caly)=$ set of SYT for a $\caly\in YD(n_b)$.
 
 
 $dim(\caly)=$ dimension of irrep $\caly$.
@@ -366,14 +376,14 @@ appearing $dim(\lam)$ times. Thus
 \begin{align}
 n_b! = |S_{n_b}| &=\sum_{\lam\in irreps(S_{n_b})}[dim(\lam)]^2
 \\
-&=[n_b!]^2\sum_{\caly \in YD_{n_b}}
+&=[n_b!]^2\sum_{\caly \in YD(n_b)}
 \frac{1}{[hook(\caly)]^2}\quad
-\text{(Because  $irreps(S_{n_b})=YD_{n_b}$)}
+\text{(Because  $irreps(S_{n_b})=YD(n_b)$)}
 \end{align}
 Hence,
 
 \beq
-1 = n_b!\sum_{\caly \in YD_{n_b}}
+1 = n_b!\sum_{\caly \in YD(n_b)}
 \frac{1}{[hook(\caly)]^2}
 \label{eq-1-hook-sq}
 \eeq
@@ -384,7 +394,7 @@ Hence,
 \qed
 
 \beq
-1 = \sum_{\caly \in YD_{n_b}} P_\caly
+1 = \sum_{\caly \in YD(n_b)} P_\caly
 \eeq
 
 \beq
@@ -484,9 +494,9 @@ than $n$ rows would require a  repetition
 in of an integer in a column, and
 such a column, after antisymetrizing, equals zero.
 
-$YD_{n_b}=$ set of YD with $n_b$ boxes
+$YD(n_b)=$ set of YD with $n_b$ boxes
 
-$YT(\caly)=$ set of YT for a $\caly\in YD_{n_b}$.
+$YT(\caly)=$ set of YT for a $\caly\in YD(n_b)$.
 
 If $\caly_\alp$ is a SYT in $irreps(U(n))$
 and the YD of $\caly_\alp$
