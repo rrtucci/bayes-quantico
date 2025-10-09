@@ -1,17 +1,12 @@
-\chapter{Unitary Groups: COMING SOON}
+\chapter{Unitary Groups}
 \label{ch-unitary-groups}
+
 
 
 \section{$SU(n)$}
 
-In $SU(n)$,
-
-\beq
-n=d_{\lam_0}
-\eeq
-where $\lam_0$
-is the defining rep.
-($\calg\subset \CC^{n\times n})$
+In $SU(n)\subset \CC^{n\times n})$
+in defining rep
 
 \beq
 m(p,q) = \delta_b^a 
@@ -33,7 +28,7 @@ a\ar[r]|\bullet
 \eeq
 
 \beq
-M^{a,c}_{d,b}=
+M\indices{^d_a^b_c}=
 \delta_d^a\delta_b^c
 =
 \begin{array}{c}
@@ -80,20 +75,82 @@ P_i = \sum_{j\neq i}
 \frac{M-\lam_j}{\lam_i-\lam_j}
 \eeq
 
-$\lam_1=n$
+$\lam=0, n$
+
+\hrule
+$\lam_s = 0$
 
 \beq
 \begin{array}{ll}
 \myboxed{
-P_1 = \frac{M-n}{0-n}=
-1 -\frac{1}{n}M
-}&
+P_s =\frac{M-0}{n-0}= \frac{1}{n} M 
+}
+&
 \bcen
 \xymatrix@C=1pc@R=1pc{
 a
 &&b\ar[dl]
 \\
-&P_1\ar[dr]\ar[lu]
+&P_s\ar[dr]\ar[lu]
+\\
+c\ar[ru]&&d
+}
+\ecen
+=
+\frac{1}{n}
+\bcen
+\xymatrix@C=3pc{
+a
+&b\ar@/_1pc/[d]|\bullet
+\\
+c\ar@/_1pc/[u]|\bullet
+&d}
+\ecen
+\end{array}\eeq
+
+singlet part
+\beq
+P_{s}x = \frac{1}{n}
+x\indices{^b_b}
+\delta_a^c
+\eeq
+
+
+
+\beqa
+dim(P_s)=\tr P_s &=&
+\frac{1}{n}
+\bcen
+\xymatrix@C=3pc{
+&\ar@/_1pc/[d]|\bullet\ar@[red]@{-}@/_1pc/[l]
+\\
+\ar@/_1pc/[u]|\bullet
+&\ar@[red]@{-}@/_1pc/[l]
+}
+\ecen
+\\
+&=&
+1
+\eeqa
+
+
+
+\hrule
+$\lam_{tl}=n$
+
+\beq
+\begin{array}{l}
+\myboxed{
+P_{tl} = \frac{M-n}{0-n}=
+1 -\frac{1}{n}M
+}
+\\
+\bcen
+\xymatrix@C=1pc@R=1pc{
+a
+&&b\ar[dl]
+\\
+&P_{tl}\ar[dr]\ar[lu]
 \\
 c\ar[ru]&&d
 }
@@ -116,48 +173,35 @@ a
 c\ar@/_1pc/[u]|\bullet
 &d}
 \ecen
+=
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&&&\ar@/_1pc/[ld]
+\\
+&T_i\ar@/_1pc/[lu]&T_i\ar@{~}[l]\ar@/_1pc/[rd]&
+\\
+\ar@/_1pc/[ru]&&&
+}
+\ecen
 \end{array}
 \eeq
-
-
-
-$\lam_2 = 0$
-
+traceless part of $x$
 \beq
-\begin{array}{ll}
-\myboxed{
-P_2 =\frac{M-0}{n-0}= \frac{1}{n} M 
-}
-&
-\bcen
-\xymatrix@C=1pc@R=1pc{
-a
-&&b\ar[dl]
-\\
-&P_2\ar[dr]\ar[lu]
-\\
-c\ar[ru]&&d
-}
-\ecen
-=
-\frac{1}{n}
-\bcen
-\xymatrix@C=3pc{
-a
-&b\ar@/_1pc/[d]|\bullet
-\\
-c\ar@/_1pc/[u]|\bullet
-&d}
-\ecen
-\end{array}\eeq
+P_{tl}x=
+x\indices{^a_c}-
+\left(
+\frac{1}{n}x\indices{^b_b}\delta_a^c
+\right)
+\eeq
 
 \beqa
-dim(P_1)=\tr P_1 &=&
+dim(P_{tl})=\tr P_{tl} &=&
 \bcen
 \xymatrix@C=3pc{
 &\ar[l]|\bullet\ar@[red]@{-}@/_1pc/[l]
 \\
-&\ar[l]|\bullet\ar@[red]@{-}@/_1pc/[l]}
+\ar[r]|\bullet\ar@[red]@{-}@/_1pc/[r]&
+}
 \ecen
 -
 \frac{1}{n}
@@ -173,23 +217,7 @@ dim(P_1)=\tr P_1 &=&
 &=& n^2 -1
 \eeqa
 
-\beqa
-dim(P_2)=\tr P_2 &=&
-\frac{1}{n}
-\bcen
-\xymatrix@C=3pc{
-&\ar@/_1pc/[d]|\bullet\ar@[red]@{-}@/_1pc/[l]
-\\
-\ar@/_1pc/[u]|\bullet
-&\ar@[red]@{-}@/_1pc/[l]
-}
-\ecen
-\\
-&=&
-1
-\eeqa
-
-
+\hrule
 \begin{claim}
 \beq
 \myboxed{\tr(T_i)=0}
@@ -204,15 +232,18 @@ dim(P_2)=\tr P_2 &=&
 \proof
 
 \beq
-0=P_1 P_2=
+0=P_{tl} P_s=
 \bcen
 \xymatrix@R=1pc@C=1pc{
 &&&\ar@/_1pc/[ld]
 &&\ar`l[ldd]`[dd][dd]
 \\
-&T_i\ar@/_1pc/[lu]&T_i\ar@{~}[l]\ar@/_1pc/[rd]&&&
+&T_i\ar@/_1pc/[lu]
+&T_i\ar@{~}[l]\ar@/_1pc/[rd]
+&&&
 \\
-\ar@/_1pc/[ru]&&&\ar[uu]
+\ar@/_1pc/[ru]
+&&&\ar[uu]
 &&
 }
 \ecen
@@ -433,7 +464,7 @@ Usually set $\kappa=1$
 \ar@/_1pc/[ru]&&&
 }
 \ecen
-\eqdef P_1
+\eqdef P_{tl}
 =
 \bcen
 \xymatrix@C=3pc{
@@ -783,4 +814,123 @@ A = 2 (A_1 - A_2)= 2n
 \eeq
 
 \qed
+
+\section{$U(n)$}
+
+\begin{itemize}
+\item $U(n)$ primitive invariants: Kronecker delta
+
+\item $SU(n)$ primitive invariants: Kronecker delta, Levi-Civita tensor
+\end{itemize}
+
+$P_{tl} \rarrow P_{adj}$
+
+\beq
+P_{adj}=
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&&&\ar@/_1pc/[ld]
+\\
+&T_i\ar@/_1pc/[lu]&T_i\ar@{~}[l]\ar@/_1pc/[rd]&
+\\
+\ar@/_1pc/[ru]&&&
+}
+\ecen
+=
+\bcen
+\xymatrix{
+&&\ar[ll]
+\\
+\ar[rr]&&
+}
+\ecen
+\eeq
+
+\beqa
+dim(P_{adj})=\tr P_{adj} &=&
+\bcen
+\xymatrix@C=3pc{
+&\ar[l]|\bullet\ar@[red]@{-}@/_1pc/[l]
+\\
+\ar[r]|\bullet\ar@[red]@{-}@/_1pc/[r]&
+}
+\ecen
+\\
+&=& n^2 
+\eeqa
+
+\begin{claim}
+The Levi-Civita tensor
+is an invariant matrix
+for $SU(n)$.
+
+\beq
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&&\ar[ll]\ar@{~}[d]T_i
+\ar[r]&
+\\
+\ar[r]
+&\ar[r]\ar@2{-}[ddd]\cala_p
+&\ar[r]T_i
+&\cala^{\frac{1}{2}}\ar@2{-}[ddd]
+\\
+\ar[r]&\ar[rr]&&
+\\
+\ar[r]&\ar[rr]&&
+\\
+\ar[r]&\ar[rr]&&
+}
+\ecen
+=
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&&\ar[ll]
+\\
+\ar[r]
+&\ar[r]\ar@2{-}[ddd]\cala_p
+&\cala^{\frac{1}{2}}\ar@2{-}[ddd]
+\\
+\ar[r]&\ar[r]&
+\\
+\ar[r]&\ar[r]&
+\\
+\ar[r]&\ar[r]&
+}
+\ecen
+-\frac{1}{n}
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&&&
+\ar`l[ld]`[d][d]
+\\
+\ar[r]
+&\ar@2{-}[ddd]\cala_p
+\ar`r[ru]`[ul][ul]
+&
+&\cala^{\frac{1}{2}}\ar@2{-}[ddd]
+&
+\\
+\ar[r]&\ar[rr]&&
+\\
+\ar[r]&\ar[rr]&&
+\\
+\ar[r]&\ar[rr]&&
+}
+\ecen
+=
+0
+\eeq
+
+\end{claim}
+\proof
+\qed
+
+
+\section{$V\times V^\dagger$
+ decomposition}
+
+
+
+\section{$Adj\otimes V$ decomposition}
 
