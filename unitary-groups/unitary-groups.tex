@@ -927,8 +927,347 @@ for $SU(n)$.
 \qed
 
 
-\section{$V\times V^\dagger$
+\section{$V\times V_{adj}$
  decomposition}
+
+$V\otimes V_{adj}
+\sim V\otimes V\otimes V^\dagger$
+
+\beq
+e=
+\bcen
+\xymatrix{
+&&\ar@{~}[ll]
+\\
+&&\ar[ll]
+}
+\ecen
+=
+\bcen
+\xymatrix{
+&\ar@{~}[l]\ar@/_1pc/[r] T_i
+&\ar@/_1pc/[l]T_j
+&\ar@{~}[l]
+\\
+&&&\ar[lll]
+}
+\ecen
+\eeq
+
+\beq
+R=
+\bcen
+\xymatrix{
+&\ar@{~}[l] T_i
+\ar@/^1pc/[ld]
+&\ar@/_1pc/[l]T_j
+&\ar@{~}[l]
+\\
+&&&\ar@/^1pc/[lu]
+}
+\ecen
+=
+\bcen
+\xymatrix@R=1pc@C=1.5pc{
+\ar@{~}[dr]&&&\ar@{~}[dl]
+\\
+&T_i\ar[ld]&T_j\ar[l]&
+\\
+&&&\ar[ul]
+}
+\ecen
+\eeq
+
+\beq
+Q=
+\bcen
+\xymatrix{
+&\ar@{~}[l] T_i
+&\ar@/_1pc/@{<-}[l]T_j
+\ar@/^1pc/[lld]
+&\ar@{~}[l]
+\\
+&&&\ar@/^1pc/[llu]
+}
+\ecen
+=
+\bcen
+\xymatrix{
+\ar@{~}@/^1pc/[drr]
+&&&\ar@{~}@/_1pc/[dll]
+\\
+&T_j\ar[l]&T_i\ar[l]&\ar[l]
+}
+\ecen
+\eeq
+
+Recall that for $SU(n)$,
+the dimension of the adjoint space $N$ is
+
+\beq
+N = n^2-1 = \xymatrix{&&\ar@{~}[ll]
+\ar@{-}@[red]@/_1pc/[ll]}
+\eeq
+For example, for $SU(2)$, $N=3$ and for $SU(3)$,
+$N=8$.
+
+\beq
+\tr(e)= 
+\bcen
+\xymatrix{
+&&\ar@{~}[ll]
+\ar@{-}@[red]@/_1pc/[ll]
+\\
+&&\ar[ll]
+\ar@{-}@[red]@/_1pc/[ll]
+}
+\ecen
+=Nn
+\eeq
+
+\beq
+\tr(R) = 
+\bcen
+\xymatrix{
+&\ar@{~}[l] T_i
+\ar@/^1pc/[ld]
+&\ar@/_1pc/[l]T_j
+&\ar@{~}[l]
+\ar@{-}@[red]@/^1pc/[lll]
+\\
+&&&\ar@/^1pc/[lu]
+\ar@{-}@[red]@/^1pc/[lll]
+}
+\ecen
+=N
+\eeq
+
+\beq
+\tr(Q)=
+\bcen
+\xymatrix{
+\ar@{~}@/^1pc/[drr]
+&&&\ar@{~}@/_1pc/[dll]
+\ar@{-}@[red]@/^1pc/[lll]
+\\
+&T_j\ar[l]&T_i\ar[l]&\ar[l]
+\ar@{-}@[red]@/^1pc/[lll]
+}
+\ecen
+=
+N
+\eeq
+
+
+\begin{claim}
+
+\beq
+R^2 = \frac{n^2-1}{n}R
+\eeq
+
+\beq
+QR = RQ= -\;\frac{1}{n}R
+\eeq
+
+\beq
+Q^2 -e= - \;\frac{1}{n}R
+\eeq
+\end{claim}
+\proof
+\qed
+
+
+\begin{claim}
+
+\beqa
+P_1 &=& \frac{n}{n^2-1}R
+\\
+P_2&=&
+\frac{1}{2}
+\left[e + Q -\frac{1}{n+1}R\right]
+\\
+P_3&=&
+\frac{1}{2}
+\left[e - Q -\frac{1}{n-1}R\right]
+\eeqa
+ae projectors such that
+for $SU(n)$, the $V\otimes V_{adj}$ Clebsch-Gordan series
+is given by
+\beq
+\begin{array}{ccccccc}
+V_{adj} \otimes V&=&
+P_1V &\oplus& P_2V &\oplus& P_3V
+\\
+\begin{ytableau}
+\;&\;
+\\
+\;
+\\
+\none[\vdots]
+\\
+\;
+\end{ytableau}
+\otimes
+\ydiagram{1}
+&=&
+\ydiagram{1}
+&\oplus&
+\begin{ytableau}
+\;&\;&\;
+\\
+\;
+\\
+\none[\vdots]
+\\
+\;
+\end{ytableau}
+&\oplus&
+\begin{ytableau}
+\;&\;
+\\
+\;&\;
+\\
+\none[\vdots]
+\\
+\;
+\end{ytableau}
+\\
+\\
+(n^2-1)n 
+&=&
+n
+&+&
+\frac{n(n-1)(n+2)}{2}
+&+&
+\frac{n(n+1)(n-2)}{2}
+\\
+SU(3): 8(3)
+&=&
+3
+&+&
+15
+&+&
+6
+\end{array}
+\eeq
+\end{claim}
+\proof
+
+\beq
+\tr(P_1)=
+\frac{n}{n^2-1}nN=\frac{n^2(n-1)}{n^2-1}= \frac{n^2}{n+1}
+\eeq
+
+\beqa
+\tr(P_2)&=&
+\frac{N}{2}\left(n+ 1-\frac{1}{n+1}
+\right)
+\\
+&=&
+\frac{N}{2}\frac{n^2+2n}{n+1}
+\\
+&=&
+\frac{N}{2}
+\frac{n(n+2)}{n+1}
+\eeqa
+
+\beqa
+\tr(P_3)&=&
+\frac{N}{2}\left(n- 1-\frac{1}{n-1}
+\right)
+\\
+&=&
+\frac{N}{2}\frac{n^2-2n}{n-1}
+\\
+&=&
+\frac{N}{2}\frac{n(n-2)}{n-1}
+\eeqa
+ 
+From $R^2 = \frac{n^2-1}{n}R$,
+
+\beq
+P_1 = \frac{n}{n^2-1}R
+\eeq
+
+\beq
+P_4 = e-P_1
+\eeq
+From $Q^2-e=-\frac{1}{n}R$ get
+
+\beq
+P_4(Q^2-1)= 0
+\eeq
+
+\beq
+P_2 = \frac{1}{2}P_4(1+Q),\quad
+P_3 = \frac{1}{2}P_4(1+Q)
+\eeq
+
+\beqa
+P_2 &=& \frac{1}{2}P_4(1+Q)
+\\
+&=&\frac{1}{2}(e-aR)(1+Q)
+\quad (\text{ where }a=\frac{n}{n^2-1})
+\\
+&=&
+\frac{1}{2}(e-aR+Q-aRQ)
+\\
+&=&
+\frac{1}{2}\left(e+ \left(\frac{1}{n}-1\right)aR+Q\right)
+\eeqa
+
+\beqa
+\left(\frac{1}{n}-1\right)a
+&=&
+\frac{1-n}{n}\frac{n}{n^2-1}
+\\
+&=&
+-\frac{1}{n+1}
+\eeqa
+
+
+
+\beqa
+P_3&=&
+\frac{1}{2}P_4(1-Q)
+\\
+&=&
+\frac{1}{2}(e-aR)(1-Q)
+\\
+&=&
+\frac{1}{2}(e-aR-Q+aRQ)
+\\
+&=&
+\frac{1}{2}\left(e- \left(\frac{1}{n}
++1\right)aR-Q\right)
+\eeqa
+
+\beq\left(\frac{1}{n}+1\right)a =\frac{1}{n-1}
+\eeq
+
+\qed
+
+\begin{claim}
+
+\end{claim}
+\proof
+
+\qed
+
+Let $Q_1, Q_2, Q_3=e, R, Q$ and $\ket{Q_i}= Q_i$
+
+\beq
+Q_\lam\ket{Q_j}=
+\sum_iA^\lam_{ij}\ket{Q_i}
+\eeq
+
+\beq
+\av{Q_i|Q_\lam|Q_j}=
+A^\lam_{ij}
+\eeq
+If $A^\lam$ are diagonalized  and divided by their eigenvalues, and they have a single non-zero eigenvalue, then they become
+a complete set of projectors
+with 1 or 0 along their diagonals.
 
 
 
