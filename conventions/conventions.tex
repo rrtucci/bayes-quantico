@@ -165,12 +165,12 @@ of the Lie Algebra. If the Lie Algebra satisfies
 $[T^i, T^j]= if_{ijk}T^k$,
 then the adjrep is given by the matrices 
 with $i,j$ entries $M^k_{ij}=-if\indices{^k_i_j}$.
-Write $\ket{T^i}$ instead of $T^i$
-and  $\ket{x} = x_i \ket{T^i}$.
+Let  $\ket{x} = x_i \ket{T^i}$.
 Then
 
 \beq
-[\ket{x}, \cdot]\ket{T^j}   = i f_{ijk}\ket{T^k} \implies
+[\ket{x}, \cdot]\ket{T^j}   = 
+\ket{[x, T^j]}= i x_if_{ijk}\ket{T^k} \implies
 \bra{T^k}[\ket{x}, \cdot]\ket{T^j}= 
 i x_i f_{ijk}
 \eeq
@@ -323,6 +323,17 @@ $B$ is closed under vector multiplication.
 where $c\indices{_{ij}^k}\in\CC$.
 The $c\indices{_{ij}^k}$ are called 
 {\bf structure constants} of $B$.
+In Dirac notation
+
+\beq
+\tau_i\ket{\tau_j}=
+\ket{\tau_i \cdot \tau_j}=
+\sum_k c\indices{_i_j^k}\ket{\tau_k}
+\eeq
+
+\beq
+\av{\tau_k|\tau_i|\tau_j}= c\indices{_i_j^k}
+\eeq
 
 An {\bf associative algebra} satisfies 
 $(x\cdot y)\cdot z = x\cdot(y\cdot z)$ for
