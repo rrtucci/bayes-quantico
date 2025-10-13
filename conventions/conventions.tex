@@ -28,6 +28,66 @@ $\CC$= complex numbers
 
 $\CC^{n\times m}$ = $n\times m$ matrices of complex numbers
 
+\section{Group Theory References}
+Much of this book
+deals with Group Theory (GT).
+
+
+GT is a vast subject. Who would have thought
+that the simple definition of 
+a group would generate so many elegant and useful results.
+
+GT books by mathematicians are very
+different from GT
+books by physicists,
+even though, of course,
+they agree on the definitions. 
+Mathematicians
+are, as to be expected, more rigorous and abstract. But it goes much further than that. Physicists are much
+more interested in applications
+to physical systems,
+especially Quantum Mechanics (QM).
+Soon after QM was invented,
+it was realized that Linear Algebra (LA) and GT  (especially Group Representation Theory,
+which combines GT and LA)
+are extremely
+relevant and useful in QM.
+Hermann Weyl,
+Eugene Wigner, Hans Bethe, Linus Pauling, etc.
+combined QM and GT to understand the spectra and chemistry of atoms and molecules,
+and later GT was heavily used in Quantum Field Theory and Particle Physics to devise 
+the Standard Model. Condensed Matter physicists have also used it to understand crystalline solids and to predict quasi particles that can be detected in the lab. 
+
+My PhD is in physics
+so in this book I cover 
+GT topics that are  mainly of interests to
+physicists and engineers. Furthermore,
+I am nowhere as abstract and
+rigorous as mathematicians 
+usually are.
+
+My favorite books about GT 
+for physicists are the Elliott \& Dawber's (ED)
+2 volume series Ref. \cite{eli-daw-book}
+and Predrag Cvitanovic's Birdtracks book
+Ref.\cite{birdtracks-book}. I highly
+recommend both of these references. I think
+both of them are excellent.
+
+The Birdtracks book explains key 
+concepts in GT representation theory
+using network diagrams 
+(Cvitanovic calls 
+such diagrams birdtracks) The ED books, on the other hand, do not use birdtracks. They use algebra instead. In fact, most GT books don't use birdtracks either. 
+But since this is a book
+about visualization using network diagrams (quantum 
+bnets), we use birdtracks.
+In fact, many
+of the chapters in this
+book were heavily influenced 
+by Ref.\cite{birdtracks-book}
+by Cvitanovic. I hope he doesn't mind. I really love his  book.
+
 \section{Group}
 
 A {\bf group}
@@ -59,7 +119,7 @@ ea=ae=a
 for all $a\in \calg$
 
 \item
-for any $g\in\calg$,
+for any $a\in\calg$,
 there exists an {\bf inverse} $a^{-1}\in \calg$ such that
 
 \beq
@@ -127,8 +187,9 @@ is 1-1, onto, we call it a {\bf faithful representation}
 The {\bf trivial representation} 
 represents all $g\in \calg$
 by  $diag(1,1, \dots, 1)$.
-It's dimension is $d_\lam=0$.
-It's not a faithful rep.
+The dimension 
+of this rep is $d_\lam=0$.
+This rep is obviously not a faithful rep.
 
 A {\bf singlet representation}
 represents all
@@ -137,12 +198,13 @@ by  $ z(g) diag(1,1, \dots, 1)$
 for some $z(g)\in\CC$.
 For the singlet rep, $\av{i|\phi(a)|j}=z(g)
 \delta(i,j)$.
-It's dimension is $d_\lam=1$.
+The dimension 
+of this rep is $d_\lam=1$.
 The projection operator
 $\delta_a^b \delta_c^d$
 when acting on $G\indices{_c^d}$
 gives a $ z(G) diag(1,1, \dots, 1)$
-where $z(G)=\tr(G)$, so it
+where $z(G)=G\indices{_c^c}=\tr(G)$, so it
 projects to a singlet rep.
 
 
@@ -186,73 +248,14 @@ $SU(n), SO(n), SP(n)$, but not for $E_8$.
 
 
 
-\section{Group Theory References}
-Much of this book
-deals with Group Theory (GT).
-
-
-GT is a vast subject. Who would have thought
-that the simple definition of 
-a group would generate so many elegant, highly applicable and useful results and
-consequences.
-
-GT books by mathematicians are very
-different from GT
-books by physicists,
-even though, of course,
-they agree on the definitions. 
-Mathematicians
-are, as to be expected, more rigorous and abstract. But it goes much further than that. Physicists are much
-more interested in applications
-to physical systems,
-especially Quantum Mechanics (QM).
-Soon after QM was invented,
-it was realized that Linear Algebra (LA) and GT  (especially Group Representation Theory,
-which combines GT and LA)
-are extremely
-relevant and useful in QM.
-Hermann Weyl,
-Eugene Wigner, Hans Bethe, Linus Pauling, etc.
-combined QM and GT to understand the spectra and chemistry of atoms and molecules,
-and later GT was heavily used in Quantum Field Theory and Particle Physics to devise 
-the Standard Model. Condensed Matter physicists have also used it to understand crystalline solids and to devise quasi particles that can be detected in the lab. 
-
-My PhD is in physics
-so in this book I cover 
-GT topics that are  mainly of interests to
-physicists and engineers. Furthermore,
-I am nowhere as abstract and
-rigorous as mathematicians 
-usually are.
-
-My favorite books about GT 
-for physicists are the Elliott \& Dawber's (ED)
-2 volume series Ref. \cite{eli-daw-book}
-and Predrag Cvitanovic's Birdtracks book
-Ref.\cite{birdtracks-book}. I highly
-recommend both of these references. I think
-both of them are excellent.
-
-The Birdtracks book explains key 
-concepts in GT representation theory
-using network diagrams 
-(Cvitanovic calls 
-such diagrams birdtracks) whereas the ED book doesn't use that type of diagram. Many people don't use birdtracks either, they only use algebra.
-But since this is a book
-about visualization using network diagrams (quantum 
-bnets), we use birdtracks.
-In fact, many
-of the chapters in this
-book were heavily influenced 
-by Ref.\cite{birdtracks-book}
-by Cvitanovic. I hope he doesn't mind. I really love his  book.
 
 \section{Vector Space and Algebra over a field $\FF$}
 \label{sec-algebra-over-f}
 
-A vector  space
+A {\bf vector  space
 (a.k.a. linear space)  $\calv$
-is defined as a set endowed with
+over a field $\FF$ }
+is defined as a set $\calv$ endowed with
 two operations: vector addition $+:\calv\times\calv\rarrow \calv$,
 and scalar multiplication $\FF\times\calv\rarrow \calv$,
 such that
@@ -307,14 +310,14 @@ for $x,y, z\in \cala$ and
 $\alp, \beta\in\CC$.
 The cross product (but not the dot product)
 for vectors in $\RR^3$,
-the multiplication of 2 complex numbers, the product or commutator of 2
+the multiplication of 2 complex numbers, the matrix product or  matrix commutator of 2
 square matrices, are all good examples of
 bilinear vector products.
 
 Let $B = \{\tau_i: i=1, 2, \ldots, r\}$
 be a basis for the vector space $\cala$. 
 Then note that
-$B$ is closed under vector multiplication. 
+$\cala$ is closed under vector multiplication. 
 
 \beq
 \tau_i\cdot \tau_j=
@@ -322,7 +325,7 @@ $B$ is closed under vector multiplication.
 \eeq
 where $c\indices{_{ij}^k}\in\CC$.
 The $c\indices{_{ij}^k}$ are called 
-{\bf structure constants} of $B$.
+{\bf structure constants} of $\cala$.
 In Dirac notation
 
 \beq
@@ -341,7 +344,7 @@ $x,y,z\in \cala$.
 \begin{itemize}
 \item Not associative: cross product for vectors in  $\RR^3$.
 \item Associative:
-the product or commutator of 2  square matrices and the product of complex numbers
+the matrix product or matrix commutator of 2  square matrices and the product of complex numbers
 \end{itemize}
 
 \section{Tensors}
@@ -350,11 +353,12 @@ Let
 
 $(x_a)=(x_1, x_2, \ldots, x_n) = x^{:n}\in V^n=\CC^{n\times 1}$
 
-Reverse of vector $rev(x_1, x_2, \ldots, x_n)=
+{\bf Reverse of vector} $rev(x_1, x_2, \ldots, x_n)=
 (x_n, x_{n-1},
 \ldots, x_1)$
 
-$y^b = \sum_a g^{ba} x_a$
+$x^b = \sum_a g^{ba} x_a$, $g^{ab}$ is the
+{\bf metric tensor}
 
 $(y^b)=(y^1, y^2, \ldots, y^n)= \dual{y}^{:n}\in \dual{V}^n=\CC^{n\times 1}$. $V^n$ is the lower indices vector space and
 $\dual{V}^n$ is its {\bf dual vector space} (i.e., with upper indices).
@@ -363,7 +367,7 @@ $\dual{V}^n$ is its {\bf dual vector space} (i.e., with upper indices).
 
 $M\indices{_a^b}\in \CC^{n\times n}$, $a, b\in\ZZ_{[1,n]}$
 
-Implicit Summation Convention
+{\bf Implicit Summation Convention}
 
 \beq
 M\indices{_a^b}x_b = \sum_{b=1}^n
@@ -372,27 +376,35 @@ M\indices{_a^b}x_b
 
 
 
-If the Hermitian conjugate $\dagger$
-equals $*T$ where $*$ is complex conjugation and $T$ is transpose,
-then define
+The {\bf Hermitian conjugate} $\dagger$
+equals $*T$ where $*$ is complex conjugation and $T$ is transpose.
+Hence
 
 \beq
-(M^\dagger)\indices{_b^a}= (M\indices{_a^b})^*,
-\quad
-(M^T)\indices{_b^a}= M\indices{_a^b},
+(M^T)\indices{_b^a}= M\indices{_a^b}
 \eeq
-Thus, $\dagger$ and $T$ 
-do two things: (1) reverse the horizontal order of the indices (2)
+
+\beq
+(M^\dagger)\indices{_b^a}= (M\indices{_a^b})^*
+\eeq
+Thus, $\dagger$
+does 3 things: 
+\begin{enumerate} \item reverse the horizontal order of the indices \item
 reverse vertical positions
 of the indices; i.e., 
 lower upper indices and raise lower indices.
-Hermitian conjugation 
-also complex conjugates the tensor components.
 
-If $M$ is a Hermitian matrix (i.e., $M^\dagger =M$),
+\item replace the tensor components
+by their complex conjugates
+\end{enumerate}
+Transposing only does
+items 1 and 2.
+
+
+If $M$ is a Hermitian matrix (i.e., $M^\dagger =M$), then
 
 \beq
-M\indices{^b_a}= (M\indices{_a^b})^*
+M\indices{_b^a}= (M\indices{_a^b})^*
 \eeq
 
 
@@ -440,18 +452,18 @@ _{d^{:p}}
 ^{c^{:q}}
 }
 \eeq
-If we define $X_\alp$
+If we define $x_\alp$
 and $x^\alp$ by
 
 \beq
-X\indices{_\alp} = X\indices{
+x\indices{_\alp} = x\indices{
 _{a^{:p}}
 ^{b^{:q}}
 }
 ,\quad
-X\indices{^\alp}
+x\indices{^\alp}
 =
-X\indices{
+x\indices{
 _{rev(b^{:q})}
 ^{rev(a^{:p})}
 }
@@ -534,11 +546,11 @@ M^\dagger
  \left\{
  \begin{array}{l}
 (M\indices
-{_d^a })^*
-M\indices{_a^d}=1
+{_b^a })^*
+M\indices{_a^c}=\delta_b^c
 \\
-(M\indices{_{rev(\delta)}^{rev(\alp)}})^*
-M\indices{_\alp^{\delta}}=1
+(M\indices{_{rev(\beta)}^{rev(\alp)}})^*
+M\indices{_\alp^\gamma}=\delta_{rev(\beta)}^\gamma
 \end{array}
 \right.
 \eeq
@@ -620,11 +632,11 @@ g^{bb'}M\indices{_a_{b'}^c^d}
 =
 g^{bb'}M_{ab'}^{cd}
 \eeq
-Hence, one drawback of
+One drawback of
 using the notation
 $M_{ab}^{cd}$
 is that if one is interested 
-in using versions of
+in using several versions of
 $M_{ab}^{cd}$ with
 some indices raised or 
 lowered, one has to 

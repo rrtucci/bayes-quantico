@@ -1,6 +1,8 @@
 \chapter{Casimir Operators}
 \label{ch-casimir}
 
+This chapter is based on Cvitanovic's Birdtracks book Ref. \cite{birdtracks-book}.
+
 \beq
 M_2 = 
 \xymatrix{
@@ -252,9 +254,9 @@ M =\sum_i  T_i x_i}
 \xymatrix{
 &&
 \\
-a&\ar[l] T_i
+&\ar[l] T_i
 \ar@{~}[u]
-&\ar[l]b
+&\ar[l]
 }
 \ecen
 \eeq
@@ -291,6 +293,8 @@ x_{i_1}
 x_{i_2}
 \ldots
 x_{i_k}
+\\
+&& \nonumber
 \\
 &=&
 \sum_{i_1 i_2 \ldots i_k}
@@ -350,10 +354,22 @@ M^n
 \right.
 \eeqa
 
-The coefficients of $M^k$ are products of traces of a single $T_i$. If we calculate 
-the trace of $M^k$,
-then that will entail
-calculating traces with $k$ matrices $T_i$.
+
+Note that that
+$\tr_{12}\cala_2 M^{\otimes 2}$
+can be expressed
+in terms of $\tr(M)$
+and $\tr(M^2)$.
+Likewise,
+$\tr_{123}\cala_3 M^{\otimes 3}$
+can be expressed in terms of $\tr(M)$, $\tr(M^2)$ and
+$\tr(M^3)$.
+If we take
+the trace of the above
+equation, we get
+an equation
+constraining $\tr(M^k)$
+for $k=1, 2, \ldots n$.
 
 \begin{table}[h!]
 \begin{tabular}{|
@@ -373,18 +389,24 @@ $E_8$ & $8,12,14,18,20,24,30$ \\ \hline
 \label{tab-betti}
 \end{table}
 
-Betti number of a Casimir is the number
-of $T_i$ being traced over (i.e., in the loop). Note that the Betti numbers are
+The {\bf Betti number} of the Casimir
+$\tr(M^k)\neq 0$ is the integer
+$k$. Table \ref{tab-betti} gives
+all the Betti numbers
+for the simple Lie Algebras.
+ Note that the Betti numbers 
+in Table \ref{tab-betti}
+are
 all even except for
 $SU(n)$.
 
-For all Simple Lie Groups except for
+For all simple Lie Groups except for
 $SU(n)$,
 there is a invertible symmetric or
 skew-symmetric 
 bilinear invariant matrix $g_{ab}$ 
 satisfying
-$g_{ab}G^{bc}=\delta_a^c$. Hence
+$g_{ab}g^{bc}=\delta_a^c$. Hence
 
 
 \beq
@@ -474,15 +496,15 @@ $g_{ab}G^{bc}=\delta_a^c$. Hence
 \ecen
 \eeq
 
-In general, a Casimir with $k$ $T_i$
-equals itself times $(-1)^k$.
-So only Casimirs with even $k$
+If such a $g^{ab}$ exists, a Casimir $\tr(M^k)$
+equals itself times $(-1)^k$,
+so only Casimirs with even $k$
 are non-zero.
 
 
 \begin{claim}
 The following are a complete set
-of Casimir operators for the given Groups
+of Casimir operators for the given groups
 \beq
 \begin{array}{lllll}
 GL(n, \CC):
@@ -828,10 +850,10 @@ M &=& \sum_\rho
 T_\lam
 \ar@{~}[dd]&&&
 \\
-&C^\dagger_\rho
+&C^*_\rho
 \ar[ld]|\mu&
 C_\rho\ar[ru]|\lam
-\ar[l]|\rho\ar[ru]&&C^\dagger_\rho
+\ar[l]|\rho\ar[ru]&&C^*_\rho
 \ar[ld]|\mu
 &C_\rho\ar[l]|\rho\ar[ru]|\lam&
 \\
@@ -847,7 +869,7 @@ A(\lam,\rho,\mu)
 \xymatrix{
 \ar[dr]|\lam&&&
 \\
-&C^\dagger_\rho\ar[dl]|\mu&\ar[l]|\rho C_\rho\ar[ru]|\lam&
+&C^*_\rho\ar[dl]|\mu&\ar[l]|\rho C_\rho\ar[ru]|\lam&
 \\
 &&&\ar[lu]|\mu
 }
@@ -860,7 +882,7 @@ A(\lam,\rho,\mu)=
 \frac{1}{d_\rho}
 \bcen
 \xymatrix@R=2pc@C=2pc{
-&T_{\lam}^\dagger\ar@{~}[d]|{}
+&T_{\lam}^*\ar@{~}[d]|{}
 \ar@/_1pc/[ddl]|{\lam}
 \ar@/^1pc/@{<-}[ddr]|{\lam}
 \\
@@ -870,7 +892,7 @@ A(\lam,\rho,\mu)=
 \\
 T_{\rho}
 &
-&T_{\rho}^\dagger
+&T_{\rho}^*
 \ar@{<-}[ll]|{\rho}
 }
 \ecen
@@ -939,7 +961,7 @@ Square both sides of the equation.
 \ar@{<-}[ru]
 \ar[rd]
 &
-&C^\dagger_\rho
+&C^*_\rho
 \ar[lu]
 \ar@{<-}[ld]
 &\ar[l]
@@ -964,7 +986,7 @@ Square both sides of the equation.
 \ar@{<-}[ru]
 \ar[rd]
 &
-&C^\dagger_\rho
+&C^*_\rho
 \ar[lu]
 \ar@{<-}[ld]
 &\ar[l]
@@ -1000,7 +1022,7 @@ Square both sides of the equation.
 \\
 &C_\rho\ar[l]\ar[r]
 \ar@{<-}[u]
-&C^\dagger_\rho
+&C^*_\rho
 \ar[u]
 &\ar[l]
 }
@@ -1014,7 +1036,7 @@ Square both sides of the equation.
 \ar@{<-}[ru]
 \ar[rd]
 &
-&C^\dagger_\rho
+&C^*_\rho
 \ar[lu]
 \ar@{<-}[ld]
 &\ar[l]
@@ -1030,7 +1052,7 @@ Square both sides of the equation.
 \xymatrix@C=2pc@R=1pc{
 &C_\rho\ar[l]
 \ar[d]
-&C^\dagger_\rho\ar[l]
+&C^*_\rho\ar[l]
 \ar@{<-}[d]
 &\ar[l]
 \\
@@ -1064,7 +1086,7 @@ Square both sides of the equation.
 \ar@{<-}[ru]
 \ar[rd]
 &
-&C^\dagger_\rho
+&C^*_\rho
 \ar[lu]
 \ar@{<-}[ld]
 &\ar[l]
@@ -1092,7 +1114,7 @@ Square both sides of the equation.
 \ar@{<-}[ru]
 \ar[rd]
 &
-&C^\dagger_\rho
+&C^*_\rho
 \ar[lu]
 \ar@{<-}[ld]
 &
@@ -1141,7 +1163,7 @@ J^2 - L^2 - S^2
 \xymatrix{
 a&\ar[l]|\rho C_\rho
 &\ar@/_1.5pc/[l]|\lam
-\ar@{<-}@/^1.5pc/[l]|\mu C^\dagger_\rho
+\ar@{<-}@/^1.5pc/[l]|\mu C^*_\rho
 &\ar[l]|\rho b
 }
 \ecen
@@ -1154,7 +1176,7 @@ If $\mu$ is an irrep,
 \xymatrix{
 &\ar[l]|\rho C_\rho
 &\ar@/_1.5pc/[l]|\lam
-\ar@{<-}@/^1.5pc/[l]|\mu C^\dagger_\rho
+\ar@{<-}@/^1.5pc/[l]|\mu C^*_\rho
 &\ar[l]|\rho
 }
 \ecen

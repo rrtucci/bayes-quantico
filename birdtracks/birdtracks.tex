@@ -1,7 +1,7 @@
 \chapter{Birdtracks}
 \label{ch-birdtracks}
 
-This chapter is based on Cvitanovic Birdtracks book Ref. \cite{birdtracks-book}
+This chapter is based on Cvitanovic's Birdtracks book Ref. \cite{birdtracks-book}
 and my paper Ref. \cite{tucci-qbnets}
 
 
@@ -113,7 +113,7 @@ probabilities as part of
 the graph value. Thus,
  
 $P(a,b) =
-\underbrace{\xymatrix{ b\rarrow a}}_{P(b|a)}
+\underbrace{\xymatrix{ b&\ar[l] a}}_{P(b|a)}
 P(a)$}
 
 
@@ -220,14 +220,14 @@ Note that if $A$ is the matrix with entries
 $\av{y|A|x}=A(y|x)$, then
 
 \beq
-\av{y|A^\dagger A|x}=\sum_{y\in val(\rvy)}|A(y|x)|^2 = 1
+\av{x|A^\dagger A|x}=\sum_{y\in val(\rvy)}|A(y|x)|^2 = 1
 \eeq
 If $A$ is a unitary matrix, then $A^\dagger A= AA^\dagger =1$ so 
 \qt{half} ($A^\dagger A=1$) of
 the definition
 of unitary matrix is satisfied
 by a TAM.
-If both parts were 
+If both halves were 
 satisfied, $A$ would have to be a square matrix.
 
 A qbnet is a 
@@ -448,6 +448,73 @@ which tensor index is first
 horizontally in the algebraic
 representation of the tensor.
 
+Sometimes there is no need to
+indicate which arrow
+is first by drawing it in green,
+because all choices give the same
+number. For example, in the
+birdtracks for $\delta_a^b$,
+ starting with the incoming arrow
+or the outgoing arrow leads
+to the same number. 
+Likewise, with  the totally symmetric tensor $d_{ijk}$ (doesn't change sign under swap of any two indices) and the totally 
+antisymmetric tensor $f_{ijk}$
+(changes sign under swap of any two indices) ,
+it doesn't matter if one starts at
+$i$, $j$ or $k$. This is shown
+below.
+
+\beq
+\bcen
+\xymatrix@C=1.5pc@R=1.5pc{
+&\ar@[green]@{~}[d]i&
+\\
+&d\ar@{~}[dl]\ar@{~}[dr]&
+\\
+j&&k
+}
+\ecen
+=
+d_{ijk}=
+d_{jki}=
+\bcen
+\xymatrix@C=1.5pc@R=1.5pc{
+&\ar@{~}[d]i&
+\\
+&d\ar@{~}@[green][dl]\ar@{~}[dr]&
+\\
+j&&k
+}
+\ecen
+\eeq
+
+\beq
+\bcen
+\xymatrix@C=1.5pc@R=1.5pc{
+&\ar@[green]@{~}[d]i&
+\\
+&f\ar@{~}[dl]\ar@{~}[dr]&
+\\
+j&&k
+}
+\ecen
+=
+f_{ijk}=
+f_{jki}=
+\bcen
+\xymatrix@C=1.5pc@R=1.5pc{
+&\ar@{~}[d]i&
+\\
+&f\ar@{~}@[green][dl]\ar@{~}[dr]&
+\\
+j&&k
+}
+\ecen
+\eeq
+Note that for a totally antisymmetic tensor with an even number of indices, the 
+beginning arrow can change the 
+sign because $f_{ijkl}=-f_{jkli}$.
+
 \item {\bf FL convention}
 
 In the FL convention,
@@ -520,7 +587,7 @@ for bnets and qbnets.
 \end{enumerate}
 \hrule
 
-If we don't do either 1 or 2, we won't
+If we don't follow either convention CC or FL, we won't
 be able to distinguish between
 the graphical
 representations of $T^{1,2,3}$
