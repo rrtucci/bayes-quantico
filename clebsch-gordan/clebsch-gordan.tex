@@ -1,19 +1,20 @@
 \chapter{Clebsch-Gordan Coefficients}
 \label{ch-clebsch-gordan}
-This chapter is based on Ref.\cite{birdtracks-book}.
+This chapter is based on
+Cvitanovic's Birdtracks book Ref.\cite{birdtracks-book}.
 
 Suppose that for some $M\in\CC^{d\times d}$, we have
 
 \beq
 M = C^\dagger D C
 \eeq
-where $D$ is a diagonal matrix and $C=C^{d\times d}$ is unitary.
+where $D$ is a diagonal matrix and $C\in \CC^{d\times d}$ is unitary.
 Then one can partition 
-$C$ into rectangular submatrices $C_\lam$ that have $d_\lam < d$ rows, 
-with one $C_\lam$
+$C$ into rectangular submatrices $C_\lam$ that have  $d_\lam$ rows with $d_\lam < d$, 
+such that we have one $C_\lam$
 for each eigenvalue $\lam$ of $C$.
 Likewise, we can partition 
-$C^\dagger$ into rectangular submatrices $C_\lam^\dagger$ that have $d_\lam < d$ columns, with one $C^\dagger_\lam$
+$C^\dagger$ into rectangular submatrices $C_\lam^\dagger$ that have $d_\lam$ columns with $d_\lam < d$, such that we have one $C^\dagger_\lam$
 for each eigenvalue $\lam$ of $C$. Thus, if $I^{d_\lam\times d_\lam}$
 is the $d_\lam\times d_\lam$
 identity matrix,
@@ -78,7 +79,7 @@ are called the {\bf Clebsch-Gordan Coefficient} (CGC) matrices.
 
 
 Let $b^{:nb}=(b_1, b_2, \ldots, b_{nb})$ where $b_i\in Z_{[0,d_{\mu_i}]}$  and $a\in Z_{[1,d_\lam]}$.
-Hence,
+Assume that
 
 \beq
 d_\lam = \prod_{i=1}^{:nb}d_{\mu_i}
@@ -96,7 +97,7 @@ _{a}^{rev(b^{:nb})}
 &&\mu_1 b_1\ar[dl]
 \\
 \lam a
-& C_\lam\ar[l]
+& C_\lam\ar@[green][l]
 &\mu_2 b_2\ar[l]
 \\
 &&\mu_{nb} b_{nb}\ar[lu]
@@ -117,9 +118,9 @@ and
 \mu_1 b_1
 \\
 \mu_2 b_2
-&(C^*_\lam)
+&(C^\dagger_\lam)
 \ar[lu]\ar[l]\ar[ld]
-&\lam a\ar[l]
+&\lam a\ar@[green][l]
 \\
 \mu_{nb} b_{nb}
 }
@@ -128,12 +129,13 @@ and
  We will
 assume  there is no
 difference
-between when a Greek letter is lowered or raised. Also, all summations over a Greek letter will be 
+between when a Greek letter is lowered 
+and when it is  raised. Also, all summations over a Greek letter will be 
 stated explicitly;
 i.e., no implicit summations
 over repeated Greek letters.
 
-On the other hand, the Latin letter indices $b_i$ of $C_\lam$
+On the other hand, the Latin letter indices $b_i, a$ of $C_\lam$
 and $C_\lam^\dagger$
 may be lowered or raised and their arrows
 changed from outgoing to  incoming or vice versa. Furthermore,
@@ -144,8 +146,10 @@ repeated Latin letters.
 The Greek letters label representation
 of the group (not necessarily irreps).
 Each $b_i$ 
-labels a subcategory 
-of $\mu_i$.
+labels a member
+of $\mu_i$, and
+each $a$ labels
+a member of $\lam$.
 
 Recall that if $\ket{x}$ for
 $x\in val(\rvx)$ is a complete, orthonormal
@@ -414,7 +418,7 @@ b_{nb}
 b_1
 \\
 b_2
-&(C^*_\lam)
+&(C^\dagger_\lam)
 \ar[lu]\ar[l]\ar[ld]
 & a\ar[l]
 \\
