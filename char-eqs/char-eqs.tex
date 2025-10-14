@@ -2,13 +2,30 @@
 \label{ch-char-eqs}
 This chapter is based on Cvitanovic's Birdtracks book Ref. \cite{birdtracks-book}.
 
+Let
 \beq
 M\indices{_a^b}=
 \xymatrix{
 a&M\ar[l]&\ar[l]b
 }
 \eeq
-for $a,b=1, 2, \ldots, n$
+for $a,b=1, 2, \ldots, n$. 
+
+The goal of
+this chapter is
+to express the 
+coefficients
+of the characteristic 
+equation (i.e., $det(M-\lam)=0$)
+of $M$
+as 
+traces.
+ 
+For starters, note the 
+difference between 
+birdtracks for
+a matrix power and a tensor 
+power of $M$.
 
 \beq
 M^2 = 
@@ -24,7 +41,7 @@ M^2 =
 M\otimes M = M^{\otimes 2}
 =
 \bcen
-\xymatrix{
+\xymatrix@R=1pc{
 &\ar[l]M&\ar[l]
 \\
 &\ar[l]M&\ar[l]
@@ -32,9 +49,7 @@ M\otimes M = M^{\otimes 2}
 \ecen
 \eeq
 
-
-
-
+In general, $M^{\otimes p}$ is defined by
 \beq
 \begin{array}{l}
 \myboxed{
@@ -79,7 +94,9 @@ M\indices{_{a_p}^{b_p}}}
 \ecen
 \end{array}
 \eeq
-where $a_i, b_i\in \ZZ_{[1, n]}$
+where $a_i, b_i\in \ZZ_{[1, n]}$,
+and we define
+the anti-symmetrized trace of $M^{\otimes p}$ by
 
 
 
@@ -121,7 +138,7 @@ _{b_i}
 \ar@/_3pc/[uuuuu]&
 }
 \ecen
-\text{(Cvitanovic Style)}
+\text{(Cvitanovic Drawing Style)}
 \\
 &=&
 \bcen
@@ -144,13 +161,21 @@ _{b_i}
 \ar@/_1pc/@[red]@{-}[lll]
 }
 \ecen
+\text{(This book's drawing style)}
 \eeqa
+
+Note that the
+determinant of $M$
+is one of
+those traces
 
 \beq
 det M = 
 \tr_{1\ldots n} \cala[ M^{\otimes n}]
 \eeq
 
+
+\begin{claim}
 \beq
 \bcen
 \xymatrix@C=1pc@R=1.5pc{
@@ -208,7 +233,14 @@ det M =
 \ecen
 \right]
 \eeq
+\end{claim}
+\proof
 
+See Chapter \ref{ch-sym}.
+\qed
+
+Consider the above
+claim for $p=2,3$.
 \beq
 \left\{
 \begin{array}{l}
@@ -308,7 +340,15 @@ det M =
 \ecen
 \right]
 \end{array}\right.
+\label{eq-recursion-p-23}
 \eeq
+If we multiply from the right, by $M^d$
+for $d=1,2$, 
+the first row
+of Eq.(\ref{eq-recursion-p-23}) and
+then take the trace 
+of that row,
+we get
 
 \beq
 \left\{
@@ -413,6 +453,7 @@ det M =
 \ecen
 \right]
 \end{array}\right.
+\label{eq-2eqs-m3}
 \eeq
 
 Let
@@ -420,7 +461,9 @@ Let
 \beq
 \tau = \tr(M)
 \eeq
-
+Then Eqs.(\ref{eq-2eqs-m3})
+can be expressed
+algebraically by
 
 \beq
 \tr_{1,2,3}\cala_3(M^{\otimes 3})=
@@ -431,6 +474,7 @@ Let
 +\tr M^3
 \right]
 \eeq
+and
 
 \beq
 \tr_{1,2}
@@ -440,6 +484,7 @@ Let
 \tau^2-\tr(M^2)
 \right]
 \eeq
+Therefore,
 
 \beqa
 \tr_{1,2,3}\cala_3(M^{\otimes 3})
@@ -459,6 +504,7 @@ Let
 +2\tr M^3
 \right]
 \eeqa
+In general,
 
 \beq
 \tr_{1\ldots p}\cala_p M=
@@ -468,29 +514,39 @@ Let
 \left(\tr_{1\ldots p-k}\cala_{p-k}M^{\otimes p-k}
 \right)
 \tr(M^k)
+\label{eq-tr-am-expansion}
 \eeq
 
+Next note that
 \beq
 \cala_{p}=0
 \quad \text{if $p>n$}
 \eeq
+This follows because the Levi Civita tensor
+with more than $n$
+indices is zero.; i.e., 
 
 \beq
 \eps_{a_1, a_2, \ldots, a_{n+1}} =0
 \eeq
-Two of the $a_i$ must be
+Indeed, two of the $a_i$ must be
 equal, so
 that element of the
-$\eps$ is zero
+$\eps$ tensor is zero
  
-$I$ is the $n\times n$
-identity matrix
+Let $I$ be the $n\times n$
+identity matrix. Then,
+since $\cala_{n+1}=0$,
+the following is 
+true
+
 \beq
 \begin{array}{cc}
-\myboxed{
+\myboxed{0=
 \tr_{2\ldots n+1}
-\cala_{n+1}I\otimes M^{\otimes n}=0}
-&
+\cala_{n+1}I\otimes M^{\otimes n}}
+&\quad\quad
+0=
 \bcen
 \xymatrix@R=1.5pc{
 &\cala_{n+1}\ar[l]
@@ -513,9 +569,14 @@ identity matrix
 \ar@/_1pc/@[red]@{-}[lll]
 }
 \ecen
-=0
 \end{array}
+\label{eq-a-n-plus-1}
 \eeq
+We can
+now expand
+the right hand
+side of Eq.(\ref{eq-a-n-plus-1}) using
+identity Eq.(\ref{eq-tr-am-expansion})
 
 \beqa
 0&=&
@@ -545,3 +606,9 @@ M^n
 \right.
 \label{eq-char-eq-gen}
 \eeqa
+Viola. The last equation is none other
+than the characteristic equation
+of $M$. As promised,
+the coefficients
+of this polynomial in $M$,
+are expressed as traces. 
