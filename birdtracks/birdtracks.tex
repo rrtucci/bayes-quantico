@@ -459,7 +459,7 @@ or the outgoing arrow leads
 to the same number. 
 Likewise, with  the totally symmetric tensor $d_{ijk}$ (doesn't change sign under swap of any two indices) and the totally 
 antisymmetric tensor $f_{ijk}$
-(changes sign under swap of any two indices) ,
+(changes sign under swap of any two indices),
 it doesn't matter if one starts at
 $i$, $j$ or $k$. This is shown
 below.
@@ -513,7 +513,32 @@ j&&k
 \eeq
 Note that for a totally antisymmetic tensor with an even number of indices, the 
 beginning arrow can change the 
-sign because $f_{ijkl}=-f_{jkli}$.
+sign. Indeed,
+
+\beq
+\bcen
+\xymatrix@C=1.5pc@R=1.5pc{
+\ar@[green]@{~}[dr]i&&\ar@{~}[dl]l
+\\
+&f\ar@{~}[dl]\ar@{~}[dr]&
+\\
+j&&k
+}
+\ecen
+=
+f_{ijkl}=
+-f_{jkli}=
+(-1)
+\bcen
+\xymatrix@C=1.5pc@R=1.5pc{
+\ar@{~}[dr]i&&\ar@{~}[dl]l
+\\
+&f\ar@{~}@[green][dl]\ar@{~}[dr]&
+\\
+j&&k
+}
+\ecen
+\eeq
 
 \item {\bf FL convention}
 

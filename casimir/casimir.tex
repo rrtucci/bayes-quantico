@@ -3,6 +3,17 @@
 
 This chapter is based on Cvitanovic's Birdtracks book Ref. \cite{birdtracks-book}.
 
+The term {\bf Casimir operator}
+will
+be used to refer
+to 2 types of 
+operators: a Casimir matrix or a 
+Casimir sun
+\hrule
+{\bf Casimir matrix}
+
+Examples:
+
 \beq
 M_2 = 
 \xymatrix{
@@ -32,11 +43,15 @@ M_4 =
 }
 \ecen
 \eeq
+Casimir matrices are
+invariant matrices
+so they satisfy
 
-\begin{align}
-0 &= [T_r, M]
+\beq
+\begin{array}{l}
+\myboxed{0 = [T_r, M_4]}
 \\
-&=
+0=
 \bcen
 \xymatrix@C=1pc{
 &
@@ -77,12 +92,23 @@ M_4 =
 &\ar[l]
 }
 \ecen
-\end{align}
+\end{array}
+\eeq
 
+Because Casimir matrices
+are invariant matrices, they commute with each other. For example,
 
 \beq
 M_2 M_4 = M_4 M_2
 \eeq
+
+\hrule
+{\bf Casimir sun.} By
+this we mean a tensor consisting of a loop
+of fundamental
+particles with
+gluons (rays)
+emanating from it; i.e., this:
 
 \beq
 \tr(T_i T_j \ldots T_l)
@@ -100,6 +126,8 @@ M_2 M_4 = M_4 M_2
 \ecen
 \eeq
 
+Note that the Lie Algebra commutation 
+relations can be applies to a Casimir sun:
 \beq
 \bcen
 \xymatrix@C=1pc{
@@ -141,6 +169,9 @@ M_2 M_4 = M_4 M_2
 }
 \ecen
 \eeq
+Note also that we can
+define a symmetrized
+version of a Casimir sun:
 
 \beq
 h_{i_1 i_2\ldots  i_p}
@@ -172,74 +203,14 @@ h_{i_1 i_2\ldots  i_p}
 \ecen
 \eeq
 
-\beq
-d_{ijk}=
-\bcen
-\xymatrix@R=1pc{
-i&&
-\\
-&d
-\ar@{~}`u[ul][ul]
-\ar@{~}`d[dl][dl]
-&\ar@{~}[l]k
-\\
-j&&
-}
-\ecen
-=
-2
-\bcen
-\xymatrix@R=1pc{
-i&\cals_2\ar@{~}[l]
-\ar@2{-}[dd]
-&\ar@{~}[l]
-\ar[dd]&
-\\
-&&&\ar[ul]&k\ar@{~}[l]
-\\
-j&\ar@{~}[l]&\ar[ur]
-\ar@{~}[l]&
-}
-\ecen
-\eeq
-Multiplying Jacobi identity by $T_k$
-and taking the trace, we get
 
-\beq
-if_{ijk}=
-\bcen
-\xymatrix@R=1pc{
-i&&
-\\
-&if
-\ar@{~}`u[ul][ul]
-\ar@{~}`d[dl][dl]
-&\ar@{~}[l]k
-\\
-j&&
-}
-\ecen
-=
-2
-\bcen
-\xymatrix@R=1pc{
-i&\cala_2\ar@{~}[l]
-\ar@2{-}[dd]
-&\ar@{~}[l]
-\ar[dd]&
-\\
-&&&\ar[ul]&k\ar@{~}[l]
-\\
-j&\ar@{~}[l]&\ar[ur]
-\ar@{~}[l]&
-}
-\ecen
-\eeq
+\section{Independent Casimirs of Simple Lie Groups}
 
-\section{Independent Casimirs of Simple Groups}
-
-
-
+So as not
+to have any gluon free indices, it is convenient to contract
+with a matrix $M$, all the
+outgoing gluons
+of a Casimir sun . Let
 
 \beq
 \myboxed{
@@ -260,6 +231,7 @@ M =\sum_i  T_i x_i}
 }
 \ecen
 \eeq
+Then
 
 \beqa
 \tr(M^k)
@@ -494,11 +466,13 @@ $g_{ab}g^{bc}=\delta_a^c$. Hence
 &\ar@[red]@/_1.3pc/[uuuuuu]
 }
 \ecen
+\label{eq-moving-g-down}
 \eeq
 
-If such a $g^{ab}$ exists, a Casimir $\tr(M^k)$
-equals itself times $(-1)^k$,
-so only Casimirs with even $k$
+As illustrated in Eq.(\ref{eq-moving-g-down}),
+if such a $g^{ab}$ exists, a Casimir $\tr(M^k)$
+equals itself times $(-1)^k$. Hence,
+only Casimirs with even $k$
 are non-zero.
 
 
@@ -729,6 +703,8 @@ SO(2r):
 \eeq
 \end{claim}
 \proof
+
+Define
 \beq
 I_r(x)=
 \bcen
@@ -754,7 +730,13 @@ M\ar[ur]&
 &\ar[ul]
 }
 \ecen
-\eeq
+\eeq\
+where $\cala^{\frac{1}{2}}$
+is the Levi Civita tensor.(see Chapter \ref{ch-sym}).
+Then an expansion
+of $I^2_r(x)$
+contains $\tr(M^{2r})$
+among its summands.
 
 \beq
 I_r^2(x)=
@@ -786,6 +768,10 @@ M\ar[ur]&&M\ar[ld]
 \tr(M^{2r}) +\ldots
 \eeq
 \qed
+
+\section{Casimir matrix expressed in terms of $6j$ coefficients}
+
+Define the Casimir matrix $I_p$ as
 
 \beqa
 (I_p)\indices{_a^b}
@@ -827,7 +813,12 @@ T^{i_1}_\mu\ar[l]
 }
 \ecen
 \eeqa
+The goal of
+this section is to
+express $I_p$ in terms
+of $6j$ coefficients.
 
+Let
 \beq
 M=
 \bcen
@@ -841,9 +832,15 @@ T^i_\lam\ar@{~}[d]
 }
 \ecen
 \eeq
+We will first
+decompose $M$ in terms of $6j$
+coefficients, and
+then use that result to
+decompose $I_p$ for $p=1,2,3, \ldots$.
+Note that 
 
 \beqa
-M &=& \sum_\rho
+M &=& \sum_{\rho, \rho'}
 \bcen
 \xymatrix@C=2pc@R=1pc{
 \ar[rd]|\lam&&&\ar[rd]|\lam
@@ -853,9 +850,9 @@ T_\lam
 &C^*_\rho
 \ar[ld]|\mu&
 C_\rho\ar[ru]|\lam
-\ar[l]|\rho\ar[ru]&&C^*_\rho
+\ar[l]|\rho\ar[ru]&&C^*_{\rho'}
 \ar[ld]|\mu
-&C_\rho\ar[l]|\rho\ar[ru]|\lam&
+&C_{\rho'}\ar[l]|{\rho'}\ar[ru]|\lam&
 \\
 &&&\ar[lu]|\mu
 T_\mu&&&\ar[lu]|\mu
@@ -875,7 +872,7 @@ A(\lam,\rho,\mu)
 }
 \ecen
 \eeqa
-
+where
 
 \beq
 A(\lam,\rho,\mu)=
@@ -1136,10 +1133,12 @@ Square both sides of the equation.
 \right]
 \eeq
 
+This is similar to assuming 
 \beq
 \vec{J} = \vec{L} +\vec{S}
-\eeq
-
+\eeq 
+where $\vec{J}, \vec{L}, \vec{S}$
+are the total, orbital and spin angular momentum. Then 
 
 \beq
 \vec{L}\cdot\vec{S}=
@@ -1148,8 +1147,8 @@ Square both sides of the equation.
 J^2 - L^2 - S^2
 \right]
 \eeq
-
 \qed
+Next note that
 
 \beqa
 (I_p)\indices{_a^b}
@@ -1193,12 +1192,13 @@ T_{\rho}
 \\
 &=&
 \
-\frac{d_\rho}{d_\lam}\xymatrix{&\ar[l]|\mu} \text{(because $\rho\in irreps$)}
+\frac{d_\rho}{d_\lam}\xymatrix{&\ar[l]|\mu} \text{(because $\rho$ is an irrep)}
 \eeqa
 
-\section{$\Gamma_2$ and $\Gamma_3$}
+\section{$\tr(M^2)$ and $\tr(M^3)$}
 
-Three quadratic Casimirs ($\Gamma_2$)
+There are 3 quadratic Casimir ($\tr(M^2)$)
+matrices:
 
 \begin{enumerate}
 \item
@@ -1244,9 +1244,9 @@ f_{ijk}f_{kji'} = \Gamma_{adj}\delta_i^{i'}
 }=\Gamma_{adj}
 \xymatrix{&\ar@{~}[l]}
 \eeq
-
-
 \end{enumerate}
+
+Note that
 
 \beq
 \xymatrix{
@@ -1265,8 +1265,11 @@ N\kappa
 \xymatrix@C=1.5pc{
 &&&&
 \\
-&T_i\ar[l]&\ar@{~}[u]\ar[l]&\ar[l]T_i\ar[l]
-\ar@{~}@/^1.5pc/[ll]&\ar[l]
+&T_i\ar[l]
+&\ar@{~}[u]\ar[l] T_k
+&\ar[l]T_i\ar[l]
+\ar@{~}@/^1.5pc/[ll]
+&\ar[l]
 }
 \ecen
 =
