@@ -2,6 +2,14 @@
 \label{ch-integrals}
 This chapter is based on Cvitanovic's Birdtracks book Ref. \cite{birdtracks-book}.
 
+For a group $\calg$, let $SR=$ singlet reps
+(i.e., one dimensional reps, scalar reps), and
+$SR^c=$ nonsinglet reps.
+Let $g$ be an
+element of $\calg$
+with a rep $G$.
+The goal of this chapter is to show how to evaluate 
+integrals over a group $\calg$, of the form:
 \beq
 \int dg 
 G\indices{_a^b}
@@ -10,37 +18,45 @@ G\indices{_c^d}
 (G^\dagger)\indices{_e^f}
 (G^\dagger)\indices{_g^h}
 \eeq
-
-$\calr_0=$ singlets
-(0 dimensional representations),
-$\calr_0^c=$ nonsinglets
+subject to the 
+constraints that:
 
 \beq
-\int dg =1, \quad
+\int dg =1
+\eeq
+and 
+
+\beq
 \int dg \;G_\lam
-=0\quad  \text{if $\lam\in \calr_0^c$}
+=0\quad  \text{if $\lam\in SR^c$}
 \eeq
 
-
+We will represent rep $G$ by
 \beq
 G\indices{_a^b}=
 \xymatrix{a&G\ar@[green][l]&b\ar[l]},\quad
 (G^\dagger)\indices{_b^a}=
 \xymatrix{b&G^\dagger\ar@[green][l]&\ar[l]a}
 \eeq
-Out arrow always first
+Note that we will always take the out arrow as the first one
+(green).
 
-We assume that $G$
-is unitary ($G^\dagger G=G G^\dagger =1$) 
+We will assume that $G$
+is a unitary matrix
 
 \beq
-\xymatrix{&G^\dagger
+\myboxed{
+G^\dagger G=G G^\dagger =1
+}
+\quad 
+\xymatrix@C=1.5pc{&G^\dagger
 \ar[l]&G\ar[l]&\ar[l]}
 =
-\xymatrix{&G\ar[l]&G^\dagger\ar[l]&\ar[l]}=
-\xymatrix{&\bullet\ar[l]&\ar[l]}
+\xymatrix@C=1.5pc{&G\ar[l]&G^\dagger\ar[l]&\ar[l]}=
+\xymatrix@C=1.5pc{&\bullet\ar[l]&\ar[l]}
 \eeq
 
+Tensor products of $G$'s will be represented thus
 \beq
 G\otimes G\otimes G^\dagger=
 \bcen
@@ -54,13 +70,45 @@ G\otimes G\otimes G^\dagger=
 \ecen
 \eeq
 
-\section{$\int\scriptstyle dg\; G$
-and 
-$\int \scriptstyle dg\; G
+\section{$\int\scriptstyle dg\; G$}
+To evaluate $\int dg
+\; G$, we 
+expand $G$  in its
+Clebsch-Gordan series. Such series and  the
+Clebsch-Gordan 
+coefficients $C_\lam$
+are discussed in Chapter
+\ref{ch-clebsch-gordan}.
+
+\beqa
+\int dg\; G
+&=&
+\sum_\lam
+C^\dagger_\lam
+\left[\int dg\; G_\lam
+\right]
+C_\lam
+\\
+&=& \sum_{\lam\in SR}
+C^\dagger_\lam C_\lam
+\\
+&=&
+\sum_{\lam\in SR}
+P_\lam
+\eeqa
+This result is
+valid for 
+any group $\calg$
+and any rep $G$
+of that group.
+
+
+\section{$\int \scriptstyle dg\; G
 \otimes G^\dagger$
 }
 
 \begin{claim}
+For $G\in SU(n)\subset \CC^{n\times n}$,
 \beq
 \bcen
 \xymatrix@R=1pc{
@@ -70,7 +118,7 @@ b\ar[r]&G^\dagger\ar[r]&c
 }
 \ecen
 =
-\frac{1}{d}
+\frac{1}{n}
 \bcen
 \xymatrix@R=1pc{
 &&&\ar`l[ldd]`[dd][dd]
@@ -101,7 +149,7 @@ b\ar[r]&G^\dagger\ar[r]&c
 \begin{array}{l}
 \myboxed{
 \delta_a^d \delta_c^b=
-\frac{1}{d}
+\frac{1}{n}
 \delta_a^b \delta_c^d
 +
 \frac{1}{\kappa}
@@ -117,7 +165,7 @@ b\ar[r]&\bullet\ar[r]&c
 }
 \ecen
 =
-\frac{1}{d}
+\frac{1}{n}
 \bcen
 \xymatrix@R=1pc{
 &&&\ar`l[ldd]`[dd][dd]
@@ -151,7 +199,7 @@ from here on.
 \myboxed{
 G\indices{_a^d} 
 (G^\dagger)\indices{_c^b}=
-\frac{1}{d}
+\frac{1}{n}
 \delta_a^b \delta_c^d
 +
 (G^\dagger T^i G)\indices{_a^b}
@@ -166,7 +214,7 @@ b\ar[r]&G^\dagger\ar[r]&c
 }
 \ecen
 =
-\frac{1}{d}
+\frac{1}{n}
 \bcen
 \xymatrix@R=1pc{
 &&&\ar`l[ldd]`[dd][dd]
@@ -276,6 +324,9 @@ G_{ii'}
 \qed
 
 
+\begin{claim}
+For $G\in SU(n)\subset \CC^{n\times n}$,
+
 \beq
 \begin{array}{l}
 \myboxed{
@@ -283,7 +334,7 @@ G_{ii'}
 G\indices{_a^d}
 (G^\dagger)\indices{_b^c}
 =
-\frac{1}{d}
+\frac{1}{n}
 \delta_a^b \delta_c^d
 }
 \\
@@ -297,7 +348,7 @@ b\ar[r]&G^\dagger\ar[r]&c
 }
 \ecen
 =
-\frac{1}{d}
+\frac{1}{n}
 \bcen
 \xymatrix@R=1pc{
 &&&\ar`l[ldd]`[dd][dd]
@@ -309,6 +360,14 @@ b\ar[r]&G^\dagger\ar[r]&c
 \ecen
 \end{array}
 \eeq
+\end{claim}
+\proof
+
+This claim follows
+immediately from
+the previous one.
+
+\qed
 
 \beq
 \int dg \;
@@ -331,7 +390,7 @@ b\ar[r]&G_\lam^\dagger\ar[r]&c
 \frac{1}{d}
 \delta_a^b \delta_c^d
 +
-\sum_{\lam\in \calr_0^c}
+\sum_{\lam\in SR^c}
 \frac{1}{\kappa}
 (T^i_\lam)\indices{_a^b}
 (T^i_\lam)\indices{_c^d}
@@ -356,7 +415,7 @@ b\ar[r]&\bullet\ar[r]&c
 }
 \ecen
 +
-\sum_{\lam \in \calr_0^c}
+\sum_{\lam \in SR^c}
 \frac{1}{\kappa}
 \bcen
 \xymatrix@R=1pc{
@@ -374,17 +433,15 @@ b\ar[r]&\bullet\ar[r]&c
 \eeq
 
 \begin{claim}
-\beq
-\int dg\; G = 
-\sum_{\lam\in \calr_0}
-P_\lam
-\eeq
+For any group $\calg$
+with reps $G_\mu$ and
+$G_\nu$ (not necessarily irreps)
 
 \beq
 \int dg\;
 (G_\mu)_{ab}(G_\nu)^{cd}
 =
-\sum_{\lam \in \calr_0}
+\sum_{\lam \in SR}
 (P_\lam)\indices{_{ab}
 ^{cd}
 }
@@ -393,23 +450,7 @@ P_\lam
 \end{claim}
 \proof
 
-\beqa
-\int dg\; G
-&=&
-\sum_\lam
-C^\dagger_\lam
-\left[\int dg\; G_\lam
-\right]
-C_\lam
-\\
-&=& \sum_{\lam\in \calr}
-C^\dagger_\lam C_\lam
-\\
-&=&
-\sum_{\lam\in \calr_0}
-P_\lam
-\eeqa
-
+Let
 \beq
 (C^\dagger_{\lam i})
 \indices{
@@ -418,17 +459,24 @@ _{ac}
 =
 \bcen
 \xymatrix@R=1pc{
-a&&&
+\mu a&&&
 \\
 &C^\dagger_{\lam i}
 \ar`u[ul][ul]
 \ar`d[dl][dl]
-&\ar[l]i
+&\ar[l]\lam i
 \\
-c&&&
+\nu c&&&
 }
 \ecen
 \eeq
+represent the
+Clebsch-Gordan coefficients
+for the Clebsch-Gordan
+series $\mu\otimes \nu=\sum \lam$.
+
+Since the $C_\lam$ are
+invariant tensors:
 
 \beq
 \begin{array}{l}
@@ -471,6 +519,7 @@ _{a'}
 \ecen
 \end{array}
 \eeq
+Therefore,
 
 \begin{align}
 \int dg\;
@@ -510,22 +559,17 @@ C_{\lam}
 \\
 &=
 \sum_{i}
-\sum_{\lam \in \calr_0}
+\sum_{\lam \in SR}
 (C^\dagger_{\lam i})_{ab}
 (C_{\lam i})^{cd}
 \\
 &=
-\sum_{\lam \in \calr_0}
+\sum_{\lam \in SR}
 (P_\lam)\indices{_{ab}
 ^{cd}}
 \end{align}
 
-\beq
-\int dg \;
-(G_\lam)_{ij}
-=
-\delta(i,j)\indi(\lam\in \calr_0)
-\eeq
+
 \qed
 
 \section{Character Orthonormality Relation}
