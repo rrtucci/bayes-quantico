@@ -11,14 +11,14 @@ G\indices{_c^d}
 (G^\dagger)\indices{_g^h}
 \eeq
 
-$\cals=$ singlets,
-$\cals^c=$ nonsinglets
+$\calr_0=$ singlets
+(0 dimensional representations),
+$\calr_0^c=$ nonsinglets
 
 \beq
 \int dg =1, \quad
 \int dg \;G_\lam
-=
-\indi(\lam\in \cals)
+=0\quad  \text{if $\lam\in \calr_0^c$}
 \eeq
 
 
@@ -54,7 +54,49 @@ G\otimes G\otimes G^\dagger=
 \ecen
 \eeq
 
+\section{$\int\scriptstyle dg\; G$
+and 
+$\int \scriptstyle dg\; G
+\otimes G^\dagger$
+}
 
+\begin{claim}
+\beq
+\bcen
+\xymatrix@R=1pc{
+a&G\ar[l]&d\ar[l]
+\\
+b\ar[r]&G^\dagger\ar[r]&c
+}
+\ecen
+=
+\frac{1}{d}
+\bcen
+\xymatrix@R=1pc{
+&&&\ar`l[ldd]`[dd][dd]
+\\
+&&&
+\\
+\ar`r[ruu]`[uu][uu]&&&
+}
+\ecen
++
+\bcen
+\xymatrix@R=1pc{
+&&&&\ar`l[ld][dl]
+\\
+&T^i
+\ar`u[ul][ul]
+&G\ar@{~}[l]
+&T^i\ar@{~}[l]
+\ar`d[rd][rd]&
+\\
+ \ar`r[ru][ur]&&&&
+}
+\ecen
+\eeq
+\end{claim}
+\proof
 \beq
 \begin{array}{l}
 \myboxed{
@@ -107,13 +149,13 @@ from here on.
 \beq
 \begin{array}{l}
 \myboxed{
-\delta_a^d \delta_c^b=
+G\indices{_a^d} 
+(G^\dagger)\indices{_c^b}=
 \frac{1}{d}
 \delta_a^b \delta_c^d
 +
-\frac{1}{\kappa}
-(T^i)\indices{_a^b}
-(T^i)\indices{_c^d}
+(G^\dagger T^i G)\indices{_a^b}
+( T^i)\indices{_c^d}
 }
 \\
 \bcen
@@ -231,40 +273,7 @@ G_{ii'}
 \end{array}
 \eeq
 
-\beq
-\bcen
-\xymatrix@R=1pc{
-a&G\ar[l]&d\ar[l]
-\\
-b\ar[r]&G^\dagger\ar[r]&c
-}
-\ecen
-=
-\frac{1}{d}
-\bcen
-\xymatrix@R=1pc{
-&&&\ar`l[ldd]`[dd][dd]
-\\
-&&&
-\\
-\ar`r[ruu]`[uu][uu]&&&
-}
-\ecen
-+
-\bcen
-\xymatrix@R=1pc{
-&&&&\ar`l[ld][dl]
-\\
-&T^i
-\ar`u[ul][ul]
-&G\ar@{~}[l]
-&T^i\ar@{~}[l]
-\ar`d[rd][rd]&
-\\
- \ar`r[ru][ur]&&&&
-}
-\ecen
-\eeq
+\qed
 
 
 \beq
@@ -322,7 +331,7 @@ b\ar[r]&G_\lam^\dagger\ar[r]&c
 \frac{1}{d}
 \delta_a^b \delta_c^d
 +
-\sum_{\lam\in \cals^c}
+\sum_{\lam\in \calr_0^c}
 \frac{1}{\kappa}
 (T^i_\lam)\indices{_a^b}
 (T^i_\lam)\indices{_c^d}
@@ -347,6 +356,7 @@ b\ar[r]&\bullet\ar[r]&c
 }
 \ecen
 +
+\sum_{\lam \in \calr_0^c}
 \frac{1}{\kappa}
 \bcen
 \xymatrix@R=1pc{
@@ -366,7 +376,7 @@ b\ar[r]&\bullet\ar[r]&c
 \begin{claim}
 \beq
 \int dg\; G = 
-\sum_{\lam\in \cals}
+\sum_{\lam\in \calr_0}
 P_\lam
 \eeq
 
@@ -374,7 +384,7 @@ P_\lam
 \int dg\;
 (G_\mu)_{ab}(G_\nu)^{cd}
 =
-\sum_{\lam \in \cals}
+\sum_{\lam \in \calr_0}
 (P_\lam)\indices{_{ab}
 ^{cd}
 }
@@ -392,11 +402,11 @@ C^\dagger_\lam
 \right]
 C_\lam
 \\
-&=& \sum_{\lam\in \cals}
+&=& \sum_{\lam\in \calr}
 C^\dagger_\lam C_\lam
 \\
 &=&
-\sum_{\lam\in \cals}
+\sum_{\lam\in \calr_0}
 P_\lam
 \eeqa
 
@@ -500,12 +510,12 @@ C_{\lam}
 \\
 &=
 \sum_{i}
-\sum_{\lam \in \cals}
+\sum_{\lam \in \calr_0}
 (C^\dagger_{\lam i})_{ab}
 (C_{\lam i})^{cd}
 \\
 &=
-\sum_{\lam \in \cals}
+\sum_{\lam \in \calr_0}
 (P_\lam)\indices{_{ab}
 ^{cd}}
 \end{align}
@@ -514,7 +524,7 @@ C_{\lam}
 \int dg \;
 (G_\lam)_{ij}
 =
-\delta(i,j)\indi(\lam\in \cals)
+\delta(i,j)\indi(\lam\in \calr_0)
 \eeq
 \qed
 
@@ -602,7 +612,7 @@ where $\lam_0$
 is the defining rep.
 ($\calg\subset \CC^{n\times n})$
 
-
+\subsection{$\int\scriptstyle dg\; G\otimes G$}
 $SU(n)$
 $G\otimes G$
 
@@ -792,9 +802,12 @@ for $SU(n)$
 \text{if $n>2$}
 \eeq
 
+\subsection{$\int\scriptstyle dg \; G^\dagger \otimes
+G^\dagger \otimes G \otimes G$}
+
 $
 V^\dagger \otimes V^\dagger
-\otimes  V\otimes G$
+\otimes  V\otimes V$
 
 \begin{align}
 \bcen
@@ -943,8 +956,10 @@ P_2 =\frac{1}{n^2}
 \xymatrix{
 \ar[r]&
 \ar@/^2pc/[ddd]
-&&\ar@/_2pc/@{<-}[ddd]
-\ar[r]&
+&
+&\ar@/_2pc/@{<-}[ddd]
+\ar[r]\ar@{<->}[d]
+&
 \\
 \ar[r]&
 \ar@/^1pc/[d]
@@ -1054,7 +1069,7 @@ dim(\pi_\cala)=1
 \eeq
 
 \beq
-\pi_\cala \pi_\cals=1
+\pi_\cala \pi_\cals=0
 \eeq
 
 
