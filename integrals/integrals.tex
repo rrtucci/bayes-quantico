@@ -2,6 +2,13 @@
 \label{ch-integrals}
 This chapter is based on Cvitanovic's Birdtracks book Ref. \cite{birdtracks-book}.
 
+In this chapter,
+we will consider
+only non-trivial reps;
+i.e., reps with dimension $d_\lam>0$.
+Trivial \qt{reps}, i.e., those with
+$d_\lam=0$, will be excluded.
+
 For a group $\calg$, let $SR=$ singlet reps
 (i.e., one dimensional reps, scalar reps), and
 $SR^c=$ nonsinglet reps.
@@ -325,6 +332,7 @@ G_{ii'}
 
 
 \begin{claim}
+\label{cl-g-gdag-int-sun}
 For $G\in SU(n)\subset \CC^{n\times n}$,
 
 \beq
@@ -359,6 +367,7 @@ b\ar[r]&G^\dagger\ar[r]&c
 }
 \ecen
 \end{array}
+\label{eq-g-gdagger-int}
 \eeq
 \end{claim}
 \proof
@@ -369,25 +378,34 @@ the previous one.
 
 \qed
 
-\beq
-\int dg \;
-\bcen
-\xymatrix@R=1pc{
-a&G_\mu\ar[l]&d\ar[l]
-\\
-b\ar[r]&G_\lam^\dagger\ar[r]&c
-}
-\ecen
-=0
-\quad \text{ if $\mu\neq \lam$}
-\eeq
+%\beq
+%\int dg \;
+%\bcen
+%\xymatrix@R=1pc{
+%a&G_\mu\ar[l]&d\ar[l]
+%\\
+%b\ar[r]&G_\lam^\dagger\ar[r]&c
+%}
+%\ecen
+%=0
+%\quad \text{ if $\mu\neq \lam$}
+%\eeq
 
+Claim
+\ref{cl-g-gdag-int-sun} can be extended
+to any group $\calg$
+that has a single singlet
+rep. For such
+groups, we have,
+if $G\in \CC^{d_{def}\times d_{def}}$ is the defining
+rep so that
+$a,b,c,,d\in\{1,2, \ldots d_{def}\}$, 
 
 \beq
 \begin{array}{l}
 \myboxed{
 \delta_a^d \delta_c^b=
-\frac{1}{d}
+\frac{1}{d_{def}}
 \delta_a^b \delta_c^d
 +
 \sum_{\lam\in SR^c}
@@ -404,7 +422,7 @@ b\ar[r]&\bullet\ar[r]&c
 }
 \ecen
 =
-\frac{1}{d}
+\frac{1}{d_{def}}
 \bcen
 \xymatrix@R=1pc{
 &&&\ar`l[ldd]`[dd][dd]
@@ -430,7 +448,11 @@ b\ar[r]&\bullet\ar[r]&c
 }
 \ecen
 \end{array}
+\label{eq-decomp-g-gdag}
 \eeq
+so Eq.(\ref{eq-g-gdagger-int})
+is valid with $n$
+replaced by $d_{def}$.
 
 \begin{claim}
 For any group $\calg$
@@ -574,13 +596,22 @@ C_{\lam}
 
 \section{Character Orthonormality Relation}
 
+For any matrix rep $G_\lam$ in rep $\lam$ such that $G_\lam$
+represents the group
+element $g$ in the 
+Group $\calg$,
+define the {\bf character 
+of $g$
+in rep $\lam$} by
 \beq
-\chi_\lam(g)
+\chi_\lam(g)=
+\chi_\lam(G_\lam)
 \eqdef
 \tr G_\lam
 =
 (G_\lam)\indices{_a^a}
 \eeq
+Note that
 
 \beq
 \tr G^\dagger_\lam
@@ -589,23 +620,29 @@ C_{\lam}
 \chi_\lam(g)^*
 \eeq
 
+\begin{claim}
+Suppose $G_\lam$ and $G_\mu$ 
+are matrix reps
+in irreps $\lam$ and $\mu$, respectively. Suppose
+$h, G_\lam\in \CC^{d_\lam\times d_\lam}$
+and $f, G_\mu\in \CC^{d_\mu\times d_\mu}$. Then
 \beq
 \begin{array}{l}
 \myboxed{
 \int dg\;
-\chi_\lam(hg)
-\chi_\mu^*(gf^\dagger)
+\chi_\lam(h^\dagger G_\lam)
+\chi_\mu^*(G^\dagger_\mu f)
 =
 \delta(\mu, \lam)
-\frac{1}{d_\lam}
-\chi_\lam(hf^\dagger)
+\frac{1}{d_\mu}
+\chi_\lam(h^\dagger f)
 }
 \\
 \displaystyle
 \int dg
 \bcen
 \xymatrix{
-&h\ar@2{-}[l]&\ar@2{-}[l]
+&h^\dagger\ar@2{-}[l]&\ar@2{-}[l]
 \ar`d[dl][dl]
 \\
 &G_\lam
@@ -616,45 +653,72 @@ C_{\lam}
 \ar`r[dr][dr]&
 \\
 \ar`u[ur][ur]
-&f^\dagger\ar@2{-}[l]
+&f\ar@2{-}[l]
 &\ar@2{-}[l]
 }
 \ecen
 =
+\delta(\mu, \lam)
 \frac{1}{d_\lam}
 \bcen
 \xymatrix{
-&h\ar@2{-}[l]&
+&h^\dagger\ar@2{-}[l]&
 \ar@2{-}[l]\ar[d]
 \\
-\ar[u]&f^\dagger\ar@2{-}[l]&\ar@2{-}[l]
+\ar[u]&f\ar@2{-}[l]&\ar@2{-}[l]
 }
 \ecen
 \end{array}
-\quad
-\text{if $\mu$ and $\lam$ are irreps}
+\label{eq-char-ortho}
 \eeq
+\end{claim}
+\proof
 
+This claim follows from Eq.(\ref{eq-decomp-g-gdag} 
+once we prove that
+the left hand side of Eq.(\ref{eq-char-ortho})
+is zero if $\lam\neq \mu$. Because $\lam$
+and $\mu$ are both irreps, there can be
+no matrix connecting 
+$G_\mu$ and $G_\lam$
+when $\lam\neq \mu$,
+so the left hand side of Eq.(\ref{eq-char-ortho})
+is indeed zero.
+Even when $\lam=\mu$,
+there can only be
+one matrix,
+namely
+a Kronecker delta, connecting 
+$G_\lam$ and $G_\mu$,
+so the group must
+have only one singlet rep.
+\qed
+
+Note that
+since the matrices
+$h, f\in \CC^{d_\mu\times d_\mu}$ are arbitrary,
+differentiation can be used to retrieve 
+$G_\mu$ from its character
+with various $h$:
 \beq
 G\indices{_a^b}
 =
 \frac{d}{d(h^\dagger)
 \indices{_b^a}
 }
-\underbrace{\chi(h^\dagger g)}
+\underbrace{\chi_\mu(h^\dagger G)}
 _{(h^\dagger)
 \indices{_b^a}G\indices{_a^b}}
 \eeq
 \section{$SU(n)$ examples}
 
 In $SU(n)$,
-
-\beq
-n=d_{\lam_0}
-\eeq
-where $\lam_0$
-is the defining rep.
-($\calg\subset \CC^{n\times n})$
+$n=d_{def}$,
+where $d_{def}$ is the dimension of
+the defining rep.
+($\calg\subset \CC^{n\times n})$.
+In this section, all matrices $G$
+are elements of  $\CC^{n\times n}$.
 
 \subsection{$\int\scriptstyle dg\; G\otimes G$}
 $SU(n)$
