@@ -722,22 +722,9 @@ In this section, all matrices $G$
 are elements of  $\CC^{n\times n}$.
 
 \subsection{$\int\scriptstyle dg\; G\otimes G$}
-$SU(n)$
-$G\otimes G$
-
-\beq
-G\indices{_a^b}
-G\indices{_a^b}
-=
-\bcen
-\xymatrix{
-a&G\ar[l]&\ar[l]b
-\\
-c&G\ar[l]&\ar[l]d
-}
-\ecen
-\eeq
-
+Consider
+$V\otimes V$.
+We have
 \beq
 \bcen
 \xymatrix{
@@ -767,6 +754,7 @@ c&G\ar[l]&\ar[l]d
 }
 \ecen
 \eeq
+because
 
 \beq
 \bcen
@@ -801,6 +789,7 @@ c&G\ar[l]&\ar[l]d
 \ecen
 \right\}
 \eeq
+and
 
 \beq
 \bcen
@@ -835,7 +824,7 @@ c&G\ar[l]&\ar[l]d
 \ecen
 \right\}
 \eeq
-
+Thus
 
 \beqa
 d_\cals 
@@ -869,6 +858,7 @@ d_\cals
 &=&
 \frac{n(n+1)}{2}
 \eeqa
+and
 
 \beqa
 d_\cala 
@@ -903,7 +893,7 @@ d_\cala
 \frac{n(n-1)}{2}
 \eeqa
 
-Hence, $d_\cals= 1$ iff $n=1$, and $d_\cala=1$ iff $n=2$. Therefore,
+Note that $d_\cals= 1$ iff $n=1$, and $d_\cala=1$ iff $n=2$. Therefore,
 for $SU(n)$
 
 \beq
@@ -914,9 +904,10 @@ for $SU(n)$
 \subsection{$\int\scriptstyle dg \; G^\dagger \otimes
 G^\dagger \otimes G \otimes G$}
 
-$
+Consider $
 V^\dagger \otimes V^\dagger
-\otimes  V\otimes V$
+\otimes  V\otimes V$.
+We have
 
 \begin{align}
 \bcen
@@ -1016,6 +1007,8 @@ V^\dagger \otimes V^\dagger
 \ecen}_{\cala_2\otimes\cals_2}
 \end{align}
 
+Let
+
 \beq
 P_1 =
 \frac{1}{n^2}
@@ -1039,6 +1032,7 @@ P_1 =
 }
 \ecen
 \eeq
+and
 
 \beq
 P_2 =\frac{1}{n^2}
@@ -1063,7 +1057,7 @@ P_2 =\frac{1}{n^2}
 \frac{1}{n^2}
 \bcen
 \xymatrix{
-\ar[r]&
+\ar[r]&\ar@{<->}[d]
 \ar@/^2pc/[ddd]
 &
 &\ar@/_2pc/@{<-}[ddd]
@@ -1075,15 +1069,39 @@ P_2 =\frac{1}{n^2}
 &&\ar@/_1pc/@{<-}[d]
 \ar[r]&
 \\
-&\ar[l]\ar@{<->}[d]
+&\ar[l]
 &&&\ar[l]
 \\
 &\ar[l]
 &&&\ar[l]
 }
 \ecen
+\label{eq-p2-double-swap}
+\eeq
+Then
+
+\beq
+P_1^2=P_1, \quad 
+P_2^2=P_2, \quad P_1P_2\neq 0
 \eeq
 
+\beq
+dim(P_1)=dim(P_2)=1
+\eeq
+
+This hints to
+the possibility 
+of two orthogonal
+projectors, if only
+we include terms
+where there is 
+a single swap
+on either the right
+or the left side,
+but
+not on both sides as
+in 
+Eq.(\ref{eq-p2-double-swap}). So define
 
 \beq
 \pi_\cals
@@ -1112,7 +1130,12 @@ P_2 =\frac{1}{n^2}
 &&&\ar[l]
 }
 \ecen
-,\quad 
+\text{ where }
+d_\cals= \frac{n(n+1)}{2}
+\eeq
+and
+
+\beq
 \pi_\cala
 =
 \frac{1}{d_\cala}
@@ -1139,9 +1162,19 @@ P_2 =\frac{1}{n^2}
 &&&\ar[l]
 }
 \ecen
+\text{ where }
+d_\cala= \frac{n(n-1)}{2}
 \eeq
-$P_1, P_2, \pi_\cala, \pi_\cals$
-are all properly  normalized projectors
+Then
+
+\beq
+\pi_\cala^2=\pi_\cala
+,\quad
+\pi_\cals^2=\pi_\cals
+,\quad
+\pi_\cala\pi_\cals =0
+\eeq
+
 
 \beq
 dim(\pi_\cals)= \tr \pi_\cals=
@@ -1176,29 +1209,7 @@ dim(\pi_\cals)= \tr \pi_\cals=
 \beq
 dim(\pi_\cala)=1
 \eeq
-
-\beq
-\pi_\cala \pi_\cals=0
-\eeq
-
-
-
-\beq
-P_i(\cals_2\otimes
-\cala_2)P_i =0, 
-\quad
-P_i(\cala_2\otimes
-\cals_2)P_i =0
-\eeq
-
-\beq
-P_i(\cals_2\otimes
-\cals_2)P_i =P_i \pi_\cals P_i, 
-\quad
-P_i(\cala_2\otimes
-\cala_2)P_i
-=P_i \pi_\cala P_i
-\eeq
+Thus
 
 \beq
 \bcen
@@ -1212,10 +1223,11 @@ P_i(\cala_2\otimes
 &\ar[l]
 }
 \ecen
-=\pi_\cals + \pi_\cala + \ldots
+=\pi_\cals + \pi_\cala + \text{ non-singlet projectors}
 \eeq
+Hence
 
-\beqa
+\beq
 \int dg\;
 \bcen
 \xymatrix@R=1pc{
@@ -1228,22 +1240,7 @@ P_i(\cala_2\otimes
 &\ar[l]G&\ar[l]
 }
 \ecen
-&=&
-\int dg\;(\pi_\cals + \pi_\cals)
-\bcen
-\xymatrix@R=1pc{
-\ar[r]& G^\dagger\ar[r]&
-\\
-\ar[r]& G^\dagger\ar[r]&
-\\
-&\ar[l]G &\ar[l]
-\\
-&\ar[l] G &\ar[l]
-}
-\ecen
-(\pi_\cals + \pi_\cals)
-\\
-&=&
+=
 \pi_\cals + \pi_\cala
-\eeqa
+\eeq
 
