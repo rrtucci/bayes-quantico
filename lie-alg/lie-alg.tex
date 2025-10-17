@@ -3,7 +3,7 @@
 
 This chapter is based on 
 Ref.\cite{birdtracks-book}.
-\section{Generators (infinitesimal transformations)}
+\section{Generators of infinitesimal transformations}
 
 For some group
 $\calg$, assume that any group element $G\in\calg$
@@ -14,16 +14,16 @@ $1$ can be parametrized by
 
 \beq
 G = 1 + i \sum_i 
-\eps_i T^i
+\eps_i T_i
 \eeq
-where $T^i\in \CC^{n\times n}$
+where $T_i\in \CC^{n\times n}$
 for $i=1,2, \ldots, N$,
 $\eps_i\in\RR $
 and $|\eps_i|<<1$.
 
-The $T^i$ matrices are called
-the {\bf generators}
-of infinitesimal transformations
+The $T_i$ matrices are called
+the {\bf generators
+of infinitesimal transformations}
 for group $\calg$.
 The generators of a group $\calg$ span a vector space 
 called a Lie algebra $\mathfrak{g}$.\footnote{See Sec.\ref{sec-algebra-over-f}
@@ -32,18 +32,33 @@ for the definition of an algebra over a field.
 the generators of the group SU(2) 
 span the {\bf Lie algebra} $\mathfrak{su(2)}$.
 
+The tensor
+\beq
+g_{ij}=\tr(T^\dagger_i T_j)
+\eeq
+is called the {\bf Cartan-Killing form}. This tensor  can
+be used to raise and lower the 
+the adjoint rep indices $i, j, k$
+in a tensor such as $M_{ijk}$:
 
-Assume that the $T^i$ matrices are Hermitian and
+
+\beq
+M\indices{^{i}_{jk}}=
+g^{ii'}
+M\indices{_{i'jk}}
+\eeq
+
+
+Assume that the $T_i$ matrices are Hermitian and
 that they satisfy
 
 \beq
-\tr(T^i T^j)=\kappa\delta(i, j)
+g_{ij}=\tr(T_i T_j)=\kappa\delta(i, j)
 \label{eq-gluon-mass}
 \eeq
 A Lie algebra that satisfies Eq.(\ref{eq-gluon-mass})
-is called a {\bf simple Lie algebra}.
-$g_{ij}=\tr(T^\dagger_i T_j)$
-is called the {\bf Cartan-Killing form}.
+is called a {\bf simple Lie algebra}. 
+
 A {\bf semi-simple Lie algebra} is a direct
 sum of simple Lie algebras.
 
@@ -85,7 +100,7 @@ as a birdtrack. Define
 \xymatrix{
 &a\ar[d]
 \\
-i\ar@{~}[r]
+i\ar@{~}@[green][r]
 &T^i
 \ar[d]
 \\
@@ -95,12 +110,11 @@ i\ar@{~}[r]
 \eeq
 In the CC convention, we will always
 start reading the indices 
-of this node at the wavy undirected leg.
-
+of this node at the wavy undirected green leg.
 $Adj$ stands the 
-Adjoint. In this node (vertex), an adjoint representation (adjrep) particle
+Adjoint. In this node (vertex), an adj-rep particle
 (wavy line, gluon) is generated (released) by
-a defining representation (defrep)
+a def-rep
 particle 
 (straight solid line, arrow).
 
@@ -136,8 +150,8 @@ i
 \eeq
 
 We can now define the projection operator
-for the adrep
-(gluon exchange between 2 defrep particles)
+for the adj-rep. This  projection operator represent a
+gluon exchange between 2 def-rep particles.
 \beq
 \myboxed
 {(P_{Adj})\indices{
@@ -167,13 +181,12 @@ a
 \xymatrix@R=1pc@C=2pc{
 b
 &
-&c\ar[dd]
+&c\ar[d]
 \\
-&
-&\ar@{~}[ll]|
-{\sum i}
+T^i\ar@[green][u]&
+&\ar@{~}[ll]|{\sum i} T^i\ar@[green][d]
 \\
-a\ar[uu]
+a\ar[u]
 &
 &d}
 \ecen
@@ -527,7 +540,7 @@ kind of CGC matrix,
 one with 
 \begin{itemize}
 \item a gluon
-(adjrep) particle 
+(adj-rep) particle
 instead of
 a general $\lam$ rep
 particle emanating 
@@ -535,13 +548,13 @@ from the $i$
 index,
 \item 
 a particle
-of the defrep
+of the def-rep
 entering
 and another leaving
 the node,
 instead of 
 any number of
-defrep particles entering and leaving.
+def-rep particles entering and leaving.
 \end{itemize}
 
 
@@ -954,12 +967,13 @@ this.
 }
 
 
-If $(T^j)\indices{_a^b}$ are the rep-matrices (in the defrep) of the generators
+If $(T^j)\indices{_a^b}$ are the rep-matrices (in the def-rep) of the
+generators
 of a group $\calg$, then Eq.(\ref{eq-lie-alg-com-rels}
 ) shows that
 the matrices $(M^k)_{ij}=
 -iC_{ijk}$
-are also a rep-matrix (in the adrep) of
+are also a rep-matrix (in the adj-rep) of
 the generators of $\calg$.
 
 Since $\tr(T^k T^{k'})=\delta(k, k')$,
@@ -1323,8 +1337,8 @@ Note Claim
 \ref{cl-cijk-is-invariant}
 can be undertood
 as the Lie Algebra commutation relations
-Eq.(\ref{eq-lie-alg-com-rels}), but stated in the adrep
-instead of the defrep. Indeed,
+Eq.(\ref{eq-lie-alg-com-rels}), but stated in the adj-rep
+instead of the def-rep. Indeed,
 if 
 
 \beq

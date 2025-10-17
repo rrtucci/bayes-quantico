@@ -202,7 +202,7 @@ This \qt{rep} is often not
 considered a rep because it
 doesn't capture any of the group structure.
 
-A {\bf singlet representation}
+A {\bf singlet or scalar representation}
 is any 1 dimensional rep. It represents each
 $g\in \calg$
 by  $ z(g) diag(1,1, \dots, 1)$
@@ -224,7 +224,7 @@ projects to a singlet rep.
 
 When a group is 
 defined using matrices, those
-matrices are called the {\bf defining representation} (defrep). For example,
+matrices are called the {\bf defining representation} (def-rep). For example,
 the group
 of {\bf General Linear Transformations}
 is defined by
@@ -234,11 +234,11 @@ GL(n, \CC)=
 \{M\in \CC^{n\times n}: \det{M}\neq 0\}
 \eeq
 
-The {\bf adjoint representation} (adjrep)
+The {\bf adjoint representation} (adj-rep)
 is defined in terms of the structure constants
 of the Lie Algebra. If the Lie Algebra satisfies
 $[T^i, T^j]= if_{ijk}T^k$,
-then the adjrep is given by the matrices 
+then the adj-rep is given by the matrices
 with $i,j$ entries $M^k_{ij}=-if\indices{^k_i_j}$.
 Let  $\ket{x} = x_i \ket{T^i}$.
 Then
@@ -254,9 +254,9 @@ i x_i f_{ijk}
 {\bf Irreducible representations} (irreps)
 are defined in Ch. \ref{ch-reducibility}
 
-The {\bf fundamental representation} (funrep)
+The {\bf fundamental representation} (fun-rep)
 is defined as the smallest irrep.
-The defrep equals the funrep for
+The def-rep equals the fun-rep for
 $SU(n), SO(n), SP(n)$, but not for $E_8$.
 
 

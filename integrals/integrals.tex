@@ -18,7 +18,7 @@ with a rep-matrix $G$.
 The goal of this chapter is to show how to evaluate 
 integrals over a group $\calg$, of the form:
 \beq
-\int dg 
+\int dg \;
 G\indices{_a^b}
 G\indices{_c^d}
 \ldots
@@ -45,8 +45,7 @@ G\indices{_a^b}=
 (G^\dagger)\indices{_b^a}=
 \xymatrix{b&G^\dagger\ar@[green][l]&\ar[l]a}
 \eeq
-Note that we will always take the out arrow as the first one
-(green).
+Note that we will always take the out arrow (green) as the first one.
 
 We will assume that $G$
 is a unitary matrix
@@ -152,6 +151,7 @@ b\ar[r]&G^\dagger\ar[r]&c
 \eeq
 \end{claim}
 \proof
+Recall that
 \beq
 \begin{array}{l}
 \myboxed{
@@ -200,6 +200,10 @@ b\ar[r]&\bullet\ar[r]&c
 \eeq
 Will set $\kappa=1$
 from here on.
+Multiplying 
+both sides
+from the left
+by $G\otimes G^\dagger$, we get
 
 \beq
 \begin{array}{l}
@@ -248,6 +252,8 @@ b\ar[r]&G^\dagger\ar[r]&c
 \end{array}
 \eeq
 
+Since the generators $T^i$
+are invariant tensors,
 \beq
 \begin{array}{l}
 \myboxed{
@@ -287,6 +293,7 @@ G_{i'i}
 \ecen
 \end{array}
 \eeq
+Hence,
 
 \beq
 \begin{array}{l}
@@ -596,7 +603,7 @@ C_{\lam}
 
 \section{Character Orthonormality Relation}
 
-For any matrix rep-matrix $G_\lam$ in rep $\lam$ such that $G_\lam$
+For any  rep-matrix $G_\lam$ in rep $\lam$ such that $G_\lam$
 represents the group
 element $g$ in the 
 Group $\calg$,

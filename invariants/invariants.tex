@@ -72,7 +72,7 @@ GM=MG, \quad [G, M] =0
 
 A {\bf multilinear form}
 is a linear function $h:\dual{V}^{n^p}\times V^{n^q}\rarrow \CC$ with
-$\dual{V}^d, V^d=\CC^d$.
+$\dual{V}, V=\CC$.
 For example,
 
 
@@ -159,16 +159,16 @@ a
 \ecen
 \eeq
 
-A {\bf composed IT} is a IT that can
+A {\bf composed IT} is an IT that can
 be written as a product or contraction
 of ITs.
 
 A {\bf tree IT}
-is a composed ITs
+is a composed IT
 without any loops.
 
 A {\bf primitive IT}
-is a IT that can be expressed as a linear
+is an IT that can be expressed as a linear
 combination of
 a finite number of tree ITs.
 
@@ -458,7 +458,8 @@ $\calp$ is
 a basis for an {\bf algebra of invariants}.\footnote{An algebra over a field
 is defined in Sec.\ref{sec-algebra-over-f}}
 
-An {\bf invariance group} $\calg$ is the set of all linear transformation $G\in \calg$ such that
+An {\bf invariance group} $\calg$ with
+a full set of primitive ITs $\calp=\{p_1, p_2, \ldots, p_k\}$ is the set of all linear transformation $G\in \calg$ such that
 
 \beqa
 p_1(\dual{x}, y)&=&
@@ -471,6 +472,7 @@ Gz)
 \\
 &&\text{etc.}
 \eeqa
+
 
 Example. Consider
 an invariance group
