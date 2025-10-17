@@ -19,7 +19,8 @@ G = 1 + i \sum_i
 where $T_i\in \CC^{n\times n}$
 for $i=1,2, \ldots, N$,
 $\eps_i\in\RR $
-and $|\eps_i|<<1$.
+and $|\eps_i|<<1$
+\footnote{Note that the $\eps_i$ are real, not complex.}.
 
 The $T_i$ matrices are called
 the {\bf generators
@@ -212,7 +213,7 @@ x\indices{_c^d}
 \right]}_{\eps_i\in\RR}
 \eeq
 
-
+\section{Tensor Invariance Conditions}
 
 Recall Eq.(\ref{eq-xprime-eq-gg-x}).
 If $x\in V^{n^p}\otimes \dual{V}^{n^q}$, and $\GG\in \calg\subset GL(n^{p+q}, \CC)$,
@@ -422,6 +423,7 @@ b_1
 }
 \ecen
 \end{array}
+\label{eq-tensor-inv-1}
 \eeq
 then
 
@@ -525,7 +527,13 @@ b_1
 }
 \ecen
 \end{array}
+\label{eq-tensor-inv-2}
 \eeq
+We will refer to
+identities such as
+Eq.(\ref{eq-tensor-inv-1}) 
+and (\ref{eq-tensor-inv-2})
+as {\bf tensor invariance conditions}.
 
 \section{Clebsch-Gordan Coefficients}
 The Clebsch Gordan coefficients (CBC) are
@@ -637,6 +645,10 @@ Hence,
 +
 C_\lam T^j
 \eeq
+Note that in the last equation,
+$T_\lam^j$ and $T^j$
+are different.
+In terms of birdtracks, we might have, for example,
 
 
 \beq
@@ -717,8 +729,13 @@ a&C_\lam\ar[l]
 \ecen
 \end{array}
 \right\}
+\label{eq-tlamj-tj}
 \eeq
-Multiplying on the left by $C^\dagger_\lam$, we obtain
+Multiplying 
+Eq.(\ref{eq-tlamj-tj})
+on the left by $C^\dagger_\lam$,
+and moving the first tem to
+the right side, we obtain
 an expression
 for the generator  $T_\lam^i$
 in term
@@ -885,6 +902,20 @@ a
 \end{array}
 \label{eq-inv-3pt-vertex}
 \eeq
+The term with the underbrace in Eq.(\ref{eq-inv-3pt-vertex})
+does not come from
+Eq.(\ref{eq-tlamj-tj}).
+I included it to demonstrate to
+ the reader
+that 
+Eq.(\ref{eq-inv-3pt-vertex})
+is just another
+tensor
+invariance condition that
+touches all the incoming
+and outgoing arrows.
+
+
 
 \section{Structure Constants
 (3 gluon vertex)}
