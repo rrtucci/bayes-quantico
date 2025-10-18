@@ -184,8 +184,8 @@ b
 &
 &c\ar[d]
 \\
-T^i\ar@[green][u]&
-&\ar@{~}[ll]|{\sum i} T^i\ar@[green][d]
+T^i\ar[u]&
+&\ar@{~}@[green][ll]|{\sum i} T^i\ar[d]
 \\
 a\ar[u]
 &
@@ -663,8 +663,8 @@ In terms of birdtracks, we might have, for example,
 &c_1\ar[ld]
 \\
 a&T_\lam^j
-\ar[l]
-&C_\lam\ar[l]
+\ar@{.>}[l]
+&C_\lam\ar@{.>}[l]
 &c_2\ar[l]
 \\
 &
@@ -681,7 +681,7 @@ a&T_\lam^j
 &T^j\ar[ld]
 &c_1\ar[l]
 \\
-a&C_\lam\ar[l]
+a&C_\lam\ar@{.>}[l]
 &c_2\ar[l]
 &
 \\
@@ -700,7 +700,7 @@ a&C_\lam\ar[l]
 &c_1\ar[ld]
 &
 \\
-a&C_\lam\ar[l]
+a&C_\lam\ar@{.>}[l]
 &T^j\ar[l]
 &c_2\ar[l]
 \\
@@ -718,7 +718,7 @@ a&C_\lam\ar[l]
 &c_1\ar[ld]
 &
 \\
-a&C_\lam\ar[l]
+a&C_\lam\ar@{.>}[l]
 &c_2\ar[l]
 &
 \\
@@ -751,8 +751,8 @@ the generators $T^j$
 \\
 a
 &T_\lam^j
-\ar[l]
-&a'\ar[l]
+\ar@{.>}[l]
+&a'\ar@{.>}[l]
 }
 \ecen
 =
@@ -766,7 +766,7 @@ a
 &
 \\
 a
-&\ar[l]T_j
+&\ar@{.>}[l]T_j
 &C_\lam\ar[l]
 \ar@{<-}[ru]
 \ar@{<-}[r]
@@ -776,7 +776,7 @@ a
 \ar[lu]
 \ar[l]
 \ar@{<-}[ld]
-&a'\ar[l]
+&a'\ar@{.>}[l]
 \\
 &
 &
@@ -795,7 +795,7 @@ a
 &
 \\
 a
-&C_\lam\ar[l]
+&C_\lam\ar@{.>}[l]
 \ar@{<-}[ru]
 \ar@{<-}[r]
 \ar[rd]
@@ -805,7 +805,7 @@ a
 \ar[l]
 \ar@{<-}[ld]
 &\ar[l]T_j
-&a'\ar[l]
+&a'\ar@{.>}[l]
 \\
 &
 &
@@ -826,7 +826,7 @@ a
 &
 \\
 a
-&C_\lam\ar[l]
+&C_\lam\ar@{.>}[l]
 \ar@{<-}[ru]
 \ar@{<-}[r]
 \ar[rd]
@@ -835,7 +835,7 @@ a
 \ar[lu]
 \ar[l]
 \ar@{<-}[ld]
-&a'\ar[l]
+&a'\ar@{.>}[l]
 \\
 &
 &
@@ -854,7 +854,7 @@ a
 &
 \\
 a
-&C_\lam\ar[l]
+&C_\lam\ar@{.>}[l]
 \ar@{<-}[ru]
 \ar@{<-}[r]
 \ar[rd]
@@ -863,7 +863,7 @@ a
 \ar[lu]
 \ar[l]
 \ar@{<-}[ld]
-&a'\ar[l]
+&a'\ar@{.>}[l]
 \\
 &
 &
@@ -882,7 +882,7 @@ a
 &
 \\
 a
-&C_\lam\ar[l]
+&C_\lam\ar@{.>}[l]
 \ar@{<-}[ru]
 \ar@{<-}[r]
 \ar[rd]
@@ -891,7 +891,7 @@ a
 \ar[lu]
 \ar[l]
 \ar@{<-}[ld]
-&a'\ar[l]
+&a'\ar@{.>}[l]
 \\
 &
 &T^j
@@ -920,7 +920,12 @@ and outgoing arrows.
 \section{Structure Constants
 (3 gluon vertex)}
 
-
+A {\bf Lie Algebra} is an
+algebra over the field $\CC$ 
+such that its vector product is the matrix commutator (see Section \ref{sec-algebra-over-f}).
+Simply put, a Lie Algebra 
+is a set 
+of square Hermitian matrices $\{T^i\}_{i=1}^N$ that satisfy
 
 \beq
 \begin{array}{l}
@@ -1003,17 +1008,13 @@ generators
 of a group $\calg$, then Eq.(\ref{eq-lie-alg-com-rels}
 ) shows that
 the matrices $(M^k)_{ij}=
--iC_{ijk}$
+if_{ijk}$
 are also a rep-matrix (in the adj-rep) of
 the generators of $\calg$.
 
 Since $\tr(T^k T^{k'})=\delta(k, k')$,
 Eq.(\ref{eq-lie-alg-com-rels}) implies
 
-\beq
-\tr([T^i, T^j]T^k)=
-if_{ijk}
-\eeq
 
 \beq
 \begin{array}{l}
@@ -1022,11 +1023,11 @@ if_{ijk}
 =\tr([T^i, T^j]T^k)
 =
 (T^i)\indices{_a^c}
-(T^j)\indices{_b^a}
 (T^k)\indices{_c^b}
+(T^j)\indices{_b^a}
 -
-(T^j)\indices{_c^b}
 (T^i)\indices{_a^c}
+(T^j)\indices{_c^b}
 (T^k)\indices{_b^a}
 }
 \\
@@ -1052,13 +1053,13 @@ j\ar@{~}[ur]
 &
 \\
 &
-&T^i\ar[ld]|{\sum a}
+&T^i\ar@{<-}[ld]|{\sum a}
 &
 &
 \\
-&T^j\ar[r]
-&\sum b\ar[r]
-&T^k\ar[lu]|{\sum c}
+&T^j\ar@{<-}[r]
+&\sum b\ar@{<-}[r]
+&T^k\ar@{<-}[lu]|{\sum c}
 &
 \\
 j\ar@{~}[ru]
@@ -1077,13 +1078,13 @@ j\ar@{~}[ru]
 &
 \\
 &
-&T^i\ar[ld]|{\sum a}
+&T^i\ar@{<-}[ld]|{\sum a}
 &
 &
 \\
-&T^k\ar[r]
+&T^k\ar@{<-}[r]
 &\sum b\ar[r]
-&T^j\ar[lu]|{\sum c}
+&T^j\ar@{<-}[lu]|{\sum c}
 &
 \\
 j\ar@{~}[urrr]
@@ -1140,7 +1141,7 @@ i\ar@{~}[urr]
 \xymatrix@R=1pc@C=1pc{
 &k\ar@{~}[d]
 \\
-&f_{\rvi\rvj k}
+&f_{\rvi\rvj \rvk}
 &
 \\
 i\ar@{~}[ur]
@@ -1154,7 +1155,7 @@ i\ar@{~}[ur]
 \xymatrix@R=1pc@C=1pc{
 &k\ar@{~}[d]
 \\
-&f_{\rvj\rvi k}
+&f_{\rvj\rvi \rvk}
 &
 \\
 i\ar@{~}[ur]
@@ -1162,7 +1163,7 @@ i\ar@{~}[ur]
 &j\ar@{~}[lu]
 }
 \ecen
-\text{(Convention L)}
+\text{(Convention FL)}
 \end{array}
 \eeq
 In fact, the tensor $f_{ijk}$
@@ -1185,7 +1186,7 @@ a real number.
 (-i)\tr([T^j, T^i]T^k)
 \\
 &=&
-i\tr([T^j, T^k]T^k)
+i\tr([T^i, T^j]T^k)
 \eeqa
 \qed
 
@@ -1203,48 +1204,48 @@ Eq.(\ref{eq-lie-alg-com-rels}) to make that obvious
 0=
 \bcen
 \xymatrix@R=2pc@C=1pc{
-&i\ar@{~}@[red][d]
-&j\ar@{~}[d]
-&
-&
-\\
 a
 &T^i\ar[l]
 &T^j\ar[l]
 &c\ar[l]
+\\
+&i\ar@{~}@[red][u]
+&j\ar@{~}[u]
+&
+&
 }
 \ecen
 -
 \bcen
 \xymatrix@R=2pc@C=1pc{
-&i\ar@{~}@[red][dr]
-&j\ar@{~}[dl]
-&
-&
-\\
 a
 &T^j\ar[l]
 &T^i\ar[l]
 &c\ar[l]
+\\
+&i\ar@{~}@[red][ur]
+&j\ar@{~}[ul]
+&
+&
 }
 \ecen
 -i
 \bcen
 \xymatrix@R=2pc@C=1pc
 {
+a
+&T^k\ar[l]\ar@{~}[d]
+&c\ar[l]
+\\
+&f_{ijk}
+\ar@{~}@[red][dl]
+\ar@{~}[dr]
+&
+\\
 i
 &
 &j
 \\
-&f_{ijk}
-\ar@{~}[d]
-\ar@{~}@[red][ul]
-\ar@{~}[ur]
-&
-\\
-a
-&T^k\ar[l]
-&c\ar[l]
 }
 \ecen
 \eeq
@@ -1269,8 +1270,8 @@ f_{iml}f_{jkm}\quad
 i\ar@{~}[d]
 &l\ar@{~}[d]
 \\
-f_{ijm}
-&f_{mkl}\ar@{~}[l]|{\sum m}
+f_{ljm}
+&f_{mki}\ar@{~}[l]|{\sum m}
 \\
 j\ar@{~}[u]
 &
@@ -1283,8 +1284,8 @@ k\ar@{~}[u]
 i\ar@{~}[dr]
 &l\ar@{~}[dl]
 \\
-f_{ijm}
-&f_{mkl}\ar@{~}[l]|{\sum m}
+f_{ljm}
+&f_{mki}\ar@{~}[l]|{\sum m}
 \\
 j\ar@{~}[u]
 &
@@ -1319,7 +1320,7 @@ Note that
 \right)
 &=&
 \tr\left(
-f_{ijm}[T^m, T^k]
+f_{ijm}[T^m, T^k]T^l
 \right)
 \\
 &=&
@@ -1373,7 +1374,7 @@ instead of the def-rep. Indeed,
 if 
 
 \beq
-M^i_{jk} = -if_{ijk}
+M^i_{jk} = if_{ijk}
 \eeq
 then Claim
 \ref{cl-cijk-is-invariant}
@@ -1382,7 +1383,7 @@ becomes
 \beq
 (M^i M^l - M^l M^i)_{jk}
 =
-iC_{ilm}(M^m)_{jk}
+if_{ilm}(M^m)_{jk}
 \eeq
 
 
@@ -1449,14 +1450,15 @@ j\ar@{~}[ur]
 \eeq
 
 
-\section{Two types of gluon exchanges}
+\section{Other Forms of Lie Algebra Commutators}
 
 Consider the following two gluon exchange
 operators. Note that
 $\PP^2=\PP$,  but $\QQ^2\neq \QQ$,
 so $\PP$ is a bonafide projection operator
-but not $\QQ$. $\QQ\QQ^\dagger =\PP$ so
-$\QQ$ is like half of a projection operator.
+but  $\QQ$
+isn't. $\QQ\QQ^\dagger =\PP$ so
+$\QQ$ behaves like half of a projection operator.
  
 
 \beq
@@ -1471,7 +1473,7 @@ a
 &
 &d
 \\
-&\PP\ar@{|->}[ul]
+&\PP\ar@[green][ul]
 \ar@{<-}[ur]
 \ar[dr]
 &
@@ -1489,7 +1491,7 @@ a
 \ar[d]
 \\
 T^i\ar[u]
-\ar@{~}[r]|{\sum i}
+\ar@{~}@[green][r]|{\sum i}
 &T^i
 \ar[d]
 \\
@@ -1503,50 +1505,50 @@ b\ar[u]
 
 
 \beq
-\myboxed{\QQ\indices{_a^b_\beta^\gamma}
+\myboxed{\QQ\indices{_a^b_Y^X}
 =
 \sum_i
 (T^i)\indices{_a^b}
-(T^i_\lam)\indices{_\beta^\gamma}
+(T^i_\lam)\indices{_Y^X}
 }
 \bcen
 \xymatrix{
 a
 &
-&\gamma
+&X
 \\
-&\QQ\ar@{|->}[ul]
+&\QQ\ar@[green][ul]
 \ar@2{<-}[ur]
 \ar@2{->}[dr]
 &
 \\
 b\ar[ur]
 &
-&\beta
+&Y
 }
 \ecen
 =
 \bcen
 \xymatrix@C=3pc{
 a
-&\gamma
+&X
 \ar@2{->}[d]
 \\
 T^i\ar[u]
-\ar@{~}[r]|{\sum i}
+\ar@{~}@[green][r]|{\sum i}
 &T_\lam^i
 \ar@2{->}[d]
 \\
 b\ar[u]
-&\beta
+&Y
 }
 \ecen
 \eeq
 
 \begin{claim}
 If $\QQ\indices{_b^a}$ is
-the matrix with $(\nu, \gamma)$ entries 
-$\QQ\indices{_b^a_\nu^\gamma}$, then
+the matrix with $(Z, X)$ entries 
+$\QQ\indices{_b^a_Z^X}$, then
  \beq
  [
  \QQ\indices{_b^a},
@@ -1554,58 +1556,31 @@ $\QQ\indices{_b^a_\nu^\gamma}$, then
  ]=
 \PP\indices
 {
-_{b'}
-^a
-_d
+_{c'}
 ^c
+^a
+_b
 }
 \QQ\indices{
-_b
-^{b'}
+_d
+^{c'}
 }
 -
 \QQ\indices{
-_{a'}
-^a
+_{d'}
+^c
 }
 \PP\indices{
+_d
+^{d'}
+^a
 _b
-^{a'}
-_c
-^d
 }
 \eeq
 
 \end{claim}
 \proof
  
-\beq
-(T^j)\indices{_b^a}
-(T^i)\indices{_d^c}
-[T^j_\lam, T^i_\lam
-]=
-\left[
-(T^i)\indices{_{b'}^a}
-(T^k)\indices{_b^{b'}}
--
-(T^k)\indices{_{a'}^{a}}
-(T^i)\indices{_b^{a'}}
-\right]
-(T^i)\indices{_d^c}
-T^k_\lam
-\eeq
-
-
-\beq
-(T^j)\indices{_b^a}
-(T^i)\indices{_d^c}
-if_{jik}T^k_\lam
-=
-if_{ikj}(T^j)\indices{_b^a}
-(T^i)\indices{_d^c}
-T^k_\lam
-\eeq
-\qed
 
 This claim can be visualized as follows.
 $\QQ$ is an invariant tensor so
@@ -1617,188 +1592,188 @@ $\QQ$ is an invariant tensor so
 \begin{array}{l}
 \bcen
 \xymatrix{
-a\ar[ddrr]
+c\ar[ddrr]
 &
 &
-&b
+&d
 \\
 i\ar@{~}@[red][dr]
 &
 &
 &
 \\
-\beta
+Y
 &T_\lam^i\ar@2{->}[l]
 &\QQ\ar@2{->}[l]
-\ar@{|->}[ruu]
-&\gamma\ar@2{->}[l]
+\ar@[green][ruu]
+&X\ar@2{->}[l]
 }
 \ecen
 -
 \bcen
 \xymatrix{
-a\ar[ddr]
+c\ar[ddr]
 &
 &
-&b
+&d
 \\
 i\ar@{~}@[red][drr]
 &
 &
 &
 \\
-\beta
+Y
 &\QQ\ar@2{->}[l]
-\ar@{|->}[rruu]
+\ar@[green][rruu]
 &T_\lam^i\ar@2{->}[l]
-&\gamma\ar@2{->}[l]
+&X\ar@2{->}[l]
 }
 \ecen
 \\
 -
 \bcen
 \xymatrix{
-a\ar[r]
+c\ar[r]
 &T^i
 \ar[r]
-&\QQ\ar@{|->}[r]
+&\QQ\ar@[green][r]
 \ar@2{->}[ddll]
-&b
+&d
 \\
 i\ar@[red]@{~}[ur]
 &
 &
 &
 \\
-\beta
+Y
 &
 &
-&\gamma\ar@2{->}[uul]
+&X\ar@2{->}[uul]
 }
 \ecen
 +
 \bcen
 \xymatrix{
-a\ar[r]
+c\ar[r]
 &\QQ
 \ar[r]
 \ar@2{->}[ddl]
-&T^i\ar@{|->}[r]
-&b
+&T^i\ar[r]
+&d
 \\
 i\ar@{~}@[red][urr]
 &
 &
 &
 \\
-\beta
+Y
 &
 &
-&\gamma\ar@2{->}[uull]
+&X\ar@2{->}[uull]
 }
 \ecen
 \end{array}
 \right\}
 \eeq
-Now multiplying by $(T^i)\indices{_c^d}$, we get
+Now multiplying by $(T^i)\indices{_a^b}$, we get
 
 \beq
 \begin{array}{l}
 \myboxed{
 \QQ\indices{
-_d
-^c
-_\beta
-^{\nu}
-}
-\QQ\indices{
 _b
 ^a
-_{\nu}
-^\gamma
+_Y
+^{Z}
+}
+\QQ\indices{
+_d
+^c
+_{Z}
+^X
 }
 -
 \QQ\indices{
-_b
-^a
-_\beta
-^{\nu}
-}
-\QQ\indices{
 _d
 ^c
-_\nu
-^\gamma
+_Y
+^{Z}
+}
+\QQ\indices{
+_b
+^a
+_Z
+^X
 }
 =
 \PP\indices
 {
-_{a'}
-^a
-_d
+_{c'}
 ^c
+^a
+_b
 }
 \QQ\indices{
-_b
-^{a'}
-_\beta
-^\gamma
+_d
+^{c'}
+_Y
+^X
 }
 -
 \QQ\indices{
-_{b'}
-^a
-_\beta
-^\gamma
+_{d'}
+^c
+_Y
+^X
 }
 \PP\indices{
-_b
-^{b'}
 _d
-^c
+^{d'}
+^a
+_b
 }
 }
 \\
 \begin{array}{l}
 \bcen
 \xymatrix{
-a\ar[ddrr]
-&
-&
-&b
-\\
-c\ar[dr]
+c\ar[ddrr]
 &
 &
 &d
 \\
-\beta
+a\ar[dr]
+&
+&
+&b
+\\
+Y
 &\QQ\ar@2{->}[l]
-\ar@{|->}[rru]
+\ar@[green][rru]
 &\QQ\ar@2{->}[l]
-\ar@{|->}[ruu]
-&\gamma\ar@2{->}[l]
+\ar@[green][ruu]
+&X\ar@2{->}[l]
 }
 \ecen
 -
 \bcen
 \xymatrix{
-a\ar[ddr]
-&
-&
-&b
-\\
-c\ar[drr]
+c\ar[ddr]
 &
 &
 &d
 \\
-\beta
+a\ar[drr]
+&
+&
+&b
+\\
+Y
 &\QQ\ar@2{->}[l]
-\ar@{|->}[rruu]
+\ar@[green][rruu]
 &\QQ\ar@2{->}[l]
-\ar@{|->}[ur]
-&\gamma\ar@2{->}[l]
+\ar@[green][ur]
+&X\ar@2{->}[l]
 }
 \ecen
 =
@@ -1806,51 +1781,98 @@ c\ar[drr]
 \quad\quad\quad
 \bcen
 \xymatrix{
-a\ar[r]
+c\ar[r]
 &T^i
 \ar[r]
 \ar@{~}[d]
-&\QQ\ar@{|->}[r]
+&\QQ\ar@[green][r]
 \ar@2{->}@/_1pc/[ddll]
-&b
-\\
-c\ar[r]
-&T^i\ar[rr]
-&
 &d
 \\
-\beta
+a\ar[r]
+&T^i\ar[rr]
+&
+&b
+\\
+Y
 &
 &
-&\gamma\ar@2{->}[uul]
+&X\ar@2{->}[uul]
 }
 \ecen
 -
 \bcen
 \xymatrix{
-a\ar[r]
+c\ar[r]
 &\QQ
-\ar@{|->}[r]
+\ar@[green][r]
 \ar@2{->}[ddl]
 &T^j\ar[r]
 \ar@{~}[d]
-&b
-\\
-c\ar[rr]
-&\ar[r]
-&T^j\ar[r]
 &d
 \\
-\beta
+a\ar[rr]
+&\ar[r]
+&T^j\ar[r]
+&b
+\\
+Y
 &
 &
-&\gamma\ar@2{->}@/_1pc/[uull]
+&X\ar@2{->}@/_1pc/[uull]
 }
 \ecen
 \end{array}
 \end{array}
 \eeq
+Finally, if we hide the 
+capital letter indices
+to  obtain a statement
+about matrices with capital
+letter indices, we get
 
+\beq
+\QQ\indices{
+_b
+^a
+}
+\QQ\indices{
+_d
+^c
+}
+-
+\QQ\indices{
+_d
+^c
+}
+\QQ\indices{
+_b
+^a
+}
+=
+\PP\indices
+{
+_{c'}
+^c
+^a
+_b
+}
+\QQ\indices{
+_d
+^{c'}
+}
+-
+\QQ\indices{
+_{d'}
+^c
+}
+\PP\indices{
+_d
+^{d'}
+^a
+_b
+}
+\eeq
 
-
+\qed
 
