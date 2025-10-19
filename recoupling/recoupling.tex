@@ -4,9 +4,9 @@ This chapter is based on Cvitanovic's Birdtracks book Ref. \cite{birdtracks-book
 
 Mandelstam variables
 
-s-channel, particles shag (have sex),
+s-channel, particle synergy (energy from coming together),
 
-t-channel, particles have tea
+t-channel, particle trade
 
 \beq
 \begin{array}{ccc}
@@ -46,28 +46,7 @@ t-channel, particles have tea
 
 \section{Parallel channels to 
 sum of t-channels}
-\xymatrix{
-{\circ} \ar 
-`r[d] ^a
-`[rr] ^b
-`[rr] ^c
-`[rrr] ^d
-`_dl[drrr]^e
-[drrr]^f
-& {\circ} & {\circ} & {\circ} \\
-{\circ} & {\circ} & {\circ} & {\circ} }
 
-
-\xymatrix{
-&A
-\ar
-`l[ld]
-`[drr]
-`[rr]
-`[r]
-[r]
-&B&
-\\x&x&x&x}
 
 
 \beq
@@ -78,7 +57,7 @@ sum of t-channels}
 
 no implicit sum over Greek indices
 
-\beq P_\lam
+\beq 
 C\indices{
 _{\lam a}
 ^{\nu b}
@@ -90,7 +69,7 @@ _{\lam a}
 &&\mu c\ar@[green][ld]
 \\
 \lam a
-&P_\lam C\indices{
+&C\indices{
 _{\lam}
 ^{\nu}
 ^{\mu}
@@ -105,7 +84,7 @@ _{\lam}
 &&\mu c\ar@[green][l]
 \\
 \lam a
-&P_\lam C\indices{
+&C\indices{
 _{\lam}
 ^{\nu}
 ^{\mu}
@@ -118,39 +97,24 @@ _{\lam}
 \ecen
 \eeq
 
-\beq
-\calc\indices{
-_\lam
-^\nu
-^\mu
-} = P_\lam
-C\indices{
-_\lam
-^\nu
-^\mu
-}
-\eeq
 
 \beq
-\calc_\lam \calc^\dagger_\lam=P_\lam^2 = P_\lam
+C_\lam C^\dagger_\lam = P_\lam
 \eeq
 
 \beq
 \tr(P_\lam)=d_\lam
 \eeq
 where $d_\lam$ is the dimension of rep $\lam$.
-Actually, $\calc_\lam=P_\lam C_\lam=C_\lam$,
-but we make the $P_\lam$ explicit
-for pedagogical purposes.
 
 Note that if we divide
-$\calc_\lam$ by $\sqrt{d_\lam}$,
+$C_\lam$ by $\sqrt{d_\lam}$,
 then
 
 \beq
-\tr\left(\frac{\calc_\lam}
+\tr\left(\frac{C_\lam}
 {\sqrt{d_\lam}} 
-\frac{\calc^\dagger_\lam}
+\frac{C^\dagger_\lam}
 {\sqrt{d_\lam}} 
 \right)=1
 \eeq
@@ -158,7 +122,7 @@ then
 
 
 \beq
-{\color{red}\calp_\lam}
+{\color{red}P_\lam}
 =
 \bcen
 \xymatrix@C=3pc{
@@ -166,12 +130,12 @@ then
 &
 &\ar@[green][l]
 \\
-&\calc^\dagger
+&C^\dagger
 _\lam
 \ar@2{-}[u]
 \ar@2{-}[d]
 &
-\calc
+C
 _\lam
 \ar@2{-}[u]
 \ar@2{-}[d]
@@ -185,13 +149,13 @@ _\lam
 \eeq
 
 \beq
-\calp_\lam^2=
-\calp_\lam
+P_\lam^2=
+P_\lam
 \eeq
 
 
 \beq
-{\color{blue}\calp_\nu}
+{\color{blue}P_\nu}
 =\frac{d_\nu}{d_\lam}
 \bcen
 \xymatrix@R=1pc{
@@ -210,11 +174,11 @@ _\lam
 &
 &\ar@[green][l]
 \\
-&\calc^\dagger_\lam
+&C^\dagger_\lam
 \ar@2{-}[u]
 \ar@2{-}[d]
 &
-&\calc_\lam
+&C_\lam
 \ar@2{-}[u]
 \ar@2{-}[d]
 \ar@[red]
@@ -240,13 +204,13 @@ _\lam
 \eeq
 
 \beq
-\calp_\nu^2=\calp_\nu
+P_\nu^2=P_\nu
 \eeq
 
 
 
 \beq
-{\color{green}\calp_\mu}
+{\color{green}P_\mu}
 =\frac{d_\mu}{d_\lam}
 \bcen
 \xymatrix@R=1pc{
@@ -262,11 +226,11 @@ _\lam
 &
 &
 \\
-&\calc^\dagger_\lam
+&C^\dagger_\lam
 \ar@2{-}[u]
 \ar@2{-}[d]
 &
-&\calc_\lam
+&C_\lam
 \ar@2{-}[u]
 \ar@2{-}[d]
 \ar@[red]
@@ -294,18 +258,18 @@ _\lam
 \eeq
 
 \beq
-\calp_\mu^2=\calp_\mu
+P_\mu^2=P_\mu
 \eeq
-The normalization of the projectors $\calp_\lam, \calp_\nu, \calp_\mu$ can be remembered if 
+The normalization of the projectors $P_\lam, P_\nu, P_\mu$ can be remembered if 
 one takes the denominator $d_\lam$ and splits it into two factors of $\sqrt{d_\lam}$
 and puts one $\sqrt{d_\lam}$
-under $\calc_\lam$
-and the other under $\calc^\dagger_\lam$. Then
-one \qt{trades} $\frac{\calc_\lam}{\sqrt{d_\lam}}$
+under $C_\lam$
+and the other under $C^\dagger_\lam$. Then
+one \qt{trades} $\frac{C_\lam}{\sqrt{d_\lam}}$
 by
-$\frac{\calc_\nu}{\sqrt{d_\nu}}$
+$\frac{C_\nu}{\sqrt{d_\nu}}$
 or
-$\frac{\calc_\mu}{\sqrt{d_\mu}}$.
+$\frac{C_\mu}{\sqrt{d_\mu}}$.
 
 
 
@@ -327,7 +291,7 @@ they can be changed
 &&\mu \ar@[green][l]
 \\
 \lam 
-&\calc_\lam\ar@[red][l]
+&C_\lam\ar@[red][l]
 \ar@2{-}[u]
 \ar@2{-}[d]
 \\
@@ -345,7 +309,7 @@ they can be changed
 \\
 \lam 
 &
-T_\lam\ar@[red][l]
+\ger{C}_\lam\ar@[red][l]
 \ar@2{-}[u]
 \ar@2{-}[d]
 \\
@@ -353,6 +317,17 @@ T_\lam\ar@[red][l]
 }
 \ecen
 \eeq
+Note that we are defining $\ger{C}_\lam=T\indices{_\lam^\nu^\mu}$
+so that the $\lam$
+rep is an s-channel 
+for converging reps $\mu$ anf $\nu$.
+When we define the
+generators $T^i_\lam$, the $i$
+(gluon, adj-rep particle) 
+is in a t-channel
+emanating from 
+ incoming
+and outgoing def-rep particles.  
 
 \beq
 \bcen
@@ -361,7 +336,7 @@ T_\lam\ar@[red][l]
 \\
 \lam 
 &
-T_\lam\ar@[red][l]
+\ger{C}_\lam\ar@[red][l]
 \ar@2{-}[u]
 \ar@2{-}[d]
 \\
@@ -375,7 +350,7 @@ T_\lam\ar@[red][l]
 \\
 \lam 
 &
-T_\lam\ar@[red][l]
+\ger{C}_\lam\ar@[red][l]
 \ar@2{-}[u]
 \ar@2{-}[d]
 \\
@@ -387,15 +362,16 @@ T_\lam\ar@[red][l]
 
 \beq
 \xymatrix{
-&T_\lam
+&\ger{C}_\lam
 \ar[l]|\lam
-&T_\s^\dagger
+&\ger{C}^\dagger_\s
 \ar@/_1.5pc/[l]|\mu
 \ar@/^1.5pc/[l]|\nu
 &\ar[l]|\s
 }
 =
 \kten{\lam}{\nu}{\mu}
+\delta(\lam, \s)
 \xymatrix{
 &\bullet\ar[l]|\lam
 &\ar[l]|\s
@@ -410,7 +386,7 @@ T_\lam\ar@[red][l]
 
 
 \beq
-\calp_\lam=
+P_\lam=
 \frac{1}{\kten{\lam}{\nu}{\mu}}
 \bcen
 \xymatrix{
@@ -418,10 +394,10 @@ T_\lam\ar@[red][l]
 &
 &\ar[dl]|\mu
 \\
-&T_\lam^\dagger
+&\ger{C}_\lam^\dagger
 \ar[lu]
 \ar[ld]
-&T_\lam\ar[l]|\lam
+&\ger{C}_\lam\ar[l]|\lam
 &
 \\
 &
@@ -430,9 +406,10 @@ T_\lam\ar@[red][l]
 }
 \ecen
 \eeq
+Check that $\tr P_\lam=d_\lam$.
 
 \beq
-\calp_\mu=
+P_\mu=
 \frac{1}{\kten{\mu}{\lam}{\nu}}
 \bcen
 \xymatrix{
@@ -440,10 +417,10 @@ T_\lam\ar@[red][l]
 &
 &\ar[dl]|\nu
 \\
-&T_\mu^\dagger
+&\ger{C}_\mu^\dagger
 \ar[lu]
 \ar[ld]
-&T_\mu\ar[l]|\mu
+&\ger{C}_\mu\ar[l]|\mu
 &
 \\
 &
@@ -454,7 +431,7 @@ T_\lam\ar@[red][l]
 \eeq
 
 \beq
-\calp_\nu=
+P_\nu=
 \frac{1}{\kten{\nu}{\mu}{\lam}}
 \bcen
 \xymatrix{
@@ -462,10 +439,10 @@ T_\lam\ar@[red][l]
 &
 &\ar[dl]|\lam
 \\
-&T_\nu^\dagger
+&\ger{C}_\nu^\dagger
 \ar[lu]
 \ar[ld]
-&T_\nu\ar[l]|\nu
+&\ger{C}_\nu\ar[l]|\nu
 &
 \\
 &
@@ -474,6 +451,7 @@ T_\lam\ar@[red][l]
 }
 \ecen
 \eeq
+
 
 \beq
 \bcen
@@ -484,7 +462,7 @@ T_\lam\ar@[red][l]
 &\bullet\ar[l]
 &\ar[l]|\nu
 }\ecen
-=\sum_\lam \calp_\lam
+=\sum_\lam P_\lam
 =
 \sum_\lam
 \frac{d_\lam}
@@ -497,10 +475,10 @@ T_\lam\ar@[red][l]
 &
 &\ar[dl]|\mu
 \\
-&T_\lam^\dagger
+&\ger{C}_\lam^\dagger
 \ar[lu]
 \ar[ld]
-&T_\lam\ar[l]|\lam
+&\ger{C}_\lam\ar[l]|\lam
 &
 \\
 &
@@ -532,32 +510,32 @@ T_\lam\ar@[red][l]
 &\ar[l]
 &&&&&&\ar[l]
 \\
-&T_\lam^\dagger
+&\ger{C}_\lam^\dagger
 \ar@2{-}[u]
 \ar@2{-}[d]
 &\ar[l]
 &
-&&&T_\lam
+&&&\ger{C}_\lam
 \ar@2{-}[u]
 \ar@2{-}[d]
 \ar[l]
 \\
 &\ar[l]
-&T_\mu^\dagger
+&\ger{C}_\mu^\dagger
 \ar@2{-}[u]
 \ar@2{-}[d]
 &\ar[l]
-&&T_\mu\ar[l]
+&&\ger{C}_\mu\ar[l]
 \ar@2{-}[u]
 \ar@2{-}[d]
 &&\ar[l]
 \\
 &&\ar[ll]
 &
-T_\nu^\dagger
+\ger{C}_\nu^\dagger
 \ar@2{-}[u]
 \ar@2{-}[d]
-&T_\nu\ar[l]
+&\ger{C}_\nu\ar[l]
 \ar@2{-}[u]
 \ar@2{-}[d]
 &&&\ar[ll]\ar[ll]
@@ -601,13 +579,13 @@ their dependance still there.
 &
 &
 \\
-&T_\lam^\dagger
+&\ger{C}_\lam^\dagger
 \ar@2{-}[u]
 \ar@2{-}[d]
 &\ar[l]
 &
 &\ar[l]
-T_\lam
+\ger{C}_\lam
 \ar@2{-}[u]
 \ar@2{-}[d]
 &
@@ -623,10 +601,10 @@ T_\lam
 &
 \\
 &
-&T_\nu^\dagger
+&\ger{C}_\nu^\dagger
 \ar@2{-}[uu]
 \ar@2{-}[dd]
-&\ar[l]T_\nu
+&\ar[l]\ger{C}_\nu
 \ar@2{-}[uu]
 \ar@2{-}[dd]
 &
@@ -642,12 +620,12 @@ T_\lam
 &
 \\
 &
-T_\mu^\dagger
+\ger{C}_\mu^\dagger
 \ar@2{-}[u]
 \ar@2{-}[d]
 &\ar[l]
 &
-&T_\mu
+&\ger{C}_\mu
 \ar@2{-}[u]
 \ar@2{-}[d]
 \ar[l]
@@ -669,12 +647,12 @@ T_\mu^\dagger
 \begin{align}
 \bcen
 \xymatrix{
-&T^\dagger_\mu
+&\ger{C}^\dagger_\mu
 \ar[l]|\s
 \ar[d]|\omega
 &\ar[l]|\mu
 \\
-&T_\rho
+&\ger{C}_\rho
 \ar[l]|\rho
 &\ar[l]|\nu
 }
@@ -695,25 +673,25 @@ T_\mu^\dagger
 \xymatrix{
 &
 &
-&T^\dagger_\mu\ar[dl]|\s
+&\ger{C}^\dagger_\mu\ar[dl]|\s
 \ar[dd]|\omega
 &
 &
 &\ar[dl]|\mu
 \\
-&T^\dagger_\lam\ar[lu]|\s
+&\ger{C}^\dagger_\lam\ar[lu]|\s
 \ar[ld]|\rho
-&T_\lam\ar[l]|\lam
+&\ger{C}_\lam\ar[l]|\lam
 &
-&T^\dagger_\lam
+&\ger{C}^\dagger_\lam
 \ar[ul]|\mu
 \ar[dl]|\nu
-&T_\lam\ar[l]|\lam
+&\ger{C}_\lam\ar[l]|\lam
 &
 \\
 &
 &
-&T_\rho\ar[ul]|\rho
+&\ger{C}_\rho\ar[ul]|\rho
 &
 &
 &\ar[ul]|\nu
@@ -728,12 +706,12 @@ T_\mu^\dagger
 S_\lam\left(
 \bcen
 \xymatrix{
-&T^\dagger_\mu
+&\ger{C}^\dagger_\mu
 \ar[l]|\s
 \ar[d]|\omega
 &\ar[l]|\mu
 \\
-&T_\rho
+&\ger{C}_\rho
 \ar[l]|\rho
 &\ar[l]|\nu
 }
@@ -743,10 +721,10 @@ S_\lam\left(
 \xymatrix{
 &&&\ar[ld]|\mu
 \\
-&T_\lam^\dagger
+&\ger{C}_\lam^\dagger
 \ar[lu]|\s
 \ar[ld]|\rho
-&T^\lam
+&\ger{C}_\lam
 \ar[l]|\lam
 &
 \\
@@ -762,12 +740,12 @@ S_\lam\left(
 S_\lam\left(
 \bcen
 \xymatrix{
-&T^\dagger_\mu
+&\ger{C}^\dagger_\mu
 \ar[l]|\s
 \ar[d]|\omega
 &\ar[l]|\mu
 \\
-&T_\rho
+&\ger{C}_\rho
 \ar[l]|\rho
 &\ar[l]|\nu
 }
@@ -846,7 +824,7 @@ t-channel to sum of s-channels conversion Eq.(\ref{eq-gen-t-to-sum-of-s})
 &\ar[l]
 &&&&
 \\
-&T_\lam^\dagger
+&\ger{C}_\lam^\dagger
 \ar@2{-}[u]
 \ar@2{-}[d]
 &\ar[l]
@@ -854,7 +832,7 @@ t-channel to sum of s-channels conversion Eq.(\ref{eq-gen-t-to-sum-of-s})
 &
 \\
 &\ar[l]
-&T_\mu^\dagger
+&\ger{C}_\mu^\dagger
 \ar@2{-}[u]
 \ar@2{-}[d]
 &\ar[l]
@@ -862,10 +840,10 @@ t-channel to sum of s-channels conversion Eq.(\ref{eq-gen-t-to-sum-of-s})
 \\
 &&\ar[ll]
 &
-T_\nu^\dagger
+\ger{C}_\nu^\dagger
 \ar@2{-}[u]
 \ar@2{-}[d]
-&T_\nu\ar[l]
+&\ger{C}_\nu\ar[l]
 \ar@2{-}[u]
 \ar@2{-}[d]
 &
@@ -906,13 +884,13 @@ T_\nu^\dagger
 &
 &
 \\
-&T_\lam^\dagger
+&\ger{C}_\lam^\dagger
 \ar@2{-}[u]
 \ar@2{-}[d]
 &\ar[l]&
 \\
 &\ar[l]
-&T_\mu^\dagger
+&\ger{C}_\mu^\dagger
 \ar@2{-}[u]
 \ar@2{-}[d]
 &\ar[dd]\ar[l]

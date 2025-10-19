@@ -88,10 +88,10 @@
 \newcommand{\rvnu}[0]{\rv{\nu}}
 \newcommand{\trij}[3]{
 \xymatrix{
-T_{#2}^\dagger
+\ger{C}_{#2}^\dagger
 \ar@/^1pc/[r]|{#1}
 \ar@/_1pc/[r]|{#3}
-&T_{#2}\ar[l]|{#2}
+&\ger{C}_{#2}\ar[l]|{#2}
 }
 }
 
@@ -102,17 +102,17 @@ _{#1}^{#2}^{#3}}
 
 \newcommand{\sixj}[6]{
 \xymatrix@R=2pc@C=2pc{
-&T_{#5}^\dagger\ar[d]|{#1}
+&\ger{C}_{#5}^\dagger\ar[d]|{#1}
 \ar@/_1pc/[ddl]|{#6}
 \ar@/^1pc/@{<-}[ddr]|{#5}
 \\
-&T_{#2}
+&\ger{C}_{#2}
 \ar[dl]|{#2}
 \ar@{<-}[dr]|{#3}
 \\
-T_{#4}
+\ger{C}_{#4}
 &
-&T_{#4}^\dagger
+&\ger{C}_{#4}^\dagger
 \ar@{<-}[ll]|{#4}
 }
 }
@@ -124,8 +124,7 @@ $\displaystyle #1$
 }
 }
 
-
-
+\newcommand{\ger}[1]{\mathfrak{#1}}
 
 \newcommand{\chapquote}[3]{\begin{quotation} \textit{#1} \end{quotation} \begin{flushright} - #2, \textit{#3}\end{flushright} }
 
