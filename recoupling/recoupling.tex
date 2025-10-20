@@ -2,20 +2,13 @@
 \label{ch-recoupling}
 This chapter is based on Cvitanovic's Birdtracks book Ref. \cite{birdtracks-book}.
 
-Mandelstam variables
-
-s-channel, particle synergy (energy from coming together),
-
-t-channel, particle trade
+In this chapter, we 
+will refer to the following
+2 birdtracks
+as  s and t channels.\footnote{My mnemonic to remember which is which: {\bf s-channel}: particle \ul{synergy}, energy from particles coming together, {\bf t-channel}: particle \ul{trade}.}
 
 \beq
 \begin{array}{ccc}
-\xymatrix@R=2pc@C=1.5pc{
-&&\ar[ll]
-\\
-&&\ar[ll]
-}
-&
 \xymatrix@R=1pc@C=1.5pc{
 &
 &
@@ -38,24 +31,25 @@ t-channel, particle trade
 \\
 &\ar[l]&\ar[l]
 }\\
-\text{parallel channels}
-&\text{s-channel}
+\text{s-channel}
 &\text{t-channel}
 \end{array}
 \eeq
+This terminology comes from High Energy Physics, where these birdtracks are used to define the so called Mandelstam variables.
+The Mandelstam variables measure the energy 
+of particles in various birdtracks.
+
+
+
 
 \section{Parallel channels to 
 sum of t-channels}
 
 
 
-\beq
-\lam =red,\quad
-\mu=green,\quad
-\nu=blue
-\eeq
-
-no implicit sum over Greek indices
+Clebsch-Gordan (CG) coefficients were
+introduced in Chapter \ref{ch-clebsch-gordan}.
+Define the CG coefficients node
 
 \beq 
 C\indices{
@@ -97,6 +91,75 @@ _{\lam}
 \ecen
 \eeq
 
+Note that
+
+\beq
+\bcen
+\xymatrix{
+&&\mu \ar@[green][l]
+\\
+\lam 
+&
+C_\lam\ar@[red][l]
+\ar@2{-}[u]
+\ar@2{-}[d]
+\\
+&&\nu\ar@[blue][l]
+}
+\ecen
+\neq
+\bcen
+\xymatrix{
+&&\mu \ar@[green][ldd]
+\\
+\lam 
+&
+C_\lam\ar@[red][l]
+\ar@2{-}[u]
+\ar@2{-}[d]
+\\
+&&\nu\ar@[blue][luu]
+}
+\ecen
+\eeq
+
+Note that we are defining 
+the CG coefficient $C_\lam$ 
+so that the $\lam$
+rep particle is created in an s-channel 
+by converging $\mu$ and $\nu$ rep particles.
+When we define the
+generators $T^i_\lam$, the $i$
+(gluon, adj-rep particle) 
+is in a t-channel
+emanating from 
+ incoming
+and outgoing def-rep particles. 
+Another big difference between 
+$C_\lam$  and
+$T^i_\lam$ is that $T^i_\lam$ 
+is assumed to be Hermitian,
+whereas $C_\lam$
+is not Hermitian in general. $C_\lam$ is not
+even a square matrix in general.
+
+
+In this chapter, we won't use implicit summation over Greek indices.
+
+
+In this section, 
+sometimes
+instead of labelling arrows by a lower case Greek letter denoting its  rep, we will disclose an arrow's rep by a color,
+according to the following 
+rep-to-color code.
+\beq
+\lam: red,\quad
+\mu: green,\quad
+\nu: blue
+\eeq
+
+According to Chapter \ref{ch-clebsch-gordan},
+the CG coefficient $C_\lam$ satisfies
 
 \beq
 C_\lam C^\dagger_\lam = P_\lam
@@ -105,7 +168,11 @@ C_\lam C^\dagger_\lam = P_\lam
 \beq
 \tr(P_\lam)=d_\lam
 \eeq
-where $d_\lam$ is the dimension of rep $\lam$.
+where $P_\lam$
+is the projection operator onto
+the vector space of the rep $\lam$ and $d_\lam$ is the dimension of that vector space.
+
+
 
 Note that if we divide
 $C_\lam$ by $\sqrt{d_\lam}$,
@@ -119,7 +186,7 @@ then
 \right)=1
 \eeq
 
-
+Define
 
 \beq
 {\color{red}P_\lam}
@@ -147,67 +214,6 @@ _\lam
 }
 \ecen
 \eeq
-
-\beq
-P_\lam^2=
-P_\lam
-\eeq
-
-
-\beq
-{\color{blue}P_\nu}
-=\frac{d_\nu}{d_\lam}
-\bcen
-\xymatrix@R=1pc{
-\\
-\ar@[red]
-`r[drr]
-`[ddrr]
-[ddr]
-&
-&
-&
-&
-\\
-&\ar@[green][l]
-&
-&
-&\ar@[green][l]
-\\
-&C^\dagger_\lam
-\ar@2{-}[u]
-\ar@2{-}[d]
-&
-&C_\lam
-\ar@2{-}[u]
-\ar@2{-}[d]
-\ar@[red]
-`l[lu]
-`[uur]
-[uur]
-&
-&
-\\
-&\ar@[blue]
-`l[ld]
-`[drrrr]
-`[rrr]
-`[rr]
-[rr]
-&
-&
-&
-\\
-&&&&&
-}
-\ecen
-\eeq
-
-\beq
-P_\nu^2=P_\nu
-\eeq
-
-
 
 \beq
 {\color{green}P_\mu}
@@ -258,32 +264,85 @@ P_\nu^2=P_\nu
 \eeq
 
 \beq
-P_\mu^2=P_\mu
+{\color{blue}P_\nu}
+=\frac{d_\nu}{d_\lam}
+\bcen
+\xymatrix@R=1pc{
+\\
+\ar@[red]
+`r[drr]
+`[ddrr]
+[ddr]
+&
+&
+&
+&
+\\
+&\ar@[green][l]
+&
+&
+&\ar@[green][l]
+\\
+&C^\dagger_\lam
+\ar@2{-}[u]
+\ar@2{-}[d]
+&
+&C_\lam
+\ar@2{-}[u]
+\ar@2{-}[d]
+\ar@[red]
+`l[lu]
+`[uur]
+[uur]
+&
+&
+\\
+&\ar@[blue]
+`l[ld]
+`[drrrr]
+`[rrr]
+`[rr]
+[rr]
+&
+&
+&
+\\
+&&&&&
+}
+\ecen
 \eeq
-The normalization of the projectors $P_\lam, P_\nu, P_\mu$ can be remembered if 
+
+
+
+One can check that these
+operators are projection operators normalized to the dimennsion
+of their rep; i.e., 
+for $\Omega\in\{\lam, \mu, \nu\}$,
+
+\beq
+P_\Omega^2=P_\Omega
+\eeq
+and 
+
+\beq
+\tr(P_\Omega)= d_\Omega
+\eeq
+
+
+The normalization of the projectors $P_\Omega$ can be remembered if 
 one takes the denominator $d_\lam$ and splits it into two factors of $\sqrt{d_\lam}$
 and puts one $\sqrt{d_\lam}$
 under $C_\lam$
 and the other under $C^\dagger_\lam$. Then
 one \qt{trades} $\frac{C_\lam}{\sqrt{d_\lam}}$
 by
-$\frac{C_\nu}{\sqrt{d_\nu}}$
+$\frac{C_\mu}{\sqrt{d_\mu}}$
 or
-$\frac{C_\mu}{\sqrt{d_\mu}}$.
+$\frac{C_\nu}{\sqrt{d_\nu}}$.
 
+Next we define a scaled version of the CG coefficients $C_\lam$
+as follows
 
-
-$
-\trij{\mu}{\lam}{\nu}
-$
-
-
-\sixj{\lam}{\mu}{\nu}{\omega}{\rho}{\s}
-
-arrow directions 
-for specific case being
-considered.
-they can be changed
 
 \beq
 \bcen
@@ -317,47 +376,7 @@ they can be changed
 }
 \ecen
 \eeq
-Note that we are defining $\ger{C}_\lam=T\indices{_\lam^\nu^\mu}$
-so that the $\lam$
-rep is an s-channel 
-for converging reps $\mu$ anf $\nu$.
-When we define the
-generators $T^i_\lam$, the $i$
-(gluon, adj-rep particle) 
-is in a t-channel
-emanating from 
- incoming
-and outgoing def-rep particles.  
-
-\beq
-\bcen
-\xymatrix{
-&&\mu \ar@[green][l]
-\\
-\lam 
-&
-\ger{C}_\lam\ar@[red][l]
-\ar@2{-}[u]
-\ar@2{-}[d]
-\\
-&&\nu\ar@[blue][l]
-}
-\ecen
-\neq
-\bcen
-\xymatrix{
-&&\mu \ar@[green][ldd]
-\\
-\lam 
-&
-\ger{C}_\lam\ar@[red][l]
-\ar@2{-}[u]
-\ar@2{-}[d]
-\\
-&&\nu\ar@[blue][luu]
-}
-\ecen
-\eeq
+The {\bf scaled CG coefficients} $\ger{C}_\lam$ satisfy
 
 
 \beq
@@ -377,13 +396,22 @@ and outgoing def-rep particles.
 &\ar[l]|\s
 }
 \eeq
+Therefore
 
 
 \beq
 \trij{\mu}{\lam}{\nu}=
 \kten{\lam}{\nu}{\mu} d_\lam 
+\label{eq-trij-is}
 \eeq
 
+The projection
+operators $P_\Omega$
+for $\Omega\in\{\lam, \mu, \nu\}$
+can be expressed in a more
+symmetrical form using
+nodes for
+the scaled CG coefficients as follows
 
 \beq
 P_\lam=
@@ -395,8 +423,8 @@ P_\lam=
 &\ar[dl]|\mu
 \\
 &\ger{C}_\lam^\dagger
-\ar[lu]
-\ar[ld]
+\ar[lu]|\mu
+\ar[ld]|\nu
 &\ger{C}_\lam\ar[l]|\lam
 &
 \\
@@ -406,7 +434,7 @@ P_\lam=
 }
 \ecen
 \eeq
-Check that $\tr P_\lam=d_\lam$.
+
 
 \beq
 P_\mu=
@@ -418,8 +446,8 @@ P_\mu=
 &\ar[dl]|\nu
 \\
 &\ger{C}_\mu^\dagger
-\ar[lu]
-\ar[ld]
+\ar[lu]|\nu
+\ar[ld]|\lam
 &\ger{C}_\mu\ar[l]|\mu
 &
 \\
@@ -440,8 +468,8 @@ P_\nu=
 &\ar[dl]|\lam
 \\
 &\ger{C}_\nu^\dagger
-\ar[lu]
-\ar[ld]
+\ar[lu]|\lam
+\ar[ld]|\mu
 &\ger{C}_\nu\ar[l]|\nu
 &
 \\
@@ -452,7 +480,10 @@ P_\nu=
 \ecen
 \eeq
 
-
+The CG series for 
+$V_\mu \otimes V_\nu\rarrow \sum_\lam V_\lam$ can 
+be expressed in terms of
+birdtracks as follows
 \beq
 \bcen
 \xymatrix{
@@ -476,8 +507,8 @@ P_\nu=
 &\ar[dl]|\mu
 \\
 &\ger{C}_\lam^\dagger
-\ar[lu]
-\ar[ld]
+\ar[lu]|\mu
+\ar[ld]|\nu
 &\ger{C}_\lam\ar[l]|\lam
 &
 \\
@@ -487,6 +518,18 @@ P_\nu=
 }
 \ecen
 \eeq
+This CG series
+expresses two {\bf parallel
+channels} as a sum of s-channels.
+
+The CG series for
+$N>2$ parallel channels $V_{\mu_1}\otimes  V_{\mu_2}\otimes \ldots \otimes V_{\mu_N}
+\rarrow \sum_\lam V_\lam$
+is obtained
+by combining pairs of vector spaces
+recursively. The series depends on what vector space pairs are chosen in what order. For example, we can use\footnote{For succinctness, we are dropping the rep labels $\mu, \lam$ from
+$\kappa\indices{_\nu^{\mu\lam}}$, but
+the $\kappa_\nu$ still depends on them.}
 
 \beq
 \bcen
@@ -546,10 +589,7 @@ P_\nu=
 \ecen
 \label{eq-four-to-one-loop}
 \eeq
-Dropping two upper representation labels from
-$\kappa\indices{_\nu^{\mu\lam}}$
-for succinctness, but
-their dependance still there.
+Another possibility is
 
 \beq
 \bcen
@@ -644,6 +684,12 @@ their dependance still there.
 
 
 \section{t-channel to sum of s-channels}
+
+We can express a t-channel
+as a sum over s-channels as follows
+
+
+
 \begin{align}
 \bcen
 \xymatrix{
@@ -703,7 +749,7 @@ their dependance still there.
 &=
 \sum_\lam
 \left[
-S_\lam\left(
+\Phi_\lam\left(
 \bcen
 \xymatrix{
 &\ger{C}^\dagger_\mu
@@ -734,10 +780,10 @@ S_\lam\left(
 \right]
 \label{eq-gen-t-to-sum-of-s}
 \end{align}
-
+where
 
 \begin{align}
-S_\lam\left(
+\Phi_\lam\left(
 \bcen
 \xymatrix{
 &\ger{C}^\dagger_\mu
@@ -771,54 +817,130 @@ d_\lam
 {\trij{\s}{\lam}{\rho}
 \trij{\mu}{\lam}{\nu}
 }
+\label{eq-phi-3j-6j}
 \end{align}
 
-\section{Wigner $3n-j$ coefficients}
+\section{Wigner $3n-j$ coefficients/DAGs}
 
-we will refer to x
-as a $3j$ symbol,
-and to x as a  $6j$
-symbol. Atomic
-physicsists
-also  define
-  $3n-j$ symbols,
+A DAG with no incoming or outgoing arrows is called an {\bf isolated DAG}. Physicists sometimes call it a {\bf vacuum bubble} also.
+On the right hand side of 
+Eq.(\ref{eq-phi-3j-6j}), the isolated DAG 
+with two $\ger{C} $ is called
+a {\bf $3j$ coefficient/DAG},
+and the one with 4 $\ger{C}$ is called
+a {\bf $6j$ coefficient/DAG}.
+So far we seen $3j$ and $6j$
+coefficients/DAGs. Atomic
+physicists
+define
+ {\bf Wigner $3n-j$ coefficients/DAGs},
   for $n=1,2, 3, \dots$.
 They are called that because they
 describe  how to \qt{add} $3n$
 angular momenta $j$.
   There is
-  only one $3j$
-but two $6j$'s .
-five $9-j$s, and so  on.
-We only show 
-one $3j$
-and one $6j$.
+  only one topological distinct $3j$
+DAG but two $6j$ DAGs, 
+five $9j$ DAGs, and so  on.
 
 
-Similar to Eq.(\ref{eq-four-to-one-loop})
+In Chapter \ref{ch-casimir},
+we discussed Casimir suns.
+Next we show that they
+can always be expressed in
+terms of $3j$ and $6j$
+coefficients
+and CG coefficients.
+We proceed as we did in Eq.(\ref{eq-four-to-one-loop})
 but here we use the most general 
-t-channel to sum of s-channels conversion Eq.(\ref{eq-gen-t-to-sum-of-s})
-\beq
+t-channel to sum of s-channels conversion Eq.(\ref{eq-gen-t-to-sum-of-s}).
+
+\begin{align}
 \bcen
-\xymatrix@R=1pc{
-&\ar[l]\ar[dd]&
+\xymatrix@R=.5pc{
+&\ar[l]\ar@{<-}[dd]T^{i_1}&
 \\&&
-\\&\ar[l]\ar[dd]&
+\\&\ar[l]\ar@{<-}[dd]T^{i_2}&
 \\&&
-\\&\ar[l]\ar[dd]&
+\\&\ar[l]\ar@{<-}[dd]T^{i_3}&
 \\&&
-\\&\ar[l]
+\\&\ar[l]T^{i_4}
 \ar`r[ru]
 `[uuuuuu]
 [uuuuuu]
 &
 }
 \ecen
-=
+&=
+\sum_{\lam, \mu}
+{\Phi_\lam}
+{\Phi_\mu}
+\bcen
+\xymatrix@R=1pc{
+&\ar[l]
+&
+&
+\\
+&\ger{C}_\lam^\dagger
+\ar@2{-}[u]
+\ar@2{-}[d]
+&\ar[l]
+\ger{C}_\lam
+&
+\\
+&\ar[l]
+&
+&
+\\
+&
+&\ar@{<-}[d]T^{i_3}\ar[ll]
+\ar[uu]
+&
+\\
+&&
+\ar`r[ru]`[uuu][uuu]T^{i_4}
+\ar[ll]
+&
+}
+\ecen
+\\
+&=
+\sum_{\lam, \mu}
+{\Phi_\lam}
+{\Phi_\mu}
+\bcen
+\xymatrix@R=1pc{
+&\ar[l]
+&
+&
+\\
+&\ger{C}_\lam^\dagger
+\ar@2{-}[u]
+\ar@2{-}[d]
+&\ar[l]&
+\\
+&\ar[l]
+&\ger{C}_\mu^\dagger
+\ar@2{-}[u]
+\ar@2{-}[d]
+&\ar@{<-}[dd]\ger{C}_\mu
+\ar[l]
+\\
+&&\ar[ll]
+&
+&
+\\
+&&&\ar[lll]
+\ar`r[ru]`[uu][uu]T^{i_4}
+&
+}
+\ecen
+\\
+&= 
 \sum_{\lam, \mu, \nu}
-{S_\lam}
-{S_\mu}
-{S_\nu}
+{\Phi_\lam}
+{\Phi_\mu}
+{\Phi_\nu}
 \bcen
 \xymatrix@R=1pc{
 &\ar[l]
@@ -856,65 +978,4 @@ t-channel to sum of s-channels conversion Eq.(\ref{eq-gen-t-to-sum-of-s})
 &
 }
 \ecen
-\eeq
-
-\beq
-\bcen
-\xymatrix@R=1pc{
-&\ar[l]\ar[dd]&
-\\&&
-\\&\ar[l]\ar[dd]&
-\\&&
-\\&\ar[l]\ar[dd]&
-\\&&
-\\&\ar[l]
-\ar`r[ru]
-`[uuuuuu]
-[uuuuuu]
-&
-}
-\ecen
-=
-\sum_{\lam, \mu}
-{S_\lam}
-{S_\mu}
-\bcen
-\xymatrix@R=1pc{
-&\ar[l]
-&
-&
-\\
-&\ger{C}_\lam^\dagger
-\ar@2{-}[u]
-\ar@2{-}[d]
-&\ar[l]&
-\\
-&\ar[l]
-&\ger{C}_\mu^\dagger
-\ar@2{-}[u]
-\ar@2{-}[d]
-&\ar[dd]\ar[l]
-\\
-&&\ar[ll]
-&
-&
-\\
-&&&\ar[lll]
-\ar`r[ru]`[uu][uu]
-&
-}
-\ecen
-\eeq
-
-\beq
-3n-j \text{ coefficient}
-=
-\sum (\text{product of $S_\lam$'s})
-(\text{tree graph with one-point loop})
-\eeq
-
-4-point loop $\rarrow$ one-point loop
-
-one-point loop , self energy loop?
-
-zero point loop =  vacuum bubble
+\end{align}

@@ -3,13 +3,16 @@
 This chapter is based on
 Cvitanovic's Birdtracks book Ref.\cite{birdtracks-book}.
 
-Suppose that for some $M\in\CC^{d\times d}$, we have
+Suppose that  $M\in\CC^{d\times d}$ is a Hermitian matrix. Then we have
 
 \beq
 M = C^\dagger D C
 \eeq
 where $D$ is a diagonal matrix and $C\in \CC^{d\times d}$ is unitary.
-Then one can partition 
+
+
+
+One can partition 
 $C$ into rectangular submatrices $C_\lam$ that have  $d_\lam$ rows with $d_\lam < d$, 
 such that we have one $C_\lam$
 for each eigenvalue $\lam$ of $C$.
@@ -74,7 +77,40 @@ C^{d\times d}
 \right]^{d\times d}
 \eeq
 The matrices $C_\lam$
-are called the {\bf Clebsch-Gordan Coefficient} (CGC) matrices.
+are called the {\bf Clebsch-Gordan (CG) coefficients} for $M$.
+
+It follows that
+
+\beq
+M = \sum_\lam 
+\lam C^\dagger_\lam
+C_\lam=
+\sum_\lam C^\dagger_\lam
+C_\lam M
+\eeq
+
+\beq
+I^{d\times d} = \sum_\lam C^\dagger_\lam
+C_\lam
+\label{eq-cb-series-simple}
+\eeq
+We will call Eq.(\ref{eq-cb-series-simple}) the {\bf Clebsch-Gordan (CG) series}
+for $M$.
+
+Since we are assuming $M$ is Hermitian,
+its eigenvalues are real. 
+Thus, we can absorb
+the eigenvalue $\lam$ into the CG
+coefficients   by defining
+
+\beq
+\calc_\lam =\sqrt{\lam}C_\lam
+\eeq
+and writing
+
+\beq
+M= \sum_\lam \calc^\dagger_\lam \calc_\lam
+\eeq
 
 
 
