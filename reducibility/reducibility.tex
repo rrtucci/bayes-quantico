@@ -1,8 +1,7 @@
 \chapter{Reducibility of Representations}
 \label{ch-reducibility}
 
-This chapter is based on
-Ref.\cite{birdtracks-book}.
+This chapter is based on Cvitanovic's Birdtracks book Ref. \cite{birdtracks-book}.
 
 \section{Eigenvalue Projectors}
 
@@ -35,8 +34,8 @@ then all its eigenvalues  are real. (because $\lam_i =
 
 
 
-If $M$ is a Hermitian, then there exists
-a matrix $C$ that is a unitary ($CC^\dagger = C^\dagger C =1$)
+If $M$ is a Hermitian matrix, then there exists
+a matrix $C$ that is a unitary matrix ($CC^\dagger = C^\dagger C =1$)
 and diagonalizes $M$
 
 \beq
@@ -71,6 +70,7 @@ where
 D_{\lam_i} =
 \text{diag}\underbrace{(\lam_i,\lam_i, \dots,\lam_i)}_{d_i\text{ times}}
 \eeq
+and
 
 \beq
 d=\sum_{i=1}^r d_i
@@ -92,7 +92,7 @@ CMC^\dagger =
 Note that for $d=2$,
 
 \beq
-C P_1 C^\dagger=
+P_1=
 \left[
 \begin{array}{cc}
 1&0
@@ -105,7 +105,7 @@ C P_1 C^\dagger=
 \eeq
 
 \beq
-CP_2 C^\dagger =
+P_2 =
 \left[
 \begin{array}{cc}
 0&0
@@ -116,7 +116,7 @@ CP_2 C^\dagger =
 =
 \frac{CMC^\dagger-\lam_1}{\lam_2-\lam_1}
 \eeq
-$P_1$ and $P_2$ are a 
+and $P_1$ and $P_2$ are a 
 set of complete
 orthogonal projection operators
 
@@ -138,16 +138,16 @@ If $I^{d_i\times d_i}$
 is the $d_i$
 dimensional unit matrix,
 then
-\beqa
-P_i &=&
-C^\dagger
-diag(0,\ldots,0, I^{d_i\times d_i},0, \dots, 0)C
-\\
-&=&
+
+\beq
+P_i =
+diag(0,\ldots,0, I^{d_i\times d_i},0, \dots, 0)
+=
 \prod_{j\neq i}
 \frac{M -\lam_j}{\lam_i -\lam_j}
-\eeqa
-As for $d=2$, the $P_i$
+\label{eq-pi-gen-formula}
+\eeq
+and the $P_i$
 just defined are 
 a complete set of 
 orthogonal projection operators:
@@ -164,21 +164,15 @@ P_iP_j =P_i\delta(i,j)
 for all $i,j\in \ZZ_{[1,r]}$
 
 Note that
-\beqa
-d_i &=&\tr [C^\dagger P_i C]
-\\
-&=& \tr P_i
-\eeqa
+\beq
+d_i = \tr P_i
+\eeq
 
-Note that the $P_i$'s are Hermitian
-($P_i^\dagger = P_i$)
-because $M$
-is Hermitian and
-its eigenvalues are real.
 
 \section{$[P_i, M]=0$ consequences}
 
-Note that for any $i$,
+From Eq.(\ref{eq-pi-gen-formula}), it is
+clear that
 $P_i$ and $M$
 commute
 

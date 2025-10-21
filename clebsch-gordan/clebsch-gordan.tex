@@ -3,6 +3,62 @@
 This chapter is based on
 Cvitanovic's Birdtracks book Ref.\cite{birdtracks-book}.
 
+Recall that if $\ket{x}$ for
+$x\in val(\rvx)$ is a complete, orthonormal
+basis in Quantum Mechanics, then
+
+\beq
+\av{x|y} =  \delta(x, y)
+\quad
+\text{(orthonormality)}
+\eeq
+and
+
+\beq
+\sum_x \ket{x}\bra{x} = 1
+\quad
+\text{(completeness)}
+\eeq
+Furthermore, if we define
+
+\beq
+\pi_x = \ket{x}\bra{x}
+\eeq
+then $\pi_x$ is a
+is a projection operator so
+
+\beq
+\pi_x\pi_x=\pi_x
+\eeq
+and
+
+\beq
+\pi_x \ket{y}=  \ket{y}
+\delta(x, y),\quad
+\bra{y}\pi_x = \bra{y}
+\delta(x, y)
+\eeq
+
+Below, we will
+define matrices $C_\lam$ and $C^\dagger_\lam$.
+If we identify $C_\lam$
+with $\bra{x}$,
+and $C^\dagger_\lam$
+with
+$\ket{x}$\footnote{
+As a mnemonic, I like to think of 
+$C_\lam$ as a rounded 
+out bra $\bra{x}$
+and of $C^\dagger_\lam$
+as the corresponding ket $\ket{x}$},
+then $C_\lam$ and $C_\lam ^\dagger$
+satisfy identities
+similar to those satisfied by $\ket{x}$ and $\bra{x}$. 
+We will show that
+in this chapter.
+
+
+
 Suppose that  $M\in\CC^{d\times d}$ is a Hermitian matrix. Then we have
 
 \beq
@@ -33,7 +89,7 @@ C_\lam^{d_\lam\times d}
 \end{array}
 \right]^{d \times d}
 =
-\left[
+\underbrace{\left[
 \begin{array}{ccc}
 0
 &0
@@ -47,20 +103,20 @@ C_\lam^{d_\lam\times d}
 &0
 &0
 \end{array}
-\right]^{d\times d}
+\right]^{d\times d}}_{P_\lam}
 C^{d\times d}
 \eeq
 \beq
 \left[
 \begin{array}{ccc}
 0
-&(C^\dagger)_\lam^{d\times d_\lam}
+&(C^\dagger_\lam)^{d\times d_\lam}
 &0
 \end{array}
 \right]^{d \times d}
 =
 (C^\dagger)^{d\times d}
-\left[
+\underbrace{\left[
 \begin{array}{ccc}
 0
 &0
@@ -74,26 +130,51 @@ C^{d\times d}
 &0
 &0
 \end{array}
-\right]^{d\times d}
+\right]^{d\times d}}_{P_\lam}
 \eeq
 The matrices $C_\lam$
 are called the {\bf Clebsch-Gordan (CG) coefficients} for $M$.
 
-It follows that
+Hence
 
 \beq
-M = \sum_\lam 
+P_\lam C= P_\lam C_\lam,\quad
+C^\dagger P_\lam = 
+C^\dagger_\lam P_\lam
+\eeq
+
+\beqa
+C_\lam  C^\dagger_\lam &=&
+P_\lam C C^\dagger P_\lam
+\\
+&=&
+P_\lam
+\eeqa
+
+
+\beqa
+M &=& C^\dagger D C
+\\
+&=& 
+C^\dagger\left(\sum_\lam \lam P_\lam 
+\right)C
+\\
+&=&\sum_\lam
 \lam C^\dagger_\lam
-C_\lam=
-\sum_\lam C^\dagger_\lam
-C_\lam M
-\eeq
-
-\beq
-I^{d\times d} = \sum_\lam C^\dagger_\lam
 C_\lam
+\eeqa
+
+\beqa
+I^{d\times d} &=&
+C^\dagger C
+\\
+&=&
+ \sum_\lam C^\dagger P_\lam C
+\\
+&=&
+ \sum_\lam C^\dagger_\lam  C_\lam
 \label{eq-cb-series-simple}
-\eeq
+\eeqa
 We will call Eq.(\ref{eq-cb-series-simple}) the {\bf Clebsch-Gordan (CG) series}
 for $M$.
 
@@ -187,162 +268,6 @@ of $\mu_i$, and
 each $a$ labels
 a member of $\lam$.
 
-Recall that if $\ket{x}$ for
-$x\in val(\rvx)$ is a complete, orthonormal
-basis in Quantum Mechanics, then
-
-\beq
-\av{x|y} =  \delta(x, y)
-\quad
-\text{(orthonormality)}
-\eeq
-and
-
-\beq
-\sum_x \ket{x}\bra{x} = 1
-\quad
-\text{(completeness)}
-\eeq
-Furthermore, if we define
-
-\beq
-\pi_x = \ket{x}\bra{x}
-\eeq
-then $\pi_x$ is a
-is a projection operator so
-
-\beq
-\pi_x\pi_x=\pi_x
-\eeq
-and
-
-\beq
-\pi_x \ket{y}=  \ket{y}
-\delta(x, y),\quad
-\bra{y}\pi_x = \bra{y}
-\delta(x, y)
-\eeq
-
-
-If we identify $C_\lam$
-with $\bra{x}$,
-and $C^\dagger_\lam$
-with
-$\ket{x}$\footnote{
-As a mnemonic, I like to think of 
-$C_\lam$ as a rounded 
-out bra $\bra{x}$
-and of $C^\dagger_\lam$
-as the corresponding ket $\ket{x}$},
-then $C_\lam$ and $C_\lam ^\dagger$
-satisfy analogous identities:
-
-
-
-
-\beq
-\begin{array}{l}
-\myboxed{
-(C_\lam)\indices{
-_a
-^{rev(b^{:nb})}
-} 
-(C^\dagger _\mu)\indices{
-^{a'}_{b^{:nb}} 
-}
-= \delta(\lam, \mu)
-\delta_{a}^{a'},
-\quad
-C_\lam C_\mu^\dagger =
-\delta(\mu, \lam)
-}
-\\
-\bcen
-\xymatrix@C=1pc@R=1pc{
-&&\sum b_1\ar[dl]
-\\
-a
-& C_\lam\ar[l]
-&
-\sum b_2\ar[l]
-\\
-&&\sum b_{nb}\ar[lu]
-}
-\xymatrix@C=1pc@R=1pc{
-\\
-&(C^\dagger_\mu)
-\ar[lu]\ar[l]\ar[ld]
-& a'\ar[l]
-\\
-&
-}
-\ecen =
-\delta(\mu, \lam)
-\xymatrix{
-a
-&a'
-\ar[l]|\bullet
-}
-\end{array}\eeq
-
-\beq
-\begin{array}{l}
-\myboxed{
-\sum_\lam
-(C_\lam^\dagger)\indices{
-^a
-_{b^{:nb}}
-}
-(C_\lam)
-\indices{_a
-^{rev((b')^{:nb})}
-}=
-\delta^{rev((b')^{:nb})}_{b^{:nb}}
-,\quad
-\sum_\lam C^\dagger_\lam C_\lam = 1
-}
-\\
-\sum_\lam
-\bcen
-\xymatrix@C=1pc@R=1pc{
-b_1
-\\
-b_2
-&(C^\dagger_\lam)
-\ar[lu]\ar[l]\ar[ld]
-& \sum a\ar[l]
-\\
-b_{nb}}
-\xymatrix@C=1pc@R=1pc{
-&
-&b'_1\ar[dl]
-\\
-& C_\lam\ar[l]
-&b'_2\ar[l]
-\\
-&
-&b'_{nb}\ar[lu]
-}
-\ecen
-=
-\bcen
-\xymatrix@C=1pc@R=1pc{
-b_1
-&\bullet
-&b'_1\ar[ll]
-\\
-b_2
-&\bullet
-&b'_2
-\ar[ll]
-\\
-b_{nb}
-&\bullet
-&b'_{nb}\ar[ll]
-}
-\ecen
-\end{array}
-\eeq
 
 \beq
 \begin{array}{l}
@@ -469,4 +394,111 @@ b_{nb}
 \end{array}
 \eeq
 
+
+
+
+
+\beq
+\begin{array}{l}
+\myboxed{
+(C_\lam)\indices{
+_a
+^{rev(b^{:nb})}
+} 
+(C^\dagger _\mu)\indices{
+^{a'}_{b^{:nb}} 
+}
+= \delta(\lam, \mu)
+\delta_{a}^{a'},
+\quad
+C_\lam C_\mu^\dagger =
+\delta(\mu, \lam)
+}
+\\
+\bcen
+\xymatrix@C=1pc@R=1pc{
+&&\sum b_1\ar[dl]
+\\
+a
+& C_\lam\ar[l]
+&
+\sum b_2\ar[l]
+\\
+&&\sum b_{nb}\ar[lu]
+}
+\xymatrix@C=1pc@R=1pc{
+\\
+&(C^\dagger_\mu)
+\ar[lu]\ar[l]\ar[ld]
+& a'\ar[l]
+\\
+&
+}
+\ecen =
+\delta(\mu, \lam)
+\xymatrix{
+a
+&a'
+\ar[l]|\bullet
+}
+\end{array}\eeq
+
+\beq
+\begin{array}{l}
+\myboxed{
+\sum_\lam
+(C_\lam^\dagger)\indices{
+^a
+_{b^{:nb}}
+}
+(C_\lam)
+\indices{_a
+^{rev((b')^{:nb})}
+}=
+\delta^{rev((b')^{:nb})}_{b^{:nb}}
+,\quad
+\sum_\lam C^\dagger_\lam C_\lam = 1
+}
+\\
+\sum_\lam
+\bcen
+\xymatrix@C=1pc@R=1pc{
+b_1
+\\
+b_2
+&(C^\dagger_\lam)
+\ar[lu]\ar[l]\ar[ld]
+& \sum a\ar[l]
+\\
+b_{nb}}
+\xymatrix@C=1pc@R=1pc{
+&
+&b'_1\ar[dl]
+\\
+& C_\lam\ar[l]
+&b'_2\ar[l]
+\\
+&
+&b'_{nb}\ar[lu]
+}
+\ecen
+=
+\bcen
+\xymatrix@C=1pc@R=1pc{
+b_1
+&\bullet
+&b'_1\ar[ll]
+\\
+b_2
+&\bullet
+&b'_2
+\ar[ll]
+\\
+b_{nb}
+&\bullet
+&b'_{nb}\ar[ll]
+}
+\ecen
+\end{array}
+\eeq
 
