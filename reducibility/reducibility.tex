@@ -19,11 +19,12 @@ defined as
 \beq
 cp(\lam)\eqdef \det(M-\lam)= \prod_{i=1}^r (\lam-\lam_i)^{d_i}
 \eeq
-It must satisfy
+It satisfies
 
 \beq
 cp(\lam) =0
 \eeq
+for $\lam=\lam_i$.
 
 Note 
 that if $M$ is Hermitian 
@@ -34,8 +35,8 @@ then all its eigenvalues  are real. (because $\lam_i =
 
 
 
-If $M$ is a Hermitian matrix, then there exists
-a matrix $C$ that is a unitary matrix ($CC^\dagger = C^\dagger C =1$)
+If $M$ is Hermitian, then there exists
+a matrix $C$ that is unitary  ($CC^\dagger = C^\dagger C =1$)
 and diagonalizes $M$
 
 \beq
@@ -119,7 +120,7 @@ CMC^\dagger =
 \end{array}
 \right]
 \eeq
-Note that for $d=2$,
+so
 
 \beq
 \pi_1=
@@ -241,6 +242,7 @@ f(M) P_i = f(\lam_i)P_i \;
 \text{(no $i$ sum)}
 \eeq
 
+\section{Multiple invariant matrices}
 Suppose 
 $M^{(1)}, M^{(2)}\in \CC^{d\times d}$
 are Hermitian matrices that
@@ -258,9 +260,16 @@ If $M^{(1)}$ and $M^{(2)}$ don't
 commute, let $P^{(1)}_i$ be an eigenvalue 
 projection operator of $M^{(1)}$. Then replace $M^{(2)}$ by $P^{(1)}_i M^{(2)}P_i^{(1)}$. Now
 
-\beq
-[M^{(1)}, P^{(1)}_iM^{(2)}P^{(1)}_i]  =0
-\eeq
+\beqa
+[M^{(1)}, P^{(1)}_iM^{(2)}P^{(1)}_i]  
+&=&
+\sum_j\lam_j^{(1)}
+[P_j^{(1)}, P_i^{(1)}M^{(2)}
+P_i^{(1)}]
+\\
+&=&
+0
+\eeqa
 
 \section{$[G, M]=0$  consequences}
 
@@ -348,7 +357,7 @@ decomposition of $V^d$ into irreps. An example of such a decomposition is the de
 \beq
 \begin{array}{l}
 \myboxed{
-1 = \frac{1}{n} \twoarrows + P_{Adj} +
+1 = \frac{1}{n} P_{S} + P_{Adj} +
 \sum_{\lam \neq Adj}P_\lam,
 }
 \\
