@@ -40,18 +40,19 @@ and
 \eeq
 
 Below, we will
-define matrices $C_\lam$ and $C^\dagger_\lam = D_\lam$.
-If we identify $C_\lam$
+define matrices $C_\lam=\bra{\lam}$ and $C^\dagger_\lam = \ket{\lam}$.
+If we identify $\bra{\lam}$
 with $\bra{x}$,
-and $C^\dagger_\lam=D_\lam$
+and $\ket{\lam}$
 with
-$\ket{x}$\footnote{
-As a mnemonic, I like to think of 
-$C_\lam$ as a rounded 
-out bra $\bra{x}$
-and of $C^\dagger_\lam=D_\lam$
-as a rounded out  $\ket{x}$},
-then $C_\lam$ and $D_\lam$
+$\ket{x}$
+%\footnote{
+%As a mnemonic, I like to think of 
+%$\bra{\lam}$ as a rounded 
+%out bra $\bra{x}$
+%and of $C^\dagger_\lam=\ket{\lam}$
+%as a rounded out  $\ket{x}$}
+, then $\bra{\lam}$ and $\ket{\lam}$
 satisfy identities
 similar to those satisfied by $\bra{x}$ and $\ket{x}$. 
 We will show this
@@ -62,19 +63,19 @@ in this chapter.
 Suppose that  $M\in\CC^{d\times d}$ is a Hermitian matrix. Then we have
 
 \beq
-M = D \Lam C
+M = C^\dagger \Lam C
 \eeq
 where 
-$C\in \CC^{d\times d}$ is a unitary matrix, $D=C^\dagger$, and $\Lam$ is a diagonal matrix.
+$C\in \CC^{d\times d}$ is a unitary matrix, and $\Lam$ is a diagonal matrix.
 
 
 
 One can partition 
-$C$ into rectangular submatrices $C_\lam$ that have  $d_\lam$ rows with $d_\lam < d$, 
-such that we have one $C_\lam$
+$C$ into rectangular submatrices $\bra{\lam}$ that have  $d_\lam$ rows with $d_\lam < d$, 
+such that we have one $\bra{\lam}$
 for each eigenvalue $\lam$ of $C$.
 Likewise, we can partition 
-$D$ into rectangular submatrices $C^\dagger_\lam$ that have $d_\lam$ columns with $d_\lam < d$, such that we have one $D_\lam$
+$C^\dagger$ into rectangular submatrices $C^\dagger_\lam$ that have $d_\lam$ columns with $d_\lam < d$, such that we have one $\ket{\lam}$
 for each eigenvalue $\lam$ of $C$. Thus, if $I^{d_\lam\times d_\lam}$
 is the $d_\lam\times d_\lam$
 identity matrix,
@@ -111,12 +112,12 @@ C^{d\times d}
 \left[
 \begin{array}{ccc}
 0
-&(D_\lam)^{d\times d_\lam}
+&(C^\dagger_\lam)^{d\times d_\lam}
 &0
 \end{array}
 \right]^{d \times d}
 =
-(D)^{d\times d}
+(C^\dagger)^{d\times d}
 \underbrace{\left[
 \begin{array}{ccc}
 0
@@ -133,7 +134,12 @@ C^{d\times d}
 \end{array}
 \right]^{d\times d}}_{\pi_\lam}
 \eeq
-The matrices $C_\lam$
+Henceforth in this chapter, we will use
+$C_\lam$ and $\bra{\lam}$ interchangeably.
+Likewise, we will
+use $C^\dagger_\lam$ and
+$\ket{\lam}$ interchangeably
+The matrices $C_\lam=\bra{\lam}$
 are called the {\bf Clebsch-Gordan (CG) coefficients} for $M$.
 
 The matrices $\pi_\lam$  
@@ -148,14 +154,14 @@ operators:
 We now have
 
 \beq
-\pi_\lam C=  C_\lam,\quad
-D \pi_\lam = 
-D_\lam 
+\pi_\lam C=  \bra{\lam},\quad
+C^\dagger \pi_\lam = 
+\ket{\lam} 
 \eeq
 
 \beqa
-C_\lam  D_\lam &=&
-\pi_\lam C D \pi_\lam
+\bra{\lam}  \ket{\lam} &=&
+\pi_\lam C C^\dagger \pi_\lam
 \\
 &=&
 \pi_\lam
@@ -163,26 +169,26 @@ C_\lam  D_\lam &=&
 
 
 \beqa
-M &=& D \Lam C
+M &=& C^\dagger \Lam C
 \\
 &=& 
-D\left(\sum_\lam \lam \pi_\lam 
+C^\dagger\left(\sum_\lam \lam \pi_\lam 
 \right)C
 \\
 &=&\sum_\lam
-\lam D_\lam
-C_\lam
+\lam \ket{\lam}
+\bra{\lam}
 \eeqa
 
 \beqa
 I^{d\times d} &=&
-D C
+C^\dagger C
 \\
 &=&
- \sum_\lam D \pi_\lam C
+ \sum_\lam C^\dagger \pi_\lam C
 \\
 &=&
- \sum_\lam  \underbrace {D_\lam  C_\lam}_{P_\lam}
+ \sum_\lam  \underbrace {\ket{\lam}  \bra{\lam}}_{P_\lam}
 \label{eq-cb-series-simple}
 \eeqa
 We will call Eq.(\ref{eq-cb-series-simple}) the {\bf Clebsch-Gordan (CG) series}
@@ -190,12 +196,12 @@ for $M$.
 
 So far, we have established  that
  \beqa
-P_\lam&=&D_\lam C_\lam= D\pi_\lam C, \quad  
+P_\lam&=&\ket{\lam} \bra{\lam}= C^\dagger\pi_\lam C, \quad  
 \\
-\pi_\lam&=&C_\lam D_\lam
+\pi_\lam&=&\bra{\lam} \ket{\lam}
 \\
-1 &=&\sum_\lam \underbrace{D_\lam C_\lam}_{P_\lam}=
-\sum_\lam \underbrace{C_\lam D_\lam}_{\pi_\lam}
+1 &=&\sum_\lam \underbrace{\ket{\lam} \bra{\lam}}_{P_\lam}=
+\sum_\lam \underbrace{\bra{\lam} \ket{\lam}}_{\pi_\lam}
 \eeqa
 In fact, the
  $P_\lam$ form a complete orthogonal set of
@@ -210,16 +216,16 @@ P_\lam \delta(\mu, \nu)
 Whereas the $\pi_\lam$ satisfy
 
 \beq
-\pi_\lam C= \pi_\lam C_\lam,\quad
-D \pi_\lam = 
-D_\lam \pi_\lam
+\pi_\lam C= \bra{\lam},\quad
+C^\dagger \pi_\lam = 
+\ket{\lam} 
 \eeq
 the $P_\lam$ satisfy
 
 \beq
-CP_\lam= C_\lam P_\lam ,\quad
-P_\lam D  = 
-P_\lam D_\lam
+CP_\lam= \bra{\lam} ,\quad
+P_\lam C^\dagger  = 
+\ket{\lam}
 \eeq
 
 Since we are assuming $M$ is Hermitian,
@@ -229,7 +235,7 @@ the eigenvalue $\lam$ into the CG
 coefficients   by defining
 
 \beq
-\calc_\lam =\sqrt{\lam}C_\lam
+\calc_\lam =\sqrt{\lam}\bra{\lam}
 \eeq
 and writing
 
@@ -250,7 +256,7 @@ Now define the birdtracks
 
 
 \beq
-(C_\lam)\indices{
+(\bra{\lam})\indices{
 _{a}^{rev(b^{:nb})}
 }=
 \bcen
@@ -258,7 +264,7 @@ _{a}^{rev(b^{:nb})}
 &&\mu_1 b_1\ar[dl]
 \\
 \lam a
-& C_\lam\ar@[green][l]
+& \bra{\lam}\ar@[green][l]
 &\mu_2 b_2\ar[l]
 \\
 &&\mu_{nb} b_{nb}\ar[lu]
@@ -270,7 +276,7 @@ and
 
 
 \beq
-(D_\lam)
+(\ket{\lam})
 \indices{
 ^{a}_{b^{:nb}}
 }=
@@ -279,7 +285,7 @@ and
 \mu_1 b_1
 \\
 \mu_2 b_2
-&(D_\lam)
+&(\ket{\lam})
 \ar[lu]\ar[l]\ar[ld]
 &\lam a\ar@[green][l]
 \\
@@ -296,8 +302,8 @@ stated explicitly;
 i.e., no implicit summations
 over repeated Greek letters.
 
-On the other hand, the Latin letter indices $b_i, a$ of $C_\lam$
-and $D_\lam$
+On the other hand, the Latin letter indices $b_i, a$ of $\bra{\lam}$
+and $\ket{\lam}$
 may be lowered or raised and their arrows
 changed from outgoing to  incoming or vice versa. Furthermore,
 we will use implicit
@@ -316,7 +322,7 @@ a member of $\lam$.
 \beq
 \begin{array}{l}
 \myboxed{
-(C_\lam)\indices{
+(\bra{\lam})\indices{
 _a
 ^{rev((b')^{:nb})}
 }
@@ -325,20 +331,20 @@ _{(b')^{:nb}}
 ^{rev(b^{:nb})}
 }=
 \delta(\mu,\lam) 
-(C_\mu)\indices{
+(\bra{\mu})\indices{
 _a
 ^{rev(b^{:nb})}
 }
 ,\quad
-C_\lam P_\mu =
-\delta(\mu,\lam) C_\mu}
+\bra{\lam} P_\mu =
+\delta(\mu,\lam) \bra{\mu}}
 \\
 \bcen
 \xymatrix@C=1pc@R=1pc{
 &
 &\sum b'_1\ar[dl]
 \\
-a& C_\lam\ar[l]
+a& \bra{\lam}\ar[l]
 &\sum b'_2\ar[l]
 \\
 &
@@ -364,7 +370,7 @@ a& C_\lam\ar[l]
 &
 &b_1\ar[dl]
 \\
-a& C_\lam\ar[l]
+a& \bra{\lam}\ar[l]
 &b_2\ar[l]
 \\
 &
@@ -382,18 +388,18 @@ a& C_\lam\ar[l]
 _{b^{:nb}}
 ^{rev((b')^{:nb})}
 }
-(D_\lam)\indices{
+(\ket{\lam})\indices{
 ^a
 _{(b')^{:nb}}
 }=
 \delta(\mu, \lam) 
-(D_\mu)\indices{
+(\ket{\mu})\indices{
 ^a
 _{b^{:nb}}
 }
 ,\quad
-P_\mu D_\lam=
-\delta(\mu, \lam) D_\mu}
+P_\mu \ket{\lam}=
+\delta(\mu, \lam) \ket{\mu}}
 \\
 \bcen
 \xymatrix@C=1pc@R=1pc{
@@ -414,7 +420,7 @@ b_{nb}
 \ecen\bcen
 \xymatrix@C=1pc@R=2pc{
 \\
-&(D_\lam)
+&(\ket{\lam})
 \ar[lu]\ar[l]\ar[ld]
 & a\ar[l]
 \\
@@ -428,7 +434,7 @@ b_{nb}
 b_1
 \\
 b_2
-&(D_\lam)
+&(\ket{\lam})
 \ar[lu]\ar[l]\ar[ld]
 & a\ar[l]
 \\
@@ -445,17 +451,17 @@ b_{nb}
 \beq
 \begin{array}{l}
 \myboxed{
-(C_\lam)\indices{
+(\bra{\lam})\indices{
 _a
 ^{rev(b^{:nb})}
 } 
-(D _\mu)\indices{
+(\ket{\mu})\indices{
 ^{a'}_{b^{:nb}} 
 }
 = \delta(\lam, \mu)
 \delta_{a}^{a'},
 \quad
-C_\lam D_\mu =
+\bra{\lam} \ket{\mu} =
 \delta(\mu, \lam)
 }
 \\
@@ -464,7 +470,7 @@ C_\lam D_\mu =
 &&\sum b_1\ar[dl]
 \\
 a
-& C_\lam\ar[l]
+& \bra{\lam}\ar[l]
 &
 \sum b_2\ar[l]
 \\
@@ -472,7 +478,7 @@ a
 }
 \xymatrix@C=1pc@R=1pc{
 \\
-&(D_\mu)
+&(\ket{\mu})
 \ar[lu]\ar[l]\ar[ld]
 & a'\ar[l]
 \\
@@ -491,17 +497,17 @@ a
 \begin{array}{l}
 \myboxed{
 \sum_\lam
-(D_\lam)\indices{
+(\ket{\lam})\indices{
 ^a
 _{b^{:nb}}
 }
-(C_\lam)
+(\bra{\lam})
 \indices{_a
 ^{rev((b')^{:nb})}
 }=
 \delta^{rev((b')^{:nb})}_{b^{:nb}}
 ,\quad
-\sum_\lam D_\lam C_\lam = 1
+\sum_\lam \ket{\lam} \bra{\lam} = 1
 }
 \\
 \sum_\lam
@@ -510,7 +516,7 @@ _{b^{:nb}}
 b_1
 \\
 b_2
-&(D_\lam)
+&(\ket{\lam})
 \ar[lu]\ar[l]\ar[ld]
 & \sum a\ar[l]
 \\
@@ -519,7 +525,7 @@ b_{nb}}
 &
 &b'_1\ar[dl]
 \\
-& C_\lam\ar[l]
+& \bra{\lam}\ar[l]
 &b'_2\ar[l]
 \\
 &
