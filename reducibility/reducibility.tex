@@ -286,44 +286,37 @@ the projection operators of $M$, then $P_i=f_i(M)$ so
 [G, P_i]=0
 \eeq
 for all $G\in \calg$ and $i$.
-
+Hence,
 
 \beq
 G = 1G1 =\sum_i\sum_j P_i G P_j
 =
 \sum_j \underbrace{P_j G P_j}_
-{\eqdef G_j}
+{\eqdef G'_j}
 \eeq
 
-\begin{claim}
-\beq
- G = C^\dagger
-diag(G_1, G_2, \ldots)C
-\eeq
+
+Since $P_i = C^\dagger  \pi_i C$,
 
 \beq
-G=
-\sum_i
-C^\dagger_i
-G_i C_i 
+[CGC^\dagger, \pi_i]=0
 \eeq
-where the matrices $C_i$
-are the Clebsch Gordan 
-coefficients of $M$ (see Ch. \ref{ch-clebsch-gordan})
-\end{claim}
-\proof
+Hence
 
 \beq
-C_i G C^\dagger_i = 
-\sum_j 
-C_i P_jG P_j C_i^\dagger
-=C_i G_i C_i^\dagger
-= G_i
+CGC^\dagger =
+1G1 =\sum_i\sum_j \pi_i CGC^\dagger \pi_j= \sum_j\underbrace{  \pi_j CGC^\dagger \pi_j}_
+{\eqdef G_j}=diag(G_1, G_2, \ldots, G_r)
 \eeq
-\qed
+
+Note that
+
+\beq
+C^\dagger G_j C = G_j'
+\eeq
 
 
-A rep-matrix $G_i$ acts only
+A rep-matrix $G'_i$ acts only
 on a $d_i$ dimensional vector space $V^{d_i}=P_i V^d$.
 In this way, an invariant
 matrix $M\in \CC^{d\times d}$
@@ -342,7 +335,7 @@ V_2^{d_2}
 \oplus 
 V_r^{d_r}
 \eeq
-If a rep-matrix $G_i$ cannot itself be
+If a rep-matrix $G'_i$ cannot itself be
 reduced further, it is said to 
 be an {\bf irreducible representation (irrep)}.
 
