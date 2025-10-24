@@ -253,7 +253,8 @@ dim(P_{adj})=\tr P_{adj} &=&
 
 \hrule
 
-
+We will denote
+the generators $T_i$ of $SU(n)$ by
 
 
 \beq
@@ -266,10 +267,13 @@ a&T^i\ar[l]&b\ar[l]
 }
 \ecen
 \eeq
+we will assume that
+they are  Hermitian
 
 \beq
 T_i^\dagger = T_i
 \eeq
+and satisfy
 
 \beq
 \begin{array}{l}
@@ -289,8 +293,13 @@ i&\ar@{~}[l]i
 }
 \end{array}
 \eeq
-Usually set $\kappa=1$
+Usually, we set $\kappa=1$
+and, if necessary, restore the $\kappa$'s at
+the end by dimensional
+analysis. (Replace each $T_i$
+in a $\kappa$-less equation by $T_i/\sqrt{\kappa}$.)
 
+The adjoint projection operator for $SU(n)$ is
 \beq
 \bcen
 \xymatrix@R=1pc@C=1pc{
@@ -320,7 +329,8 @@ Usually set $\kappa=1$
 \ecen
 \eeq
 
-
+The Lie Algebra commutators for
+$SU(n)$ are
 \beq
 \begin{array}{l}
 \myboxed{
@@ -364,121 +374,166 @@ T_i T_j - T_j T_i = i f_{ijk}T_k
 \ecen
 \end{array}
 \eeq
-$f_{ijk}$
-is totally antisymmetric. First index in green.\footnote{Actually, it doesn't
+The structure constants
+ $f_{ijk}$ for
+$SU(n)$ 
+is a totally antisymmetric tensor. In the CC convention, the first index of $f_{ijk}$ corresponds to
+the green leg in the birdtracks.\footnote{Actually, it doesn't
 matter which index is taken first.
 This is explained in 
 Chapter \ref{ch-birdtracks}}
 
+Multiplying Lie Algebra commutator by by $T_k$
+and taking the trace, we get
 \beq
 \begin{array}{l}
 \myboxed{
 if_{ijk}= 
-\tr(T_i T_j T_k)
--
-\tr(T_j T_i T_k)
+\tr([T_i, T_j] T_k)
 }
 \\
 \bcen
 \xymatrix{
 &\ar@{~}[d]&
 \\
-&f\ar@{~}@[green][dl]\ar@{~}[dr]&
+&f\ar@{~}[dl]\ar@{~}[dr]&
 \\
 &&
 }
 \ecen
 =
 \bcen
-\xymatrix@R=1.5pc@C=1.5pc{
+\xymatrix@R=1pc@C=1pc{
 &&\ar@{~}[d]&&
 \\
 &&\ar[dl]T_k&&
 \\
 &T_i\ar[rr]&&\ar[ul]T_j&
 \\
-\ar@{~}@[green][ur]&&&&\ar@{~}[ul]
+\ar@{~}[ur]&&&&\ar@{~}[ul]
 }
 \ecen
 -
 \bcen
-\xymatrix@R=1.5pc@C=1.5pc{
+\xymatrix@R=1pc@C=1pc{
 &&\ar@{~}[d]&&
 \\
 &&\ar@{<-}[dl]T_k&&
 \\
 &\ar@{<-}[rr]T_i&&\ar@{<-}[ul]T_j&
 \\
-\ar@{~}@[green][ur]&&&&\ar@{~}[ul]
+\ar@{~}[ur]&&&&\ar@{~}[ul]
+}
+\ecen
+\\
+\quad\quad\quad\quad\quad\quad\quad
+=2\bcen
+\xymatrix@R=1pc@C=1pc{
+&\ar@{~}[d]&
+\\
+&\ar[dl]T_k&
+\\
+\ar[rr]T_{i'}\ar@{~}[d]
+&&\ar[ul]T_{j'}\ar@{~}[d]
+\\
+\cala_2\ar@2{-}[rr]\ar@{~}[d]
+&&\ar@{~}[d]
+\\
+&&
 }
 \ecen
 \end{array}
 \eeq
 
-\beq
-d_{ijk}=
-\bcen
-\xymatrix@R=1pc{
-i&&
-\\
-&d
-\ar@{~}`u[ul][ul]
-\ar@{~}`d[dl][dl]
-&\ar@{~}[l]k
-\\
-j&&
-}
-\ecen
-=
-2
-\bcen
-\xymatrix@R=1pc{
-i&\cals_2\ar@{~}[l]
-\ar@2{-}[dd]
-&\ar@{~}[l]T_{i'}
-\ar[dd]&
-\\
-&&&\ar[ul]T_k&k\ar@{~}[l]
-\\
-j&\ar@{~}[l]&\ar[ur]
-\ar@{~}[l]T_{j'}&
-}
-\ecen
-\eeq
-Multiplying Jacobi identity by $T_k$
-and taking the trace, we get
+
+One can define
+a totally symmetric tensor
+$d_{ijk}$ analogously by
 
 \beq
-if_{ijk}=
+\begin{array}{l}
+\myboxed{
+d_{ijk}= 
+\tr([T_i, T_j]_+ T_k)
+}
+\\
 \bcen
-\xymatrix@R=1pc{
-i&&
+\xymatrix{
+&\ar@{~}[d]&
 \\
-&if
-\ar@{~}`u[ul][ul]
-\ar@{~}`d[dl][dl]
-&\ar@{~}[l]k
+&f\ar@{~}[dl]\ar@{~}[dr]&
 \\
-j&&
+&&
 }
 \ecen
 =
-2
 \bcen
-\xymatrix@R=1pc{
-i&\cala_2\ar@{~}[l]
-\ar@2{-}[dd]
-&\ar@{~}[l]
-\ar[dd]T_{i'}
-&
+\xymatrix@R=1pc@C=1pc{
+&&\ar@{~}[d]&&
 \\
-&&&\ar[ul]T_k&k\ar@{~}[l]
+&&\ar[dl]T_k&&
 \\
-j&\ar@{~}[l]&\ar[ur]
-\ar@{~}[l]T_{j'}&
+&T_i\ar[rr]&&\ar[ul]T_j&
+\\
+\ar@{~}[ur]&&&&\ar@{~}[ul]
 }
 \ecen
++
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&&\ar@{~}[d]&&
+\\
+&&\ar@{<-}[dl]T_k&&
+\\
+&\ar@{<-}[rr]T_i&&\ar@{<-}[ul]T_j&
+\\
+\ar@{~}[ur]&&&&\ar@{~}[ul]
+}
+\ecen
+\\
+\quad\quad\quad\quad\quad\quad\quad
+=2\bcen
+\xymatrix@R=1pc@C=1pc{
+&\ar@{~}[d]&
+\\
+&\ar[dl]T_k&
+\\
+\ar[rr]T_{i'}\ar@{~}[d]
+&&\ar[ul]T_{j'}\ar@{~}[d]
+\\
+\cals_2\ar@2{-}[rr]\ar@{~}[d]
+&&\ar@{~}[d]
+\\
+&&
+}
+\ecen
+\end{array}
 \eeq
+
+\begin{claim}.
+
+\begin{itemize}
+\item $\tr([T_i, T_j] T_k)$
+is totally anti-symmetric
+\item $\tr([T_i, T_j]_+ T_k)$
+is totally symmetric
+\end{itemize}
+in the indices $i,j,k$
+\end{claim}
+\proof
+
+\beq
+\tr([T_i, T_j] T_k)
+=
+-\tr([T_k, T_j] T_i)
+\eeq
+
+\beq
+\tr([T_i, T_j] T_k)
+=
++\tr([T_k, T_j]_+ T_i)
+\eeq
+\qed
 
 \begin{claim}
 \beq
@@ -682,6 +737,7 @@ f
 \proof
 
 \beq
+A=
 \xymatrix{
 &\ar@{~}@[green][l]|i f
 &\ar@{~}@/_1pc/[l]|n
@@ -703,7 +759,6 @@ f
 &&T_m\ar[u]
 }
 \ecen
-=A
 \eeq
 
 \beq
@@ -1166,7 +1221,7 @@ Q=
 \eeq
 
 Recall that for $SU(n)$,
-the dimension of the adjoint space $N$ is
+the dimension $N$ of the adjoint rep is
 
 \beq
 N = n^2-1 = \xymatrix{&&\ar@{~}[ll]
@@ -1626,7 +1681,7 @@ SU(3): 8(3)
 
 \beq
 \tr(P_1)=
-\frac{n}{n^2-1}nN=\frac{n^2(n-1)}{n^2-1}= \frac{n^2}{n+1}
+\frac{n}{n^2-1}nN=n^2
 \eeq
 
 \beqa
@@ -1640,6 +1695,9 @@ SU(3): 8(3)
 &=&
 \frac{N}{2}
 \frac{n(n+2)}{n+1}
+\\
+&=&
+\frac{(n-1)n(n+2)}{2}
 \eeqa
 
 \beqa
@@ -1652,6 +1710,9 @@ SU(3): 8(3)
 \\
 &=&
 \frac{N}{2}\frac{n(n-2)}{n-1}
+\\
+&=&
+\frac{(n+1)n(n-2)}{2}
 \eeqa
  
 From $R^2 = \frac{n^2-1}{n}R$,
@@ -1659,26 +1720,34 @@ From $R^2 = \frac{n^2-1}{n}R$,
 \beq
 P_1 = \frac{n}{n^2-1}R
 \eeq
+Define
 
 \beq
 P_4 = e-P_1
 \eeq
-From $Q^2-e=-\frac{1}{n}R$ get
+From $Q^2-e=-\frac{1}{n}R$, we get
 
 \beq
 P_4(Q^2-1)= 0
 \eeq
 
+Let
+
 \beq
 P_2 = \frac{1}{2}P_4(1+Q),\quad
 P_3 = \frac{1}{2}P_4(1+Q)
 \eeq
+and
+
+\beq
+a=\frac{n}{n^2-1}
+\eeq
+Then
 
 \beqa
 P_2 &=& \frac{1}{2}P_4(1+Q)
 \\
 &=&\frac{1}{2}(e-aR)(1+Q)
-\quad (\text{ where }a=\frac{n}{n^2-1})
 \\
 &=&
 \frac{1}{2}(e-aR+Q-aRQ)
@@ -1686,6 +1755,7 @@ P_2 &=& \frac{1}{2}P_4(1+Q)
 &=&
 \frac{1}{2}\left(e+ \left(\frac{1}{n}-1\right)aR+Q\right)
 \eeqa
+where
 
 \beqa
 \left(\frac{1}{n}-1\right)a
@@ -1696,7 +1766,7 @@ P_2 &=& \frac{1}{2}P_4(1+Q)
 -\frac{1}{n+1}
 \eeqa
 
-
+Furthermore
 
 \beqa
 P_3&=&
@@ -1712,6 +1782,7 @@ P_3&=&
 \frac{1}{2}\left(e- \left(\frac{1}{n}
 +1\right)aR-Q\right)
 \eeqa
+where
 
 \beq\left(\frac{1}{n}+1\right)a =\frac{1}{n-1}
 \eeq
