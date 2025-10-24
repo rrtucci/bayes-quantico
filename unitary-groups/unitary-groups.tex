@@ -3,6 +3,8 @@
 
 This chapter is based on Cvitanovic's Birdtracks book Ref. \cite{birdtracks-book}.
 
+Let
+
 $d_\lam=MD_\lam=$ matrix dimension
 of  rep-matrix $G$
 in rep $\lam$ 
@@ -26,27 +28,29 @@ but $N=n^2-1$ for $SU(n)$.
 
 \section{$SU(n)$}
 
-In $SU(n)\subset \CC^{n\times n})$
-in defining rep
+In $SU(n)\subset \CC^{n\times n}$
+in the defining rep,
+we have the quadratic form
 
 \beq
-m(p,q) = \delta_b^a 
-\sum_{a=1}^n 
-(p_a)^* q_a
+m(p,q) =   
+(p_b)^* \delta_b^a q_a
 \eeq
+Let
 
 \beq
-\indi^{a,c}_{d,b}=
+\indi\indices{_d^a_b^c}=
 \delta_b^a\delta_d^c
 =
 \bcen
-\xymatrix{d
+\xymatrix@R=1pc{d
 &c\ar[l]|\bullet
 \\
 a\ar[r]|\bullet
 &b}
 \end{array}
 \eeq
+and
 
 \beq
 M\indices{^d_a^b_c}=
@@ -60,6 +64,7 @@ a\ar@/_1pc/[u]|\bullet
 &b}
 \end{array}
 \eeq
+Note that
 
 \beq
 \begin{array}{ll}
@@ -91,15 +96,21 @@ a\ar@/_1pc/[u]|\bullet
 \end{array}\eeq
 
 
+
+
+Hence, $(M-n)0M=0$ 
+so $M$ has two eigenvalues $\lam_s=0$ and $\lam_{tl}=n$.
+
+Next we will use this equation
+to obtain a projection
+operator for each eigenvalue
+
 \beq 
 P_i = \sum_{j\neq i}
 \frac{M-\lam_j}{\lam_i-\lam_j}
 \eeq
-
-$\lam=0, n$
-
 \hrule
-$\lam_s = 0$
+$\lam_S = 0$
 
 \beq
 \begin{array}{ll}
@@ -129,13 +140,13 @@ c\ar@/_1pc/[u]|\bullet
 \ecen
 \end{array}\eeq
 
-singlet rep part
+The singlet projection operator $P_S$ projects the singlet part of a tensor $x$:
 \beq
-P_{s}x = \frac{1}{n}
+P_{S}x = \frac{1}{n}
 x\indices{^b_b}
 \delta_a^c
 \eeq
-
+$P_S$ has dimension 1:
 
 
 \beqa
@@ -143,10 +154,10 @@ dim(P_S)=\tr P_S &=&
 \frac{1}{n}
 \bcen
 \xymatrix@C=3pc{
-&\ar@/_1pc/[d]|\bullet\ar@[red]@{-}@/_1pc/[l]
+&\ar@/_1pc/[d]|\bullet\ar@[red]@{-}@/_.5pc/[l]
 \\
 \ar@/_1pc/[u]|\bullet
-&\ar@[red]@{-}@/_1pc/[l]
+&\ar@[red]@{-}@/^.5pc/[l]
 }
 \ecen
 \\
@@ -162,7 +173,7 @@ $\lam_{tl}=n$
 \beq
 \begin{array}{l}
 \myboxed{
-P_{Adj} = \frac{M-n}{0-n}=
+P_{adj} = \frac{M-n}{0-n}=
 1 -\frac{1}{n}M
 }
 \\
@@ -171,7 +182,7 @@ P_{Adj} = \frac{M-n}{0-n}=
 a
 &&b\ar[dl]
 \\
-&P_{Adj}\ar[dr]\ar[lu]
+&P_{adj}\ar[dr]\ar[lu]
 \\
 c\ar[ru]&&d
 }
@@ -206,32 +217,34 @@ c\ar@/_1pc/[u]|\bullet
 \ecen
 \end{array}
 \eeq
-traceless part of $x$
+The adjoint projection operator $P_{adj}$ projects the traceless part of
+a tensor $x$
 \beq
-P_{Adj}x=
+P_{adj}x=
 x\indices{^a_c}-
 \left(
 \frac{1}{n}x\indices{^b_b}\delta_a^c
 \right)
 \eeq
 
+The $P_{adj}$ has dimension $n^2-1$
 \beqa
-dim(P_{Adj})=\tr P_{Adj} &=&
+dim(P_{adj})=\tr P_{adj} &=&
 \bcen
 \xymatrix@C=3pc{
-&\ar[l]|\bullet\ar@[red]@{-}@/_1pc/[l]
+&\ar[l]|\bullet\ar@[red]@{-}@/_.5pc/[l]
 \\
-\ar[r]|\bullet\ar@[red]@{-}@/_1pc/[r]&
+\ar[r]|\bullet\ar@[red]@{-}@/_.5pc/[r]&
 }
 \ecen
 -
 \frac{1}{n}
 \bcen
 \xymatrix@C=3pc{
-&\ar@/_1pc/[d]|\bullet\ar@[red]@{-}@/_1pc/[l]
+&\ar@/_.5pc/[d]|\bullet\ar@[red]@{-}@/_.5pc/[l]
 \\
 \ar@/_1pc/[u]|\bullet
-&\ar@[red]@{-}@/_1pc/[l]
+&\ar@[red]@{-}@/^.5pc/[l]
 }
 \ecen
 \\
@@ -239,6 +252,234 @@ dim(P_{Adj})=\tr P_{Adj} &=&
 \eeqa
 
 \hrule
+
+
+
+
+\beq
+(T_i)\indices{^b_a} = 
+\bcen
+\xymatrix{
+&i\ar@{~}[d]
+\\
+a&T^i\ar[l]&b\ar[l]
+}
+\ecen
+\eeq
+
+\beq
+T_i^\dagger = T_i
+\eeq
+
+\beq
+\begin{array}{l}
+\myboxed{\tr(T_i T_j)=\kappa \delta(i,j)}
+\\
+\\
+\xymatrix{
+i&\ar@{~}[l] T_i
+\ar@/_1pc/[r]
+&T_j\ar@/_1pc/[l]
+&\ar@{~}[l]j
+}
+=
+\delta(i,j)\kappa
+\xymatrix{
+i&\ar@{~}[l]i
+}
+\end{array}
+\eeq
+Usually set $\kappa=1$
+
+\beq
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&&&\ar@/_1pc/[ld]
+\\
+&T_i\ar@/_1pc/[lu]&T_i\ar@{~}[l]\ar@/_1pc/[rd]&
+\\
+\ar@/_1pc/[ru]&&&
+}
+\ecen
+\eqdef P_{adj}
+=
+\bcen
+\xymatrix@C=3pc{
+&\ar[l]|\bullet
+\\
+\ar[r]|\bullet&}
+\ecen
+-
+\frac{1}{n}
+\bcen
+\xymatrix@C=3pc{
+&\ar@/_1pc/[d]|\bullet
+\\
+\ar@/_1pc/[u]|\bullet
+&}
+\ecen
+\eeq
+
+
+\beq
+\begin{array}{l}
+\myboxed{
+T_i T_j - T_j T_i = i f_{ijk}T_k
+}
+\\
+\bcen
+\xymatrix{
+&\ar[l]T_i
+&\ar[l]T_j
+&\ar[l]
+\\
+&\ar@{~}[u]i
+&\ar@{~}[u]j
+&
+}
+\ecen
+-
+\bcen
+\xymatrix{
+&\ar[l]T_j
+&\ar[l]T_i
+&\ar[l]
+\\
+&\ar@{~}[ur]i
+&\ar@{~}[ul]j
+&
+}
+\ecen
+=
+\bcen
+\xymatrix{
+&\ar[l]T_k
+&\ar[l]
+\\
+&\ar@{~}@[green][u]i f
+&
+\\
+\ar@{~}[ru]i&&\ar@{~}[lu]j
+}
+\ecen
+\end{array}
+\eeq
+$f_{ijk}$
+is totally antisymmetric. First index in green.\footnote{Actually, it doesn't
+matter which index is taken first.
+This is explained in 
+Chapter \ref{ch-birdtracks}}
+
+\beq
+\begin{array}{l}
+\myboxed{
+if_{ijk}= 
+\tr(T_i T_j T_k)
+-
+\tr(T_j T_i T_k)
+}
+\\
+\bcen
+\xymatrix{
+&\ar@{~}[d]&
+\\
+&f\ar@{~}@[green][dl]\ar@{~}[dr]&
+\\
+&&
+}
+\ecen
+=
+\bcen
+\xymatrix@R=1.5pc@C=1.5pc{
+&&\ar@{~}[d]&&
+\\
+&&\ar[dl]T_k&&
+\\
+&T_i\ar[rr]&&\ar[ul]T_j&
+\\
+\ar@{~}@[green][ur]&&&&\ar@{~}[ul]
+}
+\ecen
+-
+\bcen
+\xymatrix@R=1.5pc@C=1.5pc{
+&&\ar@{~}[d]&&
+\\
+&&\ar@{<-}[dl]T_k&&
+\\
+&\ar@{<-}[rr]T_i&&\ar@{<-}[ul]T_j&
+\\
+\ar@{~}@[green][ur]&&&&\ar@{~}[ul]
+}
+\ecen
+\end{array}
+\eeq
+
+\beq
+d_{ijk}=
+\bcen
+\xymatrix@R=1pc{
+i&&
+\\
+&d
+\ar@{~}`u[ul][ul]
+\ar@{~}`d[dl][dl]
+&\ar@{~}[l]k
+\\
+j&&
+}
+\ecen
+=
+2
+\bcen
+\xymatrix@R=1pc{
+i&\cals_2\ar@{~}[l]
+\ar@2{-}[dd]
+&\ar@{~}[l]T_{i'}
+\ar[dd]&
+\\
+&&&\ar[ul]T_k&k\ar@{~}[l]
+\\
+j&\ar@{~}[l]&\ar[ur]
+\ar@{~}[l]T_{j'}&
+}
+\ecen
+\eeq
+Multiplying Jacobi identity by $T_k$
+and taking the trace, we get
+
+\beq
+if_{ijk}=
+\bcen
+\xymatrix@R=1pc{
+i&&
+\\
+&if
+\ar@{~}`u[ul][ul]
+\ar@{~}`d[dl][dl]
+&\ar@{~}[l]k
+\\
+j&&
+}
+\ecen
+=
+2
+\bcen
+\xymatrix@R=1pc{
+i&\cala_2\ar@{~}[l]
+\ar@2{-}[dd]
+&\ar@{~}[l]
+\ar[dd]T_{i'}
+&
+\\
+&&&\ar[ul]T_k&k\ar@{~}[l]
+\\
+j&\ar@{~}[l]&\ar[ur]
+\ar@{~}[l]T_{j'}&
+}
+\ecen
+\eeq
+
 \begin{claim}
 \beq
 \myboxed{\tr(T_i)=0}
@@ -253,7 +494,7 @@ dim(P_{Adj})=\tr P_{Adj} &=&
 \proof
 
 \beq
-0=P_{Adj} P_S=
+0=P_{adj} P_S=
 \bcen
 \xymatrix@R=1pc@C=1pc{
 &&&\ar@/_1pc/[ld]
@@ -272,6 +513,414 @@ dim(P_{Adj})=\tr P_{Adj} &=&
 
 \qed
 
+\begin{claim}
+\beq
+\begin{array}{l}
+\myboxed{
+\Gamma_{fun}\delta^b_a=
+\sum_i
+(T_iT_i)\indices{_a^b}
+ = \frac{n^2-1}{n}\delta_a^b}
+\\
+\sum_i
+\bcen
+\xymatrix{
+a&T_i\ar[l]&T_i\ar@{~}@/_2pc/[l]|i\ar[l]&
+\ar[l]b
+}\ecen
+=
+\left(\frac{n^2-1}{n}\right)
+\xymatrix{
+a&\ar[l]|\bullet b 
+}
+\end{array}
+\label{eq-wavy-arc}
+\eeq
+\end{claim}
+\proof
+
+\beqa
+(T_iT_i)\indices{_a^b}
+&=&
+\bcen
+\xymatrix{
+a&T_i\ar[l]&T_i\ar@{~}@/_2pc/[l]|i\ar[l]&
+\ar[l]b
+}\ecen
+\\
+&=&
+\bcen
+\xymatrix@R=1pc@C=1pc{
+a&&&\ar@/_1pc/[ld]b
+\\
+&T_i\ar@/_1pc/[lu]&T_i\ar@{~}[l]\ar@/_1pc/[rd]&
+\\
+\ar@/_1pc/[ru]&&&
+\ar@/^1pc/[lll]
+}
+\ecen
+\\
+&&\nonumber
+\\
+&=&
+\bcen
+\xymatrix@C=3pc{
+&\ar[l]|\bullet
+\\
+\ar[r]|\bullet&
+\ar@/^1pc/[l]}
+\ecen
+-
+\frac{1}{n}
+\bcen
+\xymatrix@C=3pc{
+&\ar@/_1pc/[d]|\bullet
+\\
+\ar@/_1pc/[u]|\bullet
+&
+\ar@/^1pc/[l]}
+\ecen
+\\
+&&\nonumber
+\\
+&=&\left(n-\frac{1}{n}\right)
+\xymatrix{
+a&\ar[l]|\bullet b 
+}
+\eeqa
+\qed
+
+
+
+
+
+
+\begin{claim}
+\beq
+\bcen
+\xymatrix@R=1pc{
+&&T_k\ar[ld]
+\ar@{~}[dd]
+&&
+\\
+&T_i\ar[rd]\ar@{~}[l]|i
+&&T_j\ar[lu]&\ar@{~}[l]|j
+\\
+&&T_k\ar[ru]&&
+}
+\ecen
+=
+-\frac{1}{n}\delta(i,j)
+\xymatrix{
+&\ar@{~}[l]}
+\eeq
+\end{claim}
+\proof
+\beq
+\bcen
+\xymatrix@R=1pc{
+&&T_k\ar[ld]
+\ar@{~}[dd]
+&&
+\\
+&T_i\ar[rd]\ar@{~}[l]|i
+&&T_j\ar[lu]&\ar@{~}[l]|j
+\\
+&&T_k\ar[ru]&&
+}
+\ecen
+=
+\underbrace
+{\bcen
+\xymatrix@C=1pc{
+&
+\ar[d]&\ar@/_1pc/[dd]
+\\
+&\ar@{~}[l]T_i
+\ar[d]&T_j\ar[u]&
+\ar@{~}[l]
+\\
+&\ar@/_1pc/[uu]
+&\ar[u]
+}
+\ecen}_{=0}
+-
+\frac{1}{n}
+\bcen
+\xymatrix{
+&T_i\ar@{~}[l]
+\ar@/_1pc/[r]
+&T_i\ar@/_1pc/[l]
+&\ar@{~}[l]
+}
+\ecen
+\eeq
+\qed
+
+
+
+\begin{claim}
+\beq
+\begin{array}{l}
+\myboxed{
+\delta(i,j) \Gamma_{adj}
+=
+-f_{imn}f_{jnm} = 2n\delta(i,j)}
+\\ (-1)
+\xymatrix{
+&\ar@{~}@[green][l]|i f
+&\ar@{~}@/_1pc/[l]|n
+\ar@{~}@/^1pc/[l]|m
+f
+&\ar@{~}@[green][l]| j
+}
+= 2n\delta(i,j)
+\end{array}
+\eeq
+
+\end{claim}
+\proof
+
+\beq
+\xymatrix{
+&\ar@{~}@[green][l]|i f
+&\ar@{~}@/_1pc/[l]|n
+\ar@{~}@/^1pc/[l]|m
+f
+&\ar@{~}@[green][l]| j
+}
+=2
+\bcen
+\xymatrix@C=2pc{
+&\ar@{~}[l]|i T_i
+\ar[rd]
+&\ar[l]T_n
+&f
+\ar@{~}[l]
+\ar@{~}[ld]
+&\ar@{~}@[green][l]|j
+\\
+&&T_m\ar[u]
+}
+\ecen
+=A
+\eeq
+
+\beq
+\frac{1}{2}A=
+\underbrace{\bcen
+\xymatrix@C=2pc{
+&&T_k\ar[ld]
+\ar@{~}@/_1pc/[dd]
+&
+\\
+&\ar@{~}[l]|i T_i
+\ar[rd]
+&\ar[u]T_n
+&\ar@{~}@[green][l]|j
+\\
+&&T_m\ar[u]
+}
+\ecen}_{A_1}
+-
+\underbrace{\bcen
+\xymatrix{
+&&T_k\ar[ld]
+&\ar@{~}@[green][l]|j
+\\
+&\ar@{~}[l]|i T_i
+\ar[rd]
+&\ar[u]T_n
+\ar@{~}@/_1pc/[d]
+\\
+&&T_m\ar[u]
+}
+\ecen}_{A_2}
+\eeq
+
+\beq
+A_1 =
+\frac{n^2-1}{n}\delta(i,j)
+\eeq
+
+\beq
+A_2 = -\frac{1}{n}\delta(i,j)
+\eeq
+
+\beq
+A = 2 (A_1 - A_2)= 2n
+\delta(i, j)
+\eeq
+
+\qed
+
+
+
+
+\section{Differences between $U(n)$ and $SU(n)$}
+
+\begin{enumerate}
+\item $SU(n)$ 
+
+primitive invariants: Kronecker delta, Levi-Civita tensor
+
+
+\beq
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&&&\ar@/_1pc/[ld]
+\\
+&T_i\ar@/_1pc/[lu]&T_i\ar@{~}[l]\ar@/_1pc/[rd]&
+\\
+\ar@/_1pc/[ru]&&&
+}
+\ecen
+\eqdef P_{adj}
+=
+\bcen
+\xymatrix@C=3pc{
+&\ar[l]|\bullet
+\\
+\ar[r]|\bullet&}
+\ecen
+-
+\frac{1}{n}
+\bcen
+\xymatrix@C=3pc{
+&\ar@/_1pc/[d]|\bullet
+\\
+\ar@/_1pc/[u]|\bullet
+&}
+\ecen
+\eeq
+
+\beqa
+dim(P_{adj})=\tr P_{adj} &=&
+\bcen
+\xymatrix@C=3pc{
+&\ar[l]|\bullet\ar@[red]@{-}@/_.5pc/[l]
+\\
+\ar[r]|\bullet\ar@[red]@{-}@/_.5pc/[r]&
+}
+\ecen
+-
+\frac{1}{n}
+\bcen
+\xymatrix@C=3pc{
+&\ar@/_1pc/[d]|\bullet
+\ar@[red]@{-}@/_.5pc/[l]
+\\
+\ar@/_1pc/[u]|\bullet
+&\ar@[red]@{-}@/^.5pc/[l]}
+\ecen
+\\
+&=& n^2 -1
+\eeqa
+
+Since the Levi-Civita tensor
+is an invariant matrix
+for $SU(n)$,
+we must have
+
+\beq
+0=
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&&\ar[ll]\ar@{~}[d]T_i
+\ar[r]&
+\\
+\ar[r]
+&\ar[r]\ar@2{-}[ddd]\cala_p
+&\ar[r]T_i
+&\cala^{\frac{1}{2}}_p\ar@2{-}[ddd]
+\\
+\ar[r]&\ar[rr]&&
+\\
+\ar[r]&\ar[rr]&&
+\\
+\ar[r]&\ar[rr]&&
+}
+\ecen
+=
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&&\ar[ll]
+\\
+\ar[r]
+&\ar[r]\ar@2{-}[ddd]\cala_p
+&\cala^{\frac{1}{2}}_p\ar@2{-}[ddd]
+\\
+\ar[r]&\ar[r]&
+\\
+\ar[r]&\ar[r]&
+\\
+\ar[r]&\ar[r]&
+}
+\ecen
+-\frac{1}{n}
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&&&
+\ar`l[ld]`[d][d]
+\\
+\ar[r]
+&\ar@2{-}[ddd]\cala_p
+\ar`r[ru]`[ul][ul]
+&
+&\cala^{\frac{1}{2}}_p\ar@2{-}[ddd]
+&
+\\
+\ar[r]&\ar[rr]&&
+\\
+\ar[r]&\ar[rr]&&
+\\
+\ar[r]&\ar[rr]&&
+}
+\ecen
+\eeq
+
+
+\item $U(n)$ 
+
+primitive invariants: Kronecker delta
+
+\beq
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&&&\ar@/_1pc/[ld]
+\\
+&T_i\ar@/_1pc/[lu]&T_i\ar@{~}[l]\ar@/_1pc/[rd]&
+\\
+\ar@/_1pc/[ru]&&&
+}
+\ecen
+\eqdef P_{adj}
+=
+\bcen
+\xymatrix@C=3pc{
+&\ar[l]|\bullet
+\\
+\ar[r]|\bullet&}
+\ecen
+\eeq
+
+\end{enumerate}
+
+
+\beqa
+dim(P_{adj})=\tr P_{adj} &=&
+\bcen
+\xymatrix@C=3pc{
+&\ar[l]|\bullet\ar@[red]@{-}@/_.5pc/[l]
+\\
+\ar[r]|\bullet\ar@[red]@{-}@/_.5pc/[r]&
+}
+\ecen
+\\
+&=& n^2 
+\eeqa
+
+\section{$V\otimes V$ Decomposition}
 
 
 \beq
@@ -440,586 +1089,13 @@ dim(\cala_2)
 \eeqa
 
 
-\beq
-(T_i)\indices{^b_a} = 
-\bcen
-\xymatrix{
-&i\ar@{~}[d]
-\\
-a&T^i\ar[l]&b\ar[l]
-}
-\ecen
-\eeq
 
-\beq
-T_i^\dagger = T_i
-\eeq
-
-\beq
-\begin{array}{l}
-\myboxed{\tr(T_i T_j)=\kappa \delta(i,j)}
-\\
-\\
-\xymatrix{
-i&\ar@{~}[l] T_i
-\ar@/_1pc/[r]
-&T_j\ar@/_1pc/[l]
-&\ar@{~}[l]j
-}
-=
-\delta(i,j)\kappa
-\xymatrix{
-i&\ar@{~}[l]i
-}
-\end{array}
-\eeq
-Usually set $\kappa=1$
-
-\beq
-\bcen
-\xymatrix@R=1pc@C=1pc{
-&&&\ar@/_1pc/[ld]
-\\
-&T_i\ar@/_1pc/[lu]&T_i\ar@{~}[l]\ar@/_1pc/[rd]&
-\\
-\ar@/_1pc/[ru]&&&
-}
-\ecen
-\eqdef P_{Adj}
-=
-\bcen
-\xymatrix@C=3pc{
-&\ar[l]|\bullet
-\\
-\ar[r]|\bullet&}
-\ecen
--
-\frac{1}{n}
-\bcen
-\xymatrix@C=3pc{
-&\ar@/_1pc/[d]|\bullet
-\\
-\ar@/_1pc/[u]|\bullet
-&}
-\ecen
-\eeq
-
-\begin{claim}
-\beq
-\begin{array}{l}
-\myboxed{
-\Gamma_{fun}\delta^b_a=
-\sum_i
-(T_iT_i)\indices{_a^b}
- = \frac{n^2-1}{n}\delta_a^b}
-\\
-\sum_i
-\bcen
-\xymatrix{
-a&T_i\ar[l]&T_i\ar@{~}@/_2pc/[l]|i\ar[l]&
-\ar[l]b
-}\ecen
-=
-\left(\frac{n^2-1}{n}\right)
-\xymatrix{
-a&\ar[l]|\bullet b 
-}
-\end{array}
-\label{eq-wavy-arc}
-\eeq
-\end{claim}
-\proof
-
-\beqa
-(T_iT_i)\indices{_a^b}
-&=&
-\sum_i
-\bcen
-\xymatrix{
-a&T_i\ar[l]&T_i\ar@{~}@/_2pc/[l]|i\ar[l]&
-\ar[l]b
-}\ecen
-\\
-&=&
-\bcen
-\xymatrix@R=1pc@C=1pc{
-a&&&\ar@/_1pc/[ld]b
-\\
-&T_i\ar@/_1pc/[lu]&T_i\ar@{~}[l]\ar@/_1pc/[rd]&
-\\
-\ar@/_1pc/[ru]&&&
-\ar@/^1pc/[lll]
-}
-\ecen
-\\
-&&\nonumber
-\\
-&=&
-\bcen
-\xymatrix@C=3pc{
-&\ar[l]|\bullet
-\\
-\ar[r]|\bullet&
-\ar@/^1pc/[l]}
-\ecen
--
-\frac{1}{n}
-\bcen
-\xymatrix@C=3pc{
-&\ar@/_1pc/[d]|\bullet
-\\
-\ar@/_1pc/[u]|\bullet
-&
-\ar@/^1pc/[l]}
-\ecen
-\\
-&&\nonumber
-\\
-&=&\left(n-\frac{1}{n}\right)
-\xymatrix{
-a&\ar[l]|\bullet b 
-}
-\eeqa
-\qed
-
-
-\beq
-\begin{array}{l}
-\myboxed{
-T_i T_j - T_j T_i = i f_{ijk}T_k
-}
-\\
-\bcen
-\xymatrix{
-&\ar[l]T_i
-&\ar[l]T_j
-&\ar[l]
-\\
-&\ar@{~}[u]i
-&\ar@{~}[u]j
-&
-}
-\ecen
--
-\bcen
-\xymatrix{
-&\ar[l]T_j
-&\ar[l]T_i
-&\ar[l]
-\\
-&\ar@{~}[ur]i
-&\ar@{~}[ul]j
-&
-}
-\ecen
-=
-\bcen
-\xymatrix{
-&\ar[l]T_k
-&\ar[l]
-\\
-&\ar@{~}@[green][u]i f
-&
-\\
-\ar@{~}[ru]i&&\ar@{~}[lu]j
-}
-\ecen
-\end{array}
-\eeq
-$f_{ijk}$
-is totally antisymmetric. First index in green
-
-\beq
-\begin{array}{l}
-\myboxed{
-if_{ijk}= 
-\tr(T_i T_j T_k)
--
-\tr(T_j T_i T_k)
-}
-\\
-\bcen
-\xymatrix{
-&\ar@{~}[d]&
-\\
-&f\ar@{~}@[green][dl]\ar@{~}[dr]&
-\\
-&&
-}
-\ecen
-=
-\bcen
-\xymatrix@R=1.5pc@C=1.5pc{
-&&\ar@{~}[d]&&
-\\
-&&\ar[dl]T_k&&
-\\
-&T_i\ar[rr]&&\ar[ul]T_j&
-\\
-\ar@{~}@[green][ur]&&&&\ar@{~}[ul]
-}
-\ecen
--
-\bcen
-\xymatrix@R=1.5pc@C=1.5pc{
-&&\ar@{~}[d]&&
-\\
-&&\ar@{<-}[dl]T_k&&
-\\
-&\ar@{<-}[rr]T_i&&\ar@{<-}[ul]T_j&
-\\
-\ar@{~}@[green][ur]&&&&\ar@{~}[ul]
-}
-\ecen
-\end{array}
-\eeq
-
-
-
-
-
-\begin{claim}
-\beq
-\bcen
-\xymatrix@R=1pc{
-&&T_k\ar[ld]
-\ar@{~}[dd]
-&&
-\\
-&T_i\ar[rd]\ar@{~}[l]|i
-&&T_j\ar[lu]&\ar@{~}[l]|j
-\\
-&&T_k\ar[ru]&&
-}
-\ecen
-=
--\frac{1}{n}\delta(i,j)
-\xymatrix{
-&\ar@{~}[l]}
-\eeq
-\end{claim}
-\proof
-\beq
-\bcen
-\xymatrix@R=1pc{
-&&T_k\ar[ld]
-\ar@{~}[dd]
-&&
-\\
-&T_i\ar[rd]\ar@{~}[l]|i
-&&T_j\ar[lu]&\ar@{~}[l]|j
-\\
-&&T_k\ar[ru]&&
-}
-\ecen
-=
-\underbrace
-{\bcen
-\xymatrix@C=1pc{
-&
-\ar[d]&\ar@/_1pc/[dd]
-\\
-&\ar@{~}[l]T_i
-\ar[d]&T_j\ar[u]&
-\ar@{~}[l]
-\\
-&\ar@/_1pc/[uu]
-&\ar[u]
-}
-\ecen}_{=0}
--
-\frac{1}{n}
-\bcen
-\xymatrix{
-&T_i\ar@{~}[l]
-\ar@/_1pc/[r]
-&T_i\ar@/_1pc/[l]
-&\ar@{~}[l]
-}
-\ecen
-\eeq
-\qed
-
-
-
-\begin{claim}
-\beq
-\begin{array}{l}
-\myboxed{
-\delta(i,j) \Gamma_{adj}
-=
--f_{imn}f_{jnm} = 2n\delta(i,j)}
-\\ (-1)
-\xymatrix{
-&\ar@{~}@[green][l]|i f
-&\ar@{~}@/_1pc/[l]|n
-\ar@{~}@/^1pc/[l]|m
-f
-&\ar@{~}@[green][l]| j
-}
-= 2n\delta(i,j)
-\end{array}
-\eeq
-
-\end{claim}
-\proof
-
-\beq
-\xymatrix{
-&\ar@{~}@[green][l]|i f
-&\ar@{~}@/_1pc/[l]|n
-\ar@{~}@/^1pc/[l]|m
-f
-&\ar@{~}@[green][l]| j
-}
-=2
-\bcen
-\xymatrix@C=2pc{
-&\ar@{~}[l]|i T_i
-\ar[rd]
-&\ar[l]T_n
-&f
-\ar@{~}[l]
-\ar@{~}[ld]
-&\ar@{~}@[green][l]|j
-\\
-&&T_m\ar[u]
-}
-\ecen
-=A
-\eeq
-
-\beq
-\frac{1}{2}A=
-\underbrace{\bcen
-\xymatrix@C=2pc{
-&&T_k\ar[ld]
-\ar@{~}@/_1pc/[dd]
-&
-\\
-&\ar@{~}[l]|i T_i
-\ar[rd]
-&\ar[u]T_n
-&\ar@{~}@[green][l]|j
-\\
-&&T_m\ar[u]
-}
-\ecen}_{A_1}
--
-\underbrace{\bcen
-\xymatrix{
-&&T_k\ar[ld]
-&\ar@{~}@[green][l]|j
-\\
-&\ar@{~}[l]|i T_i
-\ar[rd]
-&\ar[u]T_n
-\ar@{~}@/_1pc/[d]
-\\
-&&T_m\ar[u]
-}
-\ecen}_{A_2}
-\eeq
-
-\beq
-A_1 =
-\frac{n^2-1}{n}\delta(i,j)
-\eeq
-
-\beq
-A_2 = -\frac{1}{n}\delta(i,j)
-\eeq
-
-\beq
-A = 2 (A_1 - A_2)= 2n
-\delta(i, j)
-\eeq
-
-\qed
-
-
-\beq
-d_{ijk}=
-\bcen
-\xymatrix@R=1pc{
-i&&
-\\
-&d
-\ar@{~}`u[ul][ul]
-\ar@{~}`d[dl][dl]
-&\ar@{~}[l]k
-\\
-j&&
-}
-\ecen
-=
-2
-\bcen
-\xymatrix@R=1pc{
-i&\cals_2\ar@{~}[l]
-\ar@2{-}[dd]
-&\ar@{~}[l]T_{i'}
-\ar[dd]&
-\\
-&&&\ar[ul]T_k&k\ar@{~}[l]
-\\
-j&\ar@{~}[l]&\ar[ur]
-\ar@{~}[l]T_{j'}&
-}
-\ecen
-\eeq
-Multiplying Jacobi identity by $T_k$
-and taking the trace, we get
-
-\beq
-if_{ijk}=
-\bcen
-\xymatrix@R=1pc{
-i&&
-\\
-&if
-\ar@{~}`u[ul][ul]
-\ar@{~}`d[dl][dl]
-&\ar@{~}[l]k
-\\
-j&&
-}
-\ecen
-=
-2
-\bcen
-\xymatrix@R=1pc{
-i&\cala_2\ar@{~}[l]
-\ar@2{-}[dd]
-&\ar@{~}[l]
-\ar[dd]T_{i'}
-&
-\\
-&&&\ar[ul]T_k&k\ar@{~}[l]
-\\
-j&\ar@{~}[l]&\ar[ur]
-\ar@{~}[l]T_{j'}&
-}
-\ecen
-\eeq
-
-\section{$U(n)$}
-
-\begin{enumerate}
-\item $U(n)$ primitive invariants: Kronecker delta
-
-\item $SU(n)$ primitive invariants: Kronecker delta, Levi-Civita tensor
-\end{enumerate}
-
-$P_{Adj} \rarrow P_{adj}$
-
-\beq
-P_{adj}=
-\bcen
-\xymatrix@R=1pc@C=1pc{
-&&&\ar@/_1pc/[ld]
-\\
-&T_i\ar@/_1pc/[lu]&T_i\ar@{~}[l]\ar@/_1pc/[rd]&
-\\
-\ar@/_1pc/[ru]&&&
-}
-\ecen
-=
-\bcen
-\xymatrix{
-&&\ar[ll]
-\\
-\ar[rr]&&
-}
-\ecen
-\eeq
-
-\beqa
-dim(P_{adj})=\tr P_{adj} &=&
-\bcen
-\xymatrix@C=3pc{
-&\ar[l]|\bullet\ar@[red]@{-}@/_1pc/[l]
-\\
-\ar[r]|\bullet\ar@[red]@{-}@/_1pc/[r]&
-}
-\ecen
-\\
-&=& n^2 
-\eeqa
-
-\begin{claim}
-The Levi-Civita tensor
-is an invariant matrix
-for $SU(n)$.
-
-\beq
-\bcen
-\xymatrix@R=1pc@C=1pc{
-&&\ar[ll]\ar@{~}[d]T_i
-\ar[r]&
-\\
-\ar[r]
-&\ar[r]\ar@2{-}[ddd]\cala_p
-&\ar[r]T_i
-&\cala^{\frac{1}{2}}\ar@2{-}[ddd]
-\\
-\ar[r]&\ar[rr]&&
-\\
-\ar[r]&\ar[rr]&&
-\\
-\ar[r]&\ar[rr]&&
-}
-\ecen
-=
-\bcen
-\xymatrix@R=1pc@C=1pc{
-&&\ar[ll]
-\\
-\ar[r]
-&\ar[r]\ar@2{-}[ddd]\cala_p
-&\cala^{\frac{1}{2}}\ar@2{-}[ddd]
-\\
-\ar[r]&\ar[r]&
-\\
-\ar[r]&\ar[r]&
-\\
-\ar[r]&\ar[r]&
-}
-\ecen
--\frac{1}{n}
-\bcen
-\xymatrix@R=1pc@C=1pc{
-&&&
-\ar`l[ld]`[d][d]
-\\
-\ar[r]
-&\ar@2{-}[ddd]\cala_p
-\ar`r[ru]`[ul][ul]
-&
-&\cala^{\frac{1}{2}}\ar@2{-}[ddd]
-&
-\\
-\ar[r]&\ar[rr]&&
-\\
-\ar[r]&\ar[rr]&&
-\\
-\ar[r]&\ar[rr]&&
-}
-\ecen
-=
-0
-\eeq
-
-\end{claim}
-\proof
-\qed
-
-
-\section{$V\otimes V_{adj}$
+\section{$V_{adj}\otimes V$
  decomposition}
 
-$V\otimes V_{adj}
-\sim V\otimes V\otimes V^\dagger$
+$V_{adj}\otimes V
+\sim (V\otimes V^\dagger)
+\otimes V$
 
 \beq
 e=
@@ -1483,8 +1559,8 @@ P_3&=&
 \frac{1}{2}
 \left[e - Q -\frac{1}{n-1}R\right]
 \eeqa
-ae projectors such that
-for $SU(n)$, the $V\otimes V_{adj}
+are projectors
+for $SU(n)$. The $V_{adj}\otimes V
 \rarrow \sum_\lam V_\lam$ Clebsch-Gordan series
 is given by
 
@@ -1642,12 +1718,6 @@ P_3&=&
 
 \qed
 
-\begin{claim}
-
-\end{claim}
-\proof
-
-\qed
 
 Let $Q_1, Q_2, Q_3=e, R, Q$
 
