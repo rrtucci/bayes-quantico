@@ -5,210 +5,56 @@ This chapter is based on Cvitanovic's Birdtracks book Ref. \cite{birdtracks-book
 
 \section{WE in general}
 
-\beq
-M=
-\bcen
-\xymatrix@R=1pc{
-&M\ar@2{-}[dddddd]
-\ar[l]|\mu
-\\&
-\\
-&\ar[l]|\nu
-\\&
-\\
-\ar[r]|\rho&
-\\&
-\\
-\ar[r]|\omega&
-}
-\ecen
-\eeq
+The birdtracks with no
+incomming or outgoing arrows
+are know as {\bf reduced matrix elements, isolated birdtracks, vacuum bubbles}
 
-\begin{align}
-\bcen
-\xymatrix@R=1pc{
-&M\ar@2{-}[dddddd]
-\ar[l]|\mu
-\\&
-\\
-&\ar[l]|\nu
-\\&
-\\
-\ar[r]|\rho&
-\\&
-\\
-\ar[r]|\omega&
-}
-\ecen
-&=
-\sum_{\alp, \beta}
-\frac{1}{\kappa_\alp \kappa_\beta}
-\bcen
-\xymatrix@R=1pc{
-&\ar[l]&&M
-\ar@2{-}[ddddd]
-\ar[l]
-\\
-&T_\alp^\dagger\ar@2{-}[u]
-\ar@2{-}[d]&T_\alp\ar@2{-}[u]
-\ar@2{-}[d]
-\ar[l]
-&
-\\
-&\ar[l]&&\ar[l]
-\\
-\ar[r]&&\ar[r]&
-\\
-&T_\beta
-\ar@2{-}[u]
-\ar@2{-}[d]
-\ar[r]
-&T_\beta^\dagger\ar@2{-}[u]
-\ar@2{-}[d]
-&
-\\
-\ar[r]&&\ar[r]&
-}
-\ecen
-\\
-&=
-\sum_{\alp}
-\frac{1}{\kappa^2_\alp d_\alp}
-\bcen
-\xymatrix@R=1pc{
-&\ar[l]&
-\\
-&T_\alp^\dagger\ar@2{-}[u]
-\ar@2{-}[d]
-&
-\\
-&\ar[l]&
-\\
-\ar[r]&&
-\\
-&T_\alp
-\ar@2{-}[u]
-\ar@2{-}[d]
-\ar`r[ruuu]
-`[uuu][uuu]
-&
-\\
-\ar[r]&&
-}
-\xymatrix@R=1pc{
-&&M
-\ar@2{-}[ddddd]
-\ar[l]
-\\
-&T_\alp\ar@2{-}[u]
-\ar@2{-}[d]
-\ar`l[ld]
-`[ddd][ddd]
-&
-\\
-&&\ar[l]
-\\
-&\ar[r]&
-\\
-&T_\alp^\dagger\ar@2{-}[u]
-\ar@2{-}[d]
-&
-\\
-&\ar[r]&
-}
-\ecen
-\end{align}
-
-
-\beq
-\bcen
-\xymatrix@R=1pc{
-&&M
-\ar@2{-}[ddddd]
-\ar[l]
-\\
-&T_\alp\ar@2{-}[u]
-\ar@2{-}[d]
-\ar[l]
-&
-\\
-&&\ar[l]
-\\
-&\ar[r]&
-\\
-\ar[r]
-&T_\alp^\dagger\ar@2{-}[u]
-\ar@2{-}[d]
-&
-\\
-&\ar[r]&
-}
-\ecen
-=\frac{1}{d_\alp}
-\bcen
-\xymatrix{
-&
-\\
-&
-\\
-&
-\\
-\ar
-`r[ur]`[uu][uu]&
-\\
-&
-}\ecen
-\bcen
-\xymatrix@R=1pc{
-&&M
-\ar@2{-}[ddddd]
-\ar[l]
-\\
-&T_\alp\ar@2{-}[u]
-\ar@2{-}[d]
-\ar`l[ld]
-`[ddd][ddd]
-&
-\\
-&&\ar[l]
-\\
-&\ar[r]&
-\\
-&T_\alp^\dagger\ar@2{-}[u]
-\ar@2{-}[d]
-&
-\\
-&\ar[r]&
-}
-\ecen
-\eeq
-
-
-
-
-\beq M_a =
+The following 3 claims 
+are related. They 
+reduce a tensor with 1, 2 and 3 indices
+\begin{claim} (one index)
+\beqa
+ M_a &=&
 \sum_\lam
 \xymatrix{
-\lam a&\ar[l]
-T_\lam
+ a&\ar[l]|\lam
+P_\lam&
+\ar[l]|\lam M
 }
-\eeq
-
-\beq
-M\indices{_\lam_a^\mu^b}=
+\\
+&=&
+\sum_{\lam\in SR }
 \xymatrix{
-&\ar[l]|\lam
-M
-&\ar[l]|\mu
+ a&\ar[l]|\lam
+P_\lam&
+\ar[l]|\lam M
 }
-\eeq
+\eeqa
+where $P_\lam = \ket{\lam}\bra{\lam}
+= \ger{C}_\lam^\dagger \ger{C}_\lam$
+and $SR=$ singlet representation.
+\end{claim}
+\proof
+\qed
 
-\beq
-(M^{\lam i})
+\begin{claim}(Schur's Lemma) (2 indices)
+
+If $\mu$ and $\lam$
+are irreps, then
+\beqa
+M
 \indices{
-_{\lam_2 a}
-^{\lam_1 b}
-}=
+_{\lam a}
+^{\mu b}
+}
+&=&
+\xymatrix{
+a&\ar[l]|\lam
+M
+&b\ar[l]|\mu
+}
+\\
+&=&
 \frac{1}{d_\mu}
 \bcen
 \xymatrix{
@@ -217,35 +63,38 @@ M\loopdown{5}{|\mu}
 \ecen
 \quad
 \delta(\mu, \lam)
-\eeq
+\xymatrix{
+&\ar[l]|\lam}
+\eeqa
+This theorem is usually stated as:
+when $\lam$ is an irrep, the $\lam$ rep of  invariant matrix
+$M$ 
+is either zero, or proportional to
+the unit matrix.
+\end{claim}
+\proof
+\qed
 
-
-\beq
+\begin{claim} (Wigner-Ekart (WE) Theorem) (3 indices)
+\begin{align}
 (M^{\lam i})
 \indices{
 _{\lam_2 a}
 ^{\lam_1 b}
-}=
+}&=
 \bcen
 \xymatrix@C=3pc{
 &&\ar
-`l[dl]|\lam
-[dl]
+`l[dl]|\lam 
+[dl] i
 \\
-&M^\lam
+a&M^\lam 
 \ar[l]|{\lam_2}
 &
-\ar[l]|{\lam_1}
+\ar[l]|{\lam_1}b
 }
 \ecen
-\eeq
-
-\begin{align}
-(M^{\lam })
-\indices{
-_{\lam_2 }
-^{\lam_1 }
-}
+\\
 &=
 \sum_{\lam_2}
 \frac{d_{\lam_2}}
@@ -263,11 +112,11 @@ _{\lam_2 }
 &&\ar[l]
 \\
 &&
-C_{\lam_2}^\dagger
+\ger{C}_{\lam_2}^\dagger
 \ar@2{-}[u]
 \ar@2{-}[d]
 &\ar[l]
-C_{\lam_2}
+\ger{C}_{\lam_2}
 \ar@2{-}[u]
 \ar@2{-}[d]
 &
@@ -290,7 +139,7 @@ C_{\lam_2}
 &
 \\
 &&
-C_{\lam_2}^\dagger
+\ger{C}_{\lam_2}^\dagger
 \ar@2{-}[u]
 \ar@2{-}[d]
 &
@@ -319,15 +168,205 @@ C_{\lam_2}^\dagger
 `l[dl]|\lam
 [dl]
 \\
-&T_{\lam_2}
+&\ger{C}_{\lam_2}
 \ar[l]|{\lam_2}
 &
 \ar[l]|{\lam_1}
 }
 \ecen
 \end{align}
+\end{claim}
+\proof
+\qed
+
+What about 4 indices and beyond?
+Consider
+\beq
+M=
+\bcen
+\xymatrix@R=1pc{
+&M\ar@2{-}[dddddd]
+\ar[l]|\mu
+\\&
+\\
+&\ar[l]|\nu
+\\&
+\\
+\ar[r]|\rho&
+\\&
+\\
+\ar[r]|\omega&
+}
+\ecen
+\eeq
+Then
+
+\begin{align}
+\bcen
+\xymatrix@R=1pc{
+&M\ar@2{-}[dddddd]
+\ar[l]|\mu
+\\&
+\\
+&\ar[l]|\nu
+\\&
+\\
+\ar[r]|\rho&
+\\&
+\\
+\ar[r]|\omega&
+}
+\ecen
+&=
+\sum_{\alp, \beta}
+\frac{1}{\kappa_\alp \kappa_\beta}
+\bcen
+\xymatrix@R=1pc{
+&\ar[l]&&M
+\ar@2{-}[ddddd]
+\ar[l]
+\\
+&\ger{C}_\alp^\dagger\ar@2{-}[u]
+\ar@2{-}[d]&\ger{C}_\alp\ar@2{-}[u]
+\ar@2{-}[d]
+\ar[l]
+&
+\\
+&\ar[l]&&\ar[l]
+\\
+\ar[r]&&\ar[r]&
+\\
+&\ger{C}_\beta
+\ar@2{-}[u]
+\ar@2{-}[d]
+\ar[r]
+&\ger{C}_\beta^\dagger\ar@2{-}[u]
+\ar@2{-}[d]
+&
+\\
+\ar[r]&&\ar[r]&
+}
+\ecen
+\\
+&=
+\sum_{\alp}
+\frac{1}{\kappa^2_\alp d_\alp}
+\bcen
+\xymatrix@R=1pc{
+&\ar[l]&
+\\
+&\ger{C}_\alp^\dagger\ar@2{-}[u]
+\ar@2{-}[d]
+&
+\\
+&\ar[l]&
+\\
+\ar[r]&&
+\\
+&\ger{C}_\alp
+\ar@2{-}[u]
+\ar@2{-}[d]
+\ar`r[ruuu]
+`[uuu][uuu]
+&
+\\
+\ar[r]&&
+}
+\xymatrix@R=1pc{
+&&M
+\ar@2{-}[ddddd]
+\ar[l]
+\\
+&\ger{C}_\alp\ar@2{-}[u]
+\ar@2{-}[d]
+\ar`l[ld]
+`[ddd][ddd]
+&
+\\
+&&\ar[l]
+\\
+&\ar[r]&
+\\
+&\ger{C}_\alp^\dagger\ar@2{-}[u]
+\ar@2{-}[d]
+&
+\\
+&\ar[r]&
+}
+\ecen
+\end{align}
+
+Above, we used
+
+\beq
+\bcen
+\xymatrix@R=1pc{
+&&M
+\ar@2{-}[ddddd]
+\ar[l]
+\\
+&\ger{C}_\alp\ar@2{-}[u]
+\ar@2{-}[d]
+\ar[l]
+&
+\\
+&&\ar[l]
+\\
+&\ar[r]&
+\\
+\ar[r]
+&\ger{C}_\beta^\dagger\ar@2{-}[u]
+\ar@2{-}[d]
+&
+\\
+&\ar[r]&
+}
+\ecen
+=\frac{\delta(\alp, \beta)}{d_\alp}
+\bcen
+\xymatrix{
+&
+\\
+&
+\\
+&
+\\
+\ar
+`r[ur]`[uu][uu]&
+\\
+&
+}\ecen
+\bcen
+\xymatrix@R=1pc{
+&&M
+\ar@2{-}[ddddd]
+\ar[l]
+\\
+&\ger{C}_\alp\ar@2{-}[u]
+\ar@2{-}[d]
+\ar`l[ld]
+`[ddd][ddd]
+&
+\\
+&&\ar[l]
+\\
+&\ar[r]&
+\\
+&\ger{C}_\alp^\dagger\ar@2{-}[u]
+\ar@2{-}[d]
+&
+\\
+&\ar[r]&
+}
+\ecen
+\eeq
+
+
+
 
 \section{WE for angular momentum}
+Let
+
 $\lam=J$, $\lam_i=J_i$ for $i=1,2$.
 We will use Greek letters instead of $J$
 so as to keep
@@ -336,16 +375,23 @@ of using Greek
 letters for rep labels. 
 
 $m, m'= -\lam, \
--\lam+1,\ldots, \lam-1, \lam$. Note
+-\lam+1,\ldots, \lam-1, \lam$. Note that
 $d_\lam = 2\lam + 1$
  
 for $i=1,2$, $m_i= -\lam_i, -\lam_i +1,\ldots, \lam_i-1, \lam_i$.  Note
+that
 $d_{\lam_i} = 2\lam_i + 1$ 
 
 
 
-
+Define
 \beq
+\av{
+(\lam_1\lam_2)\lam m|
+\lam_1 m_1
+\lam_2 m_2}
+\quad
+=\quad
 \bcen
 \xymatrix@R=1pc{
 &
@@ -354,7 +400,7 @@ $d_{\lam_i} = 2\lam_i + 1$
 \\
 \lam m
 &\ar[l]
-C_\lam
+\ger{C}_\lam
 \ar@2{-}[u]
 \ar@2{-}[d]
 &
@@ -362,29 +408,21 @@ C_\lam
 &
 &\lam_2 m_2
 \ar[l]
-\\
 }
 \ecen
-\quad
-=\quad
-\av{
-(\lam_1\lam_2)\lam m|
-\lam_1 m_1
-\lam_2 m_2
-}
 \eeq
 
 \beq
-\\
+D^\lam_{m m'}(g)
+\quad =\quad
 \xymatrix{
 m
 &D^\lam
 \ar[l]
 &\ar[l]m'
 }
-\quad =\quad
-D^\lam_{m m'}(g)
 \eeq
+Then
 
 
 \beq
@@ -417,12 +455,12 @@ D^\lam_{m m'}(g)
 \xymatrix@R=1pc{
 &\ar[l]&&&\ar[l]
 \\
-&C_\lam^\dagger
+&\ger{C}_\lam^\dagger
 \ar@2{-}[u]
 \ar@2{-}[d]
 &
 D^\lam\ar[l]
-&C_\lam\ar[l]
+&\ger{C}_\lam\ar[l]
 \ar@2{-}[u]
 \ar@2{-}[d]
 &
@@ -433,7 +471,9 @@ D^\lam\ar[l]
 \end{array}
 \eeq
 
-tensor operator $M^\lam_m$
+We will denote a
+{\bf tensor operator} $M^\lam_m$ by
+the birdtrack
 
 \beq
 \av{
@@ -456,7 +496,7 @@ M^\lam_m
 \ecen
 \eeq
 
-
+\begin{claim}(Wigner-Ekart for angular momentum)
 \beq\begin{array}{l}
 \myboxed{
 \av{\lam_2 m_2 | M^\lam_m |
@@ -484,7 +524,7 @@ q(\lam, \lam_1, \lam_2)
 \xymatrix@R=1pc{
 &&\ar[l]|\lam
 \\
-&C_\lam\ar[l]|{\lam_2}
+&\ger{C}_\lam\ar[l]|{\lam_2}
 \ar@2{-}[u]
 \ar@2{-}[d]
 &
@@ -494,6 +534,7 @@ q(\lam, \lam_1, \lam_2)
 }\ecen
 \end{array}
 \eeq
+where
 
 \beqa
 q(\lam, \lam_1, \lam_2)
@@ -520,7 +561,7 @@ M^\lam_m
 &
 \\
 &&
-C_{\lam_2}^\dagger
+\ger{C}_{\lam_2}^\dagger
 \ar@2{-}[u]
 \ar@2{-}[d]
 &
@@ -538,3 +579,6 @@ C_{\lam_2}^\dagger
 &&&
 }\ecen
 \eeqa
+\end{claim}
+\proof
+\qed
