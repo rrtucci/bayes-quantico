@@ -1,13 +1,13 @@
 \chapter{Wigner-Ekart Theorem}
 \label{ch-wigner-ekart}
 
-This chapter is based on Cvitanovic's Birdtracks book Ref. \cite{birdtracks-book}.
+This chapter on the Wigner-Ekart (WE) Theorem is based on Cvitanovic's Birdtracks book Ref. \cite{birdtracks-book}.
 
 \section{WE in general}
 
 The birdtracks with no
 incomming or outgoing arrows
-are know as {\bf reduced matrix elements, isolated birdtracks, vacuum bubbles}
+are know as {\bf reduced matrix elements, isolated DAGs and vacuum bubbles}
 
 The following 3 claims 
 are related. They 
@@ -66,11 +66,6 @@ M\loopdown{5}{|\mu}
 \xymatrix{
 &\ar[l]|\lam}
 \eeqa
-This theorem is usually stated as:
-when $\lam$ is an irrep, the $\lam$ rep of  invariant matrix
-$M$ 
-is either zero, or proportional to
-the unit matrix.
 \end{claim}
 \proof
 \qed
@@ -423,7 +418,7 @@ m
 }
 \eeq
 Then
-
+the Clebsch-Gordan decomposition of $D^{\lam_1}\otimes D^{\lam_2}$ is
 
 \beq
 \begin{array}{l}
@@ -504,7 +499,7 @@ M^\lam_m
 \av{(\lam \lam_1 )\lam_2 m_2|\lam m 
 \lam_1 m_1
 }
-q(\lam, \lam_1, \lam_2)
+Q R
 }\\
 \bcen
 \xymatrix{
@@ -519,7 +514,7 @@ q(\lam, \lam_1, \lam_2)
 }
 \ecen
 =
-q(\lam, \lam_1, \lam_2)
+Q R
 \bcen
 \xymatrix@R=1pc{
 &&\ar[l]|\lam
@@ -537,7 +532,7 @@ q(\lam, \lam_1, \lam_2)
 where
 
 \beqa
-q(\lam, \lam_1, \lam_2)
+Q(\lam, \lam_1, \lam_2)
 &=&
 \frac{1}{d_{\lam_2}}
 \sum_{m_1, m_2, m}
@@ -579,6 +574,17 @@ M^\lam_m
 &&&
 }\ecen
 \eeqa
+and
+\beq
+R =
+\frac{d_{\lam_2}}
+{
+\trij
+{\lam}
+{\lam_2}
+{\lam_1}
+}
+\eeq
 \end{claim}
 \proof
 \qed
