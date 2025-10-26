@@ -211,30 +211,31 @@ If the map $\phi$
 is 1-1, onto, we call it a {\bf faithful representation} 
 
 The {\bf trivial \qt{representation}}
-represents all $g\in \calg$
-by  $diag(1,1, \dots, 1)$.
+is the rep with  $\phi(g)=1=[1]^{1\times 1}$ 
+for all $g\in \calg$.
 The dimension 
-of this \qt{rep} is $d_\lam=0$.
+of this \qt{rep} is $d_\lam=1$.
 This \qt{rep} is often not
 considered a rep because it
 doesn't capture any of the group structure.
 
 A {\bf singlet or scalar representation}
-is any 1 dimensional rep. It represents each
-$g\in \calg$
-by  $ z(g) diag(1,1, \dots, 1)$
-for some $z(g)\in\CC$.
-$z(g)$ is a $1\times 1$ matrix, a scalar,
-so the rep is one dimensional.
-For the singlet rep, $\av{i|\phi(a)|j}=z(g)
-\delta(i,j)$.
+is any 1 dimensional rep,
+including the trivial rep.\footnote{Some books use the terms \qt{singlet rep} and \qt{scalar rep} more narrowly to refer to the trivial rep only. Cvitanovic's birdtracks book \cite{birdtracks-book} and this book don't.} For example,
+the rep with  $\phi(g)=e^{i\beta(g)}=[e^{i\beta(g)}]^{1\times 1}$ 
+for all $g\in \calg$,
+where $\beta(g)\in \RR$.
 The dimension 
 of this rep is $d_\lam=1$.
+If $\phi(g)=e^{i\beta(g)}diag(1,1)$,
+this is sometimes refered to
+as a singlet
+rep too, or two identical copies of a singlet rep.
 The projection operator
 $\delta_a^b \delta_c^d$
-when acting on $G\indices{_c^d}$
-gives a $ z(G) diag(1,1, \dots, 1)$
-where $z(G)=G\indices{_c^c}=\tr(G)$, so it
+when acting on $z\indices{_c^d}$
+gives a $ \tr(z) diag(1,1, \dots, 1)$
+where $\tr(z)=z\indices{_c^c}$, so it
 projects to a singlet rep.
 
 
