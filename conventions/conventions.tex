@@ -210,33 +210,45 @@ to give the effect of each group element $a\in \calg$ on a basis of vectors $\{\
 If the map $\phi$
 is 1-1, onto, we call it a {\bf faithful representation} 
 
-The {\bf trivial \qt{representation}}
+A {\bf singlet (or invariant or conserved) quantity of group $\calg$}
+is a quantity that
+is invariant under the group transformations
+$g\in \calg$.
+The {\bf trivial or singlet representation}
 is the rep with  $\phi(g)=1=[1]^{1\times 1}$ 
 for all $g\in \calg$.
 The dimension 
-of this \qt{rep} is $d_\lam=1$.
-This \qt{rep} is often not
-considered a rep because it
-doesn't capture any of the group structure.
+of this rep is $d_\lam=1$.
+If $\phi(g)=diag(1,1)$,
+this is referred to as two identical copies of a singlet rep.
+The {\bf singlet projection operator}
+$\delta_a^b \delta_c^d$
+when acting on $z\indices{_c^d}$
+gives a $ \tr(z) diag(1,1, \dots, 1)$
+where $\tr(z)=z\indices{_c^c}$, so it
+projects to out a singlet
+quantity.
+A singlet projection
+operator $P_\lam$ 
+is associated with a singlet rep $\lam$ with
+rep-matrices $G_\lam(g)=1$.
+For example,
+$P_\lam=\delta_a^b \delta_c^d$
+is associated with a rep $\lam$
+with rep-matrices
+$G_\lam\otimes G^\dagger_\lam=1$
 
-A {\bf singlet or scalar representation}
+
+
+
+A {\bf scalar representation}
 is any 1 dimensional rep,
-including the trivial rep.\footnote{Some books use the terms \qt{singlet rep} and \qt{scalar rep} more narrowly to refer to the trivial rep only. Cvitanovic's birdtracks book \cite{birdtracks-book} and this book don't.} For example,
+%including the trivial rep.\footnote{Some books use the terms \qt{singlet rep} and \qt{scalar rep} more narrowly to refer to the trivial rep only. Cvitanovic's birdtracks book \cite{birdtracks-book} and this book don't.} For example,
 the rep with  $\phi(g)=e^{i\beta(g)}=[e^{i\beta(g)}]^{1\times 1}$ 
 for all $g\in \calg$,
 where $\beta(g)\in \RR$.
 The dimension 
 of this rep is $d_\lam=1$.
-If $\phi(g)=e^{i\beta(g)}diag(1,1)$,
-this is sometimes refered to
-as a singlet
-rep too, or two identical copies of a singlet rep.
-The projection operator
-$\delta_a^b \delta_c^d$
-when acting on $z\indices{_c^d}$
-gives a $ \tr(z) diag(1,1, \dots, 1)$
-where $\tr(z)=z\indices{_c^c}$, so it
-projects to a singlet rep.
 
 
 

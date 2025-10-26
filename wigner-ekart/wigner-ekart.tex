@@ -44,7 +44,7 @@ and $TR=$ trivial representations.
 \begin{claim}(Schur's Lemma) (2 indices)
 
 If $\mu$ and $\lam$
-are irreps, then
+are irreps, and $M$ is an invariant matrix, then
 \beqa
 M
 \indices{
@@ -75,6 +75,8 @@ M\loopdown{5}{|\mu}
 \qed
 
 \begin{claim} (Wigner-Ekart (WE) Theorem) (3 indices)
+
+If $M$ is an invariant 3 index tensor, 
 \begin{align}
 (M^{\lam i})
 \indices{
@@ -580,7 +582,7 @@ M^\lam_m
 \eeqa
 and
 \beq
-R =
+R(\lam, \lam_1, \lam_2) =
 \frac{d_{\lam_2}}
 {
 \trij
