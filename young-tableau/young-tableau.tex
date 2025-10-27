@@ -205,7 +205,7 @@ The SYT with $n_b$ boxes and no more than $n$ rows
 label the irreps of $GL(n)$ and of $U(n)$
 
 \beq
-irreps(U(n)) =\cup_{n_b\leq n} \cup_{NR\leq n}STY(n_b, NR) 
+irreps(U(n)) =\bigcup_{n_b\leq n, NR\leq n}STY(n_b, NR) 
 \eeq
 
 \item
@@ -215,7 +215,7 @@ rows ($NR\leq n -1$), label the irreps of $SL(n)$ and $SU(n)$.
 
 \beq
 irreps(SU(n)) =
-\cup_{n_b\leq n} \cup_{NR\leq n-1}STY(n_b, NR) 
+\bigcup_{n_b\leq n, NR\leq n-1}STY(n_b, NR) 
 \eeq
 \end{enumerate}
 \end{claim}
@@ -237,6 +237,10 @@ $SYT(\caly)=$ set of SYT with a YD $\caly$.
 $dim(\caly| S_{n_b})=$ dimension of irrep $\caly$ of $S_{n_b}$
 
 $dim(\caly_\alp| U(n))=$ dimension of irrep $\caly_\alp$ of $U(n)$ or $SU(n)$.
+
+
+
+\subsection{$dim({\cal Y}|S_{n_b})$}
 
 \begin{claim}
 
@@ -373,6 +377,7 @@ so
 dim(\caly| S_4)= \frac{4!}{4(2)}=3
 \eeq
 
+\subsection{Regular Representation}
 The {\bf regular representation} of the
 symmetric group $S_{n_b}$ is defined as follows.
 For each permutation $\s \in S_{n_b}$, define
@@ -428,33 +433,24 @@ Hence,
 \label{eq-1-hook-sq}
 \eeq
 
-The Clebsch-Gordan series  for a rep of $S_{n_b}$
-is
-\beq
-1 = \sum_{\caly\in S} P_\caly
-\eeq
-for some set $S$.
 
 The Clebsch-Gordan series 
-for a rep of $U(n)$ or $SU(n)$ is
+for the regular rep of $S_{n_b}$ is
 
 \beq
-1 = \sum_{\caly\in S}
+1 = \sum_{\caly\in YD(n_b)}
 P_\caly
-\label{eq-cd-su-u-n_b}
 \eeq
-for some set $S$,
 where each $P_\caly$
 can be further decomposed into 
 
 \beq
 P_\caly = \sum_{\caly_\alp \in SYT(\caly)} \underbrace{\ket{\caly_\alp}\bra{\caly_\alp}}_{P_{\caly_\alp}}
 \eeq
-The projection operators $P_{\caly_\alp}$ 
-for $\caly_\alp\in STY(\caly)$
+The projection operators $\{P_{\caly_\alp}
+: \caly_\alp\in STY(\caly), \caly\in YD(n_b)\}$
 are complete and orthogonal.
 
-Examples of Eq.(\ref{eq-cd-su-u-n_b}) are
 
 
 \beq
@@ -485,12 +481,12 @@ Examples of Eq.(\ref{eq-cd-su-u-n_b}) are
 Recall that
 \beq
 irreps(U(n)) =
-\cup_{n_b\leq n} \cup_{NR\leq n}STY(n_b, NR) 
+\bigcup_{n_b\leq n, NR\leq n}STY(n_b, NR) 
 \eeq
 
 \beq
 irreps(SU(n)) =
-\cup_{n_b\leq n} \cup_{NR\leq n-1}STY(n_b, NR) 
+\bigcup_{n_b\leq n, NR\leq n-1}STY(n_b, NR) 
 \eeq
 
 A SYT with $n_b$ boxes represents a 
@@ -550,6 +546,7 @@ than $n$ rows would require a  repetition
 in of an integer in a column, and
 such a column, after antisymetrizing, equals zero.
 
+\subsection{$dim({\cal Y}_\alpha|U(n))$}
 \begin{claim}
 \beq
 dim(\caly_\alp|U(n))= |YT(\caly)|
