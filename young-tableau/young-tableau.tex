@@ -4,16 +4,17 @@
 This chapter is based on Cvitanovic's Birdtracks book Ref. \cite{birdtracks-book}.
 
 A {\bf Young Diagram} (YD) $\caly=[\lam_1, \lam_2, \ldots, \lam_D]$ 
-consists of $\lam_1$ left-aligned empty boxes
-over $\lam_2$, over 
-$\lam_3$ left-aligned empty boxes, up to
-$\lam_D$ boxes,
-where $\lam_1\geq \lam_2\geq \ldots\geq \lam_D\geq 1$.
+consists of $\lam_1$ left-aligned empty boxes (LAEB)
+over $\lam_2$ LAEB, over 
+$\lam_3$ LAEB, up to
+$\lam_{NR}$ LAEB,
+where $\lam_1\geq \lam_2\geq \ldots\geq \lam_{NR}\geq 1$.
+$NR=$ number of rows.
 For example,
 
 \beq
-[4, 2,1,1]=
-\ydiagram{4,2,1,1}
+\ydiagram{4,2,1,1} =
+[4,2,1,1]
 \eeq
 We will call $[4, 2,1,1]$ the
 {\bf row lengths} (RL) method 
@@ -40,7 +41,9 @@ when reading a column from top to bottom. Obviously, for $n<n_b$, some integers 
 A {\bf Standard Young Tableau} (SYT)
 $\caly_\alp$  is a YT such that $n=n_b$ and 
 no integer is repeated. 
-\begin{figure}
+Fig.\ref{fig-syt-1234}
+shows all SYT for $n_b=1,2,3,4$ 
+\begin{figure}[h!]
 \begin{itemize}
 
 \item $n_b=1$
@@ -111,20 +114,20 @@ no integer is repeated.
 1 \\ 2 \\ 3 \\ 4
 \end{ytableau}
 \end{itemize}
-\caption{SYT for $n_b=1, 2,3,4$.}
-\label{fig-syt-1234.}
+\caption{All SYT for $n_b=1, 2,3,4$.}
+\label{fig-syt-1234}
 \end{figure}
 
 We will use
 $|\caly|$, or $|\caly_\alp|$
 or $|\alp|$ to denote the number
-of boxes in a YD or YT.
-Sometimes $|S|$
-means the number of elements
-in a finite set $S$, but
-that should not
-lead to confusion.
-
+of boxes in a YD or YT.\footnote
+{For many authors and for us too,  $|S|$
+stands for the number of elements
+in a finite set $S$.
+This should not
+lead to confusion
+as a YD or YT are not sets.}
 
 \section{Symmetric group $S_{n_b}$}
 
@@ -174,6 +177,17 @@ M M^\dagger =M^\dagger M =1\}$
 $SU(n)=\{ M\in U(n):
 det(M)=1\}$
 
+Let
+
+$YD(n_b)=$ set of YD with $n_b$ boxes.
+$YD=\cup_{n_n=1}^\infty YD(n_b)$.
+
+$SYD(n_b)=$ set of SYD with $n_b$ boxes. $YT=\cup_{n_n=1}^\infty YT(n_b)$.
+
+$SYT(n_b, NR)=$ set of STY with $n_b$
+boxes and $NR$ rows.
+
+
 
 \begin{claim}\
 \begin{enumerate}
@@ -181,13 +195,28 @@ det(M)=1\}$
 The YD with $n_b$ boxes label all irreps of the symmetric group 
 $S_{n_b}$.
 
+\beq
+irreps(S_{n_b})=YD(n_b)
+\eeq
+
 \item
-The SYT with $n_b$ boxes and no more than $n_b$ rows,
-label the irreps of $GL(n_b)$ and of $U(n_b)$
+The SYT with $n_b$ boxes and no more than $n$ rows
+($NR\leq n$),
+label the irreps of $GL(n)$ and of $U(n)$
+
+\beq
+irreps(U(n)) =\cup_{n_b\leq n} \cup_{NR\leq n}STY(n_b, NR) 
+\eeq
+
 \item
 The SYT with $n_b$ boxes and
-no more than $n_b-1$
-rows, label the irreps of $SL(n_b)$ and $SU(n_b)$.
+no more than $n-1$
+rows ($NR\leq n -1$), label the irreps of $SL(n)$ and $SU(n)$.
+
+\beq
+irreps(SU(n)) =
+\cup_{n_b\leq n} \cup_{NR\leq n-1}STY(n_b, NR) 
+\eeq
 \end{enumerate}
 \end{claim}
 \proof
@@ -195,36 +224,38 @@ rows, label the irreps of $SL(n_b)$ and $SU(n_b)$.
 
 
 
-$YD(n_b)=$ set of YD with $n_b$ boxes
-
-$SYD(n_b)=$ set of SYD with $n_b$ boxes
-
-The irreps of $S_{n_b}$  are labelled by the $\caly\in YD(n_b)$. 
-Hence, there is a 1-1 onto map between $irreps(S_{n_b})$ and $YD(n_b)$
 
 
-\beq
-irreps(S_{n_b})=YD(n_b)
-\eeq
-
-$YT(\caly)=$ set of YT for a $\caly\in YD(n_b)$.
-
-$SYT(\caly)=$ set of SYT for a $\caly\in YD(n_b)$.
 
 
-$dim(\caly)=$ dimension of irrep $\caly$.
+
+$YT(\caly)=$ set of YT with a YD $\caly$.
+
+$SYT(\caly)=$ set of SYT with a YD $\caly$.
+
+
+$dim(\caly| S_{n_b})=$ dimension of irrep $\caly$ of $S_{n_b}$
+
+$dim(\caly_\alp| U(n))=$ dimension of irrep $\caly_\alp$ of $U(n)$ or $SU(n)$.
+
+\begin{claim}
 
 \beq
-dim(\caly)=|SYT(\caly)|
+dim(\caly|S_{n_b})=|SYT(\caly)|
 \eeq
-For example, the 
-irrep 
+\end{claim}
+\proof
+\qed
+
+For example, there are 3
+irreps of $S_4$ 
+associated withe the YD
 
 \beq
 \caly=
 \ydiagram{2,1,1}
 \eeq
-has dimension 3 because there are 3 possible SYT for this YD:
+And each of those 3 irreps has dimension 3. Why? Because there are 3 possible SYT for this YD:
 
 \beq
 \begin{ytableau}
@@ -253,7 +284,8 @@ has dimension 3 because there are 3 possible SYT for this YD:
 \implies dim(\caly)=3
 \eeq
 Thus, we can denote the
-basis vectors of this irrep by
+basis vectors of one of
+these 3 degenerate irreps by
 
 \beq
 \ket{\bcen\begin{ytableau}
@@ -312,9 +344,9 @@ hook(\caly)=
 \eeq
 
 
-\begin{claim} ({\bf hook rule} for computing $dim(\caly)$)
+\begin{claim} ({\bf hook rule} for computing $dim(\caly|S_{n_b})$)
 \beq
-dim(\caly)=
+dim(\caly| S_{n_b})=
 \frac{n_b!}{hook(\caly)}
 \eeq
 \end{claim}
@@ -338,7 +370,7 @@ hook(\caly)=
 \eeq
 so
 \beq
-dim(\caly)= \frac{4!}{4(2)}=3
+dim(\caly| S_4)= \frac{4!}{4(2)}=3
 \eeq
 
 The {\bf regular representation} of the
@@ -356,31 +388,37 @@ For any $\tau\in S_{n_b}$, suppose
 
 \beq
 \bra{\s_j}\tau\ket{\s_i}=
-\av{\tau^{-1}\s_j|
+\av{\s_j \tau|
 \s_i}
 \eeq
 
 
 \beq
 \bra{\s_j}\tau\ket{x}=
-\av{\tau^{-1}\s_j|
-x}
+\av{\s_j\tau|
+x}=\sum_i x_i \av{\s_j\tau|\s_i}
 \eeq
+
+
+\begin{claim}
 The regular
 rep is $n_b!$ dimensional
 and reducible.
+In the decomposition of the regular rep of $S_{n_b}$,
+each $\lam\in irreps(S_{n_b})$ 
+appears $dim(\lam|S_{n_b})$ times. 
+\end{claim}
+\proof
+\qed
 
-\begin{claim}
-The regular rep of $S_{n_b}$
-decomposes into each $\lam\in rreps(S_{n_b})$,
-appearing $dim(\lam)$ times. Thus
+From the last claim, it follows that
 
 \begin{align}
-n_b! = |S_{n_b}| &=\sum_{\lam\in irreps(S_{n_b})}[dim(\lam)]^2
+n_b! = |S_{n_b}| &=\sum_{\lam\in irreps(S_{n_b})}[dim(\lam|S_{n_b})]^2
 \\
 &=[n_b!]^2\sum_{\caly \in YD(n_b)}
 \frac{1}{[hook(\caly)]^2}\quad
-\text{(Because  $irreps(S_{n_b})=YD(n_b)$)}
+\text{(Because  $|irreps(S_{n_b})|=|YD(n_b)|$)}
 \end{align}
 Hence,
 
@@ -390,20 +428,33 @@ Hence,
 \label{eq-1-hook-sq}
 \eeq
 
+The Clebsch-Gordan series  for a rep of $S_{n_b}$
+is
+\beq
+1 = \sum_{\caly\in S} P_\caly
+\eeq
+for some set $S$.
 
-\end{claim}
-\proof
-\qed
+The Clebsch-Gordan series 
+for a rep of $U(n)$ or $SU(n)$ is
 
 \beq
-1 = \sum_{\caly \in YD(n_b)} P_\caly
+1 = \sum_{\caly\in S}
+P_\caly
+\label{eq-cd-su-u-n_b}
 \eeq
+for some set $S$,
+where each $P_\caly$
+can be further decomposed into 
 
 \beq
-P_\caly = \sum_{\caly_\alp \in SYT(\caly)} \ket{\caly_\alp}\bra{\caly_\alp}
+P_\caly = \sum_{\caly_\alp \in SYT(\caly)} \underbrace{\ket{\caly_\alp}\bra{\caly_\alp}}_{P_{\caly_\alp}}
 \eeq
-The projection operators  
+The projection operators $P_{\caly_\alp}$ 
+for $\caly_\alp\in STY(\caly)$
 are complete and orthogonal.
+
+Examples of Eq.(\ref{eq-cd-su-u-n_b}) are
 
 
 \beq
@@ -431,12 +482,15 @@ are complete and orthogonal.
 
 \section{Unitary group $U(n)$}
 
-$SYT(n_b, R\leq n)=$ SYTs with $n_b$ boxes and less then $n$ rows
+Recall that
+\beq
+irreps(U(n)) =
+\cup_{n_b\leq n} \cup_{NR\leq n}STY(n_b, NR) 
+\eeq
 
 \beq
-irreps(U(n))=
-\cup_{n_b\leq n}
-SYT(n_b, R\leq n)
+irreps(SU(n)) =
+\cup_{n_b\leq n} \cup_{NR\leq n-1}STY(n_b, NR) 
 \eeq
 
 A SYT with $n_b$ boxes represents a 
@@ -496,20 +550,25 @@ than $n$ rows would require a  repetition
 in of an integer in a column, and
 such a column, after antisymetrizing, equals zero.
 
-$YD(n_b)=$ set of YD with $n_b$ boxes
-
-$YT(\caly)=$ set of YT for a $\caly\in YD(n_b)$.
-
-If $\caly_\alp$ is a SYT in $irreps(U(n))$
-and the YD of $\caly_\alp$
-is  $\caly$, then
+\begin{claim}
 \beq
-dim(\caly_\alp)= |YT(\caly)|
+dim(\caly_\alp|U(n))= |YT(\caly)|
 \label{eq-dim-yalp}
 \eeq
+Note that the right hand
+side is independent
+of $\alp$, so
+this dimension
+is  the same for
+all irreps $\alp$
+with the same YD $\caly$.
+\end{claim}
+\proof
+\qed
+
 Hence, $\{\ket{\alp}:  \alp\in YT(\caly)\}$
 are a basis for the 
-irrep $\caly_\alp$.
+irrep $\caly_\alp$ of $U(n)$.
 Note that the irreps of $U(n)$ are given by SYT  $\caly_\alp$,
 whereas the basis vectors of an irrep are given by YT (not just STY).
 For example,
@@ -536,7 +595,7 @@ the basis vectors are
 \eeq
 so
 \beq
-dim(\caly_\alp)=
+dim(\caly_\alp|U(n_b))=
 3
 \eeq
 
