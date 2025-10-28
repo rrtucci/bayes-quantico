@@ -492,10 +492,10 @@ $n_b$ boxes  and number of rows $NR<n'$
 
 Recall that\footnote{Note that
 $STY(n_b) $ only
-contains STY with $n_b\leq n$ boxes, so the $n<n_b$
+contains STY with $n_b\leq n$ boxes, so the $n_b\leq n$
 constraint might seem redundant in Eqs.(\ref{eq-irreps-of-un-sun}).
 It isn't redundant because
-by $\cup_{n_b<n}$
+by $\cup_{n_b\leq n}$
 we mean $\cup_{n_b=1}^n$.}
 
 \begin{subequations}
@@ -563,43 +563,40 @@ A single column SYT indicates a
 totally
 anti-symmetric tensor, a
 single row SYT indicates a totally symmetric tensor,
-and a neither single column nor single
-row SYT indicates mixed symmetry. This
+and a SYT with more
+than one row or column indicates a mixed symmetry tensor. This
 is why we can't have more than $n$ rows,
-because there are only $n_b$ integers
+because there are only $n$ integers
 to fill all boxes so more
 than $n$ rows would require a  repetition
 of an integer in a column, and
-such a column, after antisymetrizing, equals zero.
+such a column, after antisymetrizing, would
+lead to zero.
 
 
-\section{Young Projection operators}
+\subsection{Young Projection operators}
 
-For each  SYT $\caly_\alp\in irreps(U(n))$, we have
+For each  SYT $\caly_\alp\in irreps(U(n))$, define
+the {\bf Young projection operator}
 
 \beq
 P_{\caly\alp}=
-\caln_\caly
+\caln
 \left(\prod_i S_i\right)
 \left(\prod_j A_j
 \right)
 \eeq
-Note that the normalization
-constant $\caln_\caly$
-depends only on the
-YD $\caly$.
-
+for some normalization
+constant $\caln$ yet to
+bee  determined.
 These projection
 operators are not
 unique.
 
-Let 
-
-$NR(\caly)=$ number of boxes in YD $\caly$
 \begin{claim}
-Let 
+
 \beq
-\caln_\caly
+\caln
 =
 \frac{
 \left(\prod_i |S_{i}|!\right)
@@ -612,7 +609,11 @@ where $|S_i|$
 and $|A_j|$ are
 the number of arrows entering 
 the symmetrizer or
-anti-symmetrizer. Then the operators $P_{\caly_\alp}$ are idempotent 
+anti-symmetrizer.
+Note that the normalization
+constant $\caln$
+depends only on the
+YD $\caly$. Furthermore, the operators $P_{\caly_\alp}$ are idempotent 
 (i.e., their square equals themselves) mutually orthogonal and complete:
 \beq
 P_{\caly_\alp}
@@ -642,10 +643,10 @@ n-1 & \text{for $SU(n)$}
 
 \beq
 P_{\caly_\alp}=
-\caln_\caly
+\caln
 \frac{1}
 {\prod_i |S_i|!
-\prod_jj |A_j|!}
+\prod_j |A_j|!}
 \left(
 \bcen
 \underbrace
@@ -669,7 +670,7 @@ From Eq.(\ref{eq-complete-un-proj})
 \indi
 &=&
 \sum_{\caly_\alp\in SYT(n_b, NR<n')}
-\caln_\caly
+\caln
 \frac{1}
 {\prod_i |S_i|!
 \prod_j |A_j|!}
@@ -678,7 +679,7 @@ From Eq.(\ref{eq-complete-un-proj})
 &=&
 \sum_{\caly\in YD(n_b)}
 \frac{n_b!}{hook(\caly)}
-\caln_\caly
+\caln
 \frac{1}
 {\prod_i |S_i|!
 \prod_j |A_j|!}
