@@ -177,15 +177,23 @@ M M^\dagger =M^\dagger M =1\}$
 $SU(n)=\{ M\in U(n):
 det(M)=1\}$
 
-Let
-
 $YD(n_b)=$ set of YD with $n_b$ boxes.
 $YD=\cup_{n_n=1}^\infty YD(n_b)$.
 
-$SYD(n_b)=$ set of SYD with $n_b$ boxes. $YT=\cup_{n_n=1}^\infty YT(n_b)$.
+$SYD(n_b)=$ set of SYD with $n_b$ boxes. $YT=\cup_{n_b=1}^\infty YT(n_b)$.
 
 $SYT(n_b, NR)=$ set of STY with $n_b$
 boxes and $NR$ rows.
+
+$YT(\caly)=$ set of YT with a YD $\caly$.
+
+$SYT(\caly)=$ set of SYT with a YD $\caly$.
+
+
+$dim(\caly| S_{n_b})=$ dimension of irrep $\caly$ of $S_{n_b}$
+
+$dim(\caly_\alp| U(n))=$ dimension of irrep $\caly_\alp$ of $U(n)$ or $SU(n)$.
+
 
 
 
@@ -205,7 +213,7 @@ The SYT with $n_b$ boxes and no more than $n$ rows
 label the irreps of $GL(n)$ and of $U(n)$
 
 \beq
-irreps(U(n)) =\bigcup_{n_b\leq n, NR\leq n}STY(n_b, NR) 
+irreps(U(n)) =\bigcup_{n_b\leq n, \;NR\leq n}STY(n_b, NR) 
 \eeq
 
 \item
@@ -215,7 +223,7 @@ rows ($NR\leq n -1$), label the irreps of $SL(n)$ and $SU(n)$.
 
 \beq
 irreps(SU(n)) =
-\bigcup_{n_b\leq n, NR\leq n-1}STY(n_b, NR) 
+\bigcup_{n_b\leq n,\; NR\leq n-1}STY(n_b, NR) 
 \eeq
 \end{enumerate}
 \end{claim}
@@ -228,15 +236,6 @@ irreps(SU(n)) =
 
 
 
-
-$YT(\caly)=$ set of YT with a YD $\caly$.
-
-$SYT(\caly)=$ set of SYT with a YD $\caly$.
-
-
-$dim(\caly| S_{n_b})=$ dimension of irrep $\caly$ of $S_{n_b}$
-
-$dim(\caly_\alp| U(n))=$ dimension of irrep $\caly_\alp$ of $U(n)$ or $SU(n)$.
 
 
 
@@ -285,7 +284,7 @@ And each of those 3 irreps has dimension 3. Why? Because there are 3 possible SY
 \\
 3
 \end{ytableau}
-\implies dim(\caly)=3
+\implies dim(\caly| S_4)=3
 \eeq
 Thus, we can denote the
 basis vectors of one of
@@ -447,8 +446,12 @@ can be further decomposed into
 \beq
 P_\caly = \sum_{\caly_\alp \in SYT(\caly)} \underbrace{\ket{\caly_\alp}\bra{\caly_\alp}}_{P_{\caly_\alp}}
 \eeq
-The projection operators $\{P_{\caly_\alp}
-: \caly_\alp\in STY(\caly), \caly\in YD(n_b)\}$
+The projection operators 
+\beq
+\{P_{\caly_\alp}
+: \caly_\alp\in STY(\caly), \caly\in YD(n_b)\}=
+\{P_{\caly_\alp}: \caly_\alp \in SYT(n_b)\}
+\eeq
 are complete and orthogonal.
 
 
@@ -478,16 +481,35 @@ are complete and orthogonal.
 
 \section{Unitary group $U(n)$}
 
-Recall that
+Let 
+
+$STY(n_b, NR<n')=$ set of STY with
+$n_b$ boxes  and number of rows $NR<n'$
+
+Recall that\footnote{Note that
+$STY(n_b) $ only
+contains STY with $n_b\leq n$ boxes, so the $n<n_b$
+constraint might seem redundant in Eqs.(\ref{eq-irreps-of-un-sun}).
+It isn't redundant because
+by $\cup_{n_b<n}$
+we mean $\cup_{n_b=1}^n$.}
+
+\begin{subequations}
+\label{eq-irreps-of-un-sun}
 \beq
 irreps(U(n)) =
-\bigcup_{n_b\leq n, NR\leq n}STY(n_b, NR) 
+\bigcup_{n_b\leq n,\; NR\leq n}STY(n_b, NR) 
+=
+\bigcup_{n_b=1}^n STY(n_b, NR<n)
 \eeq
 
 \beq
 irreps(SU(n)) =
-\bigcup_{n_b\leq n, NR\leq n-1}STY(n_b, NR) 
+\bigcup_{n_b\leq n,\; NR\leq n-1}STY(n_b, NR) 
+=
+\bigcup_{n_b=1}^n STY(n_b, NR<n-1)
 \eeq
+\end{subequations}
 
 A SYT with $n_b$ boxes represents a 
 tensor with $n_b$ indices ($n_b$-particles state). Each index ranges from $1$ to $n$.
@@ -543,10 +565,143 @@ is why we can't have more than $n$ rows,
 because there are only $n_b$ integers
 to fill all boxes so more
 than $n$ rows would require a  repetition
-in of an integer in a column, and
+of an integer in a column, and
 such a column, after antisymetrizing, equals zero.
 
+
+\section{Young Projection operators}
+
+For each  SYT $\caly_\alp\in irreps(U(n))$, we have
+
+\beq
+P_{\caly\alp}=
+\caln_\caly
+\left(\prod_i S_i\right)
+\left(\prod_j A_j
+\right)
+\eeq
+Note that the normalization
+constant $\caln_\caly$
+depends only on the
+YD $\caly$.
+
+These projection
+operators are not
+unique.
+
+Let 
+
+$NR(\caly)=$ number of boxes in YD $\caly$
+\begin{claim}
+Let 
+\beq
+\caln_\caly
+=
+\frac{
+\left(\prod_i |S_{i}|!\right)
+\left(\prod_j |A_j|!
+\right)
+}{hook(\caly)}
+\label{eq-n-caly}
+\eeq
+where $|S_i|$
+and $|A_j|$ are
+the number of arrows entering 
+the symmetrizer or
+anti-symmetrizer. Then the operators $P_{\caly_\alp}$ are idempotent 
+(i.e., their square equals themselves) mutually orthogonal and complete:
+\beq
+P_{\caly_\alp}
+P_{\caly_\beta}=
+P_{\caly_\alp}
+\delta(\alp, 
+\beta)
+\eeq
+\beq
+1 =\sum_{\caly_\alp\in SYT(n_b, \;NR<n')}
+P_{\caly_\alp}
+\label{eq-complete-un-proj}
+\eeq
+where
+\beq
+n'=
+\left\{
+\begin{array}{ll}
+n &\text{for $U(n)$}
+\\
+n-1 & \text{for $SU(n)$}
+\end{array}
+\right.
+\eeq
+\end{claim}
+\proof
+
+\beq
+P_{\caly_\alp}=
+\caln_\caly
+\frac{1}
+{\prod_i |S_i|!
+\prod_jj |A_j|!}
+\left(
+\bcen
+\underbrace
+{\xymatrix@C=1pc@R=1pc{
+&&\ar[ll]
+\\
+&&\ar[ll]
+\\
+\vdots
+\\
+&&\ar[ll]
+}}_\indi
+\ecen
++
+\cdots
+\right)
+\eeq
+From Eq.(\ref{eq-complete-un-proj})
+
+\beqa
+\indi
+&=&
+\sum_{\caly_\alp\in SYT(n_b, NR<n')}
+\caln_\caly
+\frac{1}
+{\prod_i |S_i|!
+\prod_j |A_j|!}
+\quad\indi
+\\
+&=&
+\sum_{\caly\in YD(n_b)}
+\frac{n_b!}{hook(\caly)}
+\caln_\caly
+\frac{1}
+{\prod_i |S_i|!
+\prod_j |A_j|!}
+\quad \indi
+\\
+&=&
+\sum_{\caly\in YD(n_b)}
+\frac{n_b!}{
+[hook(\caly)]^2}
+\frac{1}
+{\prod_i |S_i|!
+\prod_j |A_j|!}
+\quad \indi
+\quad
+\text{(if assume Eq.(\ref{eq-n-caly}))}
+\\
+&=& \indi \quad\text{
+(by Eq.(\ref{eq-1-hook-sq}))}
+\eeqa
+\qed
+
 \subsection{$dim({\cal Y}_\alpha|U(n))$}
+
+Let $dim(\caly_\alp|U(n))$
+be the dimension of an irrep 
+of $U(n)$
+with STY given by $\caly_\alp\in STY(n_b, NR<n)$.
 \begin{claim}
 \beq
 dim(\caly_\alp|U(n))= |YT(\caly)|
@@ -592,135 +747,19 @@ the basis vectors are
 \eeq
 so
 \beq
-dim(\caly_\alp|U(n_b))=
+dim(\caly_\alp|U(2))=
 3
 \eeq
 
 
 
 
-\section{Young Projection operators}
-
-For each in the SYT $\caly_\alp\in irreps(U(n))$, we have
-
-\beq
-P_{\caly\alp}=
-\caln_\caly
-\left(\prod_i S_i\right)
-\left(\prod_j A_j
-\right)
-\eeq
-Note that the normalization
-constant $\caln_\caly$
-depends only on the
-YD $\caly$.
-
-These projection
-operators are not
-unique.
-
-\begin{claim}
-Let 
-\beq
-\caln_\caly
-=
-\frac{
-\left(\prod_i |S_{i}|!\right)
-\left(\prod_j |A_j|!
-\right)
-}{hook(\caly)}
-\label{eq-n-caly}
-\eeq
-where $|S_i|$
-and $|A_j|$ are
-the number of arrows entering 
-the symmetrizer or
-anti-symmetrizer. Then the operators $P_{\caly_\alp}$ are idempotent 
-(i.e., their square equals themselves) mutually orthogonal and complete:
-\beq
-P_{\caly_\alp}
-P_{\caly_\beta}=
-P_{\caly_\alp}
-\delta(\alp, 
-\beta)
-\eeq
-\beq
-1 =\sum_{\caly_\alp\in SYT(n_b, R<n)}
-P_{\caly_\alp}
-\label{eq-complete-un-proj}
-\eeq
-\end{claim}
-\proof
-
-\beq
-P_{\caly_\alp}=
-\caln_\caly
-\frac{1}
-{\prod_i |S_i|!
-\prod_jj |A_j|!}
-\left(
-\bcen
-\underbrace
-{\xymatrix@C=1pc@R=1pc{
-&&\ar[ll]
-\\
-&&\ar[ll]
-\\
-\vdots
-\\
-&&\ar[ll]
-}}_\indi
-\ecen
-+
-\cdots
-\right)
-\eeq
-From Eq.(\ref{eq-complete-un-proj})
-
-\beqa
-\indi
-&=&
-\sum_{\caly_\alp\in SYT(n_b, R<n)}
-\caln_\caly
-\frac{1}
-{\prod_i |S_i|!
-\prod_j |A_j|!}
-\quad\indi
-\\
-&=&
-\sum_{\caly}
-\frac{n_b!}{hook(\caly)}
-\caln_\caly
-\frac{1}
-{\prod_i |S_i|!
-\prod_j |A_j|!}
-\quad \indi
-\\
-&=&
-\sum_\caly
-\frac{n_b!}{
-[hook(\caly)]^2}
-\frac{1}
-{\prod_i |S_i|!
-\prod_j |A_j|!}
-\quad \indi
-\quad
-\text{(if assume Eq.(\ref{eq-n-caly}))}
-\\
-&=& \indi \quad\text{
-(by Eq.(\ref{eq-1-hook-sq}))}
-\eeqa
-\qed
-
-Let $dim(\caly_\alp)$
-be the dimension of an irrep 
-of $U(n)$
-with STY given by $\caly_\alp\in STY(n_\rvb, R<n)$. In Eq.(\ref{eq-dim-yalp})
-we gave a way of finding $dim(\caly_\alp)$
+ In Eq.(\ref{eq-dim-yalp})
+we gave a way of finding $dim(\caly_\alp|U(n))$
 A second way is by taking the trace of
 the corresponding projection operator
 \beq
-dim(\caly_\alp)=
+dim(\caly_\alp|U(n))=
 \tr(P_{\caly_\alp})\eeq
 For example, if
 
@@ -733,7 +772,7 @@ For example, if
 then
 
 \beqa
-d_{\caly_\alp}
+dim(\caly_\alp| U(n))
 &=&
 \bcen
 \xymatrix@R=1pc@C=1pc{
@@ -765,15 +804,15 @@ d_{\caly_\alp}
 \\
 &=& \frac{1}{2}(n^2 + n)
 \\
-&=&3 \text{ for $U(n=2)$}
+&=&3 \text{ for $n=2$}
 \eeqa
 
-A third way of computing $dim(\caly_\alp)$
+A third way of computing $dim(\caly_\alp| U(n))$
 is by computing the hook and coat functions
 and using the formula
 
 \beq
-dim(\caly_\alp)=
+dim(\caly_\alp| U(n))=
 \frac{coat(\caly)}{hook(\caly)}
 \eeq
 Note that right
@@ -783,7 +822,8 @@ We've already discussed how to compute
 $hook(\caly)$.
 $coat (\caly)$ is
 calculated as follows.\footnote{
-I invented that name. I don't know if  it has a name.}
+I invented the name
+$coat(\caly)$. I don't know if  it has a name.}
 
 \begin{enumerate}
 \item Fill $\caly$
@@ -807,7 +847,7 @@ Examples
 \beq
 dim(\begin{ytableau}
 1&2
-\end{ytableau}
+\end{ytableau}, U(2)
 )  =
 \frac{\begin{ytableau}
 $\scriptsize n$& $\scriptsize n+1$
@@ -824,7 +864,7 @@ $\scriptsize n$& $\scriptsize n+1$
 \beq
 dim(\begin{ytableau}
 1\\2
-\end{ytableau}
+\end{ytableau}, U(2)
 )  =
 \frac{\begin{ytableau}
 $\scriptsize n$\\ $\scriptsize n-1$
@@ -844,7 +884,7 @@ dim(\begin{ytableau}
 5&6
 \\
 7
-\end{ytableau}
+\end{ytableau}, U(7)
 )  =
 \frac{\begin{ytableau}
 $\scriptsize n$
@@ -874,6 +914,40 @@ $\scriptsize n-2$
 
 
 \section{Young Projection operators for $n_b=1,2,3,4$}
+
+Note that
+
+\beq
+\bcen\xymatrix@R=1pc@C=1pc{
+&\ar[l]\ar@{<->}[dd]
+&\ar[l]
+\\
+&\ar[l]
+&\ar[l]
+\\
+&\ar[l]
+&\ar[l]
+}\ecen
+=
+\bcen\xymatrix@R=1pc@C=1pc{
+&\ar[l]
+&\ar[l]\ar@{<->}[d]
+&\ar[l]
+&\ar[l]
+\\
+&\ar[l]\ar@{<->}[d]
+&\ar[l]
+&\ar[l]\ar@{<->}[d]
+&\ar[l]
+\\
+&\ar[l]
+&\ar[l]
+&\ar[l]
+&\ar[l]
+}
+\ecen
+\eeq
+
 
 \beq
 \bcen\xymatrix@R=1pc@C=1pc{
@@ -905,6 +979,7 @@ $\scriptsize n-2$
 }
 \ecen
 \eeq
+
 
 
 
@@ -950,7 +1025,7 @@ $
 }
 \\
 \xymatrix@R=1pc@C=1pc{
-&\ar[l]\ar@2{-}[dd]\cals_2&\ar[l]
+&\ar[l]\ar@2{-}[dd]\cals_3&\ar[l]
 \\
 &\ar[l]&\ar[l]
 \\
@@ -969,7 +1044,7 @@ $
 }
 \\
 \xymatrix@R=1pc@C=1pc{
-&\ar[l]\ar@2{-}[ddd]\cals_2&\ar[l]
+&\ar[l]\ar@2{-}[ddd]\cals_4&\ar[l]
 \\
 &\ar[l]&\ar[l]
 \\
@@ -1001,7 +1076,7 @@ $\bcen
 \end{ytableau}
 \\
 \xymatrix@R=1pc@C=1pc{
-&\ar[l]\ar@2{-}[dd]\cala_2&\ar[l]
+&\ar[l]\ar@2{-}[dd]\cala_3&\ar[l]
 \\
 &\ar[l]&\ar[l]
 \\
@@ -1017,7 +1092,7 @@ $\bcen
 \end{ytableau}
 \\
 \xymatrix@R=1pc@C=1pc{
-&\ar[l]\ar@2{-}[ddd]\cala_2&\ar[l]
+&\ar[l]\ar@2{-}[ddd]\cala_4&\ar[l]
 \\
 &\ar[l]&\ar[l]
 \\
@@ -1081,7 +1156,7 @@ $
 }
 \\
 \xymatrix@R=1pc@C=1pc{
-&\ar[l]\ar@2{-}[d]\cals_2
+&\ar[l]\ar@2{-}[d]\cals_3
 &\ar[l]\ar@2{-}[d]\cala_2
 &\ar[l]
 \\ 3/2
@@ -1106,7 +1181,7 @@ $
 }
 \\
 \xymatrix@R=1pc@C=1pc{
-&\ar[l]\ar@2{-}[dd]\cals_2
+&\ar[l]\ar@2{-}[dd]\cals_3
 &\ar[l]\ar@2{-}[d]\cala_2
 &\ar[l]
 \\ 3/2
@@ -1134,7 +1209,7 @@ $
 }
 \\
 \xymatrix@R=1pc@C=1pc{
-&\ar[l]\ar@2{-}[dd]\cals_2
+&\ar[l]\ar@2{-}[dd]\cals_3
 &\ar[l]\ar@2{-}[d]\cala_2
 &\ar[l]
 \\ 3/2
@@ -1200,7 +1275,7 @@ $
 \\
 \xymatrix@R=1pc@C=1pc{
 &\ar[l]
-&\ar[l]\ar@2{-}[d]\cals_2
+&\ar[l]\ar@2{-}[d]\cals_3
 &\ar[l]
 &\ar[l]\ar@2{-}[d]\cala_2
 &\ar[l]
@@ -1241,7 +1316,7 @@ $
 \\
 \xymatrix@R=1pc@C=1pc{
 &\ar[l]\ar@2{-}[d]\cals_2
-&\ar[l]\ar@2{-}[d]\cala_2
+&\ar[l]\ar@2{-}[d]\cala_3
 &\ar[l]
 \\ 3/2
 &\ar[l]
@@ -1272,7 +1347,7 @@ $
 \\
 \xymatrix@R=1pc@C=1pc{
 &\ar[l]\ar@2{-}[d]\cals_2
-&\ar[l]\ar@2{-}[dd]\cala_2
+&\ar[l]\ar@2{-}[dd]\cala_3
 &\ar[l]
 \\ 3/2
 &\ar[l]\square \ar@2{-}[d]
@@ -1303,7 +1378,7 @@ $
 \\
 \xymatrix@R=1pc@C=1pc{
 &\ar[l]\ar@2{-}[d]\cals_2
-&\ar[l]\ar@2{-}[dd]\cala_2
+&\ar[l]\ar@2{-}[dd]\cala_3
 &\ar[l]
 \\ 3/2
 &\ar[l]\square \ar@2{-}[d]
@@ -1343,7 +1418,7 @@ $
 
 \item $n_b=4$
 
-\YTsss
+\YTss
 
 \YTsFour
 \quad\YTsaFour
