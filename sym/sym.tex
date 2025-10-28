@@ -203,6 +203,45 @@ a_3
 \ecen
 \eeq
 
+Note that
+
+\beq
+\myboxed{
+(c, a)=(b,c)(b,a)(b,c)
+}
+\quad
+\bcen\xymatrix@R=1pc@C=1pc{
+&\ar@{<->}[dd]
+&\ar[ll]a
+\\
+&
+&\ar[ll]b
+\\
+&
+&\ar[ll]c
+}\ecen
+=
+\bcen\xymatrix@R=1pc@C=1pc{
+&
+&\ar@{<->}[d]
+&
+&\ar[llll]a
+\\
+&\ar@{<->}[d]
+&
+&\ar@{<->}[d]
+&\ar[llll]b
+\\
+&
+&
+&
+&\ar[llll]c
+}
+\ecen
+\label{eq-rl-swap}
+\eeq
+
+
 The {\bf $p$-element symmetrizer} $\cals_p$ is defined as the
 birdtrack
 \beq
@@ -523,10 +562,12 @@ the following identities:
 }
 \ecen
 \right)
+\label{eq-sym-p-recurse}
 \eeq
 
 \end{claim}
 \proof
+
 We only prove it for $p=3$.
 
 \beq
@@ -1504,6 +1545,7 @@ the following identities:
 
 \end{claim}
 \proof
+
 We only prove it for $p=3$.
 
 \beq

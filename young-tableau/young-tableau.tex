@@ -3,6 +3,10 @@
 
 This chapter is based on Cvitanovic's Birdtracks book Ref. \cite{birdtracks-book}.
 
+We recommend that the read Chapter \ref{ch-sym}
+on symmetrizers and antisymetrizers
+before reading this one.
+
 A {\bf Young Diagram} (YD) $\caly=[\lam_1, \lam_2, \ldots, \lam_D]$ 
 consists of $\lam_1$ left-aligned empty boxes (LAEB)
 over $\lam_2$ LAEB, over 
@@ -914,40 +918,73 @@ $\scriptsize n-2$
 
 
 \section{Young Projection operators for $n_b=1,2,3,4$}
+\label{sec-yp-holes}
 
-Note that
+Symmetrizers $\cals_p$ and
+antisymmetriers $\cala_p$
+are discussed in Chapter \ref{ch-sym}.
+
+In this section,
+we will use symmetrizers and
+antisymmetrizers with \qt{holes}
+Holes, denoted
+by empty square, will
+signify particles
+the symmetrizer or
+antisymmetrizer does not touch.
+For example
 
 \beq
 \bcen\xymatrix@R=1pc@C=1pc{
-&\ar[l]\ar@{<->}[dd]
-&\ar[l]
+&\ar[l]\ar@2{-}[d]\cals_2
+&\ar[l]1
+\\
+&\ar[l]\ar@2{-}[d]\square
+&\ar[l]2
 \\
 &\ar[l]
-&\ar[l]
+&\ar[l]3
+}\ecen
+\eeq
+denotes a symmetrizer of the 
+particles 1 and 3 but not 2.
+
+Note that
+\beq
+\myboxed{
+(c,a)=(b,c)(b,a)(b,c)
+}
+\quad
+\bcen\xymatrix@R=1pc@C=1pc{
+&\ar@{<->}[dd]
+&\ar[ll]a
 \\
-&\ar[l]
-&\ar[l]
+&
+&\ar[ll]b
+\\
+&
+&\ar[ll]c
 }\ecen
 =
 \bcen\xymatrix@R=1pc@C=1pc{
-&\ar[l]
-&\ar[l]\ar@{<->}[d]
-&\ar[l]
-&\ar[l]
+&
+&\ar@{<->}[d]
+&
+&\ar[llll]a
 \\
-&\ar[l]\ar@{<->}[d]
-&\ar[l]
-&\ar[l]\ar@{<->}[d]
-&\ar[l]
+&\ar@{<->}[d]
+&
+&\ar@{<->}[d]
+&\ar[llll]b
 \\
-&\ar[l]
-&\ar[l]
-&\ar[l]
-&\ar[l]
+&
+&
+&
+&\ar[llll]c
 }
 \ecen
 \eeq
-
+Similarly
 
 \beq
 \bcen\xymatrix@R=1pc@C=1pc{
@@ -979,8 +1016,28 @@ Note that
 }
 \ecen
 \eeq
+Hence, one can
+avoid using symmetrizers
+and antisymmetrizers with holes,
+if one is willing to use swaps
+instead of holes.
 
+Below, we use holes,
+but
+keep in mind that  those holes can we replaced
+by swaps.
 
+Below, we give
+the Clebsch decomposition of 
+
+\beq
+\begin{array}{l}
+\ydiagram{1}^{\otimes n_b}
+\\
+(\xymatrix{&\ar[l]})^{\otimes n_b}
+\end{array}
+\eeq
+for $n_b=1,2,3,4$.
 
 
 
@@ -1433,10 +1490,14 @@ $
 
 \YTaaa
 \end{itemize}
-SYT
-and corresponding unnormalized projection operators for $n_b=1, 2,3,4$
+
 
 \section{Young Projection Operator with swaps}
+Same info as in Section \ref{sec-yp-holes}
+but using
+swaps instead of holes.
+
+
 \beq
 \begin{array}{cc}
 \begin{array}{l}

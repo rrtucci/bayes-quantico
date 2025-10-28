@@ -193,8 +193,33 @@ C^\dagger C
  \sum_\lam  \underbrace {\ket{\lam}  \bra{\lam}}_{P_\lam}
 \label{eq-cb-series-simple}
 \eeqa
-We will call Eq.(\ref{eq-cb-series-simple}) the {\bf Clebsch-Gordan (CG) series}
-for $M$.
+
+We will call Eq.(\ref{eq-cb-series-simple}) a {\bf Clebsch-Gordan (CG) series} either in that form, or after
+multiplying by a vector space $V$, as in
+
+\beq
+V= \sum_\lam P_\lam V
+\eeq
+A simple example of a CG series is
+
+\beq
+\vec{r} = \HAT{x}
+\oplus \HAT{y} \oplus \HAT{z}
+\eeq
+for a vector $\vec{r}\in\RR^3$.
+In this expression, the vectors $\HAT{x}, \HAT{y}, \HAT{z}$ 
+constitute a complete (i.e., basis) orthonormal set
+for the vectors acted upon by $SO(3)$. Any generic vector
+$\vec{r}\in\RR^3$ can be 
+expressed as\footnote{Recall that a direct sum of two vector
+spaces $V=V_1\oplus V_2$
+means $V_1\cap V_2=\{0\}$}
+
+\beq
+\vec{r} = a \HAT{x} + b\HAT{y} +
+c\HAT{z}
+\eeq
+for some $a,b,c\in\RR$.
 
 So far, we have established  that
  \beqa
@@ -249,7 +274,7 @@ Here
 is an example
 of a CG series. 
 One can 
-decompose $V^n\otimes\dual{V }^n\rarrow \sum_\lam V_\lam$ as follows
+decompose $V^n\otimes\dual{V }^n= \sum_\lam V_\lam$ as follows
 
 \beq
 \begin{array}{l}
