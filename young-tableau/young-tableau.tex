@@ -458,7 +458,7 @@ The projection operators
 \eeq
 are complete and orthogonal.
 
-
+\subsection{Tensor product decompositions}
 
 \beq
 \ydiagram{1}\otimes \ydiagram{1}=
@@ -588,7 +588,7 @@ P_{\caly\alp}=
 \eeq
 for some normalization
 constant $\caln$ yet to
-bee  determined.
+be  determined.
 These projection
 operators are not
 unique.
@@ -835,11 +835,12 @@ $coat(\caly)$. I don't know if  it has a name.}
 with 
 \begin{itemize}
 \item $n$ at the diagonal blocks
-\item $n$ increments
-increasing by 1 when reading from left to right
+\item $n$ 
+increasing by 1 per block when reading from left to right
 \item
-$n$ increments
+$n$ 
 decreasing by 1 
+per blockk
 when reading from
 top to bottom
 \end{itemize}
@@ -918,7 +919,7 @@ $\scriptsize n-2$
 
 
 
-\section{Young Projection operators for $n_b=1,2,3,4$}
+\subsection{Young Projection operators for $n_b=1,2,3,4$}
 \label{sec-yp-holes}
 
 Symmetrizers $\cals_p$ and
@@ -928,9 +929,10 @@ are discussed in Chapter \ref{ch-sym}.
 In this section,
 we will use symmetrizers and
 antisymmetrizers with \qt{holes}
-Holes, denoted
-by empty square, will
-signify particles
+A hole, denoted
+by an empty square, will
+signify a particle
+that
 the symmetrizer or
 antisymmetrizer does not touch.
 For example
@@ -1029,7 +1031,7 @@ keep in mind that  those holes can we replaced
 by swaps.
 
 Below, we give
-the Clebsch decomposition of 
+the Clebsch-Gordan decomposition of 
 
 \beq
 \begin{array}{l}
@@ -1333,7 +1335,7 @@ $
 \\
 \xymatrix@R=1pc@C=1pc{
 &\ar[l]
-&\ar[l]\ar@2{-}[d]\cals_3
+&\ar[l]\ar@2{-}[d]\cals_2
 &\ar[l]
 &\ar[l]\ar@2{-}[d]\cala_2
 &\ar[l]
@@ -1493,9 +1495,15 @@ $
 \end{itemize}
 
 
-\section{Young Projection Operator with swaps}
-Same info as in Section \ref{sec-yp-holes}
-but using
+\subsection{Young Projection Operator with swaps}
+Eq.(\ref{eq-pyalp-bt})
+gives a particular
+STY $\caly_\alp$,
+and its projector
+$P_{\caly_\alp}$.
+the projector
+is expressed
+using
 swaps instead of holes.
 
 
@@ -1596,9 +1604,10 @@ A_e
 }
 \ecen
 \end{array}
+\label{eq-pyalp-bt}
 \eeq
 
-\section{Tensor product decompositions}
+\subsection{Tensor product decompositions}
 
 \beqa
 \begin{ytableau}
@@ -1658,7 +1667,7 @@ A_e
 \\ \\
 \bcen
 \xymatrix@R=1pc@C=1pc{
-&\ar[l]\ar@2{-}[dd]\cals_2&\ar[l]
+&\ar[l]\ar@2{-}[dd]\cals_3&\ar[l]
 \\
 &\ar[l]&\ar[l]
 \\
@@ -1691,7 +1700,7 @@ A_e
 +
 \bcen
 \xymatrix@R=1pc@C=1pc{
-&\ar[l]\ar@2{-}[dd]\cala_2&\ar[l]
+&\ar[l]\ar@2{-}[dd]\cala_3&\ar[l]
 \\
 &\ar[l]&\ar[l]
 \\
@@ -1715,73 +1724,69 @@ n^3 =
 \eeq
 
 \beq
-\begin{array}{l}
 \begin{ytableau}
-1&2&3
+\;&\;&\;
 \end{ytableau}
 \otimes
 \begin{ytableau}
-4&5
+\;&\;
 \\
-6
+\;
 \end{ytableau}
 =
-\\
-\\
 \left\{
 \begin{array}{l}
 \begin{ytableau}
-1&2&3&4&5
+\;&\;&\;&\;&\;
 \\
-6
+\;
 \end{ytableau}
 \oplus
 \begin{ytableau}
-1&2&3&4
+\;&\;&\;&\;
 \\
-5&6
-\end{ytableau}
-\oplus
-\begin{ytableau}
-1&2&3&5
-\\
-4&6
+\;&\;
 \end{ytableau}
 \\ \\
 \oplus
 \begin{ytableau}[*(yellow!40)]
-1&2&3&5
+\;&\;&\;&\;
 \\
-4
+\;
 \\
-6
+\;
 \end{ytableau}
 \oplus
 \begin{ytableau}[*(yellow!40)]
-1&2&3&4
+\;&\;&\;
 \\
-5
+\;&\;
 \\
-6
-\end{ytableau}
-\oplus
-\begin{ytableau}[*(yellow!40)]
-1&2&3
-\\
-4&5
-\\
-6
+\;
 \end{ytableau}
 \end{array}
 \right\}
-\end{array}
 \eeq
-For $U(n)$, the blue YT are zero for $n_b=2$,
-and non-zero otherwise.
+For $SU(n)$, the 
+yellow YDs are zero for $n=2$,
+and non-zero for $n\geq 2$.
 
-\section{$SU(n)$}
+\subsection{$SU(n)$}
 
-$\ger{su(n)}$ $A_n$
+The elements $G$
+of $SU(n)$ satisfy
+
+\beq
+\underbrace{\eps_{12\ldots n}}_{1}= 
+\underbrace{
+G\indices{_{1}^{a_1'}}
+G\indices{_{2}^{a_2'}}
+\cdots
+G\indices{_{n}^{a_n'}}\;
+\eps_{a_1' a_2' \ldots  a_n'}
+}_{\det G}
+\eeq
+
 \beq
 \eps_{a_1 a_2 \ldots a_n}=
 G\indices{_{a_1}^{a_1'}}
@@ -1790,9 +1795,69 @@ G\indices{_{a_2}^{a_2'}}
 G\indices{_{a_n}^{a_n'}}\;
 \eps_{a_1' a_2' \ldots  a_n'}
 \eeq
-YD for $SU(n)$ has a maximum of $n-1$ rows. For $SU(4)$
+so the Levi-Civita
+tensor 
+is a primitive
+invariant of $SU(n)$
+(but not of $U(n)$)
 
-\beq
+This leads to 2 consequences.
+\begin{enumerate}
+\item YD for $SU(n)$ has a maximum of $n-1$ rows.
+
+For an example
+of this, see Fig.\ref{fig-u4--to-su4}.
+The yellow columns in that figure are 
+singlets obtained
+by fully
+contracting
+Levi-Civita tensors.
+Hence, those yellow columns
+can removed.
+
+\item Conjugate YD 
+
+Given a YD $\caly$,
+its {\bf conjugate YD} $conj(\caly)$ is 
+obtained as follows:
+\begin{itemize}
+\item add yellow colored boxes 
+to the original YD
+so that the resulting YD 
+is rectangular and has $n$ rows 
+for each column.
+\item keep
+only
+the yellow boxes,
+and rotate those
+clockwise by 180 degrees.
+\end{itemize}
+See Fig.\ref{fig-conj-construct}
+for an example
+of constructing a 
+conjugate YD.
+
+This is possible because 
+in the intermediate rectangular YD, the 
+columns with $n$ white and yellow boxes
+represent a fully contracted Levi-Civita
+tensor.
+
+\begin{claim}
+The reps
+corresponding to
+YDs $\caly$
+and $conj(\caly)$
+have the same dimension.
+\end{claim}
+\proof
+\qed
+
+\end{enumerate}
+
+
+
+\begin{figure}[h!]
 \begin{ytableau}
 *(yellow!40)\;&*(yellow!40)\;&\;&\;&\;&\;&\;
 \\
@@ -1802,17 +1867,19 @@ YD for $SU(n)$ has a maximum of $n-1$ rows. For $SU(4)$
 \\
 *(yellow!40)\;&*(yellow!40)\;
 \end{ytableau}
-\quad\rarrow\quad
+$\rarrow$
 \ydiagram{5,3,2}
-\eeq
+\caption{Iluustration
+of removal of
+columns 4 boxes long when dealing with $SU(4)$. In this case,
+the YD in Dynkin notation goes from
+$[2,1,2,2,0,\ldots]_{D}$
+to
+$[2,1,2,0,\ldots]_{D}$}
+\label{fig-u4--to-su4}
+\end{figure}
 
-$[5,3,2]_{RL}$ row lengths, $[2,1,2,0,\ldots]_{D}$ row changes (Dynkin labels).
-
-$[b_1,b_2, \ldots, b_{n-1}]$
-
-
-For $SU(6)$,
-\beq
+\begin{figure}[h!]
 \begin{ytableau}
 \;&\;&\;
 \\
@@ -1822,7 +1889,7 @@ For $SU(6)$,
 \\
 \;
 \end{ytableau}
-\quad\rarrow\quad
+$\quad\rarrow\quad$
 \begin{ytableau}
 \;&\;&\;
 \\
@@ -1836,7 +1903,7 @@ For $SU(6)$,
 \\
 *(yellow!40)\;&*(yellow!40)\;&*(yellow!40)\;
 \end{ytableau}
-\quad\rarrow\quad
+$\quad\rarrow\quad$
 \begin{ytableau}
 *(yellow!40)\;&*(yellow!40)\;&*(yellow!40)\;
 \\
@@ -1848,21 +1915,26 @@ For $SU(6)$,
 \\
 *(yellow!40)\;
 \end{ytableau}
-\eeq
+\caption{Construction of a conjugate YD for $SU(6)$}
+\label{fig-conj-construct}
+\end{figure}
 
-Besides RL and RC,
-a third way
- of labelling YD (reps of 
-$SU(n)$)
-is
-by their dimension, and then adding
+Besides the RL (row lengths) and RC/D (row change/Dynkin)
+methods discussed previously,
+a third method
+commonly used 
+to label YD 
+for 
+$SU(n)$
+is as follows. Label them
+by their dimension, and then add
 a  subscript or overline
 if there are more than one 
 reps with a different YD but
 the same dimension.
 This method is used mostly
 by physicists for $SU(3)$ (The Eightfold  Way).
-Note that all YT
+Note that all SYT
 with the same YD have the
 same dimension, so
 this really labels YD instead
@@ -1886,7 +1958,7 @@ of YT. For example, for $SU(3)$  we have
 \end{array}
 \eeq
 
-
+Using this notation, we have for $SU(n)$, 
 \beqa
 \ydiagram{1} 
 \otimes
@@ -1899,6 +1971,7 @@ of YT. For example, for $SU(3)$  we have
 \\
 \;
 \end{ytableau}\ecen\right\} n-1
+\text{ rows}
 &=&
 1
 \oplus
@@ -1911,6 +1984,7 @@ of YT. For example, for $SU(3)$  we have
 \\
 \;
 \end{ytableau}\ecen\right\} n-1
+\text{ rows}
 \\
 n \otimes \ol{n}
 &=&
