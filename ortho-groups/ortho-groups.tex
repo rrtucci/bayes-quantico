@@ -12,6 +12,10 @@ is invariant
 h(p, q)=
 g_{\mu \nu}p^\mu q^\nu
 \eeq
+where $
+\mu,\nu\in\{1, \ldots, n\}$.
+
+
 Here 
 
 \beq
@@ -33,6 +37,11 @@ g^{\mu\nu}=
 \xymatrix
 {\ar[r]&g&\ar[l]
 }
+\eeq
+
+\beq
+\delta_\mu^\nu =
+\xymatrix{ &\ar[l]}
 \eeq
 
 \beq
@@ -67,12 +76,10 @@ g^{\mu\nu}=
 \beq
 \delta_\mu^\nu
 =\xymatrix{
-\mu& \ar@{-}[l]|\bullet
-\nu
+& \ar@{-}[l]|\bullet
 }
 =\xymatrix{
-\mu& \ar@{-}[l]
-\nu
+& \ar@{-}[l]
 }
 \eeq
 
@@ -88,3 +95,108 @@ g_{\mu\s} g^{\s \nu}=\delta_\mu^\nu}
 }=
 \xymatrix{&\ar@{-}[l]}
 \eeq
+
+\beq
+(T_i)\indices{_\mu^\nu}=
+\bcen
+\xymatrix{
+&\ar@{~}@[green][d]&&
+\\
+&\ar[l] T_i
+&\ar[l]
+\ar[r]
+g^\dagger
+&
+}
+\ecen
+\quad
+(T_i)\indices{_\mu_\nu}=
+\bcen
+\xymatrix{
+&\ar@{~}@[green][d]&
+\\
+&\ar@{-}[l] T_i
+&\ar@{-}[l]
+}
+\ecen
+\eeq
+
+\beq
+\myboxed{
+(T_i)\indices{_\mu^\s}g_{\s \nu}
++
+g_{\s\mu}
+(T_i)\indices{_\nu^\s}=0
+}
+\bcen
+\xymatrix{
+&\ar@{~}[d]&&
+\\
+&\ar[l] T_i
+&\ar[l]
+\ar[r]
+g^\dagger
+&
+}
+\ecen
++
+\bcen
+\xymatrix{
+&\ar[l]\ar[r] g^\dagger
+&
+\ar[r]
+T_i
+&
+\\
+&&\ar@{~}[u]
+}
+\ecen
+=0
+\eeq
+
+\beq
+\myboxed{
+(T_i)_{\mu\nu}
++
+(T_i)_{\nu\mu}
+=0
+}
+\bcen
+\xymatrix{
+&\ar@{~}[d]&
+\\
+&T_i\ar[l]
+&\ar[l]
+}
+\ecen
+=
+\bcen
+\xymatrix{
+&T_i\ar[l]\ar[r]
+&
+\\
+&\ar@{~}[u]&
+}
+\ecen
+\eeq
+
+\beq
+\bcen
+\xymatrix{
+&\ar@{~}[d]&
+\\
+&T_i\ar@{-}[l]
+&\ar@{-}[l]
+}
+\ecen
+=
+\bcen
+\xymatrix{
+&T_i\ar@{-}[l]\ar@{-}[r]
+&
+\\
+&\ar@{~}[u]&
+}
+\ecen
+\eeq
+
