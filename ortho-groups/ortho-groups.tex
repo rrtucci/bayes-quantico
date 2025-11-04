@@ -2,18 +2,88 @@
 \label{ch-ortho-groups}
 This chapter is based on Cvitanovic's Birdtracks book Ref. \cite{birdtracks-book}.
 
-$SO(n)$
-is the group of
+\beq
+O(n)= \{G\in \RR^{n\times n}: G^T G= 1\}
+\eeq
+
+\beq
+SO(n)= \{G\in O(n): \det G=1\}
+\eeq
+
+$O(n)$ contains orthogonal matrices $G$
+with $\det G\in Z_2 = \{-1, 1\}$.
+$SO(n)$ only contains those with $\det G= 1$.
+$O(n)\cong Z_2 \times SO(n)$ where
+$Z_2=\{-1, 1\}$ corresponds to the sign
+of $\det G$.
+Hence, $O(n)$ is a double cover of $SO(n)$. $O(n)$
+consists of 2 connected components (CC),
+$SO(n)$ has only one CC.
+
+An example of a $G\in O(n)$
+that is not in $SO(n))$ is a reflection $Gx = -x$.
+Another example for $O(2)$ is
+
+\beq
+\text{rotation:}\quad 
+G=\left(
+\begin{array}{cc}
+\cos\theta & \sin\theta
+\\
+-\sin\theta & \cos\theta
+\end{array}
+\right), \quad \det G =1
+\eeq
+
+\beq
+\text{improper rotation:}\quad 
+G=\left(
+\begin{array}{cc}
+\cos\theta & \sin\theta
+\\
+\sin\theta & -\cos\theta
+\end{array}
+\right), \quad \det G =-1
+\eeq
+
+In this section, we will
+call {\bf orthogonal groups}
+the group of
 matrices
-under whose transformation, the following  symmetric quadratic form,
+under which the following  symmetric quadratic form
 is invariant
 
 \beq
-h(p, q)=
-g_{\mu \nu}p^\mu q^\nu
+h(x)=
+g_{\mu \nu}x^\mu x^\nu
 \eeq
 where $
 \mu,\nu\in\{1, \ldots, n\}$.
+Thus 
+
+\beq
+h(Gx)= h(x)
+\eeq
+
+\beq
+ g_{\mu\nu}G\indices{^\mu_\alpha}
+G\indices{^\nu_\beta}x^\alpha x^\beta =
+g_{\alpha \beta}x^\alpha x^\beta
+\implies 
+g_{\mu\nu}G\indices{^\mu_\alpha}
+G\indices{^\nu_\beta} = g_{\alpha \beta}
+\implies
+G^Tg G= g
+\eeq
+
+This condition guarantees that $G\in O(n)$ is orthogonal
+for $g_{\mu\nu}=\delta_\mu^\nu$ but not that $\det G=1$.
+When $g_{\mu\nu}$
+is not the Kronecker delta function,
+we get a  different group. For
+example, if $g_{\mu\nu}=diag (1, -1, -1, -1)$ and $\det G=1$,
+we get the {\bf Lorentz group} $SO(1,3)$
+used in Special Relativity.
 
 
 Here 
@@ -30,12 +100,12 @@ g_{\mu\s} g^{\s \nu}=\delta_\mu^\nu
 \beq
 g_{\mu\nu}=
 \xymatrix
-{&g^\dagger\ar[l]\ar[r]&
+{&\ul{g}\ar[l]\ar[r]&
 },
 \quad
 g^{\mu\nu}=
 \xymatrix
-{\ar[r]&g&\ar[l]
+{\ar[r]&\ol{g}&\ar[l]
 }
 \eeq
 
@@ -49,9 +119,9 @@ g^{\mu\nu}=
 g_{\mu\s} g^{\s \nu}=\delta_\mu^\nu}
 \quad
 \xymatrix{
-&g^\dagger
+&\ul{g}
 \ar[l]\ar[r]
-&g
+&\ol{g}
 &\ar[l]
 }=
 \xymatrix{&\ar[l]}
@@ -64,12 +134,12 @@ upper indices only.
 \beq
 g_{\mu\nu}=
 \xymatrix
-{&g^\dagger\ar@{-}[l]\ar@{-}[r]&
+{&\ul{g}\ar@{-}[l]\ar@{-}[r]&
 },
 \quad
 g^{\mu\nu}=
 \xymatrix
-{\ar@{-}[r]&g&\ar@{-}[l]
+{\ar@{-}[r]&\ol{g}&\ar@{-}[l]
 }
 \eeq
 
@@ -88,9 +158,9 @@ g^{\mu\nu}=
 g_{\mu\s} g^{\s \nu}=\delta_\mu^\nu}
 \quad
 \xymatrix{
-&g^\dagger
+&\ul{g}
 \ar@{-}[l]\ar@{-}[r]
-&g
+&\ol{g}
 &\ar@{-}[l]
 }=
 \xymatrix{&\ar@{-}[l]}
@@ -105,7 +175,7 @@ g_{\mu\s} g^{\s \nu}=\delta_\mu^\nu}
 &\ar[l] T_i
 &\ar[l]
 \ar[r]
-g^\dagger
+\ul{g}
 &
 }
 \ecen
@@ -135,14 +205,14 @@ g_{\s\mu}
 &\ar[l] T_i
 &\ar[l]
 \ar[r]
-g^\dagger
+\ul{g}
 &
 }
 \ecen
 +
 \bcen
 \xymatrix{
-&\ar[l]\ar[r] g^\dagger
+&\ar[l]\ar[r] \ul{g}
 &
 \ar[r]
 T_i
@@ -200,3 +270,354 @@ T_i
 \ecen
 \eeq
 
+\beqa
+(\cals_2)\indices{_{\mu\nu,\rho\s}}
+&=&
+g_{\rho \rho'}
+g_{\s\s'}
+(\cals_2)\indices{
+_{\mu\nu}^{\rho'\s'}}
+\\
+&=&
+\frac{1}{2}
+\left(
+g_{\mu\nu}g_{\nu\rho}+
+g_{\mu,\rho}
+g_{\mu\s}
+\right)
+\\
+&=&
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&\cals_2\ar@2{-}[d]\ar[l]
+&\ul{g} \ar[r]\ar[l]
+&
+\\
+&\ar[l]
+&\ul{g}\ar[r]\ar[l]
+&
+}
+\ecen
+\\
+&=&
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&\cals_2\ar@2{-}[d]\ar@{-}[l]
+&\ul{g} \ar@{-}[r]\ar@{-}[l]
+&
+\\
+&\ar@{-}[l]
+&\ul{g}\ar@{-}[r]\ar@{-}[l]
+&
+}
+\ecen
+\eeqa
+
+\beq
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&\ar@{-}[l]
+\ul{g}
+&\ar@{-}[l]
+\\
+&\ar@{-}[l]
+\ul{g}
+&\ar@{-}[l]
+}
+\ecen
+=
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&\cals_2\ar@2{-}[d]\ar@{-}[l]
+&\ul{g} \ar@{-}[r]\ar@{-}[l]
+&
+\\
+&\ar@{-}[l]
+&\ul{g}\ar@{-}[r]\ar@{-}[l]
+&
+}
+\ecen
++
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&\cala_2\ar@2{-}[d]\ar@{-}[l]
+&\ul{g} \ar@{-}[r]\ar@{-}[l]
+&
+\\
+&\ar@{-}[l]
+&\ul{g}\ar@{-}[r]\ar@{-}[l]
+&
+}
+\ecen
+\eeq
+
+
+\beq
+M\indices{_\mu_\nu^\rho^\s}
+=
+g_{\mu\nu} g^{\rho \s}
+=
+\bcen
+\xymatrix@R=1pc@C=1pc{
+\mu&&&\rho
+\\
+&\ul{g}
+\ar@/_1pc/@{-}[lu]
+\ar@/^1pc/@{-}[ld]
+&\ol{g}
+\ar@/^1pc/@{-}[ru]
+\ar@/_1pc/@{-}[rd]
+&
+\\
+\nu&&&\s
+}
+\ecen
+\eeq
+
+\beq
+M^2 =
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&&&
+\\
+&\ul{g}
+\ar@/_1pc/@{-}[lu]
+\ar@/^1pc/@{-}[ld]
+&\ol{g}
+\ar@/^1pc/@{-}[ru]
+\ar@/_1pc/@{-}[rd]
+&
+\\
+&&&
+}
+\xymatrix@R=1pc@C=1pc{
+&&&
+\\
+&\ul{g}
+\ar@/_1pc/@{-}[lu]
+\ar@/^1pc/@{-}[ld]
+&\ol{g}
+\ar@/^1pc/@{-}[ru]
+\ar@/_1pc/@{-}[rd]
+&
+\\
+&&&
+}
+\ecen
+=
+n M
+\eeq
+
+\begin{enumerate}
+\item Singlet PO
+\beq
+(P_S)\indices{_\mu_\nu^\rho^\s}
+=
+\frac{1}{n}
+\bcen
+\xymatrix@R=1pc@C=1pc{
+\mu&&&\rho
+\\
+&\ul{g}
+\ar@/_1pc/@{-}[lu]
+\ar@/^1pc/@{-}[ld]
+&\ol{g}
+\ar@/^1pc/@{-}[ru]
+\ar@/_1pc/@{-}[rd]
+&
+\\
+\nu&&&\s
+}
+\ecen
+\eeq
+
+\beqa
+dim(P_S)&=&
+\frac{1}{n}
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&&&\ar@{-}@[red]@/_.5pc/[lll]
+\\
+&\ul{g}
+\ar@/_1pc/@{-}[lu]
+\ar@/^1pc/@{-}[ld]
+&\ol{g}
+\ar@/^1pc/@{-}[ru]
+\ar@/_1pc/@{-}[rd]
+&
+\\
+&&&
+\ar@{-}@[red]@/^.5pc/[lll]
+}
+\ecen
+\\
+&=& 1
+\eeqa
+
+\item traceless symmetric PO
+
+\beq
+(P_{TS})\indices{_\mu_\nu^\rho^\s}
+=
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&\cals_2\ar@2{-}[d]\ar@{-}[l]
+&\ar@{-}[l]
+\\
+&\ar@{-}[l]
+&\ar@{-}[l]
+}
+\ecen
+-\frac{1}{n}
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&&&
+\\
+&\ul{g}
+\ar@/_1pc/@{-}[lu]
+\ar@/^1pc/@{-}[ld]
+&\ol{g}
+\ar@/^1pc/@{-}[ru]
+\ar@/_1pc/@{-}[rd]
+&
+\\
+&&&
+}
+\ecen
+\eeq
+
+\beq
+(P_{TS})\indices{_\mu_\nu^\rho^\s}
+=
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&\cals_2\ar@2{-}[d]\ar@{-}[l]
+&\ar@{-}[l]
+\\
+&\ar@{-}[l]
+&\ar@{-}[l]
+}
+\ecen
+-\frac{1}{n}
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&&&
+\\
+&\ul{g}
+\ar@/_1pc/@{-}[lu]
+\ar@/^1pc/@{-}[ld]
+&\ol{g}
+\ar@/^1pc/@{-}[ru]
+\ar@/_1pc/@{-}[rd]
+&
+\\
+&&&
+}
+\ecen
+\eeq
+
+\beqa
+dim(P_{TS})
+&=&
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&\cals_2\ar@2{-}[d]\ar@{-}[l]
+&\ar@{-}[l]\ar@{-}@[red]@/_.5pc/[ll]
+\\
+&\ar@{-}[l]
+&\ar@{-}[l]
+\ar@{-}@[red]@/^.5pc/[ll]
+}
+\ecen
+-\frac{1}{n}
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&&&\ar@{-}@[red]@/_.5pc/[lll]
+\\
+&\ul{g}
+\ar@/_1pc/@{-}[lu]
+\ar@/^1pc/@{-}[ld]
+&\ol{g}
+\ar@/^1pc/@{-}[ru]
+\ar@/_1pc/@{-}[rd]
+&
+\\
+&&&\ar@{-}@[red]@/^.5pc/[lll]
+}
+\ecen
+\\
+&=&
+\frac{1}{2}(n^2+n)-1
+\\
+&=&
+\frac{1}{2}(n+2)(n-1)
+\eeqa
+
+
+\item Anti-symmetric PO
+\beq
+(P_{A})\indices{_\mu_\nu^\rho^\s}
+=
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&\cala_2\ar@2{-}[d]\ar@{-}[l]
+&\ar@{-}[l]
+\\
+&\ar@{-}[l]
+&\ar@{-}[l]
+}
+\ecen
+\eeq
+
+\beqa
+dim(P_{A})
+&=&
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&\cala_2\ar@2{-}[d]\ar@{-}[l]
+&\ar@{-}[l]
+\ar@{-}@[red]@/_.5pc/[ll]
+\\
+&\ar@{-}[l]
+&\ar@{-}[l]
+\ar@{-}@[red]@/^.5pc/[ll]
+}
+\ecen
+\\
+&=&
+\frac{1}{2}(n^2 -n)
+\\
+&=&
+\frac{1}{2}n(n-1)
+\eeqa
+\end{enumerate}
+
+\beq
+\begin{array}{ccccccc}
+\overbrace{V\otimes V}
+^\calv
+&=
+&P_S\calv
+&\oplus
+&P_{TS}\calv
+&\oplus
+&P_A\calv
+\\
+\ydiagram{1}
+\otimes\ydiagram{1}
+&=
+&\bullet
+&\oplus
+&\ydiagram{2}
+&\oplus
+&\ydiagram{1,1}
+\\
+n^2
+&=
+& 1
+&+
+&\frac{1}{2}(n+2)(n-1)
+&+
+&\frac{1}{2}n(n-1)
+\end{array}
+\eeq
