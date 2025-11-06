@@ -2,6 +2,10 @@
 \label{ch-ortho-groups}
 This chapter is based on Cvitanovic's Birdtracks book Ref. \cite{birdtracks-book}.
 
+$O(n)$ and $SO(n)$ are
+defined as
+the following groups of real matrices:
+
 \beq
 O(n)= \{G\in \RR^{n\times n}: G^T G= 1\}
 \eeq
@@ -11,17 +15,17 @@ SO(n)= \{G\in O(n): \det G=1\}
 \eeq
 
 $O(n)$ contains orthogonal matrices $G$
-with $\det G\in Z_2 = \{-1, 1\}$.
+($G^TG=GG^T=1$) with $\det G\in Z_2 = \{-1, 1\}$.
 $SO(n)$ only contains those with $\det G= 1$.
 $O(n)\cong Z_2 \times SO(n)$ where
 $Z_2=\{-1, 1\}$ corresponds to the sign
 of $\det G$.
-Hence, $O(n)$ is a double cover of $SO(n)$. $O(n)$
-consists of 2 connected components (CC),
-$SO(n)$ has only one CC.
+Hence, $O(n)$ is a {\bf double cover} of $SO(n)$. $O(n)$
+consists of 2 {\bf connected components} (CC),
+whereas $SO(n)$ has only one CC.
 
 An example of a $G\in O(n)$
-that is not in $SO(n))$ is a reflection $Gx = -x$.
+that is not in $SO(n)$ is a reflection $Gx = -x$ for odd $n$.
 Another example for $O(2)$ is
 
 \beq
@@ -45,6 +49,13 @@ G=\left(
 \end{array}
 \right), \quad \det G =-1
 \eeq
+
+The irreps of $SO(n)$
+depend on whether $n$ is even or odd,
+and whether the rep is spinor or non-spinor.
+This chapter deals with {\bf non-spinor reps} (with either even or odd $n$.).
+Chapter \ref{ch-spinors}
+deals with the {\bf spinor reps}.
 
 In this section, we will
 call {\bf orthogonal groups}
@@ -86,7 +97,9 @@ we get the {\bf Lorentz group} $SO(1,3)$
 used in Special Relativity.
 
 
-Here 
+We assume that the {\bf metric tensor} $g_{\mu\nu}$
+is a primitive invariant
+that satisfies:
 
 \beq
 g_{\mu\nu}=g_{\nu\mu},\quad
@@ -96,7 +109,8 @@ g^{\mu\nu}=g^{\nu\mu}
 \beq
 g_{\mu\s} g^{\s \nu}=\delta_\mu^\nu
 \eeq
-
+This will be represented 
+as birdtracks thus
 \beq
 g_{\mu\nu}=
 \xymatrix
@@ -126,10 +140,19 @@ g_{\mu\s} g^{\s \nu}=\delta_\mu^\nu}
 }=
 \xymatrix{&\ar[l]}
 \eeq
-Use only lower indices in all
-matrices except the metric. Use
-the metric with
-upper indices only.
+Often we will
+revert to an even
+less precise birdtrack notation
+shown below 
+wherein the arrow directions are omitted.
+We will try to 
+use only lower indices in all
+tensors except the metric   tensor
+which may have 2 upper or 2
+lower indices or one
+upper and one lower. In the
+latter 
+case, it becomes the Kronecker delta.
 
 \beq
 g_{\mu\nu}=
@@ -166,6 +189,11 @@ g_{\mu\s} g^{\s \nu}=\delta_\mu^\nu}
 \xymatrix{&\ar@{-}[l]}
 \eeq
 
+The generators of 
+orthogonal
+ groups will be representd by:
+
+
 \beq
 (T_i)\indices{_\mu^\nu}=
 \bcen
@@ -191,6 +219,8 @@ g_{\mu\s} g^{\s \nu}=\delta_\mu^\nu}
 \ecen
 \eeq
 
+Since $g_{\mu\nu}$
+is an invariant matrix,
 \beq
 \myboxed{
 (T_i)\indices{_\mu^\s}g_{\s \nu}
@@ -223,6 +253,8 @@ T_i
 \ecen
 =0
 \eeq
+or, equivalently,
+the generator are anti-symmetric matrices:
 
 \beq
 \myboxed{
@@ -270,6 +302,10 @@ T_i
 \ecen
 \eeq
 
+Note that the anti-symmetrizer
+$\cala_2$ 
+is an invariant matrix because
+
 \beq
 \bcen
 \xymatrix{
@@ -294,6 +330,7 @@ T_i
 \ecen
 =0
 \eeq
+Therefore, we must have
 
 \beq
 \bcen
@@ -320,11 +357,28 @@ T_i
 \ecen
 \eeq
 
-The rank (i.e., number of adjoint rep particles) is
+For $SO(n)$ and $O(n)$,
+the dimension $N$ of the adjoint rep 
+(= number of generators) is
 
 \beq
-r=\frac{n-1}{2}
+N = \frac{n(n-1)}{2} = \xymatrix{&&\ar@{~}[ll]
+\ar@{-}@[red]@/_1pc/[ll]}
 \eeq
+If you take
+an $n\times n$ matrix and remove
+its diagonal, this $N$ is the
+number of entries in the upper (or
+lower) triangular sector
+of the matrix. Recall that
+for $U(n)$, $N=n^2$,
+and for $SU(n)$, $N=n^2-1$.
+So for $U(n)$ (or $SU(n)$),
+there is a generator for each
+entry
+(or each entry minus one)
+of an $n\times n$ matrix.
+
 
 \begin{claim}
 \beq
@@ -408,7 +462,22 @@ r=\frac{n-1}{2}
 
 
 
-\section{$V\otimes V$ Decomposition}
+\section{$V_{def}\otimes V_{def}$ Decomposition}
+
+Let
+
+$V_{def}=V=$ vector space 
+in defining representation
+$\{\ket{\mu}\}_{\mu=1}^n$.
+
+Note that the symmetrizer
+$\cals_2$ originaly
+has two upper anf two
+lower indices.
+Its two 
+upper indices can be
+lowered using the metric tensor:
+
 \beqa
 (\cals_2)\indices{_{\mu\nu,\rho\s}}
 &=&
@@ -452,6 +521,7 @@ g_{\mu\s}
 \ecen
 \eeqa
 
+Likewise
 \beq
 \bcen
 \xymatrix@R=1pc@C=1pc{
@@ -490,7 +560,7 @@ g_{\mu\s}
 \ecen
 \eeq
 
-
+Define tensor $M$ by
 \beq
 M\indices{_\mu_\nu^\rho^\s}
 =
@@ -512,6 +582,7 @@ g_{\mu\nu} g^{\rho \s}
 }
 \ecen
 \eeq
+Note that
 
 \beq
 M^2 =
@@ -547,6 +618,7 @@ M^2 =
 n M
 \eeq
 
+Define the following 3 projection operators (PO)
 \begin{enumerate}
 \item Singlet PO
 \beq
@@ -703,6 +775,9 @@ dim(P_{A})
 \eeqa
 \end{enumerate}
 
+The Clebsch-Gordan series for $V\otimes V$ (i.e., decomposition of 
+$V\otimes V$) is
+
 \beq
 \begin{array}{ccccccc}
 \overbrace{V\otimes V}
@@ -734,7 +809,17 @@ n^2
 \eeq
 
 
-\section{$V_{adj}\otimes V$ Decomposition}
+\section{$V_{adj}\otimes V_{def}$ Decomposition}
+
+Let 
+
+$V_{def}=V=$ vector space 
+in defining representation
+$\{\ket{\mu}\}_{\mu=1}^n$.
+
+$V_{adj}=$ vector space 
+in adjoint representation
+$\{\ket{i}\}_{i=1}^N$.
 
 In this section, we will set
 $g_{\mu\nu}=g^{\mu\nu}=\delta(\mu, \nu)$
@@ -820,6 +905,9 @@ N = \frac{n(n-1)}{2} = \xymatrix{&&\ar@{~}[ll]
 \eeq
 For example, for $SO(3)$, $N=3$.
 
+Note that
+
+
 \beq
 \tr(e)= 
 \bcen
@@ -850,6 +938,7 @@ For example, for $SO(3)$, $N=3$.
 \ecen
 =N
 \eeq
+
 
 \beq
 \tr(Q)=
@@ -919,6 +1008,7 @@ QR &=&
 \ecen
 \eeqa
 
+Define
 \beq
 X=
 \bcen

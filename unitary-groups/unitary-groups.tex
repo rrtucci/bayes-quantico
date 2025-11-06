@@ -79,7 +79,7 @@ a\ar@/_1pc/[u]|\bullet
 
 
 
-Hence, $(M-n)0M=0$ 
+Hence, $(M-n)M=0$
 so $M$ has two eigenvalues $\lam_s=0$ and $\lam_{tl}=n$.
 
 Next we will use this equation
@@ -956,7 +956,13 @@ dim(P_{adj})=\tr P_{adj} &=&
 &=& n^2 
 \eeqa
 
-\section{$V\otimes V$ Decomposition}
+\section{$V_{def}\otimes V_{def}$ Decomposition}
+
+Let 
+
+$V_{def}=V=$ vector space 
+in defining representation
+$\{\ket{a}\}_{a=1}^n$.
 
 
 \beq
@@ -1126,8 +1132,18 @@ dim(\cala_2)
 
 
 
-\section{$V_{adj}\otimes V$
+\section{$V_{adj}\otimes V_{def}$
  Decomposition}
+Let 
+
+$V_{def}=V=$ vector space 
+in defining representation
+$\{\ket{a}\}_{a=1}^n$.
+
+$V_{adj}=$ vector space 
+in adjoint representation
+$\{\ket{i}\}_{i=1}^N$.
+
 
 $V_{adj}\otimes V
 \cong (V\otimes V^\dagger)
@@ -1210,6 +1226,8 @@ N = n^2-1 = \xymatrix{&&\ar@{~}[ll]
 \eeq
 For example, for $SU(2)$, $N=3$ and for $SU(3)$,
 $N=8$.
+
+Note that
 
 \beq
 \tr(e)= 
@@ -1309,6 +1327,7 @@ QR &=&
 \ecen
 \eeqa
 
+Define
 \beq
 X=
 \bcen
