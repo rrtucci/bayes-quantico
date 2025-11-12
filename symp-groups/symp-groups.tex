@@ -3,3 +3,249 @@
 
 
 This chapter is based on Cvitanovic's Birdtracks book Ref. \cite{birdtracks-book}.
+
+$n$ even
+\beq
+f = 
+\left(
+\begin{array}{cc}
+0& I_{n/2}
+\\
+-I_{n/2}&0
+\end{array}
+\right)
+\eeq
+
+\beq
+f^Tf=I_{n},
+\quad f^2 = 
+-I_{n}
+\eeq
+$f^2$ is an invariant matrix so, by Schur's Lemma, it
+must be proportional to
+the identity. 
+
+\beq
+Sp(n)=\{G\in GL(n,\CC):
+G^Tf G= f
+\}
+\eeq
+
+\begin{claim}
+If $G\in Sp(n)$, then $det(G)=1$.
+\end{claim}
+\proof
+
+\beq
+det(G^T f G)= det(f)
+\eeq
+
+\beq
+det() = det(I_{n/2})det(-I_{n/2})= (-1)^{n/2}
+\eeq
+
+\beq
+det(G^T f G) = det^2(G)
+(-1)^{n/2}
+\eeq
+
+
+\beq
+det^2(G)=1
+\eeq
+
+$det(G)=\pm 1$. $Sp(n)$
+is connected, $I_n\in Sp(n)$  and $det(I_n)=1$.
+Hence $det(G)=1$.
+
+\qed
+
+$a,,b\in \{1,2, \ldots, n\}$. $n$ even
+
+Indices may be raised
+or lowered without
+changing tensors. In particular
+
+\beq
+f\indices{_a_b}=
+f\indices{^a_b}=
+f\indices{_a^b}=
+f\indices{^a^b}
+\eeq
+
+
+
+\beq
+f_{ab}=
+\bcen
+\xymatrix{
+a
+&\ar@[green][l]
+f\ar@2{-}[d]
+\\
+b&\ar[l]
+}
+\ecen
+=
+\xymatrix{
+a
+&f\ar[r]\ar@[green][l]
+&
+b
+}
+\eeq
+
+\beq
+f_{ba} =f_{ab}^T=
+\bcen
+\xymatrix{
+a
+&\ar@[green][l]
+f^T\ar@2{-}[d]
+\\
+b
+&\ar[l]
+}
+\ecen
+=
+\bcen
+\xymatrix{
+&\ar@{<->}[d]\ar[l]&\ar[l]
+f\ar@2{-}[d]
+\\
+&\ar[l]&\ar[l]
+}
+\ecen
+\eeq
+
+\beq
+\myboxed{
+f_{ab}=-f_{ba}
+},\quad
+\bcen
+\xymatrix{
+&\ar[l]
+f\ar@2{-}[d]
+\\
+&\ar[l]
+}
+\ecen
+=
+-
+\bcen
+\xymatrix{
+&\ar@{<->}[d]\ar[l]&\ar[l]
+f\ar@2{-}[d]
+\\
+&\ar[l]&\ar[l]
+}
+\ecen
+=
+-
+\bcen
+\xymatrix{
+&\ar[l]
+f^T\ar@2{-}[d]
+\\
+&\ar[l]
+}
+\ecen
+\eeq
+
+
+$Sp(n)$ leaves invariant
+the skew symmetric form
+
+\beq
+h(p,q)=f_{ab}p^a q^b
+\eeq
+
+\beq
+h(Gp, Gq)=h(p,q)
+\implies
+G\indices{^{b'}_b}
+G\indices{^{a'}_a}
+f_{a'b'}
+=f_{ab}
+\implies
+G^TfG = f
+\eeq
+
+\beq
+\myboxed{f_{ac}^Tf^{cb}=\delta_a^b},\quad
+\xymatrix{
+&f^T\ar[l]\ar[r]
+&f
+&\ar[l]
+}=\xymatrix{
+&\ar[l]
+}
+\eeq
+
+\beq
+\myboxed{f_{ac}f^{cb}=-\delta_a^b},\quad
+\xymatrix{
+&f\ar[l]\ar[r]
+&f
+&\ar[l]
+}=\xymatrix{
+-
+&\ar[l]
+}
+\eeq
+
+Generator $(T_i)_{ab}$ :
+
+\beq
+(T_i)\indices{_a^b}=
+\bcen
+\xymatrix
+{
+&\ar@{~}[d]&
+\\
+&T_i\ar[l]
+&
+\ar[l]
+}
+\ecen
+\eeq
+
+
+
+\beq
+\begin{array}{l}
+\myboxed{(T_i)\indices{_a^c}
+f_{cb}+
+\underbrace{(T_i)\indices{_b^c}
+f_{ac}}_{f_{ac}(T_i^T)
+\indices{^c_b}}
+=0}
+\\
+\bcen
+\xymatrix{
+&\ar@{~}[d]
+&
+\\
+&\ar[l]T_i
+&\ar[l]
+f\ar@2{-}[d]
+\\
+&&\ar[ll]
+}
+\ecen
++
+\bcen
+\xymatrix{
+&\ar@{~}@/_1pc/[dd]
+&
+\\
+&&\ar[ll]
+f\ar@2{-}[d]
+\\
+&\ar[l]  T_i
+&\ar[l]
+}
+\ecen
+=0
+\end{array}
+\eeq
