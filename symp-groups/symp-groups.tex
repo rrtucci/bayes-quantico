@@ -252,6 +252,10 @@ f\ar@2{-}[d]
 \eeq
 
 
+
+\section{$V_{def}\otimes V_{def}$ Decomposition}
+
+
 \beq
 M\indices{_a^b_c^d}
 =
@@ -264,7 +268,7 @@ a
 d
 \\
 &f\ar@[green]@/_1pc/[ul]
-&f\ar@/_1pc/[dr]
+&f^T\ar@/_1pc/[dr]
 &
 \\
 \ar@/_1pc/[ur]
@@ -275,8 +279,6 @@ b
 }
 \ecen
 \eeq
-
-\section{$V_{def}\otimes V_{def}$ Decomposition}
 
 
 \beq
@@ -296,7 +298,7 @@ $W$ has two eigenvalues $0,n$.
 \\
 &
 &f\ar@/_1pc/[ul]
-&f\ar@/_1pc/[dr]
+&f^T\ar@/_1pc/[dr]
 &
 \\
 \ar[r]
@@ -319,7 +321,7 @@ $W$ has two eigenvalues $0,n$.
 \\
 &
 &f\ar@/_1pc/[ul]
-&f\ar@/_1pc/[dr]
+&f^T\ar@/_1pc/[dr]
 &
 \\
 \ar[r]
@@ -339,7 +341,7 @@ $W$ has two eigenvalues $0,n$.
 \\
 &
 &f\ar@/_1pc/[ul]
-&f\ar@/_1pc/[dr]
+&f^T\ar@/_1pc/[dr]
 &
 \\
 \ar[r]
@@ -369,7 +371,7 @@ d
 \ar@[red]@{-}@/_1pc/[lll]
 \\
 &f\ar@/_1pc/[ul]
-&f\ar@/_1pc/[dr]
+&f^T\ar@/_1pc/[dr]
 &
 \\
 \ar@/_1pc/[ur]
@@ -380,59 +382,35 @@ b
 \ar@[red]@{-}@/^1pc/[lll]
 }
 \ecen
-=\tr(f^2)=-n
-\eeq
-
-\beq
-\tr(\cala_2 M)=\tr(M)=  -n
+=\tr(ff^T)= n
 \eeq
 
 \beqa
-\tr(\cals_2M)
+\tr(\cala_2)
 &=&
 \frac{1}{2}
 \left[
 \bcen
 \xymatrix@R=1pc@C=1pc{
-&\ar[l]
 &
-&
-&\ar@/_1pc/[dl]
-\ar@[red]@{-}@/_1pc/[llll]
+&\ar[ll]
+\ar@[red]@{-}@/_.5pc/[ll]
 \\
 &
-&f\ar@/_1pc/[ul]
-&f\ar@/_1pc/[dr]
-&
-\\
-\ar[r]
-&\ar@/_1pc/[ur]
-&
-&
-&
-\ar@[red]@{-}@/^1pc/[llll]
+&\ar[ll]
+\ar@[red]@{-}@/^.5pc/[ll]
 }
 \ecen
-+
+-
 \bcen
 \xymatrix@R=1pc@C=1pc{
-&\ar@{<->}[dd]\ar[l]
-&
-&
-&\ar@/_1pc/[dl]
-\ar@[red]@{-}@/_1pc/[llll]
+&\ar@{<->}[d]\ar[l]
+&\ar[l]
+\ar@[red]@{-}@/_.5pc/[ll]
 \\
-&
-&f\ar@/_1pc/[ul]
-&f\ar@/_1pc/[dr]
-&
-\\
-\ar[r]
-&\ar@/_1pc/[ur]
-&
-&
-&
-\ar@[red]@{-}@/^1pc/[llll]
+&\ar[l]
+&\ar[l]
+\ar@[red]@{-}@/^.5pc/[ll]
 }
 \ecen
 \right]
@@ -440,7 +418,43 @@ b
 \nonumber
 \\
 &=&
-\tr(f^2)+\tr(f^T f) = -n + n = 0
+\frac{1}{2}(n^2-n)=\frac{1}{2}n(n-1)
+\eeqa
+
+\beqa
+\tr(\cals_2)
+&=&
+\frac{1}{2}
+\left[
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&
+&\ar[ll]
+\ar@[red]@{-}@/_.5pc/[ll]
+\\
+&
+&\ar[ll]
+\ar@[red]@{-}@/^.5pc/[ll]
+}
+\ecen
++
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&\ar@{<->}[d]\ar[l]
+&\ar[l]
+\ar@[red]@{-}@/_.5pc/[ll]
+\\
+&\ar[l]
+&\ar[l]
+\ar@[red]@{-}@/^.5pc/[ll]
+}
+\ecen
+\right]
+\\
+\nonumber
+\\
+&=&
+\frac{1}{2}(n^2+n)=\frac{1}{2}n(n+1)
 \eeqa
 
 
@@ -451,7 +465,7 @@ Projection operators(PO)
 \beq
 P_S = \frac{1}{n}
 f\indices{_a^b}
-f\indices{_c^d}
+(f^T)\indices{_c^d}
 =
 \frac{1}{n}
 \bcen
@@ -463,7 +477,7 @@ a
 d
 \\
 &f\ar@/_1pc/[ul]
-&f\ar@/_1pc/[dr]
+&f^T\ar@/_1pc/[dr]
 &
 \\
 \ar@/_1pc/[ur]
@@ -488,23 +502,21 @@ $P\indices{_a^b_b^a}=0$}
 \beqa
 P_{TA}&=&
 \frac{1}{2}
-(f\indices{_a^d}f\indices{_b^c}
-- f\indices{_b^d}f\indices{_a^c})
+(\delta\indices{_a^d}\delta\indices{_b^c}
+- \delta\indices{_b^d}\delta\indices{_a^c})
 - \frac{1}{n}
 f\indices{_a^b}
-f\indices{_c^d}
+(f^T)\indices{_c^d}
 \\
 &=&
 \bcen
 \xymatrix{
 a
 &\cala_2\ar@2{-}[d]\ar[l]
-&f\ar[l]
 &\ar[l] d
 \\
 b
 &\ar[l]
-&f\ar[l]
 &\ar[l]
 c
 }
@@ -519,7 +531,7 @@ a
 d
 \\
 &f\ar@/_1pc/[ul]
-&f\ar@/_1pc/[dr]
+&f^T\ar@/_1pc/[dr]
 &
 \\
 \ar@/_1pc/[ur]
@@ -531,25 +543,28 @@ b
 \ecen
 \eeqa
 
+\beq
+\tr(P_{TA})= \frac{1}{2}(n^2-n-2)=
+\frac{1}{2}(n+1)(n-2)
+\eeq
+
 \item Symmetric PO
 
 \beqa
 P_{SYM}&=&
 \frac{1}{2}
-(f\indices{_a^d}f\indices{_b^c}
-+ f\indices{_b^d}f\indices{_a^c})
+(\delta\indices{_a^d}\delta\indices{_b^c}
++ \delta\indices{_b^d}\delta\indices{_a^c})
 \\
 &=&
 \bcen
 \xymatrix{
 a
 &\cals_2\ar@2{-}[d]\ar[l]
-&f\ar[l]
 &\ar[l] d
 \\
 b
 &\ar[l]
-&f\ar[l]
 &\ar[l]
 c
 }
@@ -557,6 +572,41 @@ c
 \eeqa
 
 \beq
-\tr{P_{SYM}} = \tr(\cals_2 M)=0
+\tr(P_{SYM}) = 
+= \frac{1}{2}(n^2+n)=
+\frac{1}{2}n(n+1)
 \eeq
 \end{itemize}
+
+The Clebsch-Gordan series for $V\otimes V$ (i.e., decomposition of 
+$V\otimes V$) is
+
+\beq
+\begin{array}{ccccccc}
+\overbrace{V\otimes V}
+^\calv
+&=
+&P_S\calv
+&\oplus
+&P_{SYM}\calv
+&\oplus
+&P_{TA}\calv
+\\
+\ydiagram{1}
+\otimes\ydiagram{1}
+&=
+&\bullet
+&\oplus
+&\ydiagram{2}
+&\oplus
+&\ydiagram{1,1}
+\\
+n^2
+&=
+& 1
+&+
+&\frac{1}{2}n(n+1)
+&+
+&\frac{1}{2}(n+1)(n-2)
+\end{array}
+\eeq
