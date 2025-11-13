@@ -3,9 +3,24 @@
 
 This chapter is based on Cvitanovic's Birdtracks book Ref. \cite{birdtracks-book}.
 
-Please read Section \ref{sec-dimensions}
-before reading this chapter.
+Let
 
+{\bf n-dim General   Linear group} $GL(n, \CC)=\{ G\in\CC^{n\times n}:
+det(G)\neq 0\}$
+
+{\bf n-dim Special Linear group} $SL(n)=\{ G\in GL(n, \CC):
+det(G)=1\}$
+
+{\bf n-dim Unitary group}, $U(n)=\{ G\in GL(n, \CC):
+G G^\dagger =G^\dagger G =1\}$
+
+{\bf n-dim Special Unitary group}
+$SU(n)=\{ G\in U(n):
+det(G)=1\}$
+
+Chapter \ref{ch-young-tableau}
+on Young Tableau
+is closely connected to this chapter.
 
 \section{$SU(n)$}
 
@@ -80,18 +95,21 @@ a\ar@/_1pc/[u]|\bullet
 
 
 Hence, $(M-n)M=0$
-so $M$ has two eigenvalues $\lam_s=0$ and $\lam_{tl}=n$.
+so $M$ has two eigenvalues $\lam=0,n$.
 
-Next we will use this equation
+Next we will use the following equation from Chapter \ref{ch-reducibility}
+\footnote{Note that this equation
+projects to zero all eigenvalues except one.}
 to obtain a projection
-operator for each eigenvalue
+operator (PO) for each eigenvalue
 
 \beq 
 P_i = \sum_{j\neq i}
 \frac{M-\lam_j}{\lam_i-\lam_j}
 \eeq
-\hrule
-$\lam_S = 0$
+
+\begin{enumerate}
+\item Singlet PO ($\lam_S = 0$)
 
 \beq
 \begin{array}{ll}
@@ -146,10 +164,7 @@ dim(P_S)=\tr P_S &=&
 1
 \eeqa
 
-
-
-\hrule
-$\lam_{tl}=n$
+\item Adjoint PO
 
 \beq
 \begin{array}{l}
@@ -232,7 +247,7 @@ dim(P_{adj})=\tr P_{adj} &=&
 &=& n^2 -1
 \eeqa
 
-\hrule
+\end{enumerate}
 
 We will denote
 the generators $T_i$ of $SU(n)$ by

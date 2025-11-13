@@ -618,7 +618,19 @@ M^2 =
 n M
 \eeq
 
-Define the following 3 projection operators (PO)
+Hence, $(M-n)M=0$
+so $M$ has two eigenvalues $\lam=0,n$.
+
+Next we will use the following equation from Chapter \ref{ch-reducibility}
+\footnote{Note that this equation
+projects to zero all eigenvalues except one.}
+to obtain a projection (PO)
+operator for each eigenvalue
+
+\beq 
+P_i = \sum_{j\neq i}
+\frac{M-\lam_j}{\lam_i-\lam_j}
+\eeq
 \begin{enumerate}
 \item Singlet PO
 \beq
@@ -665,7 +677,7 @@ dim(P_S)&=&
 &=& 1
 \eeqa
 
-\item traceless symmetric PO\footnote{Traceless here refers to 
+\item Traceless Symmetric PO\footnote{Traceless here refers to 
 $P\indices{_a^a_c^d}V\indices{_d^c}=(PV)\indices{_a^a}=0$ for any vector $V\indices{_d^c}$. It does not refer 
 to
 $P\indices{_a^b_b^a}=0$}

@@ -281,10 +281,7 @@ b
 \eeq
 
 
-\beq
-M^2=nM\implies (M-0)(M-n)=0
-\eeq
-$W$ has two eigenvalues $0,n$.
+
 
 \beqa
 \cala_2 M
@@ -357,7 +354,7 @@ $W$ has two eigenvalues $0,n$.
 \eeqa
 Hence $M$ is ant-symmetric so 
 only anti-symmetric
-($\lam=0$) space decomposes.
+ space decomposes.
 
 \beq
 \tr(M)=
@@ -391,26 +388,26 @@ b
 \frac{1}{2}
 \left[
 \bcen
-\xymatrix@R=1pc@C=1pc{
+\xymatrix@R=1.5pc@C=1.5pc{
 &
 &\ar[ll]
-\ar@[red]@{-}@/_.5pc/[ll]
+\ar@[red]@{-}@/_.8pc/[ll]
 \\
 &
 &\ar[ll]
-\ar@[red]@{-}@/^.5pc/[ll]
+\ar@[red]@{-}@/^.8pc/[ll]
 }
 \ecen
 -
 \bcen
-\xymatrix@R=1pc@C=1pc{
+\xymatrix@R=1pc@C=1.5pc{
 &\ar@{<->}[d]\ar[l]
 &\ar[l]
-\ar@[red]@{-}@/_.5pc/[ll]
+\ar@[red]@{-}@/_.8pc/[ll]
 \\
 &\ar[l]
 &\ar[l]
-\ar@[red]@{-}@/^.5pc/[ll]
+\ar@[red]@{-}@/^.8pc/[ll]
 }
 \ecen
 \right]
@@ -427,26 +424,26 @@ b
 \frac{1}{2}
 \left[
 \bcen
-\xymatrix@R=1pc@C=1pc{
+\xymatrix@R=1pc@C=1.5pc{
 &
 &\ar[ll]
-\ar@[red]@{-}@/_.5pc/[ll]
+\ar@[red]@{-}@/_.8pc/[ll]
 \\
 &
 &\ar[ll]
-\ar@[red]@{-}@/^.5pc/[ll]
+\ar@[red]@{-}@/^.8pc/[ll]
 }
 \ecen
 +
 \bcen
-\xymatrix@R=1pc@C=1pc{
+\xymatrix@R=1.5pc@C=1.5pc{
 &\ar@{<->}[d]\ar[l]
 &\ar[l]
-\ar@[red]@{-}@/_.5pc/[ll]
+\ar@[red]@{-}@/_.8pc/[ll]
 \\
 &\ar[l]
 &\ar[l]
-\ar@[red]@{-}@/^.5pc/[ll]
+\ar@[red]@{-}@/^.8pc/[ll]
 }
 \ecen
 \right]
@@ -457,10 +454,24 @@ b
 \frac{1}{2}(n^2+n)=\frac{1}{2}n(n+1)
 \eeqa
 
+\beq
+M^2=nM
+\eeq
+Hence, $(M-n)M=0$
+so $M$ has two eigenvalues $\lam=0,n$.
 
+Next we will use the following equation from Chapter \ref{ch-reducibility}
+\footnote{Note that this equation
+projects to zero all eigenvalues except one.}
+to obtain a projection (PO)
+operator for each eigenvalue
 
-Projection operators(PO)
-\begin{itemize}
+\beq 
+P_i = \sum_{j\neq i}
+\frac{M-\lam_j}{\lam_i-\lam_j}
+\eeq
+
+\begin{enumerate}
 \item Singlet PO
 \beq
 P_S = \frac{1}{n}
@@ -573,10 +584,44 @@ c
 
 \beq
 \tr(P_{SYM}) = 
-= \frac{1}{2}(n^2+n)=
+\frac{1}{2}(n^2+n)=
 \frac{1}{2}n(n+1)
 \eeq
-\end{itemize}
+\end{enumerate}
+
+$P_{SYM}$ is the only of the 3 PO that
+is an invariant tensor so
+
+\beq
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&
+&
+&\ar@/_1pc/[dl]
+\\
+&T_i\ar@/_1pc/[ul]
+&T_i\ar@/_1pc/[dr]\ar@{~}[l]
+&
+\\
+\ar@/_1pc/[ur]
+&
+&
+&
+}
+\ecen
+=
+\bcen
+\xymatrix{
+&\cals_2\ar@2{-}[d]\ar[l]
+&\ar[l] 
+\\
+\ar[r]
+&\ar[r]
+&
+}
+\ecen
+\eeq
+
 
 The Clebsch-Gordan series for $V\otimes V$ (i.e., decomposition of 
 $V\otimes V$) is
