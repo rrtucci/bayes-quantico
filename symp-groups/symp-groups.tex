@@ -1,4 +1,4 @@
-\chapter{Symplectic Groups: COMING SOON}
+\chapter{Symplectic Groups}
 \label{ch-symp-groups}
 
 
@@ -21,7 +21,7 @@ f^Tf=I_{n},
 \quad f^2 = 
 -I_{n}
 \eeq
-$f^2$ is an invariant matrix so, by Schur's Lemma, it
+$f^2$ is a primitive invariant matrix so it
 must be proportional to
 the identity. 
 
@@ -72,6 +72,7 @@ f\indices{^a_b}=
 f\indices{_a^b}=
 f\indices{^a^b}
 \eeq
+
 
 
 
@@ -249,3 +250,313 @@ f\ar@2{-}[d]
 =0
 \end{array}
 \eeq
+
+
+\beq
+M\indices{_a^b_c^d}
+=
+\bcen
+\xymatrix@R=1pc@C=1pc{
+a
+&
+&
+&\ar@/_1pc/[dl]
+d
+\\
+&f\ar@[green]@/_1pc/[ul]
+&f\ar@/_1pc/[dr]
+&
+\\
+\ar@/_1pc/[ur]
+b
+&
+&
+&c
+}
+\ecen
+\eeq
+
+\section{$V_{def}\otimes V_{def}$ Decomposition}
+
+
+\beq
+M^2=nM\implies (M-0)(M-n)=0
+\eeq
+$W$ has two eigenvalues $0,n$.
+
+\beqa
+\cala_2 M
+&=&
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&\cala_2\ar@2{-}[dd]\ar[l]
+&
+&
+&\ar@/_1pc/[dl]
+\\
+&
+&f\ar@/_1pc/[ul]
+&f\ar@/_1pc/[dr]
+&
+\\
+\ar[r]
+&\ar@/_1pc/[ur]
+&
+&
+&
+}
+\ecen
+\\
+&=&
+\frac{1}{2}
+\left[
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&\ar[l]
+&
+&
+&\ar@/_1pc/[dl]
+\\
+&
+&f\ar@/_1pc/[ul]
+&f\ar@/_1pc/[dr]
+&
+\\
+\ar[r]
+&\ar@/_1pc/[ur]
+&
+&
+&
+}
+\ecen
+-
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&\ar@{<->}[dd]\ar[l]
+&
+&
+&\ar@/_1pc/[dl]
+\\
+&
+&f\ar@/_1pc/[ul]
+&f\ar@/_1pc/[dr]
+&
+\\
+\ar[r]
+&\ar@/_1pc/[ur]
+&
+&
+&
+}
+\ecen
+\right]
+\\
+&=& M
+\eeqa
+Hence $M$ is ant-symmetric so 
+only anti-symmetric
+($\lam=0$) space decomposes.
+
+\beq
+\tr(M)=
+\bcen
+\xymatrix@R=1pc@C=1pc{
+a
+&
+&
+&\ar@/_1pc/[dl]
+d
+\ar@[red]@{-}@/_1pc/[lll]
+\\
+&f\ar@/_1pc/[ul]
+&f\ar@/_1pc/[dr]
+&
+\\
+\ar@/_1pc/[ur]
+b
+&
+&
+&c
+\ar@[red]@{-}@/^1pc/[lll]
+}
+\ecen
+=\tr(f^2)=-n
+\eeq
+
+\beq
+\tr(\cala_2 M)=\tr(M)=  -n
+\eeq
+
+\beqa
+\tr(\cals_2M)
+&=&
+\frac{1}{2}
+\left[
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&\ar[l]
+&
+&
+&\ar@/_1pc/[dl]
+\ar@[red]@{-}@/_1pc/[llll]
+\\
+&
+&f\ar@/_1pc/[ul]
+&f\ar@/_1pc/[dr]
+&
+\\
+\ar[r]
+&\ar@/_1pc/[ur]
+&
+&
+&
+\ar@[red]@{-}@/^1pc/[llll]
+}
+\ecen
++
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&\ar@{<->}[dd]\ar[l]
+&
+&
+&\ar@/_1pc/[dl]
+\ar@[red]@{-}@/_1pc/[llll]
+\\
+&
+&f\ar@/_1pc/[ul]
+&f\ar@/_1pc/[dr]
+&
+\\
+\ar[r]
+&\ar@/_1pc/[ur]
+&
+&
+&
+\ar@[red]@{-}@/^1pc/[llll]
+}
+\ecen
+\right]
+\\
+\nonumber
+\\
+&=&
+\tr(f^2)+\tr(f^T f) = -n + n = 0
+\eeqa
+
+
+
+Projection operators(PO)
+\begin{itemize}
+\item Singlet PO
+\beq
+P_S = \frac{1}{n}
+f\indices{_a^b}
+f\indices{_c^d}
+=
+\frac{1}{n}
+\bcen
+\xymatrix@R=1pc@C=1pc{
+a
+&
+&
+&\ar@/_1pc/[dl]
+d
+\\
+&f\ar@/_1pc/[ul]
+&f\ar@/_1pc/[dr]
+&
+\\
+\ar@/_1pc/[ur]
+b
+&
+&
+&c
+}
+\ecen
+\eeq
+
+\beq
+\tr(P_S)= \frac{1}{n}\tr(M)=1
+\eeq
+
+
+\item Traceless Anti-symmetric PO\footnote{Traceless here refers to 
+$P\indices{_a^a_c^d}V\indices{_d^c}=(PV)\indices{_a^a}=0$ for any vector $V\indices{_d^c}$. It does not refer 
+to
+$P\indices{_a^b_b^a}=0$}
+
+\beqa
+P_{TA}&=&
+\frac{1}{2}
+(f\indices{_a^d}f\indices{_b^c}
+- f\indices{_b^d}f\indices{_a^c})
+- \frac{1}{n}
+f\indices{_a^b}
+f\indices{_c^d}
+\\
+&=&
+\bcen
+\xymatrix{
+a
+&\cala_2\ar@2{-}[d]\ar[l]
+&f\ar[l]
+&\ar[l] d
+\\
+b
+&\ar[l]
+&f\ar[l]
+&\ar[l]
+c
+}
+\ecen
+-\frac{1}{n}
+\bcen
+\xymatrix@R=1pc@C=1pc{
+a
+&
+&
+&\ar@/_1pc/[dl]
+d
+\\
+&f\ar@/_1pc/[ul]
+&f\ar@/_1pc/[dr]
+&
+\\
+\ar@/_1pc/[ur]
+b
+&
+&
+&c
+}
+\ecen
+\eeqa
+
+\item Symmetric PO
+
+\beqa
+P_{SYM}&=&
+\frac{1}{2}
+(f\indices{_a^d}f\indices{_b^c}
++ f\indices{_b^d}f\indices{_a^c})
+\\
+&=&
+\bcen
+\xymatrix{
+a
+&\cals_2\ar@2{-}[d]\ar[l]
+&f\ar[l]
+&\ar[l] d
+\\
+b
+&\ar[l]
+&f\ar[l]
+&\ar[l]
+c
+}
+\ecen
+\eeqa
+
+\beq
+\tr{P_{SYM}} = \tr(\cals_2 M)=0
+\eeq
+\end{itemize}
