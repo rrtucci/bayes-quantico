@@ -1145,7 +1145,15 @@ dim(\cala_2)
 \frac{n(n-1)}{2}
 \eeqa
 
-
+The projection operator tree is
+\begin{center}
+\begin{minipage}{2cm}
+\dirtree{%
+.1 $\cala_2$.
+.1 $\cals_2$.
+}
+\end{minipage}
+\end{center}
 
 \section{$V_{adj}\otimes V_{def}$
  Decomposition}
@@ -1600,13 +1608,15 @@ e - \frac{1}{n}R
 \beqa
 P_1 &=& \frac{n}{n^2-1}R
 \\
-P_2&=&
+P_2&=& \frac{1}{2}P_4(1+Q)=
 \frac{1}{2}
 \left[e + Q -\frac{1}{n+1}R\right]
 \\
-P_3&=&
+P_3&=& \frac{1}{2}P_4(1-Q)=
 \frac{1}{2}
 \left[e - Q -\frac{1}{n-1}R\right]
+\\
+P_4 &=& 1-P_1
 \eeqa
 are projectors
 for $SU(n)$. The $V_{adj}\otimes V
@@ -1670,6 +1680,17 @@ SU(3): 8(3)
 6
 \end{array}
 \eeq
+The projection operator  tree is
+\begin{center}
+\begin{minipage}{2cm}
+\dirtree{%
+.1 $P_1$.
+.1 $P_4$.
+.2 $P_2$.
+.2 $P_3$.
+}
+\end{minipage}
+\end{center}
 \end{claim}
 \proof
 
@@ -1729,7 +1750,7 @@ Let
 
 \beq
 P_2 = \frac{1}{2}P_4(1+Q),\quad
-P_3 = \frac{1}{2}P_4(1+Q)
+P_3 = \frac{1}{2}P_4(1-Q)
 \eeq
 and
 
