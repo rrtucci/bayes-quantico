@@ -483,15 +483,61 @@ M\indices{_a^b}x_b
 
 
 The {\bf Hermitian conjugate} $\dagger$
-equals $*T$ where $*$ is complex conjugation and $T$ is transpose.
+equals $*T$ (and reverse direction of arrows) where $*$ is complex conjugation and $T$ is transpose.
 Hence
 
 \beq
-(M^T)\indices{_b^a}= M\indices{_a^b}
+\myboxed{(M^T)\indices{_a^b}= M\indices{^b_a}}
+\quad
+\bcen
+\xymatrix{
+a
+&\ar@2{-}[d]\ar[l]
+M^T
+\\
+b\ar[r]
+&
+}
+\ecen
+=
+\bcen
+\xymatrix{
+a
+&\ar@{<->}[d]\ar[l]\ar[r]
+&\ar@2{-}[d]
+M
+\\
+b\ar[r]
+&
+&\ar[l]
+}
+\ecen
 \eeq
 
 \beq
-(M^\dagger)\indices{_b^a}= (M\indices{_a^b})^*
+\myboxed{(M^\dagger)\indices{_a^b}= (M\indices{_b^a})^*}
+\quad
+\bcen
+\xymatrix{
+a&\ar[l]\ar@2{-}[d]
+M^\dagger
+\\
+b\ar[r]&
+}
+\ecen
+=
+\bcen
+\xymatrix{
+a\ar[r]
+&\ar@{<->}[d]
+&\ar[l]\ar@2{-}[d]
+M^*
+\\
+b
+&\ar[l]\ar[r]
+&
+}
+\ecen
 \eeq
 To avoid confusion,
 follow the golden rule: \ul{write 
@@ -517,7 +563,29 @@ items 1 and 2.
 If $M$ is a Hermitian matrix (i.e., $M^\dagger =M$), then
 
 \beq
-M\indices{_b^a}= (M\indices{_a^b})^*
+\myboxed{M\indices{_a^b}= (M\indices{_b^a})^*}
+\quad
+\bcen
+\xymatrix{
+a&\ar[l]\ar@2{-}[d]
+M
+\\
+b\ar[r]&
+}
+\ecen
+=
+\bcen
+\xymatrix{
+a\ar[r]
+&\ar@{<->}[d]
+&\ar[l]\ar@2{-}[d]
+M^*
+\\
+b
+&\ar[l]\ar[r]
+&
+}
+\ecen
 \eeq
 
 

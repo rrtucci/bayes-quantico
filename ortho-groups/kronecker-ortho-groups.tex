@@ -57,23 +57,6 @@ This chapter deals with {\bf non-spinor reps} (with either even or odd $n$.).
 Chapter \ref{ch-spinors}
 deals with the {\bf spinor reps}.
 
-We assume that the {\bf metric tensor} $g_{\mu\nu}$
-is a primitive invariant
-that satisfies:
-
-\beq
-g_{\mu\nu}=g_{\nu\mu},\quad
-g^{\mu\nu}=g^{\nu\mu},\quad
-g\indices{_\mu^\nu}=g\indices{_\nu^\mu} =\delta_\mu^\nu
-\eeq
-
-\beq
-g_{\mu\nu}x^\mu=x_\nu,\quad g^{\mu\nu}x_\mu=x^\nu\quad (\text{so }
-g_{\mu\lam}g^{\lam\nu}=\delta_\mu^\nu)
-\eeq
-where $\mu, \nu\in \{1,2, \ldots, n\}$
-and $x_\mu$ is any tensor.
-
 In this section, we will
 call {\bf orthogonal groups}
 the group of
@@ -113,84 +96,102 @@ example, if $g_{\mu\nu}=diag (1, -1, -1, -1)$ and $\det G=1$,
 we get the {\bf Lorentz group} $SO(1,3)$
 used in Special Relativity.
 
-\qed
 
-
-\hrule
-
-{\bf Tensor Index Convention}: We will
-assume that
+We assume that the {\bf metric tensor} $g_{\mu\nu}$
+is a primitive invariant
+that satisfies:
 
 \beq
-[g\indices{_\mu_\nu}]=
-[g\indices{^\mu_\nu}]=
-[g\indices{_\mu^\nu}]=
-[g\indices{^\mu^\nu}]=g
-\quad
-\text{(fully explicit $g$ (FEg) convention)}
+g_{\mu\nu}=g_{\nu\mu},\quad
+g^{\mu\nu}=g^{\nu\mu}
 \eeq
-An alternative index convention
-that we will not follow is to assume
 
 \beq
-g\indices{^\mu_\nu}= g\indices{_\mu^\nu}=\delta_\mu^\nu, \quad
-[g_{\mu\nu}]=[g^{\mu\nu}]=g
-\quad \text{(non-FEg convention)}
+g_{\mu\s} g^{\s \nu}=\delta_\mu^\nu
 \eeq
-To go from our FEg to the non-FEg convention, 
-write  the birdtrack equation (BE) algebraically, and then,
-in the BE, 
-move indices up
-or down so that $g$ tensors all have
-either both indices up or both indices down and so that contracted indices are in up-down pairs.
-For example, if the BE 
-in the FEg convention is:
-
+This will be represented 
+as birdtracks thus
 \beq
-M\indices{_\mu^\nu} g\indices{_\nu^\lam} = g\indices{_\mu^\lam}
-\eeq
-then replace that  BE by
-
-\beq
-M\indices{_\mu^\nu} g\indices{_\nu_\lam} = g\indices{_\mu_\lam}
-\eeq
- 
-
-{\bf  Net Arrow Convention:}
-We will point the arrows in a birdtrack so that the birdtrack is a DAG. Cycles that make the birdtrack not acyclic will
-have a segment in red. Without that
-red segment, the birdtrack becomes  acyclic. The reason we follow this arrow convention is that it
-promotes acyclic birdtracks which are more
-akin to bnets. We will eschew undirected birdtracks for the same reason: bnets are directed.
-
-\hrule
-
-Let
-\beq
-g\indices{_\mu^\nu}=
+g_{\mu\nu}=
 \xymatrix
-{&g\ar[l]&\ar[l]
-},\quad
+{&\ul{g}\ar[l]\ar[r]&
+},
+\quad
+g^{\mu\nu}=
+\xymatrix
+{\ar[r]&\ol{g}&\ar[l]
+}
+\eeq
+
+\beq
 \delta_\mu^\nu =
 \xymatrix{ &\ar[l]}
 \eeq
 
 \beq
 \myboxed{
-g\indices{_\mu^\s} g\indices{_\s ^\nu}=\delta_\mu^\nu,
-\quad g^2=1}
+g_{\mu\s} g^{\s \nu}=\delta_\mu^\nu}
+\quad
 \xymatrix{
-&g
-\ar[l]
-&g\ar[l]
+&\ul{g}
+\ar[l]\ar[r]
+&\ol{g}
 &\ar[l]
 }=
 \xymatrix{&\ar[l]}
 \eeq
+Often we will
+revert to an even
+less precise birdtrack notation
+shown below 
+wherein the arrow directions are omitted.
+We will try to 
+use only lower indices in all
+tensors except the metric   tensor
+which may have 2 upper or 2
+lower indices or one
+upper and one lower. In the
+latter 
+case, it becomes the Kronecker delta.
+
+\beq
+g_{\mu\nu}=
+\xymatrix
+{&\ul{g}\ar@{-}[l]\ar@{-}[r]&
+},
+\quad
+g^{\mu\nu}=
+\xymatrix
+{\ar@{-}[r]&\ol{g}&\ar@{-}[l]
+}
+\eeq
+
+\beq
+\delta_\mu^\nu
+=\xymatrix{
+& \ar@{-}[l]|\bullet
+}
+=\xymatrix{
+& \ar@{-}[l]
+}
+\eeq
+
+\beq
+\myboxed{
+g_{\mu\s} g^{\s \nu}=\delta_\mu^\nu}
+\quad
+\xymatrix{
+&\ul{g}
+\ar@{-}[l]\ar@{-}[r]
+&\ol{g}
+&\ar@{-}[l]
+}=
+\xymatrix{&\ar@{-}[l]}
+\eeq
 
 The generators of 
 orthogonal
- groups will be represented by:
+ groups will be representd by:
 
 
 \beq
@@ -202,7 +203,7 @@ orthogonal
 &\ar[l] T_i
 &\ar[l]
 \ar[r]
-g
+\ul{g}
 &
 }
 \ecen
@@ -234,14 +235,14 @@ g_{\s\mu}
 &\ar[l] T_i
 &\ar[l]
 \ar[r]
-g
+\ul{g}
 &
 }
 \ecen
 +
 \bcen
 \xymatrix{
-&\ar[l]\ar[r] g
+&\ar[l]\ar[r] \ul{g}
 &
 \ar[r]
 T_i
@@ -497,11 +498,11 @@ g_{\mu\s}
 \bcen
 \xymatrix@R=1pc@C=1pc{
 &\cals_2\ar@2{-}[d]\ar[l]
-&g \ar[r]\ar[l]
+&\ul{g} \ar[r]\ar[l]
 &
 \\
 &\ar[l]
-&g\ar[r]\ar[l]
+&\ul{g}\ar[r]\ar[l]
 &
 }
 \ecen
@@ -510,11 +511,11 @@ g_{\mu\s}
 \bcen
 \xymatrix@R=1pc@C=1pc{
 &\cals_2\ar@2{-}[d]\ar@{-}[l]
-&g \ar@{-}[r]\ar@{-}[l]
+&\ul{g} \ar@{-}[r]\ar@{-}[l]
 &
 \\
 &\ar@{-}[l]
-&g\ar@{-}[r]\ar@{-}[l]
+&\ul{g}\ar@{-}[r]\ar@{-}[l]
 &
 }
 \ecen
@@ -525,11 +526,11 @@ Likewise
 \bcen
 \xymatrix@R=1pc@C=1pc{
 &\ar@{-}[l]
-g
+\ul{g}
 &\ar@{-}[l]
 \\
 &\ar@{-}[l]
-g
+\ul{g}
 &\ar@{-}[l]
 }
 \ecen
@@ -537,11 +538,11 @@ g
 \bcen
 \xymatrix@R=1pc@C=1pc{
 &\cals_2\ar@2{-}[d]\ar@{-}[l]
-&g \ar@{-}[r]\ar@{-}[l]
+&\ul{g} \ar@{-}[r]\ar@{-}[l]
 &
 \\
 &\ar@{-}[l]
-&g\ar@{-}[r]\ar@{-}[l]
+&\ul{g}\ar@{-}[r]\ar@{-}[l]
 &
 }
 \ecen
@@ -549,11 +550,11 @@ g
 \bcen
 \xymatrix@R=1pc@C=1pc{
 &\cala_2\ar@2{-}[d]\ar@{-}[l]
-&g \ar@{-}[r]\ar@{-}[l]
+&\ul{g} \ar@{-}[r]\ar@{-}[l]
 &
 \\
 &\ar@{-}[l]
-&g\ar@{-}[r]\ar@{-}[l]
+&\ul{g}\ar@{-}[r]\ar@{-}[l]
 &
 }
 \ecen
@@ -569,10 +570,10 @@ g_{\mu\nu} g^{\rho \s}
 \xymatrix@R=1pc@C=1pc{
 \mu&&&\rho
 \\
-&g
+&\ul{g}
 \ar@/_1pc/@{-}[lu]
 \ar@/^1pc/@{-}[ld]
-&g
+&\ol{g}
 \ar@/^1pc/@{-}[ru]
 \ar@/_1pc/@{-}[rd]
 &
@@ -589,10 +590,10 @@ M^2 =
 \xymatrix@R=1pc@C=1pc{
 &&&
 \\
-&g
+&\ul{g}
 \ar@/_1pc/@{-}[lu]
 \ar@/^1pc/@{-}[ld]
-&g
+&\ol{g}
 \ar@/^1pc/@{-}[ru]
 \ar@/_1pc/@{-}[rd]
 &
@@ -602,10 +603,10 @@ M^2 =
 \xymatrix@R=1pc@C=1pc{
 &&&
 \\
-&g
+&\ul{g}
 \ar@/_1pc/@{-}[lu]
 \ar@/^1pc/@{-}[ld]
-&g
+&\ol{g}
 \ar@/^1pc/@{-}[ru]
 \ar@/_1pc/@{-}[rd]
 &
@@ -640,10 +641,10 @@ P_i = \sum_{j\neq i}
 \xymatrix@R=1pc@C=1pc{
 \mu&&&\rho
 \\
-&g
+&\ul{g}
 \ar@/_1pc/@{-}[lu]
 \ar@/^1pc/@{-}[ld]
-&g
+&\ol{g}
 \ar@/^1pc/@{-}[ru]
 \ar@/_1pc/@{-}[rd]
 &
@@ -660,10 +661,10 @@ dim(P_S)&=&
 \xymatrix@R=1pc@C=1pc{
 &&&\ar@{-}@[red]@/_.5pc/[lll]
 \\
-&g
+&\ul{g}
 \ar@/_1pc/@{-}[lu]
 \ar@/^1pc/@{-}[ld]
-&g
+&\ol{g}
 \ar@/^1pc/@{-}[ru]
 \ar@/_1pc/@{-}[rd]
 &
@@ -700,10 +701,10 @@ $P\indices{_a^b_b^a}=0$}
 \xymatrix@R=1pc@C=1pc{
 &&&
 \\
-&g
+&\ul{g}
 \ar@/_1pc/@{-}[lu]
 \ar@/^1pc/@{-}[ld]
-&g
+&\ol{g}
 \ar@/^1pc/@{-}[ru]
 \ar@/_1pc/@{-}[rd]
 &
@@ -731,10 +732,10 @@ dim(P_{TS})
 \xymatrix@R=1pc@C=1pc{
 &&&\ar@{-}@[red]@/_.5pc/[lll]
 \\
-&g
+&\ul{g}
 \ar@/_1pc/@{-}[lu]
 \ar@/^1pc/@{-}[ld]
-&g
+&\ol{g}
 \ar@/^1pc/@{-}[ru]
 \ar@/_1pc/@{-}[rd]
 &

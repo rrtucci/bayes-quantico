@@ -17,6 +17,7 @@ f =
 \eeq
 
 \beq
+f^T=-f,\quad
 f^Tf=I_{n},
 \quad f^2 = 
 -I_{n}
@@ -41,7 +42,7 @@ det(G^T f G)= det(f)
 \eeq
 
 \beq
-det() = det(I_{n/2})det(-I_{n/2})= (-1)^{n/2}
+det(f) = det(I_{n/2})det(-I_{n/2})= (-1)^{n/2}
 \eeq
 
 \beq
@@ -60,20 +61,69 @@ Hence $det(G)=1$.
 
 \qed
 
-$a,,b\in \{1,2, \ldots, n\}$. $n$ even
-
-Indices may be raised
-or lowered without
-changing tensors. In particular
+We assume that $n$ is even and the {\bf pseudo metric tensor} $f_{ab}$
+is a primitive invariant
+that satisfies:
 
 \beq
-f\indices{_a_b}=
-f\indices{^a_b}=
-f\indices{_a^b}=
-f\indices{^a^b}
+f_{ab}=-f_{ba}
 \eeq
 
+\beq
+f_{ac} f_{cb}=-\delta_a^b
+\eeq
+where $a, b\in \{1,2, \ldots, n\}$.
 
+\hrule
+{\bf  Net Arrow Convention:}
+We will point the arrows in a birdtrack so that the birdtrack is a DAG. Cycles that make the birdtrack not acyclic will
+have a segment in red. Without that
+red segment, the birdtrack becomes  acyclic. The reason we follow this arrow convention is that it
+promotes acyclic birdtracks which are more
+akin to bnets. We will eschew undirected birdtracks for the same reason: bnets are directed.
+
+{\bf Tensor Index Convention}: 
+Since we will only use DAGs,
+birdtracks will only use $f\indices{_a^b}$ and $f\indices{^a_b}$
+We will assume that
+
+\beq
+[f\indices{^a_b}]=
+[f\indices{_a^b}]=f
+\quad
+\text{(fully explicit $f$ (FEf) convention)}
+\eeq
+An alternative index convention
+that we will not follow is to assume
+
+\beq
+f\indices{^a_b}= f\indices{_a^b}=-\delta_a^b, \quad
+[f_{ab}]=[f^{ab}]=f
+\quad
+\text{(non-FEf convention)}
+\eeq
+To go from our FEf to a non-FEf convention, 
+write  the birdtrack equation (BE) algebraically, and then,
+in the BE, 
+move indices up
+or down so that $f$ tensors all have
+either both indices up or both indices down and so that contracted indices are in up-down pairs.
+For example, if the BE in the
+FEf convention is:
+
+\beq
+M\indices{_a^b} f\indices{_b^c} = f\indices{_a^c}
+\eeq
+then replace that  BE by
+
+\beq
+M\indices{_a^b} f\indices{_b_c} = f\indices{_a_c}
+\eeq
+ 
+
+
+
+\hrule
 
 
 \beq
