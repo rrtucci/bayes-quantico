@@ -483,11 +483,11 @@ M\indices{_a^b}x_b
 
 
 The {\bf Hermitian conjugate} $\dagger$
-equals $*T$ (and reverse direction of arrows) where $*$ is complex conjugation and $T$ is transpose.
+equals $*T$  where $*$ is complex conjugation and $T$ is transpose.
 Hence
 
 \beq
-\myboxed{(M^T)\indices{_a^b}= M\indices{^b_a}}
+\myboxed{(M^T)\indices{_a^b}= M\indices{_b^a}}
 \quad
 \bcen
 \xymatrix{
@@ -503,13 +503,13 @@ b\ar[r]
 \bcen
 \xymatrix{
 a
-&\ar@{<->}[d]\ar[l]\ar[r]
-&\ar@2{-}[d]
+&\ar@{<->}[d]\ar[l]
+&\ar@2{-}[d]\ar[l]
 M
 \\
 b\ar[r]
+&\ar[r]
 &
-&\ar[l]
 }
 \ecen
 \eeq
@@ -528,13 +528,13 @@ b\ar[r]&
 =
 \bcen
 \xymatrix{
-a\ar[r]
-&\ar@{<->}[d]
+a
+&\ar@{<->}[d]\ar[l]
 &\ar[l]\ar@2{-}[d]
 M^*
 \\
-b
-&\ar[l]\ar[r]
+b\ar[r]
+&\ar[r]
 &
 }
 \ecen
@@ -576,13 +576,13 @@ b\ar[r]&
 =
 \bcen
 \xymatrix{
-a\ar[r]
-&\ar@{<->}[d]
+a
+&\ar@{<->}[d]\ar[l]
 &\ar[l]\ar@2{-}[d]
 M^*
 \\
-b
-&\ar[l]\ar[r]
+b\ar[r]
+&\ar[r]
 &
 }
 \ecen
