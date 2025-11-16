@@ -195,6 +195,38 @@ orthogonal
 }
 \ecen
 \eeq
+We will also use\footnote{We repeat again: the decorated $g$'s in these birdtracks are redundant and only included for the sake of clarity. The direction of
+the arrows has that info already.}
+
+\beq
+(T_i)\indices{^\mu_\nu}=
+\bcen
+\xymatrix{
+&\ar@{~}@[green][d]&
+\\
+&\ar@{<-}[l] \ol{g}T_i\ul{g}
+&\ar@{<-}[l]
+}
+\ecen
+(T_i)\indices{_\mu_\nu}=
+\bcen
+\xymatrix{
+&\ar@{~}@[green][d]&
+\\
+& T_i\ul{g}\ar[l]\ar[r]
+&
+}
+\ecen
+(T_i)\indices{^\mu^\nu}=
+\bcen
+\xymatrix{
+&\ar@{~}@[green][d]&
+\\
+&\ar@{<-}[l] \ol{g}T_i
+&\ar[l]
+}
+\ecen
+\eeq
 
 For $G\in O(n)$, $G^TG=1$ with
 $G=e^{iT_i\eps_i}$ where $\eps_i\in\RR$.
@@ -256,14 +288,14 @@ g\indices{_\mu_\s}=0}_
 \\
 \mu&\ar[l] T_i
 &\ar[l]
-g\ar[r]
+\ul{g}\ar[r]
 &\nu
 }
 \ecen}_{(T_i)_{\mu\nu}}
 +
 \underbrace{\bcen
 \xymatrix{
-\mu&\ar[l] g\ar[r]
+\mu&\ar[l] \ul{g}\ar[r]
 &
 T_i\ar[r]
 &\nu
@@ -1116,9 +1148,8 @@ X
 \xymatrix{
 \ar@/^1.5pc/@{~}[dr]&&
 \\
-\ar[r]
-&\ol{g}T_i\ul{g}\ar[r]
-&
+&T_i\ar[l]
+&\ar[l]
 }
 \ecen
 \eeqa
@@ -1158,22 +1189,27 @@ Q^2 &=&
 &
 &\ar@/_1pc/[ld]
 \\
-&T_k\ar@/_1pc/[lu]
+&T_k\ul{g}
+\ar@/_1pc/[lu]
 &
 &
-&T_k\ar@{~}[lll]\ar@/_1pc/[rd]
+&\ol{g}T_k
+\ar@{~}[lll]
+\ar@{<-}@/_1pc/[rd]
 &
 \\
-\ar@/_1pc/[ru]
+\ar@{<-}@/_1pc/[ru]
 &
 &
 &
 &
-&\ar[dll]
+&\ar@{<-}[dll]
 \\
 &
-&\ar[ull]T_i
-&T_j\ar[l]
+&\ar@{<-}[ull]
+\ol{g}T_i\ul{g}
+&\ol{g}T_j\ul{g}
+\ar@{<-}[l]
 &
 &
 }
@@ -1197,16 +1233,18 @@ Q^2 &=&
 &
 \ar[lllll]
 \\
-\ar[rrrrr]
+\ar@{<-}[rrrrr]
 &
 &
 &
 &
-&\ar[dll]
+&\ar@{<-}[dll]
 \\
 &
-&\ar[ull]T_i
-&T_j\ar[l]
+&\ar@{<-}[ull]
+\ol{g}T_i\ul{g}
+&\ol{g}T_j\ul{g}
+\ar@{<-}[l]
 &
 &
 }
@@ -1221,23 +1259,25 @@ Q^2 &=&
 &
 &\ar@{~}@/_2pc/[dddll]
 \\
-\ar[drrrrr]
+\ar@{<-}[drrrrr]
 &
 &
 &
 &
 &
 \\
-\ar[urrrrr]
+\ar@{<-}[urrrrr]
 &
 &
 &
 &
-&\ar[dll]
+&\ar@{<-}[dll]
 \\
 &
-&\ar[ull]T_i
-&T_j\ar[l]
+&\ar@{<-}[ull]
+\ol{g}T_i\ul{g}
+&\ol{g}T_j\ul{g}
+\ar@{<-}[l]
 &
 &
 }
@@ -1250,8 +1290,9 @@ Q^2 &=&
 \bcen
 \xymatrix{
 &\ar@{~}[l]
-\ar@/_1pc/@{<-}[r] T_i
-&\ar@/_1pc/@{<-}[l]T_j
+\ar@/_1pc/@{<-}[r] \ol{g}T_i\ul{g}
+&\ar@/_1pc/@{<-}[l]
+\ol{g}T_j\ul{g}
 &\ar@{~}[l]
 \\
 &&&\ar[lll]
@@ -1260,10 +1301,13 @@ Q^2 &=&
 -
 \bcen
 \xymatrix@R=1pc@C=1.5pc{
-\ar@{~}[drr]&&&\ar@{~}[dll]
+\ar@{~}[drr]
+&&&\ar@{~}[dll]
 \\
-&T_i\ar[ld]
-&T_j\ar[l]&
+&\ol{g}T_i\ul{g}
+\ar[ld]
+&\ol{g}T_j\ul{g}
+\ar[l]&
 \\
 &&&\ar[ul]
 }
