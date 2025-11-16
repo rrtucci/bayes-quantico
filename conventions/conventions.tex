@@ -489,55 +489,35 @@ Hence
 \beq
 \myboxed{(M^T)\indices{_a^b}= M\indices{_b^a}}
 \quad
-\bcen
 \xymatrix{
 a
-&\ar@2{-}[d]\ar[l]
+&\ar[l]
 M^T
-\\
-b\ar[r]
-&
-}
-\ecen
-=
-\bcen
+&\ar[l] b
+}=
 \xymatrix{
-a
-&\ar@{<->}[d]\ar[l]
-&\ar@2{-}[d]\ar[l]
+b
+&\ar[l]
 M
-\\
-b\ar[r]
-&\ar[r]
-&
+&\ar[l] a
 }
-\ecen
 \eeq
 
 \beq
 \myboxed{(M^\dagger)\indices{_a^b}= (M\indices{_b^a})^*}
 \quad
-\bcen
-\xymatrix{
-a&\ar[l]\ar@2{-}[d]
-M^\dagger
-\\
-b\ar[r]&
-}
-\ecen
-=
-\bcen
 \xymatrix{
 a
-&\ar@{<->}[d]\ar[l]
-&\ar[l]\ar@2{-}[d]
+&\ar[l]
+M^\dagger
+&\ar[l] b
+}=
+\xymatrix{
+b
+&\ar[l]
 M^*
-\\
-b\ar[r]
-&\ar[r]
-&
+&\ar[l] a
 }
-\ecen
 \eeq
 To avoid confusion,
 follow the golden rule: \ul{write 
@@ -565,27 +545,18 @@ If $M$ is a Hermitian matrix (i.e., $M^\dagger =M$), then
 \beq
 \myboxed{M\indices{_a^b}= (M\indices{_b^a})^*}
 \quad
-\bcen
-\xymatrix{
-a&\ar[l]\ar@2{-}[d]
-M
-\\
-b\ar[r]&
-}
-\ecen
-=
-\bcen
 \xymatrix{
 a
-&\ar@{<->}[d]\ar[l]
-&\ar[l]\ar@2{-}[d]
+&\ar[l]
+M
+&\ar[l] b
+}=
+\xymatrix{
+b
+&\ar[l]
 M^*
-\\
-b\ar[r]
-&\ar[r]
-&
+&\ar[l] a
 }
-\ecen
 \eeq
 
 
@@ -672,6 +643,21 @@ _{rev(\delta)}
 ^{rev(\alp)}
 })^*
 \end{array}\right.
+\bcen
+\quad
+\xymatrix{
+\alp
+&\ar[l]
+M^\dagger
+&\ar[l] \delta
+}=
+\xymatrix{
+rev(\delta)
+&\ar[l]
+M^*
+&\ar[l] rev(\alp)
+}
+\ecen
 \eeq
 Note that
 $\dagger$ does 3 things
@@ -709,13 +695,12 @@ M^\dagger
  = M,\quad
  \left\{
  \begin{array}{l}
+M\indices{_a^d}=
 (M\indices
 {_d^a })^*
-= M\indices{_a^d}
 \\
+M\indices{_\alp^{\delta}} =
 (M\indices{_{rev(\delta)}^{rev(\alp)}})^*
-=
-M\indices{_\alp^{\delta}}
 \end{array}
 \right.
 \eeq

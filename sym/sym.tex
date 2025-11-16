@@ -1951,6 +1951,122 @@ d_{\cala_2}=
 {n\choose 2}
 \eeq
 
+\section{Invariance of ${\cal S}_p$ and ${\cal  A}_p$}\label{sec-invariance-sp-ap}
+
+
+The Kronecker delta is 
+obviously always an invariant matrix because
+\beq
+\bcen
+\xymatrix{
+&\ar@{~}[d]
+&&
+\\
+&\ar[l]T_i
+&\ar[l]\delta
+&\ar[l]
+}
+\ecen
+-
+\bcen
+\xymatrix{
+&
+&\ar@{~}[d]
+&
+\\
+&\delta\ar[l]
+&\ar[l]T_i
+&\ar[l]
+}
+\ecen
+=0
+\eeq
+
+An immediate consequence
+of the the invariance of
+the Kronecker delta is that
+the symmetrizer $\cals_p$ and anti-symmetrizer $\cala_p$ are
+tensor invariants too. Indeed, 
+\beq
+\bcen
+\xymatrix@C=1pc@R=1pc{
+&\ar@{~}[d]
+&
+\\
+&T_i\ar[l]
+&\cals_p\ar@2{-}[dd]\ar[l]
+\\
+&
+&\ar[ll]
+\\
+&
+&\ar[ll]
+}
+\ecen
+-
+\bcen
+\xymatrix@C=1pc@R=1pc{
+&
+&\ar@{~}[d]
+&
+\\
+&\cals_p\ar@2{-}[dd]\ar[l]
+&T_i\ar[l]
+&\ar[l]
+\\
+&\ar[l]
+&
+&\ar[ll]
+\\
+&\ar[l]
+&
+&\ar[ll]
+}
+\ecen
+=0
+\label{eq-sym-invariant}
+\eeq
+
+\beq
+\bcen
+\xymatrix@C=1pc@R=1pc{
+&\ar@{~}[d]
+&
+\\
+&T_i\ar[l]
+&\cala_p\ar@2{-}[dd]\ar[l]
+\\
+&
+&\ar[ll]
+\\
+&
+&\ar[ll]
+}
+\ecen
+-
+\bcen
+\xymatrix@C=1pc@R=1pc{
+&
+&\ar@{~}[d]
+&
+\\
+&\cala_p\ar@2{-}[dd]\ar[l]
+&T_i\ar[l]
+&\ar[l]
+\\
+&\ar[l]
+&
+&\ar[ll]
+\\
+&\ar[l]
+&
+&\ar[ll]
+}
+\ecen
+=0
+\label{eq-antisym-invariant]}
+\eeq
+
 \section{Levi-Civita Tensor}
 
 The {\bf Levi-Civita tensor}
