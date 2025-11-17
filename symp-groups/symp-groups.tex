@@ -147,14 +147,14 @@ Let
 
 \beq
 \myboxed{
-f\indices{_a_c} f\indices{^c ^b}=-\delta_a^b}
+f\indices{_a_c} (f^T)\indices{^c ^b}=\delta_a^b}
 \quad
 \xymatrix{
 &\ul{f}
 \ar[l]\ar[r]
-&\ol{f}
+&\ol{f}^T
 &\ar[l]
-}=-\;
+}=\;
 \xymatrix{&\ar[l]}
 \label{eq-ol-ul-eg-sym}
 \eeq
@@ -162,7 +162,7 @@ Note that we used
 
 \beq
 \ul{f} = [f_{ab}],\quad
-\ol{f} = [f^{ab}]
+\ol{f} = [f^{ab}], \quad f^T=-f
 \eeq
 We could write Eq.(\ref{eq-ol-ul-eg-sym})
 without the overline  and underline on
@@ -198,7 +198,7 @@ the arrows has that info already.}
 \xymatrix{
 &\ar@{~}@[green][d]&
 \\
-&\ar@{<-}[l] \ol{f}T_i\ul{f}
+&\ar@{<-}[l] \ol{f}^TT_i\ul{f}
 &\ar@{<-}[l]
 }
 \ecen
@@ -216,7 +216,7 @@ the arrows has that info already.}
 \xymatrix{
 &\ar@{~}@[green][d]&
 \\
-&\ar@{<-}[l] \ol{f}T_i
+&\ar@{<-}[l] \ol{f}^TT_i
 &\ar[l]
 }
 \ecen
