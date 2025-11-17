@@ -65,47 +65,16 @@ We assume that $n$ is even and the {\bf pseudo metric tensor} $f_{ab}$
 is a primitive invariant
 that satisfies:
 
-
 \beq
-f_{ab}=-f_{ba} = [f]_{ab},\quad
-f^{ab}=-f^{ba}= [f]_{ab},\quad
-f\indices{_a^b}=f\indices{_b^a} =\delta_a^b
+f_{ab}=-f_{ba}
 \eeq
 
 \beq
-f_{ba}x^a=i x_b,\quad f^{cb}x_b=i x^c\quad (\text{so }
-f_{ba}f^{cb}=-\delta^c_a)
+f_{ac} f_{cb}=-\delta_a^b
 \eeq
-where $a, b, c\in \{1,2, \ldots, n\}$
-and $x_a$ is any tensor.
+where $a, b\in \{1,2, \ldots, n\}$.
 
-$Sp(n)$ leaves
-invariant the following skew symmetric quadratic form:
-
-\beq
-h(x)=
-f_{a b}x^a x^b
-\eeq
-where $
-a,b\in\{1, \ldots, n\}$.
-Thus 
-
-\beq
-h(Gx)= h(x)
-\eeq
-
-\beq
- f_{ab}G\indices{^a_{a'}}
-G\indices{^b_{b'}}x^{a'} x^{b'} =
-f_{{a'} {b'}}x^{a'} x^{b'}
-\implies 
-f_{ab}G\indices{^a_{a'}}
-G\indices{^b_{b'}} = f_{{a'} {b'}}
-\implies
-G^Tf G= f
-\eeq
-
-
+\hrule
 {\bf  Net Arrow Convention:}
 We will point the arrows in a birdtrack so that the birdtrack is a DAG. Cycles that make the birdtrack not acyclic will
 have a segment in red. Without that
@@ -113,355 +82,224 @@ red segment, the birdtrack becomes  acyclic. The reason we follow this arrow con
 promotes acyclic birdtracks which are more
 akin to bnets. We will eschew undirected birdtracks for the same reason: bnets are directed.
 
-Let
+{\bf Tensor Index Convention}: 
+Since we will only use DAGs,
+birdtracks will only use $f\indices{_a^b}$ and $f\indices{^a_b}$
+We will assume that
 
 \beq
-\myboxed{f\indices{_a^b}
- =\delta_a^b},\quad
-\xymatrix{
-&\ar[l]f
-&\ar[l]
-}=
-\xymatrix{
-&\ar[l]
-}
-\eeq
-
-\beq
-\myboxed{f\indices{^a_b}
- =\delta^a_b},\quad
-\xymatrix{
-\ar[r]
-&\ar[r]f
-&
-}=
-\xymatrix{
-\ar[r]
-&
-}
-\eeq
-
-
-
-\beq
-\myboxed{
-f\indices{_a_c} f\indices{^c ^b}=-\delta_a^b}
+[f\indices{^a_b}]=
+[f\indices{_a^b}]=f
 \quad
-\xymatrix{
-&\ul{f}
-\ar[l]\ar[r]
-&\ol{f}
-&\ar[l]
-}=-\;
-\xymatrix{&\ar[l]}
-\label{eq-ol-ul-eg-sym}
+\text{(fully explicit $f$ (FEf) convention)}
 \eeq
-Note that we used
+An alternative index convention
+that we will not follow is to assume
 
 \beq
-\ul{f} = [f_{ab}],\quad
-\ol{f} = [f^{ab}]
+f\indices{^a_b}= f\indices{_a^b}=-\delta_a^b, \quad
+[f_{ab}]=[f^{ab}]=f
+\quad
+\text{(non-FEf convention)}
 \eeq
-We could write Eq.(\ref{eq-ol-ul-eg-sym})
-without the overline  and underline on
-$f$. Those f-decorations are redundant. Not using those decorations
-would not introduce any
-ambiguity. However, we will
-use them  because
-they make spotting errors
-in the arrow directions easier.
+To go from our FEf to a non-FEf convention, 
+write  the birdtrack equation (BE) algebraically, and then,
+in the BE, 
+move indices up
+or down so that $f$ tensors all have
+either both indices up or both indices down and so that contracted indices are in up-down pairs.
+For example, if the BE in the
+FEf convention is:
 
-The generators of 
-symplectic
- groups will be represented by:
+\beq
+M\indices{_a^b} f\indices{_b^c} = f\indices{_a^c}
+\eeq
+then replace that  BE by
+
+\beq
+M\indices{_a^b} f\indices{_b_c} = f\indices{_a_c}
+\eeq
+ 
+
+
+
+\hrule
 
 
 \beq
-(T_i)\indices{_a^b}=
-\bcen
-\xymatrix{
-&\ar@{~}@[green][d]&&
-\\
-&\ar[l] T_i
-&\ar[l]
-}
-\ecen
-\eeq
-We will also use\footnote{We repeat again: the decorated $f$'s in these birdtracks are redundant and only included for the sake of clarity. The direction of
-the arrows has that info already.}
-
-\beq
-(T_i)\indices{^a_b}=
-\bcen
-\xymatrix{
-&\ar@{~}@[green][d]&
-\\
-&\ar@{<-}[l] \ol{f}T_i\ul{f}
-&\ar@{<-}[l]
-}
-\ecen
-(T_i)\indices{_a_b}=
-\bcen
-\xymatrix{
-&\ar@{~}@[green][d]&
-\\
-& T_i\ul{f}\ar[l]\ar[r]
-&
-}
-\ecen
-(T_i)\indices{^a^b}=
-\bcen
-\xymatrix{
-&\ar@{~}@[green][d]&
-\\
-&\ar@{<-}[l] \ol{f}T_i
-&\ar[l]
-}
-\ecen
-\eeq
-
-For $G\in Sp(n)$, $f^TG^TfG=1$ with
-$G=e^{iT_i\eps_i}$ where $\eps_i\in\RR$.
-Hence, the generators $T_i$ 
-satisfy
-
-\beq
-\underbrace{f^T T_i^T f}
-_{(f^T T_i f)^T} = -T_i
-\implies T_i^T = fT_if
-\implies (T_i f)^T = T_i  f
-\eeq
-
-\beq
-\myboxed{
-(T_i f)_{ab}
-=
-(T_if)_{ba}
-}
-\bcen
-\xymatrix{
-&\ar@{~}[d]&
-\\
-a
-&T_if\ar[l]\ar[r]
-&b
-}
-\ecen
-=
+f_{ab}=
 \bcen
 \xymatrix{
 a
-&T_i f\ar[l]\ar[r]
-&b
+&\ar@[green][l]
+f\ar@2{-}[d]
 \\
-&\ar@{~}[u]
-&
+b&\ar[l]
 }
 \ecen
-\eeq
-
-$f_a^b=\delta_a^b$
-is obviously an invariant matrix. 
-$f_{ab}$ is too, as we show below
-
-\beq
-\begin{array}{l}
-\myboxed{\underbrace{
-(T_i)\indices{_a^c}f\indices{_c _b}
-+
-(T_i)\indices{_b^c}
-f\indices{_a_c}=0}_
-{
-(T_i f)_{ab}
 =
-(T_if)_{ba}
-}}
-\\
-\underbrace
-{\bcen
 \xymatrix{
-&\ar@{~}[d]&&
-\\
-a&\ar[l] T_i
-&\ar[l]
-\ul{f}\ar[r]
-&b
-}
-\ecen}_{(T_i f)_{ab}}
-+
-\underbrace{\bcen
-\xymatrix{
-a&\ar[l] \ul{f}\ar[r]
+a
+&f\ar[r]\ar@[green][l]
 &
-T_i\ar[r]
-&b
-\\
-&&\ar@{~}[u]
+b
 }
-\ecen}_{-(T_if)_{ba}}
-=0
-\end{array}
 \eeq
 
-This just reduces to
-to the statement 
-that $(T_i f)_{ab}$
-is symmetric.
-
-
-
-
-
-
-
-
-
-The anti-symmetrizer
-$\cala_2$ 
-is an invariant tensor (see Section \ref{sec-invariance-sp-ap}).
-Other projectors of the $V\otimes V$ are not 
-invariant tensors.
-Therefore, we must have
-
 \beq
+f_{ba} =f_{ab}^T=
 \bcen
-\xymatrix@R=1pc@C=2pc{
-&&&\ar@/_1pc/[dl]
+\xymatrix{
+a
+&\ar@[green][l]
+f^T\ar@2{-}[d]
 \\
-&T_i \ul{f}\ar@{~}[r]
-\ar@/_1pc/[ul]
-\ar@/^1pc/[dl]
-&\ol{f}^TT_i
-&
-\\
-&
-&&\ar@/^1pc/[ul]
+b
+&\ar[l]
 }
 \ecen
 =
 \bcen
 \xymatrix{
-&\cala_2\ar@2{-}[d]
-\ar[l]
-&\ar[l]
+&\ar@{<->}[d]\ar[l]&\ar[l]
+f\ar@2{-}[d]
 \\
 &\ar[l]&\ar[l]
 }
 \ecen
 \eeq
 
-For $SO(n)$ and $O(n)$,
-the dimension $N$ of the adjoint rep 
-(= number of generators) is
-
 \beq
-N = \frac{n(n-1)}{2} = \xymatrix{&&\ar@{~}[ll]
-\ar@[red]@/_1pc/[ll]}
-\eeq
-If you take
-an $n\times n$ matrix and remove
-its diagonal, this $N$ is the
-number of entries in the upper (or
-lower) triangular sector
-of the matrix. Recall that
-for $U(n)$, $N=n^2$,
-and for $SU(n)$, $N=n^2-1$.
-So for $U(n)$ (or $SU(n)$),
-there is a generator for each
-entry
-(or each entry minus one)
-of an $n\times n$ matrix.
-
-
-\begin{claim}
-\beq
-\begin{array}{l}
 \myboxed{
-\Gamma_{fun}\delta^b_a=
-\sum_i
-(T_iT_i)\indices{_a^b}
- = \frac{n-1}{2}\delta_a^b}
-\\
-\sum_i
+f_{ab}=-f_{ba}
+},\quad
 \bcen
 \xymatrix{
-a
-&T_i\ar[l]
-&T_i\ar@{~}@/_2pc/[l]|i
-\ar[l]
-&b  \ar[l]
-}\ecen
+&\ar[l]
+f\ar@2{-}[d]
+\\
+&\ar[l]
+}
+\ecen
 =
-\left(\frac{n-1}{2}\right)
-\xymatrix{
-a&\ar[l]|\bullet b
-}
-\end{array}
-\label{eq-wavy-arc-son}
-\eeq
-\end{claim}
-\proof
-
-\beqa
-(T_iT_i)\indices{_a^b}
-&=&
-\bcen
-\xymatrix{
-a
-&T_i\ul{f}\ar[l]
-&\ol{f}^TT_i
-\ar@{~}@/_2pc/[l]|i\ar@{<-}[l]
-&\ar[l]b
-}\ecen
-\\
-&=&
-\bcen
-\xymatrix@R=1pc@C=1pc{
-a&&&\ar@/_1pc/[ld]b
-\\
-&T_i\ul{f}\ar@/_1pc/[lu]
-&\ol{f}^TT_i\ar@{~}[l]
-\ar@{<-}@/_1pc/[rd]&
-\\
-\ar@{<-}@/_1pc/[ru]&&&
-\ar@/^1pc/[lll]
-}
-\ecen
-\\
-&&\nonumber
-\\
-&=&
-\frac{1}{2}\left[
-\bcen
-\xymatrix@C=3pc{
-&\ar[l]|\bullet
-\\
-&
-\ar[l]|\bullet
-\ar@{-}@/^1pc/[l]}
-\ecen
 -
 \bcen
-\xymatrix@C=3pc{
-\ar@{<-}[dr]
-&
-\\
-\ar@{<-}[ur]
-&
-\ar@{-}@/^1pc/[l]}
-\ecen
-\right]
-\\
-&&\nonumber
-\\
-&=&\left(\frac{n-1}{2}\right)
 \xymatrix{
-a&\ar[l]|\bullet b
+&\ar@{<->}[d]\ar[l]&\ar[l]
+f\ar@2{-}[d]
+\\
+&\ar[l]&\ar[l]
 }
-\eeqa
-\qed
+\ecen
+=
+-
+\bcen
+\xymatrix{
+&\ar[l]
+f^T\ar@2{-}[d]
+\\
+&\ar[l]
+}
+\ecen
+\eeq
 
 
+$Sp(n)$ leaves invariant
+the skew symmetric form
+
+\beq
+h(p,q)=f_{ab}p^a q^b
+\eeq
+
+\beq
+h(Gp, Gq)=h(p,q)
+\implies
+G\indices{^{b'}_b}
+G\indices{^{a'}_a}
+f_{a'b'}
+=f_{ab}
+\implies
+G^TfG = f
+\eeq
+
+\beq
+\myboxed{f_{ac}^Tf^{cb}=\delta_a^b},\quad
+\xymatrix{
+&f^T\ar[l]\ar[r]
+&f
+&\ar[l]
+}=\xymatrix{
+&\ar[l]
+}
+\eeq
+
+\beq
+\myboxed{f_{ac}f^{cb}=-\delta_a^b},\quad
+\xymatrix{
+&f\ar[l]\ar[r]
+&f
+&\ar[l]
+}=\xymatrix{
+-
+&\ar[l]
+}
+\eeq
+
+Generator $(T_i)_{ab}$ :
+
+\beq
+(T_i)\indices{_a^b}=
+\bcen
+\xymatrix
+{
+&\ar@{~}[d]&
+\\
+&T_i\ar[l]
+&
+\ar[l]
+}
+\ecen
+\eeq
+
+
+
+\beq
+\begin{array}{l}
+\myboxed{(T_i)\indices{_a^c}
+f_{cb}+
+\underbrace{(T_i)\indices{_b^c}
+f_{ac}}_{f_{ac}(T_i^T)
+\indices{^c_b}}
+=0}
+\\
+\bcen
+\xymatrix{
+&\ar@{~}[d]
+&
+\\
+&\ar[l]T_i
+&\ar[l]
+f\ar@2{-}[d]
+\\
+&&\ar[ll]
+}
+\ecen
++
+\bcen
+\xymatrix{
+&\ar@{~}@/_1pc/[dd]
+&
+\\
+&&\ar[ll]
+f\ar@2{-}[d]
+\\
+&\ar[l]  T_i
+&\ar[l]
+}
+\ecen
+=0
+\end{array}
+\eeq
 
 
 
@@ -469,7 +307,7 @@ a&\ar[l]|\bullet b
 
 
 \beq
-M\indices{_a_b^c^d}
+M\indices{_a^b_c^d}
 =
 \bcen
 \xymatrix@R=1pc@C=1pc{
@@ -479,12 +317,11 @@ a
 &\ar@/_1pc/[dl]
 d
 \\
-&\ul{f}\ar@[green]@/_1pc/[ul]
-&\ol{f}^T
-\ar@{<-}@/_1pc/[dr]
+&f\ar@[green]@/_1pc/[ul]
+&f^T\ar@/_1pc/[dr]
 &
 \\
-\ar@{<-}@/_1pc/[ur]
+\ar@/_1pc/[ur]
 b
 &
 &
@@ -507,11 +344,12 @@ b
 &\ar@/_1pc/[dl]
 \\
 &
-&\ul{f}\ar@/_1pc/[ul]
-&\ol{f}^T\ar@{<-}@/_1pc/[dr]
+&f\ar@/_1pc/[ul]
+&f^T\ar@/_1pc/[dr]
 &
 \\
-&\ar@{<-}@/_1pc/[ur] \ar[l]
+\ar[r]
+&\ar@/_1pc/[ur]
 &
 &
 &
@@ -529,11 +367,12 @@ b
 &\ar@/_1pc/[dl]
 \\
 &
-&\ul{f}\ar@/_1pc/[ul]
-&\ol{f}^T\ar@{<-}@/_1pc/[dr]
+&f\ar@/_1pc/[ul]
+&f^T\ar@/_1pc/[dr]
 &
 \\
-&\ar@{<-}@/_1pc/[ur]\ar[l]
+\ar[r]
+&\ar@/_1pc/[ur]
 &
 &
 &
@@ -548,11 +387,12 @@ b
 &\ar@/_1pc/[dl]
 \\
 &
-&\ul{f}\ar@/_1pc/[ul]
-&\ol{f}^T\ar@{<-}@/_1pc/[dr]
+&f\ar@/_1pc/[ul]
+&f^T\ar@/_1pc/[dr]
 &
 \\
-&\ar@{<-}@/_1pc/[ur]\ar[l]
+\ar[r]
+&\ar@/_1pc/[ur]
 &
 &
 &
@@ -577,11 +417,11 @@ a
 d
 \ar@[red]@{-}@/_1pc/[lll]
 \\
-&\ul{f}\ar@/_1pc/[ul]
-&\ol{f}^T\ar@{<-}@/_1pc/[dr]
+&f\ar@/_1pc/[ul]
+&f^T\ar@/_1pc/[dr]
 &
 \\
-\ar@{<-}@/_1pc/[ur]
+\ar@/_1pc/[ur]
 b
 &
 &
@@ -589,7 +429,7 @@ b
 \ar@[red]@{-}@/^1pc/[lll]
 }
 \ecen
-=\tr(\ul{f}\ol{f}^T)= n
+=\tr(ff^T)= n
 \eeq
 
 \beqa
@@ -685,8 +525,8 @@ P_i = \sum_{j\neq i}
 \item Singlet (Anti-symmetric $\cala_2 P_S=0$) PO
 \beq
 P_S = \frac{1}{n}
-\ul{f}\indices{_a_b}
-(\ol{f}^T)\indices{^c^d}
+f\indices{_a^b}
+(f^T)\indices{_c^d}
 =
 \frac{1}{n}
 \bcen
@@ -697,12 +537,11 @@ a
 &\ar@/_1pc/[dl]
 d
 \\
-&\ul{f}\ar@/_1pc/[ul]
-&\ol{f}^T
-\ar@{<-}@/_1pc/[dr]
+&f\ar@/_1pc/[ul]
+&f^T\ar@/_1pc/[dr]
 &
 \\
-\ar@{<-}@/_1pc/[ur]
+\ar@/_1pc/[ur]
 b
 &
 &
@@ -727,8 +566,8 @@ P_{TA}&=&
 (\delta\indices{_a^d}\delta\indices{_b^c}
 - \delta\indices{_b^d}\delta\indices{_a^c})
 - \frac{1}{n}
-\ul{f}\indices{_a_b}
-(\ol{f}^T)\indices{^c^d}
+f\indices{_a^b}
+(f^T)\indices{_c^d}
 \\
 &=&
 \bcen
@@ -752,11 +591,11 @@ a
 &\ar@/_1pc/[dl]
 d
 \\
-&\ul{f}\ar@/_1pc/[ul]
-&\ol{f}^T\ar@{<-}@/_1pc/[dr]
+&f\ar@/_1pc/[ul]
+&f^T\ar@/_1pc/[dr]
 &
 \\
-\ar@{<-}@/_1pc/[ur]
+\ar@/_1pc/[ur]
 b
 &
 &
@@ -827,13 +666,11 @@ is an invariant tensor so
 &
 &\ar@/_1pc/[dl]
 \\
-&T_i\ul{f}\ar@/_1pc/[ul]
-&\ol{f}^TT_i
-\ar@{<-}@/_1pc/[dr]
-\ar@{~}[l]
+&T_i\ar@/_1pc/[ul]
+&T_i\ar@/_1pc/[dr]\ar@{~}[l]
 &
 \\
-\ar@{<-}@/_1pc/[ur]
+\ar@/_1pc/[ur]
 &
 &
 &
@@ -845,8 +682,9 @@ is an invariant tensor so
 &\cals_2\ar@2{-}[d]\ar[l]
 &\ar[l] 
 \\
-&\ar[l]
-&\ar[l]
+\ar[r]
+&\ar[r]
+&
 }
 \ecen
 \eeq

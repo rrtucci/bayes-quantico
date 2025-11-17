@@ -62,16 +62,16 @@ is a primitive invariant
 that satisfies:
 
 \beq
-g_{\mu\nu}=g_{\nu\mu},\quad
-g^{\mu\nu}=g^{\nu\mu},\quad
+g_{\mu\nu}=g_{\nu\mu}=[g]_{\mu\nu},\quad
+g^{\mu\nu}=g^{\nu\mu}=[g]_{\mu\nu},\quad
 g\indices{_\mu^\nu}=g\indices{_\nu^\mu} =\delta_\mu^\nu
 \eeq
 
 \beq
-g_{\mu\nu}x^\mu=x_\nu,\quad g^{\mu\nu}x_\mu=x^\nu\quad (\text{so }
-g_{\mu\lam}g^{\lam\nu}=\delta_\mu^\nu)
+g_{\nu\mu}x^\mu=x_\nu,\quad g^{\rho\nu}x_\nu=x^\rho\quad (\text{so }
+g_{\nu\mu}g^{\rho\nu}=\delta^\rho_\mu)
 \eeq
-where $\mu, \nu\in \{1,2, \ldots, n\}$
+where $\mu, \nu, \rho\in \{1,2, \ldots, n\}$
 and $x_\mu$ is any tensor.
 
 In this section, we will
@@ -390,8 +390,9 @@ of an $n\times n$ matrix.
 \bcen
 \xymatrix{
 \mu
-&T_i\ar[l]\ar[r]
+&T_i\ar[l]
 &T_i\ar@{~}@/_2pc/[l]|i
+\ar[l]
 &\nu  \ar[l]
 }\ecen
 =
