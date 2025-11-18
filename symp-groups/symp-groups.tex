@@ -4,7 +4,16 @@
 
 This chapter is based on Cvitanovic's Birdtracks book Ref. \cite{birdtracks-book}.
 
-$n$ even
+Throughout this chapter,
+we will assume that $n$ is even. The {\bf symplectic group} $Sp(n)$ is defined as
+
+\beq
+Sp(n)=\{G\in GL(n,\CC):
+G^Tf G= f
+\}
+\eeq
+where $f$ is the anti-symmetric matrix
+
 \beq
 f = 
 \left(
@@ -15,6 +24,7 @@ f =
 \end{array}
 \right)
 \eeq
+Note that
 
 \beq
 f^T=-f,\quad
@@ -22,21 +32,19 @@ f^Tf=I_{n},
 \quad f^2 = 
 -I_{n}
 \eeq
-$f^2$ is a primitive invariant matrix so it
+$f^2$ is a primitive invariant matrix
+because $f$ is, so $f^2$
 must be proportional to
 the identity. 
 
-\beq
-Sp(n)=\{G\in GL(n,\CC):
-G^Tf G= f
-\}
-\eeq
+
 
 \begin{claim}
 If $G\in Sp(n)$, then $det(G)=1$.
 \end{claim}
 \proof
 
+Note that
 \beq
 det(G^T f G)= det(f)
 \eeq
@@ -49,20 +57,18 @@ det(f) = det(I_{n/2})det(-I_{n/2})= (-1)^{n/2}
 det(G^T f G) = det^2(G)
 (-1)^{n/2}
 \eeq
-
+Hence,
 
 \beq
-det^2(G)=1
+det^2(G)=1\implies det(G)=\pm 1
 \eeq
-
-$det(G)=\pm 1$. $Sp(n)$
+$Sp(n)$
 is connected, $I_n\in Sp(n)$  and $det(I_n)=1$.
 Hence $det(G)=1$.
 
 \qed
 
-We assume that $n$ is even and the {\bf pseudo metric tensor} $f_{ab}$
-is a primitive invariant
+Define the {\bf pseudo metric tensor} $f_{ab}$ to be a antisymetric matrix
 that satisfies:
 
 
@@ -166,7 +172,7 @@ Note that we used
 \eeq
 We could write Eq.(\ref{eq-ol-ul-eg-sym})
 without the overline  and underline on
-$f$. Those f-decorations are redundant. Not using those decorations
+$f$. Those f-decorations are redundant as omitting them
 would not introduce any
 ambiguity. However, we will
 use them  because
@@ -189,8 +195,7 @@ symplectic
 }
 \ecen
 \eeq
-We will also use\footnote{We repeat again: the decorated $f$'s in these birdtracks are redundant and only included for the sake of clarity. The direction of
-the arrows has that info already.}
+We will also use
 
 \beq
 (T_i)\indices{^a_b}=
@@ -225,7 +230,7 @@ the arrows has that info already.}
 For $G\in Sp(n)$, $f^TG^TfG=1$ with
 $G=e^{iT_i\eps_i}$ where $\eps_i\in\RR$.
 Hence, the generators $T_i$ 
-satisfy
+must satisfy
 
 \beq
 \underbrace{f^T T_i^T f}
@@ -303,9 +308,9 @@ T_i\ar[r]
 \ecen}_{-(T_if)_{ba}}
 =0
 \end{array}
+\label{eq-tf-is-sym}
 \eeq
-
-This just reduces to
+Hence, the invariance condition Eq.(\ref{eq-tf-is-sym}) reduces to
 to the statement 
 that $(T_i f)_{ab}$
 is symmetric.
@@ -469,7 +474,7 @@ a&\ar[l]|\bullet b
 
 \section{$V_{def}\otimes V_{def}$ Decomposition}
 
-
+Define
 \beq
 M\indices{_a_b^c^d}
 =
@@ -497,7 +502,7 @@ b
 
 
 
-
+Note that $M$ is antisymmetric:
 \beqa
 \cala_2 M
 &=&
@@ -564,10 +569,32 @@ b
 \\
 &=& M
 \eeqa
-Hence $M$ is ant-symmetric so 
+Since $M$ is ant-symmetric, 
 only anti-symmetric
  space decomposes.
 
+
+Note that
+\beq
+M^2=nM
+\eeq
+Hence, $(M-n)M=0$
+so $M$ has two eigenvalues $\lam=0,n$.
+
+Next we will use the following equation from Chapter \ref{ch-reducibility}
+\footnote{Note that this equation
+projects to zero all eigenvalues except one.}
+to obtain a projection (PO)
+operator for each eigenvalue
+
+\beq 
+P_i = \sum_{j\neq i}
+\frac{M-\lam_j}{\lam_i-\lam_j}
+\eeq
+
+Below, we use the following
+traces to evaluate the traces
+of our projection operators
 \beq
 \tr(M)=
 \bcen
@@ -666,22 +693,6 @@ b
 \frac{1}{2}(n^2+n)=\frac{1}{2}n(n+1)
 \eeqa
 
-\beq
-M^2=nM
-\eeq
-Hence, $(M-n)M=0$
-so $M$ has two eigenvalues $\lam=0,n$.
-
-Next we will use the following equation from Chapter \ref{ch-reducibility}
-\footnote{Note that this equation
-projects to zero all eigenvalues except one.}
-to obtain a projection (PO)
-operator for each eigenvalue
-
-\beq 
-P_i = \sum_{j\neq i}
-\frac{M-\lam_j}{\lam_i-\lam_j}
-\eeq
 
 \begin{enumerate}
 \item Singlet (Anti-symmetric $\cala_2 P_S=0$) PO
@@ -810,10 +821,12 @@ P_{SYM}^2 =P_{SYM}, \quad P_S^2=P_S
 Note that 
 
 \beq
-P_{TA}P_S =(\cala_2 -\frac{1}{n}M)(\frac{1}{n}M)=P_S-P_S=0
+P_{TA}P_S =(\cala_2 -P_S)P_S=P_S-P_S=0
 \eeq
-Hence
+Also
+
 \beq
+P_S^2=P_S, \quad
 P_{TA}^2
 =(\cala_2 -P_{S})^2
 = P_{TA}
@@ -853,7 +866,7 @@ is an invariant tensor so
 \ecen
 \eeq
 
-
+\begin{claim}
 The Clebsch-Gordan series for $V\otimes V$ (i.e., decomposition of 
 $V\otimes V$) is
 
@@ -898,3 +911,6 @@ The projection operator tree is
 }
 \end{minipage}
 \end{center}
+\end{claim}
+\proof
+\qed

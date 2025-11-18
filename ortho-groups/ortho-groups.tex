@@ -172,7 +172,7 @@ Note that we used
 \eeq
 We could write Eq.(\ref{eq-ol-ul-eg})
 without the overline  and underline on
-$g$. Those g-decorations are redundant. Not using those decorations
+$g$. Those g-decorations are redundant as omitting them
 would not introduce any
 ambiguity. However, we will
 use them  because
@@ -195,8 +195,7 @@ orthogonal
 }
 \ecen
 \eeq
-We will also use\footnote{We repeat again: the decorated $g$'s in these birdtracks are redundant and only included for the sake of clarity. The direction of
-the arrows has that info already.}
+We will also use
 
 \beq
 (T_i)\indices{^\mu_\nu}=
@@ -231,7 +230,7 @@ the arrows has that info already.}
 For $G\in O(n)$, $G^TG=1$ with
 $G=e^{iT_i\eps_i}$ where $\eps_i\in\RR$.
 Hence, the generators $T_i$ 
-are anti-symmetric ($T_i^T=-T_i$)\footnote{For similar
+must be anti-symmetric ($T_i^T=-T_i$)\footnote{For similar
 reasons, the generators of $U(n)$
 are Hermitian.}
 
@@ -305,14 +304,12 @@ T_i\ar[r]
 \ecen}_{(T_i)_{\nu\mu}}
 =0
 \end{array}
+\label{eq-tf-is-sym-ortho}
 \eeq
-
-This just reduces to
+Hence, the invariance condition Eq.(\ref{eq-tf-is-sym-ortho}) reduces to
 to the statement 
 that $(T_i)_{\mu\nu}$
 is antisymmetric.
-
-
 
 
 
@@ -796,6 +793,8 @@ dim(P_{A})
 \eeqa
 \end{enumerate}
 
+
+\begin{claim}
 The Clebsch-Gordan series for $V\otimes V$ (i.e., decomposition of 
 $V\otimes V$) is
 
@@ -839,9 +838,10 @@ The projection operator  tree is
 }
 \end{minipage}
 \end{center}
-where $P_{SYM}=\cals_2$
-
-
+where $P_{SYM}=\cals_2$.
+\end{claim}
+\proof
+\qed
 
 \section{$V_{adj}\otimes V_{def}$ Decomposition}
 
