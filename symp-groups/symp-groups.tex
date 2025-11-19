@@ -46,16 +46,12 @@ If $G\in Sp(n)$, then $det(G)=1$.
 
 Note that
 \beq
-det(G^T f G)= det(f)
+\underbrace{det(G^T f G)}
+_{det^2(G)det(f)}= det(f)
 \eeq
 
 \beq
 det(f) = det(I_{n/2})det(-I_{n/2})= (-1)^{n/2}
-\eeq
-
-\beq
-det(G^T f G) = det^2(G)
-(-1)^{n/2}
 \eeq
 Hence,
 
@@ -114,8 +110,8 @@ G^Tf G= f
 \eeq
 
 
-{\bf  Net Arrow Convention:}
-We will point the arrows in a birdtrack so that the birdtrack is a DAG. Cycles that make the birdtrack not acyclic will
+In this chapter (and in this book),
+we will point the arrows in a birdtrack so that the birdtrack is a DAG. Cycles that make the birdtrack not acyclic will
 have a segment in red. Without that
 red segment, the birdtrack becomes  acyclic. The reason we follow this arrow convention is that it
 promotes acyclic birdtracks which are more
@@ -269,7 +265,7 @@ a
 
 $f_a^b=\delta_a^b$
 is obviously an invariant matrix. 
-$f_{ab}$ is too, as we show below
+$f_{ab}$ must be invariant too, so
 
 \beq
 \begin{array}{l}
@@ -417,7 +413,8 @@ a&\ar[l]|\bullet b
 a
 &T_i\ul{f}\ar[l]
 &\ol{f}^TT_i
-\ar@{~}@/_2pc/[l]|i\ar@{<-}[l]
+\ar@{~}@/_2pc/[l]|i
+\ar@{<-}[l]
 &\ar[l]b
 }\ecen
 \\
@@ -570,11 +567,11 @@ Note that $M$ is antisymmetric:
 &=& M
 \eeqa
 Since $M$ is ant-symmetric, 
-only anti-symmetric
+only the anti-symmetric
  space decomposes.
 
 
-Note that
+Note also that
 \beq
 M^2=nM
 \eeq
@@ -823,16 +820,17 @@ Note that
 \beq
 P_{TA}P_S =(\cala_2 -P_S)P_S=P_S-P_S=0
 \eeq
-Also
+Hence
 
 \beq
-P_S^2=P_S, \quad
 P_{TA}^2
 =(\cala_2 -P_{S})^2
 = P_{TA}
 \eeq
 
-$P_{SYM}$ is the only of the 3 PO that
+$P_{SYM}$ is the only of the 3 POs
+($P_{SYM}$, $P_S$, $P_{TA} $)
+that
 is an invariant tensor so
 
 \beq

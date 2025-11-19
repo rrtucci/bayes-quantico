@@ -11,32 +11,19 @@ This chapter is based on Cvitanovic's Birdtracks book Ref. \cite{birdtracks-book
 =
 \bcen
 \xymatrix{
-&\mu\ar[d]
-\\
-a&
-\ol{\gamma}
-\ar@{-->}[l]
-&b\ar@{-->}[l]
-}
-\ecen
-,\quad
-\gamma^\mu_{ab}
-=
-\bcen
-\xymatrix{
 &\mu
 \\
-a&
-\ul{\gamma}\ar[u]
+a&\ar@{-}[u]
+\gamma^\mu
 \ar@{-->}[l]
 &b\ar@{-->}[l]
 }
 \ecen
 ,\quad
 \delta_a^b=
-\xymatrix{a
+\xymatrix{
 &&\ar@{-->}[ll]
-}b
+}l
 \eeq]
 where
 
@@ -59,6 +46,7 @@ $
 $a,b\in\{ 1, 2, \ldots, 2^{n'}\}$
 
 Clifford Algebra
+
 
 \beq
 \begin{array}{ll}
@@ -87,8 +75,8 @@ Clifford Algebra
 &\ar@{-}[d]
 &
 \\
-&\ar@{-}[u]\ul{\gamma}\ar@{-->}[l]
-&\ar@{-}[u]\ul{\gamma} \ar@{-->}[l]
+&\ar@{-}[u]\gamma_\mu\ar@{-->}[l]
+&\ar@{-}[u]\gamma_\nu \ar@{-->}[l]
 &\ar@{-->}[l]
 }
 \ecen
@@ -102,8 +90,8 @@ Clifford Algebra
 &\ar@{-}[d]
 &
 \\
-&\ul{\gamma}\ar@{-->}[l]
-&\ul{\gamma} \ar@{-->}[l]
+&\gamma_\mu\ar@{-->}[l]
+&\gamma_\nu \ar@{-->}[l]
 &\ar@{-->}[l]
 }
 \ecen
@@ -114,8 +102,8 @@ Clifford Algebra
 &\ar@{-}[dl]
 &
 \\
-&\ul{\gamma}\ar@{-->}[l]
-&\ul{\gamma} \ar@{-->}[l]
+&\gamma_\nu\ar@{-->}[l]
+&\gamma_\mu \ar@{-->}[l]
 &\ar@{-->}[l]
 }
 \ecen
@@ -129,9 +117,9 @@ where  $\gamma_\mu, \gamma_\nu\in \CC^{2^{n'}\times 2^{n'}}$.
 \beq
 \bcen
 \xymatrix{
-&\ar@{-->}[l]\ul{\gamma}
+&\ar@{-->}[l]\gamma_\mu
 &\ar@{-}@/_2pc/[l]|{\ol{g}}
-\ar@{-->}[l]\ul{\gamma}
+\ar@{-->}[l]\gamma_\nu
 &\ar@{-->}[l]
 }
 \ecen
@@ -157,8 +145,8 @@ n
 &\ar@{-}[d]
 &
 \\
-&\ar@{-}[u]\ul{\gamma}\ar@{-->}[l]
-&\ar@{-}[u]\ul{\gamma} \ar@{-->}[l]
+&\ar@{-}[u]\gamma_\mu\ar@{-->}[l]
+&\ar@{-}[u]\gamma_\nu \ar@{-->}[l]
 &\ar@{-->}[l]
 }
 \ecen
@@ -189,10 +177,10 @@ n
 \cala_p\ar@2{-}[rrr]&&&&
 \\
 \ar@{-}[u]
-\ul{\gamma}
-&\ar@{-}[u]\ar@{-->}[l]\ul{\gamma}
-&\ar@{-}[u]\ar@{-->}[l]\ul{\gamma}
-&\ar@{-}[u]\ar@{-->}[l]\ul{\gamma}
+&\ar@{-}[u]
+&\ar@{-}[u]
+&\ar@{-}[u]
+\ar@{-->}[lll]
 \ar@{-}@[red]@/^1pc/[lll]
 }
 \ecen
@@ -206,10 +194,10 @@ n
 \\
 &\cala_{p-1}\ar@2{-}[rr]&&&
 \\
-\ul{\gamma}
-&\ar@{-}[u]\ar@{-->}[l]\ul{\gamma}
-&\ar@{-}[u]\ar@{-->}[l]\ul{\gamma}
-&\ar@{-}[u]\ar@{-->}[l]\ul{\gamma}
+&\ar@{-}[u]
+&\ar@{-}[u]
+&\ar@{-}[u]
+\ar@{-->}[lll]
 \ar@{-}@[red]@/^1pc/[lll]
 }
 \ecen
@@ -226,9 +214,9 @@ n
 &\ar@{-}[d]&&
 \\
 &
-&\ar@{-->}[ll]\ul{\gamma}
+&
 &\ar@{-}[u]
-\ar@{-->}[l]\ul{\gamma}
+\ar@{-->}[lll]
 \ar@{-}@[red]@/^1pc/[lll]
 }
 \ecen

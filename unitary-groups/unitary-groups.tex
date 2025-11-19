@@ -263,17 +263,21 @@ a&T^i\ar[l]&b\ar[l]
 }
 \ecen
 \eeq
-we will assume that
-they are  Hermitian
+For $G\in U(n)$, $G^\dagger G=1$ with
+$G=e^{iT_i\eps_i}$ where $\eps_i\in\RR$.
+Hence, the generators $T_i$ 
+must be Hermitian
 
 \beq
 T_i^\dagger = T_i
 \eeq
-and satisfy
+We will
+assume that they 
+also satisfy
 
 \beq
 \begin{array}{l}
-\myboxed{\tr(T_i T_j)=\kappa \delta(i,j)}
+\myboxed{\tr(T_i T_j)=\kappa \delta_i^j}
 \\
 \\
 \xymatrix{
@@ -283,9 +287,9 @@ i&\ar@{~}[l] T_i
 &\ar@{~}[l]j
 }
 =
-\delta(i,j)\kappa
+\kappa
 \xymatrix{
-i&\ar@{~}[l]i
+i&\ar@{~}[l]|\bullet j
 }
 \end{array}
 \eeq
@@ -661,9 +665,8 @@ a&\ar[l]|\bullet b
 }
 \ecen
 =
--\frac{1}{n}\delta(i,j)
-\xymatrix{
-&\ar@{~}[l]}
+-\frac{1}{n}
+\xymatrix{i&\ar@{~}[l]|\bullet j}
 \eeq
 \end{claim}
 \proof
@@ -725,7 +728,7 @@ a&\ar[l]|\bullet b
 f
 &\ar@{~}@[green][l]| j
 }
-= 2n\delta(i,j)
+= 2n\xymatrix{i&\ar@{~}[l]|\bullet j}
 \end{array}
 \eeq
 
