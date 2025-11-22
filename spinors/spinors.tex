@@ -8,6 +8,14 @@
 }
 }
 
+\newcommand{\solidbubble}[0]{
+\xymatrix@C=2pc{
+&\ar[l]
+\ar@/^1pc/@{-}@[red][l]
+}
+}
+
+
 This chapter is based on Cvitanovic's Birdtracks book Ref. \cite{birdtracks-book}.
 
 
@@ -1386,6 +1394,30 @@ g_{\mu_i\nu_i}
 This disagrees with the
 formula in Ref.\cite{birdtracks-book}
 
+\beq
+\chi_c=
+\bcen
+\xymatrix{
+&\ar[l]
+\cala_b
+\ar@{<->}[dr]|{\ul{g}^{(s)}}
+\ar@{<->}[rr]|{\ul{g}^{(t)}}
+&
+&
+\ar[r]
+\cala_a
+&
+\\
+&
+&\cala_c
+\ar@{<->}[ur]|{\ul{g}^{(u)}}
+\ar[d]
+&&
+\\
+&&&&
+}
+\ecen
+\eeq
 
 
 
@@ -1429,6 +1461,7 @@ formula in Ref.\cite{birdtracks-book}
 \frac{a!b!c!}
 {s!t!u!}
 \dashbubble
+\underbrace{
 \bcen
 \xymatrix{
 &\ar[l]
@@ -1449,7 +1482,7 @@ formula in Ref.\cite{birdtracks-book}
 \\
 &&&&
 }
-\ecen
+\ecen}_{\chi_c}
 \eeq
 
 
@@ -1494,65 +1527,10 @@ u=(a+c-b)/2
 \eeq
 where $t=a-u=b-s$
 
-\beq
-\bcen
-\xymatrix@C=.7pc{
-&&&
-\\
-&\ul{\Gamma}^{(c')}\ar@{-->}[l]\ar[u]
-&\ul{\Gamma}^{(b)}\ar@{-->}[l]\ar[u]
-&\ul{\Gamma}^{(a)}\ar@{-->}[l]\ar[u]
-&\ar@{-->}[l]
-\ar@{-}@[red]@/^1pc/[llll]
-}
-\ecen
-=
-\sum_{c=1}^{a+b} K_{c}
-\bcen
-\xymatrix@C=1.5pc{
-&&&
-\\
-&
-\cala_b\ar[u]
-&\ar[l]
-\ar[r]\ul{g}^{(t)}
-&\cala_a\ar[u]
-\\
-&
-\ul{\Gamma}^{(c')}\ar@{-->}[l]\ar[ul]
-&\ar@{-->}[l]\ul{\Gamma}^{(c)}\ar@{-->}[l]
-\ar[ul]|s
-\ar[ur]|u
-&\ar@{-->}[l]
-\ar@{-}@[red]@/^1pc/[lll]
-}
-\ecen
-\eeq
 
-\beq
-\chi_c=
-\bcen
-\xymatrix{
-&\ar[l]
-\cala_b
-\ar@{<->}[dr]|{\ul{g}^{(s)}}
-\ar@{<->}[rr]|{\ul{g}^{(t)}}
-&
-&
-\ar[r]
-\cala_a
-&
-\\
-&
-&\cala_c
-\ar@{<->}[ur]|{\ul{g}^{(u)}}
-\ar[d]
-&&
-\\
-&&&&
-}
-\ecen
-\eeq
+
+
+
 
 \beq
 \frac{a!b!c!}
@@ -1567,7 +1545,7 @@ K_c =\frac{a!b!c!}{s!t!u!}
 
 
 \beq
-P=
+P^{(a)}=
 \frac{1}{\dashbubble }
 \bcen
 \xymatrix@C=1pc@R=1pc{
@@ -1632,7 +1610,10 @@ P=
 \ar@{-}@[red]@/^1pc/[llll]
 }
 \ecen
+=
+K_c \chi_c
 \eeq
+nonzero only iff $a + b + c$ is even, and if $a, b,$ and $c$ satisfy the triangle inequalities $|a-b| \leq c \leq |a+b|$
 
 \beq
 \bcen
@@ -1661,48 +1642,46 @@ P=
 \ecen
 \eeq
 
-\beq
+\beqa
+d^{(a)}=
+\tr(P^{(a)})&=&
+\frac{1}{\dashbubble}
 \bcen
 \xymatrix{
-\ar@{-->}[r]&
-\\
-&\ar@{-->}[l]
+\ul{\Gamma}^{(a)}
+\ar@{-->}@/_1pc/[r]
+\ar[r]
+&
+\ol{\Gamma}^{(a)}
+\ar@{-->}@/_1pc/[l]
 }
 \ecen
-=
-\frac{1}{\dashbubble}
-\sum_a
+\\
+&=&
 \bcen
-\xymatrix@C=1pc@R=1pc{
-\ar@{-->}@/^1pc/[dr]
-&&&&
-\\
-&\ul{\Gamma}^{(a)}
-\ar@{-->}@/^1pc/[dl]
-\ar[rr]
-&
-&\ol{\Gamma}^{(a)}
-\ar@{-->}@/^1pc/[ur]
-&
-\\
-&&&
-&\ar@{-->}@/^1pc/[ul]
+\xymatrix@C=2pc{
+&\ar[l]
+\cala_a
+&\ar[l]
+\ar@/^1pc/@{-}@[red][ll]
 }
 \ecen
-\eeq
+\\
+&=&
+\left\{
+\begin{array}{ll}
+{n \choose a}
+&\text{if } a\leq n
+\text{ (see
+ Eq.(\ref{eq-dim-antisym-p}))}
+\\
+0 & \text{otherwise }
+\end{array}
+\right.
+\eeqa
 
 \beq
-\bcen
-\xymatrix@C=1.5pc@R=1.5pc{
-&&
-\\
-&\stackrel{b\A a}{c}\ar[ul]
-\ar[ur]\ar[d]
-&
-\\
-&&
-}
-\ecen
-=\sum_{c=1}^{a+b}
-K_c\chi_c
+\sum_{a=1}^n d^{(a)}=\sum_{a=1}^n{n\choose a}
+= (1+1)^2 = 2^a
 \eeq
+
