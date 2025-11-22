@@ -1,8 +1,14 @@
 \chapter{Spinors: COMING SOON}
 \label{ch-spinors}
 
-This chapter is based on Cvitanovic's Birdtracks book Ref. \cite{birdtracks-book}.
+\newcommand{\dashbubble}[0]{
+\xymatrix@C=2pc{
+&\ar@{-->}[l]
+\ar@/^1pc/@{-}@[red][l]
+}
+}
 
+This chapter is based on Cvitanovic's Birdtracks book Ref. \cite{birdtracks-book}.
 
 
 
@@ -59,10 +65,7 @@ $
 $a,b\in\{ 1, 2, \ldots, 2^{n'/2}\}$
 
 \beq
-\xymatrix@C=2pc{
-&\ar@{-->}[l]
-\ar@/_1pc/@{-}@[red][l]
-}
+\dashbubble
 =
 2^{n'/2}
 \eeq
@@ -1113,10 +1116,7 @@ The claim for $p=3$ is
 \underbrace{\frac{1}{2}
 \tr([\gamma_\mu, \gamma_\nu]_+)}
 _{\tr(\gamma_\mu\gamma_\nu)}
-=\xymatrix@C=2pc{
-&\ar@{-->}[l]
-\ar@/_1pc/@{-}@[red][l]
-}g_{\mu\nu}
+=\dashbubble g_{\mu\nu}
 }
 \\
 \underbrace{
@@ -1148,10 +1148,7 @@ _{\tr(\gamma_\mu\gamma_\nu)}
 \ecen
 }
 =
-\xymatrix@C=2pc{
-&\ar@{-->}[l]
-\ar@/_1pc/@{-}@[red][l]
-}
+\dashbubble
 \xymatrix@C=1pc{
 \mu
 &\ar[l]\ar[r]\ul{g}
@@ -1166,10 +1163,7 @@ _{\tr(\gamma_\mu\gamma_\nu)}
 \myboxed{
 \tr(\gamma_\mu\gamma_\nu
 \gamma_\rho\gamma_\s) =
-\xymatrix@C=2pc{
-&\ar@{-->}[l]
-\ar@/_1pc/@{-}@[red][l]
-}
+\dashbubble
 (g_{\mu\s} g_{\nu\rho}
 -g_{\mu\rho}g_{\nu\s}
 + g_{\mu\nu}g_{\s\rho})
@@ -1193,10 +1187,7 @@ _{\tr(\gamma_\mu\gamma_\nu)}
 }
 \ecen
 =
-\xymatrix@C=2pc{
-&\ar@{-->}[l]
-\ar@/_1pc/@{-}@[red][l]
-}
+\dashbubble
 \left[
 \bcen
 \xymatrix@C=1pc{ 
@@ -1346,7 +1337,10 @@ _{\tr(\gamma_\mu\gamma_\nu)}
 \eeq
 
 
-
+\beq
+\ul{g}^{(t)}= \prod_{i=1}^t
+g_{\mu_i\nu_i}
+\eeq
 
 \beq
 \underbrace{
@@ -1379,19 +1373,20 @@ _{\tr(\gamma_\mu\gamma_\nu)}
 \ecen
 }
 =
-a!
 \delta_a^b
-\xymatrix@C=2pc{
-&\ar@{-->}[l]
-\ar@/_1pc/@{-}@[red][l]
-}
+\dashbubble
 \xymatrix@C=1pc{
 \mu^{:a}
-&\ar[l]\ar[r]\ul{g}
+&\ar[l]\ar[r]\ul{g}^{(a)}
+&\cala_a\ar[r]
 &
 \nu^{:a}
 }
 \eeq
+This disagrees with the
+formula in Ref.\cite{birdtracks-book}
+
+
 
 
 \beq
@@ -1399,7 +1394,7 @@ a!
 \bcen
 \xymatrix@C=1.5pc{
 &\ar[l]
-\ul{\Gamma}^{(c)}
+\ul{\Gamma}^{(b)}
 \ar@{-->}[dr]
 &
 &\ar@{-->}[ll]
@@ -1408,7 +1403,7 @@ a!
 &
 \\
 &
-&\ul{\Gamma}^{(b)}
+&\ul{\Gamma}^{(c)}
 \ar@{-->}[ur]
 \ar[d]
 &&
@@ -1422,9 +1417,9 @@ a!
 &
 &
 \\
-&\ul{\Gamma}^{(a)}\ar@{-->}[l]\ar[u]
 &\ul{\Gamma}^{(c)}\ar@{-->}[l]\ar[u]
-&\ul{\Gamma}^{(b)} \ar@{-->}[l]\ar[u]
+&\ul{\Gamma}^{(b)}\ar@{-->}[l]\ar[u]
+&\ul{\Gamma}^{(a)} \ar@{-->}[l]\ar[u]
 &\ar@{-->}[l]
 \ar@[red]@{-}@/^1pc/[llll]
 }
@@ -1433,14 +1428,11 @@ a!
 =
 \frac{a!b!c!}
 {s!t!u!}
-\xymatrix@C=2pc{
-&\ar@{-->}[l]
-\ar@/_1pc/@{-}@[red][l]
-}
+\dashbubble
 \bcen
 \xymatrix{
 &\ar[l]
-\cala_c
+\cala_b
 \ar@{<->}[dr]|{\ul{g}^{(s)}}
 \ar@{<->}[rr]|{\ul{g}^{(t)}}
 &
@@ -1450,7 +1442,109 @@ a!
 &
 \\
 &
-&\cala_b
+&\cala_c
+\ar@{<->}[ur]|{\ul{g}^{(u)}}
+\ar[d]
+&&
+\\
+&&&&
+}
+\ecen
+\eeq
+
+
+\beq
+\begin{array}{l}
+s=(b+c-a)/2
+\\
+t=(b+a-c)/2
+\\
+u=(a+c-b)/2
+\end{array}
+\eeq
+
+
+\beq
+\bcen
+\xymatrix{
+&&&
+\\
+&\ul{\Gamma}^{(b)}\ar@{-->}[l]\ar[u]
+&\ul{\Gamma}^{(a)}\ar@{-->}[l]\ar[u]
+&\ar@{-->}[l]
+}
+\ecen
+=
+\sum_{c=1}^{a+b} K_{c}
+\bcen
+\xymatrix@C=1.5pc{
+&&
+\\
+\cala_b\ar[u]
+&\ar[l]
+\ar[r]\ul{g}^{(t)}
+&\cala_a\ar[u]
+\\
+&\ar[ul]|s
+\ar[ur]|u
+\ul{\Gamma}^{(c)}\ar@{-->}[l]
+&\ar@{-->}[l]
+}
+\ecen
+\eeq
+where $t=a-u=b-s$
+
+\beq
+\bcen
+\xymatrix@C=.7pc{
+&&&
+\\
+&\ul{\Gamma}^{(c')}\ar@{-->}[l]\ar[u]
+&\ul{\Gamma}^{(b)}\ar@{-->}[l]\ar[u]
+&\ul{\Gamma}^{(a)}\ar@{-->}[l]\ar[u]
+&\ar@{-->}[l]
+\ar@{-}@[red]@/^1pc/[llll]
+}
+\ecen
+=
+\sum_{c=1}^{a+b} K_{c}
+\bcen
+\xymatrix@C=1.5pc{
+&&&
+\\
+&
+\cala_b\ar[u]
+&\ar[l]
+\ar[r]\ul{g}^{(t)}
+&\cala_a\ar[u]
+\\
+&
+\ul{\Gamma}^{(c')}\ar@{-->}[l]\ar[ul]
+&\ar@{-->}[l]\ul{\Gamma}^{(c)}\ar@{-->}[l]
+\ar[ul]|s
+\ar[ur]|u
+&\ar@{-->}[l]
+\ar@{-}@[red]@/^1pc/[lll]
+}
+\ecen
+\eeq
+
+\beq
+\chi_c=
+\bcen
+\xymatrix{
+&\ar[l]
+\cala_b
+\ar@{<->}[dr]|{\ul{g}^{(s)}}
+\ar@{<->}[rr]|{\ul{g}^{(t)}}
+&
+&
+\ar[r]
+\cala_a
+&
+\\
+&
+&\cala_c
 \ar@{<->}[ur]|{\ul{g}^{(u)}}
 \ar[d]
 &&
@@ -1461,16 +1555,154 @@ a!
 \eeq
 
 \beq
-\ul{g}^{(t)}= \prod_{i=1}^t
-g_{\mu_i\nu_i}
+\frac{a!b!c!}
+{s!t!u!}
+\dashbubble
+\chi_c=K_c
+\dashbubble \chi_c
+\eeq
+\beq
+K_c =\frac{a!b!c!}{s!t!u!}
+\eeq
+
+
+\beq
+P=
+\frac{1}{\dashbubble }
+\bcen
+\xymatrix@C=1pc@R=1pc{
+\ar@{-->}@/^1pc/[dr]
+&&&&
+\\
+&\ul{\Gamma}^{(a)}
+\ar@{-->}@/^1pc/[dl]
+&\ol{g}^{(a)}
+\ar[l]\ar[r]
+&\ul{\Gamma}^{(a)}
+\ar@{-->}@/^1pc/[ur]
+&
+\\
+&&&
+&\ar@{-->}@/^1pc/[ul]
+}
+\ecen
+=
+\frac{1}{\dashbubble}
+\bcen
+\xymatrix@C=1pc@R=1pc{
+\ar@{-->}@/^1pc/[dr]
+&&&&
+\\
+&\ul{\Gamma}^{(a)}
+\ar@{-->}@/^1pc/[dl]
+\ar[rr]
+&
+&\ol{\Gamma}^{(a)}
+\ar@{-->}@/^1pc/[ur]
+&
+\\
+&&&
+&\ar@{-->}@/^1pc/[ul]
+}
+\ecen
 \eeq
 
 \beq
-\begin{array}{l}
-s=(b+c-a)/2
+\bcen
+\xymatrix@C=1.5pc@R=1.5pc{
+&&
 \\
-t=(c+a-b)/2
+&\stackrel{b\A a}{c}\ar[ul]
+\ar[ur]\ar[d]
+&
 \\
-u=(a+b-c)/2
-\end{array}
+&&
+}
+\ecen
+=
+\frac{1}{\dashbubble}
+\bcen
+\xymatrix@C=.7pc{
+&&&
+\\
+&\ul{\Gamma}^{(c)}\ar@{-->}[l]\ar[u]
+&\ul{\Gamma}^{(b)}\ar@{-->}[l]\ar[u]
+&\ul{\Gamma}^{(a)}\ar@{-->}[l]\ar[u]
+&\ar@{-->}[l]
+\ar@{-}@[red]@/^1pc/[llll]
+}
+\ecen
+\eeq
+
+\beq
+\bcen
+\xymatrix@C=1.5pc@R=1.5pc{
+&&
+\\
+&\stackrel{a\A b}{c}\ar[ul]
+\ar[ur]\ar[d]
+&
+\\
+&&
+}
+\ecen
+=
+(-1)^{st+tu+us}
+\bcen
+\xymatrix@C=1.5pc@R=1.5pc{
+&&
+\\
+&\stackrel{b\A a}{c}\ar[ul]
+\ar[ur]\ar[d]
+&
+\\
+&&
+}
+\ecen
+\eeq
+
+\beq
+\bcen
+\xymatrix{
+\ar@{-->}[r]&
+\\
+&\ar@{-->}[l]
+}
+\ecen
+=
+\frac{1}{\dashbubble}
+\sum_a
+\bcen
+\xymatrix@C=1pc@R=1pc{
+\ar@{-->}@/^1pc/[dr]
+&&&&
+\\
+&\ul{\Gamma}^{(a)}
+\ar@{-->}@/^1pc/[dl]
+\ar[rr]
+&
+&\ol{\Gamma}^{(a)}
+\ar@{-->}@/^1pc/[ur]
+&
+\\
+&&&
+&\ar@{-->}@/^1pc/[ul]
+}
+\ecen
+\eeq
+
+\beq
+\bcen
+\xymatrix@C=1.5pc@R=1.5pc{
+&&
+\\
+&\stackrel{b\A a}{c}\ar[ul]
+\ar[ur]\ar[d]
+&
+\\
+&&
+}
+\ecen
+=\sum_{c=1}^{a+b}
+K_c\chi_c
 \eeq
