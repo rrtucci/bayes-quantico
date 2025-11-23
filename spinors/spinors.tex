@@ -1,4 +1,4 @@
-\chapter{Spinors: COMING SOON}
+\chapter{Spinors}
 \label{ch-spinors}
 
 \newcommand{\dashbubble}[0]{
@@ -1527,7 +1527,39 @@ u=(a+c-b)/2
 \eeq
 where $t=a-u=b-s$
 
-
+\beq
+\bcen
+\xymatrix{
+&&&
+\\
+&\ul{\Gamma}^{(c')}\ar@{-->}[l]\ar[u]
+&\ul{\Gamma}^{(b)}\ar@{-->}[l]\ar[u]
+&\ul{\Gamma}^{(a)}\ar@{-->}[l]\ar[u]
+&\ar@{-->}[l]\
+\ar@[red]@/^1pc/@{-}[llll]
+}
+\ecen
+=
+\sum_{c=1}^{a+b} K_{c}
+\bcen
+\xymatrix@C=1.5pc{
+&&&
+\\
+&\cala_b\ar[u]
+&\ar[l]
+\ar[r]\ul{g}^{(t)}
+&\cala_a\ar[u]
+\\
+&\ul{\Gamma}^{(c')}\ar@{-->}[l]
+\ar[ul]
+&\ar[ul]|s
+\ar[ur]|u
+\ul{\Gamma}^{(c)}\ar@{-->}[l]
+&\ar@{-->}[l]
+\ar@[red]@/^1pc/@{-}[lll]
+}
+\ecen
+\eeq
 
 
 
@@ -1685,3 +1717,79 @@ d^{(a)}=
 = (1+1)^2 = 2^a
 \eeq
 
+
+\beq
+\bcen
+\xymatrix{
+&&&
+\\
+&\ul{\Gamma}^{(b)}\ar@{-->}[l]\ar[u]
+&\ul{\Gamma}^{(a)}\ar@{-->}[l]\ar[u]
+&\ar@{-->}[l]
+}
+\ecen
+=
+\sum_{c=1}^{a+b} K'_{c}
+\bcen
+\xymatrix@C=1.5pc@R=1.5pc{
+&&
+\\
+&\stackrel{b\A a}{c}\ar[ul]
+\ar[ur]\ar[d]
+&
+\\
+&\ar@{-->}[l]
+\ol{\Gamma}^{(c)}
+&\ar@{-->}[l]
+}
+\ecen
+\eeq
+
+\beq
+\bcen
+\xymatrix{
+&&&
+\\
+&\ul{\Gamma}^{(c')}\ar@{-->}[l]\ar[u]
+&\ul{\Gamma}^{(b)}\ar@{-->}[l]\ar[u]
+&\ul{\Gamma}^{(a)}\ar@{-->}[l]\ar[u]
+&\ar@{-->}[l]\
+\ar@[red]@/^1pc/@{-}[llll]
+}
+\ecen =
+\sum_{c=1}^{a+b}
+K'_c
+\bcen
+\xymatrix@C=1.5pc@R=1.5pc{
+&&&
+\\
+&&\stackrel{b\A a}{c}\ar[ul]
+\ar[ur]\ar[d]
+&
+\\
+&\ar@{-->}[l]
+\ul{\Gamma}^{(c')}\ar[u]
+&\ar@{-->}[l]
+\ol{\Gamma}^{(c)}
+&\ar@{-->}[l]
+\ar@[red]@/^1pc/@{-}[lll]
+}
+\ecen
+\eeq
+
+\beq
+\frac{a!b!c!}
+{s!t!u!}
+\dashbubble
+\chi_c=K_c'
+\dashbubble \chi_c
+\eeq
+\beq
+K_c' =\frac{a!b!c!}{s!t!u!} = K_c
+\eeq
+
+
+
+\section{Handedness}
+
+\
