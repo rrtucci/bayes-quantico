@@ -1847,7 +1847,7 @@ K_c' =\frac{a!b!c!}{s!t!u!} = K_c
 \\
 *
 \bcen
-\xymatrix{
+\xymatrix@R=1pc@C=1pc{
 &
 &
 &\ul{\Gamma}^{(a)}\ar@{-->}[dl]
@@ -1895,7 +1895,7 @@ K_c' =\frac{a!b!c!}{s!t!u!} = K_c
 \ecen
 \end{align}
 where
-\newcommand{\sixjspinor}[6]{
+\newcommand{\sixjspinor}[0]{
 \xymatrix@R=2pc@C=2pc{
 &\ul{\Gamma}^{(a)}\ar[d]
 \ar@/_1pc/@{-->}[ddl]
@@ -1909,7 +1909,7 @@ where
 \ar@{-->}[ur]
 &
 &\ul{\Gamma}^{(b)}
-\ar@{-->}[luu]\ar[ll]
+\ar@{-->}@/_1pc/[luu]\ar[ll]
 }
 }
 
@@ -1923,14 +1923,14 @@ where
 \dashbubble
 }
 \frac{
-\sixjspinor{a}{a}{a}{b}{a}{a}
+\sixjspinor
 }
 {d_b}
 \\
 &=
 d_b
 \frac{
-\sixjspinor{a}{a}{a}{b}{a}{a}
+\sixjspinor
 }
 {\dashbubble\dashbubble
 }
@@ -1940,4 +1940,127 @@ d_b
 
 \section{Handedness}
 
-\
+
+
+\beq
+\Gamma^{(3)}_{\lam\mu\nu}
+=
+\bcen
+\xymatrix@R=1pc@C=1pc@R=1.5pc{
+&&&
+\\
+&\ar[u]\cala_n \ar@2{-}[rr]
+&\ar[u]
+&\ar[u]
+&
+\\
+&\ar@{-->}[l]\ul{\gamma}\ar[u]
+&\ar@{-->}[l]\ul{\gamma}\ar[u]
+&\ar@{-->}[l]\ul{\gamma}\ar[u]
+&\ar@{-->}[l]
+}
+\ecen
+=
+\bcen
+\xymatrix@R=1pc@C=1pc@R=1.5pc{
+&&&
+\\
+&\ar[u]\cala_n^{\frac{1}{2}} \ar@2{-}[rr]
+&\ar[u]
+&\ar[u]
+&
+\\
+&\cala_n^{\frac{1}{2}} \ar@2{-}[rr]
+&
+&
+&
+\\
+&\ar@{-->}[l]\ul{\gamma}\ar[u]
+&\ar@{-->}[l]\ul{\gamma}\ar[u]
+&\ar@{-->}[l]\ul{\gamma}\ar[u]
+&\ar@{-->}[l]
+}
+\ecen
+\eeq
+
+For Spin(4), 
+\beq
+\gamma_5 = \gamma_1\gamma_2\gamma_3\gamma_4
+\eeq
+
+\beqa
+\gamma_\bullet &=&
+\frac{1}{\sqrt{n!}}
+\bcen
+\xymatrix@R=1pc@C=1pc@R=1.5pc{
+&\cala_n^{\frac{1}{2}} \ar@2{-}[rr]
+&
+&
+&
+\\
+&\ar@{-->}[l]\ul{\gamma}\ar[u]
+&\ar@{-->}[l]\ul{\gamma}\ar[u]
+&\ar@{-->}[l]\ul{\gamma}\ar[u]
+&\ar@{-->}[l]
+}
+\ecen
+\\
+&=&
+\frac{e^{i\phi}}{n!}
+\eps^{\mu_1 \mu_2 \ldots \mu_n}
+\gamma_{\mu_1}\gamma_{\mu_2}
+\ldots\gamma_{\mu_n}
+= e^{i\phi}
+\gamma_1 \gamma_2\ldots \gamma_n
+\eeqa
+
+\beq
+e^{i\phi} = i^\frac{n(n-1)}{2}
+\eeq
+
+
+\beq
+\gamma_\bullet^2 = 1
+\eeq
+
+Assuming $g_{\mu\nu}$ is
+diagonal, $\gamma_\mu$ commutes
+with itself and anti-commutes
+with every $\gamma_\nu$ where $\mu\neq \nu$. Hence
+
+\beq 
+\left\{
+\begin{array}
+{ll}\gamma_\mu \gamma_\bullet =-\gamma_\mu \gamma_\bullet 
+&\text{($n$ even)}
+\\
+\gamma_\mu \gamma_\bullet =\gamma_\mu \gamma_\bullet 
+&\text{($n$ odd)}
+\end{array}
+\right.
+\eeq 
+ 
+\beq
+P_\pm = \frac{1}{2}(1 \pm \gamma_\bullet),
+\quad P_+ + P_- =1
+\eeq
+
+
+\beq 
+\left\{
+\begin{array}{ll}
+\gamma_\mu P_+ = P_- \gamma_\mu
+&\text{($n$ even)}
+\\
+\gamma_\mu P_+ = P_+ \gamma_\mu
+&\text{($n$ odd)}
+\end{array}
+\right.
+\eeq
+
+\beq
+\gamma_\mu = P_+ \gamma_\mu P_+
++
+P_-\gamma_\mu P_-
+\quad\text{($n$ odd)}
+\eeq
