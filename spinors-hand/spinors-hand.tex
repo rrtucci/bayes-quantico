@@ -4,9 +4,18 @@
 This chapter is based on an AI output
 and Ref.\cite{birdtracks-book}.
 
+
+
 \section{In 1+3 dim}
 
 Consider $SO(1,3)$ so $n=1+3=4$
+
+$\gamma^\mu_{ab}$
+
+
+$a,b\in\{1,2,3,4\}$
+
+$\mu=1, 2, \ldots, n$
 
 {\bf Mostly-plus metric (M+M) (a.k.a. East Coast metric)} is $g_{\mu\nu}= (-1, 1,1,1)$
 
@@ -176,6 +185,40 @@ Thus $\gamma_5$ is {\bf pseudoscalar} under Lorentz transformations (i.e., invar
 
 Consider $SO(p,q)$ so $n=p+q$
 
+$\gamma^\mu_{ab}$
+
+$n'=
+\left\{
+\begin{array}{ll}
+n
+&\text{ if $n$ is even}
+\\
+n-1
+&\text{ if $n$ is odd}
+\end{array}
+\right.
+$
+
+$a,b\in\{ 1, 2, \ldots, 2^{n'/2}\}$
+
+$\mu=1, 2, \ldots, n$
+
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% Beamer presentation requires \usepackage{colortbl} instead of \usepackage[table,xcdraw]{xcolor}
+\begin{table}[h!]
+\begin{tabular}{|
+>{\columncolor[HTML]{FFFFC7}}l |l|l|l|l|l|l|l|l|l|l|}
+\hline
+$n$ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline
+$n'$ & 0 & 2 & 2 & 4 & 4 & 6 & 6 & 8 & 8 & 10 \\ \hline
+$d=2^{n'/2}$ & 1 & 2 & 2 & 4 & 4 & 8 & 8 & 16 & 16 & 32 \\ \hline
+\end{tabular}
+\caption{$\gamma_\mu \in \CC^{d\times d}$}
+\label{tab-gamma-dim}
+\end{table}
+
+
 \beq
 [\gamma_\mu, \gamma_\nu]_+ = 2g^{\mu\nu}
 \quad \text{ for } \mu, \nu=0, 1,2,\ldots, n
@@ -268,7 +311,7 @@ with $\gamma_\mu$ if $n$ is odd.
 &\text{($n$ odd)}
 \end{array}
 \right.
-\eeq 
+\eeq
 
 This follows because $g_{\mu\nu}$
 is diagonal so, by the Clifford algebra
@@ -318,10 +361,12 @@ g_{jj}
 \item If
 \beq
 P_\pm = \frac{1}{2}(1 \pm \Gamma),
-\quad P_+ + P_- =1
 \eeq
 then
 
+\beq
+P_+^2=P_-^2=1,\quad  P_+P_-=0,\quad P_+ + P_-=1
+\eeq
 
 \beq 
 \left\{
@@ -339,7 +384,17 @@ then
 \gamma_\mu = P_+ \gamma_\mu P_+
 +
 P_-\gamma_\mu P_-
-\quad\text{($n$ even)}
+\quad\text{($n$ odd)}
 \eeq
+Hence, when $n$ is odd,  the
+$\gamma_\mu \in \CC^{n'/2\times n'/2}$ matrices decompose into a pair of conjugate
+$\CC^{n'/2\times n'/2}$ reps:
+Note that only
+
+
+When $n$ is even, we can use $\Gamma$ 
+to separate the  $\pm$ 
+chirality states of a spinor $\psi$
+
 
 \end{itemize}
