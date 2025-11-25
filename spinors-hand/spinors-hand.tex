@@ -1,0 +1,345 @@
+\chapter{Spinors, Their Handedness}
+\label{ch-spinors-hand}
+
+This chapter is based on an AI output
+and Ref.\cite{birdtracks-book}.
+
+\section{In 1+3 dim}
+
+Consider $SO(1,3)$ so $n=1+3=4$
+
+{\bf Mostly-plus metric (M+M) (a.k.a. East Coast metric)} is $g_{\mu\nu}= (-1, 1,1,1)$
+
+{\bf Mostly-minus metric (M-M) (a.k.a. West Coast metric)} is $g_{\mu\nu}= (1, -1,-1,-1)$
+
+\beq
+[\gamma_\mu, \gamma_\nu]_+ = 2g^{\mu\nu}
+\quad \text{ for } \mu, \nu=0, 1,2,3
+\label{eq-ciff}
+\eeq
+
+\beq
+\begin{array}{ll}
+\text{M--M}: &
+\gamma_0^\dagger = \gamma_0,
+\quad \gamma_i^\dagger = -\gamma_i
+\quad\text{ for } i=1,2,3
+\\
+\text{M+M}: &
+\gamma_0^\dagger = -\gamma_0,
+\quad \gamma_i^\dagger = \gamma_i
+\quad\text{ for } i=1,2,3
+\end{array}
+\eeq
+The last equation is true iff
+
+\beq
+\begin{array}{ll}
+\text{M--M:} &
+\gamma_\mu^\dagger =\gamma_0 \gamma_\mu \gamma_0
+\\
+\text{M+M:} &
+\gamma_\mu^\dagger =-\gamma_0 \gamma_\mu \gamma_0
+\end{array}
+\eeq
+
+
+
+In 1+3 dimensional relativistic quantum field theory, the {\bf chirality matrix} 
+$\gamma_5$ is defined in terms of the four Dirac gamma matrices $\gamma_\mu$, where $\mu=0,1,2,3$. 
+as follows
+
+\beq
+\begin{array}{ll}
+\text{M--M:} & \gamma_5 = i \gamma_0 \gamma_1 \gamma_2 \gamma_3 = \frac{i}{4!} \epsilon^{\mu\nu\rho\sigma} \gamma_\mu \gamma_\nu \gamma_\rho \gamma_\sigma
+\\
+\text{M+M:} &\gamma_5 = -i \gamma_0 \gamma_1 \gamma_2 \gamma_3 
+\end{array}
+\eeq 
+
+
+In the \qt{Dirac representation}, 
+
+\beq
+\gamma_5 =\pm
+\left[
+\begin{array}{cc}
+0 & I_2 \\
+I_2 & 0
+\end{array}
+\right]
+\eeq
+
+The  properties of $\gamma_5$ might change by a sign
+depending on which metric
+we are using. Henceforth, we 
+will use the M--M 
+
+$\gamma_5$ properties:
+
+\begin{itemize}
+ 
+\item Anticommutes with $\gamma_\mu$
+\beq
+\gamma_5\gamma_\mu=-\gamma_\mu\gamma_5
+\quad
+\text{for $\mu=0,1,2,3$}
+\eeq
+This follows because $g_{\mu\nu}$
+is diagonal so, by the Clifford algebra
+definition Eq.(\ref{eq-ciff})
+(anti-cummutator of gammas), the
+$\gamma_\mu$ anticommutes with 3 of the
+4 gamma matrices in $\gamma_5$
+
+\item Hermitian
+\beq
+\gamma_5^\dagger = \gamma_5
+\eeq
+
+This follows because
+
+\beq
+\gamma_5^\dagger = -i(-\gamma_3)(-\gamma_2)(-\gamma_1)(+\gamma_0)=  i\gamma_3\gamma_2\gamma_1\gamma_0=
+(-1)^6
+i(\gamma_0\gamma_1\gamma_2\gamma_3)=\gamma_5
+\eeq
+
+\item Square is 1
+\beq
+\gamma_5^2 = I.
+\eeq
+
+Therefore its eigenvalues are $+1$ (positive chirality)  and $-1$ (negative chirality). This follows because
+
+\beq
+(\gamma_5)^2=-\gamma_0\gamma_1\gamma_2\gamma_3\gamma_0\gamma_1\gamma_2\gamma_3
+=-(-1)^6(\gamma_0)^2(\gamma_1)^2(\gamma_2)^2(\gamma_3)^2=
+-g_{00}g_{11}g_{22}g_{33}=
+1
+\eeq
+
+
+\item Traceless
+\beq
+\tr(\gamma_5)=0
+\eeq
+This follows immediately from
+the expression for
+$\gamma_5$ in the Dirac representation.
+Alternatively, note that if spinor $\psi$
+satisfies \beq \gamma_5\psi =+\psi\eeq (has positive chirality),
+then spinor $\gamma_\mu\psi$ has negative 
+chirality because
+\beq \gamma_5(\gamma_\mu \psi)=-
+\gamma_\mu \gamma_5\psi
+=-\gamma_\mu \psi
+\eeq
+This means that the eigenvalues of 
+$\gamma_5$ come in $\pm 1$ pairs.
+Hence the trace of $\gamma_5$ must be zero.
+
+
+\item
+\beq
+\tr(\gamma_5 \gamma_\mu \gamma_\nu \gamma_\rho \gamma_\sigma)
+= 4i \epsilon^{\mu\nu\rho\sigma},
+\eeq
+with $\epsilon^{0123}=+1$
+
+\item
+If 
+\beq
+P_L = P_-=\frac{1}{2}(1 - \gamma_5), \qquad
+P_R = P_+ =\frac{1}{2}(1 + \gamma_5).
+\eeq
+then
+
+\beq
+\psi = \underbrace{\psi_L}_{P_L\psi} + \underbrace{\psi_R}_{P_R\psi}
+\eeq
+
+\item
+If $\PP=\gamma_0$ (Parity Operator) and $\sigma^{\mu\nu} = \frac{i}{2}[\gamma_\mu,\gamma_\nu]$ (Lorentz generators)
+
+\beq
+[\gamma_5, \sigma^{\mu\nu}] = 0,\quad 
+\gamma_5 \PP=- \PP\gamma_5\eeq
+Thus $\gamma_5$ is {\bf pseudoscalar} under Lorentz transformations (i.e., invariant under proper Lorentz transformations but flips sign under parity).
+\end{itemize}
+
+
+
+
+
+\section{In $p+q$ dim}
+
+Consider $SO(p,q)$ so $n=p+q$
+
+\beq
+[\gamma_\mu, \gamma_\nu]_+ = 2g^{\mu\nu}
+\quad \text{ for } \mu, \nu=0, 1,2,\ldots, n
+\label{eq-ciff-gen}
+\eeq
+
+\beq
+\Gamma^{(3)}_{\lam\mu\nu}
+=
+\bcen
+\xymatrix@R=1pc@C=1pc@R=1.5pc{
+&&&
+\\
+&\ar[u]\cala_n \ar@2{-}[rr]
+&\ar[u]
+&\ar[u]
+&
+\\
+&\ar@{-->}[l]\ul{\gamma}\ar[u]
+&\ar@{-->}[l]\ul{\gamma}\ar[u]
+&\ar@{-->}[l]\ul{\gamma}\ar[u]
+&\ar@{-->}[l]
+}
+\ecen
+=
+\bcen
+\xymatrix@R=1pc@C=1pc@R=1.5pc{
+&&&
+\\
+&\ar[u]\cala_n^{\frac{1}{2}} \ar@2{-}[rr]
+&\ar[u]
+&\ar[u]
+&
+\\
+&\cala_n^{\frac{1}{2}} \ar@2{-}[rr]
+&
+&
+&
+\\
+&\ar@{-->}[l]\ul{\gamma}\ar[u]
+&\ar@{-->}[l]\ul{\gamma}\ar[u]
+&\ar@{-->}[l]\ul{\gamma}\ar[u]
+&\ar@{-->}[l]
+}
+\ecen
+\eeq
+
+Generalize $\gamma_5$ from $SO(1,3)$ to
+$\Gamma$ for $SO(p,q)$.
+\beqa
+\Gamma &=&
+\frac{1}{\sqrt{n!}}
+\bcen
+\xymatrix@R=1pc@C=1pc@R=1.5pc{
+&\cala_n^{\frac{1}{2}} \ar@2{-}[rr]
+&
+&
+&
+\\
+&\ar@{-->}[l]\ul{\gamma}\ar[u]
+&\ar@{-->}[l]\ul{\gamma}\ar[u]
+&\ar@{-->}[l]\ul{\gamma}\ar[u]
+&\ar@{-->}[l]
+}
+\ecen
+\\
+&=&
+\frac{e^{i\phi}}{n!}
+\eps^{\mu_1 \mu_2 \ldots \mu_n}
+\gamma_{\mu_1}\gamma_{\mu_2}
+\ldots\gamma_{\mu_n}
+= e^{i\phi}
+\gamma_1 \gamma_2\ldots \gamma_n
+\eeqa
+
+$\Gamma$ properties
+\begin{itemize}
+
+\item Anticommutes  with $\gamma_\mu$ if $n$ is even. Commutes 
+with $\gamma_\mu$ if $n$ is odd.
+
+
+\beq 
+\left\{
+\begin{array}
+{ll}\gamma_\mu \Gamma =- \Gamma \gamma_\mu
+&\text{($n$ even)}
+\\
+\gamma_\mu \Gamma = \Gamma \gamma_\mu
+&\text{($n$ odd)}
+\end{array}
+\right.
+\eeq 
+
+This follows because $g_{\mu\nu}$
+is diagonal so, by the Clifford algebra
+definition Eq.(\ref{eq-ciff-gen})
+(anti-cummutator of gammas), the
+$\gamma_\mu$ anticommutes with $n-1$ of the
+$n$ gamma matrices in $\Gamma$
+
+\item Square is one
+
+If
+\beq
+e^{i\phi} = i^\frac{n(n-1)}{2}
+\sqrt{\prod_{j=1}^k
+g_{jj}}
+\eeq
+with $g_{jj}\in \{1, -1\}$, then
+
+
+\beq
+\Gamma^2 = 1
+\eeq
+This follows because
+
+\beqa
+\Gamma^2 &=&
+e^{i2\phi} \gamma_1\gamma_2\cdots\gamma_n
+\gamma_1\gamma_2\cdots\gamma_n
+\\
+&=&
+e^{i2\phi}
+(-1)^{\frac{n(n-1)}{2}}
+(\gamma_{1})^2
+(\gamma_{2})^2
+\ldots
+(\gamma_{n})^2
+\\
+&=&
+e^{i2\phi}
+(-1)^{\frac{n(n-1)}{2}}
+\prod_{j=1}^k
+g_{jj}
+\eeqa
+
+
+ 
+\item If
+\beq
+P_\pm = \frac{1}{2}(1 \pm \Gamma),
+\quad P_+ + P_- =1
+\eeq
+then
+
+
+\beq 
+\left\{
+\begin{array}{ll}
+\gamma_\mu P_+ = P_- \gamma_\mu
+&\text{($n$ even)}
+\\
+\gamma_\mu P_+ = P_+ \gamma_\mu
+&\text{($n$ odd)}
+\end{array}
+\right.
+\eeq
+
+\beq
+\gamma_\mu = P_+ \gamma_\mu P_+
++
+P_-\gamma_\mu P_-
+\quad\text{($n$ even)}
+\eeq
+
+\end{itemize}
