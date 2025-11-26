@@ -4,7 +4,7 @@
 This chapter is based on an AI output
 and Ref.\cite{birdtracks-book}.
 
-
+\newcommand{\gfive}[0]{\gamma_{\text{@}}}
 
 \section{In 1+3 dim}
 
@@ -162,6 +162,8 @@ If
 P_L = P_-=\frac{1}{2}(1 - \gamma_5), \qquad
 P_R = P_+ =\frac{1}{2}(1 + \gamma_5).
 \eeq
+where $R$= right handed,
+$L=$ left handed
 then
 
 \beq
@@ -267,9 +269,9 @@ $d=2^{n'/2}$ & 1 & 2 & 2 & 4 & 4 & 8 & 8 & 16 & 16 & 32 \\ \hline
 \eeq
 
 Generalize $\gamma_5$ from $SO(1,3)$ to
-$\Gamma$ for $SO(p,q)$.
+$\gfive$ for $SO(p,q)$.
 \beqa
-\Gamma &=&
+\gfive &=&
 \frac{1}{\sqrt{n!}}
 \bcen
 \xymatrix@R=1pc@C=1pc@R=1.5pc{
@@ -294,7 +296,8 @@ $\Gamma$ for $SO(p,q)$.
 \gamma_1 \gamma_2\ldots \gamma_n
 \eeqa
 
-$\Gamma$ properties
+
+$\gfive$ properties
 \begin{itemize}
 
 \item Anticommutes  with $\gamma_\mu$ if $n$ is even. Commutes 
@@ -304,10 +307,10 @@ with $\gamma_\mu$ if $n$ is odd.
 \beq 
 \left\{
 \begin{array}
-{ll}\gamma_\mu \Gamma =- \Gamma \gamma_\mu
+{ll}\gamma_\mu \gfive =- \gfive \gamma_\mu
 &\text{($n$ even)}
 \\
-\gamma_\mu \Gamma = \Gamma \gamma_\mu
+\gamma_\mu \gfive = \gfive \gamma_\mu
 &\text{($n$ odd)}
 \end{array}
 \right.
@@ -318,7 +321,11 @@ is diagonal so, by the Clifford algebra
 definition Eq.(\ref{eq-ciff-gen})
 (anti-cummutator of gammas), the
 $\gamma_\mu$ anticommutes with $n-1$ of the
-$n$ gamma matrices in $\Gamma$
+$n$ gamma matrices in $\gfive$
+
+\item For $n$ odd, $\gfive$ is
+a constant matrix. If also $\gfive^2=1$,
+then $\gfive=\pm1$.
 
 \item Square is one
 
@@ -332,12 +339,12 @@ with $g_{jj}\in \{1, -1\}$, then
 
 
 \beq
-\Gamma^2 = 1
+\gfive^2 = 1
 \eeq
 This follows because
 
 \beqa
-\Gamma^2 &=&
+\gfive^2 &=&
 e^{i2\phi} \gamma_1\gamma_2\cdots\gamma_n
 \gamma_1\gamma_2\cdots\gamma_n
 \\
@@ -358,11 +365,11 @@ g_{jj}
 
 
  
-\item If
+\item If $n$ is even and
 \beq
-P_\pm = \frac{1}{2}(1 \pm \Gamma),
+P_\pm = \frac{1}{2}(1 \pm \gfive),
 \eeq
-then
+then 
 
 \beq
 P_+^2=P_-^2=1,\quad  P_+P_-=0,\quad P_+ + P_-=1
@@ -381,20 +388,94 @@ P_+^2=P_-^2=1,\quad  P_+P_-=0,\quad P_+ + P_-=1
 \eeq
 
 \beq
-\gamma_\mu = P_+ \gamma_\mu P_+
+\gamma_\mu = P_+ \gamma_\mu P_-
 +
-P_-\gamma_\mu P_-
-\quad\text{($n$ odd)}
+P_-\gamma_\mu P_+
+\quad\text{($n$ even)}
 \eeq
-Hence, when $n$ is odd,  the
-$\gamma_\mu \in \CC^{n'/2\times n'/2}$ matrices decompose into a pair of conjugate
-$\CC^{n'/2\times n'/2}$ reps:
-Note that only
+Note that when $n$ is odd,
+$\gfive=\pm1$ so either $P_+$ or $P_-$ is zero
+and the other is 1. Hence this decomposition
+is only  valid for $n$ even.
+
+The Lorentz group for $n$ odd has only one irreducible spinor representation.
+In even $n$ it has two inequivalent spinor irreps (positive and negative chirality).
+
+Thus chirality cannot exist in odd dimensions because the representation theory of the Lorentz group does not support it.
+
+\end{itemize}
 
 
-When $n$ is even, we can use $\Gamma$ 
-to separate the  $\pm$ 
-chirality states of a spinor $\psi$
+\section{Weyl and Majorana Spinors}
+
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% Beamer presentation requires \usepackage{colortbl} instead of \usepackage[table,xcdraw]{xcolor}
+\begin{table}[h!]
+\begin{tabular}{|l|l|l|l|}
+\hline
+\rowcolor[HTML]{FFFFC7} 
+Spinor Type & Condition & \# of dofs & Exists in 4D? \\ \hline
+Dirac & none & 8 & yes \\ \hline
+Weyl & $\gfive \psi = \pm \psi$ & 4 & yes \\ \hline
+Majorana & $\psi^c=\psi$ & 4 & yes \\ \hline
+Majorana-Weyl & both & 2 & no \\ \hline
+\end{tabular}
+\caption{Different types of spinors, their number of dofs (real degrees of freedom) and whether they exist in 4 dim.}
+\label{tab-maj-weyl}
+\end{table}
+
+\begin{itemize}
+\item Weyl spinors
+
+\beq
+P_L = \frac{1}{2}(1-\gfive),\quad
+P_R = \frac{1}{2}(1+\gfive)
+\eeq
+
+A {\bf left-handed Weyl spinor} satisfies
+\beq
+\psi_L = P_L\psi,\quad \gfive\psi_L=-\psi_L
+\eeq
+
+A {\bf a right-handed Weyl spinor} satisfies
+\beq
+\psi_R = P_R\psi,\quad \gfive \psi_R=+\psi_R.
+\eeq
+
+\item Majorana Spinors
+
+
+Given a Dirac spinor $\psi$, its {\bf charge-conjugate} is
+
+\beq
+\psi^c = C \bar{\psi}^T
+\quad \text{ where }
+\bar{\psi} = \psi^\dagger\gamma^0
+\eeq
+
+The matrix $C$ is defined by
+
+\beq
+C\gamma^\mu C^{-1} = -(\gamma^\mu)^T,
+\eeq
+and exists in any dimension.
+
+A {\bf Majorana spinor} is one satisfying 
+
+\beq
+\psi=\psi^c
+\eeq
+
+Whether Majorana spinors exist depends on the spacetime dimension and signature.
+In 1+3 dimensions, Majorana spinors do exist because one can choose a representation where all gamma matrices are purely real or imaginary so that $\psi$ can be chosen real.
+
+A Majorana spinor has 4 real components. (vs.  Dirac spinors which have  4 complex.
+
+A Weyl spinor and Majorana spinor cannot both be imposed simultaneously in 1+3 dim.
+But in some dimensions (e.g. 2 mod 8), Majorana–Weyl spinors **do** exist (important in 10D superstring theory).
+
 
 
 \end{itemize}
+
