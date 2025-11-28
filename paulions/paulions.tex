@@ -93,9 +93,9 @@ With $\vec{a}=\vec{b}$:
 (\s_{\vec{a}})^2 = |\vec{a}|^2 
 \eeq
 
-With unit vector $\hat{n}$:
+With unit vector $\hat{a}$:
 \beq
-(\s_{\vec{n}})^2 = 1
+(\s_{\hat{a}})^2 = 1
 \eeq
 \end{claim}
 \proof
@@ -113,8 +113,8 @@ i \s_{\hat{a}}\sin |\vec{a}|
 where 
 
 \beq
-U=e^{-i\frac{\theta}{2}\s_{\hat{n}}}=
-\cos(\tfrac\theta2)-i\s_{\hat{n}}\sin(\tfrac\theta2)
+U=e^{-i\frac{\theta}{2}\s_{\hat{a}}}=
+\cos(\tfrac\theta2)-i\s_{\hat{a}}\sin(\tfrac\theta2)
 \eeq
 \end{claim}
 \proof
@@ -134,21 +134,21 @@ i \s_i \sin \theta
 \beq
 U\s_{\vec{x}}U^\dagger
 =
-\sigma_{R_{\hat{n}}(\theta)\vec{x}}
+\sigma_{R_{\hat{a}}(\theta)\vec{x}}
 \eeq
 where
 
 \beq
-U=e^{-i\frac{\theta}{2}\s_{\hat{n}}}
+U=e^{-i\frac{\theta}{2}\s_{\hat{a}}}
 \eeq
 
 \beq
-R_{\hat{n}}(\theta)\vec{x}=
+R_{\hat{a}}(\theta)\vec{x}=
 \vec{x}\cos\theta
 +
-(\hat{n}\times\vec{x})\sin\theta
+(\hat{a}\times\vec{x})\sin\theta
 +
-\hat{n}(\hat{n}\cdot\vec{x})(1-\cos\theta)
+\hat{a}(\hat{a}\cdot\vec{x})(1-\cos\theta)
 \eeq
 This immediately implies that
 $SU(2)$ is a double cover of $SO(3)$.
@@ -183,12 +183,12 @@ If $U$ produces rotation $R$, then $-U$ gives the same rotation:
 
 \begin{claim}
 \beq
--\s_{\hat{n}}\s_{\vec{x}}\s_{\hat{n}}=
-\sigma_{\rho_{\hat{n}}\vec{x}}
+-\s_{\hat{a}}\s_{\vec{x}}\s_{\hat{a}}=
+\sigma_{\rho_{\hat{a}}\vec{x}}=\phi_{\hat{a}}(\vec{x})
 \eeq
 
 \beq
-\rho_{\hat{n}}\vec{x}=\vec{x} - 2(\hat{n}\cdot\vec{x})\hat{n}
+\rho_{\hat{a}}\vec{x}=\vec{x} - 2(\hat{a}\cdot\vec{x})\hat{a}
 \eeq
 
 
@@ -203,7 +203,7 @@ If $U$ produces rotation $R$, then $-U$ gives the same rotation:
 \begin{claim}
 \beq
 [\s_{\vec{a}}, \s_{\vec{b}}]_+
-= 2(\vec{a}\cdot\vec{b})I
+= 2(\vec{a}\cdot\vec{b})
 \eeq
 
 \beq
@@ -217,7 +217,7 @@ If $U$ produces rotation $R$, then $-U$ gives the same rotation:
 
 
 
-Define
+Example, $n=2$, $Spin(2)$ and $SO(2)$
 
 \beq
 Cl(2)=span_\RR \{1, \s_1, \s_2, \s_1\s_2=i\s_3\}
@@ -257,24 +257,10 @@ to $SO(2)$.
 \end{claim}
 \proof
 
-Note that
-if $x= e^{i\theta \s_3}$ and $v = v_1\s_1
-+ v_2 \s_2$, 
-
-\beqa
-xx^\dagger &=&(\cos \theta + i\s_3 \sin \theta)(\cos \theta -i\s_3 \sin \theta)
-\\
-&=&
-\cos^2\theta + \sin^2\theta 
-\\
-&=& 1
-\eeqa
-
- Let 
-
+Note $U= e^{i\theta \s_3}$ and $\vec{x}= (x_1, x_2)$
 
 \begin{align}
-xvx^\dagger
+U\s_{\vec{x}}U^\dagger
 &=
 \left(
 \begin{array}{cc}
@@ -285,9 +271,9 @@ e^{i\theta} & 0
 \right)
 \left(
 \begin{array}{cc}
-0 & v_1 - i v_2
+0 & x_1 - i x_2
 \\
-v_1 + i v_2 & 0
+x_1 + i x_2 & 0
 \end{array}
 \right)
 \left(
@@ -305,28 +291,28 @@ e^{-i\theta} & 0
 \\
 ze^{-i2\theta}&0
 \end{array}
-\right)  \quad (z = v_1 + i v_2)
+\right)  \quad (z = x_1 + i x_2)
 \\
 &=
 \left(
 \begin{array}{cc}
-0 & v'_1 - i v'_2
+0 & x'_1 - i x'_2
 \\
-v'_1 + i v'_2 & 0
+x'_1 + i x'_2 & 0
 \end{array}
 \right)
 \end{align}
 
 \beq
-v_1' = \Re(ze^{-i2\theta})=
-v_1 \cos 2\theta + v_2 \sin \theta
+x_1' = \Re(ze^{-i2\theta})=
+x_1 \cos 2\theta + x_2 \sin \theta
 \eeq
 
 \beq
-v'_2 = \Im (ze^{-i2\theta})
+x'_2 = \Im (ze^{-i2\theta})
 =
--v_1 \sin 2\theta +
-v_2 \cos 2\theta
+-x_1 \sin 2\theta +
+x_2 \cos 2\theta
 \eeq
 
 \beq
@@ -341,13 +327,13 @@ R_z(2\theta)=
 \eeq
 
 \beq
-\vec{v}= (v_1, v_2)^T,
+\vec{x}= (x_1, x_2)^T,
 \quad 
-\vec{v'}= (v_1', v_2')^T
+\vec{x'}= (x_1', x_2')^T
 \eeq
 
 \beq
-\vec{v'}= R_z(2\theta)\vec{v}
+\vec{x'}= R_z(2\theta)\vec{x}
 \eeq
 
 The 2-1 map:
@@ -441,38 +427,51 @@ Spin(n)
 
 
 \beq
- - \gamma_{\hat{n}} \gamma_{x} \gamma_{\hat{n}}=
-\gamma_{\rho_{\hat{n}}x}
+ - \gamma_{\hat{a}} \gamma_{x} \gamma_{\hat{a}}=
+\gamma_{\rho_{\hat{a}}x}=\phi_{\hat{a}}(x)
 \eeq
 
-Reflection about axis $\hat{n}$
+Reflection about axis $\hat{a}$
 \beq
-\rho_{\hat{n}}x
-=x - 2(\hat{n}\cdot x)\hat{n}
+\rho_{\hat{a}}x
+=x - 2(\hat{a}\cdot x)\hat{a}
+\eeq
+
+\beq
+S^n =\{\hat{a}\in\RR^n| \hat{a}^2=1\}
 \eeq
 
 Pin stands for \qt{Product of involutions}
-An involution in this case is a unit vector (i.e., $\hat{n}\in \RR^n$ such that
-$\hat{n}\cdot\hat{n}=\hat{n}^2=1$)
-\beq
-Pin(n)=\{\rho()| \rho(x)=-\gamma_{\hat{n}}\gamma_{x}\gamma_{\hat{n}}, \text{ for all  $\hat{n}$ such that $\hat{n}^2=1$}\}
-\eeq
+An involution in this case is a unit vector (i.e., $\hat{a}\in \RR^n$ such that
+$\hat{a}\cdot\hat{a}=\hat{a}^2=1$)
+\beqa
+Pin(n)
+&=&\cup_{k=1}^\infty
+\{
+\phi_{\hat{a}_{1}}
+\circ
+\phi_{\hat{a}_{1}}
+\circ\ldots\circ
+\phi_{\hat{a}_{k}}
+| \hat{a}_{i}\in S^n \text{ for all $i$}\}
+\eeqa
 
 Note that
 
 One refection
 \beq
-det[\rho(x)] = -det(\gamma_x \gamma_{\hat{n}}^2)
+det[\phi_{\hat{a}}(x)] = -det(\gamma_x \gamma_{\hat{a}}^2)
 =-\det(\gamma_{x})
 \eeq
 
 Two reflections = a rotation
 \beq
-det[\rho_2\circ\rho_1(x)] = +
+det[\phi_{\hat{a}_1}\circ\phi_{\hat{a}_2}(x)] = +
 \det(\gamma_{x})
 \eeq
 
 $Pin(n)$ is a double cover of $O(n)$
+($det=\pm1$)
 \beq
 Pin(n)\xymatrix{\ar[r]_{\text{2 to 1 map}}&} O(n), \quad 
 Pin(n)/\{1, -1\}\cong 
@@ -481,5 +480,21 @@ O(n)
 
 Another definition of $Spin(n)$
 \beq
-Spin(n)=\{\phi()| \phi(x)=\gamma_{a}\gamma_{x}\gamma_{a}, \text{ for all  $a\in \RR^4$}\}
+Spin(n)=\cup_{k=1}^\infty
+\{
+\phi_{\hat{a}_{1}}
+\circ
+\phi_{\hat{a}_{1}}
+\circ\ldots\circ
+\phi_{\hat{a}_{{2k}}}
+| \hat{a}_{i}\in S^n \text{ for all $i$}\}
+\eeq
+
+$Spin(n)$ is a double cover of $SO(n)$
+($\phi_{\hat{a}}=\phi_{-\hat{a}}
+$)
+\beq
+Spin(n)\xymatrix{\ar[r]_{\text{2 to 1 map}}&} SO(n), \quad 
+Spin(n)/\{1, -1\}\cong 
+SO(n)
 \eeq
