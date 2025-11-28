@@ -1,0 +1,485 @@
+\chapter{Paulions and Gammions}
+\label{ch-paulions}
+
+\section{Paulions}
+
+$\vec{a}\in\RR^3$
+
+$\hat{a}= \frac{\vec{a}}{|
+\vec{a}|}$
+
+$i=1,2,3$, $\mu=0,1,2,3$
+
+Pauli matrices
+
+\beq
+\s_x=\s_1=\left(
+\begin{array}{cc}
+0&1
+\\
+1&0
+\end{array}
+\right),\quad
+\s_y=\s_2=\left(
+\begin{array}{cc}
+0&-i
+\\
+i&0
+\end{array}
+\right),\quad
+\s_z=\s_3=\left(
+\begin{array}{cc}
+1&0
+\\
+0&-1
+\end{array}
+\right)
+\eeq
+
+Hermitian 
+
+\beq
+\s_i^\dagger = \s_i
+\eeq
+
+Square is 1 (and Unitary because Hermitian)
+\beq 
+\s_i^2 = 1
+\eeq
+
+
+
+\beq
+\s_x \s_y= -\s_y \s_x 
+\eeq
+\beq
+\s_x \s_y = i \s_z
+\eeq
+
+ \beq
+\sigma_i \sigma_j = \delta_{ij} I_2+ i \epsilon_{ijk}\sigma_k
+\eeq
+
+\beq
+\vec{\s}= (\s_1, \s_2, \s_3)
+\eeq
+
+\beq
+\s_0=\left(
+\begin{array}{cc}
+1&0
+\\
+0&1
+\end{array}
+\right),\quad
+\s_\mu = (\s_0, \vec{\s})
+\eeq
+
+If $\vec{x}=(x_	1, x_2, x_3)\in\RR^3$
+\beq
+\s_{\vec{x}} = \sigma\cdot \vec{x}=x_1\sigma_1 + x_2\sigma_2 + x_3\sigma_3
+\eeq
+
+\begin{claim}
+
+\beq
+\s_{\vec{a}}\s_{\vec{b}}=
+\vec{a}\cdot\vec{b}+i\s_{\vec{a}\times\vec{b}}
+\eeq
+
+With $\vec{a}=\vec{b}$:
+
+\beq
+(\s_{\vec{a}})^2 = |\vec{a}|^2 
+\eeq
+
+With unit vector $\hat{n}$:
+\beq
+(\s_{\vec{n}})^2 = 1
+\eeq
+\end{claim}
+\proof
+\qed
+
+\begin{claim}
+If $\vec{a}\in \RR^3$ then
+
+\beq
+e^{i\s_{\vec{a}}}=
+\cos |\vec{a}|
++
+i \s_{\hat{a}}\sin |\vec{a}|
+\eeq
+where 
+
+\beq
+U=e^{-i\frac{\theta}{2}\s_{\hat{n}}}=
+\cos(\tfrac\theta2)-i\s_{\hat{n}}\sin(\tfrac\theta2)
+\eeq
+\end{claim}
+\proof
+
+\beq
+e^{i\
+\theta \s_i}=
+\cos \theta
++
+i \s_i \sin \theta 
+\eeq
+
+
+\qed
+
+\begin{claim}
+\beq
+U\s_{\vec{x}}U^\dagger
+=
+\sigma_{R_{\hat{n}}(\theta)\vec{x}}
+\eeq
+where
+
+\beq
+U=e^{-i\frac{\theta}{2}\s_{\hat{n}}}
+\eeq
+
+\beq
+R_{\hat{n}}(\theta)\vec{x}=
+\vec{x}\cos\theta
++
+(\hat{n}\times\vec{x})\sin\theta
++
+\hat{n}(\hat{n}\cdot\vec{x})(1-\cos\theta)
+\eeq
+This immediately implies that
+$SU(2)$ is a double cover of $SO(3)$.
+
+\beq
+SU(2)\xymatrix{\ar[r]_{\text{2 to 1 map}}&} SO(3),\quad SU(2)/\{1, -1\} \cong SO(3)\eeq
+\end{claim}
+\proof
+
+
+If $U$ produces rotation $R$, then $-U$ gives the same rotation:
+
+\beq
+(-U) \s_{\vec{x}} (-U)^\dagger = U\s_{\vec{x}}U^\dagger.
+\eeq
+
+\qed
+
+
+\begin{claim}
+\beq
+\s_{\vec{a}}\s_{\vec{x}}
+\s_{\vec{a}}=
+\sigma\cdot\left[
+\vec{x}(2(\vec{a}\cdot\vec{a}) -1)
+-2\vec{a}\times(\vec{a}\times\vec{x})
+  \right]
+\eeq
+\end{claim}
+\proof
+\qed
+
+\begin{claim}
+\beq
+-\s_{\hat{n}}\s_{\vec{x}}\s_{\hat{n}}=
+\sigma_{\rho_{\hat{n}}\vec{x}}
+\eeq
+
+\beq
+\rho_{\hat{n}}\vec{x}=\vec{x} - 2(\hat{n}\cdot\vec{x})\hat{n}
+\eeq
+
+
+\
+
+
+
+\end{claim}
+\proof
+\qed
+
+\begin{claim}
+\beq
+[\s_{\vec{a}}, \s_{\vec{b}}]_+
+= 2(\vec{a}\cdot\vec{b})I
+\eeq
+
+\beq
+[\s_{\vec{a}}, \s_{\vec{b}}]
+= 2 i\s_{\vec{a}\times\vec{b}}
+\eeq
+
+\end{claim}
+\proof
+\qed
+
+
+
+Define
+
+\beq
+Cl(2)=span_\RR \{1, \s_1, \s_2, \s_1\s_2=i\s_3\}
+\eeq
+
+\beq
+Cl^0(2)=
+span_\RR\{1,\s_1\s_2=i\s_3\}
+=\{Ae^{i \theta \s_3}: \theta, A\in\RR\}
+\cong\CC
+\eeq
+
+\beq
+Cl^1(2)=
+span_\RR\{\s_1, \s_2\}
+\eeq
+
+\beq
+Cl(2)= Cl^0(2) \oplus Cl^0(2)
+\eeq
+
+\beq
+Spin(2)=
+\{
+e^{i\theta\s_3}:
+\theta\in\RR\}
+\cong U(1)
+\eeq
+
+
+
+\begin{claim}
+
+There is a 2 to 1 map
+(i.e., a {\bf double cover map}) from $Spin(2)$
+to $SO(2)$.
+\end{claim}
+\proof
+
+Note that
+if $x= e^{i\theta \s_3}$ and $v = v_1\s_1
++ v_2 \s_2$, 
+
+\beqa
+xx^\dagger &=&(\cos \theta + i\s_3 \sin \theta)(\cos \theta -i\s_3 \sin \theta)
+\\
+&=&
+\cos^2\theta + \sin^2\theta 
+\\
+&=& 1
+\eeqa
+
+ Let 
+
+
+\begin{align}
+xvx^\dagger
+&=
+\left(
+\begin{array}{cc}
+e^{i\theta} & 0
+\\
+0 & e^{-i\theta}
+\end{array}
+\right)
+\left(
+\begin{array}{cc}
+0 & v_1 - i v_2
+\\
+v_1 + i v_2 & 0
+\end{array}
+\right)
+\left(
+\begin{array}{cc}
+e^{-i\theta} & 0
+\\
+0 & e^{i\theta}
+\end{array}
+\right)
+\\
+&=
+\left(
+\begin{array}{cc}
+0&z^* e^{i2\theta}
+\\
+ze^{-i2\theta}&0
+\end{array}
+\right)  \quad (z = v_1 + i v_2)
+\\
+&=
+\left(
+\begin{array}{cc}
+0 & v'_1 - i v'_2
+\\
+v'_1 + i v'_2 & 0
+\end{array}
+\right)
+\end{align}
+
+\beq
+v_1' = \Re(ze^{-i2\theta})=
+v_1 \cos 2\theta + v_2 \sin \theta
+\eeq
+
+\beq
+v'_2 = \Im (ze^{-i2\theta})
+=
+-v_1 \sin 2\theta +
+v_2 \cos 2\theta
+\eeq
+
+\beq
+R_z(2\theta)=
+\left(
+\begin{array}{cc}
+\cos 2\theta & \sin 2\theta
+\\
+-\sin 2\theta & \cos 2\theta
+\end{array}
+\right)
+\eeq
+
+\beq
+\vec{v}= (v_1, v_2)^T,
+\quad 
+\vec{v'}= (v_1', v_2')^T
+\eeq
+
+\beq
+\vec{v'}= R_z(2\theta)\vec{v}
+\eeq
+
+The 2-1 map:
+
+\beq
+e^{i\theta\s_3}\mapsto R_z(2\theta)
+\eeq
+
+\qed
+
+\section{Gammions}
+
+\beq
+a\cdot b= a_\mu b^\mu
+\eeq
+
+Instead of $\s\cdot\vec{x}=\s_{\vec {x}}$
+
+\beq
+\gamma\cdot a = \gamma_\mu a^\mu = \gamma_a
+\eeq
+
+
+\beq
+[\gamma_\mu,\gamma_\nu]_+=2\eta_{\mu\nu}
+\eeq
+
+with $\eta_{\mu\nu}$ equals Euclidean $(1,1,1,1)$ or Lorentzian $(1, -1,-1,-1)$ metric.
+
+
+\beq
+\gamma_a \gamma_b
+= a\cdot b + i\gamma_{\mu\nu} a^\mu b^\nu,
+\eeq
+where bivector
+
+\beq
+\gamma_{\mu\nu}=-i\frac{1}{2}[\gamma_\mu,\gamma_\nu]
+\eeq
+is the generator of $\mathfrak{so}(n)$ or $\mathfrak{so}(p,q)$.
+
+
+A rotation by angle $\theta$ in 
+direction $n^{\mu\nu}$ where 
+$n^{\mu\nu}n_{\mu\nu}=1$ is
+
+\beq
+S(\theta)=e^{-i\frac{\theta}{2}n^{\mu\nu}\gamma_{\mu\nu}}
+\eeq
+
+\beq
+ S \gamma_x S^\dagger = \gamma_{Rx}
+\eeq
+where $R\in SO(n)$ (or $SO(p,q)$).
+ 
+
+\beq
+Spin(n)=
+\{e^{-i\frac{\theta}{2}n^{\mu\nu}\gamma_{\mu\nu}}|\theta\in \RR, 
+n^{\mu\nu}n_{\mu\nu}=1
+\}
+\eeq
+
+\beq
+Cl(n)=span_\RR\{ \gamma_{a_1}\gamma_{a_2}\ldots \gamma_{a_{k}}| k=0,1,2, \ldots int(n/2)\}
+\eeq
+
+If
+$n_-=n$ for $n$ even and $n_-=n-1$
+for $n$ odd.
+
+\beq
+Cl^0(n) = span_\RR\{ \gamma_{a_1}\gamma_{a_2}\ldots \gamma_{a_{k}}| k=0,2,4, \ldots n_-\}
+\eeq
+
+\beq
+Cl^1(n) = span_\RR\{ \gamma_{a_1}\gamma_{a_2}\ldots \gamma_{a_{k}}| k=1,3,5, \ldots n_-\}
+\eeq
+
+\beq
+Cl(n)= Cl^0(n) \oplus Cl^1(n)
+\eeq
+
+Since $S$ is the exponentiation of a bivector, its Taylor expansion only
+contains summands with an even number 
+of gammas.
+\beq
+Spin(n)
+\subset Cl^0(n)
+\eeq
+
+
+\beq
+ - \gamma_{\hat{n}} \gamma_{x} \gamma_{\hat{n}}=
+\gamma_{\rho_{\hat{n}}x}
+\eeq
+
+Reflection about axis $\hat{n}$
+\beq
+\rho_{\hat{n}}x
+=x - 2(\hat{n}\cdot x)\hat{n}
+\eeq
+
+Pin stands for \qt{Product of involutions}
+An involution in this case is a unit vector (i.e., $\hat{n}\in \RR^n$ such that
+$\hat{n}\cdot\hat{n}=\hat{n}^2=1$)
+\beq
+Pin(n)=\{\rho()| \rho(x)=-\gamma_{\hat{n}}\gamma_{x}\gamma_{\hat{n}}, \text{ for all  $\hat{n}$ such that $\hat{n}^2=1$}\}
+\eeq
+
+Note that
+
+One refection
+\beq
+det[\rho(x)] = -det(\gamma_x \gamma_{\hat{n}}^2)
+=-\det(\gamma_{x})
+\eeq
+
+Two reflections = a rotation
+\beq
+det[\rho_2\circ\rho_1(x)] = +
+\det(\gamma_{x})
+\eeq
+
+$Pin(n)$ is a double cover of $O(n)$
+\beq
+Pin(n)\xymatrix{\ar[r]_{\text{2 to 1 map}}&} O(n), \quad 
+Pin(n)/\{1, -1\}\cong 
+O(n)
+\eeq
+
+Another definition of $Spin(n)$
+\beq
+Spin(n)=\{\phi()| \phi(x)=\gamma_{a}\gamma_{x}\gamma_{a}, \text{ for all  $a\in \RR^4$}\}
+\eeq
