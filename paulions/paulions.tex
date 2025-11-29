@@ -42,7 +42,7 @@ Hermitian
 \s_i^\dagger = \s_i
 \eeq
 
-Square is 1 (and Unitary because Hermitian)
+Square is 1 (unitary too  because Hermitian)
 \beq 
 \s_i^2 = 1
 \eeq
@@ -75,7 +75,9 @@ Square is 1 (and Unitary because Hermitian)
 \s_\mu = (\s_0, \vec{\s})
 \eeq
 
-If $\vec{x}=(x_	1, x_2, x_3)\in\RR^3$
+Suppose $\vec{x}=(x_	1, x_2, x_3)\in\RR^3$. We define the 
+{\bf Paulion} $\s_{\vec{x}}$ by\footnote{The term Paulion is not commonly used. As far as I know, $\s_{\vec{a}}$ doesn't
+have a common name.}
 \beq
 \s_{\vec{x}} = \sigma\cdot \vec{x}=x_1\sigma_1 + x_2\sigma_2 + x_3\sigma_3
 \eeq
@@ -110,7 +112,7 @@ e^{i\s_{\vec{a}}}=
 +
 i \s_{\hat{a}}\sin |\vec{a}|
 \eeq
-where 
+and
 
 \beq
 U=e^{-i\frac{\theta}{2}\s_{\hat{a}}}=
@@ -120,15 +122,22 @@ U=e^{-i\frac{\theta}{2}\s_{\hat{a}}}=
 \proof
 
 \beq
-e^{i\
+e^{i
 \theta \s_i}=
 \cos \theta
 +
 i \s_i \sin \theta 
 \eeq
-
-
 \qed
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=2.5in]
+{paulions/Rx-pic.png}
+\caption{Geometry of $R_{\hat{a}}(\theta)x$}
+\label{fig-Rx-pic}
+\end{figure}
+
 
 \begin{claim}
 \beq
@@ -144,11 +153,19 @@ U=e^{-i\frac{\theta}{2}\s_{\hat{a}}}
 
 \beq
 R_{\hat{a}}(\theta)\vec{x}=
-\vec{x}\cos\theta
-+
-(\hat{a}\times\vec{x})\sin\theta
-+
-\hat{a}(\hat{a}\cdot\vec{x})(1-\cos\theta)
+\vec{x}
++(2|\vec{x}|\sin\beta\sin\theta)(-\sin\theta \hat{r}+
+\cos\theta \hat{\theta})
+\eeq
+where (see Fig.\ref{fig-Rx-pic})
+
+\beq
+\beta=\angle(\vec{x}, \vec{a}),\quad
+\hat{\theta}=
+\frac{(\hat{a}\times\vec{x})}
+{|\vec{x}|\sin\beta},\quad
+\hat{r}=
+\frac{[\vec{x}-\hat{a}(\hat{a}\cdot\vec{x})]}{|\vec{x}|\sin\beta}
 \eeq
 This immediately implies that
 $SU(2)$ is a double cover of $SO(3)$.
@@ -157,6 +174,10 @@ $SU(2)$ is a double cover of $SO(3)$.
 SU(2)\xymatrix{\ar[r]_{\text{2 to 1 map}}&} SO(3),\quad SU(2)/\{1, -1\} \cong SO(3)\eeq
 \end{claim}
 \proof
+
+
+
+
 
 
 If $U$ produces rotation $R$, then $-U$ gives the same rotation:
@@ -184,7 +205,7 @@ If $U$ produces rotation $R$, then $-U$ gives the same rotation:
 \begin{claim}
 \beq
 -\s_{\hat{a}}\s_{\vec{x}}\s_{\hat{a}}=
-\sigma_{\rho_{\hat{a}}\vec{x}}=\phi_{\hat{a}}(\vec{x})
+\sigma_{\rho_{\hat{a}}\vec{x}}=\gamma_{\hat{\rva}}(\vec{x})
 \eeq
 
 \beq
@@ -225,7 +246,11 @@ If $U$ produces rotation $R$, then $-U$ gives the same rotation:
 a\cdot b= a_\mu b^\mu
 \eeq
 
-Instead of $\s\cdot\vec{x}=\s_{\vec {x}}$
+Suppose $a_\mu\in\RR$
+for each $\mu$. We define
+the {\bf Gammion} $\gamma_a$ by\footnote{The term Gammion, like the term Paulion, is not commonly used. As far as I know, $\gamma_a$ doesn't
+have a common name.}
+
 
 \beq
 \gamma\cdot a = \gamma_\mu a^\mu = \gamma_a
@@ -251,44 +276,90 @@ where bivector
 is the generator of $\mathfrak{so}(n)$ or $\mathfrak{so}(p,q)$.
 
 
-A rotation by angle $\theta$ in 
-direction $n^{\mu\nu}$ where 
-$n^{\mu\nu}n_{\mu\nu}=1$ is
+A rotation by  $\omega_{\mu\nu}$   is
 
 \beq
 S(\omega)=e^{-\;\frac{i}{4}\omega^{\mu\nu}\gamma_{\mu\nu}}
 \eeq
 
 \beq
- S \gamma_x S^\dagger = \gamma_{Rx}
+ S \gamma_\rvx S^\dagger = \gamma_{Rx}
 \eeq
 where $R\in SO(n)$ (or $SO(p,q)$).
  
 \section{$Spin(n)$}
 \beq
 Spin(n)=
-\{e^{-\frac{i}{4}\omega^{\mu\nu}\gamma_{\mu\nu}}|\theta\in \RR, 
+\{e^{-\frac{i}{4}\omega^{\mu\nu}\gamma_{\mu\nu}}|
 \omega_{\mu\nu}=-\omega_{\nu\mu}\in\RR
 \}
 \eeq
 
-\beq
-Cl(n)=span_\RR\{ \gamma_{a_1}\gamma_{a_2}\ldots \gamma_{a_{k}}| k=0,1,2, \ldots int(n/2)\}
-\eeq
 
-
-
-
-If
 $n_-=n$ for $n$ even and $n_-=n-1$
 for $n$ odd.
 
+$e_i\in\RR^n$ for $i=1, 2, \ldots n$. All components
+of $e_i$ are zero except the $i$th one.
+
 \beq
-Cl^0(n) = span_\RR\{ \gamma_{a_1}\gamma_{a_2}\ldots \gamma_{a_{k}}| k=0,2,4, \ldots n_-\}
+\gamma_i=\gamma_{\rve_i}
 \eeq
 
 \beq
-Cl^1(n) = span_\RR\{ \gamma_{a_1}\gamma_{a_2}\ldots \gamma_{a_{k}}| k=1,3,5, \ldots n_-\}
+[\gamma_{i}, \gamma_{j}]_+ = 2 \delta_{i,j}
+\eeq
+
+\beq
+\Pi_0 = \{1\},
+\quad |\Pi_0|=1
+\eeq
+
+\beq
+\Pi_1=\{\gamma_i|i=1, 2, \ldots, n\}
+\quad |\Pi_1|={n\choose 1}=n
+\eeq
+
+\beq
+\Pi_2=
+\{ \gamma_{i_1}\gamma_{ i_2}|i_1<i_2 \},
+\quad |\Pi_2|={n\choose 2}
+\eeq
+
+\beq
+\Pi_3=
+\{ \gamma_{i_1}\gamma_{ i_2}\gamma_{i_3}|i_1<i_2<i_3 \},
+\quad |\Pi_3|={n\choose 3}
+\eeq
+
+\beq
+\Pi_{2^n}=
+\{\gamma_1\gamma_2\ldots\gamma_n\},
+\quad |\Pi_{2^n}|={n\choose n}=1
+\eeq
+
+\beq
+\sum_{k=0}^n {n\choose k}= (1+1)^n=2^n
+\eeq
+
+\beq
+Cl(n)=span_\RR
+\left(\bigcup_{k=0,1,2,\ldots, 2^n}\Pi_k
+\right)
+\eeq
+
+
+
+\beq
+Cl^0(n) = span_\RR
+\left(\bigcup_{k=0,2,4,\ldots ,2^{n_-}}\Pi_k
+\right)
+\eeq
+
+\beq
+Cl^1(n) = span_\RR
+\left(\bigcup_{k=1,3,5,\ldots ,2^{n_-}}\Pi_k
+\right)
 \eeq
 
 \beq
@@ -305,8 +376,8 @@ Spin(n)
 
 
 \beq
- - \gamma_{\hat{a}} \gamma_{x} \gamma_{\hat{a}}=
-\gamma_{\rho_{\hat{a}}x}=\phi_{\hat{a}}(x)
+ - \gamma_{\hat{\rva}} \gamma_{\rvx} \gamma_{\hat{\rva}}=
+\gamma_{\ul{\rho_{\hat{a}}x}}=\gamma_{\hat{\rva}}(x)
 \eeq
 
 Reflection about axis $\hat{a}$
@@ -321,16 +392,15 @@ S^n =\{\hat{a}\in\RR^n| \hat{a}^2=1\}
 
 Pin stands for \qt{Product of involutions}
 An involution in this case is a unit vector (i.e., $\hat{a}\in \RR^n$ such that
-$\hat{a}\cdot\hat{a}=\hat{a}^2=1$)
+$\hat{a}\cdot\hat{a}=\hat{a}^2=1$) $Pin(n)$ group
 \beqa
 Pin(n)
 &=&\cup_{k=1}^\infty
 \{
-\phi_{\hat{a}_{1}}
-\circ
-\phi_{\hat{a}_{1}}
-\circ\ldots\circ
-\phi_{\hat{a}_{k}}
+\gamma_{\hat{\rva}_{1}}
+\gamma_{\hat{\rva}_{1}}
+\ldots
+\gamma_{\hat{\rva}_{k}}
 | \hat{a}_{i}\in S^n \text{ for all $i$}\}
 \eeqa
 
@@ -338,14 +408,14 @@ Note that
 
 One refection
 \beq
-det[\phi_{\hat{a}}(x)] = -det(\gamma_x \gamma_{\hat{a}}^2)
-=-\det(\gamma_{x})
+det[\gamma_{\hat{\rva}}(x)] = -det(\gamma_\rvx \gamma_{\hat{\rva}}^2)
+=-\det(\gamma_{\rvx})
 \eeq
 
 Two reflections = a rotation
 \beq
-det[\phi_{\hat{a}_1}\circ\phi_{\hat{a}_2}(x)] = +
-\det(\gamma_{x})
+det[\gamma_{\hat{\rva}_1}\gamma_{\hat{\rva}_2}(x)] = +
+\det(\gamma_{\rvx})
 \eeq
 
 $Pin(n)$ is a double cover of $O(n)$
@@ -356,20 +426,20 @@ Pin(n)/\{1, -1\}\cong
 O(n)
 \eeq
 
-Another definition of $Spin(n)$
+Another definition of $Spin(n)$ group. This definition
+in terms of gammions instead of group generators
 \beq
 Spin(n)=\cup_{k=1}^\infty
 \{
-\phi_{\hat{a}_{1}}
-\circ
-\phi_{\hat{a}_{1}}
-\circ\ldots\circ
-\phi_{\hat{a}_{{2k}}}
+\gamma_{\hat{\rva}_{1}}
+\gamma_{\hat{\rva}_{1}}
+\ldots
+\gamma_{\hat{\rva}_{{2k}}}
 | \hat{a}_{i}\in S^n \text{ for all $i$}\}
 \eeq
 
 $Spin(n)$ is a double cover of $SO(n)$
-(because $\phi_{\hat{a}}=\phi_{-\hat{a}}
+(because $\gamma_{\hat{\rva}}=\phi_{-\hat{a}}
 $)
 \beq
 Spin(n)\xymatrix{\ar[r]_{\text{2 to 1 map}}&} SO(n), \quad 
@@ -392,23 +462,28 @@ $\gamma_\mu\in\CC^{d\times d}$,
 where $d=\intntwo$.
 
 The complex representation of 
-gamma matrices are easy to discuss and construct, and we discuss them next.
-They are the ones used in Quantum Electodynamics and the Dirac equation. 
+gamma matrices are easy to discuss and construct, and we discuss them below.
+They are used in Quantum Electodynamics and the Dirac equation. 
 
-Real representations of the gamma
- matrices are much harder to
-construct, so we won't discuss them here. They are characterized by 
+The real representations of the gamma
+ matrices are more complicated than the complex ones, so we won't discuss them here. They are characterized by 
 something called Bott periodicity. They arise when considering
 supersymmetric theories and String theory.
 
 
 Spinors are the vector space
 that the gamma matrix algebra (Clifford algebra) acts on.
-If we use complex gamma matrices,
+
+Note that
+\begin{enumerate}
+\item If we use complex gamma matrices as is done in Quantum Electrodynamics,
 then spinors are complex. 
-This causes a bit of confusion to
-beginners because even though the the spinor has complex entries even though the
-definition of the group $Spin(n)$ uses only real matrices on the basis of gamma matrix products.
+\item  $Spin(n)$ is a span over reals of gamma matrix products
+\end{enumerate}
+The fact that 1 and 2 are
+true simultaneously
+can cause some confusion
+in beginners.
 
 So for complex gamma matrices, we have:
 
