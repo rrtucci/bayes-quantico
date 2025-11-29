@@ -217,7 +217,263 @@ If $U$ produces rotation $R$, then $-U$ gives the same rotation:
 
 
 
-Example, $n=2$, $Spin(2)$ and $SO(2)$
+
+
+\section{Gammions}
+
+\beq
+a\cdot b= a_\mu b^\mu
+\eeq
+
+Instead of $\s\cdot\vec{x}=\s_{\vec {x}}$
+
+\beq
+\gamma\cdot a = \gamma_\mu a^\mu = \gamma_a
+\eeq
+
+
+\beq
+[\gamma_\mu,\gamma_\nu]_+=2\eta_{\mu\nu}
+\eeq
+
+with $\eta_{\mu\nu}$ equals Euclidean $(1,1,1,1)$ or Lorentzian $(1, -1,-1,-1)$ metric.
+
+
+\beq
+\gamma_a \gamma_b
+= a\cdot b + i\gamma_{\mu\nu} a^\mu b^\nu,
+\eeq
+where bivector
+
+\beq
+\gamma_{\mu\nu}=-i\frac{1}{2}[\gamma_\mu,\gamma_\nu]
+\eeq
+is the generator of $\mathfrak{so}(n)$ or $\mathfrak{so}(p,q)$.
+
+
+A rotation by angle $\theta$ in 
+direction $n^{\mu\nu}$ where 
+$n^{\mu\nu}n_{\mu\nu}=1$ is
+
+\beq
+S(\omega)=e^{-\;\frac{i}{4}\omega^{\mu\nu}\gamma_{\mu\nu}}
+\eeq
+
+\beq
+ S \gamma_x S^\dagger = \gamma_{Rx}
+\eeq
+where $R\in SO(n)$ (or $SO(p,q)$).
+ 
+\section{$Spin(n)$}
+\beq
+Spin(n)=
+\{e^{-\frac{i}{4}\omega^{\mu\nu}\gamma_{\mu\nu}}|\theta\in \RR, 
+\omega_{\mu\nu}=-\omega_{\nu\mu}\in\RR
+\}
+\eeq
+
+\beq
+Cl(n)=span_\RR\{ \gamma_{a_1}\gamma_{a_2}\ldots \gamma_{a_{k}}| k=0,1,2, \ldots int(n/2)\}
+\eeq
+
+
+
+
+If
+$n_-=n$ for $n$ even and $n_-=n-1$
+for $n$ odd.
+
+\beq
+Cl^0(n) = span_\RR\{ \gamma_{a_1}\gamma_{a_2}\ldots \gamma_{a_{k}}| k=0,2,4, \ldots n_-\}
+\eeq
+
+\beq
+Cl^1(n) = span_\RR\{ \gamma_{a_1}\gamma_{a_2}\ldots \gamma_{a_{k}}| k=1,3,5, \ldots n_-\}
+\eeq
+
+\beq
+Cl(n)= Cl^0(n) \oplus Cl^1(n)
+\eeq
+
+Since $S$ is the exponentiation of a bivector, its Taylor expansion only
+contains summands with an even number 
+of gammas.
+\beq
+Spin(n)
+\subset Cl^0(n)
+\eeq
+
+
+\beq
+ - \gamma_{\hat{a}} \gamma_{x} \gamma_{\hat{a}}=
+\gamma_{\rho_{\hat{a}}x}=\phi_{\hat{a}}(x)
+\eeq
+
+Reflection about axis $\hat{a}$
+\beq
+\rho_{\hat{a}}x
+=x - 2(\hat{a}\cdot x)\hat{a}
+\eeq
+
+\beq
+S^n =\{\hat{a}\in\RR^n| \hat{a}^2=1\}
+\eeq
+
+Pin stands for \qt{Product of involutions}
+An involution in this case is a unit vector (i.e., $\hat{a}\in \RR^n$ such that
+$\hat{a}\cdot\hat{a}=\hat{a}^2=1$)
+\beqa
+Pin(n)
+&=&\cup_{k=1}^\infty
+\{
+\phi_{\hat{a}_{1}}
+\circ
+\phi_{\hat{a}_{1}}
+\circ\ldots\circ
+\phi_{\hat{a}_{k}}
+| \hat{a}_{i}\in S^n \text{ for all $i$}\}
+\eeqa
+
+Note that
+
+One refection
+\beq
+det[\phi_{\hat{a}}(x)] = -det(\gamma_x \gamma_{\hat{a}}^2)
+=-\det(\gamma_{x})
+\eeq
+
+Two reflections = a rotation
+\beq
+det[\phi_{\hat{a}_1}\circ\phi_{\hat{a}_2}(x)] = +
+\det(\gamma_{x})
+\eeq
+
+$Pin(n)$ is a double cover of $O(n)$
+(because $det=\pm1$)
+\beq
+Pin(n)\xymatrix{\ar[r]_{\text{2 to 1 map}}&} O(n), \quad 
+Pin(n)/\{1, -1\}\cong 
+O(n)
+\eeq
+
+Another definition of $Spin(n)$
+\beq
+Spin(n)=\cup_{k=1}^\infty
+\{
+\phi_{\hat{a}_{1}}
+\circ
+\phi_{\hat{a}_{1}}
+\circ\ldots\circ
+\phi_{\hat{a}_{{2k}}}
+| \hat{a}_{i}\in S^n \text{ for all $i$}\}
+\eeq
+
+$Spin(n)$ is a double cover of $SO(n)$
+(because $\phi_{\hat{a}}=\phi_{-\hat{a}}
+$)
+\beq
+Spin(n)\xymatrix{\ar[r]_{\text{2 to 1 map}}&} SO(n), \quad 
+Spin(n)/\{1, -1\}\cong 
+SO(n)
+\eeq
+\section{Representations of $Spin(n)$}
+
+$Cl(n), Pin(n), Spin(n)$ are
+all spans over the reals
+of products of gamma matrices.
+However, the question
+arises, are we going
+to use a representation of
+the  gamma matrices, if it exists, 
+such that
+ $\gamma_\mu\in\RR^{d\times d}$
+or are we going to use
+$\gamma_\mu\in\CC^{d\times d}$,
+where $d=\intntwo$.
+
+The complex representation of 
+gamma matrices are easy to discuss and construct, and we discuss them next.
+They are the ones used in Quantum Electodynamics and the Dirac equation. 
+
+Real representations of the gamma
+ matrices are much harder to
+construct, so we won't discuss them here. They are characterized by 
+something called Bott periodicity. They arise when considering
+supersymmetric theories and String theory.
+
+
+Spinors are the vector space
+that the gamma matrix algebra (Clifford algebra) acts on.
+If we use complex gamma matrices,
+then spinors are complex. 
+This causes a bit of confusion to
+beginners because even though the the spinor has complex entries even though the
+definition of the group $Spin(n)$ uses only real matrices on the basis of gamma matrix products.
+
+So for complex gamma matrices, we have:
+
+\begin{itemize} 
+\item even $n$, $n=2k$
+
+\beq
+\gamma_\mu, Cl(n), Spin(n)
+\in \CC^{k\times k}
+\eeq
+
+Can define
+a nontrivial  chirality operator:
+
+\beq
+\gfive= i^{n/2} \gamma_1\gamma_2\cdots\gamma_n.
+\eeq
+
+$\gfive$ satisfies:
+\begin{itemize}
+\item anticommutes with
+all the $\gamma_\mu$
+
+\item commutes with the elements of group $Spin(n)$
+(product of even number of gammas)
+
+\item
+$\gfive^2=1$.
+\end{itemize}
+Therefore it has eigenvalues $1, -1$.
+If $S=\CC^{n/2}$,
+then
+
+\beq
+S = S_+ \oplus S_-,
+\eeq
+where:
+
+\beq
+S_\pm = 
+\{\psi \in S \mid \gfive \psi = \pm \psi\}
+\eeq
+These are the two Weyl (or chiral) spinors in even $n$.
+
+
+\item odd $n$, $n=2k+1$
+
+\beq
+\gamma_\mu, Cl(n), Spin(n)
+\in \CC^{k\times k}
+\oplus \CC^{k\times k}
+\eeq
+
+For odd $n$, $\gamma^1\cdots\gamma^n$ is proportional to the identity. Hence,
+there is no new operator  that commutes with all the elements of $Spin(n)$ and there is no
+chiral decomposition of vector space $S$.
+The space $S$ is irreducible.
+
+\end{itemize}
+
+
+
+\section{Examples}
+\hrule
+$n=2$, $Spin(2)$ and $SO(2)$
 
 \beq
 Cl(2)=span_\RR \{1, \s_1, \s_2, \s_1\s_2=i\s_3\}
@@ -344,157 +600,51 @@ e^{i\theta\s_3}\mapsto R_z(2\theta)
 
 \qed
 
-\section{Gammions}
-
-\beq
-a\cdot b= a_\mu b^\mu
-\eeq
-
-Instead of $\s\cdot\vec{x}=\s_{\vec {x}}$
-
-\beq
-\gamma\cdot a = \gamma_\mu a^\mu = \gamma_a
-\eeq
+\hrule
+Quaternions
 
 
 \beq
-[\gamma_\mu,\gamma_\nu]_+=2\eta_{\mu\nu}
+q= a + x\mathbf{i}
++ y\mathbf{j}
++
+\mathbf{k}
 \eeq
-
-with $\eta_{\mu\nu}$ equals Euclidean $(1,1,1,1)$ or Lorentzian $(1, -1,-1,-1)$ metric.
-
+where $a,x,y,z\in\RR$
 
 \beq
-\gamma_a \gamma_b
-= a\cdot b + i\gamma_{\mu\nu} a^\mu b^\nu,
+i\sigma_1 \leftrightarrow \mathbf{i},\qquad
+i\sigma_2 \leftrightarrow \mathbf{j},\qquad
+i\sigma_3 \leftrightarrow \mathbf{k}
 \eeq
-where bivector
 
+Quaternion multiplication rules
 \beq
-\gamma_{\mu\nu}=-i\frac{1}{2}[\gamma_\mu,\gamma_\nu]
-\eeq
-is the generator of $\mathfrak{so}(n)$ or $\mathfrak{so}(p,q)$.
-
-
-A rotation by angle $\theta$ in 
-direction $n^{\mu\nu}$ where 
-$n^{\mu\nu}n_{\mu\nu}=1$ is
-
-\beq
-S(\theta)=e^{-i\frac{\theta}{2}n^{\mu\nu}\gamma_{\mu\nu}}
-\eeq
-
-\beq
- S \gamma_x S^\dagger = \gamma_{Rx}
-\eeq
-where $R\in SO(n)$ (or $SO(p,q)$).
- 
-
-\beq
-Spin(n)=
-\{e^{-i\frac{\theta}{2}n^{\mu\nu}\gamma_{\mu\nu}}|\theta\in \RR, 
-n^{\mu\nu}n_{\mu\nu}=1
-\}
-\eeq
-
-\beq
-Cl(n)=span_\RR\{ \gamma_{a_1}\gamma_{a_2}\ldots \gamma_{a_{k}}| k=0,1,2, \ldots int(n/2)\}
-\eeq
-
-If
-$n_-=n$ for $n$ even and $n_-=n-1$
-for $n$ odd.
-
-\beq
-Cl^0(n) = span_\RR\{ \gamma_{a_1}\gamma_{a_2}\ldots \gamma_{a_{k}}| k=0,2,4, \ldots n_-\}
-\eeq
-
-\beq
-Cl^1(n) = span_\RR\{ \gamma_{a_1}\gamma_{a_2}\ldots \gamma_{a_{k}}| k=1,3,5, \ldots n_-\}
-\eeq
-
-\beq
-Cl(n)= Cl^0(n) \oplus Cl^1(n)
-\eeq
-
-Since $S$ is the exponentiation of a bivector, its Taylor expansion only
-contains summands with an even number 
-of gammas.
-\beq
-Spin(n)
-\subset Cl^0(n)
+(i\sigma_i)(i\sigma_j)
+= -(\delta_{ij} + i\epsilon_{ijk}\sigma_k)
 \eeq
 
 
-\beq
- - \gamma_{\hat{a}} \gamma_{x} \gamma_{\hat{a}}=
-\gamma_{\rho_{\hat{a}}x}=\phi_{\hat{a}}(x)
-\eeq
 
-Reflection about axis $\hat{a}$
-\beq
-\rho_{\hat{a}}x
-=x - 2(\hat{a}\cdot x)\hat{a}
-\eeq
 
-\beq
-S^n =\{\hat{a}\in\RR^n| \hat{a}^2=1\}
-\eeq
 
-Pin stands for \qt{Product of involutions}
-An involution in this case is a unit vector (i.e., $\hat{a}\in \RR^n$ such that
-$\hat{a}\cdot\hat{a}=\hat{a}^2=1$)
-\beqa
-Pin(n)
-&=&\cup_{k=1}^\infty
-\{
-\phi_{\hat{a}_{1}}
-\circ
-\phi_{\hat{a}_{1}}
-\circ\ldots\circ
-\phi_{\hat{a}_{k}}
-| \hat{a}_{i}\in S^n \text{ for all $i$}\}
-\eeqa
 
-Note that
 
-One refection
-\beq
-det[\phi_{\hat{a}}(x)] = -det(\gamma_x \gamma_{\hat{a}}^2)
-=-\det(\gamma_{x})
-\eeq
 
-Two reflections = a rotation
-\beq
-det[\phi_{\hat{a}_1}\circ\phi_{\hat{a}_2}(x)] = +
-\det(\gamma_{x})
-\eeq
 
-$Pin(n)$ is a double cover of $O(n)$
-($det=\pm1$)
-\beq
-Pin(n)\xymatrix{\ar[r]_{\text{2 to 1 map}}&} O(n), \quad 
-Pin(n)/\{1, -1\}\cong 
-O(n)
-\eeq
 
-Another definition of $Spin(n)$
-\beq
-Spin(n)=\cup_{k=1}^\infty
-\{
-\phi_{\hat{a}_{1}}
-\circ
-\phi_{\hat{a}_{1}}
-\circ\ldots\circ
-\phi_{\hat{a}_{{2k}}}
-| \hat{a}_{i}\in S^n \text{ for all $i$}\}
-\eeq
 
-$Spin(n)$ is a double cover of $SO(n)$
-($\phi_{\hat{a}}=\phi_{-\hat{a}}
-$)
-\beq
-Spin(n)\xymatrix{\ar[r]_{\text{2 to 1 map}}&} SO(n), \quad 
-Spin(n)/\{1, -1\}\cong 
-SO(n)
-\eeq
+
+
+
+
+
+
+
+
+
+
+
+
+
+
