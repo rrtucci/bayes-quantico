@@ -150,6 +150,7 @@ where
 \beq
 U=e^{-i\frac{\theta}{2}\s_{\hat{a}}}
 \eeq
+and (this is called Rodrigues formula)
 
 \beq
 R_{\hat{a}}(\theta)\vec{x}=
@@ -168,10 +169,10 @@ where (see Fig.\ref{fig-Rx-pic})
 \frac{[\vec{x}-\hat{a}(\hat{a}\cdot\vec{x})]}{|\vec{x}|\sin\beta}
 \eeq
 This immediately implies that
-$SU(2)$ is a double cover of $SO(3)$.
+$SU(2)_\RR$ is a double cover of $SO(3)$.
 
 \beq
-SU(2)\xymatrix{\ar[r]_{\text{2 to 1 map}}&} SO(3),\quad SU(2)/\{1, -1\} \cong SO(3)\eeq
+SU(2)_\RR\dmap SO(3),\quad SU(2)_\RR/\{1, -1\} \cong SO(3)\eeq
 \end{claim}
 \proof
 
@@ -266,20 +267,20 @@ with $\eta_{\mu\nu}$ equals Euclidean $(1,1,1,1)$ or Lorentzian $(1, -1,-1,-1)$ 
 
 \beq
 \gamma_a \gamma_b
-= a\cdot b + i\gamma_{\mu\nu} a^\mu b^\nu,
+= a\cdot b + \gamma_{\mu\nu} a^\mu b^\nu,
 \eeq
 where bivector
 
 \beq
-\gamma_{\mu\nu}=-i\frac{1}{2}[\gamma_\mu,\gamma_\nu]
+\gamma_{\mu\nu}=\frac{1}{2}[\gamma_\mu,\gamma_\nu]
 \eeq
-is the generator of $\mathfrak{so}(n)$ or $\mathfrak{so}(p,q)$.
+is the generator of $\mathfrak{so}(n)_\RR$ or $\mathfrak{so}(p,q)$.
 
 
 A rotation by  $\omega_{\mu\nu}$   is
 
 \beq
-S(\omega)=e^{-\;\frac{i}{4}\omega^{\mu\nu}\gamma_{\mu\nu}}
+S(\omega)=e^{\;\frac{1}{2}\omega^{\mu\nu}\gamma_{\mu\nu}}
 \eeq
 
 \beq
@@ -287,13 +288,29 @@ S(\omega)=e^{-\;\frac{i}{4}\omega^{\mu\nu}\gamma_{\mu\nu}}
 \eeq
 where $R\in SO(n)$ (or $SO(p,q)$).
  
-\section{$Spin(n)$}
+\section{$Spin(n)_\RR$}
+
+%Mathematicians use $Cl(n)_\RR$, $Pin(n)_\RR$, $Spin(n)_\RR$ to mean
+%$Cl(n; \FF)$, $Pin(n)_\FF$, $Spin(n)_\FF$ with $\FF=\RR$
+%but some people,
+%especially physicists, use it to
+%mean the \qt{complexified} versions 
+%with $\FF=\CC$.
+%To avoid confusion,
+%here we will
+%write the field $\FF$ explicitly.
+%In Quantum Mechanics, we use
+%$Spin(n)_\CC$. 
+
 \beq
-Spin(n)=
-\{e^{-\frac{i}{4}\omega^{\mu\nu}\gamma_{\mu\nu}}|
+Spin(n)_\RR=
+\{e^{\frac{1}{2}\omega^{\mu\nu}\gamma_{\mu\nu}}|
 \omega_{\mu\nu}=-\omega_{\nu\mu}\in\RR
 \}
 \eeq
+
+Spinors are the vector space
+that the group $Spin(n)_\RR$ acts on.
 
 
 $n_-=n$ for $n$ even and $n_-=n-1$
@@ -343,7 +360,7 @@ of $e_i$ are zero except the $i$th one.
 \eeq
 
 \beq
-Cl(n)=span_\RR
+Cl(n)_\RR=span_\RR
 \left(\bigcup_{k=0,1,2,\ldots, 2^n}\Pi_k
 \right)
 \eeq
@@ -351,27 +368,27 @@ Cl(n)=span_\RR
 
 
 \beq
-Cl^0(n) = span_\RR
+Cl^0(n)_\RR = span_\RR
 \left(\bigcup_{k=0,2,4,\ldots ,2^{n_-}}\Pi_k
 \right)
 \eeq
 
 \beq
-Cl^1(n) = span_\RR
+Cl^1(n)_\RR = span_\RR
 \left(\bigcup_{k=1,3,5,\ldots ,2^{n_-}}\Pi_k
 \right)
 \eeq
 
 \beq
-Cl(n)= Cl^0(n) \oplus Cl^1(n)
+Cl(n)_\RR= Cl^0(n)_\RR \oplus Cl^1(n)_\RR
 \eeq
 
 Since $S$ is the exponentiation of a bivector, its Taylor expansion only
 contains summands with an even number 
 of gammas.
 \beq
-Spin(n)
-\subset Cl^0(n)
+Spin(n)_\RR
+\subset Cl^0(n)_\RR
 \eeq
 
 
@@ -401,9 +418,9 @@ S^n =\{\hat{a}\in\RR^n| \hat{a}^2=1\}
 
 Pin stands for \qt{Product of involutions}
 An involution in this case is a unit vector (i.e., $\hat{a}\in \RR^n$ such that
-$\hat{a}\cdot\hat{a}=\hat{a}^2=1$) $Pin(n)$ group
+$\hat{a}\cdot\hat{a}=\hat{a}^2=1$) $Pin(n)_\RR$ group
 \beqa
-Pin(n)
+Pin(n)_\RR
 &=&\cup_{k=1}^\infty
 \{
 \gamma_{\hat{\rva}_{1}}
@@ -427,18 +444,18 @@ det[\gamma_{\hat{\rva}_1}\gamma_{\hat{\rva}_2}(x)] = +
 \det(\gamma_{\rvx})
 \eeq
 
-$Pin(n)$ is a double cover of $O(n)$
+$Pin(n)_\RR$ is a double cover of $O(n)$
 (because $det=\pm1$)
 \beq
-Pin(n)\xymatrix{\ar[r]_{\text{2 to 1 map}}&} O(n), \quad 
-Pin(n)/\{1, -1\}\cong 
+Pin(n)_\RR\dmap O(n), \quad 
+Pin(n)_\RR/\{1, -1\}\cong 
 O(n)
 \eeq
 
-Another definition of $Spin(n)$ group. This definition
+Another definition of $Spin(n)_\RR$ group. This definition
 in terms of gammions instead of group generators
 \beq
-Spin(n)=\cup_{k=1}^\infty
+Spin(n)_\RR=\cup_{k=1}^\infty
 \{
 \gamma_{\hat{\rva}_{1}}
 \gamma_{\hat{\rva}_{1}}
@@ -447,60 +464,67 @@ Spin(n)=\cup_{k=1}^\infty
 | \hat{a}_{i}\in S^n \text{ for all $i$}\}
 \eeq
 
-$Spin(n)$ is a double cover of $SO(n)$
+$Spin(n)_\RR$ is a double cover of $SO(n)$
 (because $\gamma_{\hat{\rva}}=\phi_{-\hat{a}}
 $)
 \beq
-Spin(n)\xymatrix{\ar[r]_{\text{2 to 1 map}}&} SO(n), \quad 
-Spin(n)/\{1, -1\}\cong 
+Spin(n)_\RR\dmap SO(n), \quad 
+Spin(n)_\RR/\{1, -1\}\cong 
 SO(n)
 \eeq
-\section{Representations of $Spin(n)$}
+\section{Representations of $Spin(n)_\RR$}
 
-$Cl(n), Pin(n), Spin(n)$ are
-all spans over the reals
-of products of gamma matrices.
-However, the question
-arises, are we going
-to use a representation of
-the  gamma matrices, if it exists, 
-such that
- $\gamma_\mu\in\RR^{d\times d}$
-or are we going to use
-$\gamma_\mu\in\CC^{d\times d}$,
-where $d=\intntwo$.
+$Cl(n)_\FF$ is a span over $\FF=\RR,\CC$
+and $Spin(n)_\FF\subset Cl^0(n)_\FF$. 
 
-The complex representation of 
-gamma matrices are easy to discuss and construct, and we discuss them below.
-They are used in Quantum Electodynamics and the Dirac equation. 
-
-The real representations of the gamma
- matrices are more complicated than the complex ones, so we won't discuss them here. They are characterized by 
-something called Bott periodicity. They arise when considering
-supersymmetric theories and String theory.
-
-
-Spinors are the vector space
-that the gamma matrix algebra (Clifford algebra) acts on.
-
-Note that
+Careful. The following dual 
+possibilities are not equivalent
 \begin{enumerate}
-\item If we use complex gamma matrices as is done in Quantum Electrodynamics,
-then spinors are complex. 
-\item  $Spin(n)$ is a span over reals of gamma matrix products
+\item representation of $Spin(n)_\FF$
+is real or complex
+\item Spinor space on which $Spin(n)_\FF$ acts is real or complex
+\item $\gamma$ matrices are real or complex
 \end{enumerate}
-The fact that 1 and 2 are
-true simultaneously
-can cause some confusion
-in beginners.
 
-So for complex gamma matrices, we have:
+When you go from a vector space
+\beq V_\RR =span_\RR(e_1, e_2, \ldots, e_n)\eeq
+to \beq V_\CC =span_\CC(e_1, e_2, \ldots, e_n),\eeq this is said to
+be a {\bf complexification} of
+the vector space. Lie Algebras are
+real vector spaces, so they can be 
+complexified, although they rarely are. $Cl(n)_\CC$ is the complexification
+of  $Cl(n)_\RR$.
+
+$Spin(n)_\RR \dmap SO(n;\RR)$
+and 
+$Spin(n)_\CC \dmap SO(n;\CC)$.
+Rotations by a complex angle as in $SO(n)_\CC$ are meaningless,
+even in Quantum Mechanics. 
+In Physics, only
+$Spin(n)_\RR$ arises.
+However, in Quantum Mechanics,
+we use complex representations 
+of $Spin(n)_\RR$
+and a complex spinor space.
+A complex rep of $Spin(n)_\RR$
+and $Spin(n)_\CC$
+are not the same thing although
+some people erroneously equate them.
+
+The irreps of $Spin(n)_\RR$
+are complicated. They can be 
+real, complex and even quaternionic. Rather than depending on $n$, they depend on $n \mod 8$ (or, in Python notation, $n\% 8$,
+the remainder after dividing $n$ by 8.) (Bott Periodicity).
+The complex irreps of $Spin(n)_\RR$,
+for those $n$ for which they exist,
+such as $n=4$, are as follows:
+
 
 \begin{itemize} 
 \item even $n$, $n=2k$
 
 \beq
-\{\gamma_\mu\}_{\mu=1}^n, Cl(n), Spin(n)
+ Cl(n)_\RR, Spin(n)_\RR
 \subset \CC^{k\times k}
 \eeq
 
@@ -516,7 +540,7 @@ $\gfive$ satisfies:
 \item anticommutes with
 all the $\gamma_\mu$
 
-\item commutes with the elements of group $Spin(n)$
+\item commutes with the elements of group $Spin(n)_\RR$
 (product of even number of gammas)
 
 \item
@@ -541,13 +565,13 @@ These are the two Weyl (or chiral) spinors in even $n$.
 \item odd $n$, $n=2k+1$
 
 \beq
-\gamma_\mu, Cl(n), Spin(n)
-\in \CC^{k\times k}
+ Cl(n)_\RR, Spin(n)_\RR
+\subset \CC^{k\times k}
 \oplus \CC^{k\times k}
 \eeq
 
 For odd $n$, $\gamma^1\cdots\gamma^n$ is proportional to the identity. Hence,
-there is no new operator  that commutes with all the elements of $Spin(n)$ and there is no
+there is no new operator  that commutes with all the elements of $Spin(n)_\RR$ and there is no
 chiral decomposition of vector space $S$.
 The space $S$ is irreducible.
 
@@ -557,30 +581,30 @@ The space $S$ is irreducible.
 
 \section{Examples}
 \hrule
-$n=2$, $Spin(2)$ and $SO(2)$
+$Spin(2)_\RR$
 
 \beq
-Cl(2)=span_\RR \{1, \s_1, \s_2, \s_1\s_2=i\s_3\}
+Cl(2)_\RR=span_\RR \{1, \s_1, \s_2, \s_1\s_2=i\s_3\}
 \eeq
 
 \beq
-Cl^0(2)=
+Cl^0(2)_\RR=
 span_\RR\{1,\s_1\s_2=i\s_3\}
 =\{Ae^{i \theta \s_3}: \theta, A\in\RR\}
 \cong\CC
 \eeq
 
 \beq
-Cl^1(2)=
+Cl^1(2)_\RR=
 span_\RR\{\s_1, \s_2\}
 \eeq
 
 \beq
-Cl(2)= Cl^0(2) \oplus Cl^0(2)
+Cl(2)_\RR= Cl^0(2)_\RR \oplus Cl^1(2)_\RR
 \eeq
 
 \beq
-Spin(2)=
+Spin(2)_\RR=
 \{
 e^{i\theta\s_3}:
 \theta\in\RR\}
@@ -589,11 +613,9 @@ e^{i\theta\s_3}:
 
 
 
-\begin{claim}
+\begin{claim} (Double Cover)
 
-There is a 2 to 1 map
-(i.e., a {\bf double cover map}) from $Spin(2)$
-to $SO(2)$.
+ $Spin(2)_\RR\dmap SO(2)$.
 \end{claim}
 \proof
 
@@ -683,6 +705,12 @@ e^{i\theta\s_3}\mapsto R_z(2\theta)
 \eeq
 
 \qed
+\hrule
+$Spin(3)_\RR$
+
+\beq
+SL(2;\CC)\supset SU(2)\cong Spin(3)_\RR\dmap SO(3)\eeq 
+
 
 \hrule
 Quaternions
