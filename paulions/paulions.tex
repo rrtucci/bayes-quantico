@@ -152,22 +152,28 @@ U=e^{-i\frac{\theta}{2}\s_{\hat{a}}}
 \eeq
 and (this is called Rodrigues formula)
 
-\beq
-R_{\hat{a}}(\theta)\vec{x}=
+\beqa
+R_{\hat{a}}(\theta)\vec{x}&=&
 \vec{x}
 +(2|\vec{x}|\sin\beta\sin\theta)(-\sin\theta \hat{r}+
 \cos\theta \hat{\theta})
-\eeq
+\\
+&=&
+\vec{x}
++(2\sin\theta)(-\sin\theta \vec{r}+
+\cos\theta \vec{\theta})
+\eeqa
 where (see Fig.\ref{fig-Rx-pic})
 
 \beq
 \beta=\angle(\vec{x}, \vec{a}),\quad
 \hat{\theta}=
-\frac{(\hat{a}\times\vec{x})}
+\frac{\overbrace{(\hat{a}\times\vec{x})}^{\vec{\theta}}}
 {|\vec{x}|\sin\beta},\quad
 \hat{r}=
-\frac{[\vec{x}-\hat{a}(\hat{a}\cdot\vec{x})]}{|\vec{x}|\sin\beta}
+\frac{\overbrace{[\vec{x}-\hat{a}(\hat{a}\cdot\vec{x})]}^{\vec{r}}}{|\vec{x}|\sin\beta}
 \eeq
+
 This immediately implies that
 $SU(2)_\RR$ is a double cover of $SO(3)$.
 
@@ -280,7 +286,7 @@ is the generator of $\mathfrak{so}(n)_\RR$ or $\mathfrak{so}(p,q)$.
 A rotation by  $\omega_{\mu\nu}$   is
 
 \beq
-S(\omega)=e^{\;\frac{1}{2}\omega^{\mu\nu}\gamma_{\mu\nu}}
+S(\omega)=e^{\;\omega^{\mu\nu}\gamma_{\mu\nu}}
 \eeq
 
 \beq
@@ -302,10 +308,22 @@ where $R\in SO(n)$ (or $SO(p,q)$).
 %In Quantum Mechanics, we use
 %$Spin(n)_\CC$. 
 
+If $\gamma_\mu^\dagger=\gamma_\mu$
+for $\mu=1,2,\ldots,n$
 \beq
 Spin(n)_\RR=
-\{e^{\frac{1}{2}\omega^{\mu\nu}\gamma_{\mu\nu}}|
-\omega_{\mu\nu}=-\omega_{\nu\mu}\in\RR
+\{e^{\omega^{\mu\nu}\gamma_{\mu\nu}}|
+\omega_{\mu\nu}=-\omega_{\nu\mu}\in\RR\}
+\}
+\eeq
+If $\gamma_0^\dagger=\gamma_0$, and
+$\gamma_i^\dagger=-\gamma_i$ (this assumes the mostly-minus metric $(1, -1, -1, -1)$)
+\beq
+Spin(1,3)_\RR=
+\{e^{-i\omega^{\mu\nu}\gamma_{\mu\nu}}|
+\omega_{\mu\nu}=-\omega_{\nu\mu},
+\omega_{0,i}\in\RR, \omega_{i,j}
+\in i\RR
 \}
 \eeq
 
@@ -474,8 +492,37 @@ SO(n)
 \eeq
 \section{Representations of $Spin(n)_\RR$}
 
-$Cl(n)_\FF$ is a span over $\FF=\RR,\CC$
+
+Define $Cl(n)_\FF$ is a span over $\FF=\RR,\CC$
 and $Spin(n)_\FF\subset Cl^0(n)_\FF$. 
+
+When you go from a vector space
+\beq V_\RR =span_\RR(e_1, e_2, \ldots, e_n)\eeq
+to \beq V_\CC =span_\CC(e_1, e_2, \ldots, e_n),\eeq this is said to
+be a {\bf complexification} of
+the vector space. Lie Algebras are
+real vector spaces, so they can be 
+complexified. $Cl(n)_\CC$ is the complexification
+of  $Cl(n)_\RR$.
+
+
+
+
+
+$Spin(n)_\RR \dmap SO(n;\RR)$
+and 
+$Spin(n)_\CC \dmap SO(n;\CC)$.
+Rotations by a complex angle as in $SO(n)_\CC$ are meaningless,
+even in Quantum Mechanics. 
+In Physics, only GROUP
+$Spin(n)_\RR$ arises.
+However, in Quantum Mechanics,
+we use complex representations 
+of $Spin(n)_\RR$
+and a complex spinor space.
+The complex rep of $Spin(n)_\RR$
+and the MATRIX SET $Spin(n)_\CC$
+are the same thing.
 
 Careful. The following dual 
 possibilities are not equivalent
@@ -486,49 +533,44 @@ is real or complex
 \item $\gamma$ matrices are real or complex
 \end{enumerate}
 
-When you go from a vector space
-\beq V_\RR =span_\RR(e_1, e_2, \ldots, e_n)\eeq
-to \beq V_\CC =span_\CC(e_1, e_2, \ldots, e_n),\eeq this is said to
-be a {\bf complexification} of
-the vector space. Lie Algebras are
-real vector spaces, so they can be 
-complexified, although they rarely are. $Cl(n)_\CC$ is the complexification
-of  $Cl(n)_\RR$.
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% Beamer presentation requires \usepackage{colortbl} instead of \usepackage[table,xcdraw]{xcolor}
+\begin{table}[h!]
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|}
+\hline
+\rowcolor[HTML]{FFCCC9} 
+\cellcolor[HTML]{9AFF99}$n$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\ \hline
+\cellcolor[HTML]{9AFF99}{\color[HTML]{000000} $\cong$} & $\RR$ & $\RR\oplus \RR$ & $M_2(\RR)$ & $M_2(\CC)$ & $M_2(\HH)$ & $M_2(\HH)\oplus M_2(\HH)$ & $M_4(\HH)$ & $M_8(\CC)$ \\ \hline
+\end{tabular}
+\caption{Sets isomorphic ($\cong$) to $Cl(n)_\RR$.  $M_n(\FF)=\FF^{n\times n}$ for $\FF=\HH, \RR, \CC$.
+$\HH$ are the quaternions.}
+\label{tab-bott}
+\end{table}
 
-$Spin(n)_\RR \dmap SO(n;\RR)$
-and 
-$Spin(n)_\CC \dmap SO(n;\CC)$.
-Rotations by a complex angle as in $SO(n)_\CC$ are meaningless,
-even in Quantum Mechanics. 
-In Physics, only
-$Spin(n)_\RR$ arises.
-However, in Quantum Mechanics,
-we use complex representations 
-of $Spin(n)_\RR$
-and a complex spinor space.
-A complex rep of $Spin(n)_\RR$
-and $Spin(n)_\CC$
-are not the same thing although
-some people erroneously equate them.
-
-The irreps of $Spin(n)_\RR$
-are complicated. They can be 
-real, complex and even quaternionic. Rather than depending on $n$, they depend on $n \mod 8$ (or, in Python notation, $n\% 8$,
-the remainder after dividing $n$ by 8.) (Bott Periodicity).
-The complex irreps of $Spin(n)_\RR$,
-for those $n$ for which they exist,
-such as $n=4$, are as follows:
-
-
-\begin{itemize} 
-\item even $n$, $n=2k$
+Notes on Table \ref {tab-bott}
+\begin{itemize}
+\item Dimension check: the real dimension ($dim_\RR$, number of real degrees of freedom, dofs. $dim_\CC= 2dim_\RR$) for the two isomorphic sets is $2^n$ in every case.  For
+example, $\dim_\RR M_2(\CC) = 8 = 2^3$ and $dim_\RR(\HH)=4$.
+\item The pattern repeats with period 8 (Bott Periodicity). 
 
 \beq
- Cl(n)_\RR, Spin(n)_\RR
-\subset \CC^{k\times k}
+Cl(n+8)_\RR\cong Cl(n)_\RR\otimes M_{16}(\RR)
 \eeq
+Rather than depending on $n$, they depend on $n \mod 8$ (or, in Python notation, $n\% 8$,
+the remainder after dividing $n$ by 8.)
 
-Can define
+\item An analogous table for  $Cl(p,q)_\RR$ depends on $(p-q) \%8$
+
+\item 
+
+Complexifying collapses this to the simpler complex classification: 
+\beq Cl(2k)_\CC\cong M_{2^k}(\CC) \supset Spin(2k)_\CC\eeq and \beq
+Cl(2k+1)_\CC\cong M_{2^k}(\CC)\oplus M_{2^k}(\CC)
+\supset Spin(2k+1)_\RR
+\eeq
+\item For even $n$, $n=2k$,
+we can define
 a nontrivial  chirality operator:
 
 \beq
@@ -562,18 +604,12 @@ S_\pm =
 These are the two Weyl (or chiral) spinors in even $n$.
 
 
-\item odd $n$, $n=2k+1$
-
-\beq
- Cl(n)_\RR, Spin(n)_\RR
-\subset \CC^{k\times k}
-\oplus \CC^{k\times k}
-\eeq
-
-For odd $n$, $\gamma^1\cdots\gamma^n$ is proportional to the identity. Hence,
+\item For odd $n$, $n=2k+1$,
+the expression $\gamma^1\cdots\gamma^n$ is proportional to the identity. Hence,
 there is no new operator  that commutes with all the elements of $Spin(n)_\RR$ and there is no
 chiral decomposition of vector space $S$.
 The space $S$ is irreducible.
+
 
 \end{itemize}
 
@@ -751,13 +787,14 @@ SL(2;\CC)\supset SU(2)\cong Spin(3)_\RR\dmap SO(3)\eeq
 \hrule
 Quaternions
 
-The set of quaternions is called $\HH$ in honor of Hamilton. ($\QQ$ is already used for the rationals)
+The set of quaternions is called $\HH$ in honor of Hamilton. ($\QQ$ is already used for the rationals).
+A quaternion $q$ is an expression of the form
 
 \beq
 q= a + x\mathbf{i}
 + y\mathbf{j}
 +
-\mathbf{k}
+z\mathbf{k}
 \eeq
 where $a,x,y,z\in\RR$
 
