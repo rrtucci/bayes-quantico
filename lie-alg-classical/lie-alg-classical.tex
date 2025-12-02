@@ -1,0 +1,300 @@
+\chapter{Lie Algebras of Classical Groups}
+\label{ch-lie-alg-classical}
+
+
+Lie algebras of the classical simple Lie groups. They are all compact.
+\begin{itemize}
+\item $A_n = \ger{su}(n+1)$
+\item $B_n = \ger{so}(2n+1)$
+\item $C_n = \ger{sp}(n)$
+\item $D_n = \ger{so}(2n)$
+\end{itemize}
+
+Lie Algebras of Exceptional 
+simple Lie groups:
+\begin{itemize}
+\item $E_6, E_7, E_8$
+\item $F_4$
+\item $G_2$
+
+\end{itemize}
+
+\section{$SU(n)$}
+
+
+
+
+\beq
+SU(n) = \{ U \in \CC^{n\times n} : U^\dagger U = I,\ \det U = 1 \}
+\eeq
+
+
+\beq
+1=U^\dagger U = e^{X^\dagger} e^X 
+\implies X^\dagger = -X
+\eeq
+
+\beq 
+1=\det U = \det e^X= e^{\tr X}\implies \tr X = 0
+\eeq
+
+Thus:
+
+\beq
+\ger{su}(n)=\{X\in \CC^{n\times n}: X^\dagger = -X,\tr X=0\}
+\eeq
+
+Real dimension: 
+
+\beq
+\dim_\RR \ger{su}(n) = n^2 - 1
+\eeq
+
+---
+
+
+\beq
+(T_i)^\dagger = T_i, \quad
+\tr(T^i T^j) = \frac{1}{2} \delta_{ij}
+\eeq
+
+\beq
+X^j = i T^j.
+\eeq
+
+\beq
+[X^i, X^j] = f^{ijk} X^k
+\eeq
+where $f^{ijk}$ are the real structure constants of $\ger{su}(n)$
+
+For $SU(2)$, $T^i=\frac{1}{2}\s_i$ (Pauli matrices)
+
+For $SU(3)$, $T^i=\frac{1}{2}\lam_i$ (Gel-Mann matrices)
+
+
+\section{$SO(n)$}
+
+
+
+\beq
+\ger{so}(n) = \{ A \in \RR^{n\times n} |  A^T = -A \}
+\eeq
+
+\beq
+\{L_{ij}| i<j\}
+\eeq
+
+\beq
+(L_{ij})_{ab} = \delta_{ia}\delta_{jb} - \delta_{ja}\delta_{ib}
+=
+\bcen
+\xymatrix{
+i\ar[d]&j
+\\
+a&b\ar[u]
+}
+\ecen
+-
+\bcen
+\xymatrix{
+i\ar[dr]&j\ar[dl]
+\\
+a&b
+}
+\ecen
+\eeq
+
+\beq
+\begin{array}{l}
+\myboxed{[L_{ij}, L_{kl}]
+= \delta_{jk}L_{il}-\delta_{ik}L_{jl}
+-\delta_{jl}L_{ik}+\delta_{il}
+L_{jk}}
+\\
+\bcen
+\xymatrix@R=1pc@C=.5pc{
+i\ar[dr]
+&&j\ar[dl]
+&&k\ar[dr]
+&&l\ar[dl]
+&
+\\
+&\ar[l]L
+&&&
+&\ar[llll]L
+&\ar[l]
+}
+\ecen
+=\\
+\left\{
+\begin{array}{l}
+\bcen
+\xymatrix@R=1pc@C=.5pc{
+i\ar@{-}@/_1pc/[rrrrrr]
+&&j\ar[dr]
+&&k\ar[dl]
+&&l
+&
+\\
+&
+&&L\ar[lll]
+&
+&
+&\ar[lll]
+}
+\ecen +
+\bcen
+\xymatrix@R=1pc@C=.5pc{
+i\ar[drrr]
+&&j\ar@{-}@/_.7pc/[rr]
+&&k
+&&l\ar[dlll]
+&
+\\
+&
+&&L\ar[lll]
+&
+&
+&\ar[lll]
+}
+\ecen
+\\ \\
+-\bcen
+\xymatrix@R=1pc@C=.5pc{
+i\ar@{-}@/_1pc/[rrrr]
+&&j\ar[dr]
+&&k
+&&l\ar[dlll]
+&
+\\
+&
+&&L\ar[lll]
+&
+&
+&\ar[lll]
+}
+\ecen -
+\bcen
+\xymatrix@R=1pc@C=.5pc{
+i\ar[drrr]
+&&j\ar@{-}@/_1pc/[rrrr]
+&&k\ar[dl]
+&&l
+&
+\\
+&
+&
+&L\ar[lll]
+&
+&
+&\ar[lll]
+}
+\ecen
+\end{array}
+\right\}
+\end{array}
+\eeq
+
+
+\section{$Sp(n)$}
+
+$n$ even
+\beq
+Sp(n) =\{U \in \CC^{n\times n} :
+U^\dagger U = I, \quad U^T J U = J \}
+\eeq
+
+where
+
+\beq
+J=
+\left(
+\begin{array}{cc}
+0 & I_{n/2} \\
+-I_{n/2} & 0
+\end{array}
+\right)
+\eeq
+
+\beq
+J^T = -J,\quad J^TJ=1
+\eeq
+
+
+\beq
+U^\dagger U =e^{X^\dagger}e^X \implies  X^\dagger = -X.
+\eeq
+
+\beq
+U^T J U = J \implies 1= J^T U^T J U=
+e^{J^T X^T J}e^{X}
+\implies X^T J + J X = 0
+\eeq
+
+
+\beq
+\ger{sp}(n)
+= \{ X\in \CC^{n\times n} : X^\dagger = -X,  X^T J + J X = 0 \}
+\eeq
+
+Real dimension:
+$$
+\dim_{\RR} \ger{sp}(n) = n(2n+1)
+$$
+
+
+\beq
+X =
+\begin{pmatrix}
+A & B \\
+B^* & A^*
+\end{pmatrix}
+\eeq
+
+with
+
+\beq A^\dagger = -A,
+\quad
+B^T = B
+\eeq
+
+
+\beq
+X_A = \begin{pmatrix}
+A & 0 \\
+0 & A^*
+\end{pmatrix},
+\quad
+A^\dagger = -A.
+\eeq
+
+They contribute $n^2$ real parameters.
+
+These generate the \qt{raising/lowering} part:
+
+\beq
+X_B = \begin{pmatrix}
+0 & B \\
+ B^* & 0
+  \end{pmatrix},
+  \quad
+  B^T = B.
+\eeq
+
+They contribute $n(n+1)$ real parameters.
+
+\beq
+n^2 + n(n+1) = n(2n+1)
+\eeq
+
+
+\beq
+[X_1,X_2] \in \ger{sp}(n),
+\eeq
+
+and the algebra closes.
+
+\beq
+ A_1 A_2 = A_3 
+\eeq
+
