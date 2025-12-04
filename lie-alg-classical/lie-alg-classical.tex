@@ -2,7 +2,7 @@
 \label{ch-lie-alg-classical}
 
 
-Lie algebras of the classical simple Lie groups. They are all compact.
+Lie algebras of the classical simple Lie groups. 
 \begin{itemize}
 \item $A_n = \ger{su}(n+1)$
 \item $B_n = \ger{so}(2n+1)$
@@ -234,7 +234,7 @@ e^{J^T X^T J}e^{X}
 
 \beq
 \ger{sp}(n)
-= \{ X\in \CC^{n\times n} : X^\dagger = -X,  X^T J + J X = 0 \}
+= \{ X\in \CC^{n\times n} : X^\dagger = -X,\quad  X^T J + J X = 0 \}
 \eeq
 
 Real dimension:
@@ -242,43 +242,135 @@ $$
 \dim_{\RR} \ger{sp}(n) = n(2n+1)
 $$
 
-
+\begin{claim}
+ $X^\dagger = -X$ and $X^TJ+JX=0$
+iff $X$ must has the
+{\bf A-B form} 
 \beq
 X =
 \begin{pmatrix}
 A & B \\
-B^* & A^*
+-B^* & -A^*
 \end{pmatrix}
 \eeq
-
-with
+where 
 
 \beq A^\dagger = -A,
 \quad
-B^T = B
+B^T = -B
 \eeq
+\end{claim}
+\proof
+
+\beq
+X=
+\begin{pmatrix}
+A&B
+\\
+C&D
+\end{pmatrix}
+\eeq
+
+\beqa
+JX J^T &=&
+\begin{pmatrix}
+0 & 1
+\\
+-1&0
+\end{pmatrix}
+\begin{pmatrix}
+A & B
+\\
+C& D
+\end{pmatrix}
+\begin{pmatrix}
+0 & -1
+\\
+1&0
+\end{pmatrix}
+\\
+&=&
+\begin{pmatrix}
+C&D
+\\
+-A&-B
+\end{pmatrix}
+\begin{pmatrix}
+0 & -1
+\\
+1&0
+\end{pmatrix}
+\\
+&=&
+\begin{pmatrix}
+D&-C
+\\
+-B&A
+\end{pmatrix}
+\eeqa
+
+\beq
+JXJ^T +X^T=
+\begin{pmatrix}
+D+ A^T&-C+C^T
+\\
+-B+B^T&A+D^T
+\end{pmatrix}
+=
+0
+\eeq
+
+\beq
+\boxed{B^T=B, \quad C^T=C,\quad A^T=D}
+\eeq
+
+\beq
+X^\dagger + X=
+\begin{pmatrix}
+A^\dagger + A& C^\dagger + B
+\\
+B^\dagger+C&D^\dagger + D
+\end{pmatrix}
+=0
+\eeq
+
+\beq
+\boxed {A^\dagger = -A,\quad D^\dagger = -D,
+\quad C^\dagger = -B}
+\eeq
+
+
+\beq
+C= -B^*, \quad D=-A^*
+\eeq
+
+
+\qed
 
 
 \beq
 X_A = \begin{pmatrix}
 A & 0 \\
-0 & A^*
+0 & -A^*
 \end{pmatrix},
 \quad
-A^\dagger = -A.
+\quad X_A^\dagger = -X_A 
 \eeq
+
+
+
+
 
 They contribute $n^2$ real parameters.
 
 These generate the \qt{raising/lowering} part:
 
 \beq
-X_B = \begin{pmatrix}
+\eps_B = \begin{pmatrix}
 0 & B \\
- B^* & 0
-  \end{pmatrix},
-  \quad
-  B^T = B.
+ -B^* & 0
+\end{pmatrix},
+ \quad \eps_B^\dagger =-\eps_B
 \eeq
 
 They contribute $n(n+1)$ real parameters.
@@ -287,14 +379,110 @@ They contribute $n(n+1)$ real parameters.
 n^2 + n(n+1) = n(2n+1)
 \eeq
 
+\beq
+X = X_A + \eps_B
+\eeq
+
+
+\begin{claim}
 
 \beq
 [X_1,X_2] \in \ger{sp}(n),
 \eeq
+\end{claim}
+\proof
 
-and the algebra closes.
+If $X,Y\in \ger{sp}(n)$,
+\beq
+[X, Y]^\dagger = [Y^\dagger, X^\dagger]= [-Y, -X]= -[X, Y]
+\eeq
+
+
+\beqa
+X_A  \eps_B &=&
+\begin{pmatrix}
+A&0\\
+0&-A^*
+\end{pmatrix}
+\begin{pmatrix}
+0 & B \\
+ -B^* & 0
+\end{pmatrix}
+\\
+&=&
+\begin{pmatrix}
+0&AB\\
+(AB)^*&0
+\end{pmatrix}
+\\
+&=& \eps_{AB}
+\eeqa
+
+\beqa
+\eps_B  X_A &=&
+\begin{pmatrix}
+0 & B \\
+ -B^* & 0
+\end{pmatrix}
+\begin{pmatrix}
+A&0\\
+0&-A^*
+\end{pmatrix}
+\\
+&=&-
+\begin{pmatrix}
+0&B A^*\\
+B^* A&0
+\end{pmatrix}
+\\
+&=& \eps_{-BA^*}
+\eeqa
+
 
 \beq
- A_1 A_2 = A_3 
+X_{A_1}X_{A_2}= X_{A_1A_2}
 \eeq
+
+\beqa
+\eps_{B_1}\eps_{B_2}
+&=&
+\begin{pmatrix}
+0 & B_1 \\
+- B^*_1 & 0
+\end{pmatrix}
+\begin{pmatrix}
+0 & B_2\\
+- B^*_2 & 0
+\end{pmatrix}
+\\
+&=&
+\begin{pmatrix}
+-B_1B_2^* & 0\\
+0& -B^*_1 B_2
+\end{pmatrix}
+\\
+&=& X_{-B_1 B_2^*}
+\eeqa
+
+
+\beq
+[X_A, \eps_B]=\eps_{AB + B A^*}
+\eeq
+
+\beq
+[X_{A_1}, X_{A_2}]=
+X_{[A_1,A_2]}
+\eeq
+
+
+
+\beq
+[\eps_{B_1}, \eps_{B_2}]=X_{-B_1 B_2^* - B_2 B_1^*}
+\eeq
+\qed
+
+\beqa
+J \eps_B J^T = -\eps_B^\dagger,
+\quad J X_A J^T = - X_A^\dagger
+\eeqa
 
