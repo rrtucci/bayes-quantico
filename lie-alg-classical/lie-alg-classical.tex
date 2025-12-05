@@ -113,10 +113,25 @@ L_{jk}}
 \\
 \bcen
 \xymatrix@R=1pc@C=.5pc{
-i\ar[dr]
-&&j\ar[dl]
+i\ar@[red][dr]
+&&j\ar@[red][dl]
 &&k\ar[dr]
 &&l\ar[dl]
+&
+\\
+&\ar[l]L
+&&&
+&\ar[llll]L
+&\ar[l]
+}
+\ecen
+-
+\bcen
+\xymatrix@R=1pc@C=.5pc{
+k\ar[dr]
+&&l\ar[dl]
+&&i\ar@[red][dr]
+&&j\ar@[red][dl]
 &
 \\
 &\ar[l]L
@@ -130,8 +145,8 @@ i\ar[dr]
 \begin{array}{l}
 \bcen
 \xymatrix@R=1pc@C=.5pc{
-i\ar@{-}@/_1pc/[rrrrrr]
-&&j\ar[dr]
+i\ar@[red]@{-}@/_1pc/[rrrrrr]
+&&j\ar@[red][dr]
 &&k\ar[dl]
 &&l
 &
@@ -145,8 +160,8 @@ i\ar@{-}@/_1pc/[rrrrrr]
 \ecen +
 \bcen
 \xymatrix@R=1pc@C=.5pc{
-i\ar[drrr]
-&&j\ar@{-}@/_.7pc/[rr]
+i\ar@[red][drrr]
+&&j\ar@[red]@{-}@/_.7pc/[rr]
 &&k
 &&l\ar[dlll]
 &
@@ -161,8 +176,8 @@ i\ar[drrr]
 \\ \\
 -\bcen
 \xymatrix@R=1pc@C=.5pc{
-i\ar@{-}@/_1pc/[rrrr]
-&&j\ar[dr]
+i\ar@[red]@{-}@/_1pc/[rrrr]
+&&j\ar@[red][dr]
 &&k
 &&l\ar[dlll]
 &
@@ -176,8 +191,8 @@ i\ar@{-}@/_1pc/[rrrr]
 \ecen -
 \bcen
 \xymatrix@R=1pc@C=.5pc{
-i\ar[drrr]
-&&j\ar@{-}@/_1pc/[rrrr]
+i\ar@[red][drrr]
+&&j\ar@[red]@{-}@/_1pc/[rrrr]
 &&k\ar[dl]
 &&l
 &
@@ -384,8 +399,7 @@ X = X_A + \eps_B
 \eeq
 
 
-\begin{claim}
-
+\begin{claim}(Lie Algebra is closed)
 \beq
 [X_1,X_2] \in \ger{sp}(n),
 \eeq

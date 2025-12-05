@@ -1,3 +1,140 @@
-\chapter{Dynkin Diagrams: COMING SOON}
+\chapter{Dynkin Diagrams}
 \label{ch-dynkin}
+
+\newcommand{\valp}[0]{{\vec{\alp}}}
+\newcommand{\vbeta}[0]{{\vec{\beta}}}
+\newcommand{\vgamma}[0]{{\vec{\gamma}}}
+
+This chapter is based on Ref.\cite{eli-daw-book}, section 20.4.
+
+Lie algebra over reals (real vector space over generators $X_r$ for
+$r=1,2, \ldots \cald$) $\cald=$  number  of real degrees of freedom, real dimension $\dim_\RR$
+of Lie Algebra
+\beq
+[X_q, X_p] = \sum_t f\indices{_q_p^t}X_t
+\eeq
+
+
+
+\beq
+g_{qs}= \sum_{p,t}f\indices{_q_p^t}
+f\indices{_s_t^p}
+=
+\bcen
+\xymatrix{
+q\ar@{~}[r]
+&f\ar@/_1pc/@{~}[r]
+\ar@/^1pc/@{~}[r]
+&f\ar@{~}[r]
+&s
+}
+\ecen
+\eeq
+
+If $\det g =0$,
+
+\beq
+[X_a, X_b] = 0,
+\quad
+[X_q, X_p] =\sum_t f\indices{_q_p^t}X_t
+\eeq
+
+Can assume $\det g \neq 0$,
+Cartan criterion (CC) for
+group to be semi-simple.
+If the CC is satisfied, can assume
+$g_{st}$ is diagonal
+
+\beq g_{s t}=\delta(s,t)=
+\xymatrix{
+\ar@{~}[r]&
+}
+\eeq
+
+\beq
+f\indices{_q_p^t}=f_{qpt}
+\eeq
+Will not choose $f_{qpt}$
+to be totally antisymmetric
+
+
+$q_- = 1, 2, \ldots,\calr$
+
+$\valp = 1,2, \ldots, 
+\cald-\calr$ 
+
+$q=$ either $q_-$ or $\valp$ but not both.
+
+
+
+Let $\{H_{i_-}\}_{i_-=1}^\calr$
+be the largest possible set
+of mutually commuting $X_p$.
+$\calr$ is called the {\bf rank} of the group.
+
+\beq
+\boxed{[H_{i_-}, H_{j_-}]=0}
+\eeq
+
+Choose $E_{\vec{\alp}}$
+to be eigenvectors of $H_{i_-}$ in the commutator \qt{product}
+\beq
+\boxed{[H_{i_-}, E_{\vec{\alp}}]= \underbrace{\alp_{i_-}}_{f_{i_-,\valp,\valp}} E_{\valp}}
+\eeq
+
+
+Then\footnote{The commutator $[x,y]=xy-yx$ acts like a derivative operator: 
+$ [x[a,b]]= [[x,a],b] + 
+[a,[x,b]]$}
+
+\beqa
+[H_i, [E_\valp,
+E_\vbeta]]
+&=&
+[[H_i, E_\valp], E_\vbeta]
++
+[E_\valp, [H_i, E_\vbeta]]
+\\
+&=&
+(\alp_i + \beta_i)[E_\valp, E_\vbeta]
+\eeqa
+
+If $\valp + \vbeta=0$,
+$[H_i, [E_\valp,
+E_\vbeta]]=0$ so
+
+\beq
+\boxed{[E_\valp,
+E_{-\valp}] = \sum_{i_-} \underbrace{\alp^{i_-}}_{f_{\valp,-\valp,i_-}} H_{i_-}}
+\eeq
+
+If $\valp + \vbeta\neq 0$,
+
+\beq
+\boxed{[E_\valp, E_\vbeta]=
+ N_{\valp,\vbeta}
+E_{\valp + \vbeta}
+\quad \text{ if } \valp+\vbeta \neq 0}
+\eeq
+
+
+\beq
+\alp^{i_-}=f_{\valp,-\valp,i_-} 
+\eeq
+
+\beq 
+n= \frac{-2 \valp\cdot \vbeta}{\valp\cdot\valp}
+\eeq
+
+\beq 
+p= \frac{-2 \valp\cdot \vbeta}{\vbeta\cdot\vbeta}
+\eeq
+
+\beq
+\sqrt{
+\frac{np}{4}}
+=
+|\hat{\alp}\
+\cdot\hat{\beta}|
+\eeq
 
