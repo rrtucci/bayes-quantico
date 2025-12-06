@@ -34,7 +34,7 @@ q\ar@{~}[r]
 If $\det g =0$,
 
 \beq
-[X_a, X_b] = 0,
+[X_{a}, X_{b}] = 0,
 \quad
 [X_q, X_p] =\sum_t f\indices{_q_p^t}X_t
 \eeq
@@ -87,6 +87,7 @@ Then\footnote{The commutator $[x,y]=xy-yx$ acts like a derivative operator:
 $ [x[a,b]]= [[x,a],b] + 
 [a,[x,b]]$}
 
+Root vectors $\alp\in \RR^\calr$
 \beqa
 [H_i, [E_\valp,
 E_\vbeta]]
@@ -124,15 +125,74 @@ E_{\valp + \vbeta}
 
 Dynking Diagram (DD)
 
+The roots of a semisimple lie algebra form a
+real vector space.
+
+A {\bf positive/negative (P/N) root} $\valp$ is 
+root for which the first component $\alp_1$ is positive/negative.
+If the first component of $\valp$ is zero, then
+decide the root's sign from its second component $\alp_2$. And so on.
+Note that the definition of positive root is basis
+dependent.
+
+A P root $\valp$ is a {\bf simple positive (SP)
+root} if there are no P roots
+$\vec{\rho}$ and $\vec{\s}$ such that
+$\valp= \vec{\rho}+\vec{\s}$.
+
+
+
+
+Properties of root vectors $\valp, \vbeta, \ldots \in \RR^\calr$ 
+
+
+
+\begin{enumerate}
+\item If $\valp$ is a root,  then
+$-\valp$ must be too.
+
+
+\item We can find a basis of simple
+positive roots for the root space.
+
+
+\item 
+\begin{claim}If $\valp$ and $\vec{\rho}$ are SP roots,
+then $\valp-\vec{\rho}$ is not a root of any kind.
+\end{claim}
+\proof
+This follows because: if $\valp-\vec{\rho}$ is a P root
+ $\vec{\s} $, then
+$\valp= \vec{\rho}+\vec{\s}$ so
+$\valp$ is not a PS root. Likewise, if $\valp-\vec{\rho}$ is an N root $\vec{\s}$, then $-\vec{\s}$
+is a P root and $\valp= \vec{\rho}+(-\vec{\s})$.
+\qed
+
+
+
+\item If $\valp$ and $\vbeta$ are PS, then there can be roots 
+
+\beq\{\vbeta + n\valp| 
+i=0, 1, 2, \ldots, n\}
+\eeq
+for some terminal integer $n>0$ defined by
 \beq 
 n= \frac{-2 \valp\cdot \vbeta}{\valp\cdot\valp}
 \label{eq-dynkin-n-pic}
 \eeq
+Also possible are roots $\{\valp + p\vbeta| 
+i=0, 1, 2, \ldots, p\}$
+for some terminal integer $p>0$ defined by
+
 
 \beq 
 p= \frac{-2 \valp\cdot \vbeta}{\vbeta\cdot\vbeta}
 \label{eq-dynkin-p-pic}
 \eeq
+
+
+
+\item angle constraints
 
 \beq
 -\sqrt{
@@ -141,6 +201,9 @@ p= \frac{-2 \valp\cdot \vbeta}{\vbeta\cdot\vbeta}
 \hat{\alp}\cdot\hat{\beta}\in [-1, 0]
 \label{eq-dynkin-angles}
 \eeq
+
+
+\end{enumerate}
 
 \begin{figure}[h!]
 \centering
@@ -163,14 +226,27 @@ $np$ & $\sqrt{np/4}$ & $\arccos\left(-\sqrt{np/4}\right)$ \\ \hline
 2 & $\frac{1}{\sqrt{2}}$ & $\frac{3\pi}{4}=135^o$ \\ \hline
 3 & $\frac{\sqrt{3}}{2}$ & $\frac{5\pi}{6}=150^o$ \\ \hline
 \end{tabular}
-\caption{Possible root vector angles from Eq.(\ref{eq-dynkin-angles}).}
+\caption{Possible root vector angles according to Eq.(\ref{eq-dynkin-angles}).}
 \label{tab-dynkin-angles}
 \end{table}
 
+Rules for Dynkin Diagram (DD)
+\begin{enumerate}
+\item One dot for each SP root
+\item Dots connected by $np$ number of lines
+\item If $np>1$, draw arrowhead (i.e., greater than sign $>$) pointing from bigger to smaller root.
 
+\item One connected diagram for a simple Lie algebra. Multiple disconnected connected-diagrams for a semisimple lie algebra. 
 
+This follows because the Lie algebra of a semisimple lie algebra $\ger{g}$ is a direct sum $\ger{g}= \ger{g}_1 \oplus \ger{g}_2 \oplus \ldots \ger{g}_t$
+of simple Lie algebras $\ger{g}_i$ and the root vectors
+of any two of those Lie algebras $\ger{g}_1$ and $\ger{g}_2$ are orthogonal so
+$np=0$ and 
+there is no line connecting the roots of $\ger{g}_1$ and $\ger{g}_2$. 
+\end{enumerate}
 
-
+$n$ subscript in $A_n, B_n, C_n, d_n$
+is number of dots
 
 \begin{figure}
 \renewcommand{\arraystretch}{2}
@@ -202,7 +278,9 @@ D_n=\ger{so}(2n)
 \end{array}
 $$
 \renewcommand{\arraystretch}{1}
-\caption{Dynkin diagrams for the simple Lie groups}
+\caption{Dynkin diagrams for the simple Lie groups.
+$n$ subscript in $A_n, B_n, C_n, D_n$
+is the number of dots, which equals the number of SP roots.}
 \label{fig-dynkin-simple}
 \end{figure}
 
@@ -210,11 +288,11 @@ $$
 
 
 \begin{itemize}
-\item $SO(3)$ and $SU(2)$ have a single dot DD
+\item DD for $SO(3)$ and $SU(2)$ is a single dot
 
-\item $SO(4)\cong SO(3)\times SO(3)$ not a simple Lie algebra, its DD is two disconnected dots
+\item $SO(4)\cong SO(3)\times SO(3)$ is not a simple Lie algebra.  Its DD is two disconnected dots
 
-\item For $SU(3)$
+\item For $SU(3)$, the DD is $\xymatrix{\bullet\ar@{-}[r]&\bullet}$
 
 \beq
 H_1=T_z,\quad H_2=\frac{\sqrt{3}}{2} Y
