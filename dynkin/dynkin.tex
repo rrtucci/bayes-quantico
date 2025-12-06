@@ -131,12 +131,29 @@ p= \frac{-2 \valp\cdot \vbeta}{\vbeta\cdot\vbeta}
 \eeq
 
 \beq
-\sqrt{
+-\sqrt{
 \frac{np}{4}}
 =
-|\hat{\alp}\
-\cdot\hat{\beta}|
+\hat{\alp}\
+\cdot\hat{\beta}
 \eeq
+
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% Beamer presentation requires \usepackage{colortbl} instead of \usepackage[table,xcdraw]{xcolor}
+\begin{table}[h!]
+\begin{tabular}{|l|l|l|}
+\hline
+\rowcolor[HTML]{FFFFC7} 
+$np$ & $\sqrt{np/4}$ & $\arccos\left(-\sqrt{np/4}\right)$ \\ \hline
+0 & 0 & $\frac{\pi}{2}=90^o$ \\ \hline
+1 & $\frac{1}{2}$ & $\frac{2\pi}{3}=120^o$ \\ \hline
+2 & $\frac{1}{\sqrt{2}}$ & $\frac{3\pi}{4}=135^o$ \\ \hline
+3 & $\frac{\sqrt{3}}{2}$ & $\frac{5\pi}{6}=150^o$ \\ \hline
+\end{tabular}
+\caption{Dynkin lattice angles.}
+\label{tab-dynkin-angles}
+\end{table}
 
 \begin{figure}[h!]
 \centering
@@ -146,8 +163,9 @@ p= \frac{-2 \valp\cdot \vbeta}{\vbeta\cdot\vbeta}
 \label{fig-dyynkin-constraint}
 \end{figure}
 
-\beq
-\renewcommand{\arraystretch}{4}
+\begin{figure}
+\renewcommand{\arraystretch}{3}
+$$
 \begin{array}{ll}
  A_n=\ger{su
 }(n+1)
@@ -173,7 +191,10 @@ D_n=\ger{so}(2n)
 \\ G_2 & \dynkin[scale=3] G2{}
 
 \end{array}
+$$
 \renewcommand{\arraystretch}{1}
-\eeq
+\caption{Dynkin Diagrams for the simple Lie Groups}
+\label{fig-dynkin-simple}
+\end{figure}
 
 
