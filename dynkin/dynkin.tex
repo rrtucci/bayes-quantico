@@ -122,25 +122,37 @@ E_{\valp + \vbeta}
 \alp^{i_-}=f_{\valp,-\valp,i_-} 
 \eeq
 
+Dynking Diagram (DD)
+
 \beq 
 n= \frac{-2 \valp\cdot \vbeta}{\valp\cdot\valp}
+\label{eq-dynkin-n-pic}
 \eeq
 
 \beq 
 p= \frac{-2 \valp\cdot \vbeta}{\vbeta\cdot\vbeta}
+\label{eq-dynkin-p-pic}
 \eeq
 
 \beq
 -\sqrt{
 \frac{np}{4}}
 =
-\hat{\alp}\
-\cdot\hat{\beta}
+\hat{\alp}\cdot\hat{\beta}\in [-1, 0]
+\label{eq-dynkin-angles}
 \eeq
 
-% Please add the following required packages to your document preamble:
-% \usepackage[table,xcdraw]{xcolor}
-% Beamer presentation requires \usepackage{colortbl} instead of \usepackage[table,xcdraw]{xcolor}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=5in]
+{dynkin/dynkin-constraint.png}
+\caption{Pictorial representation of 
+Eqs.(\ref{eq-dynkin-n-pic})
+and (\ref{eq-dynkin-p-pic}).
+}
+\label{fig-dynkin-constraint}
+\end{figure}
+
 \begin{table}[h!]
 \begin{tabular}{|l|l|l|}
 \hline
@@ -151,20 +163,17 @@ $np$ & $\sqrt{np/4}$ & $\arccos\left(-\sqrt{np/4}\right)$ \\ \hline
 2 & $\frac{1}{\sqrt{2}}$ & $\frac{3\pi}{4}=135^o$ \\ \hline
 3 & $\frac{\sqrt{3}}{2}$ & $\frac{5\pi}{6}=150^o$ \\ \hline
 \end{tabular}
-\caption{Dynkin lattice angles.}
+\caption{Possible root vector angles from Eq.(\ref{eq-dynkin-angles}).}
 \label{tab-dynkin-angles}
 \end{table}
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=5in]
-{dynkin/dynkin-constraint.png}
-\caption{Mount Vesuvius and Bay of Naples}
-\label{fig-dyynkin-constraint}
-\end{figure}
+
+
+
+
 
 \begin{figure}
-\renewcommand{\arraystretch}{3}
+\renewcommand{\arraystretch}{2}
 $$
 \begin{array}{ll}
  A_n=\ger{su
@@ -193,8 +202,43 @@ D_n=\ger{so}(2n)
 \end{array}
 $$
 \renewcommand{\arraystretch}{1}
-\caption{Dynkin Diagrams for the simple Lie Groups}
+\caption{Dynkin diagrams for the simple Lie groups}
 \label{fig-dynkin-simple}
 \end{figure}
+
+\section{Examples}
+
+
+\begin{itemize}
+\item $SO(3)$ and $SU(2)$ have a single dot DD
+
+\item $SO(4)\cong SO(3)\times SO(3)$ not a simple Lie algebra, its DD is two disconnected dots
+
+\item For $SU(3)$
+
+\beq
+H_1=T_z,\quad H_2=\frac{\sqrt{3}}{2} Y
+\eeq
+
+\beq
+E_\valp= \frac{1}{\sqrt{2}} T_+,
+\quad
+E_\vbeta = \frac{1}{\sqrt{2}} U_+,
+\quad
+E_{\vec{\alp}+\vec{\beta}}=\frac{1}{\sqrt{2}} V_-
+\eeq
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=2in]
+{dynkin/dynkin-su3-roots.png}
+\caption{Root system for $SU(3)$}
+\label{fig-su3-roots}
+\end{figure}
+
+
+\end{itemize}
+
 
 
