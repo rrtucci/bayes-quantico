@@ -44,17 +44,27 @@ Thus:
 \ger{su}(n)=\{X\in \CC^{n\times n}: X^\dagger = -X,\tr X=0\}
 \eeq
 
-Real dimension: 
+\begin{claim}(Real dimension) 
 
 \beq
 \dim_\RR \ger{su}(n) = n^2 - 1
 \eeq
-
----
+\end{claim}
+\proof
+\begin{itemize}
+ \item +1 real parameter for each diagonal entry,
+\item +1 for the real part of the entries above the diagonal
+\item
++1 for the imaginary part of each 
+entry below the diagonal
+\item $-1$ for zero trace constraint.
+\end{itemize}
+This adds up to $n^2-1$.
+\qed
 
 
 \beq
-(T_i)_\dagger = T_i, \quad \tr(T_i)=0, \quad
+(T_i)^\dagger = T_i, \quad \tr(T_i)=0, \quad
 \tr(T_i T_j) = \frac{1}{2} \delta_{ij}
 \eeq
 
@@ -76,16 +86,33 @@ For $SU(3)$, $T^i=\frac{1}{2}\lam_i$ (Gel-Mann matrices)
 \section{$SO(n)$}
 
 \beq
-O(n)= \{G\in \RR^{n\times n}: G^T G= 1\}
+SO(n)= \{G\in \RR^{n\times n}: G^T G= 1, \det G=1\}
 \eeq
 
-\beq
-SO(n)= \{G\in O(n): \det G=1\}
-\eeq
 
 \beq
-\ger{so}(n) = \{ X \in \RR^{n\times n} |  \tr X=1, X^T = -X \}
+\ger{so}(n) = \{ X \in \RR^{n\times n} |  X^T = -X, \tr X =0 \}
 \eeq
+\begin{claim}
+\beq
+\dim_\RR \ger{so}(n) = \frac{(n-1)(n+2)}{2}
+\eeq
+\end{claim}
+\proof
+\begin{itemize}
+ \item +1 real parameter for each diagonal entry,
+\item +1 for the entries above the diagonal
+\item $-1$ for zero trace constraint.
+\end{itemize}
+This adds up to 
+
+\beq
+\underbrace{\frac{(n^2-n)}{2}}_{\text{off diagonal}} + 
+\underbrace{n-1}_{\text{diagonal}}
+= (n-1)\left[
+\frac{n}{2}+1\right] = \frac{(n-1)(n+2)}{2}
+\eeq
+\qed
 
 \beq
 \{L_{ij}| i<j\}
@@ -244,28 +271,24 @@ J^T = -J,\quad J^TJ=1
 
 
 \beq
-U^\dagger U =e^{X^\dagger}e^X \implies  X^\dagger = -X.
+1=U^\dagger U =e^{X^\dagger}e^X \implies  X^\dagger = -X.
 \eeq
 
 \beq
 U^T J U = J \implies 1= J^T U^T J U=
 e^{J^T X^T J}e^{X}
-\implies X^T J + J X = 0
+\implies J^T X^T J =- X
 \eeq
 
 
 \beq
 \ger{sp}(n)
-= \{ X\in \CC^{n\times n} : X^\dagger = -X,\quad  X^T J + J X = 0 \}
+= \{ X\in \CC^{n\times n} : X^\dagger = -X,\quad  J^TX^T J =- X \}
 \eeq
 
-Real dimension:
-$$
-\dim_{\RR} \ger{sp}(n) = n(2n+1)
-$$
 
 \begin{claim}
- $X^\dagger = -X$ and $X^TJ+JX=0$
+ $X^\dagger = -X$ and $J^T X^TJ=-X$
 iff $X$ has the
 {\bf A-B form} 
 \beq
@@ -294,49 +317,49 @@ C&D
 \eeq
 
 \beqa
-JX J^T &=&
+J^T X^T J &=&
+\begin{pmatrix}
+0 & -1
+\\
+1&0
+\end{pmatrix}
+\begin{pmatrix}
+A^T & C^T
+\\
+B^T& D^T
+\end{pmatrix}
 \begin{pmatrix}
 0 & 1
 \\
 -1&0
 \end{pmatrix}
-\begin{pmatrix}
-A & B
 \\
-C& D
+&=&
+\begin{pmatrix}
+-B^T&-D^T
+\\
+A^T&C^T
 \end{pmatrix}
 \begin{pmatrix}
-0 & -1
+0 & 1
 \\
-1&0
+-1&0
 \end{pmatrix}
 \\
 &=&
 \begin{pmatrix}
-C&D
+D^T&-B^T
 \\
--A&-B
-\end{pmatrix}
-\begin{pmatrix}
-0 & -1
-\\
-1&0
-\end{pmatrix}
-\\
-&=&
-\begin{pmatrix}
-D&-C
-\\
--B&A
+-C^T&A^T
 \end{pmatrix}
 \eeqa
 
 \beq
-JXJ^T +X^T=
+J^T X^T J +X=
 \begin{pmatrix}
-D+ A^T&-C+C^T
+D^T + A & -B^T + B
 \\
--B+B^T&A+D^T
+-C^T + C & A^T + D
 \end{pmatrix}
 =
 0
@@ -383,9 +406,7 @@ A & 0 \\
 
 
 
-They contribute $n^2$ real parameters.
 
-These generate the \qt{raising/lowering} part:
 
 \beq
 \eps_B = \begin{pmatrix}
@@ -395,15 +416,16 @@ These generate the \qt{raising/lowering} part:
  \quad \eps_B^\dagger =-\eps_B
 \eeq
 
-They contribute $n(n+1)$ real parameters.
 
-\beq
-n^2 + n(n+1) = n(2n+1)
-\eeq
 
 \beq
 X = X_A + \eps_B
 \eeq
+
+\beqa
+J \eps_B J^T = -\eps_B^\dagger,
+\quad J X_A J^T = - X_A^\dagger
+\eeqa
 
 
 \begin{claim}(Lie Algebra is closed)
@@ -423,7 +445,7 @@ If $X,Y\in \ger{sp}(n)$,
 X_A  \eps_B &=&
 \begin{pmatrix}
 A&0\\
-0&-A^*
+0&A^*
 \end{pmatrix}
 \begin{pmatrix}
 0 & B \\
@@ -433,7 +455,7 @@ A&0\\
 &=&
 \begin{pmatrix}
 0&AB\\
-(AB)^*&0
+-(AB)^*&0
 \end{pmatrix}
 \\
 &=& \eps_{AB}
@@ -447,16 +469,16 @@ A&0\\
 \end{pmatrix}
 \begin{pmatrix}
 A&0\\
-0&-A^*
+0&A^*
 \end{pmatrix}
 \\
-&=&-
+&=&
 \begin{pmatrix}
 0&B A^*\\
-B^* A&0
+-B^* A&0
 \end{pmatrix}
 \\
-&=& \eps_{-BA^*}
+&=& \eps_{BA^*}
 \eeqa
 
 
@@ -502,8 +524,30 @@ X_{[A_1,A_2]}
 \eeq
 \qed
 
-\beqa
-J \eps_B J^T = -\eps_B^\dagger,
-\quad J X_A J^T = - X_A^\dagger
-\eeqa
+\begin{claim}
+
+
+\beq
+\dim_\RR \ger{sp}(n)= n(2n+1)
+\eeq
+
+\end{claim}
+\proof
+
+$A^\dagger =-A$ so $A$ contributes  $n^2$ real parameters.
+
+$B^T=B$ so $B$ contributes 
+\beq
+\frac{(n^2-n)}{2} + n=\frac{(n^2+n)}{2} = \frac{n(n+1)}{2}
+\eeq
+ complex parameters.
+
+This adds up to 
+\beq
+n^2 + n(n+1) = n(2n+1)
+\eeq
+real parameters.
+\qed
+
+
 
