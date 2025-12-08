@@ -8,24 +8,26 @@
 This chapter is based on Ref.\cite{eli-daw-book}, section 20.4.
 
 This chapter is an overview of the classification
-of simple Lie algebras, a classification that was invented mainly by Killing, Cartan and Dynkin, in that historical order. The classification is valid for Lie algebras over $\CC$\footnote{More generally, Cartan's classification is valid for Lie algebras over $\FF$, where $\FF$ is an algebraically closed field of characteristic zero. $\CC$ satisfies both of these constraints. $\RR$ has characteristic zero but is not algebraically closed.} This distinction is important because there are many more simple Lie algebras over $\RR$ than over $\CC$. When defining the generators of Lie algebras in other chapters, we defined a real Lie algebra $\ger{g}_\RR$ (a vector space over $\RR$)
+of simple Lie algebras, a classification that was invented mainly by Killing, Cartan and Dynkin, in that historical order. The classification is valid for Lie algebras over $\CC$\footnote{More generally, Cartan's classification is valid for Lie algebras over $\FF$, where $\FF$ is an algebraically closed field of characteristic zero. $\CC$ satisfies both of these constraints. $\RR$ has characteristic zero but is not algebraically closed.} This caveat is important because there are more simple Lie algebras over $\RR$ than over $\CC$. When defining the generators of Lie algebras in other chapters, we defined a real Lie algebra $\ger{g}_\RR$ (a vector space over $\RR$)
 which exponentiates to a group $\calg_\RR=\exp(\ger{g}_\RR)$.
 This chapter refers to the complexification
-$\ger{g}_\CC$  (complex vector space) of $\ger{g}_\RR$ 
+$\ger{g}_\CC$  (a vector space
+over $\CC$) of $\ger{g}_\RR$ 
 and to the group $\calg_\CC=\exp(\ger{g}_\CC)$
 
 
-Suppose $\ger{g}_\CC$ has generators $X_r$ for
-$r\in S=\{1,2, \ldots \cald\}$ where 
+Suppose $\ger{g}_\CC$ has generators $X_s$ for
+$s\in S=\{1,2, \ldots \cald\}$ where 
 
 $\cald=\frac{1}{2}\dim_\RR \ger{g}_\CC=\dim_\CC \ger{g}_\CC=$  half the number  of real degrees of freedom
 of the Lie algebra.
 
 By definition,
-the generators $X_r$ are closed under commutation
+the generators $X_s$ are closed under commutation so
 \beq
 [X_q, X_p] = \sum_t f\indices{_q_p^t}X_t
 \eeq
+for some $f\indices{_q_p^t}\in \CC$.
 
 Define
 \beq
@@ -71,10 +73,10 @@ $g_{st}$ is diagonal.
 f\indices{_q_p^t}=f_{qpt}
 \eeq
 Will not, however, assume that $f_{qpt}$ 
-to be totally antisymmetric,
+is totally antisymmetric,
 as is often assumed.
 
-Let
+For any lower case latin letter $q$ and Greek letter $\alp$, let
 
 $q_- = 1, 2, \ldots,\calr$
 
@@ -92,8 +94,8 @@ $\calr$ is called the {\bf rank} of the group.
 \boxed{[H_{i_-}, H_{j_-}]=0}
 \eeq
 
-Choose $E_{\vec{\alp}}$
-to be eigenvectors of $H_{i_-}$ 
+Let $E_{\vec{\alp}}$
+ be eigenvectors of $H_{i_-}$ 
 for a commutator \qt{product}
 instead of a matrix multiplication product
 \beq
@@ -103,7 +105,7 @@ The vectors $\valp\in \RR^\calr$
 of eigenvalues are called {\bf root vectors}.
 
 
-From the properties of commutator bracket\footnote{The commutator $[x,y]=xy-yx$ acts like a derivative operator: 
+From the properties of a commutator bracket\footnote{The commutator $[x,y]=xy-yx$ acts like a derivative operator: 
 $ [x[a,b]]= [[x,a],b] + 
 [a,[x,b]]$}
 
@@ -147,7 +149,7 @@ A {\bf positive/negative (P/N) root} $\valp$ is a
 root for which the first component $\alp_1$ is positive/negative.
 If the first component of $\valp$ is zero, then
 decide the root's sign from its second component $\alp_2$. And so on.
-Note that the definition of positive root is basis
+Note that the definition of P/N root is basis
 dependent.
 
 A P root $\valp$ is a {\bf simple positive (SP)
@@ -215,7 +217,7 @@ p= \frac{-2 \valp\cdot \vbeta}{\vbeta\cdot\vbeta}
 
 
 
-\item angle constraints
+\item angle constraint
 
 Multiplying Eqs.(\ref{eq-dynkin-n-pic}) and
 (\ref{eq-dynkin-p-pic}), we get
@@ -232,17 +234,17 @@ between the two SP roots $\valp$
 and $\vbeta$ can only
 have one of the 4 possible values listed in Table \ref{tab-dynkin-angles}.
 
-\item relative lengths constraint
+\item length ratio constraint
 
 Dividing Eqs.(\ref{eq-dynkin-n-pic}) and
 (\ref{eq-dynkin-p-pic}), we get
 \beq
 \sqrt{\frac{n}{p}}=\frac{|\vbeta|}
 {|\valp|}
+\label{eq-rel-len-cons}
 \eeq
-
-
-
+Table \ref{tab-rel-len-cons}
+gives the possible length ratios implied by Eq.(\ref{eq-rel-len-cons}).
 \end{enumerate}
 
 \begin{figure}[h!]
@@ -260,7 +262,7 @@ and (\ref{eq-dynkin-p-pic}).
 \begin{tabular}{|l|l|l|}
 \hline
 \rowcolor[HTML]{FFFFC7} 
-$np$ & $\sqrt{np/4}$ & $\arccos\left(-\sqrt{np/4}\right)$ \\ \hline
+$np$ & $\sqrt{np/4}$ & $\angle(\valp, \vbeta)=\arccos\left(-\sqrt{np/4}\right)$ \\ \hline
 0 & 0 & $\frac{\pi}{2}=90^o$ \\ \hline
 1 & $\frac{1}{2}$ & $\frac{2\pi}{3}=120^o$ \\ \hline
 2 & $\frac{1}{\sqrt{2}}$ & $\frac{3\pi}{4}=135^o$ \\ \hline
@@ -271,8 +273,24 @@ constraint  Eq.(\ref{eq-dynkin-angles}).}
 \label{tab-dynkin-angles}
 \end{table}
 
-Using the angle and length constraints on SP roots and
-the definition of SP roots,
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% Beamer presentation requires \usepackage{colortbl} instead of \usepackage[table,xcdraw]{xcolor}
+\begin{table}[h!]
+\begin{tabular}{|l|l|l|}
+\hline
+\rowcolor[HTML]{FFFFC7} 
+$np$ & $(n,p)$ & $|\vbeta|/|\valp|$ \\ \hline
+0 & (0, 1) or (1,0) & 0 or $\infty$ \\ \hline
+1 & (1,1) & 1 \\ \hline
+2 & (1,2) or (2,1) & $1/\sqrt{2}$ or $\sqrt{2}$ \\ \hline
+3 & (1,3) or (3,1) & $1/\sqrt{3}$ or $\sqrt{3}$ \\ \hline
+\end{tabular}
+\caption{Possible length ratios between two PS roots, as dictated by the length ratio constraint Eq.(\ref{eq-rel-len-cons}).}
+\label{tab-rel-len-cons}
+\end{table}
+
+Using the definition of SP roots, and the angle and length constraints on SP roots,
 one can show that all possible 
 simple Lie algebras 
 have one of the root systems given by Fig.\ref{fig-dynkin-simple}.  In that figure,
@@ -338,7 +356,7 @@ is the number of dots, which equals the number of SP roots.}
 
 
 \begin{itemize}
-\item DD for $SO(3)$ and $SU(2)$ is a single dot
+\item DD for $SO(3)$ and its double cover $SU(2)$ is a single dot
 
 \item $SO(4)\cong SO(3)\times SO(3)$ is not a simple Lie algebra.  Its DD is two disconnected dots
 

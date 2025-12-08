@@ -6,7 +6,7 @@ Lie algebras of the classical simple Lie groups.
 \begin{itemize}
 \item $A_n = \ger{su}(n+1)$
 \item $B_n = \ger{so}(2n+1)$
-\item $C_n = \ger{sp}(n)$
+\item $C_n = \ger{sp}(2n)$
 \item $D_n = \ger{so}(2n)$
 \end{itemize}
 
@@ -54,18 +54,19 @@ Real dimension:
 
 
 \beq
-(T_i)^\dagger = T_i, \quad
-\tr(T^i T^j) = \frac{1}{2} \delta_{ij}
+(T_i)_\dagger = T_i, \quad \tr(T_i)=0, \quad
+\tr(T_i T_j) = \frac{1}{2} \delta_{ij}
 \eeq
 
 \beq
-X^j = i T^j.
+X_j = -i T_j.
 \eeq
 
 \beq
-[X^i, X^j] = f^{ijk} X^k
+[X_i, X_j] = f_{ijk} X_k
+\implies [T_i, T_j] = i f_{ijk} T_k
 \eeq
-where $f^{ijk}$ are the real structure constants of $\ger{su}(n)$
+where $f_{ijk}$ are the real structure constants of $\ger{su}(n)$
 
 For $SU(2)$, $T^i=\frac{1}{2}\s_i$ (Pauli matrices)
 
@@ -74,10 +75,16 @@ For $SU(3)$, $T^i=\frac{1}{2}\lam_i$ (Gel-Mann matrices)
 
 \section{$SO(n)$}
 
-
+\beq
+O(n)= \{G\in \RR^{n\times n}: G^T G= 1\}
+\eeq
 
 \beq
-\ger{so}(n) = \{ A \in \RR^{n\times n} |  A^T = -A \}
+SO(n)= \{G\in O(n): \det G=1\}
+\eeq
+
+\beq
+\ger{so}(n) = \{ X \in \RR^{n\times n} |  \tr X=1, X^T = -X \}
 \eeq
 
 \beq
@@ -259,20 +266,20 @@ $$
 
 \begin{claim}
  $X^\dagger = -X$ and $X^TJ+JX=0$
-iff $X$ must has the
+iff $X$ has the
 {\bf A-B form} 
 \beq
 X =
 \begin{pmatrix}
 A & B \\
--B^* & -A^*
+-B^* & A^*
 \end{pmatrix}
 \eeq
 where 
 
 \beq A^\dagger = -A,
 \quad
-B^T = -B
+B^T = B
 \eeq
 \end{claim}
 \proof
@@ -336,7 +343,7 @@ D+ A^T&-C+C^T
 \eeq
 
 \beq
-\boxed{B^T=B, \quad C^T=C,\quad A^T=D}
+\boxed{B^T=B, \quad C^T=C,\quad A^T=-D}
 \eeq
 
 \beq
@@ -356,7 +363,7 @@ B^\dagger+C&D^\dagger + D
 
 
 \beq
-C= -B^*, \quad D=-A^*
+C= -B^*, \quad D=A^*
 \eeq
 
 
@@ -366,7 +373,7 @@ C= -B^*, \quad D=-A^*
 \beq
 X_A = \begin{pmatrix}
 A & 0 \\
-0 & -A^*
+0 & A^*
 \end{pmatrix},
 \quad
 \quad X_A^\dagger = -X_A 
