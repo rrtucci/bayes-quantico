@@ -106,34 +106,30 @@ SO(n)= \{G\in \RR^{n\times n}: G^T G= 1, \det G=1\}
 
 
 \beq
-\ger{so}(n) = \{ X \in \RR^{n\times n} |  X^T = -X, \tr X =0 \}
+\ger{so}(n) = \{ X \in \RR^{n\times n} |  X^T = -X\}
 \eeq
+Note that $X^T=-X$ implies that the diagonal of $X$ is zero, so $\tr X=0$
+automatically.
 \begin{claim}
 \beq
-\dim_\RR \ger{so}(n) = \frac{(n-1)(n+2)}{2}
+\dim_\RR \ger{so}(n) = \frac{n(n-1)}{2}
 \eeq
 \end{claim}
 \proof
 
+
 Real parameter count
 \begin{itemize}
- \item +1 for each diagonal entry
 \item +1 for each entry above the diagonal
-\item $-1$ for the zero trace constraint.
 \end{itemize}
 This adds up to 
-
-\beq
-\underbrace{\frac{(n^2-n)}{2}}_{\text{off diagonal}} + 
-\underbrace{n-1}_{\text{diagonal}}
-= (n-1)\left[
-\frac{n}{2}+1\right] = \frac{(n-1)(n+2)}{2}
-\eeq
+$
+\frac{(n^2-n)}{2}
+= \frac{n(n-1)}{2}$.
 \qed
 
-\beq
-\{L_{ij}| i<j\}
-\eeq
+Define the generator basis
+$\{L_{ij}| i<j\}$, where
 
 \beq
 (L_{ij})_{ab} = \delta_{ia}\delta_{jb} - \delta_{ja}\delta_{ib}
@@ -153,8 +149,14 @@ i\ar[dr]&j\ar[dl]
 a&b
 }
 \ecen
+\label{eq-Lij-def}
 \eeq
 
+Note that $L_{ij}^T= L_{ji} = - L_{ij}$.
+Hence these generators satisfy $X^T=-X$.
+Physicists often define generators $T_{ij}=iL_{ij}$ that are Hermitian.
+
+\begin{claim}
 \beq
 \begin{array}{l}
 \myboxed{[L_{ij}, L_{kl}]
@@ -260,6 +262,12 @@ i\ar@[red][drrr]
 \right\}
 \end{array}
 \eeq
+\end{claim}\
+\proof
+
+Just calculate the commutator $[L_{ij}, L_{kl}]$  using the definition Eq.(\ref{eq-Lij-def})
+of $L_{ij}$
+\qed
 
 
 \section{$Sp(n)$}
