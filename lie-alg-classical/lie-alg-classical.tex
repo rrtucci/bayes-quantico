@@ -1,16 +1,22 @@
 \chapter{Lie Algebras of Classical Groups}
 \label{ch-lie-alg-classical}
 
+In this chapter, we
+present an overview of
+the Lie algebras
+for the classical simple Lie groups.
 
-Lie algebras of the classical simple Lie groups. 
+
+Recall from Chapter \ref{ch-dynkin} that the Lie algebras of the simple Lie groups 
+can be divided into two classes: the Classical and the Exceptional.
+The Lie algebras of the classical simple Lie groups are
 \begin{itemize}
 \item $A_n = \ger{su}(n+1)$
 \item $B_n = \ger{so}(2n+1)$
 \item $C_n = \ger{sp}(2n)$
 \item $D_n = \ger{so}(2n)$
 \end{itemize}
-
-Lie Algebras of Exceptional 
+and the Lie algebras of Exceptional 
 simple Lie groups:
 \begin{itemize}
 \item $E_6, E_7, E_8$
@@ -28,7 +34,7 @@ simple Lie groups:
 SU(n) = \{ U \in \CC^{n\times n} : U^\dagger U = I,\ \det U = 1 \}
 \eeq
 
-
+Note that
 \beq
 1=U^\dagger U = e^{X^\dagger} e^X 
 \implies X^\dagger = -X
@@ -37,7 +43,6 @@ SU(n) = \{ U \in \CC^{n\times n} : U^\dagger U = I,\ \det U = 1 \}
 \beq 
 1=\det U = \det e^X= e^{\tr X}\implies \tr X = 0
 \eeq
-
 Thus:
 
 \beq
@@ -51,32 +56,42 @@ Thus:
 \eeq
 \end{claim}
 \proof
+
+Real parameter count:
 \begin{itemize}
- \item +1 real parameter for each diagonal entry,
-\item +1 for the real part of the entries above the diagonal
+ \item +1 for each diagonal entry
+\item +1 for the real part of each entry above the diagonal
 \item
 +1 for the imaginary part of each 
 entry below the diagonal
-\item $-1$ for zero trace constraint.
+\item $-1$ for the zero trace constraint.
 \end{itemize}
 This adds up to $n^2-1$.
 \qed
 
-
-\beq
-(T_i)^\dagger = T_i, \quad \tr(T_i)=0, \quad
-\tr(T_i T_j) = \frac{1}{2} \delta_{ij}
-\eeq
-
+Let $X_j$ be the generators of the Lie algebra, and set
 \beq
 X_j = -i T_j.
 \eeq
 
+By definition, the generators $X_j$ are closed under commutation
 \beq
 [X_i, X_j] = f_{ijk} X_k
 \implies [T_i, T_j] = i f_{ijk} T_k
 \eeq
 where $f_{ijk}$ are the real structure constants of $\ger{su}(n)$
+
+\beq
+X^\dagger = -X,\quad \tr X=0 \implies
+(T_i)^\dagger = T_i, \quad \tr(T_i)=0
+\eeq
+
+It's also possible to assume
+\beq
+\tr(T_i T_j) = \frac{1}{2} \delta_{ij}
+\eeq
+
+
 
 For $SU(2)$, $T^i=\frac{1}{2}\s_i$ (Pauli matrices)
 
@@ -99,10 +114,12 @@ SO(n)= \{G\in \RR^{n\times n}: G^T G= 1, \det G=1\}
 \eeq
 \end{claim}
 \proof
+
+Real parameter count
 \begin{itemize}
- \item +1 real parameter for each diagonal entry,
-\item +1 for the entries above the diagonal
-\item $-1$ for zero trace constraint.
+ \item +1 for each diagonal entry
+\item +1 for each entry above the diagonal
+\item $-1$ for the zero trace constraint.
 \end{itemize}
 This adds up to 
 
@@ -247,12 +264,11 @@ i\ar@[red][drrr]
 
 \section{$Sp(n)$}
 
-$n$ even
+Assume $n$ is even. Then
 \beq
 Sp(n) =\{U \in \CC^{n\times n} :
 U^\dagger U = I, \quad U^T J U = J \}
 \eeq
-
 where
 
 \beq
@@ -265,11 +281,12 @@ J=
 \right)
 \eeq
 
+Note that $J$ satisfies
 \beq
 J^T = -J,\quad J^TJ=1
 \eeq
 
-
+Note that
 \beq
 1=U^\dagger U =e^{X^\dagger}e^X \implies  X^\dagger = -X.
 \eeq
@@ -279,8 +296,7 @@ U^T J U = J \implies 1= J^T U^T J U=
 e^{J^T X^T J}e^{X}
 \implies J^T X^T J =- X
 \eeq
-
-
+Hence
 \beq
 \ger{sp}(n)
 = \{ X\in \CC^{n\times n} : X^\dagger = -X,\quad  J^TX^T J =- X \}
@@ -307,6 +323,7 @@ B^T = B
 \end{claim}
 \proof
 
+Let
 \beq
 X=
 \begin{pmatrix}
@@ -315,7 +332,7 @@ A&B
 C&D
 \end{pmatrix}
 \eeq
-
+Then
 \beqa
 J^T X^T J &=&
 \begin{pmatrix}
@@ -364,11 +381,12 @@ D^T + A & -B^T + B
 =
 0
 \eeq
-
+Hence
 \beq
 \boxed{B^T=B, \quad C^T=C,\quad A^T=-D}
+\label{eq-lie-alg-class-box1}
 \eeq
-
+Also
 \beq
 X^\dagger + X=
 \begin{pmatrix}
@@ -378,20 +396,27 @@ B^\dagger+C&D^\dagger + D
 \end{pmatrix}
 =0
 \eeq
-
+Hence
 \beq
 \boxed {A^\dagger = -A,\quad D^\dagger = -D,
 \quad C^\dagger = -B}
+\label{eq-lie-alg-class-box2}
 \eeq
-
+Combining Eqs.(\ref{eq-lie-alg-class-box1}) and 
+(\ref{eq-lie-alg-class-box2}), we get
 
 \beq
 C= -B^*, \quad D=A^*
 \eeq
 
-
 \qed
 
+Let
+
+\beq
+X = X_A + \eps_B
+\eeq
+where
 
 \beq
 X_A = \begin{pmatrix}
@@ -401,12 +426,7 @@ A & 0 \\
 \quad
 \quad X_A^\dagger = -X_A 
 \eeq
-
-
-
-
-
-
+and
 
 \beq
 \eps_B = \begin{pmatrix}
@@ -416,15 +436,10 @@ A & 0 \\
  \quad \eps_B^\dagger =-\eps_B
 \eeq
 
-
-
-\beq
-X = X_A + \eps_B
-\eeq
-
+Note that
 \beqa
-J \eps_B J^T = -\eps_B^\dagger,
-\quad J X_A J^T = - X_A^\dagger
+J^T \eps_B^\dagger J = -\eps_B,
+\quad J^T X_A^\dagger J = - X_A
 \eeqa
 
 
@@ -509,7 +524,7 @@ X_{A_1}X_{A_2}= X_{A_1A_2}
 
 
 \beq
-[X_A, \eps_B]=\eps_{AB + B A^*}
+[X_A, \eps_B]=\eps_{AB - B A^*}
 \eeq
 
 \beq
@@ -524,7 +539,7 @@ X_{[A_1,A_2]}
 \eeq
 \qed
 
-\begin{claim}
+\begin{claim} (Real dimension)
 
 
 \beq
