@@ -3,6 +3,9 @@
 
 \section{Paulions}
 
+($dim_\RR$, number of real degrees of freedom, dofs. $dim_\CC= 2dim_\RR$. For example, $dim_\RR(\HH)=4$, Where $\HH$ are
+the quaternions.
+
 $\vec{a}\in\RR^3$
 
 $\hat{a}= \frac{\vec{a}}{|
@@ -165,14 +168,19 @@ i \s_i \sin \beta
 \label{fig-Rx-pic}
 \end{figure}
 
+Define
+\beq
+\av{\s_{\hat{\rva}}}(\vec{x}) = -\s_{\hat{a}}\s_{\vec{x}}\s_{\hat{a}}
+\eeq
 
+Fig.\ref{fig-reflection} illustrates reflection about plane with normal vector $\hat{a}$ 
 
 \begin{claim}
 \beq
 -\s_{\hat{a}}\s_{\vec{x}}\s_{\hat{a}}=
 \sigma_{\rho_{\hat{a}}\vec{x}}
-=\av{\s_{\hat{\rva}}}(\vec{x})
 \eeq
+where
 
 \beq
 \rho_{\hat{a}}\vec{x}=
@@ -376,7 +384,7 @@ Spin(1,3)_\RR=
 \eeq
 
 Spinors are the vector space upon which
-the group $Spin(n)_\RR$ acts on.
+the group $Spin(n)_\RR$ acts.
 
 
 $n_-=n$ for $n$ even and $n_-=n-1$
@@ -418,7 +426,7 @@ of $e_i$ are zero except the $i$th one.
 \beq
 \Pi_{n}=
 \{\gamma_1\gamma_2\ldots\gamma_n\},
-\quad |\Pi_{2^n}|={n\choose n}=1
+\quad |\Pi_n|={n\choose n}=1
 \eeq
 
 \beq
@@ -460,20 +468,31 @@ Spin(n)_\RR
 \subset Cl^0(n)_\RR
 \eeq
 
-
+Define
 \beq
- - \gamma_{\hat{\rva}} \gamma_{\rvx} \gamma_{\hat{\rva}}=
-\gamma_{\ul{\rho_{\hat{a}}x}}=
-\av{\gamma_{\hat{\rva}}}(x)
+\av{\gamma_{\hat{\rva}}}(x)=
+- \gamma_{\hat{\rva}} \gamma_{\rvx} \gamma_{\hat{\rva}}
 \eeq
 
 
+\begin{claim}
+\beq
+ - \gamma_{\hat{\rva}} \gamma_{\rvx} \gamma_{\hat{\rva}}=
+\gamma_{\ul{\rho_{\hat{a}}x}}
+\eeq
 
-Fig.\ref{fig-reflection} illustrates reflection about plane with normal vector $\hat{a}$ 
 \beq
 \rho_{\hat{a}}x
 =x - 2(\hat{a}\cdot x)\hat{a}
 \eeq
+\end{claim}
+\proof
+\qed
+
+
+
+
+
 
 \beq
 S^n =\{\hat{a}\in\RR^n| \hat{a}^2=1\}
@@ -539,13 +558,12 @@ SO(n)
 \section{Representations of $Spin(n)_\RR$}
 
 
-Define $Cl(n)_\FF$ is a span over $\FF=\RR,\CC$
+Define $Cl(n)_\FF$ as a span over $\FF=\RR,\CC$
 and $Spin(n)_\FF\subset Cl^0(n)_\FF$. 
 
 When you go from a vector space
 \beq V_\RR =span_\RR(e_1, e_2, \ldots, e_n)\eeq
-to \beq V_\CC =span_\CC(e_1, e_2, \ldots, e_n),\eeq this is said to
-be a {\bf complexification} of
+to \beq V_\CC =span_\CC(e_1, e_2, \ldots, e_n),\eeq this is called a {\bf complexification} of
 the vector space. Lie algebras over $\RR$ can be 
 complexified. $Cl(n)_\CC$ is the complexification
 of  $Cl(n)_\RR$.
@@ -559,8 +577,8 @@ and
 $Spin(n)_\CC \dmap SO(n;\CC)$.
 Rotations by a complex angle as in $SO(n)_\CC$ are meaningless,
 even in Quantum Mechanics. 
-In Physics, only GROUP
-$Spin(n)_\RR$ arises.
+Only the GROUP
+$Spin(n)_\RR$ describes physical processes.
 However, in Quantum Mechanics,
 we use complex representations 
 of $Spin(n)_\RR$
@@ -569,7 +587,7 @@ The complex rep of $Spin(n)_\RR$
 and the MATRIX SET $Spin(n)_\CC$
 are the same thing.
 
-Careful. The following dual 
+Careful. The following 
 possibilities are not equivalent
 \begin{enumerate}
 \item representation of $Spin(n)_\FF$
@@ -588,15 +606,15 @@ is real or complex
 \cellcolor[HTML]{9AFF99}$n$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\ \hline
 \cellcolor[HTML]{9AFF99}{\color[HTML]{000000} $\cong$} & $\RR$ & $\RR\oplus \RR$ & $M_2(\RR)$ & $M_2(\CC)$ & $M_2(\HH)$ & $M_2(\HH)\oplus M_2(\HH)$ & $M_4(\HH)$ & $M_8(\CC)$ \\ \hline
 \end{tabular}
-\caption{Sets isomorphic ($\cong$) to $Cl(n)_\RR$. In this figure, $M_n(\FF)=\FF^{n\times n}$ for $\FF=\HH, \RR,\CC$ and
-$\HH$ are the quaternions.}
+\caption{Sets isomorphic ($\cong$) to $Cl(n)_\RR$. In this figure, $M_n(\FF)=\FF^{n\times n}$ for $\FF=\HH, \RR,\CC$ where
+$\HH$ are the quaternions. }
 \label{tab-bott}
 \end{table}
 
 Notes on Table \ref {tab-bott}
 \begin{itemize}
-\item Dimension check: the real dimension ($dim_\RR$, number of real degrees of freedom, dofs. $dim_\CC= 2dim_\RR$) for the two isomorphic sets is $2^n$ in every case.  For
-example, $\dim_\RR M_2(\CC) = 8 = 2^3$ and $dim_\RR(\HH)=4$.
+\item Dimension check: the real dimension  for the two isomorphic sets is $2^n$ in every case.  For
+example, $\dim_\RR M_2(\CC) = 8 = 2^3$.
 \item The pattern repeats with period 8 (Bott Periodicity). 
 
 \beq
@@ -853,7 +871,7 @@ i\sigma_3 \leftrightarrow \mathbf{k}
 Quaternion multiplication rules
 \beq
 (i\sigma_i)(i\sigma_j)
-= -(\delta_{ij} + i\epsilon_{ijk}\sigma_k)
+= -(\delta_{ij} + \epsilon_{ijk}i\sigma_k)
 \eeq
 
 
