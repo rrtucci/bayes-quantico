@@ -76,7 +76,8 @@ Square is 1 (unitary too  because Hermitian)
 \eeq
 
 Suppose $\vec{x}=(x_	1, x_2, x_3)\in\RR^3$. We define the 
-{\bf Paulion} $\s_{\vec{x}}$ by\footnote{The term Paulion is not commonly used. As far as I know, $\s_{\vec{a}}$ doesn't
+{\bf Paulion} $\s_{\vec{x}}$ by\footnote{The term Paulion my own. As far as I know, the construct $\s_{\vec{a}}$,
+although often used, doesn't
 have a common name.}
 \beq
 \s_{\vec{x}} = \sigma\cdot \vec{x}=x_1\sigma_1 + x_2\sigma_2 + x_3\sigma_3
@@ -102,6 +103,22 @@ With unit vector $\hat{a}$:
 \end{claim}
 \proof
 \qed
+
+\begin{claim}
+\beq
+[\s_{\vec{a}}, \s_{\vec{b}}]_+
+= 2(\vec{a}\cdot\vec{b})
+\eeq
+
+\beq
+[\s_{\vec{a}}, \s_{\vec{b}}]
+= 2 i\s_{\vec{a}\times\vec{b}}
+\eeq
+
+\end{claim}
+\proof
+\qed
+
 
 \begin{claim}
 If $\vec{a}\in \RR^3$ then
@@ -130,6 +147,15 @@ i \s_i \sin \theta
 \eeq
 \qed
 
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=2.4in]
+{paulions/reflection.png}
+\caption{Reflection about plane with normal vector $\hat{a}$}
+\label{fig-reflection}
+\end{figure}
+
 \begin{figure}[h!]
 \centering
 \includegraphics[width=2.5in]
@@ -139,18 +165,36 @@ i \s_i \sin \theta
 \end{figure}
 
 
+
 \begin{claim}
+\beq
+-\s_{\hat{a}}\s_{\vec{x}}\s_{\hat{a}}=
+\sigma_{\rho_{\hat{a}}\vec{x}}
+=\av{\s_{\hat{\rva}}}(\vec{x})
+\eeq
+
+\beq
+\rho_{\hat{a}}\vec{x}=\vec{x} - 2(\hat{a}\cdot\vec{x})\hat{a}
+\eeq
+\end{claim}
+\proof
+\qed
+
+
+\begin{claim}(Rodrigues formula)
+
+If
+\beq
+U=e^{-i\frac{\theta}{2}\s_{\hat{a}}}
+\eeq
+then
+
 \beq
 U\s_{\vec{x}}U^\dagger
 =
 \sigma_{R_{\hat{a}}(\theta)\vec{x}}
 \eeq
 where
-
-\beq
-U=e^{-i\frac{\theta}{2}\s_{\hat{a}}}
-\eeq
-and (this is called Rodrigues formula)
 
 \beqa
 R_{\hat{a}}(\theta)\vec{x}&=&
@@ -167,11 +211,10 @@ where (see Fig.\ref{fig-Rx-pic})
 
 \beq
 \beta=\angle(\vec{x}, \vec{a}),\quad
-\hat{\theta}=
-\frac{\overbrace{(\hat{a}\times\vec{x})}^{\vec{\theta}}}
-{|\vec{x}|\sin\beta},\quad
-\hat{r}=
-\frac{\overbrace{[\vec{x}-\hat{a}(\hat{a}\cdot\vec{x})]}^{\vec{r}}}{|\vec{x}|\sin\beta}
+\hat{\theta}=\frac{1}{|\vec{x}|\sin\beta}
+\overbrace{(\hat{a}\times\vec{x})}^{\vec{\theta}},\quad
+\hat{r}=\frac{1}{|\vec{x}|\sin\beta}
+\overbrace{[\vec{x}-\hat{a}(\hat{a}\cdot\vec{x})]}^{\vec{r}}
 \eeq
 
 This immediately implies that
@@ -182,8 +225,19 @@ SU(2)_\RR\dmap SO(3),\quad SU(2)_\RR/\{1, -1\} \cong SO(3)\eeq
 \end{claim}
 \proof
 
+Let $C= \cos \frac{\theta}{2}$,
+$S =\sin \frac{\theta}{2}$. Then
 
-
+\beqa
+U\s_{\vec{x}}U^\dagger
+&=&
+(C-iS\s_{\hat{a}})\s_{\vec{x}}(C+iS\s_{\hat{a}})
+\\
+&=&
+C^2\s_{\vec{x}}
+-i SC[\s_{\hat{a}}, \s_{\vec{x}}]
++ S^2 \s_{\hat{a}} \s_{\vec{x}} \s_{\hat{a}} 
+\eeqa
 
 
 
@@ -196,52 +250,9 @@ If $U$ produces rotation $R$, then $-U$ gives the same rotation:
 \qed
 
 
-\begin{claim}
-\beq
-\s_{\vec{a}}\s_{\vec{x}}
-\s_{\vec{a}}=
-\sigma\cdot\left[
-\vec{x}(2(\vec{a}\cdot\vec{a}) -1)
--2\vec{a}\times(\vec{a}\times\vec{x})
-  \right]
-\eeq
-\end{claim}
-\proof
-\qed
-
-\begin{claim}
-\beq
--\s_{\hat{a}}\s_{\vec{x}}\s_{\hat{a}}=
-\sigma_{\rho_{\hat{a}}\vec{x}}=\gamma_{\hat{\rva}}(\vec{x})
-\eeq
-
-\beq
-\rho_{\hat{a}}\vec{x}=\vec{x} - 2(\hat{a}\cdot\vec{x})\hat{a}
-\eeq
-
-
-\
 
 
 
-\end{claim}
-\proof
-\qed
-
-\begin{claim}
-\beq
-[\s_{\vec{a}}, \s_{\vec{b}}]_+
-= 2(\vec{a}\cdot\vec{b})
-\eeq
-
-\beq
-[\s_{\vec{a}}, \s_{\vec{b}}]
-= 2 i\s_{\vec{a}\times\vec{b}}
-\eeq
-
-\end{claim}
-\proof
-\qed
 
 
 
@@ -255,13 +266,15 @@ a\cdot b= a_\mu b^\mu
 
 Suppose $a_\mu\in\RR$
 for each $\mu$. We define
-the {\bf Gammion} $\gamma_a$ by\footnote{The term Gammion, like the term Paulion, is not commonly used. As far as I know, $\gamma_a$ doesn't
+the {\bf Gammion} $\gamma_\rva$ by\footnote{The term Gammion, like the term Paulion, is my own. As far as I know, the construct $\gamma_\rva$, although often used, doesn't
 have a common name.}
 
 
 \beq
-\gamma\cdot a = \gamma_\mu a^\mu = \gamma_a
+\gamma\cdot a = \gamma_\mu a^\mu = \gamma_\rva
 \eeq
+We will use an underline in $\gamma_\rva$ 
+to distinguish $a$ from an index.
 
 
 \beq
@@ -272,7 +285,7 @@ with $\eta_{\mu\nu}$ equals Euclidean $(1,1,1,1)$ or Lorentzian $(1, -1,-1,-1)$ 
 
 
 \beq
-\gamma_a \gamma_b
+\gamma_\rva \gamma_\rvb
 = a\cdot b + \gamma_{\mu\nu} a^\mu b^\nu,
 \eeq
 where bivector
@@ -314,7 +327,6 @@ for $\mu=1,2,\ldots,n$
 Spin(n)_\RR=
 \{e^{\omega^{\mu\nu}\gamma_{\mu\nu}}|
 \omega_{\mu\nu}=-\omega_{\nu\mu}\in\RR\}
-\}
 \eeq
 If $\gamma_0^\dagger=\gamma_0$, and
 $\gamma_i^\dagger=-\gamma_i$ (this assumes the mostly-minus metric $(1, -1, -1, -1)$)
@@ -347,7 +359,7 @@ of $e_i$ are zero except the $i$th one.
 
 \beq
 \Pi_0 = \{1\},
-\quad |\Pi_0|=1
+\quad |\Pi_0|={ n \choose 0}=1
 \eeq
 
 \beq
@@ -368,18 +380,19 @@ of $e_i$ are zero except the $i$th one.
 \eeq
 
 \beq
-\Pi_{2^n}=
+\Pi_{n}=
 \{\gamma_1\gamma_2\ldots\gamma_n\},
 \quad |\Pi_{2^n}|={n\choose n}=1
 \eeq
 
 \beq
+\sum_{k=0}^n |\Pi_k| =
 \sum_{k=0}^n {n\choose k}= (1+1)^n=2^n
 \eeq
 
 \beq
 Cl(n)_\RR=span_\RR
-\left(\bigcup_{k=0,1,2,\ldots, 2^n}\Pi_k
+\left(\bigcup_{k=0,1,2,\ldots, n}\Pi_k
 \right)
 \eeq
 
@@ -387,13 +400,15 @@ Cl(n)_\RR=span_\RR
 
 \beq
 Cl^0(n)_\RR = span_\RR
-\left(\bigcup_{k=0,2,4,\ldots ,2^{n_-}}\Pi_k
+\left(\bigcup_{k=0,2,4,\ldots ,
+{n_-}}\Pi_k
 \right)
 \eeq
 
 \beq
 Cl^1(n)_\RR = span_\RR
-\left(\bigcup_{k=1,3,5,\ldots ,2^{n_-}}\Pi_k
+\left(\bigcup_{k=1,3,5,\ldots ,
+{n_-}}\Pi_k
 \right)
 \eeq
 
@@ -401,7 +416,7 @@ Cl^1(n)_\RR = span_\RR
 Cl(n)_\RR= Cl^0(n)_\RR \oplus Cl^1(n)_\RR
 \eeq
 
-Since $S$ is the exponentiation of a bivector, its Taylor expansion only
+Since $e^{\omega^{\mu\nu}\gamma_{\mu\nu}}$ is the exponentiation of a bivector, its Taylor expansion only
 contains summands with an even number 
 of gammas.
 \beq
@@ -412,16 +427,10 @@ Spin(n)_\RR
 
 \beq
  - \gamma_{\hat{\rva}} \gamma_{\rvx} \gamma_{\hat{\rva}}=
-\gamma_{\ul{\rho_{\hat{a}}x}}=\gamma_{\hat{\rva}}(x)
+\gamma_{\ul{\rho_{\hat{a}}x}}=
+\av{\gamma_{\hat{\rva}}}(x)
 \eeq
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=2.4in]
-{paulions/reflection.png}
-\caption{Reflection about plane with normal vector $\hat{a}$}
-\label{fig-reflection}
-\end{figure}
 
 
 Fig.\ref{fig-reflection} illustrates reflection about plane with normal vector $\hat{a}$ 
@@ -452,13 +461,13 @@ Note that
 
 One refection
 \beq
-det[\gamma_{\hat{\rva}}(x)] = -det(\gamma_\rvx \gamma_{\hat{\rva}}^2)
+det[\av{\gamma_{\hat{\rva}}}(x)] = -det(\gamma_\rvx \gamma_{\hat{\rva}}^2)
 =-\det(\gamma_{\rvx})
 \eeq
 
 Two reflections = a rotation
 \beq
-det[\gamma_{\hat{\rva}_1}\gamma_{\hat{\rva}_2}(x)] = +
+det[\av{\gamma_{\hat{\rva}_1}\gamma_{\hat{\rva}_2}}(x)] = +
 \det(\gamma_{\rvx})
 \eeq
 
@@ -483,7 +492,8 @@ Spin(n)_\RR=\cup_{k=1}^\infty
 \eeq
 
 $Spin(n)_\RR$ is a double cover of $SO(n)$
-(because $\gamma_{\hat{\rva}}=\phi_{-\hat{a}}
+(because $\av{\gamma_{\hat{\rva}}}=
+\av{\gamma_{-\hat{a}}}
 $)
 \beq
 Spin(n)_\RR\dmap SO(n), \quad 
@@ -500,8 +510,7 @@ When you go from a vector space
 \beq V_\RR =span_\RR(e_1, e_2, \ldots, e_n)\eeq
 to \beq V_\CC =span_\CC(e_1, e_2, \ldots, e_n),\eeq this is said to
 be a {\bf complexification} of
-the vector space. Lie Algebras are
-real vector spaces, so they can be 
+the vector space. Lie algebras over $\RR$ can be 
 complexified. $Cl(n)_\CC$ is the complexification
 of  $Cl(n)_\RR$.
 
@@ -543,7 +552,7 @@ is real or complex
 \cellcolor[HTML]{9AFF99}$n$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\ \hline
 \cellcolor[HTML]{9AFF99}{\color[HTML]{000000} $\cong$} & $\RR$ & $\RR\oplus \RR$ & $M_2(\RR)$ & $M_2(\CC)$ & $M_2(\HH)$ & $M_2(\HH)\oplus M_2(\HH)$ & $M_4(\HH)$ & $M_8(\CC)$ \\ \hline
 \end{tabular}
-\caption{Sets isomorphic ($\cong$) to $Cl(n)_\RR$.  $M_n(\FF)=\FF^{n\times n}$ for $\FF=\HH, \RR;\CC$.
+\caption{Sets isomorphic ($\cong$) to $Cl(n)_\RR$. In this figure, $M_n(\FF)=\FF^{n\times n}$ for $\FF=\HH, \RR,\CC$ and
 $\HH$ are the quaternions.}
 \label{tab-bott}
 \end{table}
@@ -557,8 +566,9 @@ example, $\dim_\RR M_2(\CC) = 8 = 2^3$ and $dim_\RR(\HH)=4$.
 \beq
 Cl(n+8)_\RR\cong Cl(n)_\RR\otimes M_{16}(\RR)
 \eeq
-Rather than depending on $n$, they depend on $n \mod 8$ (or, in Python notation, $n\% 8$,
-the remainder after dividing $n$ by 8.)
+Rather than depending on $n$, they depend on\footnote{In Python $n \mod 8$ is denoted by $n\% 8$,
+the remainder after dividing $n$ by 8.}
+$n \mod 8$
 
 \item An analogous table for  $Cl(p,q)_\RR$ depends on $(p-q) \%8$
 
