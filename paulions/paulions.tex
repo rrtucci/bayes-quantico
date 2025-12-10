@@ -132,18 +132,19 @@ i \s_{\hat{a}}\sin |\vec{a}|
 and
 
 \beq
-U=e^{-i\frac{\theta}{2}\s_{\hat{a}}}=
-\cos(\tfrac\theta2)-i\s_{\hat{a}}\sin(\tfrac\theta2)
+e^{i\beta\s_{\hat{a}}}=
+\cos(\beta)
+ +i\s_{\hat{a}}\sin(\beta)
 \eeq
 \end{claim}
 \proof
 
 \beq
 e^{i
-\theta \s_i}=
-\cos \theta
+\beta \s_i}=
+\cos \beta
 +
-i \s_i \sin \theta 
+i \s_i \sin \beta
 \eeq
 \qed
 
@@ -160,7 +161,7 @@ i \s_i \sin \theta
 \centering
 \includegraphics[width=2.5in]
 {paulions/Rx-pic.png}
-\caption{Geometry of $R_{\hat{a}}(\theta)x$}
+\caption{Geometry of $R_{\hat{a}}(\Theta)x$,  where $\Theta=2\theta$}
 \label{fig-Rx-pic}
 \end{figure}
 
@@ -174,10 +175,30 @@ i \s_i \sin \theta
 \eeq
 
 \beq
-\rho_{\hat{a}}\vec{x}=\vec{x} - 2(\hat{a}\cdot\vec{x})\hat{a}
+\rho_{\hat{a}}\vec{x}=
+\vec{x} - 2(\hat{a}\cdot\vec{x})\hat{a}
 \eeq
 \end{claim}
 \proof
+
+\beqa
+\s_{\hat{a}}\s_{\vec{x}}\s_{\hat{a}}
+&=&
+\left[
+\hat{a}\cdot\vec{x} + i\s_{\hat{a}\times \vec{x}}
+\right]\s_{\hat{a}}
+\\
+&=&
+\hat{a}\cdot\vec{x}\s_{\hat{a}}
++ i 
+\underbrace{(\hat{a}\times\vec{x})\cdot\hat{a}}_{=0}
+-\s\cdot\underbrace{(\hat{a}\times\vec{x})\times \hat{a}}_{\vec{x}-
+(\vec{x}\cdot \hat{a})\hat{a}}
+\\
+&=&
+-\s\cdot\left[\vec{x} - 2(\hat{a}\cdot\vec{x})\hat{a}\right]
+\eeqa
+
 \qed
 
 
@@ -185,19 +206,20 @@ i \s_i \sin \theta
 
 If
 \beq
-U=e^{-i\frac{\theta}{2}\s_{\hat{a}}}
+U=e^{-i\frac{\Theta}{2}\s_{\hat{a}}},\quad
+\Theta = 2\theta
 \eeq
 then
 
 \beq
 U\s_{\vec{x}}U^\dagger
 =
-\sigma_{R_{\hat{a}}(\theta)\vec{x}}
+\sigma_{R_{\hat{a}}(\Theta)\vec{x}}
 \eeq
 where
 
 \beqa
-R_{\hat{a}}(\theta)\vec{x}&=&
+R_{\hat{a}}(\Theta)\vec{x}&=&
 \vec{x}
 +(2|\vec{x}|\sin\beta\sin\theta)(-\sin\theta \hat{r}+
 \cos\theta \hat{\theta})
@@ -225,8 +247,8 @@ SU(2)_\RR\dmap SO(3),\quad SU(2)_\RR/\{1, -1\} \cong SO(3)\eeq
 \end{claim}
 \proof
 
-Let $C= \cos \frac{\theta}{2}$,
-$S =\sin \frac{\theta}{2}$. Then
+Let $C= \cos \theta$,
+$S =\sin \theta$. Then
 
 \beqa
 U\s_{\vec{x}}U^\dagger
@@ -236,7 +258,21 @@ U\s_{\vec{x}}U^\dagger
 &=&
 C^2\s_{\vec{x}}
 -i SC[\s_{\hat{a}}, \s_{\vec{x}}]
-+ S^2 \s_{\hat{a}} \s_{\vec{x}} \s_{\hat{a}} 
++ S^2 
+\s_{\hat{a}} \s_{\vec{x}} \s_{\hat{a}} 
+\\
+&=&
+\s\cdot\left\{
+C^2\vec{x}
++ 2SC(\hat{a}\times \vec{x})
+-S^2[\vec{x} - 2(\hat{a}\cdot\vec{x})\hat{a}]
+\right\}
+\\
+&=&
+\s\cdot
+\left\{
+\vec{x}+2SC\vec{\theta}-2S^2\vec{r}
+\right\}
 \eeqa
 
 
