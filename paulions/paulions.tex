@@ -3,8 +3,7 @@
 
 \section{Paulions}
 
-($dim_\RR$, number of real degrees of freedom, dofs. $dim_\CC= 2dim_\RR$. For example, $dim_\RR(\HH)=4$, Where $\HH$ are
-the quaternions.
+
 
 $\vec{a}\in\RR^3$
 
@@ -304,12 +303,28 @@ If $U$ produces rotation $R$, then $-U$ gives the same rotation:
 
 \section{Gammions}
 
+Suppose 
+
+$n_-=n$ for $n$ even and $n_-=n-1$
+for $n$ odd.
+
+$int(x) =$ integer part of $x\in \RR$. $\intntwo = n_-/2$
+
+
+$\mu=1, 2, \dots, n$
+
+$a_\mu, b_\mu\in\RR$ for each $\mu$,
+
+$\gamma_\mu\in \CC^{d\times d}$
+where $d=int(n/2)$.
+
+
 \beq
 a\cdot b= a_\mu b^\mu
 \eeq
 
-Suppose $a_\mu\in\RR$
-for each $\mu$. We define
+
+We define
 the {\bf Gammion} $\gamma_\rva$ by\footnote{The term Gammion, like the term Paulion, is my own. As far as I know, the construct $\gamma_\rva$, although often used, doesn't
 have a common name.}
 
@@ -325,7 +340,7 @@ to distinguish $a$ from an index.
 [\gamma_\mu,\gamma_\nu]_+=2\eta_{\mu\nu}
 \eeq
 
-with $\eta_{\mu\nu}$ equals Euclidean $(1,1,1,1)$ or Lorentzian $(1, -1,-1,-1)$ metric.
+Where $\eta_{\mu\nu}$ is real valued\footnote{Since $\eta_{\mu\nu}$ is real, we consider $Cl(n)_\RR$ instead of iits complexification $Cl(n)_\CC$} For $n=4$, it equals the Euclidean metric $(1,1,1,1)$ or the Lorentzian metric $(1, -1,-1,-1)$.
 
 
 \beq
@@ -387,8 +402,6 @@ Spinors are the vector space upon which
 the group $Spin(n)_\RR$ acts.
 
 
-$n_-=n$ for $n$ even and $n_-=n-1$
-for $n$ odd.
 
 $e_i\in\RR^n$ for $i=1, 2, \ldots n$. All components
 of $e_i$ are zero except the $i$th one.
@@ -577,15 +590,16 @@ and
 $Spin(n)_\CC \dmap SO(n;\CC)$.
 Rotations by a complex angle as in $SO(n)_\CC$ are meaningless,
 even in Quantum Mechanics. 
-Only the GROUP
-$Spin(n)_\RR$ describes physical processes.
+Only group
+$Spin(n)_\RR$ describes symmetries
+in physical systems.
 However, in Quantum Mechanics,
 we use complex representations 
 of $Spin(n)_\RR$
 and a complex spinor space.
 The complex rep of $Spin(n)_\RR$
-and the MATRIX SET $Spin(n)_\CC$
-are the same thing.
+and its complexification $Spin(n)_\CC$
+are isomorphic.
 
 Careful. The following 
 possibilities are not equivalent
@@ -606,29 +620,63 @@ is real or complex
 \cellcolor[HTML]{9AFF99}$n$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\ \hline
 \cellcolor[HTML]{9AFF99}{\color[HTML]{000000} $\cong$} & $\RR$ & $\RR\oplus \RR$ & $M_2(\RR)$ & $M_2(\CC)$ & $M_2(\HH)$ & $M_2(\HH)\oplus M_2(\HH)$ & $M_4(\HH)$ & $M_8(\CC)$ \\ \hline
 \end{tabular}
-\caption{Sets isomorphic ($\cong$) to $Cl(n)_\RR$. In this figure, $M_n(\FF)=\FF^{n\times n}$ for $\FF=\HH, \RR,\CC$ where
+\caption{Sets isomorphic ($\cong$) to $Cl(n)_\RR$. In this figure, $M_n(\FF)=\FF^{n\times n}$ for $\FF= \RR,\CC,\HH$ where
 $\HH$ are the quaternions. }
 \label{tab-bott}
 \end{table}
 
 Notes on Table \ref {tab-bott}
 \begin{itemize}
-\item Dimension check: the real dimension  for the two isomorphic sets is $2^n$ in every case.  For
-example, $\dim_\RR M_2(\CC) = 8 = 2^3$.
-\item The pattern repeats with period 8 (Bott Periodicity). 
+\item Dimension check: the real dimension  for the two isomorphic sets 
+is equal to $2^n$ in every case.  For
+example\footnote{$dim_\RR$= number of real degrees of freedom (dofs). $dim_\CC= 2dim_\RR$. For example, $dim_\RR(\HH)=4$, Where $\HH$ are
+the quaternions.}, $\dim_\RR M_2(\CC) = 8 = 2^3$.
+\item The pattern repeats with period 8 ({\bf Bott Periodicity}). 
 
 \beq
 Cl(n+8)_\RR\cong Cl(n)_\RR\otimes M_{16}(\RR)
 \eeq
 Rather than depending on $n$, they depend on\footnote{In Python $n \mod 8$ is denoted by $n\% 8$,
 the remainder after dividing $n$ by 8.}
-$n \mod 8$
+$n \mod 8$.
 
-\item An analogous table for  $Cl(p,q)_\RR$ depends on $(p-q) \%8$
+for example
+
+\beq
+Cl(8)_\RR \cong \underbrace{Cl(0)}_{\RR}\otimes M_{16}(\RR)\cong M_{16}(\CC)
+\eeq
+
+\beq
+Cl(9)_\RR \cong \underbrace{Cl(1)}_{\RR\oplus \RR}\otimes M_{16}(\RR)\cong M_{16}(\CC)\oplus M_{16}(\CC)
+\eeq
+
+$M_{16}(\CC)$ are $2^{\intntwo}\times 2^{\intntwo}$ complex matrices where $n=8$. 
+
+\item The exact same table is valid for  $Cl(p,q)_\RR$, except with $n$ replaced by $(p-q) \%8$. Note, however, that according to this, $Cl(1,3)_\RR$ is congruent to column $(1-3)\%8=6$ of Table \ref{tab-bott},
+whereas $Cl(3,1)_\RR$ is congruent to column $(3-1)\%8=2$ and columns 2 and 6
+are not isomorphic. Hence
+
+\beq Cl(p,q)_\RR\not\cong Cl(q,p)_\RR\eeq
+
+However, one can show that
+
+\beq Cl(p,q)_\CC\cong Cl(q,p)_\CC\eeq
+and
+
+\beq
+Spin(p,q)_\RR \cong Spin(q,p)_\RR,
+\quad \ger{spin}(p,q)_\RR\cong \ger{spin}(q,p)_\RR
+\eeq
+
+\beq
+SO(p,q)_\RR \cong SO(q,p)_\RR,
+\quad \ger{so}(p,q)_\RR\cong \ger{so}(q,p)_\RR
+\eeq
 
 \item 
 
-Complexifying collapses this to the simpler complex classification: 
+Complexifying collapses this to the simpler classification
+of representations. In fact, the representations of $Cl(n)_\CC$ are all complex.
 \beq Cl(2k)_\CC\cong M_{2^k}(\CC) \supset Spin(2k)_\CC\eeq and \beq
 Cl(2k+1)_\CC\cong M_{2^k}(\CC)\oplus M_{2^k}(\CC)
 \supset Spin(2k+1)_\RR
@@ -653,7 +701,7 @@ all the $\gamma_\mu$
 $\gfive^2=1$.
 \end{itemize}
 Therefore it has eigenvalues $1, -1$.
-If $S=\CC^{n/2}$,
+If $n$ is even, and $S=\CC^{n/2}$,
 then
 
 \beq
@@ -719,7 +767,7 @@ e^{i\theta\s_3}:
 \end{claim}
 \proof
 
-Note $U= e^{i\theta \s_3}$ and $\vec{x}= (x_1, x_2)$
+If $U= e^{i\theta \s_3}$ and $\vec{x}= (x_1, x_2)$, then
 
 \begin{align}
 U\s_{\vec{x}}U^\dagger
@@ -810,7 +858,11 @@ $Spin(3)_\RR$
 
 
 \beq
-Cl(3)_\RR=span_\RR \{1, \s_1, \s_2, \s_3,\s_1\s_2=i\s_3, i\s_2, i\s_3, \s_1\s_2\s_3=i\}
+Cl(3)_\RR=span_\RR \{1, \s_1, \s_2, \s_3,
+\underbrace{\s_1\s_2}_{i\s_3},
+\underbrace{\s_2\s_3}_{i\s_1},
+\underbrace{\s_3\s_1}_{i\s_2},
+ \underbrace{\s_1\s_2\s_3}_{i}\}
 \cong \CC^{2\times 2}
 \eeq
 
@@ -851,7 +903,7 @@ SL(2;\CC)\supset SU(2)\cong Spin(3)_\RR\dmap SO(3)\eeq
 \hrule
 Quaternions
 
-The set of quaternions is called $\HH$ in honor of Hamilton. ($\QQ$ is already used for the rationals).
+The set of quaternions is called $\HH$ in honor of Hamilton. ($\QQ$ is used for the rationals).
 A quaternion $q$ is an expression of the form
 
 \beq
