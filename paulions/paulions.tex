@@ -3,16 +3,13 @@
 
 \section{Paulions}
 
+Let
 
-
-$\vec{a}\in\RR^3$
-
-$\hat{a}= \frac{\vec{a}}{|
-\vec{a}|}$
+$\vec{a}\in\RR^3$, $\hat{a}= \frac{\vec{a}}{|\vec{a}|}$
 
 $i=1,2,3$, $\mu=0,1,2,3$
 
-Pauli matrices
+The Pauli matrices are defined by
 
 \beq
 \s_x=\s_1=\left(
@@ -38,29 +35,37 @@ i&0
 \right)
 \eeq
 
+Note that they are
 Hermitian 
 
 \beq
 \s_i^\dagger = \s_i
 \eeq
-
-Square is 1 (unitary too  because Hermitian)
+and their multiplication table
+is given by
+ \beq
+\sigma_i \sigma_j = \delta_{ij} I_2+ i \epsilon_{ijk}\sigma_k
+\label{eq-mult-table}
+\eeq
+This multiplication table implies
+\begin{itemize}
+\item Square is 1 (unitary too  because Hermitian)
 \beq 
 \s_i^2 = 1
 \eeq
 
-
-
+\item Different ones anticommute and 
+proportional to third
 \beq
 \s_x \s_y= -\s_y \s_x 
 \eeq
+ 
 \beq
 \s_x \s_y = i \s_z
 \eeq
+\end{itemize}
 
- \beq
-\sigma_i \sigma_j = \delta_{ij} I_2+ i \epsilon_{ijk}\sigma_k
-\eeq
+It's common to write
 
 \beq
 \vec{\s}= (\s_1, \s_2, \s_3)
@@ -78,7 +83,7 @@ Square is 1 (unitary too  because Hermitian)
 \eeq
 
 Suppose $\vec{x}=(x_	1, x_2, x_3)\in\RR^3$. We define the 
-{\bf Paulion} $\s_{\vec{x}}$ by\footnote{The term Paulion my own. As far as I know, the construct $\s_{\vec{a}}$,
+{\bf Paulion} $\s_{\vec{x}}$ by\footnote{The term Paulion is my own. As far as I know, the construct $\s_{\vec{a}}$,
 although often used, doesn't
 have a common name.}
 \beq
@@ -91,22 +96,16 @@ have a common name.}
 \s_{\vec{a}}\s_{\vec{b}}=
 \vec{a}\cdot\vec{b}+i\s_{\vec{a}\times\vec{b}}
 \eeq
-
-With $\vec{a}=\vec{b}$:
+As a consequence,
 
 \beq
 (\s_{\vec{a}})^2 = |\vec{a}|^2 
 \eeq
 
-With unit vector $\hat{a}$:
 \beq
 (\s_{\hat{a}})^2 = 1
 \eeq
-\end{claim}
-\proof
-\qed
 
-\begin{claim}
 \beq
 [\s_{\vec{a}}, \s_{\vec{b}}]_+
 = 2(\vec{a}\cdot\vec{b})
@@ -116,9 +115,9 @@ With unit vector $\hat{a}$:
 [\s_{\vec{a}}, \s_{\vec{b}}]
 = 2 i\s_{\vec{a}\times\vec{b}}
 \eeq
-
 \end{claim}
 \proof
+This follows directly from Eq.(\ref{eq-mult-table}).
 \qed
 
 
@@ -141,6 +140,9 @@ e^{i\beta\s_{\hat{a}}}=
 \end{claim}
 \proof
 
+First show by Taylor expansion
+of the exponential that the following 
+equation is true.
 \beq
 e^{i
 \beta \s_i}=
@@ -148,6 +150,7 @@ e^{i
 +
 i \s_i \sin \beta
 \eeq
+Then replace $\s_i$ by $\s_{\hat{a}}$.
 \qed
 
 
@@ -174,7 +177,7 @@ Define
 
 Fig.\ref{fig-reflection} illustrates reflection about plane with normal vector $\hat{a}$ 
 
-\begin{claim}
+\begin{claim}(Reflection)
 \beq
 -\s_{\hat{a}}\s_{\vec{x}}\s_{\hat{a}}=
 \sigma_{\rho_{\hat{a}}\vec{x}}
@@ -209,7 +212,7 @@ where
 \qed
 
 
-\begin{claim}(Rodrigues formula)
+\begin{claim}(Rotation, Rodrigues formula)
 
 If
 \beq
@@ -284,7 +287,8 @@ C^2\vec{x}
 
 
 
-If $U$ produces rotation $R$, then $-U$ gives the same rotation:
+If $U$ produces rotation $R$, then $-U$ gives the same rotation
+so 2 to 1 map:
 
 \beq
 (-U) \s_{\vec{x}} (-U)^\dagger = U\s_{\vec{x}}U^\dagger.
@@ -330,17 +334,19 @@ have a common name.}
 
 
 \beq
-\gamma\cdot a = \gamma_\mu a^\mu = \gamma_\rva
+\gamma\cdot a =  \gamma_\rva =
+\gamma_\mu a^\mu 
 \eeq
 We will use an underline in $\gamma_\rva$ 
 to distinguish $a$ from an index.
 
-
+The Clifford  anticommutation relation is
 \beq
 [\gamma_\mu,\gamma_\nu]_+=2\eta_{\mu\nu}
 \eeq
-
-Where $\eta_{\mu\nu}$ is real valued\footnote{Since $\eta_{\mu\nu}$ is real, we consider $Cl(n)_\RR$ instead of iits complexification $Cl(n)_\CC$} For $n=4$, it equals the Euclidean metric $(1,1,1,1)$ or the Lorentzian metric $(1, -1,-1,-1)$.
+where $\eta_{\mu\nu}$ is real valued\footnote{Since $\eta_{\mu\nu}$ is real, we consider later on in this chapter, the Clifford algebra $Cl(n)_\RR$ instead of its complexification $Cl(n)_\CC$} For $n=4$, it equals the Euclidean metric $(1,1,1,1)$ or the Lorentzian metric $(1, -1,-1,-1)$.
+The Clifford anticommutation relation 
+can be expressed in terms of gammions thus:
 
 
 \beq
@@ -354,17 +360,43 @@ where bivector
 \eeq
 is the generator of $\mathfrak{so}(n)_\RR$ or $\mathfrak{so}(p,q)$.
 
+Define
+\beq
+\av{\gamma_{\hat{\rva}}}(x)=
+- \gamma_{\hat{\rva}} \gamma_{\rvx} \gamma_{\hat{\rva}}
+\eeq
 
-A rotation by  $\omega_{\mu\nu}$   is
 
+\begin{claim} (Reflection)
+\beq
+ - \gamma_{\hat{\rva}} \gamma_{\rvx} \gamma_{\hat{\rva}}=
+\gamma_{\ul{\rho_{\hat{a}}x}}
+\eeq
+where
+
+\beq
+\rho_{\hat{a}}x
+=x - 2(\hat{a}\cdot x)\hat{a}
+\eeq
+\end{claim}
+\proof
+\qed
+
+
+\begin{claim} (Rotation)
+
+If 
 \beq
 S(\omega)=e^{\;\omega^{\mu\nu}\gamma_{\mu\nu}}
 \eeq
-
+for some $\omega_{\mu\nu}\in\RR$, then
 \beq
- S \gamma_\rvx S^\dagger = \gamma_{Rx}
+ S(\omega) \gamma_\rvx S^\dagger(\omega) = \gamma_{Rx}
 \eeq
 where $R\in SO(n)$ (or $SO(p,q)$).
+\end{claim}
+\proof
+\qed
  
 \section{$Spin(n)_\RR$}
 
@@ -381,14 +413,15 @@ where $R\in SO(n)$ (or $SO(p,q)$).
 %$Spin(n)_\CC$. 
 
 If $\gamma_\mu^\dagger=\gamma_\mu$
-for $\mu=1,2,\ldots,n$
+for $\mu=1,2,\ldots,n$, then define
 \beq
 Spin(n)_\RR=
 \{e^{\omega^{\mu\nu}\gamma_{\mu\nu}}|
 \omega_{\mu\nu}=-\omega_{\nu\mu}\in\RR\}
+\label{eq-spinrr-def}
 \eeq
 If $\gamma_0^\dagger=\gamma_0$, and
-$\gamma_i^\dagger=-\gamma_i$ (this assumes the mostly-minus metric $(1, -1, -1, -1)$)
+$\gamma_i^\dagger=-\gamma_i$ (this assumes the mostly-minus metric $(1, -1, -1, -1)$), theen define
 \beq
 Spin(1,3)_\RR=
 \{e^{-i\omega^{\mu\nu}\gamma_{\mu\nu}}|
@@ -398,21 +431,25 @@ Spin(1,3)_\RR=
 \}
 \eeq
 
-Spinors are the vector space upon which
+{\bf Spinors} are the vector space upon which
 the group $Spin(n)_\RR$ acts.
 
 
 
-$e_i\in\RR^n$ for $i=1, 2, \ldots n$. All components
+Suppose $e_i\in\RR^n$ for $i=1, 2, \ldots n$, and all components
 of $e_i$ are zero except the $i$th one.
+Define
 
 \beq
 \gamma_i=\gamma_{\rve_i}
 \eeq
+Consider the Clifford anticommutator in the
+Euclidean metric:
 
 \beq
 [\gamma_{i}, \gamma_{j}]_+ = 2 \delta_{i,j}
 \eeq
+Define the Clifford algebra $Cl(n)_\RR$ by
 
 \beq
 \Pi_0 = \{1\},
@@ -475,37 +512,13 @@ Cl(n)_\RR= Cl^0(n)_\RR \oplus Cl^1(n)_\RR
 
 Since $e^{\omega^{\mu\nu}\gamma_{\mu\nu}}$ is the exponentiation of a bivector, its Taylor expansion only
 contains summands with an even number 
-of gammas.
+of gammas. Hence,
 \beq
 Spin(n)_\RR
 \subset Cl^0(n)_\RR
 \eeq
 
-Define
-\beq
-\av{\gamma_{\hat{\rva}}}(x)=
-- \gamma_{\hat{\rva}} \gamma_{\rvx} \gamma_{\hat{\rva}}
-\eeq
-
-
-\begin{claim}
-\beq
- - \gamma_{\hat{\rva}} \gamma_{\rvx} \gamma_{\hat{\rva}}=
-\gamma_{\ul{\rho_{\hat{a}}x}}
-\eeq
-
-\beq
-\rho_{\hat{a}}x
-=x - 2(\hat{a}\cdot x)\hat{a}
-\eeq
-\end{claim}
-\proof
-\qed
-
-
-
-
-
+Define thee unit sphere in $n$ dimensions by
 
 \beq
 S^n =\{\hat{a}\in\RR^n| \hat{a}^2=1\}
@@ -513,7 +526,8 @@ S^n =\{\hat{a}\in\RR^n| \hat{a}^2=1\}
 
 Pin stands for \qt{Product of involutions}
 An involution in this case is a unit vector (i.e., $\hat{a}\in \RR^n$ such that
-$\hat{a}\cdot\hat{a}=\hat{a}^2=1$) $Pin(n)_\RR$ group
+$\hat{a}\cdot\hat{a}=\hat{a}^2=1$)
+The $Pin(n)_\RR$ group is defined by
 \beqa
 Pin(n)_\RR
 &=&\cup_{k=1}^\infty
@@ -527,19 +541,21 @@ Pin(n)_\RR
 
 Note that
 
-One refection
+\begin{itemize}
+\item One refection
 \beq
 det[\av{\gamma_{\hat{\rva}}}(x)] = -det(\gamma_\rvx \gamma_{\hat{\rva}}^2)
 =-\det(\gamma_{\rvx})
 \eeq
 
-Two reflections = a rotation
+\item Two reflections = a rotation
 \beq
 det[\av{\gamma_{\hat{\rva}_1}\gamma_{\hat{\rva}_2}}(x)] = +
 \det(\gamma_{\rvx})
 \eeq
+\end{itemize}
 
-$Pin(n)_\RR$ is a double cover of $O(n)$
+Hence, $Pin(n)_\RR$ is a double cover of $O(n)$
 (because $det=\pm1$)
 \beq
 Pin(n)_\RR\dmap O(n), \quad 
@@ -547,8 +563,13 @@ Pin(n)_\RR/\{1, -1\}\cong
 O(n)
 \eeq
 
-Another definition of $Spin(n)_\RR$ group. This definition
-in terms of gammions instead of group generators
+In Eq.(\ref{eq-spinrr-def}),
+we defined $Spin(n)_\RR$ 
+by exponentiating its generators. 
+$Spin(n)_\RR$ can also be defined as follows, 
+in terms of products of gammions
+instead of exponentiating generators:
+
 \beq
 Spin(n)_\RR=\cup_{k=1}^\infty
 \{
@@ -625,22 +646,26 @@ $\HH$ are the quaternions. }
 \label{tab-bott}
 \end{table}
 
+Consider Table \ref {tab-bott}
+which gives sets isomorphic to
+$Cl(n)_\RR$ for all $n$.
+
 Notes on Table \ref {tab-bott}
 \begin{itemize}
 \item Dimension check: the real dimension  for the two isomorphic sets 
-is equal to $2^n$ in every case.  For
-example\footnote{$dim_\RR$= number of real degrees of freedom (dofs). $dim_\CC= 2dim_\RR$. For example, $dim_\RR(\HH)=4$, Where $\HH$ are
+is equal to $2^n$ in every column.  For
+example\footnote{$dim_\RR$= number of real degrees of freedom (dofs). $dim_\CC= 2dim_\RR$. For example, $dim_\RR(\HH)=4$, where $\HH$ are
 the quaternions.}, $\dim_\RR M_2(\CC) = 8 = 2^3$.
 \item The pattern repeats with period 8 ({\bf Bott Periodicity}). 
 
 \beq
 Cl(n+8)_\RR\cong Cl(n)_\RR\otimes M_{16}(\RR)
 \eeq
-Rather than depending on $n$, they depend on\footnote{In Python $n \mod 8$ is denoted by $n\% 8$,
+Rather than depending on $n$, the
+pattern depends on\footnote{In Python $n \mod 8$ is denoted by $n\% 8$,
 the remainder after dividing $n$ by 8.}
 $n \mod 8$.
-
-for example
+For example
 
 \beq
 Cl(8)_\RR \cong \underbrace{Cl(0)}_{\RR}\otimes M_{16}(\RR)\cong M_{16}(\CC)
@@ -675,9 +700,15 @@ SO(p,q)_\RR \cong SO(q,p)_\RR,
 
 \item 
 
-Complexifying collapses this to the simpler classification
-of representations. In fact, the representations of $Cl(n)_\CC$ are all complex.
-\beq Cl(2k)_\CC\cong M_{2^k}(\CC) \supset Spin(2k)_\CC\eeq and \beq
+Complexifying collapses this
+classification
+of representations to a far simpler one . In fact, the representations of $Cl(n)_\CC$ are all complex.
+
+For $n=2k$, 
+\beq Cl(2k)_\CC\cong M_{2^k}(\CC) \supset Spin(2k)_\CC\eeq 
+and for $n=2k+1$,
+
+\beq
 Cl(2k+1)_\CC\cong M_{2^k}(\CC)\oplus M_{2^k}(\CC)
 \supset Spin(2k+1)_\RR
 \eeq
@@ -695,32 +726,33 @@ $\gfive$ satisfies:
 all the $\gamma_\mu$
 
 \item commutes with the elements of group $Spin(n)_\RR$
-(product of even number of gammas)
+(because this group consists of products of even number of gammions)
 
 \item
-$\gfive^2=1$.
+$\gfive^2=1$. Therefore, $\gfive$ has eigenvalues $1, -1$.
 \end{itemize}
-Therefore it has eigenvalues $1, -1$.
-If $n$ is even, and $S=\CC^{n/2}$,
+
+
+\item If $n$ is even, and $V=\CC^{n/2}$,
 then
 
 \beq
-S = S_+ \oplus S_-,
+V = V_+ \oplus V_-,
 \eeq
 where:
 
 \beq
-S_\pm = 
-\{\psi \in S \mid \gfive \psi = \pm \psi\}
+V_\pm = 
+\{\psi \in V \mid \gfive \psi = \pm \psi\}
 \eeq
-These are the two Weyl (or chiral) spinors in even $n$.
+Thus, there  are the two Weyl (or chiral) spinors when $n$ is even.
 
 
-\item For odd $n$, $n=2k+1$,
+\item If $n$ is odd,
 the expression $\gamma^1\cdots\gamma^n$ is proportional to the identity. Hence,
 there is no new operator  that commutes with all the elements of $Spin(n)_\RR$ and there is no
-chiral decomposition of vector space $S$.
-The space $S$ is irreducible.
+chiral decomposition of vector space $V$.
+The space $V$ is irreducible.
 
 
 \end{itemize}
@@ -732,12 +764,12 @@ The space $S$ is irreducible.
 $Spin(2)_\RR$
 
 \beq
-Cl(2)_\RR=span_\RR \{1, \s_1, \s_2, \s_1\s_2=i\s_3\}
+Cl(2)_\RR=span_\RR \{1, \s_1, \s_2, \underbrace{\s_1\s_2}_{i\s_3}\}
 \eeq
 
 \beq
 Cl^0(2)_\RR=
-span_\RR\{1,\s_1\s_2=i\s_3\}
+span_\RR\{1,\underbrace{\s_1\s_2}_{i\s_3}\}
 =\{Ae^{i \theta \s_3}: \theta, A\in\RR\}
 \cong\CC
 \eeq
@@ -846,7 +878,7 @@ R_z(2\theta)=
 \vec{x'}= R_z(2\theta)\vec{x}
 \eeq
 
-The 2-1 map:
+The 2 to 1 map:
 
 \beq
 e^{i\theta\s_3}\mapsto R_z(2\theta)
@@ -912,7 +944,11 @@ q= a + x\mathbf{i}
 +
 z\mathbf{k}
 \eeq
-where $a,x,y,z\in\RR$
+where $a,x,y,z\in\RR$.
+The multiplication table for
+quaternions is the
+same as that of Pauli matrices, 
+if we map
 
 \beq
 i\sigma_1 \leftrightarrow \mathbf{i},\qquad
