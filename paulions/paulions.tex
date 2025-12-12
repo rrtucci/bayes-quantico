@@ -589,7 +589,6 @@ Spin(n)_\RR\dmap SO(n), \quad
 Spin(n)_\RR/\{1, -1\}\cong 
 SO(n)
 \eeq
-\section{Representations of $Spin(n)_\RR$}
 
 
 Define $Cl(n)_\FF$ as a span over $\FF=\RR,\CC$
@@ -631,6 +630,7 @@ is real or complex
 \item $\gamma$ matrices are real or complex
 \end{enumerate}
 
+
 % Please add the following required packages to your document preamble:
 % \usepackage[table,xcdraw]{xcolor}
 % Beamer presentation requires \usepackage{colortbl} instead of \usepackage[table,xcdraw]{xcolor}
@@ -645,6 +645,8 @@ is real or complex
 $\HH$ are the quaternions. }
 \label{tab-bott}
 \end{table}
+
+\section{$Cl(n)_\RR$ representations}
 
 Consider Table \ref {tab-bott}
 which gives sets isomorphic to
@@ -697,12 +699,12 @@ Spin(p,q)_\RR \cong Spin(q,p)_\RR,
 SO(p,q)_\RR \cong SO(q,p)_\RR,
 \quad \ger{so}(p,q)_\RR\cong \ger{so}(q,p)_\RR
 \eeq
+\end{itemize}
+\section{$Cl(n)_\CC$ representations}
 
-\item 
-
-Complexifying collapses this
+Complexifying collapses the
 classification
-of representations to a far simpler one . In fact, the representations of $Cl(n)_\CC$ are all complex.
+of representations of Table \ref{tab-bott} to a far simpler one. In fact, the representations of $Cl(n)_\CC$ are all complex.
 
 For $n=2k$, 
 \beq Cl(2k)_\CC\cong M_{2^k}(\CC) \supset Spin(2k)_\CC\eeq 
@@ -712,7 +714,7 @@ and for $n=2k+1$,
 Cl(2k+1)_\CC\cong M_{2^k}(\CC)\oplus M_{2^k}(\CC)
 \supset Spin(2k+1)_\RR
 \eeq
-\item For even $n$, $n=2k$,
+Assuming complexification, if $n$ is even, 
 we can define
 a nontrivial  chirality operator:
 
@@ -733,7 +735,7 @@ $\gfive^2=1$. Therefore, $\gfive$ has eigenvalues $1, -1$.
 \end{itemize}
 
 
-\item If $n$ is even, and $V=\CC^{n/2}$,
+Assuming complexification, if $n$ is even, and $V=\CC^{n/2}$,
 then
 
 \beq
@@ -748,14 +750,12 @@ V_\pm =
 Thus, there  are the two Weyl (or chiral) spinors when $n$ is even.
 
 
-\item If $n$ is odd,
+Assuming complexification, if $n$ is odd,
 the expression $\gamma^1\cdots\gamma^n$ is proportional to the identity. Hence,
 there is no new operator  that commutes with all the elements of $Spin(n)_\RR$ and there is no
 chiral decomposition of vector space $V$.
 The space $V$ is irreducible.
 
-
-\end{itemize}
 
 
 
@@ -885,7 +885,7 @@ e^{i\theta\s_3}\mapsto R_z(2\theta)
 \eeq
 
 \qed
-\hrule
+\hrule\noindent
 $Spin(3)_\RR$
 
 
@@ -932,11 +932,11 @@ SL(2;\CC)\supset SU(2)\cong Spin(3)_\RR\dmap SO(3)\eeq
 \qed
 
 
-\hrule
+\hrule\noindent
 Quaternions
 
 The set of quaternions is called $\HH$ in honor of Hamilton. ($\QQ$ is used for the rationals).
-A quaternion $q$ is an expression of the form
+A {\bf quaternion} $q$ is an expression of the form
 
 \beq
 q= a + x\mathbf{i}
@@ -947,7 +947,7 @@ z\mathbf{k}
 where $a,x,y,z\in\RR$.
 The multiplication table for
 quaternions is the
-same as that of Pauli matrices, 
+same as that for Pauli matrices, 
 if we map
 
 \beq
@@ -956,7 +956,7 @@ i\sigma_2 \leftrightarrow \mathbf{j},\qquad
 i\sigma_3 \leftrightarrow \mathbf{k}
 \eeq
 
-Quaternion multiplication rules
+Quaternion multiplication rules:
 \beq
 (i\sigma_i)(i\sigma_j)
 = -(\delta_{ij} + \epsilon_{ijk}i\sigma_k)
