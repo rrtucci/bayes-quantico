@@ -638,12 +638,25 @@ is real or complex
 \begin{tabular}{|l|l|l|l|l|l|l|l|l|}
 \hline
 \rowcolor[HTML]{FFCCC9} 
-\cellcolor[HTML]{9AFF99}$n$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\ \hline
-\cellcolor[HTML]{9AFF99}{\color[HTML]{000000} $\cong$} & $\RR$ & $\RR\oplus \RR$ & $M_2(\RR)$ & $M_2(\CC)$ & $M_2(\HH)$ & $M_2(\HH)\oplus M_2(\HH)$ & $M_4(\HH)$ & $M_8(\CC)$ \\ \hline
+\cellcolor[HTML]{9AFF99}$n=$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\ \hline
+\cellcolor[HTML]{9AFF99}{\color[HTML]{000000} $Cl(n)_\RR\cong$} & $\RR$ & $\RR\oplus \RR$ & $M_2(\RR)$ & $M_2(\CC)$ & $M_2(\HH)$ & $M_2(\HH)\oplus M_2(\HH)$ & $M_4(\HH)$ & $M_8(\CC)$ \\ \hline
 \end{tabular}
 \caption{Sets isomorphic ($\cong$) to $Cl(n)_\RR$. In this figure, $M_n(\FF)=\FF^{n\times n}$ for $\FF= \RR,\CC,\HH$ where
 $\HH$ are the quaternions. }
 \label{tab-bott}
+\end{table}
+
+\begin{table}[h!]
+\begin{tabular}{|
+>{\columncolor[HTML]{9AFF99}}l |l|l|}
+\hline
+$n=$& \cellcolor[HTML]{FFCCC9}$2k$ & \cellcolor[HTML]{FFCCC9}$2k+1$ \\ \hline
+$Cl(n)_\CC\cong$ & $M_{2^k}(\CC)\oplus M_{2^k}(\CC)$ & $M_{2^k}(\CC)$  \\ \hline
+\end{tabular}
+\caption{Sets isomorphic ($\cong$) to $Cl(n)_\CC$. Table \ref{tab-bott}
+collapses to this table
+when $Cl(n)_\RR$ is complexified.}
+\label{tab-clcc-reps}
 \end{table}
 
 \section{$Cl(n)_\RR$ representations}
@@ -702,18 +715,18 @@ SO(p,q)_\RR \cong SO(q,p)_\RR,
 \end{itemize}
 \section{$Cl(n)_\CC$ representations}
 
-Complexifying collapses the
-classification
-of representations of Table \ref{tab-bott} to a far simpler one. In fact, the representations of $Cl(n)_\CC$ are all complex.
+Upon complexification, Table \ref{tab-bott} collapses to Table \ref{tab-clcc-reps}. In fact, the representations of $Cl(n)_\CC$ are all complex.
 
 For $n=2k$, 
-\beq Cl(2k)_\CC\cong M_{2^k}(\CC) \supset Spin(2k)_\CC\eeq 
-and for $n=2k+1$,
-
 \beq
-Cl(2k+1)_\CC\cong M_{2^k}(\CC)\oplus M_{2^k}(\CC)
-\supset Spin(2k+1)_\RR
+Cl(2k)_\CC\cong M_{2^k}(\CC)\oplus M_{2^k}(\CC)
+\supset Spin(2k)_\CC
 \eeq
+and for $n=2k+1$,
+\beq Cl(2k+1)_\CC\cong M_{2^k}(\CC) \supset Spin(2k+1)_\CC\eeq 
+
+
+
 Assuming complexification, if $n$ is even, 
 we can define
 a nontrivial  chirality operator:
