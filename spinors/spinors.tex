@@ -81,7 +81,7 @@ a&
 }
 \ecen
 ,\quad
-\gamma^\mu_{ab}
+(\gamma_\mu)_{ab}
 =
 \bcen
 \xymatrix{
@@ -99,6 +99,13 @@ a&
 &\bullet&\ar@{-->}[ll]
 }b
 \eeq
+
+\beq
+g_{\mu\nu}= \xymatrix{\mu&\ul{g}\ar[r]\ar[l]&\nu},
+\quad
+g^{\mu\nu}= \xymatrix{\mu\ar[r]&\ol{g}&\ar[l]\nu}
+\eeq
+
 Note that
 
 
@@ -178,7 +185,7 @@ Clifford Algebra anticommutator:
 By virtue of Eq.(\ref{eq-g-anti-com}),
 it is possible to replace all $g$'s by swaps, 
 and vice versa,
-in a birdtrack linear combination.
+in a linear combination of birdtracks.
 
 \begin{claim} 
 
@@ -328,6 +335,7 @@ The claim for $p=2$ is
 }
 \ecen
 \eeq
+where we define
 
 \beq
 2
@@ -488,8 +496,7 @@ The claim for $p=3$ is
 \end{array}
 \right]
 \end{align}
-
-The definition of $\cala_6$ is
+where we define
 
 \beq
 6
@@ -951,6 +958,7 @@ side of Eq.(\ref{eq-cala-six-def}) in terms of $g$'s instead of swaps.
 \ar@{-->}[l]
 }
 \ecen
+\label{eq-arrow-arrow-perm}
 \eeq
 \qed
 
@@ -978,7 +986,7 @@ g_{\nu\mu_k}
 \ldots
 \gamma_{\mu_a}
 \eeq
-where hat means omission. For $a=2$, 
+where a hat means omission. For $a=2$, 
 \beq
 \frac{1}{2}
 \left[
@@ -1046,6 +1054,8 @@ where hat means omission. For $a=2$,
 \eeq
 \end{claim}
 \proof
+
+Note that
 \beq
 \bcen
 \xymatrix@C=1pc@R=1.5pc{
@@ -1082,6 +1092,9 @@ where hat means omission. For $a=2$,
 }
 \ecen
 \eeq
+so this claim has been
+proven before for $a=2$ in
+Eq.(\ref{eq-arrow-arrow-perm})
 \qed
 
 \begin{claim}
@@ -1515,10 +1528,11 @@ a
 %\ecen
 %\eeq
 
-Hence, if $a$ is odd and  $n\neq a$, the trace of $a$ 
+Hence, if  $n\neq a$
+and $a$ is odd, the trace of $a$ 
 gammas is zero.
 
-The just presented is now  complete
+The above proof is now  complete
 and it works for odd or even $n$. However, let us mention that for even $n$,
 a chirality operator $\Gamma_5$,  exists,
 and this claim  can be proven using $\Gamma_5$. Indeed, for $n$ even, let
@@ -1874,9 +1888,7 @@ u=(a+c-b)/2
 \eeq
 
 \begin{claim}
-The $\Gamma^{(c)}$
-span the algebra of sum products
-of $\Gamma^{(c)}$ so
+
 \beq
 \underbrace{
 \bcen
@@ -2287,7 +2299,7 @@ K_c' =\frac{a!b!c!}{s!t!u!} = K_c
 \eeq
 \qed
 
-\begin{claim}
+\begin{claim}(t-channel to sum of s-channels)
 \beq
 \bcen
 \xymatrix{
