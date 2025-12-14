@@ -10,15 +10,17 @@ Chapter \ref{ch-paulions}
 before reading this chapter. There he
 will learn about
 the group $Spin(n)_\RR$.
-Spinors are the vector space upon which
-the group $Spin(n)_\RR$ acts.
 
 
-
+Let
+\beq
+\gamma_{\mu\nu}=\frac{1}{2}
+[\gamma_\mu, \gamma_\nu]
+\eeq
 
 
 If $\gamma_\mu^\dagger=\gamma_\mu$
-for $\mu=1,2,\ldots,n$
+for $\mu=1,2,\ldots,n$ (this assumes the Euclidean metric which is  $(1, 1, 1, 1)$ for $n=4$)
 \beq
 Spin(n)_\RR=
 \{e^{\omega^{\mu\nu}\gamma_{\mu\nu}}|
@@ -26,7 +28,7 @@ Spin(n)_\RR=
 \}
 \eeq
 If $\gamma_0^\dagger=\gamma_0$, and
-$\gamma_i^\dagger=-\gamma_i$ (this assumes the mostly-minus metric $(1, -1, -1, -1)$)
+$\gamma_i^\dagger=-\gamma_i$ (this assumes the mostly-minus metric which is $(1, -1, -1, -1)$ for $n=4$)
 \beq
 Spin(1,3)_\RR=
 \{e^{-i\omega^{\mu\nu}\gamma_{\mu\nu}}|
@@ -36,11 +38,35 @@ Spin(1,3)_\RR=
 \}
 \eeq
 
-Spinors are the vector space
-that upon which the group $Spin(n)_\RR$ acts.
+{\bf Spinors} are the vectors in the vector space
+upon which the group $Spin(n)_\RR$ acts.
+
+\begin{table}[h!]
+\begin{tabular}{|
+>{\columncolor[HTML]{FFFFC7}}l |l|l|l|l|l|l|l|l|l|l|}
+\hline
+$n$ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline
+$\intntwo$ & 0 & 1 & 1 & 2 & 2 & 3 & 3 & 4 & 4 & 5 \\ \hline
+$d=2^{\intntwo}$ & 1 & 2 & 2 & 4 & 4 & 8 & 8 & 16 & 16 & 32 \\ \hline
+\end{tabular}
+\caption{$\gamma_\mu \in \CC^{d\times d}$}
+\label{tab2-gamma-dim}
+\end{table}
 
 
+Let 
+$
+\mu \in \{1,2, \dots, n\}$
 
+
+$int(x) =$ integer part of $x\in \RR$
+
+$a,b\in\{ 1, 2, \ldots, 2^\intntwo\}$
+
+$\gamma_\mu\in \CC^{d\times d}$ where 
+$d=2^{int(n/2)}$ (See Table \ref{tab2-gamma-dim})
+
+Define the following birdtracks
 \beq
 \gamma^\mu_{ab}
 =
@@ -73,35 +99,18 @@ a&
 &\bullet&\ar@{-->}[ll]
 }b
 \eeq
-where
-
-$
-\mu \in \{1,2, \dots, n\}$
+Note that
 
 
-$int(x) =$ integer part of $x\in \RR$
-
-$a,b\in\{ 1, 2, \ldots, 2^\intntwo\}$
-
-\begin{table}[h!]
-\begin{tabular}{|
->{\columncolor[HTML]{FFFFC7}}l |l|l|l|l|l|l|l|l|l|l|}
-\hline
-$n$ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline
-$\intntwo$ & 0 & 1 & 1 & 2 & 2 & 3 & 3 & 4 & 4 & 5 \\ \hline
-$d=2^{\intntwo}$ & 1 & 2 & 2 & 4 & 4 & 8 & 8 & 16 & 16 & 32 \\ \hline
-\end{tabular}
-\caption{$\gamma_\mu \in \CC^{d\times d}$}
-\label{tab2-gamma-dim}
-\end{table}
 
 \beq
+g\indices{_\mu^\mu}=
 \dashbubble
 =
 2^{\intntwo}
 \eeq
 
-Clifford Algebra
+Clifford Algebra anticommutator:
 
 \beq
 \begin{array}{ll}
@@ -163,12 +172,13 @@ Clifford Algebra
 \ecen
 \right]
 \end{array}
+\label{eq-g-anti-com}
 \eeq
-where  $\gamma_\mu, \gamma_\nu\in \CC^{2^{\intntwo}\times 2^{\intntwo}}$.
 
-In the formulae
-for the symmetrizer
-and antysymmetrizer, we can replace each swap by a $2g$ tensor.
+By virtue of Eq.(\ref{eq-g-anti-com}),
+it is possible to replace all $g$'s by swaps, 
+and vice versa,
+in a birdtrack linear combination.
 
 \begin{claim} 
 
@@ -479,6 +489,8 @@ The claim for $p=3$ is
 \right]
 \end{align}
 
+The definition of $\cala_6$ is
+
 \beq
 6
 \bcen
@@ -590,8 +602,11 @@ The claim for $p=3$ is
 \ecen
 \end{array}
 \right]
+\label{eq-cala-six-def}
 \eeq
-
+Now let us express each of
+the 6 birdtracks on the right hand
+side of Eq.(\ref{eq-cala-six-def}) in terms of $g$'s instead of swaps.
 
 \beq
 \bcen
@@ -939,8 +954,98 @@ The claim for $p=3$ is
 \eeq
 \qed
 
-
-
+\begin{claim}
+\beq
+\frac{1}{2}
+\left[
+{\color{red}\gamma_{\nu}}
+\gamma_{\mu_1}
+\ldots
+\gamma_{\mu_a}
+-(-1)^a
+\gamma_{\mu_1}
+\ldots
+\gamma_{\mu_a}
+{\color{red}\gamma_{\nu}}
+\right]
+=
+\sum_{k=1}^a
+(-1)^{k-1}
+g_{\nu\mu_k}
+\gamma_{\mu_1}
+\ldots
+\HAT{\gamma_{\mu_k}}
+\ldots
+\gamma_{\mu_a}
+\eeq
+where hat means omission. For $a=2$, 
+\beq
+\frac{1}{2}
+\left[
+\bcen
+\xymatrix@C=1pc@R=1.5pc{
+&&
+\\
+&
+&
+\\
+\ul{\gamma}\ar@[red][uu]
+&\ul{\gamma}\ar@{-->}[l]\ar[uu]
+&\ul{\gamma}\ar[uu]
+\ar@{-->}[l]
+}
+\ecen
+- (-1)^2
+\bcen
+\xymatrix@C=1pc@R=1.5pc{
+&
+&
+\\
+&
+&
+\\
+\ul{\gamma}\ar[uur]
+&\ul{\gamma}\ar@{-->}[l]\ar[uur]
+&\ul{\gamma}\ar@[red][uull]
+\ar@{-->}[l]
+}
+\ecen
+\right]=
+ \bcen
+\xymatrix@C=1pc@R=1.5pc{
+%\ar@{-}`d[ddr]`[r][r]
+\ar@{-}@/_1pc/[r]|{\ul{g}}
+&
+&
+\\
+&
+&
+\\
+&
+&
+\ar@{-->}[ll]\ul{\gamma}\ar[uu]
+}
+\ecen
+-
+\bcen
+\xymatrix@C=1pc@R=1.5pc{
+%\ar@{-}`d[ddr]`[r][r]
+\ar@{-}@/_1.5pc/[rr]|{\ul{g}}
+&
+&
+\\
+&
+&
+\\
+&\ul{\gamma}\ar@{-->}[l]\ar[uu]
+&
+\ar@{-->}[l]
+}
+\ecen
+\label{eq-before-after-gamma}
+\eeq
+\end{claim}
+\proof
 \beq
 \bcen
 \xymatrix@C=1pc@R=1.5pc{
@@ -957,170 +1062,124 @@ The claim for $p=3$ is
 }
 \ecen
 =
-2
 \bcen
 \xymatrix@C=1pc@R=1.5pc{
-%\ar@{-}`d[ddr]`[r][r]
-\ar@{-}@/_1.5pc/[rr]|{\ul{g}}
+\ar@{<-}[ddd]
+&\ar@{<-}[ddd]
+&\ar@{<-}[ddd]
+\\
+\ar@{<->}[r]
 &
 &
 \\
-&
-&
-\\
-&\ul{\gamma}\ar@{-->}[l]\ar[uu]
-&
-\ar@{-->}[l]
-}
-\ecen
--2
-\bcen
-\xymatrix@C=1pc@R=1.5pc{
-%\ar@{-}`d[ddr]`[r][r]
-\ar@{-}@/_1pc/[r]|{\ul{g}}
-&
+&\ar@{<->}[r]
 &
 \\
-&
-&
-\\
-&
-&
-\ar@{-->}[ll]\ul{\gamma}\ar[uu]
-}
-\ecen
-+
-\bcen
-\xymatrix@C=1pc@R=1.5pc{
-&&
-\\
-&
-&
-\\
-\ul{\gamma}\ar[uu]
-&\ul{\gamma}\ar@{-->}[l]\ar[uu]
-&\ul{\gamma}\ar[uu]
+\ul{\gamma}
+&\ul{\gamma}\ar@{-->}[l]
+&\ul{\gamma}
 \ar@{-->}[l]
 }
 \ecen
 \eeq
+\qed
 
-\beqa
+\begin{claim}
+If $n\neq a$ and $a$ is odd
+\beq
+\tr(\gamma_{\mu_1}
+\gamma_{\mu_2}
+\ldots \gamma_{\mu_a})=0
+\eeq
+\end{claim}
+\proof
+
+If we
+left-multiply
+both sides of Eq.(\ref{eq-before-after-gamma})
+by $\gamma_{\mu_1}$
+where $\mu_1$ is the first index,
+and then we trace over the spinor indices, we get
+\beq
+\frac{1}{2}
+\left[
 \bcen
 \xymatrix@C=1pc@R=1.5pc{
+&\ar@[red][ldd]
 &&
 \\
-\ar[u]
-&\cala_2\ar@2{-}[r]\ar[u]
-&\ar[u]
-\\
+&
 &
 &
 \\
-\ul{\gamma}\ar[uur]
+\ul{\gamma}
+&\ul{\gamma}\ar@{-->}[l]\ar@[red][uu]
+&\ul{\gamma}\ar@{-->}[l]\ar[uu]
+&\ul{\gamma}\ar[uu]
+\ar@{-->}[l]
+\ar@[red]@{-}@/^1.5pc/[lll]
+}
+\ecen
+- (-1)^a
+\bcen
+\xymatrix@C=1pc@R=1.5pc{
+&\ar@[red][ddl]
+&
+&
+\\
+&
+&
+&
+\\
+\ul{\gamma}
+&\ul{\gamma}\ar[uur]\ar@{-->}[l]
 &\ul{\gamma}\ar@{-->}[l]\ar[uur]
-&\ul{\gamma}\ar[uull]
+&\ul{\gamma}\ar@[red][uull]
 \ar@{-->}[l]
+\ar@[red]@{-}@/^1.5pc/[lll]
 }
 \ecen
-&=&
-2
-\bcen
+\right]=
+ \bcen
 \xymatrix@C=1pc@R=1.5pc{
-&&
-\\
 %\ar@{-}`d[ddr]`[r][r]
-\ar@{-}@/_1.5pc/[rr]|{\ul{g}}
-\ar[u]
-&\cala_2\ar@2{-}[r]\ar[u]
-&\ar[u]
-\\
+&
 &
 &
 \\
-&\ul{\gamma}\ar@{-->}[l]\ar[uu]
 &
-\ar@{-->}[l]
+&
+&
+\\
+&\ar@{-->}[l]\ul{\gamma}\ar[uu]
+&\ar@{-->}[l]\ul{\gamma}\ar[uu]
+&\ar@{-->}[l]
+\ar@[red]@{-}@/^1.5pc/[lll]
 }
 \ecen
--2
+-
 \bcen
 \xymatrix@C=1pc@R=1.5pc{
-&&
-\\
 %\ar@{-}`d[ddr]`[r][r]
-\ar@{-}@/_1pc/[r]|{\ul{g}}
-\ar[u]
-&\cala_2\ar@2{-}[r]\ar[u]
-&\ar[u]
-\\
+&
 &
 &
 \\
 &
 &
-\ar@{-->}[ll]\ul{\gamma}\ar[uu]
-}
-\ecen
-+
-\bcen
-\xymatrix@C=1pc@R=1.5pc{
-&&
-\\
-&\cala_2\ar@2{-}[r]\ar[u]
-&\ar[u]
-\\
-&
 &
 \\
-\ul{\gamma}\ar[uuu]
+&\ul{\gamma}\ar@{-->}[l]\ar[rruu]
 &\ul{\gamma}\ar@{-->}[l]\ar[uu]
-&\ul{\gamma}\ar[uu]
-\ar@{-->}[l]
+&\ar@{-->}[l]
+\ar@[red]@{-}@/^1.5pc/[lll]
 }
 \ecen
-\\
-&=&
--2 a
-\bcen
-\xymatrix@C=1pc@R=1.5pc{
-&&
-\\
-%\ar@{-}`d[ddr]`[r][r]
-\ar@{-}@/_1pc/[r]|{\ul{g}}
-\ar[u]
-&\cala_a\ar@2{-}[r]\ar[u]
-&\ar[u]
-\\
-&
-&
-\\
-&
-&
-\ar@{-->}[ll]\ul{\gamma}\ar[uu]
-}
-\ecen
-+ (-1)^a
-\bcen
-\xymatrix@C=1pc@R=1.5pc{
-&&
-\\
-&\cala_a\ar@2{-}[r]\ar[u]
-&\ar[u]
-\\
-&
-&
-\\
-\ul{\gamma}\ar[uuu]
-&\ul{\gamma}\ar@{-->}[l]\ar[uu]
-&\ul{\gamma}\ar[uu]
-\ar@{-->}[l]
-}
-\ecen
-\eeqa
+\eeq
+Assuming $a$ is odd, we get
 
 \beq
-(n-a)
+n
 \bcen
 \xymatrix@C=1pc{
 &&&
@@ -1135,10 +1194,364 @@ The claim for $p=3$ is
 &\ul{\gamma}\ar@{-->}[l]\ar[u]
 &\ul{\gamma}\ar@{-->}[l]\ar[u]
 &\ul{\gamma}\ar@{-->}[l]\ar[u]
+\ar@[red]@{-}@/^1.5pc/[lll]
 }
 \ecen
-=0
+=
+a
+\bcen
+\xymatrix@C=1pc{
+&&&
+\\
+\cala_a\ar@2{-}[rrr]
+\ar[u]
+&\ar[u]
+&\ar[u]
+&\ar[u]
+\\
+\ul{\gamma}\ar[u]
+&\ul{\gamma}\ar@{-->}[l]\ar[u]
+&\ul{\gamma}\ar@{-->}[l]\ar[u]
+&\ul{\gamma}\ar@{-->}[l]\ar[u]
+\ar@[red]@{-}@/^1.5pc/[lll]
+}
+\ecen
 \eeq
+
+
+%\beq
+%\bcen
+%\xymatrix@C=1pc@R=1.5pc{
+%&
+%&
+%\\
+%&
+%&
+%\\
+%\ul{\gamma}\ar[uur]
+%&\ul{\gamma}\ar@{-->}[l]\ar[uur]
+%&\ul{\gamma}\ar[uull]
+%\ar@{-->}[l]
+%}
+%\ecen
+%=
+%\bcen
+%\xymatrix@C=1pc@R=1.5pc{
+%\ar@{<-}[ddd]
+%&\ar@{<-}[ddd]
+%&\ar@{<-}[ddd]
+%\\
+%\ar@{<->}[r]
+%&
+%&
+%\\
+%&\ar@{<->}[r]
+%&
+%\\
+%\ul{\gamma}
+%&\ul{\gamma}\ar@{-->}[l]
+%&\ul{\gamma}
+%\ar@{-->}[l]
+%}
+%\ecen
+%=
+%2
+%\bcen
+%\xymatrix@C=1pc@R=1.5pc{
+%%\ar@{-}`d[ddr]`[r][r]
+%\ar@{-}@/_1.5pc/[rr]|{\ul{g}}
+%&
+%&
+%\\
+%&
+%&
+%\\
+%&\ul{\gamma}\ar@{-->}[l]\ar[uu]
+%&
+%\ar@{-->}[l]
+%}
+%\ecen
+%-2
+%\bcen
+%\xymatrix@C=1pc@R=1.5pc{
+%%\ar@{-}`d[ddr]`[r][r]
+%\ar@{-}@/_1pc/[r]|{\ul{g}}
+%&
+%&
+%\\
+%&
+%&
+%\\
+%&
+%&
+%\ar@{-->}[ll]\ul{\gamma}\ar[uu]
+%}
+%\ecen
+%+
+%\bcen
+%\xymatrix@C=1pc@R=1.5pc{
+%&&
+%\\
+%&
+%&
+%\\
+%\ul{\gamma}\ar[uu]
+%&\ul{\gamma}\ar@{-->}[l]\ar[uu]
+%&\ul{\gamma}\ar[uu]
+%\ar@{-->}[l]
+%}
+%\ecen
+%\eeq
+%
+%\beqa
+%\bcen
+%\xymatrix@C=1pc@R=1.5pc{
+%&&
+%\\
+%\ar[u]
+%&\cala_2\ar@2{-}[r]\ar[u]
+%&\ar[u]
+%\\
+%&
+%&
+%\\
+%\ul{\gamma}\ar[uur]
+%&\ul{\gamma}\ar@{-->}[l]\ar[uur]
+%&\ul{\gamma}\ar[uull]
+%\ar@{-->}[l]
+%}
+%\ecen
+%&=&
+%2
+%\bcen
+%\xymatrix@C=1pc@R=1.5pc{
+%&&
+%\\
+%%\ar@{-}`d[ddr]`[r][r]
+%\ar@{-}@/_1.5pc/[rr]|{\ul{g}}
+%\ar[u]
+%&\cala_2\ar@2{-}[r]\ar[u]
+%&\ar[u]
+%\\
+%&
+%&
+%\\
+%&\ul{\gamma}\ar@{-->}[l]\ar[uu]
+%&
+%\ar@{-->}[l]
+%}
+%\ecen
+%-2
+%\bcen
+%\xymatrix@C=1pc@R=1.5pc{
+%&&
+%\\
+%%\ar@{-}`d[ddr]`[r][r]
+%\ar@{-}@/_1pc/[r]|{\ul{g}}
+%\ar[u]
+%&\cala_2\ar@2{-}[r]\ar[u]
+%&\ar[u]
+%\\
+%&
+%&
+%\\
+%&
+%&
+%\ar@{-->}[ll]\ul{\gamma}\ar[uu]
+%}
+%\ecen
+%+
+%\bcen
+%\xymatrix@C=1pc@R=1.5pc{
+%&&
+%\\
+%&\cala_2\ar@2{-}[r]\ar[u]
+%&\ar[u]
+%\\
+%&
+%&
+%\\
+%\ul{\gamma}\ar[uuu]
+%&\ul{\gamma}\ar@{-->}[l]\ar[uu]
+%&\ul{\gamma}\ar[uu]
+%\ar@{-->}[l]
+%}
+%\ecen
+%\\
+%&=&
+%2 a \indi(a \text{
+%odd})
+%\bcen
+%\xymatrix@C=1pc@R=1.5pc{
+%&&
+%\\
+%%\ar@{-}`d[ddr]`[r][r]
+%\ar@{-}@/_1.5pc/[rr]|{\ul{g}}
+%\ar[u]
+%&\cala_a\ar@2{-}[r]\ar[u]
+%&\ar[u]
+%\\
+%&
+%&
+%\\
+%&\ul{\gamma}\ar@{-->}[l]\ar[uu]
+%&
+%\ar@{-->}[l]
+%}
+%\ecen
+%+ (-1)^a
+%\bcen
+%\xymatrix@C=1pc@R=1.5pc{
+%&&
+%\\
+%&\cala_a\ar@2{-}[r]\ar[u]
+%&\ar[u]
+%\\
+%&
+%&
+%\\
+%\ul{\gamma}\ar[uuu]
+%&\ul{\gamma}\ar@{-->}[l]\ar[uu]
+%&\ul{\gamma}\ar[uu]
+%\ar@{-->}[l]
+%}
+%\ecen
+%\eeqa
+%
+%\beq
+%\bcen
+%\xymatrix@C=1pc@R=1.5pc{
+%\ar[rrrddd]
+%&&&
+%\\
+%\ar[u]
+%&\cala_a\ar@2{-}[r]\ar[u]
+%&\ar[u]
+%&
+%\\
+%&
+%&
+%&
+%\\
+%\ul{\gamma}\ar[uur]
+%&\ul{\gamma}\ar@{-->}[l]\ar[uur]
+%&\ul{\gamma}\ar[uull]
+%\ar@{-->}[l]
+%&\ul{\gamma}\ar@{-->}[l]
+%\ar@[red]@{-}@/^1.5pc/[lll]
+%}
+%\ecen
+%=
+%2 a \indi(a \text{
+%odd})
+%\bcen
+%\xymatrix@C=1pc@R=1.5pc{
+%&&
+%\\
+%%\ar@{-}`d[ddr]`[r][r]
+%&\cala_a\ar@2{-}[r]\ar[u]
+%&\ar[u]
+%\\
+%&
+%&
+%\\
+%&\ul{\gamma}\ar@{-->}[l]\ar[uu]
+%&\ul{\gamma}\ar@{-->}[l]\ar[uu]
+%\ar@[red]@{-}@/^1.5pc/[ll]
+%}
+%\ecen
+%+ (-1)^a
+%\bcen
+%\xymatrix@C=1pc@R=1.5pc{
+%\ar[rrrddd]
+%&&&
+%\\
+%&\cala_a\ar@2{-}[r]\ar[u]
+%&\ar[u]
+%&
+%\\
+%&
+%&
+%&
+%\\
+%\ul{\gamma}\ar[uuu]
+%&\ul{\gamma}\ar@{-->}[l]\ar[uu]
+%&\ul{\gamma}\ar[uu]
+%\ar@{-->}[l]
+%&\ul{\gamma}\ar@{-->}[l]
+%\ar@[red]@{-}@/^1.5pc/[lll]
+%}
+%\ecen
+%\eeq
+%
+%
+%\beq
+%0=\underbrace{[2a\indi(a \text{
+%odd})  + ((-1)^a-1)n]}_{
+%\left\{
+%\begin{array}{ll}
+%2(a-n)&\text{ if $a$ odd}
+%\\
+%0&\text{ if $a$ even}
+%\end{array}
+%\right.
+%}
+%\bcen
+%\xymatrix@C=1pc{
+%&&&
+%\\
+%\cala_a\ar@2{-}[rrr]
+%\ar[u]
+%&\ar[u]
+%&\ar[u]
+%&\ar[u]
+%\\
+%\ul{\gamma}\ar[u]
+%&\ul{\gamma}\ar@{-->}[l]\ar[u]
+%&\ul{\gamma}\ar@{-->}[l]\ar[u]
+%&\ul{\gamma}\ar@{-->}[l]\ar[u]
+%\ar@[red]@{-}@/^1.5pc/[lll]
+%}
+%\ecen
+%\eeq
+
+Hence, if $a$ is odd and  $n\neq a$, the trace of $a$ 
+gammas is zero.
+
+The just presented is now  complete
+and it works for odd or even $n$. However, let us mention that for even $n$,
+a chirality operator $\Gamma_5$,  exists,
+and this claim  can be proven using $\Gamma_5$. Indeed, for $n$ even, let
+
+\beq
+\Gamma_5 =K \gamma_1\gamma_2\ldots 
+\gamma_n
+\eeq
+$\Gamma_5$ anti-commutes with all $\gamma_\mu$:
+
+\beq
+\Gamma_5 \gamma_\mu \Gamma_5^{-1}=
+-\gamma_\mu
+\eeq
+Hence
+
+\beqa
+\tr(\gamma_{\mu_1}\gamma_{\mu_2}
+\ldots\gamma_{\mu_a})
+&=&
+\tr(\Gamma_5\gamma_{\mu_1}\gamma_{\mu_2}
+\ldots\gamma_{\mu_a}
+\Gamma_5^{-1})
+\\
+&=&
+(-1)^a\tr(\gamma_{\mu_1}\gamma_{\mu_2}
+\ldots\gamma_{\mu_a})
+\eeqa
+So for odd $a$,
+$\tr(\gamma_{\mu_1}\gamma_{\mu_2}
+\ldots\gamma_{\mu_a})=0$.
+
+\qed
 
 \begin{claim}
 \beq
@@ -1252,7 +1665,8 @@ _{\tr(\gamma_\mu\gamma_\nu)}
 \proof
 \qed
 
-
+Define the antisymmetrized gamma
+matrix products $\Gamma^{(k)}$ by:
 
 \beq
 \begin{array}{ccccccc}
@@ -1367,12 +1781,14 @@ _{\tr(\gamma_\mu\gamma_\nu)}
 \end{array}
 \eeq
 
-
+Henceforth, let
 \beq
 \ul{g}^{(t)}= \prod_{i=1}^t
 g_{\mu_i\nu_i}
 \eeq
 
+
+\begin{claim}
 \beq
 \underbrace{
 \bcen
@@ -1406,6 +1822,7 @@ g_{\mu_i\nu_i}
 =
 \delta_a^b
 \dashbubble
+\quad
 \xymatrix@C=1pc{
 \mu^{:a}
 &\ar[l]\ar[r]\ul{g}^{(a)}
@@ -1414,8 +1831,11 @@ g_{\mu_i\nu_i}
 \nu^{:a}
 }
 \eeq
-This disagrees with the
-formula in Ref.\cite{birdtracks-book}
+\end{claim}
+\proof
+\qed
+
+Define $\chi_c$ by
 
 \beq
 \chi_c=
@@ -1441,9 +1861,22 @@ formula in Ref.\cite{birdtracks-book}
 }
 \ecen
 \eeq
+where
 
+\beq
+\begin{array}{l}
+s=(b+c-a)/2
+\\
+t=(b+a-c)/2
+\\
+u=(a+c-b)/2
+\end{array}
+\eeq
 
-
+\begin{claim}
+The $\Gamma^{(c)}$
+span the algebra of sum products
+of $\Gamma^{(c)}$ so
 \beq
 \underbrace{
 \bcen
@@ -1508,18 +1941,11 @@ formula in Ref.\cite{birdtracks-book}
 \ecen}_{\chi_c}
 \eeq
 
+\end{claim}
+\proof
+\qed
 
-\beq
-\begin{array}{l}
-s=(b+c-a)/2
-\\
-t=(b+a-c)/2
-\\
-u=(a+c-b)/2
-\end{array}
-\eeq
-
-
+\begin{claim}
 \beq
 \bcen
 \xymatrix{
@@ -1547,8 +1973,26 @@ u=(a+c-b)/2
 &\ar@{-->}[l]
 }
 \ecen
+\label{eq-Gamma-expansion}
 \eeq
-where $t=a-u=b-s$
+where $t=a-u=b-s$ and 
+
+\beq
+K_c =\frac{a!b!c!}{s!t!u!}
+\eeq
+\end{claim}
+\proof
+
+Eq.(\ref{eq-Gamma-expansion}) follows 
+because the $\Gamma^{(c)}$
+span the vector space of $\Gamma^{(c)}$
+products.
+
+If we
+left-multiply
+both sides of Eq.(\ref{eq-Gamma-expansion})
+by $\Gamma^{(c')} $
+and then we trace over the spinor indices, we get
 
 \beq
 \bcen
@@ -1583,7 +2027,7 @@ where $t=a-u=b-s$
 }
 \ecen
 \eeq
-
+so $K_c$ satisfies
 
 
 
@@ -1594,11 +2038,14 @@ where $t=a-u=b-s$
 \chi_c=K_c
 \dashbubble \chi_c
 \eeq
+Hence,
+
 \beq
 K_c =\frac{a!b!c!}{s!t!u!}
 \eeq
+\qed
 
-
+Define the projector $P^{(a)}$ by
 \beq
 P^{(a)}=
 \frac{1}{\dashbubble }
@@ -1638,7 +2085,8 @@ P^{(a)}=
 }
 \ecen
 \eeq
-
+and the 3 leg vertex 
+$\stackrel{b\A a}{c}$ by
 \beq
 \bcen
 \xymatrix@C=1.5pc@R=1.5pc{
@@ -1667,8 +2115,11 @@ P^{(a)}=
 =
 K_c \chi_c
 \eeq
-nonzero only iff $a + b + c$ is even, and if $a, b,$ and $c$ satisfy the triangle inequalities $|a-b| \leq c \leq |a+b|$
+Note that the vertex $\stackrel{b\A a}{c}$
+is
+nonzero iff $a + b + c$ is even, and if $a, b,$ and $c$ satisfy the triangle inequalities $|a-b| \leq c \leq |a+b|$
 
+\begin{claim}
 \beq
 \bcen
 \xymatrix@C=1.5pc@R=1.5pc{
@@ -1695,6 +2146,11 @@ nonzero only iff $a + b + c$ is even, and if $a, b,$ and $c$ satisfy the triangl
 }
 \ecen
 \eeq
+\end{claim}
+\proof
+\qed
+
+Note that
 
 \beqa
 d^{(a)}=
@@ -1739,7 +2195,7 @@ d^{(a)}=
 = (1+1)^2 = 2^a
 \eeq
 
-
+\begin{claim}
 \beq
 \bcen
 \xymatrix{
@@ -1765,8 +2221,26 @@ d^{(a)}=
 &\ar@{-->}[l]
 }
 \ecen
+\label{eq-Gamma-expansion-3leg}
 \eeq
+where
 
+\beq
+K_c' =\frac{a!b!c!}{s!t!u!} = K_c
+\eeq
+\end{claim}
+\proof
+
+Eq.(\ref{eq-Gamma-expansion-3leg}) follows 
+because the $\Gamma^{(c)}$
+span the vector space of $\Gamma^{(c)}$
+products.
+
+If we
+left-multiply
+both sides of Eq.(\ref{eq-Gamma-expansion-3leg})
+by $\Gamma^{(c')} $
+and then we trace over the spinor indices, we get
 \beq
 \bcen
 \xymatrix{
@@ -1798,6 +2272,7 @@ K'_c
 }
 \ecen
 \eeq
+So $K_c'$ satisfies
 
 \beq
 \frac{a!b!c!}
@@ -1806,10 +2281,13 @@ K'_c
 \chi_c=K_c'
 \dashbubble \chi_c
 \eeq
+Hence,
 \beq
 K_c' =\frac{a!b!c!}{s!t!u!} = K_c
 \eeq
+\qed
 
+\begin{claim}
 \beq
 \bcen
 \xymatrix{
@@ -1842,6 +2320,52 @@ K_c' =\frac{a!b!c!}{s!t!u!} = K_c
 }
 \ecen
 \eeq
+where
+\newcommand{\sixjspinor}[0]{
+\xymatrix@R=2pc@C=2pc{
+&\ul{\Gamma}^{(a)}\ar[d]
+\ar@/_1pc/@{-->}[ddl]
+&
+\\
+&\ol{\Gamma}^{(a)}
+\ar@{-->}[dr]
+&
+\\
+\ol{\Gamma}^{(b)}
+\ar@{-->}[ur]
+&
+&\ul{\Gamma}^{(b)}
+\ar@{-->}@/_1pc/[luu]\ar[ll]
+}
+}
+
+\begin{align}
+\Phi_b
+&=
+\frac{d_b}
+{\dashbubble
+}
+\frac{d_b}{
+\dashbubble
+}
+\frac{
+\sixjspinor
+}
+{d_b}
+\\
+&=
+d_b
+\frac{
+\sixjspinor
+}
+{\dashbubble\dashbubble
+}
+\end{align}
+
+
+\end{claim}
+\proof
+
 
 \begin{align}
 \bcen
@@ -1917,45 +2441,5 @@ K_c' =\frac{a!b!c!}{s!t!u!} = K_c
 }
 \ecen
 \end{align}
-where
-\newcommand{\sixjspinor}[0]{
-\xymatrix@R=2pc@C=2pc{
-&\ul{\Gamma}^{(a)}\ar[d]
-\ar@/_1pc/@{-->}[ddl]
-&
-\\
-&\ol{\Gamma}^{(a)}
-\ar@{-->}[dr]
-&
-\\
-\ol{\Gamma}^{(b)}
-\ar@{-->}[ur]
-&
-&\ul{\Gamma}^{(b)}
-\ar@{-->}@/_1pc/[luu]\ar[ll]
-}
-}
-
-\begin{align}
-\Phi_b
-&=
-\frac{d_b}
-{\dashbubble
-}
-\frac{d_b}{
-\dashbubble
-}
-\frac{
-\sixjspinor
-}
-{d_b}
-\\
-&=
-d_b
-\frac{
-\sixjspinor
-}
-{\dashbubble\dashbubble
-}
-\end{align}
+\qed
 
