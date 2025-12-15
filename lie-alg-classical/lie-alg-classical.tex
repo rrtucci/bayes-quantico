@@ -136,9 +136,10 @@ $\{L_{ij}| i<j\}$, where
 =
 \bcen
 \xymatrix{
-i\ar[d]&j
+i\ar@/^1pc/[d]
+&j\ar@/_1pc/[d]
 \\
-a&b\ar[u]
+a&b
 }
 \ecen
 -
@@ -149,10 +150,18 @@ i\ar[dr]&j\ar[dl]
 a&b
 }
 \ecen
+=
+\bcen
+\xymatrix@R=1pc@C=1pc{
+i\ar[dr]&&j\ar[dl]
+\\
+a&L\ar[l]&\ar[l]b
+}
+\ecen
 \label{eq-Lij-def}
 \eeq
 
-Note that $L_{ij}^T= L_{ji} = - L_{ij}$.
+Note that $L_{ij}^T= L_{ji} = - L_{ij}$ and $L_{ii}=0$.
 Hence these generators satisfy $X^T=-X$.
 Physicists often define generators $T_{ij}=iL_{ij}$ that are Hermitian.
 
@@ -267,6 +276,122 @@ i\ar@[red][drrr]
 
 Just calculate the commutator $[L_{ij}, L_{kl}]$  using the definition Eq.(\ref{eq-Lij-def})
 of $L_{ij}$
+
+\begin{align}
+L_{ij}L_{kl}
+&=
+\left[
+\bcen
+\xymatrix@R=1pc@C=1pc{
+i\ar@/^.6pc/[d]
+&j\ar@/_.6pc/[d]
+\\
+&
+}
+\ecen
+-
+\bcen
+\xymatrix@R=1pc@C=1pc{
+i\ar[dr]&j\ar[dl]
+\\
+&
+}
+\ecen
+\right]
+\left[
+\bcen
+\xymatrix@R=1pc@C=1pc{
+k\ar@/^.6pc/[d]
+&l\ar@/_.6pc/[d]
+\\
+&
+}
+\ecen
+-
+\bcen
+\xymatrix@R=1pc@C=1pc{
+k\ar[dr]
+&l\ar[dl]
+\\
+&
+}
+\ecen
+\right]
+\\
+&=
+(\xymatrix@C=.5pc{i&j\ar@{-}@/^.5pc/[r]&k&l})
++ (\xymatrix@C=.5pc{i\ar@{-}@/^.5pc/[rrr]&j&k&l})
+-(\xymatrix@C=.5pc{i\ar@{-}@/^.5pc/[rr]&j&k&l})
+-(\xymatrix@C=.5pc{i&j\ar@{-}@/^.5pc/[rr]&k&l})
+\end{align}
+
+\begin{align}
+L_{kl}L_{ij}
+&=
+\left[
+\bcen
+\xymatrix@R=1pc@C=1pc{
+k\ar@/^.6pc/[d]
+&l\ar@/_.6pc/[d]
+\\
+&
+}
+\ecen
+-
+\bcen
+\xymatrix@R=1pc@C=1pc{
+k\ar[dr]
+&l\ar[dl]
+\\
+&
+}
+\ecen
+\right]
+\left[
+\bcen
+\xymatrix@R=1pc@C=1pc{
+i\ar@/^.6pc/[d]
+&j\ar@/_.6pc/[d]
+\\
+&
+}
+\ecen
+-
+\bcen
+\xymatrix@R=1pc@C=1pc{
+i\ar[dr]
+&j\ar[dl]
+\\
+&
+}
+\ecen
+\right]
+\\
+&=
+(\xymatrix@C=.5pc{k&l\ar@{-}@/^.5pc/[r]&i&j})
++ (\xymatrix@C=.5pc{k\ar@{-}@/^.5pc/[rrr]&l&i&j})
+-(\xymatrix@C=.5pc{k\ar@{-}@/^.5pc/[rr]&l&i&j})
+-(\xymatrix@C=.5pc{k&l\ar@{-}@/^.5pc/[rr]&i&j})
+\end{align}
+
+\beq
+(\xymatrix@C=.5pc{i&j\ar@{-}@/^.5pc/[r]&k&l})
+-
+(\xymatrix@C=.5pc{k\ar@{-}@/^.5pc/[rrr]&l&i&j})=\{
+\xymatrix@C=.5pc{i&j\ar@{-}@/^.5pc/[r]&k&l}
+\}
+=\delta_{jk}L_{il}
+\eeq
+
+\begin{align}
+[L_{ij},L_{kl}]
+&=
+\{\xymatrix@C=.5pc{i&j\ar@{-}@/^.5pc/[r]&k&l}\}
++ \{\xymatrix@C=.5pc{i\ar@{-}@/^.5pc/[rrr]&j&k&l}\}
+-\{\xymatrix@C=.5pc{i\ar@{-}@/^.5pc/[rr]&j&k&l}\}
+-\{\xymatrix@C=.5pc{i&j\ar@{-}@/^.5pc/[rr]&k&l}\}
+\end{align}
+
 \qed
 
 
