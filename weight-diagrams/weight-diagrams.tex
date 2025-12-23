@@ -9,34 +9,39 @@ and \cite{lich-book}.
 \eeq
 
 \beq
-\vec{H}\ket{J, \vec{M}}= \vec{M}\ket{J, \vec{M}}
+\vec{H}\ket{j, \vec{m}}= \vec{m}\ket{j, \vec{m}}
 \eeq
 
+Vectors like $\vec{\alp}$ and $\vec{m}$ live in root space $\RR^r$,
+where $r$ is the rank of the Lie algebra.
+
+brakets like $\ket{j, \vec{m}}$ live in multiplet space 
+$\RR^d$, where $d$ is the dimesion of the irrep
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=2.5in]
 {weight-diagrams/weight-roots-relation.png}
-\caption{Relationship between 2 weights $\vec{M}$ and $\vec{M}'$.}
+\caption{Relationship between 2 weights $\vec{m}$ and $\vec{m}'$.}
 \label{fig-weight-roots-relation}
 \end{figure}
 
 
 
 \begin{claim}
-For any weight $\vec{M}$ and
+For any weight $\vec{m}$ and
 root $\vec{\alp}$,
 if $k$ is an integer and
 
-\beq k = -\;\frac{2\vec{M}\cdot \vec{\alp}}{\vec{\alp}\cdot\vec{\alp}}
+\beq k = -\;\frac{2\vec{m}\cdot \vec{\alp}}{\vec{\alp}\cdot\vec{\alp}}
 \eeq
 then
 
 \beq
-\vec{M}'=\vec{M} + k\vec{\alp}
+\vec{m}'=\vec{m} + k\vec{\alp}
 \eeq
 is a weight
-with the same eigenvalue multiplicity as $\vec{M}$.
+with the same eigenvalue multiplicity as $\vec{m}$.
 \end{claim}
 \proof
 \qed
@@ -45,7 +50,7 @@ with the same eigenvalue multiplicity as $\vec{M}$.
 \section{WD for $SU(2)$}
 
 \beq
-M=-J, -J+1, \ldots, J-1, J
+m=-j, -j+1, \ldots, j-1, j
 \eeq
 
 \section{WD for $SU(3)$}
@@ -77,27 +82,27 @@ M=-J, -J+1, \ldots, J-1, J
 \eeq
 
 \beq
-T_+=\ket{1}\bra{2},\quad
-T_- =\ket{2}\bra{1}
+\sqrt{3}E_1=T_+=\ket{1}\bra{2},\quad
+\sqrt{3}E_{-1}=T_- =\ket{2}\bra{1}
 \eeq
 
 \beq
-U_+ = \ket{2}\bra{3},\quad
-U_- = \ket{3}\bra{2}
+\sqrt{3}E_3=U_+ = \ket{2}\bra{3},\quad
+\sqrt{3}E_{-3} = U_- = \ket{3}\bra{2}
 \eeq
 
 \beq
-V_+ = \ket{3}\bra{1},\quad
-V_- = \ket{1}\bra{3}
+\sqrt{3}E_{-2}=V_+ = \ket{3}\bra{1},\quad
+\sqrt{3}E_2=V_- = \ket{1}\bra{3}
 \eeq
 
 \beq
-T_z = \frac{1}{2}
+\sqrt{\frac{3}{2}}H_1=T_z = \frac{1}{2}
 \left(
 \ket{1}\bra{1}
 -\ket{2}\bra{2}\right),
 \quad
-Y=
+\sqrt{2}H_2=Y=
 \frac{1}{3}
 \left(
 \ket{1}\bra{1}
@@ -106,10 +111,105 @@ Y=
 \right)
 \eeq
 
+\renewcommand{\arraystretch}{1.5}
+\beq
+\begin{pmatrix}
+\sqrt{\frac{3}{2}}H_1
+\\
+\sqrt{2}H_2
+\end{pmatrix}
+\ket{1}
+=
+\begin{pmatrix}
+T_z
+\\
+Y
+\end{pmatrix}
+\ket{1}
+=
+\begin{pmatrix}
+\frac{1}{2}
+\\
+\frac{1}{3}
+\end{pmatrix}
+\ket{1}
+=
+\vec{m}(1)\ket{1}
+\eeq
+
+\beq
+\begin{pmatrix}
+\sqrt{\frac{3}{2}}H_1
+\\
+\sqrt{2}H_2
+\end{pmatrix}
+\ket{2}
+=
+\begin{pmatrix}
+T_z
+\\
+Y
+\end{pmatrix}
+\ket{2}
+=
+\begin{pmatrix}
+-\frac{1}{2}
+\\
+\frac{1}{3}
+\end{pmatrix}
+\ket{2}
+=
+\vec{m}(2)\ket{2}
+\eeq
+
+\beq
+\begin{pmatrix}
+\sqrt{\frac{3}{2}}H_1
+\\
+\sqrt{2}H_2
+\end{pmatrix}
+\ket{3}
+=
+\begin{pmatrix}
+T_z
+\\
+Y
+\end{pmatrix}
+\ket{3}
+=
+\begin{pmatrix}
+0
+\\
+-\frac{2}{3}
+\end{pmatrix}
+\ket{3}
+=
+\vec{m}(3)\ket{3}
+\eeq
+\renewcommand{\arraystretch}{1}
+
 \begin{figure}[h!]
 \centering
-\includegraphics[width=3.7in]
+\includegraphics[width=4in]
 {weight-diagrams/tuv-plus.png}
-\caption{$(M_T, Y)$ Grid}
+\caption{Roots of $SU(3)$.}
 \label{fig-tuv-plus}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=4in]
+{weight-diagrams/weights-fundamental.png}
+\caption{For $SU(3)$, roots in green and weights of fundamental rep in red.}
+\label{fig-weights-fundamental}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=2.4in]
+{weight-diagrams/123-vecs.png}
+\caption{$\ket{1}, \ket{2}, \ket{3}$ 
+vectors, and operators that act on them. $E_{-i}$ in opposite direction 
+as $E_i$ for $i=1,2,3$.}
+\label{fig-123-vecs}
 \end{figure}
