@@ -12,8 +12,11 @@
    height="11in"
    version="1.1"
    id="svg8015"
-   sodipodi:docname="graph-paper.svg"
-   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+   sodipodi:docname="rep3.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   inkscape:export-filename="C:\Users\rrtuc\Desktop\backed-up\latex-projects\bayes-quantico\weight-diagrams\rep3.png"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300">
   <metadata
      id="metadata8019">
     <rdf:RDF>
@@ -39,9 +42,9 @@
      inkscape:window-height="739"
      id="namedview8017"
      showgrid="false"
-     inkscape:zoom="0.63"
-     inkscape:cx="-148.72727"
-     inkscape:cy="-115.48491"
+     inkscape:zoom="1.3928906"
+     inkscape:cx="-279.3908"
+     inkscape:cy="-191.04047"
      inkscape:window-x="-9"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
@@ -2954,4 +2957,42 @@
       </g>
     </g>
   </g>
+  <ellipse
+     style="opacity:1;vector-effect:none;fill:#050000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.53372991;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     id="path1432"
+     cx="1.6825333"
+     cy="1124.762"
+     rx="10.051383"
+     ry="9.2577314" />
+  <ellipse
+     style="opacity:1;vector-effect:none;fill:#050000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.53372991;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     id="path1432-2"
+     cx="162.12698"
+     cy="1125.9365"
+     rx="10.051383"
+     ry="9.2577314" />
+  <ellipse
+     style="opacity:1;vector-effect:none;fill:#050000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.53372991;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     id="path1432-2-4"
+     cx="80.507927"
+     cy="1286.7937"
+     rx="10.051383"
+     ry="9.2577314" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2.13543296;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 0,1125.619 H 161.90476"
+     id="path1466"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:3.64724398;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="m 0,1125.619 76.950095,158.3471"
+     id="path1468"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:3.64724398;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 157.2687,1130.5725 80.3186,1288.9196"
+     id="path1468-5"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
 </svg>

@@ -82,34 +82,60 @@ m=-j, -j+1, \ldots, j-1, j
 \eeq
 
 \beq
-\sqrt{3}E_1=T_+=\ket{1}\bra{2},\quad
-\sqrt{3}E_{-1}=T_- =\ket{2}\bra{1}
+\sqrt{3}E_{12}=T_+=\ket{1}\bra{2},\quad
+\sqrt{3}E_{-12}=E_{21}=T_- =\ket{2}\bra{1}
 \eeq
 
 \beq
-\sqrt{3}E_3=U_+ = \ket{2}\bra{3},\quad
-\sqrt{3}E_{-3} = U_- = \ket{3}\bra{2}
+\sqrt{3}E_{23}=U_+ = \ket{2}\bra{3},\quad
+\sqrt{3}E_{-23}=E_{32} = U_- = \ket{3}\bra{2}
 \eeq
 
 \beq
-\sqrt{3}E_{-2}=V_+ = \ket{3}\bra{1},\quad
-\sqrt{3}E_2=V_- = \ket{1}\bra{3}
+\sqrt{3}E_{31}=V_+ = \ket{3}\bra{1},\quad
+\sqrt{3}E_{-31}=E_{13}=V_- = \ket{1}\bra{3}
 \eeq
 
 \beq
-\sqrt{\frac{3}{2}}H_1=T_z = \frac{1}{2}
+T_z = \frac{1}{2}
 \left(
 \ket{1}\bra{1}
 -\ket{2}\bra{2}\right),
 \quad
-\sqrt{2}H_2=Y=
-\frac{1}{3}
+U_z = \frac{1}{2}
 \left(
-\ket{1}\bra{1}
-+\ket{2}\bra{2}
--2\ket{3}\bra{3}
+\ket{2}\bra{2}
+-\ket{3}\bra{3}\right)
+,\quad
+V_z = \frac{1}{2}
+\left(
+\ket{3}\bra{3}
+-\ket{1}\bra{1}\right)
+\eeq
+
+
+\beq
+\sqrt{\frac{3}{2}}H_1=T_z,
+\quad
+\sqrt{2}H_2=Y=
+\frac{2}{3}
+\left(
+U_z-V_z
 \right)
 \eeq
+
+isospin $T_z\in \ZZ/2= 0, \pm\frac{1}{2}, \pm 1, \pm\frac{3}{2}, \pm 2, \ldots$
+
+hypercharge $Y\in \ZZ/3$
+
+$H_1\in 
+\frac{1}{\sqrt{6}}\ZZ$
+
+$H_2\in \frac{1}{3\sqrt{2}}\ZZ$
+
+
+
+
 
 \renewcommand{\arraystretch}{1.5}
 \beq
@@ -213,3 +239,42 @@ vectors, and operators that act on them. $E_{-i}$ in opposite direction
 as $E_i$ for $i=1,2,3$.}
 \label{fig-123-vecs}
 \end{figure}
+
+
+\subsection{$SU(3)$ examples}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=2.9in]
+{weight-diagrams/rep3.png}
+\includegraphics[width=2.9in]
+{weight-diagrams/rep3star.png}
+\caption{3, 3star}
+\label{fig-3-3star}
+\end{figure}
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=3.5in]
+{weight-diagrams/rep10.png}
+\caption{10}
+\label{fig-rep10}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=3.5in]
+{weight-diagrams/rep8.png}
+\caption{8}
+\label{fig-rep8}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=3.5in]
+{weight-diagrams/rep15.png}
+\caption{15}
+\label{fig-rep15}
+\end{figure}
+
