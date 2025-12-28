@@ -3,20 +3,24 @@ This chapter is based on Refs. \cite{eli-daw-book}
 and \cite{lich-book}.
 
 \beq
-[\vec{H},\;\cdot\;]E_{\vec{\alp}}
+\begin{array}{ll}
+\text{root $\vec{\alp}$:}& [\vec{H},\;\cdot\;]E_{\vec{\alp}}
 =
 [\vec{H}, E_{\vec{\alp}}]= \vec{\alp} E_{\vec{\alp}}
-\eeq
-
-\beq
+\\
+\text{weight $\vec{m}$:}&
 \vec{H}\ket{j, \vec{m}}= \vec{m}\ket{j, \vec{m}}
+\end{array}
 \eeq
 
-Vectors like $\vec{\alp}$ and $\vec{m}$ live in root space $\RR^r$,
-where $r$ is the rank of the Lie algebra.
+$\vec{\alp}, \vec{m}\in\RR^r$
+where $r$ is the rank of the Lie algebra. $\RR^r$ is the root and weight space
 
-brakets like $\ket{j, \vec{m}}$ live in multiplet space 
-$\RR^d$, where $d$ is the dimesion of the irrep
+$\ket{1}, \ket{2}, \ldots, \ket{n}\in \RR^n$ and
+$H_i, E_\alp\in \RR^{n\times n}$  where s$n$ is
+the dimension of the fundamental rep of the Lie algebra $\ger{su}(n)$
+
+$\ket{j, \vec{m}}\in \CC^d$ where $d$ is the dimension of the irrep
 
 \begin{figure}[h!]
 \centering
@@ -243,13 +247,43 @@ as $E_{ij}$ for $i\ne j$ and $i,j=1,2,3$.}
 
 \subsection{$SU(3)$ examples}
 
+
+one-to-one map of $SU(3)$ irreps and {\bf weight diagrams (WD)}
+
+weights on the {\bf boundary of WD} are called {\bf dominant weights
+}
+
+nondegenerate weights are
+represented by a single dot.
+$k$-fold degenerate (i.e., eigenvalues with {\bf multiplicity} $k$) weights are represented by a dot with $k-1$ rings
+
+WD are labelled by either by
+
+\begin{itemize}
+\item the dimension $d_{rep}$ of the irrep, with extra labels in case there are multiple irreps with the same dimension, 
+
+\item the
+$(\lam, \mu)$ WD-boundary dimensions. See Fig.\ref{fig-rep15}
+\end{itemize}
+For example, see Fig.\ref{fig-3-3star}. $SU(3)$ has 2 fundamental irreps, $\ul{3}$ and $\ul{3}^*$. Both are 3 dimensional. $(\lam,\mu)=(1,0)$ for $\ul{3}$, 
+and $(\lam,\mu)=(0,1)$ for $\ul{3}^*$.
+
+\begin{claim}
+\beq
+d_{rep}= \frac{1}{2}(\lam+1)(\mu+1)(\lam +\mu +2)
+\eeq
+\end{claim}
+\proof
+\qed
+
 \begin{figure}[h!]
 \centering
 \includegraphics[width=2.9in]
 {weight-diagrams/rep3.png}
 \includegraphics[width=2.9in]
 {weight-diagrams/rep3star.png}
-\caption{3, 3star}
+\caption{WDs for the two fundamental irreps of $SU(3)$, $\ul{3}$ and $\ul{3}^*$. $(\lam,\mu)=(1,0)$ for $\ul{3}$, 
+and $(\lam,\mu)=(0,1)$ for $\ul{3}^*$.}
 \label{fig-3-3star}
 \end{figure}
 
@@ -258,7 +292,7 @@ as $E_{ij}$ for $i\ne j$ and $i,j=1,2,3$.}
 \centering
 \includegraphics[width=3.5in]
 {weight-diagrams/rep10.png}
-\caption{10}
+\caption{WD for the $SU(3)$ irrep $\ul{10}$. $(\lam,\mu)=(3,0)$.}
 \label{fig-rep10}
 \end{figure}
 
@@ -266,7 +300,7 @@ as $E_{ij}$ for $i\ne j$ and $i,j=1,2,3$.}
 \centering
 \includegraphics[width=3.5in]
 {weight-diagrams/rep8.png}
-\caption{8}
+\caption{WD for the $SU(3)$ irrep $\ul{8}$. $(\lam,\mu)=(1,1)$.}
 \label{fig-rep8}
 \end{figure}
 
@@ -274,7 +308,7 @@ as $E_{ij}$ for $i\ne j$ and $i,j=1,2,3$.}
 \centering
 \includegraphics[width=3.5in]
 {weight-diagrams/rep15.png}
-\caption{15}
+\caption{WD for the $SU(3)$ irrep $\ul{15}$. $(\lam,\mu)=(2,1)$.}
 \label{fig-rep15}
 \end{figure}
 
