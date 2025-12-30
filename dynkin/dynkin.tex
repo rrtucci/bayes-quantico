@@ -76,12 +76,46 @@ Will not, however, assume that $f_{qpt}$
 is totally antisymmetric,
 as is often assumed.
 
+\hrule
+Cartan-Weyl commutators for $\ger{su}(2)$
+
+\beq
+E_-=\ket{2}\bra{1} , \quad E_+=\ket{1}\bra{2},
+\quad H= \frac{1}{2}[\ket{1}\bra{1}-\ket{2}\bra{2}]
+\label {eq-su2-norm-op}
+\eeq
+
+\beq
+\begin{array}{ll}
+\bcen
+\xymatrix{
+&H\ar[dl]_{-E_-}
+\ar[dr]^{E_+}
+\\
+E_-&&E_+\ar[ll]^{2H}
+}
+\ecen
+&
+\left\{
+\begin{array}{l}
+[E_+, E_-]=2H
+\\
+{[H, E_+]=E_+}
+\\
+{[H,, E_-]=-E_-}
+\end{array}
+\right.
+\end{array}
+\eeq
+\hrule
+Cartan-Weyl commutators for any semi-simple Lie algebra
+
 For any lower case latin letter $q$ and Greek letter $\alp$, let
 
 $q_- = 1, 2, \ldots,\calr$
 
-$\valp = 1,2, \ldots, 
-\cald-\calr$ 
+$\valp = \calr+1,\calr+2, \ldots, 
+\cald$ 
 
 $q=$ either $q_-$ or $\valp$ but not both.
 
@@ -99,7 +133,7 @@ Let $E_{\vec{\alp}}$
 for a commutator \qt{product}
 instead of a matrix multiplication product
 \beq
-\boxed{[H_{i_-}, E_{\vec{\alp}}]= \underbrace{\alp_{i_-}}_{f_{i_-,\valp,\valp}} E_{\valp}}
+\boxed{[H_{i_-}, E_{\vec{\alp}}]= \alp_{i_-}E_{\valp}}
 \eeq
 The vectors $\valp\in \RR^\calr$
 of eigenvalues are called {\bf root vectors}.
@@ -111,16 +145,17 @@ $ [x[a,b]]= [[x,a],b] +
 
 
 \beqa
-[H_i, [E_\valp,
+[H_{i_-}, [E_\valp,
 E_\vbeta]]
 &=&
-[[H_i, E_\valp], E_\vbeta]
+[[H_{i_-}, E_\valp], E_\vbeta]
 +
-[E_\valp, [H_i, E_\vbeta]]
+[E_\valp, [H_{i_-}, E_\vbeta]]
 \\
 &=&
-(\alp_i + \beta_i)[E_\valp, E_\vbeta]
+(\alp_{i_-} + \beta_{i_-})[E_\valp, E_\vbeta]
 \eeqa
+
 
 If $\valp + \vbeta=0$,
 $[H_i, [E_\valp,
@@ -128,8 +163,19 @@ E_\vbeta]]=0$ so
 
 \beq
 \boxed{[E_\valp,
-E_{-\valp}] = \sum_{i_-} f_{\valp,-\valp,i_-}H_{i_-}}
+E_{-\valp}] = \sum_{i_-} \xi_{i_-}H_{i_-}}
 \eeq
+\begin{claim}
+If we assume the normalization of $\ger{su}(2)$
+operators used in Eq.(\ref{eq-su2-norm-op}), the
+\beq
+\xi_{i_-}=\frac{2\alp_{i_-}}{\vec{\alp}\cdot \vec{\alp}}
+\eeq
+\end{claim}
+\proof
+Let $E_\valp \rarrow E_+$, $E_{-\valp}\rarrow E_-$, $|\valp|=1$.
+
+\qed
 
 If $\valp + \vbeta\neq 0$,
 

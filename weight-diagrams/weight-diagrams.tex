@@ -30,7 +30,32 @@ $\ket{j, \vec{m}}\in \CC^d$ where $d$ is the dimension of the irrep
 \label{fig-weight-roots-relation}
 \end{figure}
 
+\begin{claim}
+If 
 
+\beq
+\vec{H}\ket{\vec{m}}
+=\vec{m}\ket{\vec{m}}
+\eeq
+then
+\beq
+\vec{H}E_{\vec{\alp}}\ket{\vec{m}}
+=(\vec{m}+\vec{\alp})E_{\vec{\alp}}\ket{\vec{m}}
+\eeq
+\end{claim}
+\proof
+\beq
+[\vec{H}, E_{\vec{\alp}}]=\vec{\alp}E_{\vec{\alp}}
+\eeq
+so
+\beqa
+\vec{H}E_{\vec{\alp}}\ket{\vec{m}}
+&=&
+E_{\vec{\alp}}\vec{H}\ket{\vec{m}} + \vec{\alp}E_{\vec{\alp}}\ket{\vec{m}}
+\\&=&
+(\vec{m}+\vec{\alp})E_{\vec{\alp}}\ket{\vec{m}}
+\eeqa
+\qed
 
 \begin{claim}
 For any weight $\vec{m}$ and
@@ -139,6 +164,23 @@ $H_1\in
 $H_2\in \frac{1}{3\sqrt{2}}\ZZ$
 
 
+\begin{figure}[h!]
+\centering
+\includegraphics[width=2.4in]
+{weight-diagrams/123-vecs.png}
+\caption{$\ket{1}, \ket{2}, \ket{3}$ 
+vectors, and operators that act on them. $E_{-ij}=E_{ji}$ is in opposite direction 
+as $E_{ij}$ for $i\ne j$ and $i,j=1,2,3$.}
+\label{fig-123-vecs}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=3.5in]
+{weight-diagrams/tuv-plus.png}
+\caption{Roots of $SU(3)$.}
+\label{fig-tuv-plus}
+\end{figure}
 
 
 
@@ -219,31 +261,19 @@ Y
 \eeq
 \renewcommand{\arraystretch}{1}
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=4in]
-{weight-diagrams/tuv-plus.png}
-\caption{Roots of $SU(3)$.}
-\label{fig-tuv-plus}
-\end{figure}
+
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=4in]
+\includegraphics[width=3.5in]
 {weight-diagrams/weights-fundamental.png}
 \caption{For $SU(3)$, roots in green and weights of fundamental rep in red.}
 \label{fig-weights-fundamental}
 \end{figure}
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=2.4in]
-{weight-diagrams/123-vecs.png}
-\caption{$\ket{1}, \ket{2}, \ket{3}$ 
-vectors, and operators that act on them. $E_{-ij}=E_{ji}$ is in opposite direction 
-as $E_{ij}$ for $i\ne j$ and $i,j=1,2,3$.}
-\label{fig-123-vecs}
-\end{figure}
+
+
+
 
 
 \subsection{$SU(3)$ examples}
@@ -331,27 +361,37 @@ for nucleons,
 As a mnemonic, remember that a nucleon has 3 quarks with $Y=1/3$,
 and $Y'$ for the nucleon is the sum of $Y$ for each quark. $Y=1/3$ for up or down quarks, and $Y=-2/3$ for the strange quark. $u,d$ constitute an $SU(2)$ doublet and $s$ an $SU(2)$ singlet.
 
-\section{Relation of weights of WD to Standard Young Tableau}
+\section{Relation of weights of WD to Semi-Standard Young Tableau}
 
 
 
-Given a young diagram YD, a sSYT (Semi  Standard Young Tableau) 
+Given a young diagram YD, a SYT/SSYT (Standard or Semi-Standard Young Tableau) 
 for the YD satisfies
 
 
 \begin{itemize}
-\item Rows weakly increasing
+\item Rows strictly/weakly increasing
 \item Columns strictly increasing
-\item Entries in $\{1,2,\dots, n\}$
-\end{itemize}
-
+\item Entries in $\{1,2,\dots, n\}$.
 $n=3$ for $SU(3)$
+\end{itemize}
+Thus, SYT/SSYT disallow/allow repetitions along a row.
+
+SYT are used, for example, to label the irreps of $S_n$.
+Hence, there is a 1-1 relation between Young Symmetrizer operators
+and STY. 
+
+
+SSYT are used below to label the basis vectors of an irrep of $SU(n)$.
+
+SYT \xymatrix{\ar[r]_{\text{1 to 1}}&} Young operators, SSYT \xymatrix{\ar[r]_{\text{1 to 1}}&} weights of WD
+
 
 
 There is a 1-1 relationship between YD and WD,
-and a 1-1 relationship between the sSYT of a YD and the 
+and a 1-1 relationship between the SSYT of a YD and the 
 weights of the corresponding WD.
-Degenerate weights have different sSYT.
+Degenerate weights have different SSYT.
 
 
 \beq
@@ -388,6 +428,17 @@ $$
 \caly = S_{12}A_{13}= [1+(12)][1-(13)]
 \eeq
 
+\beqa\ket{\psi}=
+\caly\ket{a}\ket{b}\ket{c}
+&=&
+S_{12}\left(
+\ket{a}\ket{b}\ket{c}-\ket{c}\ket{b}\ket{a}
+\right)
+\\&=&
+[\ket{a}\ket{b}\ket{c} + \ket{b}\ket{a}\ket{c}]
+-[\ket{c}\ket{b}\ket{a}+\ket{c}\ket{a}\ket{b}]
+\eeqa
+
 \begin{enumerate}
 
 \item
@@ -399,7 +450,7 @@ $$
 \end{ytableau}
 &
 (t_z,y)=\left(+\tfrac12,1\right)
-& \psi = \caly u_1
+&\ket{\psi} \text{ with } abc\rarrow u_1
 u_1 u_2
 \end{array}
 \eeq 
@@ -414,7 +465,7 @@ u_1 u_2
 \end{ytableau}
 &
 (t_z,y)=\left(-\tfrac12,1\right)
-& \psi = \caly u_1 u_2 u_2
+& \ket{\psi} \text{ with } abc\rarrow u_1 u_2 u_2
 \end{array}
 \eeq 
 
@@ -429,7 +480,7 @@ u_1 u_2
 &
 (t_z,y)=(+1,0)
 &
-\psi = \caly u_1 u_1 u_3
+\ket{\psi} \text{ with } abc\rarrow u_1 u_1 u_3
 \end{array}
 \eeq 
 
@@ -443,7 +494,7 @@ u_1 u_2
 &
 (t_z,y)=(0,0)
 &
-\psi=\caly u_1 u_2 u_3
+\ket{\psi} \text{ with } abc\rarrow u_1 u_2 u_3
 \end{array}
 \eeq 
 
@@ -458,7 +509,7 @@ u_1 u_2
 &
 (t_z,y)=(-1,0)
 &
-\psi = \caly u_2 u_2 u_3
+\ket{\psi} \text{ with } abc\rarrow u_2 u_2 u_3
 \end{array}
 \eeq 
 
@@ -473,7 +524,7 @@ u_1 u_2
 \end{ytableau}
 &
 (t_z,y)=(0,0)
-&\psi = \caly u_1 u_3 u_2
+&\ket{\psi} \text{ with } abc\rarrow u_1 u_3 u_2
 \end{array}
 \eeq 
 
@@ -489,7 +540,7 @@ u_1 u_2
 &
 (t_z,y)=\left(+\tfrac12,-1\right)
 &
-\psi = \caly u_1 u_3 u_3
+\ket{\psi} \text{ with } abc\rarrow u_1 u_3 u_3
 \end{array}
 \eeq 
 
@@ -503,7 +554,7 @@ u_1 u_2
 \end{ytableau}
 &
 (t_z,y)=\left(-\tfrac12,-1\right)
-& \psi = \caly u_2 u_3 u_3
+& \ket{\psi} \text{ with } abc\rarrow u_2 u_3 u_3
 \end{array}
 \eeq 
 
