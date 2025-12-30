@@ -78,9 +78,66 @@ with the same eigenvalue multiplicity as $\vec{m}$.
 
 \section{WD for $SU(2)$}
 
+
 \beq
-m=-j, -j+1, \ldots, j-1, j
+\ket{1}=\begin{pmatrix}
+1
+\\
+0
+\end{pmatrix}
+,\quad
+\ket{2}=\begin{pmatrix}
+0
+\\
+1
+\end{pmatrix}
 \eeq
+
+\beq
+\sqrt{2}E_{12}=J_+=\ket{1}\bra{2},\quad
+\sqrt{2}E_{-12}=E_{21}=J_- =\ket{2}\bra{1}
+\eeq
+
+\beq
+J_z=\frac{1}{2}\left(
+\ket{1}\bra{1}
+-\ket{2}\bra{2}\right)
+\eeq
+
+\beq
+\begin{array}{ll}
+\bcen
+\xymatrix{
+&J_z\ar[dl]_{-J_-}
+\ar[dr]^{J_+}
+\\
+J_-&&J_+\ar[ll]^{2J_z}
+}
+\ecen
+&
+\left\{
+\begin{array}{l}
+[J_+, J_-]=2J_z
+\\
+{[J_z, J_+]=J_+}
+\\
+{[J_z, J_-]=-J_-}
+\end{array}\right.
+\end{array}
+\eeq
+
+
+
+WD for irrep $j$, has weights $m$ where
+\beq
+J=j\in \left\{0, \frac{1}{2}, 1, \frac{3}{2}, \ldots\right\}
+\eeq
+
+\beq
+J_z=j_z=m=\{-j, -j+1, \ldots, j-1, j\}
+\eeq
+
+$\ket{j,m}$ eigenvector of irrep $j$ with weight $m$
 
 \section{WD for $SU(3)$}
 
@@ -276,7 +333,7 @@ Y
 
 
 
-\subsection{$SU(3)$ examples}
+\section{$SU(3)$ examples}
 
 
 one-to-one map of $SU(3)$ irreps and {\bf weight diagrams (WD)}

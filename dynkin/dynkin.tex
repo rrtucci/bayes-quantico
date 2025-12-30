@@ -80,7 +80,7 @@ as is often assumed.
 Cartan-Weyl commutators for $\ger{su}(2)$
 
 \beq
-E_-=\ket{2}\bra{1} , \quad E_+=\ket{1}\bra{2},
+E_-=\frac{1}{\sqrt 2}\ket{2}\bra{1} , \quad E_+=\frac{1}{\sqrt 2}\ket{1}\bra{2},
 \quad H= \frac{1}{2}[\ket{1}\bra{1}-\ket{2}\bra{2}]
 \label {eq-su2-norm-op}
 \eeq
@@ -92,13 +92,13 @@ E_-=\ket{2}\bra{1} , \quad E_+=\ket{1}\bra{2},
 &H\ar[dl]_{-E_-}
 \ar[dr]^{E_+}
 \\
-E_-&&E_+\ar[ll]^{2H}
+E_-&&E_+\ar[ll]^{H}
 }
 \ecen
 &
 \left\{
 \begin{array}{l}
-[E_+, E_-]=2H
+[E_+, E_-]=H
 \\
 {[H, E_+]=E_+}
 \\
@@ -164,16 +164,33 @@ E_\vbeta]]=0$ so
 \beq
 \boxed{[E_\valp,
 E_{-\valp}] = \sum_{i_-} \xi_{i_-}H_{i_-}}
+\label{eq-xi-linear-comb}
 \eeq
 \begin{claim}
 If we assume the normalization of $\ger{su}(2)$
-operators used in Eq.(\ref{eq-su2-norm-op}), the
+operators used in Eq.(\ref{eq-su2-norm-op}), then
 \beq
-\xi_{i_-}=\frac{2\alp_{i_-}}{\vec{\alp}\cdot \vec{\alp}}
+\xi_{i_-}=\frac{\alp_{i_-}}{\vec{\alp}\cdot \vec{\alp}}
 \eeq
 \end{claim}
 \proof
-Let $E_\valp \rarrow E_+$, $E_{-\valp}\rarrow E_-$, $|\valp|=1$.
+
+Applying $[E_\valp,\cdot]$ to both sides of Eq.(\ref{eq-xi-linear-comb})
+\beq
+[E_\valp, [E_\valp, E_{-\valp}]]
+=-\vec{\xi}\cdot\valp E_{\valp}
+\eeq
+But for $\ger{su}(2)$
+\beq
+[E_+, [E_+, E_-]]=
+[E_+,H]=-E_+
+\eeq
+If set $E_\valp=E_+$, $E_{-\valp}=E_-$,
+then
+\beq
+\vec{\xi}\cdot\valp=1
+\eeq
+
 
 \qed
 
