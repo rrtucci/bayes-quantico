@@ -2,6 +2,25 @@
 This chapter is based on Refs. \cite{eli-daw-book}
 and \cite{lich-book}.
 
+In this chapter, we will study irreps of semi-simple Lie algebras,
+paying special attention to $\ger{su}(2)$ and $\ger{su}(3)$.
+Suppose $\ger{g}$ is the Lie algebra of a group $G$.
+Note that an irrep of $G$ always gives an irrep of $\ger{g}$,
+but an irrep of $\ger{g}$ might not give an irrep of $G$.
+Suppose groups $G_1$ and $G_2$ with different global topology both have Lie algebra $\ger{g}$.
+Some irreps of $\ger{g}$ might lead to irreps of $G_1$ but not of $G_2$.
+For example, $SO(3)$ and $SU(2)$
+have the same Lie algebra
+$\ger{su}(2)$. $\ger{su}(2)$ has irreps with integral
+and half integral spin. But only
+the ones with integral spin are irreps of $SO(3)$.
+
+In Chapter \ref{ch-dynkin},
+we classified semi-simple Lie algebras
+in terms of their Dynkin diagrams. The Dynkin diagram of a Lie algebra $\ger{g}$ describes its set of
+root vectors. An irrep of $\ger{g}$
+is described by a set of weight vectors.
+Both {\bf root vectors} and {\bf weight vectors}  satisfy an eigenvalue equation, namely 
 \beq
 \begin{array}{ll}
 \text{root $\vec{\alp}$:}& [\vec{H},\;\cdot\;]E_{\vec{\alp}}
@@ -14,13 +33,16 @@ and \cite{lich-book}.
 \eeq
 
 $\vec{\alp}, \vec{m}\in\RR^r$
-where $r$ is the rank of the Lie algebra. $\RR^r$ is the root and weight space
+where $r$ is the rank of the Lie algebra.
 
 $\ket{1}, \ket{2}, \ldots, \ket{n}\in \RR^n$ and
-$H_i, E_\alp\in \RR^{n\times n}$  where s$n$ is
+$H_i, E_{\vec{\alp}}\in \RR^{n\times n}$  where $n$ is
 the dimension of the fundamental rep of the Lie algebra $\ger{su}(n)$
 
-$\ket{j, \vec{m}}\in \CC^d$ where $d$ is the dimension of the irrep
+$\ket{j, \vec{m}}\in \CC^d$ where $d$ is the dimension of the irrep.
+
+The set of weight vectors of an irrep of a Lie algebra will be called the
+{\bf Weight Diagram (WD)} of the irrep.
 
 \begin{figure}[h!]
 \centering
@@ -57,7 +79,7 @@ E_{\vec{\alp}}\vec{H}\ket{\vec{m}} + \vec{\alp}E_{\vec{\alp}}\ket{\vec{m}}
 \eeqa
 \qed
 
-\begin{claim}
+\begin{claim} See Fig.\ref{fig-weight-roots-relation}.
 For any weight $\vec{m}$ and
 root $\vec{\alp}$,
 if $k$ is an integer and
@@ -78,7 +100,13 @@ with the same eigenvalue multiplicity as $\vec{m}$.
 
 \section{WD for $SU(2)$}
 
+In this section, we describe 
+the WDs for $SU(2)$. These
+follow from the 
+theory of angular momentum
+in quantum mechanics.
 
+Define
 \beq
 \ket{1}=\begin{pmatrix}
 1
@@ -103,6 +131,7 @@ J_z=\frac{1}{2}\left(
 \ket{1}\bra{1}
 -\ket{2}\bra{2}\right)
 \eeq
+Then
 
 \beq
 \begin{array}{ll}
@@ -128,18 +157,29 @@ J_-&&J_+\ar[ll]^{2J_z}
 
 
 
-WD for irrep $j$, has weights $m$ where
+The WD for irrep $j$, where
 \beq
 J=j\in \left\{0, \frac{1}{2}, 1, \frac{3}{2}, \ldots\right\}
 \eeq
+has weights $m$, where
 
 \beq
 J_z=j_z=m=\{-j, -j+1, \ldots, j-1, j\}
 \eeq
 
-$\ket{j,m}$ eigenvector of irrep $j$ with weight $m$
+$\ket{j,m}$ is the basis vector of irrep $j$ with weight $m$.
 
 \section{WD for $SU(3)$}
+
+In this section, we describe 
+the WDs for $SU(3)$. These
+occur in particle
+physics, 
+when describing 
+particles by their
+quark constituents.
+
+Define
 
 \beq
 \ket{1}=\begin{pmatrix}
@@ -230,16 +270,14 @@ vectors, and operators that act on them. $E_{-ij}=E_{ji}$ is in opposite directi
 as $E_{ij}$ for $i\ne j$ and $i,j=1,2,3$.}
 \label{fig-123-vecs}
 \end{figure}
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=3.5in]
-{weight-diagrams/tuv-plus.png}
-\caption{Roots of $SU(3)$.}
-\label{fig-tuv-plus}
-\end{figure}
+Fig.\ref{fig-123-vecs}
+illustrates the states $\ket{1}, \ket{2}, \ket{3}$, and operators $E_{ij}$ that act on them. 
 
 
+We can derive
+the weights of the 
+fundamental rep
+of $\ger{su}(3)$ as follows.
 
 \renewcommand{\arraystretch}{1.5}
 \beq
@@ -324,12 +362,24 @@ Y
 \centering
 \includegraphics[width=3.5in]
 {weight-diagrams/weights-fundamental.png}
-\caption{For $SU(3)$, roots in green and weights of fundamental rep in red.}
+\caption{The roots vectors or $\ger{su}(3)$ in green and the weight vectors  of fundamental rep in red.}
 \label{fig-weights-fundamental}
 \end{figure}
 
+Fig.\ref{fig-weights-fundamental}
+shows 
+the root vectors for $\ger{su}(3)$ (derived in Chapter \ref{ch-dynkin}) and the
+weight vectors  of the fundamental rep (just derived).
 
 
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=3.5in]
+{weight-diagrams/tuv-plus.png}
+\caption{Roots of $SU(3)$.}
+\label{fig-tuv-plus}
+\end{figure}
 
 
 
@@ -625,3 +675,5 @@ u_1 u_2
 for each weight.}
 \label{fig-rep8-with-yt}
 \end{figure}
+
+
