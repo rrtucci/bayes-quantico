@@ -98,7 +98,7 @@ with the same eigenvalue multiplicity as $\vec{m}$.
 \qed
 
 
-\section{WD for $SU(2)$}
+\section{$SU(2)$ Weight Diagrams}
 
 In this section, we describe 
 the WDs for $SU(2)$. These
@@ -157,7 +157,12 @@ J_-&&J_+\ar[ll]^{2J_z}
 
 
 
-The WD for irrep $j$, where
+The WD for irrep $j$, where\footnote{Whenever possible, we will follow  the convention of denoting operators by upper case letters 
+and their eigenvalues
+by lower case letters.
+For example, $J,J_z$ 
+eigenvalues will be denoted by $j, j_z$.
+}
 \beq
 J=j\in \left\{0, \frac{1}{2}, 1, \frac{3}{2}, \ldots\right\}
 \eeq
@@ -169,7 +174,7 @@ J_z=j_z=m=\{-j, -j+1, \ldots, j-1, j\}
 
 $\ket{j,m}$ is the basis vector of irrep $j$ with weight $m$.
 
-\section{WD for $SU(3)$}
+\section{$SU(3)$ Weight Diagrams}
 
 In this section, we describe 
 the WDs for $SU(3)$. These
@@ -362,7 +367,7 @@ Y
 \centering
 \includegraphics[width=3.5in]
 {weight-diagrams/weights-fundamental.png}
-\caption{The roots vectors or $\ger{su}(3)$ in green and the weight vectors  of fundamental rep in red.}
+\caption{The roots vectors of $\ger{su}(3)$ in green and the weight vectors  of the fundamental rep in red.}
 \label{fig-weights-fundamental}
 \end{figure}
 
@@ -370,6 +375,8 @@ Fig.\ref{fig-weights-fundamental}
 shows 
 the root vectors for $\ger{su}(3)$ (derived in Chapter \ref{ch-dynkin}) and the
 weight vectors  of the fundamental rep (just derived).
+As expected, the difference between
+any two weight vectors, is a root vector.
 
 
 
@@ -377,25 +384,45 @@ weight vectors  of the fundamental rep (just derived).
 \centering
 \includegraphics[width=3.5in]
 {weight-diagrams/tuv-plus.png}
-\caption{Roots of $SU(3)$.}
+\caption{
+Each of the six root
+vectors of $\ger{su}(3)$
+is associated with a raising operator $T_+, U_+, V_+$
+or a lowering operator
+$T_-, U_-, V_-$.}
 \label{fig-tuv-plus}
 \end{figure}
 
+As shown in Fig.\ref{fig-tuv-plus},
+each of the six root
+vectors of $\ger{su}(3)$
+is associated with a raising operator $T_+, U_+, V_+$
+or a lowering operator
+$T_-, U_-, V_-$.
+In $\ger{su}(2)$
+$J_+$ raises the $J_z=j_z=m$ of a quantum state by
+$1/2$ and $J_-$
+lowers it by a $1/2$.
+$T_\pm, U_\pm, V_\pm$ change $T_z,U_z, V_z$ analogously.
 
+\subsection{Examples}
 
-\section{$SU(3)$ examples}
+In this section, we give examples of
+$SU(3)$ WDs.
 
+There is a
+one-to-one map
+between the the irreps of  $\ger{su}(3)$ irreps and the WDs
+of $\ger{su}(3)$.
 
-one-to-one map of $SU(3)$ irreps and {\bf weight diagrams (WD)}
-
-weights on the {\bf boundary of WD} are called {\bf dominant weights
+The weights on the {\bf boundary of WD} are called {\bf dominant weights
 }
 
-nondegenerate weights are
+In a WD, nondegenerate weights are
 represented by a single dot.
-$k$-fold degenerate (i.e., eigenvalues with {\bf multiplicity} $k$) weights are represented by a dot with $k-1$ rings
+$k$-fold degenerate weights (i.e., eigenvalues with {\bf {\bf multiplicity}} $k$) are represented by a dot with $k-1$ rings.
 
-WD are labelled by either by
+WD are labelled either by
 
 \begin{itemize}
 \item the dimension $d_{rep}$ of the irrep, with extra labels in case there are multiple irreps with the same dimension, 
@@ -412,11 +439,26 @@ d_{rep}= \frac{1}{2}(\lam+1)(\mu+1)(\lam +\mu +2)
 \label{eq-drep}
 \eeq
 
-For example, see Fig.\ref{fig-3-3star}. $SU(3)$ has 2 fundamental irreps, $\ul{3}$ and $\ul{3}^*$. Both are 3 dimensional. $(\lam,\mu)=(1,0)$ for $\ul{3}$, 
+For example, see Fig.\ref{fig-3-3star}. $\ger{su}(3)$ has 2 fundamental irreps, $\ul{3}$ and $\ul{3}^*$. Both are 3 dimensional. $(\lam,\mu)=(1,0)$ for $\ul{3}$, 
 and $(\lam,\mu)=(0,1)$ for $\ul{3}^*$.
 The formula Eq.(\ref{eq-drep}) for $d_{rep}$ gives 3 for both.
 
+See the following figures for examples of WDs of $\ger{su}(3)$.
 
+\begin{itemize}
+\item Fig.\ref{fig-3-3star}
+shows $\ul{3}$ and $\ul{3}^*$
+
+\item Fig.\ref{fig-rep10}
+shows $\ul{10}$ (decuplet)
+
+\item Fig.\ref{fig-rep8}
+shows $\ul{8}$ (octet)
+
+\item Fig.\ref{fig-rep15}
+shows $\ul{15}$
+
+\end{itemize}
 
 
 \begin{figure}[h!]
@@ -425,7 +467,7 @@ The formula Eq.(\ref{eq-drep}) for $d_{rep}$ gives 3 for both.
 {weight-diagrams/rep3.png}
 \includegraphics[width=2.9in]
 {weight-diagrams/rep3star.png}
-\caption{WDs for the two fundamental irreps of $SU(3)$, $\ul{3}$ and $\ul{3}^*$. $(\lam,\mu)=(1,0)$ for $\ul{3}$, 
+\caption{WDs for the two fundamental irreps of $\ger{su}(3)$, $\ul{3}$ and $\ul{3}^*$. $(\lam,\mu)=(1,0)$ for $\ul{3}$, 
 and $(\lam,\mu)=(0,1)$ for $\ul{3}^*$.}
 \label{fig-3-3star}
 \end{figure}
@@ -435,7 +477,7 @@ and $(\lam,\mu)=(0,1)$ for $\ul{3}^*$.}
 \centering
 \includegraphics[width=3.5in]
 {weight-diagrams/rep10.png}
-\caption{WD for the $SU(3)$ irrep $\ul{10}$. $(\lam,\mu)=(3,0)$.}
+\caption{WD for the $\ger{su}(3)$ irrep $\ul{10}$. $(\lam,\mu)=(3,0)$.}
 \label{fig-rep10}
 \end{figure}
 
@@ -443,7 +485,7 @@ and $(\lam,\mu)=(0,1)$ for $\ul{3}^*$.}
 \centering
 \includegraphics[width=3.5in]
 {weight-diagrams/rep8.png}
-\caption{WD for the $SU(3)$ irrep $\ul{8}$. $(\lam,\mu)=(1,1)$.}
+\caption{WD for the $\ger{su}(3)$ irrep $\ul{8}$. $(\lam,\mu)=(1,1)$.}
 \label{fig-rep8}
 \end{figure}
 
@@ -451,7 +493,7 @@ and $(\lam,\mu)=(0,1)$ for $\ul{3}^*$.}
 \centering
 \includegraphics[width=3.5in]
 {weight-diagrams/rep15.png}
-\caption{WD for the $SU(3)$ irrep $\ul{15}$. $(\lam,\mu)=(2,1)$.}
+\caption{WD for the $\ger{su}(3)$ irrep $\ul{15}$. $(\lam,\mu)=(2,1)$.}
 \label{fig-rep15}
 \end{figure}
 
@@ -468,12 +510,13 @@ for nucleons,
 As a mnemonic, remember that a nucleon has 3 quarks with $Y=1/3$,
 and $Y'$ for the nucleon is the sum of $Y$ for each quark. $Y=1/3$ for up or down quarks, and $Y=-2/3$ for the strange quark. $u,d$ constitute an $SU(2)$ doublet and $s$ an $SU(2)$ singlet.
 
-\section{Relation of weights of WD to Semi-Standard Young Tableau}
+\section{Relation between WD and Semi-Standard Young Tableaux}
 
+Young Diagrams (YD) and Young Tableaux (YT) are 
+discussed in Chapter \ref{ch-young-tableau}
 
-
-Given a young diagram YD, a SYT/SSYT (Standard or Semi-Standard Young Tableau) 
-for the YD satisfies
+Given a YD, its SYT/SSYT (Standard or Semi-Standard YT) 
+satisfies
 
 
 \begin{itemize}
@@ -486,20 +529,26 @@ Thus, SYT/SSYT disallow/allow repetitions along a row.
 
 SYT are used, for example, to label the irreps of $S_n$.
 Hence, there is a 1-1 relation between Young Symmetrizer operators
-and STY. 
+and SYT. 
 
 
-SSYT are used below to label the basis vectors of an irrep of $SU(n)$.
-
-SYT \xymatrix{\ar[r]_{\text{1 to 1}}&} Young operators, SSYT \xymatrix{\ar[r]_{\text{1 to 1}}&} weights of WD
-
-
-
+SSYT are used below to label the basis weight vectors of an irrep of $\ger{su}(n)$.
 There is a 1-1 relationship between YD and WD,
 and a 1-1 relationship between the SSYT of a YD and the 
 weights of the corresponding WD.
 Degenerate weights have different SSYT.
 
+To summarize,
+
+SYTs \xymatrix{\ar[r]_{\text{1 to 1}}&} Young operators, SSYTs \xymatrix{\ar[r]_{\text{1 to 1}}&} weights of WD
+
+
+
+To calculate
+the isospin, hypercharge
+$(t_z, y)$
+of a SSYT, 
+use the follwing equation
 
 \beq
 (t_z,y)=
@@ -512,6 +561,10 @@ Degenerate weights have different SSYT.
 \end{array}
 \right.
 \eeq
+Equivalently,
+if $n_i$ is the number
+of $i=1,2,3$ boxes
+in the SSYT, then
 
 \beq
 t_z=
@@ -525,15 +578,18 @@ y=\frac{1}{3}(n_1 + n_2 - 2 n_3)
 SU(3) octet example. 
 
 
-Young diagram for the octet ($\ul{8}$, (1,1), Fig.\ref{fig-rep8})
+An octet ($\ul{8}$, (1,1), Fig.\ref{fig-rep8})
+has the YD
 
 $$
 \ydiagram{2,1}
 $$
+Let 
 
 \beq
 \caly = S_{12}A_{13}= [1+(12)][1-(13)]
 \eeq
+Then
 
 \beqa\ket{\psi}=
 \caly\ket{a}\ket{b}\ket{c}
@@ -545,6 +601,14 @@ S_{12}\left(
 [\ket{a}\ket{b}\ket{c} + \ket{b}\ket{a}\ket{c}]
 -[\ket{c}\ket{b}\ket{a}+\ket{c}\ket{a}\ket{b}]
 \eeqa
+
+The following
+table gives 
+the SSYT, its $(t_z, y)$
+content, and its
+wavefunction,
+for each weight of an $SU(3)$ octet.  This table's information is conveyed pictorially
+in Fig.\ref{fig-rep8-with-yt}.
 
 \begin{enumerate}
 
@@ -671,7 +735,7 @@ u_1 u_2
 \centering
 \includegraphics[width=3.5in]
 {weight-diagrams/rep8-with-yt.png}
-\caption{WD for the $SU(3)$ octet with YT
+\caption{WD for the $SU(3)$ octet with the SSYT
 for each weight.}
 \label{fig-rep8-with-yt}
 \end{figure}
