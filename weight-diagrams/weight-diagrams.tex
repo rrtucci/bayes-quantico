@@ -14,6 +14,9 @@ have the same Lie algebra
 $\ger{su}(2)$. $\ger{su}(2)$ has irreps with integral
 and half integral spin. But only
 the ones with integral spin are irreps of $SO(3)$.
+Luckily, for $SU(n)$, which is the group that most cooncerns us
+in this chapter, all irreps of $\ger{su}(n)$
+are irreps of $SU(n)$ too. 
 
 In Chapter \ref{ch-dynkin},
 we classified semi-simple Lie algebras
@@ -23,9 +26,10 @@ is described by a set of weight vectors.
 Both {\bf root vectors} and {\bf weight vectors}  satisfy an eigenvalue equation, namely 
 \beq
 \begin{array}{ll}
-\text{root $\vec{\alp}$:}& [\vec{H},\;\cdot\;]E_{\vec{\alp}}
-=
-[\vec{H}, E_{\vec{\alp}}]= \vec{\alp} E_{\vec{\alp}}
+\text{root }\valp:&
+\overbrace{[\vec{H}, E_{\vec{\alp}}]}^
+{[\vec{H},\;\cdot\;]E_{\vec{\alp}}}
+= \vec{\alp} E_{\vec{\alp}}
 \\
 \text{weight $\vec{m}$:}&
 \vec{H}\ket{j, \vec{m}}= \vec{m}\ket{j, \vec{m}}
@@ -104,7 +108,7 @@ In this section, we describe
 the WDs for $SU(2)$. These
 follow from the 
 theory of angular momentum
-in quantum mechanics.
+in Quantum Mechanics.
 
 Define
 \beq
@@ -159,9 +163,10 @@ J_-&&J_+\ar[ll]^{2J_z}
 
 The WD for irrep $j$, where\footnote{Whenever possible, we will follow  the convention of denoting operators by upper case letters 
 and their eigenvalues
-by lower case letters.
-For example, $J,J_z$ 
-eigenvalues will be denoted by $j, j_z$.
+by the same letter in lower case.
+For example, 
+the eigenvalues of $J,J_z$ 
+will be denoted by $j, j_z$.
 }
 \beq
 J=j\in \left\{0, \frac{1}{2}, 1, \frac{3}{2}, \ldots\right\}
@@ -374,7 +379,8 @@ Y
 Fig.\ref{fig-weights-fundamental}
 shows 
 the root vectors for $\ger{su}(3)$ (derived in Chapter \ref{ch-dynkin}) and the
-weight vectors  of the fundamental rep (just derived).
+weight vectors  of the fundamental rep
+of $\ger{su}(3)$ (just derived).
 As expected, the difference between
 any two weight vectors, is a root vector.
 
@@ -412,7 +418,7 @@ $SU(3)$ WDs.
 
 There is a
 one-to-one map
-between the the irreps of  $\ger{su}(3)$ irreps and the WDs
+between the the irreps of  $\ger{su}(3)$ and the WDs
 of $\ger{su}(3)$.
 
 The weights on the {\bf boundary of WD} are called {\bf dominant weights
@@ -599,7 +605,7 @@ S_{12}\left(
 \right)
 \\&=&
 [\ket{a}\ket{b}\ket{c} + \ket{b}\ket{a}\ket{c}]
--[\ket{c}\ket{b}\ket{a}+\ket{c}\ket{a}\ket{b}]
+-[\ket{c}\ket{b}\ket{a}+\ket{b}\ket{c}\ket{a}]
 \eeqa
 
 The following
