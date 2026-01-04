@@ -1,0 +1,209 @@
+\chapter{Lagrange's Theorem and Stabilizer-Orbit Theorem: COMING SOON}
+\label{ch-lagranges-theorem}
+
+
+\section{Lagrange's Theorem}
+
+Let $H$ be a subgroup of a finite
+group $G$ ($H\le G$)
+
+
+
+$g H = \{gh| h\in H\}$ Left coset with coset representative $g$
+
+$G:H=$ set of coset representatives
+
+$G/H=\{gH| g\in G:H\}$
+
+
+Form the Lagrange table with
+rows labelled by $g\in G:H$ and columns
+labelled by $h\in H$. Table entries equal to $gh$
+
+\begin{claim}Every element of $G$ appears exactly once in the Lagrange Table. Therefore
+
+\beq
+|G:H| \; |H| = |G|
+\eeq
+\end{claim}
+\proof
+
+Given $x\in G$, calculate \beq
+A_x=\{g=xh^{-1}|
+h\in H\}\eeq
+One of the elements
+$g\in A_x$ must be in $G:H$. Hence $x=gh\in gH$.  So every $x\in G$ appears at least one coset.
+
+Suppose $x$ appears in 2 cosets $g_1H$ and $g_2H$.
+\beq
+ g_1h_1=g_2h_2\eeq
+so
+\beq
+g_2^{-1} g_1= h_2 h_1^{-1}\in H
+\eeq
+Hence, 
+\beq
+g_2^{-1} g_1 H = H\implies g_2H = g_1H
+\eeq
+\qed
+
+
+* or connect this directly to quotient spaces in Lie groups.
+
+
+
+\hrule
+Example 1
+
+
+
+
+$
+G=S_3 = \{e,\ (12),\ (13),\ (23),\ (123),\ (132)\}
+$ The symmetric group on 3 letters,
+$|G|=6$
+
+$H = \{e,(12)\}$, $|H|=2$
+
+Cosets
+
+\beq\left\{
+\begin{array}{ll}
+eH &= \{e,(12)\}
+\\
+(13)H &= \{(13),(123)\}
+\\
+(23)H &= \{(23),(132)\}
+\end{array}
+\right.
+\eeq
+
+$G:H =
+\{e,\ (13),\ (23)\}$ coset representatives. $|G:H|=3$
+
+
+
+$G$ gives all operations.
+
+$H=$ symmetries for a given reference state
+
+$G:H=$ all distinct reference states.
+
+$H$ is a normal subgroup of $G$ ($H\) iff
+
+In this example, $G/H$ is not a group. 
+In the next example, it is.  $G/H$
+is a group iff $H$ is {\bf normal group}
+\hrule
+
+ 1. Is (H={e,(12)}) normal in (S_3)?
+
+No.
+(H) is not a normal subgroup of (S_3).
+
+ Quick check
+
+Conjugate ((12)) by another element of (S_3), say ((13)):
+[
+(13)(12)(13)^{-1} = (23) \notin H.
+]
+
+So
+[
+gHg^{-1} \neq H
+\quad\text{for some } g\in S_3,
+]
+hence (H \ntrianglelefteq S_3).
+
+---
+
+ 2. Simple example where (H) *is* normal
+
+ Example: cyclic group (\mathbb Z_6)
+
+Let
+[
+G=\mathbb Z_6={0,1,2,3,4,5}
+]
+(addition mod 6).
+
+Take
+[
+H={0,3}.
+]
+
+* (H) is a subgroup (order 2)
+* (G) is abelian ⇒ every subgroup is normal
+
+---
+
+ 3. Lagrange table for the normal case
+
+Choose coset representatives:
+[
+{0,1,2}.
+]
+
+Build the table (g+h).
+
+| (g \backslash h) | 0 | 3 |
+| ---------------- | - | - |
+| 0                | 0 | 3 |
+| 1                | 1 | 4 |
+| 2                | 2 | 5 |
+
+Every element of (\mathbb Z_6) appears exactly once.
+
+---
+
+ 4. Why normality matters (but not for Lagrange)
+
+* Lagrange’s theorem only needs (H \le G)
+* Normality is needed to define a group structure on (G/H)
+
+In this example:
+[
+\mathbb Z_6 / {0,3} \cong \mathbb Z_3.
+]
+
+In the (S_3) example, (G/H) is just a set of cosets — not a group.
+
+---
+
+ 5. Another classic normal example (non-abelian)
+
+If you want a non-abelian group with a normal subgroup:
+
+ Example: (S_3) again
+
+Let
+[
+H = A_3 = {e,(123),(132)}.
+]
+
+* (|H|=3)
+* (H \trianglelefteq S_3) (index 2 ⇒ automatically normal)
+
+Cosets:
+[
+A_3,\quad (12)A_3.
+]
+
+Then
+[
+S_3 / A_3 \cong \mathbb Z_2.
+]
+
+---
+
+ 6. One-sentence summary
+
+* The earlier (H={e,(12)}) was not normal
+* A simple normal example is ({0,3} \le \mathbb Z_6)
+* Normality affects quotients, not Lagrange’s counting
+
+If you want, I can next:
+
+* put the normal vs non-normal cases side-by-side as tables,
+* show how coset multiplication fails when (H) isn’t normal,
+* or connect this back to stabilizer normalizers in QEC.
