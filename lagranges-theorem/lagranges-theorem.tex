@@ -47,6 +47,27 @@ g_2^{-1} g_1 H = H\implies g_2H = g_1H
 \eeq
 \qed
 
+A group $G$ is {\bf abelian} if $g_1 g_2=g_2 g_1$ for all $g_1,g_2\in  G$. 
+
+$H$ is  {\bf normal}
+subgroup of $G$ (i.e., $H\trianglelefteq G$)
+iff $gH=Hg$ (i.e., $gGg^{-1}=H$)
+for all $g\in G$.
+All subgroups  $H$ of an abelian group $G$  are
+normal subgroups.
+
+$G$ gives all operations.
+
+$H=$ symmetries for a given reference state
+
+$G:H=$ all distinct reference states,
+often called the {\bf index set}
+
+$G/H=$ set of left cosets, often called a
+{\bf quotient space} , or {\bf quotient group}m if $H$ is a normal
+subgroup
+
+
 
 * or connect this directly to quotient spaces in Lie groups.
 
@@ -61,9 +82,9 @@ Example 1
 $
 G=S_3 = \{e,\ (12),\ (13),\ (23),\ (123),\ (132)\}
 $ The symmetric group on 3 letters,
-$|G|=6$
 
-$H = \{e,(12)\}$, $|H|=2$
+
+$H = \{e,(12)\}$
 
 Cosets
 
@@ -79,131 +100,99 @@ eH &= \{e,(12)\}
 \eeq
 
 $G:H =
-\{e,\ (13),\ (23)\}$ coset representatives. $|G:H|=3$
+\{e,\ (13),\ (23)\}$ coset representatives. 
+
+\beq
+|G|= 6, \quad |G:H|=3, \quad |H|=2
+\eeq
 
 
 
-$G$ gives all operations.
-
-$H=$ symmetries for a given reference state
-
-$G:H=$ all distinct reference states.
 
 $H$ is a normal subgroup of $G$ ($H\) iff
 
-In this example, $G/H$ is not a group. 
-In the next example, it is.  $G/H$
-is a group iff $H$ is {\bf normal group}
+In this example, $H$ is not a normal subgroup of $G$
+because 
+\beq
+(13)H = \{(13),\underbrace{(13)(12)}
+_{(123)}\}
+\eeq
+
+and
+
+\beq
+H(13)
+=\{(13),\underbrace{(12)(13)}
+_{(213)}\}
+\eeq
+are not equal.
+
 \hrule
+Example
 
- 1. Is (H={e,(12)}) normal in (S_3)?
 
-No.
-(H) is not a normal subgroup of (S_3).
+$G= Z_6=\{0,1,2,3,4,5\}$
+ under addition mod 6.
 
- Quick check
+$H=\{0,3\}$
 
-Conjugate ((12)) by another element of (S_3), say ((13)):
-[
-(13)(12)(13)^{-1} = (23) \notin H.
-]
+$G$ is abelian so every subgroup of $G$ is normal
 
-So
-[
-gHg^{-1} \neq H
-\quad\text{for some } g\in S_3,
-]
-hence (H \ntrianglelefteq S_3).
+$G:H=\{0,1,2\}$, coset representatives
 
----
+Cosets
 
- 2. Simple example where (H) *is* normal
+\beq
+\left\{
+\begin{array}{ll}
+0+ H=\{0,3\}
+\\
+1+ H=\{1,4\}
+\\
+2+ H=\{2,5\}
+\end{array}
+\right.
+\eeq
 
- Example: cyclic group (\mathbb Z_6)
+\hrule
+Example ($H$ is normal subgroup even though $G$ is not abelian)
 
-Let
-[
-G=\mathbb Z_6={0,1,2,3,4,5}
-]
-(addition mod 6).
+$S_3^e = \{e,(123),(132)\}$, even number of cycles
 
-Take
-[
-H={0,3}.
-]
+$S_3^o=\{(12),(13),(23)\}$, odd number of cycles
 
-* (H) is a subgroup (order 2)
-* (G) is abelian ⇒ every subgroup is normal
+$G=S_3=S_3^o \cup S_3^e$
 
----
 
- 3. Lagrange table for the normal case
 
-Choose coset representatives:
-[
-{0,1,2}.
-]
+$
+H = S_3^e.
+$
 
-Build the table (g+h).
 
-| (g \backslash h) | 0 | 3 |
-| ---------------- | - | - |
-| 0                | 0 | 3 |
-| 1                | 1 | 4 |
-| 2                | 2 | 5 |
 
-Every element of (\mathbb Z_6) appears exactly once.
+$S_3^e \trianglelefteq S_3$ because $\s S_3^e =S_3^e \s =S_3^o$
+for all $\s \in S_3$
 
----
+$G:H=\{e, (12)\}$ coset representatives
 
- 4. Why normality matters (but not for Lagrange)
 
-* Lagrange’s theorem only needs (H \le G)
-* Normality is needed to define a group structure on (G/H)
+Cosets
 
-In this example:
-[
-\mathbb Z_6 / {0,3} \cong \mathbb Z_3.
-]
+\beq
+\left\{
+\begin{array}{ll}
+eH &= S_3^e
+\\
+(12)H&= S_3^o
+\end{array}
+\right.
+\eeq
 
-In the (S_3) example, (G/H) is just a set of cosets — not a group.
+\beq
+S_3 / S_3^e \cong  Z_2
+\eeq
 
----
 
- 5. Another classic normal example (non-abelian)
-
-If you want a non-abelian group with a normal subgroup:
-
- Example: (S_3) again
-
-Let
-[
-H = A_3 = {e,(123),(132)}.
-]
-
-* (|H|=3)
-* (H \trianglelefteq S_3) (index 2 ⇒ automatically normal)
-
-Cosets:
-[
-A_3,\quad (12)A_3.
-]
-
-Then
-[
-S_3 / A_3 \cong \mathbb Z_2.
-]
-
----
-
- 6. One-sentence summary
-
-* The earlier (H={e,(12)}) was not normal
-* A simple normal example is ({0,3} \le \mathbb Z_6)
-* Normality affects quotients, not Lagrange’s counting
-
-If you want, I can next:
-
-* put the normal vs non-normal cases side-by-side as tables,
-* show how coset multiplication fails when (H) isn’t normal,
-* or connect this back to stabilizer normalizers in QEC.
+\section{Stabilizer-Orbit Theorem}
+Thermodynamic language
