@@ -1,28 +1,31 @@
-\chapter{Lagrange's Theorem and Orbit-Stabilizer Theorem: COMING SOON}
+\chapter{Lagrange's Theorem and Orbit-Stabilizer Theorem}
 \label{ch-lagranges-theorem}
 
 
 \section{Lagrange's Theorem}
 
 Let $H$ be a subgroup of a finite
-group $G$ ($H\le G$)
+group $G$ (i.e., $H\le G$)
 
 
 
-$g H = \{gh| h\in H\}$ Left coset with coset representative $g$
-
-$G:H=$ set of coset representatives
-
-$G/H=\{gH| g\in G:H\}$
+$g H = \{gh| h\in H\}=$ {\bf left coset} with coset representative $g$
 
 
-Form the Lagrange table with
-rows labelled by $g\in G:H$ and columns
-labelled by $h\in H$. Table entries equal to $gh$
+$G/H=\{gH| g\in G\}=\{gH| g\in G:H\}$
+
+$G:H=$ set of {\bf coset representatives}
+
+
+
+The {\bf Lagrange table} is a table with
+rows labelled by $g\in G:H$, columns
+labelled by $h\in H$, and table entries equal to $gh$.
 
 \begin{claim}Every element of $G$ appears exactly once in the Lagrange Table. Therefore\footnote{Eq.(\ref{eq-finite-lagrange}) is for finite groups. For infinite Lie groups,
 the order of each group
-is replace by the dimension of the Lie algebra vector space: $dim(\ger{g})=dim(\ln G:H) \; dim (\ger{h})$}
+is replace by the dimension of the Lie algebra vector space: $dim(\ger{g})=dim(\ger{a}) \; dim (\ger{h})$,
+where $\ger{g}=\ger{a}+\ger{h}$}
 
 \beq
 |G|=|G:H| \; |H|
@@ -31,11 +34,9 @@ is replace by the dimension of the Lie algebra vector space: $dim(\ger{g})=dim(\
 \end{claim}
 \proof
 
-Given $x\in G$, calculate \beq
-A_x=\{g=xh^{-1}|
-h\in H\}\eeq
-One of the elements
-$g\in A_x$ must be in $G:H$. Hence $x=gh\in gH$.  So every $x\in G$ appears at least one coset.
+If $x\in G$,
+then
+$x\in xH=gH$ for some $g\in G:H$.  So every $x\in G$ appears at least in one coset.
 
 Suppose $x$ appears in 2 cosets $g_1H$ and $g_2H$.
 \beq
@@ -52,18 +53,18 @@ g_2^{-1} g_1 H = H\implies g_2H = g_1H
 
 A group $G$ is {\bf abelian} if $g_1 g_2=g_2 g_1$ for all $g_1,g_2\in  G$. 
 
-$H$ is  {\bf normal}
+$H$ is  a {\bf normal}
 subgroup of $G$ (i.e., $H\trianglelefteq G$)
-iff $gH=Hg$ (i.e., $gGg^{-1}=H$)
+iff $gH=Hg$ (i.e., $gHg^{-1}=H$)
 for all $g\in G$.
 All subgroups  $H$ of an abelian group $G$  are
 normal subgroups.
 
-$G$ gives all operations.
+$G=$ all symmetries.
 
 $H=$ symmetries for a given reference state
 
-$G:H=$ all distinct reference states,
+$G:H=$ a set of reference states that yield all distinct left cosets,
 often called the {\bf index set}
 
 $G/H=$ set of left cosets, often called a
@@ -75,7 +76,7 @@ subgroup
 Examples:
 \begin{enumerate}
 \hrule
-\item
+\item ($H$ not normal subgroup)
 
 
 
@@ -110,7 +111,6 @@ $G:H =
 
 
 
-$H$ is a normal subgroup of $G$ ($H\) iff
 
 In this example, $H$ is not a normal subgroup of $G$
 because 
@@ -129,7 +129,7 @@ _{(213)}\}
 are not equal.
 
 \hrule
-\item
+\item ($H$ normal because $G$ is abelian)
 
 
 $G= Z_6=\{0,1,2,3,4,5\}$
@@ -201,17 +201,23 @@ S_3 / S_3^e \cong  Z_2
 
 Let a group $G$ act on a set $X$ by an action $\odot$. This means that $\odot: G\times X\rarrow X$ and $(g,x)\mapsto g\odot x$. Normally this {\bf action} $\odot$ is {\bf group conjugation}. $g\odot x= g x g^{-1}$. In the special case  of Lagrange's theorem, $X=G$ and $g\odot x=gx$.
 
-$Stab_G(x)
-=\{ g \in G | g x g^{-1} = x \}
-$= {\bf Stabilizer of $x$}, the symmetries of $x$, group operations that keep it fixed or \qt{stabilized}.
+$Stab(x)
+=\{ g \in G | g\odot x = x \}
+$= {\bf Stabilizer of $x$}, the symmetries of $x$, group operations that keep $x$ fixed or \qt{stabilized}.
 
-$O(x)=\{gx g^{-1}| g\in G \}=$ {\bf Orbit of $x$}, all possible projections of $x$ via $g\in G$
+$O(x)=\{g\odot x| g\in G \}=$ {\bf Orbit of $x$}, all possible projections of $x$ via $g\in G$
 
-
+\begin{figure}[h!]
+\centering
+\includegraphics[width=3.5in]
+{lagranges-theorem/orbit-stab.png}
+\caption{Pictorial representation of $O(x)$ and $Stab(x)$}
+\label{fig-orbit-stab}
+\end{figure}
 
 \begin{claim}(Orbit-Stabilizer theorem for single point $x\in X$)
 \beq
-|G| = |O(x)| \;|Stab_G(x)|
+|G| = |O(x)| \;|Stab(x)|
 \eeq
 \end{claim}
 \proof
@@ -220,18 +226,18 @@ $O(x)=\{gx g^{-1}| g\in G \}=$ {\bf Orbit of $x$}, all possible projections of $
 $Z(G)=\{z\in G| gzg^{-1}=z \text{ for all }g\in G\}=$ {\bf center of $G$}
 
 Suppose $H$ is a subgroup of $G$ (i.e., $H\leq G$) and action is group conjugation.
-There are two ways of defining $Stab(x)$ for a subgroup $H$, instead of a 
+There are two ways of generalizing $Stab(x)$ for a subgroup $H$, instead of a 
 single point $x$
 
 \beq
 \left\{
 \begin{array}{ll}
-\cup_{h\in H}Stab_G(x)=
+\cup_{h\in H}Stab(x)=
 \cup_{h\in H}
 \{g\in G| ghg^{-1}=h\}
 =C_G(H)& \text{\bf Centralizer}
 \\
-Stab_G(H)=\{g\in G| gHg^{-1}=H\})=N_G(H)& \text{\bf Normalizer}
+Stab(H)=\{g\in G| gHg^{-1}=H\})=N_G(H)& \text{\bf Normalizer}
 \end{array}
 \right.
 \eeq
@@ -256,7 +262,7 @@ structure(subgroup) $H$ instead of single point $H$
 
 \begin{claim}(Orbit-Stabilizer theorem for subgroup $H\leq G$)
 \beq
-|G| = |O(H)| \;|\underbrace{Stab_G(H)}_{N_G(H)}|
+|G| = |O(H)| \;|\underbrace{Stab(H)}_{N_G(H)}|
 \eeq
 \end{claim}
 \proof
@@ -275,7 +281,7 @@ $G= S_3$
 
 $x=(12)$
 
-$Stab_G(x)=\{e, (12)\}$
+$Stab(x)=\{e, (12)\}$
 
 $O(x)= \{ (12), (13)(12)(13), (23)(12)(23)\} =
 \{
@@ -284,7 +290,7 @@ $O(x)= \{ (12), (13)(12)(13), (23)(12)(23)\} =
 
 \beq
 |G|=6, |O(x)|=3, |Stab(x)|=2\implies
-|G| = |O(x)| \;|Stab_G(x)|
+|G| = |O(x)| \;|Stab(x)|
 \eeq
 \hrule
 \end{enumerate}
@@ -307,9 +313,11 @@ $O(x)$= projections of code state $x$
 
 $Stab(x)=$ subgroup of $G$ that preserves (doesn't change, stabilizes, fixes) code state $x$
 
-$H$ = subgroup of $G$
+$H=$ code space subgroup of $G$
 
-$Stab(H)=$ subgroup of $G$ that fixes $H$
+$Stab(H)=$ subgroup of $G$
+that fixes code space $H$
+
 
 \item thermodynamic intuition
 
