@@ -24,8 +24,8 @@ labelled by $h\in H$, and table entries equal to $gh$.
 
 \begin{claim}Every element of $G$ appears exactly once in the Lagrange Table. Therefore\footnote{Eq.(\ref{eq-finite-lagrange}) is for finite groups. For infinite Lie groups,
 the order of each group
-is replace by the dimension of the Lie algebra vector space: $dim(\ger{g})=dim(\ger{a}) \; dim (\ger{h})$,
-where $\ger{g}=\ger{a}+\ger{h}$}
+is replace by the dimension of the Lie algebra vector space: $dim(\ger{g})=dim(\ger{g}/\ger{h}) \; dim (\ger{h})$,
+where $\ger{g}=\ger{g}/\ger{h}+\ger{h}$}
 
 \beq
 |G|=|G:H| \; |H|
@@ -274,10 +274,9 @@ structure(subgroup) $H$ instead of single point $H$
 
 
 
-
+\hrule
 Examples:
 \begin{enumerate}
-\hrule
 \item 
 $G= S_3$
 
@@ -295,11 +294,12 @@ $O(x)= \{ (12), (13)(12)(13), (23)(12)(23)\} =
 |G|=6, |O(x)|=3, |Stab(x)|=2\implies
 |G| = |O(x)| \;|Stab(x)|
 \eeq
-\hrule
 \end{enumerate}
 
+\hrule
+Applications:
 \begin{itemize}
-\item error correction intuition
+\item Quantum Error Correction
 
 Pauli group =$\{1, \s_x, \s_y, \s_z\}\times\{\pm 1, \pm i\}$. Has 16 elements.
 
@@ -322,7 +322,7 @@ $Stab(H)=$ subgroup of $G$
 that fixes code space $H$
 
 
-\item thermodynamic intuition
+\item Thermodynamics
 
 $G$= group
 
@@ -338,7 +338,7 @@ residual symmetry group
 
 
 
-\item Lie groups intuition
+\item Lie groups
 
 $G$= Lie group
 
