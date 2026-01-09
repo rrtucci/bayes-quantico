@@ -168,14 +168,14 @@ under multiplication} (i.e., $ab\in \calh$ for all $a,b\in \calh$)
 
 \section{Group  Representation}
 
-A {\bf group representation} (rep)
-of a group $\calg$
-is a map $\phi: \calg\rarrow \CC^{n\times n}$\footnote{More generally, the $\CC^{n\times n}$ can be replaced by $\RR^{n\times n}$ or by $\FF^{n\times n}$ for any field $\FF$} such that
+A {\bf representation (rep)
+of a group $\calg$}
+is a map $\rho: \calg\rarrow \CC^{n\times n}$\footnote{More generally, the $\CC^{n\times n}$ can be replaced by $\RR^{n\times n}$ or by $\FF^{n\times n}$ for any field $\FF$} such that
 
 \beq
-\phi(a)\phi(b)=
-\phi(ab),
-\quad \phi(e) = I
+\rho(a)\rho(b)=
+\rho(ab),
+\quad \rho(e) = I
 \eeq
 where $e$ is the
 identity of the group
@@ -183,7 +183,7 @@ and $I$
 is the identity matrix.
 Such a map is called a {\bf homomorphism}
 (because it preserves an operation).
-The map $\phi$ 
+The map $\rho$
 partitions $\calg$
 into disjoints subsets (equivalence classes),
 such that all elements of $\calg$ in each disjoint subset 
@@ -195,7 +195,7 @@ label reps by a
 Greek letter
 such as $\lam$,
 and we will refer to
-$\phi(g)=G_\lam(g)=G_\lam$ as the
+$\rho(g)=G_\lam(g)=G_\lam$ as the
 {\bf representation matrix} (rep-matrix) of $g\in\calg$.
 
 One  way to specify a representation is
@@ -203,11 +203,11 @@ to give the effect of each group element $a\in \calg$ on a basis of vectors $\{\
 
 
 \beq
-\phi (a)\ket{i}= \sum_j M_{ij}\ket{j}
-\implies \av{i|\phi(a)|j} = M_{ij}
+\rho (a)\ket{i}= \sum_j M_{ij}\ket{j}
+\implies \av{i|\rho(a)|j} = M_{ij}
 \eeq
 
-If the map $\phi$
+If the map $\rho$
 is 1-1, onto, we call it a {\bf faithful representation} 
 
 A {\bf singlet (or invariant or conserved) quantity of group $\calg$}
@@ -215,11 +215,11 @@ is a quantity that
 is invariant under the group transformations
 $g\in \calg$.
 The {\bf trivial or singlet representation}
-is the rep with  $\phi(g)=1=[1]^{1\times 1}$ 
+is the rep with  $\rho(g)=1=[1]^{1\times 1}$
 for all $g\in \calg$.
 The dimension 
 of this rep is $d_\lam=1$.
-If $\phi(g)=diag(1,1)$,
+If $\rho(g)=diag(1,1)$,
 this is referred to as two identical copies of a singlet rep.
 The {\bf singlet projection operator}
 $\delta_a^b \delta_c^d$
@@ -253,7 +253,7 @@ the $n$-dim rep with rep-matrices $G\indices{_b^a}$
 where $b=1, 2, \ldots, n$. Always associate the dim of a rep
 with the matrix dimension of a  square matrix.}
 For example,
-the rep with  $\phi(g)=e^{i\beta(g)}=[e^{i\beta(g)}]^{1\times 1}$
+the rep with  $\rho(g)=e^{i\beta(g)}=[e^{i\beta(g)}]^{1\times 1}$
 for all $g\in \calg$,
 where $\beta(g)\in \RR$.
 The the trivial/singlet rep
