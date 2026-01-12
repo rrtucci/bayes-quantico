@@ -1,5 +1,82 @@
-\chapter{Branching Rules and Symmetry Breaking: COMING SOON}
+\chapter{Branching Rules and Symmetry Breaking}
 \label{ch-branching}
+
+\section{Block diagonalization}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=3in]
+{branching/cgs-irreps.png}
+\caption{Pictorial representation
+of 
+Clebsch-Gordan series}
+\label{fig-cgs-irreps}
+\end{figure}
+
+For any square matrices $A$, $B$, $C$ (not necessarily of the same dimension)
+\beq
+A\oplus B\oplus C = \begin{pmatrix}
+A&0&0
+\\0&B&0
+\\
+0&0&C
+\end{pmatrix}
+\eeq
+If $A_i$ for $i=1,2, \ldots, n$ are square matrices, $A_1\oplus A_2 \oplus \ldots \oplus A_n$ is called
+a {\bf block diagonal matrix}.
+
+
+An intuitive way of
+discussing branching
+rules is via block diagonalization (BD)
+of matrices.  
+
+Before discussing branching rules via BD,
+it is a good idea to discuss
+Clebsch-Gordan series via BD.
+When we
+discuss later on the branching rules via BD, we shall
+point out the difference between the two.
+The two are different 
+applications of BD that are often confused.
+
+
+
+Clebsch-Gordan series (see Chapter \ref{ch-clebsch-gordan}) via BD is
+illustrated in Fig.\ref{fig-cgs-irreps}.
+The figure shows a chain of BD steps.
+The first BD step is
+
+\beq
+\rho(g)\xymatrix{\ar[r]_{BD}&}\rho_1(g)
+\oplus \rho_2(g) \oplus \ldots \oplus \rho_n(g)
+\eeq
+where  
+$\rho(), \rho_i()$ are reps of $G$.
+The second BD step, each $\rho_i(g)$ 
+is block diagonalized to produce
+
+\beq
+\bigoplus_{i=1}^n \rho_i(g)
+\xymatrix{\ar[r]_{BD}&}
+\bigoplus_{i=1}^n \bigoplus_{j=1}^m\rho_{i,j}(g)
+\eeq
+where  
+the $\rho_{ij}()$ are reps of $G$.
+In general, we can have any number of BD steps,
+not just 2.
+
+Usually, the beginning of the chain 
+of BDs
+is 
+
+\beq
+\rho(g)=\rho'(a)\otimes\rho''(b)
+\eeq
+and at the end  of chain,
+the reps $\rho_{i,j, \ldots}(g)$ are all
+irreducible.
+
+
 
 
 \begin{figure}[h!]
@@ -11,12 +88,278 @@ of Branching Rules.}
 \label{fig-branching-irreps}
 \end{figure}
 
+Given a map $f:X\rarrow Y$, $x\mapsto f(x)$, 
+a restriction $f\downarrow  X_1$ of the map to $X_1\subset X$ is the
+same assignment rule but the domain restricted
+to $X_1$. Hence, $f\downarrow  X_1: X_1\rarrow Y$, $x\mapsto 
+f(x)$.
+
+
+Branching rules via BD 
+are illustrated in Fig.\ref{fig-branching-irreps}.
+Assume $G, H_1, H_2$ are
+groups and $G\supset H_1\supset H_2$
+The first BD step takes
+\beq
+\{\rho(g)\mid g\in G\}\xymatrix{\ar[r]_{BD}&}\{\rho_1(h_1)
+\oplus \rho_2(h_1) \oplus \ldots \oplus \rho_n(h_1)\mid h_1\in H_1\}
+\eeq
+where $\rho()$ is an irrep of $G$
+and $\rho_i()$ for $i=1,2, \ldots, n$
+are irreps of  $H_1$.
+$\rho_i()$ can be obtained by
+block diagonalizing the restriction
+$\rho\downarrow  H_1(h_1)$ for each $h_1\in H_1$.
+
+In the second BD step,
+
+\beq
+\left\{\bigoplus_{i=1}^n \rho_i(h_1)\mid h_1\in H_1\right\}
+\xymatrix{\ar[r]_{BD}&}
+\left\{\bigoplus_{i=1}^n \bigoplus_{j=1}^m\rho_{i,j}(h_2)\mid  h\in H_2\right\}
+\eeq
+where the 
+$\rho_{ij}()$ are irreps of $H_2$.
+$\rho_{ij}()$ can be obtained by
+block diagonalizing the restriction
+$\rho\downarrow  H_2(h_2)$ for each $h_2\in H_2$.
+In general, we can have any number of BD steps,
+not just 2.
+
+Note that both
+Clebsch-Gordan series and 
+branching rules can both
+be described in terms of vector spaces,
+by the following equation, 
+but the meaning of
+the vector spaces is different
+
+\beq
+V\xymatrix{\ar[r]_{BD}&}\bigoplus_{i=1}^n V_i
+\xymatrix{\ar[r]_{BD}&}
+\bigoplus_{i=1}^n \bigoplus_{j=1}^m V_{ij}
+\label{eq-bd-vectors}
+\eeq
+
+Now that we  have clarified the
+difference between Clebsch-Gordan series and branching rules, let's say more
+about the topic of this chapter, branching rules.
+
+Define a
+ {\bf tree of irreps (TOI)} as a tree wherein each node represents an irrep of $H_j$ and arrows point
+from an irrep of $H_j$ to a direct sum of irreps 
+of $H_{j+1}$ where $H_j\supset H_{j+1}$
+and $H_j,  H_{j+1}$ are subgroups of $G$. 
+
+As the tree branches out more and more, we get
+
+\begin{itemize} 
+
+\item less symmetry, 
+fewer conserved quantities,
+fewer unbroken generators, smaller multiplets, less degeneracy
+\item more broken generators (get one Goldstone boson per broken generator if spontaneous 
+symmetry breaking)
+\end{itemize}
+
+
+
+
+{\color{red}If
+the root node irrep of a TOI is the adjoint representation of $G$, then the
+dimension of each irrep in the tree is also the number of generators for that irrep.}
+Hence, we will call
+the TOI for the
+adjoint rep of $G$, a {\bf tree of generators (TOG)}. For 
+example, the octet ($\ul{8}$) irrep of $SU(3)$
+is the adjoint irrep of $SU(3)$,
+and $SU(3)$ has 8 generators.
+If we draw  the 
+weight diagram\footnote{Weight diagrams are
+discussed in Chapter \ref{ch-weight-diagrams}} for $\ul{8}\mid _{SU(3)}$,
+it contains 6 weights
+of multiplicity 1 and one 
+weight of multiplicity 2. Hence, if a weight of multiplicity $m$ is 
+thought  of as $m$ dots, 
+then {\color{red}there is a 1--1
+correspondence
+between the  dots of 
+a weight diagram of 
+the adjoint rep of $G$, and the generators of $G$}.
+\section{Symmetry Breaking}
+Explicit Symmetry breaking
+
+
+Spontaneous symmetry breaking
+
+$\{Q_u\mid u=1,2, \ldots, n_u\}=$ unbroken  generators $Q_u\ket{vac_0}=0$ for all $u$. If $h=e^{i\sum_u r_u Q_u}$ where $r_u\in \RR$, then $h\ket{vac_0}=\ket{vac_0}$
+
+
+$\{X_b\mid b=1,2, \ldots n_b\}=$ broken generators. $X_b \ket{vac_0} \neq 0$ for all $b$.
+
+$\ger{h}=$ stabilizer subalgebra. Algebra spanned by the $Q_u$
+
+$\ger{g}/\ger{h}=$ orbit algebra. Algebra spanned by the $X_b$.
+
+
+$\pi_a\in \RR$, coordinates of
+Goldstone boson manifold
+
+$\ket{vac}=e^{i\sum_b \pi_b X_b}\ket{vac_0}$= vacuum state, $n_b$ dimensional manifold.
+
+$K.E.=$ Kinetic Energy
+
+$V= $ Potential Energy
+
+$\calh= K.E. + V$ Hamiltonian (total energy)
+
+\beq
+\left\{
+\begin{array}{l}
+\text{for all }u,\quad
+[\calh, Q_u]=0, \quad Q_u\ket{vac_0}=0
+\\
+\text{for all } b,\quad [\calh, X_b]= 0, \quad X_b\ket{vac_0}\neq 0
+\end{array}\right.
+\eeq
+
+\beq
+[\calh, \ger{g}]=0, \quad\ger{h}\ket{vac_0}=0,
+\quad \ger{g}/\ger{h}\ket{vac_0}\neq 0
+\eeq
+
+Example (Higgs Mechanism)
+\beq
+\calh=K.E. + \underbrace{V(\phi)}_{\lam(|\phi|^2-v^2)^2}
+\eeq
+where $\lam, v>0$, $\phi\in \CC$.
+
 \begin{figure}[h!]
 \centering
-\includegraphics[width=3in]
-{branching/cgs-irreps.png}
-\caption{Pictorial representation
-of 
-Clebsch-Gordan series}
-\label{fig-cgs-irreps}
+\includegraphics[width=3.5in]
+{branching/mex-hat.png}
+\caption{Mexican Hat potential.}
+\label{fig-mex-hat}
 \end{figure}
+
+
+\section{Examples}
+gen=generator, \redmark=broken gen, \greenmark=unbroken  gen,
+GB= Goldstone Boson (massive particle, massive gauge boson)
+\begin{enumerate}
+\hrule
+\item $SU(3)$ octet
+(Spontaneous Symmetry Breaking)
+
+\beq
+\left\{
+\begin{array}{lll}
+SU(3)\supset 
+&SU(2)\times U(1)\supset 
+&U(1)
+\\
+8 \text{ gen}
+& 3+ 1 \text{ gens}
+& 1 \text{ gen}
+\end{array}
+\right.
+\eeq
+
+\begin{minipage}{10cm}
+\dirtree{%
+.1 $\ul{8}$, 8 gens \greenmark.
+.2 $\ul{2}$, 2 gens \redmark, GB.
+.3 $\ul{1}$ 1 gen \redmark.
+.3 $\ul{1}$ 1 gen \redmark.
+.2 $\ul{3}$, 3  gens \greenmark.
+.3 $\ul{1}$, 1 gen \redmark.
+.3 $\ul{1}$, 1 gen \redmark.
+.3 $\ul{1}$, 1 gen \redmark.
+.2 $\ul{1}$, 1 gen \greenmark.
+.2 $\ul{2}$, 2 gen \redmark, GB.
+.3 $\ul{1}$, 1 gen \redmark.
+.3 $\ul{1}$, 1 gen \redmark.
+}
+\end{minipage}
+
+\hrule
+\item Zeeman splitting without electron spin (Explicit Symmetry Breaking)
+
+\beq
+\left\{
+\begin{array}{lll}
+SU(2)\supset 
+&SO(2)
+\\
+3 \text{ gen}
+& 1 \text{ gen}
+\end{array}
+\right.
+\eeq
+
+\begin{minipage}{10cm}
+\dirtree{%
+.1 $\ul{3}$, 3 gens \greenmark.
+.2 $\ul{1}$, 1 gen  \greenmark.
+.2 $\ul{1}$, 1 gen \redmark.
+.2 $\ul{1}$, 1 gen \redmark.
+}
+\end{minipage}
+
+\hrule
+\item Zeeman splitting with electron spin (Explicit Symmetry Breaking)
+
+$L_z=\ell_z\in\{-\ell, -\ell+1,\ldots, \ell-1, \ell\}=\ZZ_{[-\ell, \ell]}$
+
+$S_z=s_z\in \{-\frac{1}{2}, +\frac{1}{2}\}$
+
+$J_z=j_z=\ell_z + s_z\in 
+\ZZ_{[-\ell, \ell]} \pm \frac{1}{2}$
+
+\beq
+\left\{
+\begin{array}{lll}
+SU(2)_{\text{orbital $\ell$} }\times SU(2)_{\text{spin $1/2$} }\supset 
+&U(1)_{\text{orbital $\ell$} }\times SU(2)_{\text{spin $1/2$} }
+\\
+3+ 3 \text{ gen}
+& 1+ 3 \text{ gen}
+\end{array}
+\right.
+\eeq
+
+\begin{minipage}{10cm}
+\dirtree{%
+.1 $L=\ell, S=\frac{1}{2}$, 6 gens \greenmark.
+.2 $S=\frac{1}{2}$, 2 gen  \greenmark.
+.2 $S=\frac{1}{2}$, 2 gen \redmark.
+.2 $S=\frac{1}{2}$, 2 gen \redmark.
+.2 \ldots.
+}
+\end{minipage}
+
+\hrule
+\item Electroweak symmetry breaking (Spontaneous Symmetry Breaking)
+
+\beq
+\left\{
+\begin{array}{lll}
+SU(2)_Y\times U(1)_Y\supset 
+&U(1)_{em}
+\\
+3+1\text{ gens}
+& 1 \text{ gen}
+\end{array}
+\right.
+\eeq
+
+\begin{minipage}{10cm}
+\dirtree{%
+.1 $\ul{3}\times \ul{1}$, 3+1 gen \greenmark.
+.2 $\ul{1}$, 1 gen \greenmark, massless photon $A_\mu$ .
+.2 $\ul{1}$, 1 gen \redmark, GB  $W^+$.
+.2 $\ul{1}$, 1 gen \redmark, GB  $W^-$.
+.2 $\ul{1}$, 1 gen \redmark, GB  $Z^0$.
+}
+\end{minipage}
+\end{enumerate}
