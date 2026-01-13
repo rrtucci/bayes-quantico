@@ -146,7 +146,7 @@ difference between Clebsch-Gordan series and branching rules, let's say more
 about the topic of this chapter, branching rules.
 
 Define a
- {\bf tree of irreps (TOI)} as a tree wherein each node represents an irrep of $H_j$ and arrows point
+ {\bf tree of reps (TOR)} as a tree wherein each node represents an irrep of $H_j$ and arrows point
 from an irrep of $H_j$ to a direct sum of irreps 
 of $H_{j+1}$ where $H_j\supset H_{j+1}$
 and $H_j,  H_{j+1}$ are subgroups of $G$. 
@@ -157,7 +157,7 @@ As the tree branches out more and more, we get
 
 \item less symmetry, 
 fewer conserved quantities,
-fewer unbroken generators, smaller multiplets, less degeneracy
+fewer unbroken generators, smaller multiplets, less degeneracy, lower energy scale
 \item more broken generators (get one Goldstone boson per broken generator if spontaneous 
 symmetry breaking)
 \end{itemize}
@@ -166,10 +166,10 @@ symmetry breaking)
 
 
 {\color{red}If
-the root node irrep of a TOI is the adjoint representation of $G$, then the
+the root node irrep of a TOR is the adjoint representation of $G$, then the
 dimension of each irrep in the tree is also the number of generators for that irrep.}
 Hence, we will call
-the TOI for the
+the TOR for the
 adjoint rep of $G$, a {\bf tree of generators (TOG)}. For 
 example, the octet ($\ul{8}$) irrep of $SU(3)$
 is the adjoint irrep of $SU(3)$,
@@ -187,10 +187,23 @@ between the  dots of
 a weight diagram of 
 the adjoint rep of $G$, and the generators of $G$}.
 \section{Symmetry Breaking}
-Explicit Symmetry breaking
 
+\begin{itemize}
+\item {\bf Explicit symmetry breaking}: 
 
-Spontaneous symmetry breaking
+$\ger{g}$ = algebra of
+symmetry group $G$.
+
+add small perturbation $\delta \calh$ to
+Hamiltonian $\calh$.
+
+\beq
+[\ger{g}, \calh]=0, \quad [\ger{g},
+\calh + \delta\calh ]
+\neq 0
+\eeq
+
+\item{\bf Spontaneous symmetry breaking}
 
 $\{Q_u\mid u=1,2, \ldots, n_u\}=$ unbroken  generators $Q_u\ket{vac_0}=0$ for all $u$. If $h=e^{i\sum_u r_u Q_u}$ where $r_u\in \RR$, then $h\ket{vac_0}=\ket{vac_0}$
 
@@ -199,19 +212,19 @@ $\{X_b\mid b=1,2, \ldots n_b\}=$ broken generators. $X_b \ket{vac_0} \neq 0$ for
 
 $\ger{h}=$ stabilizer subalgebra. Algebra spanned by the $Q_u$
 
-$\ger{g}/\ger{h}=$ orbit algebra. Algebra spanned by the $X_b$.
+$\ger{g}/\ger{h}=$ orbit subalgebra. Algebra spanned by the $X_b$.
 
 
 $\pi_a\in \RR$, coordinates of
 Goldstone boson manifold
 
-$\ket{vac}=e^{i\sum_b \pi_b X_b}\ket{vac_0}$= vacuum state, $n_b$ dimensional manifold.
+$\ket{vac_\pi}=e^{i\sum_b \pi_b X_b}\ket{vac_0}$= vacuum state, $n_b$ dimensional manifold.
 
 $K.E.=$ Kinetic Energy
 
 $V= $ Potential Energy
 
-$\calh= K.E. + V$ Hamiltonian (total energy)
+$\calh= K.E. + V=$ Hamiltonian (total energy)
 
 \beq
 \left\{
@@ -228,25 +241,83 @@ $\calh= K.E. + V$ Hamiltonian (total energy)
 \quad \ger{g}/\ger{h}\ket{vac_0}\neq 0
 \eeq
 
+Each $Q_u$ corresponds to a massless gauge boson.
+
+Each $X_b$ corresponds to a massive gauge bosoon.
+
+
 Example (Higgs Mechanism)
 \beq
-\calh=K.E. + \underbrace{V(\phi)}_{\lam(|\phi|^2-v^2)^2}
+\calh=K.E. + \underbrace{\lam(|\phi|^2-v^2)^2}_{V(\phi)}
 \eeq
 where $\lam, v>0$, $\phi\in \CC$.
+This potential $V$ is plotted in Fig.\ref{fig-mex-hat}.
+It's minimum is when $|\phi|=v$ and
+$V(e^{i\theta}\phi)= V(\phi)$.
+Consider
+
+\beq
+\underbrace{U(1)}_G\supset \underbrace{\{e\}}_H
+\eeq
+
+ \beq
+\ger{g}=\{1\},\quad  \ger{g}/\ger{h}=\{1\},\quad \ger{h}=\emptyset
+\eeq
+
+\beq
+\begin{array}{ll}
+\text{extremum that does violate symmetry:}& \phi = 0
+\\
+\text{extremum that breaks $U(1)$ symmetry:}&\phi=\underbrace{\av{\phi}}_v + \tilde{\phi}
+\end{array}
+\eeq
+
+\beq
+V= \lam(2v\tilde{\phi}+\tilde{\phi}^2)
+\eeq
+
+Goldstone boson manifold
+\beq
+\ket{vac_\theta}=e^{i\theta}\ket{vac_0}
+\eeq
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=3.5in]
 {branching/mex-hat.png}
-\caption{Mexican Hat potential.}
+\caption{Mexican Hat potential for Higgs Mechanism.}
 \label{fig-mex-hat}
 \end{figure}
 
-
+\end{itemize}
 \section{Examples}
 gen=generator, \redmark=broken gen, \greenmark=unbroken  gen,
-GB= Goldstone Boson (massive particle, massive gauge boson)
+degen.=degeneracy
 \begin{enumerate}
+\item $SU(3)$ triplet
+(Explicit Symmetry Breaking)
+
+\beq
+\left\{
+\begin{array}{lll}
+SU(3)\supset 
+&SU(2)\times U(1)
+\\
+8 \text{ gen}
+& 3+ 1 \text{ gen}
+\end{array}
+\right.
+\eeq
+
+\begin{minipage}{10cm}
+\dirtree{%
+.1 $\ul{3}$, 3 degen.
+.2 $\ul{2}$, 2 degen.
+.2 $\ul{1}$, 1 degen.
+}
+\end{minipage}
+
+
 \hrule
 \item $SU(3)$ octet
 (Spontaneous Symmetry Breaking)
@@ -259,24 +330,29 @@ SU(3)\supset
 &U(1)
 \\
 8 \text{ gen}
-& 3+ 1 \text{ gens}
+& 3+ 1 \text{ gen}
 & 1 \text{ gen}
 \end{array}
 \right.
 \eeq
 
+Assume symmetry is broken
+spontaneously instead of explicitly.
+Note that octet is adjoint rep of $SU(3)$
+so TOR is TOG too.
+
 \begin{minipage}{10cm}
 \dirtree{%
-.1 $\ul{8}$, 8 gens \greenmark.
-.2 $\ul{2}$, 2 gens \redmark, GB.
+.1 $\ul{8}$, 8 gen \greenmark.
+.2 $\ul{2}$, 2 gen \redmark.
 .3 $\ul{1}$ 1 gen \redmark.
 .3 $\ul{1}$ 1 gen \redmark.
-.2 $\ul{3}$, 3  gens \greenmark.
+.2 $\ul{3}$, 3  gen \greenmark.
 .3 $\ul{1}$, 1 gen \redmark.
 .3 $\ul{1}$, 1 gen \redmark.
 .3 $\ul{1}$, 1 gen \redmark.
 .2 $\ul{1}$, 1 gen \greenmark.
-.2 $\ul{2}$, 2 gen \redmark, GB.
+.2 $\ul{2}$, 2 gen \redmark.
 .3 $\ul{1}$, 1 gen \redmark.
 .3 $\ul{1}$, 1 gen \redmark.
 }
@@ -299,10 +375,11 @@ SU(2)\supset
 
 \begin{minipage}{10cm}
 \dirtree{%
-.1 $\ul{3}$, 3 gens \greenmark.
-.2 $\ul{1}$, 1 gen  \greenmark.
-.2 $\ul{1}$, 1 gen \redmark.
-.2 $\ul{1}$, 1 gen \redmark.
+.1 $L=\ell$,  $(2\ell + 1)$ degen.
+.2 $L_z=-\ell$, 1 degen.
+.2 $L_z=-\ell + 1$, 1 degen.
+.2 $\ldots$.
+.2 $L_z = \ell$, 1 degen.
 }
 \end{minipage}
 
@@ -330,13 +407,63 @@ SU(2)_{\text{orbital $\ell$} }\times SU(2)_{\text{spin $1/2$} }\supset
 
 \begin{minipage}{10cm}
 \dirtree{%
-.1 $L=\ell, S=\frac{1}{2}$, 6 gens \greenmark.
-.2 $S=\frac{1}{2}$, 2 gen  \greenmark.
-.2 $S=\frac{1}{2}$, 2 gen \redmark.
-.2 $S=\frac{1}{2}$, 2 gen \redmark.
+.1 $L=\ell, S=\frac{1}{2}$, $(2\ell + 1)2$ degen.
+.2 $L_z =- \ell$, $S=\frac{1}{2}$, 2 degen.
+.2  $L_z = -\ell  +1$, $S=\frac{1}{2}$, 2 degen.
 .2 \ldots.
+.2  $L_z = \ell$, $S=\frac{1}{2}$, 2 degen.
 }
 \end{minipage}
+
+\item $SO(n)$ $\ul{n}$ rep
+(Explicit Symmetry Breaking)
+
+Let $n=p+q$
+
+\beq
+\left\{
+\begin{array}{lll}
+SO(n)&\supset 
+&SO(p)\times SO(q)
+\\
+\frac{1}{2}n(n-1)\text{ gen}&
+& \frac{1}{2}p(p-1)+\frac{1}{2}q(q-1)\text{ gen}
+\end{array}
+\right.
+\eeq
+
+\begin{minipage}{10cm}
+\dirtree{%
+.1 $\ul{n}$, $n$ degen.
+.2 $\ul{p}$, $p$ degen.
+.2 $\ul{q}$, $q$ degen.
+}
+\end{minipage}
+
+\item $SO(n)$ $\ul{n}$ rep
+(Explicit Symmetry Breaking)
+
+
+\beq
+\left\{
+\begin{array}{lll}
+SO(n)&\supset 
+&SO(n-1)
+\\
+\frac{1}{2}n(n-1)\text{ gen}&
+& \frac{1}{2}(n-1)(n-2)\text{ gen}
+\end{array}
+\right.
+\eeq
+
+\begin{minipage}{10cm}
+\dirtree{%
+.1 $\ul{n}$, $n$ degen.
+.2 $\ul{1}$, 1  degen.
+.2 $\ul{n-1}$, $n-1$ degen.
+}
+\end{minipage}
+
 
 \hrule
 \item Electroweak symmetry breaking (Spontaneous Symmetry Breaking)
@@ -347,7 +474,7 @@ SU(2)_{\text{orbital $\ell$} }\times SU(2)_{\text{spin $1/2$} }\supset
 SU(2)_Y\times U(1)_Y\supset 
 &U(1)_{em}
 \\
-3+1\text{ gens}
+3+1\text{ gen}
 & 1 \text{ gen}
 \end{array}
 \right.
@@ -357,9 +484,9 @@ SU(2)_Y\times U(1)_Y\supset
 \dirtree{%
 .1 $\ul{3}\times \ul{1}$, 3+1 gen \greenmark.
 .2 $\ul{1}$, 1 gen \greenmark, massless photon $A_\mu$ .
-.2 $\ul{1}$, 1 gen \redmark, GB  $W^+$.
-.2 $\ul{1}$, 1 gen \redmark, GB  $W^-$.
-.2 $\ul{1}$, 1 gen \redmark, GB  $Z^0$.
+.2 $\ul{1}$, 1 gen \redmark, gauge boson  $W^+$.
+.2 $\ul{1}$, 1 gen \redmark, gauge boson  $W^-$.
+.2 $\ul{1}$, 1 gen \redmark,  gauge boson $Z^0$.
 }
 \end{minipage}
 \end{enumerate}
