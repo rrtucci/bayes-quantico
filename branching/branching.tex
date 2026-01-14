@@ -529,7 +529,7 @@ Higgs field $\phi(x)\in\CC^2$.
 % Please add the following required packages to your document preamble:
 % \usepackage[table,xcdraw]{xcolor}
 % Beamer presentation requires \usepackage{colortbl} instead of \usepackage[table,xcdraw]{xcolor}
-\begin{table}[]
+\begin{table}[h!]
 \begin{tabular}{|l|l|l|}
 \hline
  & \cellcolor[HTML]{BFFCAE}$VEV=0$ & \cellcolor[HTML]{BFFCAE}$VEV\neq 0$ \\ \hline
@@ -538,10 +538,21 @@ Higgs field $\phi(x)\in\CC^2$.
 \cellcolor[HTML]{FFCCC9}massive Higgs (real scalar field) &  & 1 (1 dof) \\ \hline
 \cellcolor[HTML]{FFCCC9}massless Higgs (complex doublet) & 1 (4 dofs) &  \\ \hline
 \end{tabular}
-\caption{Number of degrees of freedom (dofs) before and after VEV}
+\caption{For electoweak symmetry breaking, number of degrees of freedom (dofs) before and after VEV}
 \label{tab-dof-vev}
 \end{table}
-Table \ref{tab-dof-vev}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=2.5in]
+{branching/ew-cartoon.png}
+\caption{Pictorial representation
+of info in Table \ref{tab-dof-vev}. Each
+arrow represents one dof (i.e., one polarization).}
+\label{fig-ew-cartoon}
+\end{figure}
+
+Table \ref{tab-dof-vev} and
+Fig.\ref{fig-ew-cartoon}
 gives an inventory of the number of (real)
 degrees of freedom (dofs) before and after VEV.
 In both cases, it's 10, so the number of  dofs is conserved. Massless gauge bosons have 2 dofs (2 polarizations) and massive ones have 3 dofs (3 polarizations). The Higgs field initially has
