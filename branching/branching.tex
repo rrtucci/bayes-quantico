@@ -204,7 +204,7 @@ Hamiltonian $\calh$ so that
 
 \item{\bf Spontaneous symmetry breaking}
 
-$\{Q_u\mid u=1,2, \ldots, n_u\}=$ unbroken  generators $Q_u\ket{vac_0}=0$ for all $u$. If $h=e^{i\sum_u r_u Q_u}$ where $r_u\in \RR$, then $h\ket{vac_0}=\ket{vac_0}$
+$\{Q_u\mid u=1,2, \ldots, n_u\}=$ unbroken  generators. $Q_u\ket{vac_0}=0$ for all $u$. If $h=e^{i\sum_u r_u Q_u}$ where $r_u\in \RR$, then $h\ket{vac_0}=\ket{vac_0}$
 
 
 $\{X_b\mid b=1,2, \ldots n_b\}=$ broken generators. $X_b \ket{vac_0} \neq 0$ for all $b$.
@@ -231,14 +231,14 @@ $\calh= K.E. + V=$ Hamiltonian (total energy)
 \left\{
 \begin{array}{l}
 \text{for all }u,\quad
-[\calh, Q_u]=0, \quad Q_u\ket{vac_0}=0
+[Q_u,\calh]=0, \quad Q_u\ket{vac_0}=0
 \\
-\text{for all } b,\quad [\calh, X_b]= 0, \quad X_b\ket{vac_0}\neq 0
+\text{for all } b,\quad [X_b,\calh]= 0, \quad X_b\ket{vac_0}\neq 0
 \end{array}\right.
 \eeq
 
 \beq
-[\calh, \ger{g}]=0, \quad\ger{h}\ket{vac_0}=0,
+[\ger{g},\calh]=0, \quad\ger{h}\ket{vac_0}=0,
 \quad \ger{g}/\ger{h}\ket{vac_0}\neq 0
 \eeq
 
@@ -434,13 +434,19 @@ SU(2)_{\text{orbital $\ell$} }\times SU(2)_{\text{spin $1/2$} }\supset
 \item $SO(n)$ $\ul{n}$ rep
 (Explicit Symmetry Breaking)
 
-Let $n=p+q$
+Let $n=p+q$\footnote{Note that given two groups $G_1$, $G_2$,
+their Cartesian product $G_1\times G_2$ is defined, but 
+not their direct sum $G_1\oplus G_2$
+or direct (Kronecker) product $G_1\otimes G_2$. Direct sums and products are defined for vectors (and vector spaces) and matrices (and matrix  reps).}
 
 \beq
 \left\{
 \begin{array}{lll}
 SO(n)&\supset 
 &SO(p)\times SO(q)
+\\
+\ger{so}(n)&\supset 
+&\ger{so}(p)\oplus \ger{so}(q)
 \\
 \frac{1}{2}n(n-1)\text{ gen}&
 & \frac{1}{2}p(p-1)+\frac{1}{2}q(q-1)\text{ gen}
@@ -555,7 +561,7 @@ Table \ref{tab-dof-vev} and
 Fig.\ref{fig-ew-cartoon}
 gives an inventory of the number of (real)
 degrees of freedom (dofs) before and after VEV.
-In both cases, it's 10, so the number of  dofs is conserved. Massless gauge bosons have 2 dofs (2 polarizations) and massive ones have 3 dofs (3 polarizations). The Higgs field initially has
+In both cases, it's 12, so the number of  dofs is conserved. Massless gauge bosons have 2 dofs (2 polarizations) and massive ones have 3 dofs (3 polarizations). The Higgs field initially has
 4 (real) dofs because it's a $\CC^2$ vector.
 The Higgs field finally is reduced to a real number.
 
