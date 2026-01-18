@@ -84,12 +84,12 @@ rigorous as mathematicians
 usually are.
 
 My favorite books about GT 
-for physicists are the Elliott \& Dawber's (ED)
+for physicists are
+ Predrag Cvitanovic's Birdtracks book
+Ref.\cite{birdtracks-book}, the Elliott \& Dawber's (ED)
 2 volume series Ref. \cite{eli-daw-book}
-and Predrag Cvitanovic's Birdtracks book
-Ref.\cite{birdtracks-book}. I highly
-recommend both of these references. I think
-both of them are excellent.
+and Joshi's book Ref.\cite{Joshi-book}. I highly
+recommend all 3 of these references. 
 
 The Birdtracks book explains key 
 concepts in GT representation theory
@@ -170,7 +170,7 @@ under multiplication} (i.e., $ab\in \calh$ for all $a,b\in \calh$)
 
 A {\bf representation (rep)
 of a group $\calg$}
-is a map $\rho: \calg\rarrow \CC^{n\times n}$\footnote{More generally, the $\CC^{n\times n}$ can be replaced by $\RR^{n\times n}$ or by $\FF^{n\times n}$ for any field $\FF$} such that
+is a pair $(V, \rho)$ of a vector  space $V$ and a map $\rho: \calg\rarrow \CC^{n\times n}$\footnote{More generally, the $\CC^{n\times n}$ can be replaced by $\RR^{n\times n}$ or by $\FF^{n\times n}$ for any field $\FF$} such that
 
 \beq
 \rho(a)\rho(b)=
@@ -188,6 +188,19 @@ partitions $\calg$
 into disjoints subsets (equivalence classes),
 such that all elements of $\calg$ in each disjoint subset 
 are represented by the same matrix.
+
+The vector space $V$
+with basis $\ket{i}$
+satisfies
+
+\beq
+\rho(a):V\rarrow V, \quad
+\rho(a)\ket{i}= \sum_{j} \rho(a)_{ij}\ket{j}
+\eeq
+for all $a\in\calg$.
+This situation  is often described by saying that the group $\calg$
+\qt{acts on} the vector space $V$.
+
 
 In this book, 
 we will usually

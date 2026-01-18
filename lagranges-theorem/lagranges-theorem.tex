@@ -234,30 +234,40 @@ single point $x$
 
 \beq
 \left\{
-\begin{array}{ll}
+\begin{array}{l}
 \cup_{h\in H}Stab(h)=
 \cup_{h\in H}
 \{g\in G| ghg^{-1}=h\}
-=C_G(H)& \text{\bf Centralizer}
+=C_G(H)\quad
+\begin{array}{l}\text{\bf centralizer} 
+\\  \text{\bf(a.k.a. commutant)}
+\end{array}
 \\
-Stab(H)=\{g\in G| gHg^{-1}=H\})=N_G(H)& \text{\bf Normalizer}
+Stab(H)=\{g\in G| gHg^{-1}=H\})=N_G(H)\quad \text{\bf normalizer}
 \end{array}
 \right.
 \eeq
 
+
+Both $C_G(H)$ and $N_G(H)$ are subgroups of $G$. 
+Furthermore, $C_G(H)$ is a subgroup of $N_G(H)$
+so
+
+ \beq
+Z(G)
+\leq C_G(H)\leq N_G(H)\leq G
+\eeq
+
+$C_G(H)$ contains elements of $G$ that commute
+with every element of $H$. That's why commutant
+is a good name for it. The  elements of
+a normalizer, on the other hand, may not commute with some  elements of $H$.
+
  $N_G(H)$ is the biggest subset of $G$ that leaves the subgroup $H$ fixed under conjugation.
- $N_G(H)$ is always  a subgroup of $G$.
  If $H$ is a normal subgroup of $G$, 
 then $N_G(H)=G$.
 
-$C_G(H)$ is a subgroup of $N_G(H)$
 
- \beq
-\begin{pmatrix}Z(G)
-\\
-H
-\end{pmatrix}\leq C_G(H)\leq N_G(H)\leq G
-\eeq
 
 $O(H)=\cup_{h\in H}O(h)=$ projections (orbits) of 
 structure(subgroup) $H$ instead of single point $H$
@@ -267,6 +277,51 @@ structure(subgroup) $H$ instead of single point $H$
 \beq
 |G| = |O(H)| \;|\underbrace{Stab(H)}_{N_G(H)}|
 \eeq
+\end{claim}
+\proof
+\qed
+
+Suppose $G$ is a group and $H$ is a  subgroup of $G$.
+
+For any two $a,b\in G$, define $a\sim b$ if $a=gbg^{-1}$ for some $g\in G$. This is an
+equivalence relation that partitions  $G$
+into disjoint classes. Now define 
+
+$CC(x)=\{gxg^{-1}|g\in G\}=$ {\bf conjugacy class (CC) of $x\in G$}.
+
+$CC(H)=\{gHg^{-1}|g\in G\}=
+\bigcup_{h\in H}CC(h)=$ {\bf union of CCs of $H\leq G$}.
+
+The orbit (for conjugacy action) and the conjugacy class
+are the same thing. 
+
+
+\beq
+CC(x)= O(x)= G:Stab(x)
+\eeq
+
+\beq CC(H)= O(H)=G:Stab(H)
+\eeq
+
+A normal subgroup $H$ of $G$ satisfies $gHg^{-1}=H$
+for all $g\in G$, so it equals a union of CCs.
+
+\beq
+H=\bigcup_{x\in X}CC(x)=CC(X)
+\eeq
+where $X\subset H$.
+So conjugacy classes are the "atoms" from which normal subgroups are built.
+
+A {\bf central conjugacy class}
+is a $CC(x)$ such that $CC(x)\subset Z(G)$.
+Hence, we must have  $CC(x)=\{x\}$. So central CCs are precisely the singleton sets
+$\{x\}$ for all  $x\in Z(G)$.
+\begin{claim} (sum of class orders)
+\beq
+|G|= |Z(G)| +\sum_{x\in X}
+\underbrace{|G: Stab(x)|}_{|O(x)|}  \eeq
+where $X$ contains representatives
+of   non-central CCs (i.e., CCs with more than one element)
 \end{claim}
 \proof
 \qed
@@ -294,6 +349,40 @@ $O(x)= \{ (12), (13)(12)(13), (23)(12)(23)\} =
 |G|=6, |O(x)|=3, |Stab(x)|=2\implies
 |G| = |O(x)| \;|Stab(x)|
 \eeq
+\hrule 
+\item (sum of class orders)
+
+
+$G=S_3$
+
+conjugacy classes:
+
+$CC_0=\{e\}$, \quad (0 cycles)
+
+$CC_1=\{(12),(23),(13)\}$, \quad (1 cycle)
+
+
+$CC_2=\{(123),(132)\}$, \quad (2 cycles)
+
+\beq
+|G|=6, |CC_0|=1,|CC_1|=3, |CC_2|=2
+\implies |G|= |CC_0| + |CC_1| + |CC_2|
+\eeq
+
+\beq
+Z(G)= \{e\}
+\eeq
+
+\beq
+Stab((12))=\{e, (12)\}
+\implies |S_3:Stab((12))|=6/2=3
+\eeq
+
+\beq
+Stab((123))=\{(12), (23), (13)\}
+\implies |S_3:Stab((123))|=6/3=2
+\eeq
+
 \end{enumerate}
 
 \hrule
