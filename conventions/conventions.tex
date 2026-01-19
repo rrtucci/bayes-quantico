@@ -167,6 +167,7 @@ under multiplication} (i.e., $ab\in \calh$ for all $a,b\in \calh$)
 
 
 \section{Group  Representation}
+\label{sec-def-rep}
 
 A {\bf representation (rep)
 of a group $\calg$}
@@ -181,13 +182,26 @@ where $e$ is the
 identity of the group
 and $I$ 
 is the identity matrix.
-Such a map is called a {\bf homomorphism}
+Such a map is called a homomorphism
 (because it preserves an operation).
+\footnote{In general, any map
+$\phi:X\rarrow Y$ such that
+$\phi(x_1 x_2)=\phi(x_1)\phi(x_2)$ is called a {\bf homomorphism}. This assumes the product of two elements $x_1$ and $x_2$ of $X$ is defined. A homomorphism that is 1-1 and onto is called 
+an {\bf isomorphism}.}
 The map $\rho$
 partitions $\calg$
 into disjoints subsets (equivalence classes),
 such that all elements of $\calg$ in each disjoint subset 
 are represented by the same matrix.
+
+Two reps $\rho_1()$ and $\rho_2()$
+of a group $\calg$ are {\bf equivalent reps} if there is a non-singular matrix $M$ such that
+
+\beq
+\rho_1(g) = M\rho_2(g) M^{-1}
+\eeq
+for all $g\in \calg$.
+
 
 The vector space $V$
 with basis $\ket{i}$
@@ -306,15 +320,18 @@ i x_i f_{ijk}
 
 
 {\bf Irreducible representations} (irreps)
-are defined in Ch. \ref{ch-reducibility}
-
+are defined in Ch. \ref{ch-1}
+reducibility
 The {\bf fundamental representation} (fun-rep)
 is defined as the smallest irrep.
 The def-rep equals the fun-rep for
 $SU(n), SO(n), SP(n)$, but not for $E_8$.
 
 The {\bf regular representation}
-is defined in Chapter \ref{ch-young-tableau}
+is defined in 
+Chapter \ref{ch-reducibility1}
+for any finite group and in 
+Chapter \ref{ch-young-tableau}
  for the symmetric group on $n_b$
 letters (or $n_b$ boxes) $S_{n_b}$.
 
