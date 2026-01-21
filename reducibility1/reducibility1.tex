@@ -375,53 +375,53 @@ Hence $H$ is indeed a constant matrix.
 
 \qed
 
-\newcommand{\Mto}[0]{M_{1\rarrow 2}}
+
 \begin{claim}(Schur's Lemma 2)
  
 If $\rho_1()$ and $\rho_2()$ 
-are two irreps of a group $\calg$ and matrix $\Mto $ (possibly rectangular) satisfies
+are two irreps of a group $\calg$ and matrix $M_{12} $ (possibly rectangular) satisfies
 
 \beq
-\rho_1(g)\Mto =\Mto \rho_2(g)
+\rho_1(g)M_{12} =M_{12} \rho_2(g)
 \eeq
 for all $g\in\calg$, then
-$\Mto =0$ or $\Mto $ is a square matrix with $\det \Mto \neq 0$. In the latter case,
+$M_{12} =0$ or $M_{12} $ is a square matrix with $\det M_{12} \neq 0$. In the latter case,
 $\rho_1$ and $\rho_2$ are  equivalent reps.
 \end{claim}
 \proof
 
 \beq
-\Mto ^\dagger\underbrace{\rho_1^\dagger(g)}
+M_{12} ^\dagger\underbrace{\rho_1^\dagger(g)}
 _{\rho_1(g^{-1})}=
 \underbrace{\rho_2^\dagger(g)}_{\rho_2(g^{-1})}
-\Mto ^\dagger
+M_{12} ^\dagger
 \quad \forall g\in\calg
 \eeq
 
 \beq
-\Mto ^\dagger\rho_1(g) = \rho_2(g)\Mto ^\dagger 
+M_{12} ^\dagger\rho_1(g) = \rho_2(g)M_{12} ^\dagger 
 \quad \forall g\in\calg
 \eeq
 
 \beqa
-\rho_1(g)\Mto \Mto ^\dagger &=& \Mto \rho_2(g)\Mto ^\dagger 
+\rho_1(g)M_{12} M_{12} ^\dagger &=& M_{12} \rho_2(g)M_{12} ^\dagger 
 \\
 &=&
-\Mto \Mto ^\dagger\rho_1(g)
+M_{12} M_{12} ^\dagger\rho_1(g)
 \eeqa
 
 
 
 \beqa
-\rho_2(g)\Mto ^\dagger \Mto  &=& \Mto ^\dagger \rho_1(g)\Mto 
+\rho_2(g)M_{12} ^\dagger M_{12}  &=& M_{12} ^\dagger \rho_1(g)M_{12} 
 \\
 &=&
-\Mto ^\dagger \Mto \rho_2(g)
+M_{12} ^\dagger M_{12} \rho_2(g)
 \eeqa
 
 \beq
-\Mto \Mto ^\dagger = c, 
-\quad \Mto ^\dagger \Mto = c'
+M_{12} M_{12} ^\dagger = c, 
+\quad M_{12} ^\dagger M_{12} = c'
 \eeq
 
 Let $d_i$ for $i=1,2$ be
@@ -432,18 +432,18 @@ Assume first that $d_1=d_2=n$.
 Then 
 
 \beq
-c^n=\det(\Mto \Mto^\dagger)=\det(\Mto)\det(\Mto^\dagger)
+c^n=\det(M_{12} M_{12}^\dagger)=\det(M_{12})\det(M_{12}^\dagger)
 \eeq
 
 \begin{itemize}
 \item if $c\neq 0$:
 
-Then $\det \Mto\neq 0$ so $\Mto$ is
+Then $\det M_{12}\neq 0$ so $M_{12}$ is
 invertible.
 Hence 
 
 \beq
-\Mto^{-1} \rho_1(g) \Mto= \rho_2(g)
+M_{12}^{-1} \rho_1(g) M_{12}= \rho_2(g)
 \eeq
 for all $g\in \calg$. Thus, $\rho_1$ and
 $\rho_2$ are equivalent reps.
@@ -454,18 +454,18 @@ Then
  
 
 \beqa
-\sum_j \av{i|\Mto|j}\av{j|\Mto^\dagger|i}
+\sum_j \av{i|M_{12}|j}\av{j|M_{12}^\dagger|i}
 &=&
-\sum_j|\av{i|\Mto|j}|^2
+\sum_j|\av{i|M_{12}|j}|^2
 \\
 &=& 0
 \eeqa
-so the $i$th row of $\Mto$ equals zero
-for all $i$. Hence we must have $\Mto=0$.
+so the $i$th row of $M_{12}$ equals zero
+for all $i$. Hence we must have $M_{12}=0$.
 
 \end{itemize}
 \hrule
-When $d_1\neq d_2$, we must have $\Mto=0$.
+When $d_1\neq d_2$, we must have $M_{12}=0$.
 This is why.
 
 For simplicity, we will first assume $(d_1, d_2)=(1,2)$
@@ -505,6 +505,8 @@ so $c=0$. Contradiction.
 
 \section{ Orthogonality of Irreps}
 \begin{claim}
+If $\rho_\alp$ and $\rho_\beta$ are 
+two irreps of group $\calg$, then
 
 \beq
 \begin{array}{l}
@@ -555,6 +557,113 @@ note that if we set $\alp=\beta$,
 $j=j'$ and we sum over $j$,
 both sides yield $\delta_{ii'}$.
 
+Define
+\newcommand{\Mab}[0]{M_{\alp\beta}}
+\newcommand{\Maa}[0]{M_{\alp\alp}}
+
+\beq
+\Mab= \frac{1}{|\calg|}
+\sum_{g\in\calg}\rho_\alp(g)X\rho_\beta(g^{-1})
+\eeq
+where $X$ is some arbitrary matrix.
+\hrule
+First assume $\rho_\alp\neq \rho_\beta$.
+
+Then
+
+\beqa
+\rho_\alp(h)\Mab
+&=&
+\frac{1}{|\calg|}
+\sum_{g\in\calg}\rho_\alp(hg)X\rho_\beta(
+(\underbrace{g}_{h^{-1}hg})^{-1})
+\\
+&=&
+\frac{1}{|\calg|}
+\sum_{g\in\calg}\rho_\alp(hg)X\rho_\beta(
+(hg)^{-1})\rho_\beta(
+h)
+\\
+&=&
+\Mab\rho_\beta(h)
+\eeqa
+for all $h\in\calg$.
+Since $\rho_\alp\neq \rho_\beta$,
+by Schur's second lemma, 
+
+\beq
+\Mab=0
+\eeq
+The last equation in component form is
+
+\beq
+ \frac{1}{|\calg|}
+\sum_{g\in\calg}
+\sum_{k,k'}
+\rho_\alp(g)_{ik}
+X_{kk'}
+\rho_\beta(g^{-1})_{k'i'}=0
+\eeq
+Now setting 
+
+\beq
+X_{k k'}=\delta_{k j}\delta_{k'j'}
+\eeq
+we get 
+
+\beq
+\frac{1}{|\calg|}
+\sum_{g\in\calg}
+\rho_\alp(g)_{ij}
+\rho_\beta(g^{-1})_{j'i'}=0
+\eeq
+\hrule
+Next assume $\rho_\alp=\rho_\beta$.
+
+Then
+
+\beq
+\rho_\alp(h)\Maa
+=
+\Maa\rho_\alp(h)
+\eeq
+for all $h\in \calg$, so by Schur's first lemma,
+
+\beq
+\Maa=cI
+\eeq
+\beq
+\tr(X)=cd_\alp
+\eeq
+The last equation in component form is
+
+\beq
+ \frac{1}{|\calg|}
+\sum_{g\in\calg}
+\sum_{k,k'}
+\rho_\alp(g)_{ik}
+X_{kk'}
+\rho_\alp(g^{-1})_{k'i'}=\frac{\tr(X)}{d_\alp}\delta_{ii'}
+\eeq
+
+Now setting 
+
+\beq
+X_{k k'}=\delta_{k j}\delta_{k'j'},
+\quad  \tr(X)=\delta_{jj'}
+\eeq
+we get 
+
+\beq
+\frac{1}{|\calg|}
+\sum_{g\in\calg}
+\rho_\alp(g)_{ij}
+\rho_\alp(g^{-1})_{j'i'}=
+\frac{\delta_{jj'}}{d_\alp}\delta_{ii'}
+\eeq
+
+
 \qed
 \section{Orthogonality  of Characters}
+
 
