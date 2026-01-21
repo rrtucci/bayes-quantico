@@ -204,11 +204,11 @@ Indeed,
 \beqa
 (H_d)_{kk} &=&
  \sum_{g\in\calg}\sum_j
-[\rho_1(g)]_{kj}[\rho_1^*(g)]_{kj}
+\rho_1(g)_{kj}\rho_1^*(g)_{kj}
 \\\
 &=&
 \sum_{g\in\calg}\sum_j 
-\left|[\rho_1(g)]_{kj}\right|^2
+\left|\rho_1(g)_{kj}\right|^2
 \\
 &\geq& 0
 \eeqa
@@ -274,3 +274,274 @@ H_d^{-\frac{1}{2}}
 &=& 1
 \eeqa
 \qed
+
+For any square matrices $A$, $B$, $C$ (not necessarily of the same dimension)
+\beq
+A\oplus B\oplus C = \begin{pmatrix}
+A&0&0
+\\0&B&0
+\\
+0&0&C
+\end{pmatrix}
+\eeq
+If $A_i$ for $i=1,2, \ldots, n$ are square matrices, $A_1\oplus A_2 \oplus \ldots \oplus A_n$ is called
+a {\bf block diagonal matrix}.
+
+\beq
+\rho(g)=
+\bigoplus_\alp x_\alp \rho_\alp(g)
+\eeq
+where $x_\alp\in \ZZ_{>0}$.
+
+\begin{claim}(Schur's Lemma 1)
+
+If $\rho()$ is  an irrep of group $\calg$ and
+matrix $P$ satisfies
+
+\beq
+\rho(g)P=P\rho(g)
+\eeq
+for all $g\in \calg$, then
+
+\beq
+P=c I
+\eeq
+where  $I$ is the
+unit matrix and $c\in \CC$.
+\end{claim}
+\proof
+
+
+Note that 
+
+\beq
+P\rho(g)= \rho(g)P \quad \forall g\in\calg
+\eeq
+implies
+\beq
+\underbrace{\rho^\dagger(g)}_{\rho(g^{-1})}P^\dagger= P^\dagger\underbrace{\rho^\dagger(g)}_{\rho(g^{-1})}
+\quad \forall g\in\calg
+\eeq
+which implies
+
+\beq
+P^\dagger \rho(g)=\rho(g)P^\dagger 
+\quad \forall g\in\calg
+\eeq
+Define
+
+\beq
+H= PP^\dagger
+\eeq
+$H$ is Hermitian and
+satisfies
+
+\beq
+H\rho(g)=\rho(g)H
+\eeq
+If we can prove that $H$ is a constant 
+matrix, then $P$ must be
+a  constant matrix too.
+Since $H$ is Hermitian, it must be diagonalizable.
+Let
+
+\beq
+H\ket{h_j}=h_j\ket{h_j}
+\eeq
+for $j=1,2, \ldots, n$.
+Then
+
+\beq
+H\rho(g)=\rho(g)H\implies
+(h_i-h_j)\av{h_i|\rho(g)|h_j}=0
+\eeq
+Hence, if $h_i\neq h_j$ for some $i,j$,
+then the matrix $\rho(g)$ 
+can be block diagonalized for all $g$.
+So as not to contradict the premise that $\rho()$
+is an irrep, we are forced to
+conclude that all $h_i$ must be equal.
+Hence $H$ is indeed a constant matrix.
+
+
+\qed
+
+\newcommand{\Mto}[0]{M_{1\rarrow 2}}
+\begin{claim}(Schur's Lemma 2)
+ 
+If $\rho_1()$ and $\rho_2()$ 
+are two irreps of a group $\calg$ and matrix $\Mto $ (possibly rectangular) satisfies
+
+\beq
+\rho_1(g)\Mto =\Mto \rho_2(g)
+\eeq
+for all $g\in\calg$, then
+$\Mto =0$ or $\Mto $ is a square matrix with $\det \Mto \neq 0$. In the latter case,
+$\rho_1$ and $\rho_2$ are  equivalent reps.
+\end{claim}
+\proof
+
+\beq
+\Mto ^\dagger\underbrace{\rho_1^\dagger(g)}
+_{\rho_1(g^{-1})}=
+\underbrace{\rho_2^\dagger(g)}_{\rho_2(g^{-1})}
+\Mto ^\dagger
+\quad \forall g\in\calg
+\eeq
+
+\beq
+\Mto ^\dagger\rho_1(g) = \rho_2(g)\Mto ^\dagger 
+\quad \forall g\in\calg
+\eeq
+
+\beqa
+\rho_1(g)\Mto \Mto ^\dagger &=& \Mto \rho_2(g)\Mto ^\dagger 
+\\
+&=&
+\Mto \Mto ^\dagger\rho_1(g)
+\eeqa
+
+
+
+\beqa
+\rho_2(g)\Mto ^\dagger \Mto  &=& \Mto ^\dagger \rho_1(g)\Mto 
+\\
+&=&
+\Mto ^\dagger \Mto \rho_2(g)
+\eeqa
+
+\beq
+\Mto \Mto ^\dagger = c, 
+\quad \Mto ^\dagger \Mto = c'
+\eeq
+
+Let $d_i$ for $i=1,2$ be
+the matrix dimension of $\rho_i$.
+
+\hrule
+Assume first that $d_1=d_2=n$.
+Then 
+
+\beq
+c^n=\det(\Mto \Mto^\dagger)=\det(\Mto)\det(\Mto^\dagger)
+\eeq
+
+\begin{itemize}
+\item if $c\neq 0$:
+
+Then $\det \Mto\neq 0$ so $\Mto$ is
+invertible.
+Hence 
+
+\beq
+\Mto^{-1} \rho_1(g) \Mto= \rho_2(g)
+\eeq
+for all $g\in \calg$. Thus, $\rho_1$ and
+$\rho_2$ are equivalent reps.
+
+\item if $c=0$:
+
+Then 
+ 
+
+\beqa
+\sum_j \av{i|\Mto|j}\av{j|\Mto^\dagger|i}
+&=&
+\sum_j|\av{i|\Mto|j}|^2
+\\
+&=& 0
+\eeqa
+so the $i$th row of $\Mto$ equals zero
+for all $i$. Hence we must have $\Mto=0$.
+
+\end{itemize}
+\hrule
+When $d_1\neq d_2$, we must have $\Mto=0$.
+This is why.
+
+For simplicity, we will first assume $(d_1, d_2)=(1,2)$
+or $(d_1, d_2)=(2,1)$.
+In this case, $M$ equals either
+a column vector $x=\begin{pmatrix}x_1\\x_2\end{pmatrix}$
+or a row vector $x^\dagger$.
+Either way we must have
+
+\beq
+x x^\dagger = \begin{pmatrix}x_1\\x_2\end{pmatrix}
+\begin{pmatrix}x_1^*&x_2^*\end{pmatrix}=c
+\label{eq-x-xdag-c}
+\eeq
+for some constant $c\in \CC$.
+This is only possible if
+
+\beq
+x_1=x_2=c=0
+\eeq
+In the general case, when $d_1<d_2$ or $d_2<d_1$,
+$M$, $x_1$ is a  square matrix and $x_2$
+is  rectangular one. Eq.(\ref{eq-x-xdag-c})
+becomes 
+
+\beq
+x x^\dagger = \begin{pmatrix}x_1\\x_2\end{pmatrix}
+\begin{pmatrix}x_1^\dagger&x_2^\dagger\end{pmatrix}=c
+\eeq
+This implies $x_1 x_1^\dagger = c$ so, if $c\neq 0$,  
+$x_1/\sqrt{c}$ is a unitary matrix and therefore invertible. Since also $x_2 x^\dagger_1=0$,
+we must have $x_2=0$. But $x_2 x_2^\dagger =c$ 
+so $c=0$. Contradiction.
+
+
+\qed
+
+
+\begin{claim}
+
+\beq
+\begin{array}{l}
+\myboxed{
+\frac{1}{|\calg|}\sum_{g\in \calg}
+\rho_\alp(g)_{ij} 
+\underbrace{\rho_\beta(g^{-1})_{j'i'}}
+_{=\rho_\beta^\dagger(g)_{j'i'}=\rho_\beta^*(g)_{i'j'}}=
+\frac{1}{d_\alp}\delta_{\alp \beta}
+\delta_{ii'}\delta_{jj'}
+}
+\\
+\frac{1}{|\calg|}\sum_{g\in\calg}
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&\alp&
+\\
+i&\ar[l]\rho_\alp(g)\ar@{~}[u]&\ar[l]j
+}
+\ecen
+\bcen
+\xymatrix@R=1pc@C=1pc{
+&\beta&
+\\
+j'&\ar[l]\rho_\beta(g)\ar@{~}[u]&\ar[l]i'
+}
+\ecen
+=
+\frac{1}{d_\alp}
+\bcen
+\xymatrix@R=.5pc{
+\alp&\ar@{~}[l]|\bullet\beta
+\\
+j&\ar[l]|\bullet j'
+\\
+i&\ar[l]|\bullet i'
+}
+\ecen
+\end{array}
+\eeq
+where $d_\alp$ is
+the matrix dimension of  $\rho_\alp$
+\end{claim}
+\proof
+\qed
+
+\beq
+
+\eeq
