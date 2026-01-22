@@ -546,6 +546,7 @@ i&\ar[l]|\bullet i'
 }
 \ecen
 \end{array}
+\label{eq-ortho-irreps}
 \eeq
 where $d_\alp$ is
 the matrix dimension of  $\rho_\alp$
@@ -632,8 +633,15 @@ for all $h\in \calg$, so by Schur's first lemma,
 \beq
 \Maa=cI
 \eeq
+Taking the  trace of both sides
+of the last equation, we get
 \beq
 \tr(X)=cd_\alp
+\eeq
+so
+
+\beq
+\Maa = \frac{\tr(X)}{d_\alp}I
 \eeq
 The last equation in component form is
 
@@ -666,4 +674,221 @@ we get
 \qed
 \section{Orthogonality  of Characters}
 
+\beq
+\chi^\alp(g)=\tr(\rho^\alp(g))=\sum_k
+\rho^\alp(g)_{kk} 
+\eeq
 
+
+$
+\tr(AB)=\tr(BA)
+$
+
+
+
+\beq
+\tr(\rho^\alp(hgh^{-1}))=
+\tr(\rho^\alp(h)\rho^\alp(g)\rho^\alp(h^{-1}))=\tr\rho^\alp(g)
+\eeq
+\beq
+\chi^\alp(hgh^{-1})=\chi^\alp(g)
+\eeq
+
+$g(CC_k)=$ one candidate of the conjugacy
+class $CC_k$.
+
+\beq
+\chi^\alp_k=\chi^\alp(g(CC_k))=\chi^\alp(g)
+\eeq
+for $g\in CC_k$.
+
+
+
+\begin{claim}
+
+\beq
+\frac{1}{|\calg|}
+\sum_{g\in \calg}
+\chi^\alp(g)\chi^{\beta *}(g)
+=\delta_{\alp\beta}
+\label{eq-ortho-char}
+\eeq
+
+\beq
+\frac{1}{|\calg|}
+\sum_{k=1}^{N_{CC}}|CC_k|\;
+\chi^\alp_k\;\chi^{\beta *}_k
+=\delta_{\alp\beta}
+\eeq
+
+\end{claim}
+\proof
+
+Setting $i=j$ and $i'=j'$ in Eq.\ref{eq-ortho-irreps},
+we get
+
+\beq
+\frac{1}{|\calg|}\sum_{g\in \calg}
+\rho_\alp(g)_{ii} 
+\rho_\beta(g^{-1})_{i'i'}
+=
+\delta_{\alp \beta}
+\delta_{ii'}\frac{\delta_{ii'}}{d_\alp}
+\eeq
+Now summing both sides over $i$ and $i'$
+gives Eq.\ref{eq-ortho-char}.
+
+\qed
+
+
+\begin{claim}
+If 
+
+\beq
+CC_i\; CC_j =\sum_k a_{ijk}CC_k
+\eeq
+then
+
+
+
+\beq
+|CC_i|\;|CC_j|\chi^\alp_i
+\chi^\alp_j
+=
+d_\alp\sum_k a_{ijk}|CC_k|\chi^\alp_k
+\eeq
+\end{claim}
+\proof
+
+\beq
+\rho^\alp_k=
+\sum_{g\in CC_k}\rho^\alp(g)
+\eeq
+
+
+\beqa
+\rho^\alp(g)
+\rho^\alp_k
+\rho^\alp(g^{-1})
+&=&
+\sum_{g_1\in CC_k}
+\rho^\alp(g)
+\rho^\alp(g_1)
+\rho^\alp(g^{-1})
+\\
+&=&
+\sum_{g_1\in CC_k}
+\rho^\alp(gg_1g^{-1})
+\\
+&=&
+\rho^\alp_k
+\eeqa
+
+\beq
+\rho^\alp_k = c^\alp_k I
+\eeq
+
+\beq
+|CC_k|\chi^\alp_k=c^\alp_kd_\alp
+\eeq
+
+\beq
+\rho^\alp_k=\frac{|CC_k|}{d_\alp}\chi^\alp_k I
+\eeq
+
+\beqa
+\rho^\alp_i \rho^\alp_j
+&=&
+\sum_{g_1\in CC_i}\sum_{g_2\in CC_j}
+\rho^\alp(g_1 g_2)
+\\
+&=&\sum_{g\in CC_i \;CC_j}\rho^\alp(g)
+\\
+&=&
+\sum_k a_{ijk}\sum_{g\in CC_k}\rho^\alp(g)
+\\
+&=&
+\sum_k a_{ijk}\rho^\alp_k
+\eeqa
+
+\beq
+\frac{|CC_i|}{d_\alp}\chi^\alp_i
+\frac{|CC_j|}{d_\alp}\chi^\alp_j 
+=
+\sum_{k}a_{ijk}
+\frac{|CC_k|}{d_\alp}\chi^\alp_k 
+\eeq
+
+\qed
+
+\begin{claim}
+Suppose
+
+\beq
+\rho(g) =\bigoplus_\alp z_\alp \rho^\alp(g)
+\eeq
+for all $g\in\calg$
+where $z_\alp\in \ZZ_{>0}$
+and the $\rho_\alp$ are distinct irreps.
+Then
+
+\beq
+\chi(g)=
+\sum_\alp z_\alp \chi^\alp(g)
+\eeq
+for all $g\in \calg$ and
+
+\beq
+z_\alp=
+\frac{1}{|\calg|}
+\sum_{g\in \calg}
+\chi^{\alp*}(g)\chi^\alp(g)
+\eeq
+
+\end{claim}
+\proof
+
+\beqa
+\sum_{g\in \calg}\chi^{\alp*}(g)\chi(g)
+&=&
+\sum_\beta z_\beta \sum_{g\in \calg}
+\chi^{\alp*}(g)\chi^\beta(g)
+\\
+&=&
+z_\alp |\calg|
+\eeqa
+\qed
+
+\begin{claim}
+The rep $\rho$ of group $\calg$ 
+is irreducible iff
+
+\beq
+\sum_{g\in\calg}
+\chi^*(g)\chi(g)
+=|\calg|
+\eeq
+or, equivalently,
+
+\beq
+\sum_k |CC_k|\;\chi^*_k \chi_k=|\calg|
+\eeq
+where $\chi(g)=\tr (\rho(g))$
+and $\chi_k = \chi(g(CC_k))$.
+\end{claim}
+\proof
+
+\beqa
+\frac{1}{|\calg|}\sum_{g\in\calg}
+\chi^*(g)\chi(g)
+&=&
+\frac{1}{|\calg|}
+\sum_\alp \sum_\beta z^*_\alp z_\beta
+\sum_{g\in \calg}
+\chi^{\alp*}(g)
+\chi^\beta(g)
+\\
+&=&
+\sum_\alp  |z_\alp|^2
+\eeqa
+\qed
