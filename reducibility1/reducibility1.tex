@@ -753,8 +753,12 @@ $
 \chi^\alp(hgh^{-1})=\chi^\alp(g)
 \eeq
 
+$CC(g)=\{hgh^{-1}|h\in \calg\}=$ {\bf conjugacy class (CC) of $g\in \calg$}.
+
 $g(CC_k)=$ one candidate of the conjugacy
 class $CC_k$.
+
+
 
 \beq
 \chi^\alp_k=\chi^\alp(g(CC_k))=\chi^\alp(g)
@@ -802,13 +806,28 @@ gives Eq.\ref{eq-ortho-char}.
 multiplication of classes
 
 \beq
-CC_i CC_j =\{ ab\mid a\in CC_i, b\in CC_j\}
+CC_i\; CC_j =\{ ab\mid a\in CC_i, b\in CC_j\}
 \eeq
 
+\begin{claim}
+If $a\in CC_i$ and $b\in CC_j$,
+then there is $k$ such that $ab\in CC_k$.
+\end{claim}
+\proof
+For every $g\in \calg$,
+if  $a\in CC_i$ and $b\in CC_j$
 \beq
-CC_i CC_j =\sum_k a^k_{ij}CC_k
+g a g^{-1} g b g^{-1}=
+g ab g^{-1}
 \eeq
-where $a^k_{ij}\in \ZZ_{>0}$.
+so
+$ab\in CC(ab)= C_k$ for some $k$. 
+\qed
+
+\beq
+CC_i\; CC_j =\sum_k a_{ijk}CC_k
+\eeq
+where $a_{ijk}\in \ZZ_{>0}$.
 
 \begin{claim}
 If 
@@ -1057,7 +1076,7 @@ m_\alp
 \section{More Reps}
 \begin{enumerate}
 \hrule
-\item (plane wave rep 8-dim rep of $\sqgroup$)
+\item (plane wave 8-dim rep of $\sqgroup$)
 
 $\vec{r} = (p_1x_1,p_2x_2)$
 
@@ -1097,6 +1116,12 @@ $G_a\ket{\vec{r}}=\ket{G_a\vec{r}}=\ket{\vec{r}_a}$
 
 \beq
 \rho\equiv\rho^{ref}\equiv \bigoplus_\beta m_\beta \rho^\beta
+=
+\rho^{(1)}
+\oplus \rho^{(2)}
+\oplus \rho^{(3)}
+\oplus \rho^{(4)}
+\oplus 2\rho^{(5)}
 \eeq
 
 
@@ -1114,5 +1139,214 @@ U^\dagger \rho(G_a) U =
 
 $span\{U\ket{\vec{r}_a}\}_{a=1}^8$ is a vector
 space upon the 8-dim rep $\rho$ is block diagonal
+
+\hrule
+\item (plane wave 4-dim rep of $\sqgroup$)
+
+$\vec{r} = (p_1x_1,p_2x_2)$
+
+$\vec{k}=(k_1, k_2)$
+
+$(G_a)_{a=1}^4=(E, C_4, C_4^3, C_4^2)$ 
+
+$(G_A)_{A=1}^8=(E, C_4, C_4^3, C_4^2, N_2, N_1, \s_{y=-x}, \s_{y=x})$
+
+$\vec{r}_a = G_a\vec{r}$
+
+$G_a\ket{\vec{r}}=\ket{G_a\vec{r}}=\ket{\vec{r}_a}$
+
+
+\beq
+\av{\vec{k}|\phi_a(\vec{r})}=
+\av{\vec{k}|\vec{r}_a}=
+\exp(i\vec{k}\cdot \vec{r}_a)
+\eeq
+
+\beqa
+\av{\vec{r}_{a_1}|\vec{r}_{a_2}}
+&=&\int \frac{d^2k}{(2\pi)^2}
+\av{\vec{r}_{a_1}|\vec{k}}
+\av{\vec{k}|\vec{r}_{a_2}}
+\\
+&=&
+\delta(\vec{r}_{a_1}-\vec{r}_{a_2})
+\eeqa
+
+\beq
+\rho(G_A)_{a_1, a_2}=
+\av{\vec{r}_{a_1} |G_A|\vec{r}_{a_2}}
+=
+\av{\vec{r}_{a_1} |G_AG_{a_2}\vec{r}}
+\eeq
+
+
+
+\beq
+U^\dagger \rho(G_A) U =
+\bigoplus_\beta m_\beta\rho^\beta(G_A)
+= 
+\rho^{(1)}
+\oplus \rho^{(2)}
+\oplus \rho^{(5)}
+\eeq
+\beq
+\av{\vec{k}|\psi_a(\vec{r})}=
+\av{\vec{k}|U|\vec{r}_a}=
+\sum_{a_1}\av{\vec{k}|\vec{r}_{a_1}}\av{\vec{r}_{a_1}|U|\vec{r}_a}
+\eeq
+
+
+
+$span\{U\ket{\vec{r}_a}\}_{a=1}^4$ is a vector
+space upon the 8-dim rep $\rho$ is block diagonal
+
+\hrule
+\item (direct product reps)
+
+Kronecker product of two matrices
+\beq
+\begin{pmatrix}a_{11}&a_{12}
+\\
+a_{21}&a_{22}\end{pmatrix}
+\otimes
+\begin{pmatrix}
+b_{11}&b_{12}&b_{13}
+\\
+b_{21}&b_{22}&b_{23}
+\\
+b_{31}&b_{32}&b_{33}
+\end{pmatrix}
+=
+\begin{pmatrix}
+a_{11}
+\begin{pmatrix}
+b_{11}&b_{12}&b_{13}
+\\
+b_{21}&b_{22}&b_{23}
+\\
+b_{31}&b_{32}&b_{33}
+\end{pmatrix}
+&a_{12}
+\begin{pmatrix}
+b_{11}&b_{12}&b_{13}
+\\
+b_{21}&b_{22}&b_{23}
+\\
+b_{31}&b_{32}&b_{33}
+\end{pmatrix}
+\\
+a_{21}
+\begin{pmatrix}
+b_{11}&b_{12}&b_{13}
+\\
+b_{21}&b_{22}&b_{23}
+\\
+b_{31}&b_{32}&b_{33}
+\end{pmatrix}
+&
+a_{22}
+\begin{pmatrix}
+b_{11}&b_{12}&b_{13}
+\\
+b_{21}&b_{22}&b_{23}
+\\
+b_{31}&b_{32}&b_{33}
+\end{pmatrix}
+\end{pmatrix}
+\eeq
+
+\beq
+(A\otimes B)(A'\otimes B')=
+(AA')\otimes ( BB')
+\eeq
+
+
+\beq
+\rho(g)=\rho_1(g)\otimes\rho_2(g)
+\eeq
+
+\beqa
+\rho(g)\rho(h)&=&
+[\rho_1(g)\otimes\rho_2(g)]
+[\rho_1(h)\otimes\rho_2(h)]
+\\
+&=&
+[\rho_1(g)\rho_1(h)]
+\otimes
+[\rho_2(g)\rho_2(h)]
+\\
+&=&
+\rho_1(gh)\otimes \rho_2(gh)
+\\
+&=&
+\rho(gh)
+\eeqa
+
+\beq
+\chi(g) = \chi_1(g)\chi_2(g)
+\eeq
+for all $g\in \calg$
+
+\beq
+\rho^\alp\otimes \rho^\beta
+\equiv \bigoplus_\gamma m_{\alp \beta \gamma}\rho^\gamma
+\eeq
+$m_{\alp\beta\gamma}\in \ZZ_{>0}$
+Example: for $\sqgroup$,
+
+\beq
+\rho^{(1)}\otimes \rho^{(1)}\equiv 
+\rho^{(1)}
+\eeq
+
+\beq
+\rho^{(1)}\otimes \rho^{(2)}\equiv 
+\rho^{(2)}
+\eeq
+
+\beq
+\rho^{(5)}\otimes \rho^{(5)}
+\equiv
+\rho^{(1)}
+\oplus \rho^{(2)}
+\oplus \rho^{(3)}
+\oplus \rho^{(4)}
+\eeq
+
+\beq
+\chi^\alp(g)\chi^\beta(g)=
+\sum_\gamma m_{\alp\beta\gamma}\chi^\gamma(g)
+\eeq
+
+\beq
+\rho_1\equiv\bigoplus_\alp m_{1,\alp}\rho^\alp,
+\quad
+\rho_2\equiv\bigoplus_\alp m_{2,\beta}\rho^\beta
+\eeq
+
+\beq
+\rho_1\otimes \rho_2
+\equiv
+\bigoplus_\gamma
+\left[\sum_{\alp}\sum_{\beta}
+m_{1\alp}
+m_{2\beta}
+m_{\alp\beta\gamma}\right]
+\rho^\gamma
+\eeq
+
+\beq
+\ket{\psi_{ij}}=\ket{\psi_i}\ket{\psi_j}
+=
+\ket{\psi_i}\otimes\ket{\psi_j}
+\eeq
+
+\beq
+\av{\psi_{ij}|\rho_1(g)\otimes\rho_2(g)|\psi_{i'j'}}=
+[\av{\psi_i|\rho_1(g)|\psi_{i'}}]\quad
+[\av{\psi_j|\rho_1(g)|\psi_{j'}}]
+\eeq
+
+
 
 \end{enumerate}
