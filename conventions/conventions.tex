@@ -157,12 +157,50 @@ If $A$ and $B$ are square matrices, then
 
 \section{Baker-Campbell-Hausdorff  (BCH) formula}
 
-The {\bf Baker-Campbell-Hausdorff}  (BCH) formula is
+\begin{claim} (Baker-Campbell-Hausdorff  (BCH) formula)
+
 \beq
-e^X e^Y = e^{X + Y + \frac{1}{2}[X,Y]  + \calo(X^aY^b\mid a+b=3)}
+e^{tX} e^{tY} = e^{tX + tY + \frac{t^2}{2}[X,Y]  + \calo(t^3)}
+\label{eq-bch-formula}
 \eeq
-To prove it, one just expands the exponentials on both sides, neglecting
- terms $X^a Y^b$ where $a+b\geq 3$.
+\end{claim}
+\proof
+
+To prove this, just expands the exponentials on both sides, neglecting
+ terms of order $t^3$.
+
+Let
+
+LHS = Left Hand Side of Eq.(\ref{eq-bch-formula})
+
+RHS = Right Hand Side
+of Eq.(\ref{eq-bch-formula})
+
+Then
+
+\beqa
+LHS&=&
+(1 + t X + \frac{1}{2}t^2X^2)
+(1 + t Y + \frac{1}{2}t^2Y^2)
+\\
+&=&
+1 + t(X+Y) + t^2XY + \frac{t^2}{2}
+(X^2 + Y^2)  + \calo(t^3)
+\eeqa
+
+\begin{align}
+RHS &=
+1 + t(X+Y)+\frac{t^2}{2}[X,Y]
++
+\frac{t^2}{2}
+ (X+Y)^2 + \calo(t^3)
+\\
+&=
+1 + t(X+Y)+\frac{t^2}{2}
+(X^2 + 2XY + Y^2)
+ + \calo(t^3)
+\end{align}
+\qed
 
 \section{Jacobi identity}
 
@@ -408,6 +446,9 @@ to give the effect of each group element $a\in \calg$ on a basis of vectors $\{\
 If the map $\rho: G\rarrow C^{n\times n}$
 is 1-1, we call it a {\bf faithful representation}.
 
+{\bf Irreducible representations} (irreps)
+are defined in Ch. \ref{ch-reducibility1}.
+
 A {\bf singlet (or invariant or conserved) quantity of group $\calg$}
 is a quantity that
 is invariant under the group transformations
@@ -473,10 +514,10 @@ GL(n;\CC)=
 \{M\in \CC^{n\times n}: \det{M}\neq 0\}
 \eeq
 
+The {\bf adjoint representation} (adj-rep) is defined in Section
+\ref{sec-adj-rep}.
 
 
-{\bf Irreducible representations} (irreps)
-are defined in Ch. \ref{ch-reducibility1}.
 
 The {\bf fundamental representation} (fun-rep)
 is defined as the smallest irrep.
@@ -491,46 +532,34 @@ Chapter \ref{ch-young-tableau}
  for the symmetric group on $n_b$
 letters (or $n_b$ boxes) $S_{n_b}$.
 
-\section{Lie Algebra Representation}
-The {\bf adjoint representation} (adj-rep)
-is defined in terms of the structure constants
-of the Lie Algebra. If the Lie Algebra satisfies
-$[T^i, T^j]= if_{ijk}T^k$,
-then the adj-rep is given by the matrices
-with $i,j$ entries $M^k_{ij}=-if\indices{^k_i_j}$.
-Let  $\ket{x} = x_i \ket{T^i}$.
-Then
+\section{Adjoint Representation}
+\label{sec-adj-rep}
+
+\newcommand{\adj}[1]{{ad\{#1\}}}
+\newcommand{\Adj}[1]{{Ad\{#1\}}}
 
 \beq
-[\ket{x}, \cdot]\ket{T^j}   = 
-\ket{[x, T^j]}= i x_if_{ijk}\ket{T^k} \implies
-\bra{T^k}[\ket{x}, \cdot]\ket{T^j}= 
-i x_i f_{ijk}
+\adj{X}: L(V)\rarrow L(V), \quad
+\adj{X}[(Y)=[X, Y]
 \eeq
 
 
-\beq
-\frac{d}{dX}: L(V)\rarrow L(V), \quad
-\frac{d}{dX}(Y)=[X, Y]
-\eeq
-
-$\frac{d}{dX}= ad[X]$
 
 \begin{claim}
 
 \beq
-\left[\frac{d}{dX_1}, \frac{d}{dX_2}\right]=
-\frac{d}{d[X_1,X_2]}
+\left[\adj{X_1}, \adj{X_2}\right]=
+\adj{[X_1,X_2]}
 \eeq
 
 \end{claim}
 \proof
 
 \beqa
-\left[\frac{d}{dX_1}, \frac{d}{dX_2}\right](Y) &=&
-\frac{d}{dX_1}\frac{d}{dX_2}Y
+\left[\adj{X_1}, \adj{X_2}\right](Y) &=&
+\adj{X_1}\adj{X_2}Y
 -
-\frac{d}{dX_2}\frac{d}{dX_1}Y
+\adj{X_2}\adj{X_1}Y
 \\
 &=&
 [X_1,[X_2, Y]]-
@@ -545,30 +574,34 @@ $\frac{d}{dX}= ad[X]$
 [[X_1, X_2], Y]
 \\
 &=&
-\frac{d}{d[X_1, X_2]}(Y)
+\adj{[X_1,X_2]}(Y)
 \eeqa
 
 \qed
 
 \beq
-Ad[X]: L(V)\rarrow L(V),
-\quad Ad[X](Y)= e^X Y e^{-X}
+\Adj{X}: L(V)\rarrow L(V),
+\quad \Adj{X}(Y)= e^X Y e^{-X}
 \eeq
 
 Note that
 
 \beqa
-\lim_{\eps\rarrow 0}
-\frac{1}{\eps}\left(Ad[\eps X]-1\right)Y&=&\lim_{\eps\rarrow 0}
-\frac{1}{\eps}[(1+\eps X)Y(1-\eps X)-Y]
+\left[\frac{d}{d\lam}\Adj{\lam X}(Y)\right]_{\lam=0}
+&=&\left[e^{\lam X}XY e^{-\lam X}
+-e^{\lam X}YX e^{-\lam X}
+\right]_{\lam=0}
 \\
 &=&
-[X, Y]=
-\frac{d}{dX}(Y)=ad[X](Y)
+[X, Y]
+\\
+&=&
+\adj{X}(Y)
 \eeqa
 
 \beq
-\Omega_{adj}=Ad\circ \Omega
+\Omega: \calg \rarrow L(V), \quad
+\Omega_{adj}(g)=\Adj{\Omega(g)}
 \eeq
 
 \begin{claim}
@@ -580,7 +613,7 @@ Note that
 \proof
 
 \beqa
-Ad[\Omega(g_1)]Ad[\Omega(g_2)](X)
+\Adj{\Omega(g_1)}\Adj{\Omega(g_2)}(X)
 &=&
 \Omega(g_1)\Omega(g_2)X\Omega(g_2^{-1})\Omega{g_1^{-1}}
 \\
@@ -589,12 +622,76 @@ Ad[\Omega(g_1)]Ad[\Omega(g_2)](X)
 \Omega((g_1 g_2)^{-1})
 \\
 &=&
-Ad[\Omega(g_1  g_2)]X
+\Adj{\Omega(g_1g_2)}X
 \eeqa
 
 \qed
 
+\begin{claim}
+If the generators $\{T^i\in \CC^{n\times n}\mid i=1,2, \ldots N\}$
+of a group $\calg$ satisfy
 
+\beq
+[T^i, T^j]=i\sum_k f_{ijk}T^k
+\eeq
+for $i,j,k=1, 2, \ldots, N$.
+and
+
+\beq  
+(F^i)_{jk} = -if_{ijk}
+\eeq
+Then
+
+\beq
+[F^i, F^j]= i \sum_k f_{ijk}F^k
+\eeq
+
+\end{claim}
+\proof
+
+Suppose
+
+\beq
+F^i =\adj{T^i}
+\eeq
+
+\beqa
+F^i T^j&=&\adj{T^i}(T^j)
+\\
+&=&[T^i,T^j ]
+\\
+&=&
+i\sum_k f_{ijk}T^k
+\\
+&=&
+\sum_k T^k(F^i)_{kj}
+\eeqa
+
+\beq
+\tr(T^{k\dagger}F_jF^j)=(F^i)_{kj}
+\eeq
+
+
+\beqa
+[F^i, F^j]&=&
+[\adj{T^i}, \adj{T^j}]
+\\
+&=&
+\adj{[T^i, T^j]}
+\\
+&=&
+i\sum_kf_{ijk}\adj{T^k}
+\\
+&=&
+i\sum_kf_{ijk}F^k
+\eeqa
+
+
+\qed
+
+The matrices $\{F^i\mid
+\CC^{N\times   N}\mid i=1,2, \ldots, N\}$  generate what is called the {\bf adjoint representation} of the Lie algebra
+$\ger{g}$.
 
 \section{Dimensions}\label{sec-dimensions}
 In Physics/Math, the term \qt{dimension} can mean
