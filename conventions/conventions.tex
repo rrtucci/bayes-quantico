@@ -15,7 +15,7 @@ defined there.
 
 Definitions
 
-$|S|=$ = the number of elements in a set $S$.
+$|S|$ = the number of elements in a set $S$.
 (known as its {\bf order, size, length, cardinality})
 
 $\ZZ$ = integers
@@ -27,7 +27,9 @@ for some integers $a, b$ such that $a\leq b$
 
 $\RR$ = reals
 
-$\CC$= complex numbers
+$\QQ$= rationals
+
+$\CC$ = complex numbers
 
 $\CC^{n\times m}$ = $n\times m$ matrices of complex numbers
 
@@ -44,6 +46,142 @@ Let
 [A, B]_+ = AB+BA
 \eeq
 
+\section{Equivalence Relation}
+An {\bf equivalence relation} $R$ on a set $X$ is a subset of $X\times X$
+that satisfies the 3 axioms given below. One writes $a\sim b$ or $aRb$ instead of $(a,b)\in R$. For all $a,b,c\in X$, $R$
+must satisfy:
+
+\begin{enumerate}
+\item reflexive: $a\sim a$ 
+\item symmetric: if $a\sim b$ then $b\sim a$
+\item transitive: if $a\sim b$ and $b\sim c$ then  $a\sim c$.
+
+\end{enumerate}
+
+An {\bf equivalence class} of $R$ is a set 
+$C(a)=\{x\sim a\mid x\in X\}$.
+All possible equivalence classes of $R$ 
+constitute a disjoint partition of $X$:
+
+\beq
+X= \bigcup_{a\in X} C(a)
+\eeq
+
+\beq
+C(a) \cap C(b)=\emptyset \text{ iff }  C(a) \neq C(b)
+\eeq
+
+\section{Direct Sum and Direct Product of Matrices}
+
+For any square matrices $A$, $B$, $C$ (not necessarily of the same dimension)
+\beq
+A\oplus B\oplus C = \begin{pmatrix}
+A&0&0
+\\0&B&0
+\\
+0&0&C
+\end{pmatrix}
+\eeq
+If $A_i$ for $i=1,2, \ldots, n$ are square matrices, $A_1\oplus A_2 \oplus \ldots \oplus A_n$ is called
+a {\bf block diagonal matrix}.
+This is also called the {\bf direct sum}
+of matrices $A_i$.
+
+The {\bf direct product} of two matrices
+$A$ and $B$  is defined as the generalization of the following example
+to rectangular matrices $A$ and $B$ of any dimensions:
+\beq
+A\otimes B=
+\begin{pmatrix}a_{11}&a_{12}
+\\
+a_{21}&a_{22}\end{pmatrix}
+\otimes
+\begin{pmatrix}
+b_{11}&b_{12}&b_{13}
+\\
+b_{21}&b_{22}&b_{23}
+\\
+b_{31}&b_{32}&b_{33}
+\end{pmatrix}
+=
+\begin{pmatrix}
+a_{11}
+\begin{pmatrix}
+b_{11}&b_{12}&b_{13}
+\\
+b_{21}&b_{22}&b_{23}
+\\
+b_{31}&b_{32}&b_{33}
+\end{pmatrix}
+&a_{12}
+\begin{pmatrix}
+b_{11}&b_{12}&b_{13}
+\\
+b_{21}&b_{22}&b_{23}
+\\
+b_{31}&b_{32}&b_{33}
+\end{pmatrix}
+\\
+a_{21}
+\begin{pmatrix}
+b_{11}&b_{12}&b_{13}
+\\
+b_{21}&b_{22}&b_{23}
+\\
+b_{31}&b_{32}&b_{33}
+\end{pmatrix}
+&
+a_{22}
+\begin{pmatrix}
+b_{11}&b_{12}&b_{13}
+\\
+b_{21}&b_{22}&b_{23}
+\\
+b_{31}&b_{32}&b_{33}
+\end{pmatrix}
+\end{pmatrix}
+\eeq
+
+Note that if matrices $A, A', B, B'$ 
+have suitable dimensions, then
+
+\beq
+(A\otimes B)(A'\otimes B')=
+(AA')\otimes ( BB')
+\eeq
+
+If $A$ and $B$ are square matrices, then
+\beq
+\tr(A\otimes B)=\tr(A)\tr(B)
+\eeq
+
+\section{Baker-Campbell-Hausdorff  (BCH) formula}
+
+The {\bf Baker-Campbell-Hausdorff}  (BCH) formula is
+\beq
+e^X e^Y = e^{X + Y + \frac{1}{2}[X,Y]  + \calo(X^aY^b\mid a+b=3)}
+\eeq
+To prove it, one just expands the exponentials on both sides, neglecting
+ terms $X^a Y^b$ where $a+b\geq 3$.
+
+\section{Jacobi identity}
+
+The {\bf Jacobi identity} (JI) is
+
+\beq
+[X,[Y,Z]]= [[X,Y],Z] + [Y,[X,Z]]
+\eeq
+The JI can be easily proven by expanding both sides. 
+In this form, the JI says that $[X,\cdot]$
+acts like a derivative operator on $[Y, Z]$.
+
+The JI can be rewritten as 
+
+\beq
+[X,[Y, Z]]+ [Y[Z,X]]+[Z[X,Y]]=0
+\eeq
+In this form, it says that all cyclic 
+permutations of $[X, [Y,Z]]$ add up to zero.
 
 \section{Group Theory References}
 Much of this book
@@ -172,7 +310,7 @@ under multiplication} (i.e., $ab\in \calh$ for all $a,b\in \calh$)
 A {\bf representation (rep)
 of a group $\calg$}
 is a pair $(V, \rho)$ of a vector  space $V$ and a map $\rho: \calg\rarrow \CC^{n\times n}$\footnote{More generally, the $\CC^{n\times n}$ can be replaced by $\RR^{n\times n}$ or by $\FF^{n\times n}$ for any field $\FF$} such that
-
+for all $a,b\in\calg$, 
 \beq
 \rho(a)\rho(b)=
 \rho(ab),
@@ -194,6 +332,42 @@ into disjoints subsets (equivalence classes),
 such that all elements of $\calg$ in each disjoint subset 
 are represented by the same matrix.
 
+Given a vector space $V$,  
+
+$L(V)$ = the {\bf endomorphisms of $V$}, i.e., the set of all linear maps
+from $V$ to $V$, let 
+
+$GL(V)=
+\{f\in L(V)\mid f \text{ is invertible}\}=$
+{\bf General Linear set on $V$}.
+
+For a fixed basis of $V$, there is clearly a 1-1 relationship
+between elements of $L(V)$ and the matrices
+in $\CC^{n\times n}$ where $n=dim(V)$. 
+
+
+
+An equivalent but more abstract definition of a rep is: A {\bf representation (rep) of group $\calg$} is a 
+map $\Omega: \calg \rarrow L(V)$
+such that
+for all $a,b\in\calg$, 
+\beq
+\Omega(a)\circ\Omega(b)=
+\Omega(ab),
+\quad \Omega(e) = I
+\eeq
+A linear map automatically yields a matrix once you choose a basis.
+That’s the entire bridge between the two definitions of a rep.
+
+A  linear map in $L(V)$ is called a  \qt{linear operator}
+in Physics. Neither has  a particular basis or matrix attached to it.
+We will henceforth
+refer to the two definitions
+of a rep as the {\bf matrix definition and operator definition of a rep}.
+
+
+
+
 Two reps $\rho_1()$ and $\rho_2()$
 of a group $\calg$ are {\bf equivalent reps} if they are equal up to a {\bf similarity transformation}; i.e., if there is a non-singular matrix $M$ such that
 
@@ -209,8 +383,7 @@ with basis $\ket{i}$
 satisfies
 
 \beq
-\rho(a):V\rarrow V, \quad
-\rho(a)\ket{i}= \sum_{j} \rho(a)_{ij}\ket{j}
+\Omega(a)\ket{i}= \sum_{j}\ket{j} \underbrace{\av{j|\Omega(a)|i}}_{\rho(a)_{ji}}
 \eeq
 for all $a\in\calg$.
 This situation  is often described by saying that the group $\calg$
@@ -230,13 +403,10 @@ One  way to specify a representation is
 to give the effect of each group element $a\in \calg$ on a basis of vectors $\{\ket{1}, \ket{2}, \dots, \ket{n}\}$.
 
 
-\beq
-\rho (a)\ket{i}= \sum_j M_{ij}\ket{j}
-\implies \av{i|\rho(a)|j} = M_{ij}
-\eeq
 
-If the map $\rho$
-is 1-1, onto, we call it a {\bf faithful representation} 
+
+If the map $\rho: G\rarrow C^{n\times n}$
+is 1-1, we call it a {\bf faithful representation}.
 
 A {\bf singlet (or invariant or conserved) quantity of group $\calg$}
 is a quantity that
@@ -303,6 +473,25 @@ GL(n;\CC)=
 \{M\in \CC^{n\times n}: \det{M}\neq 0\}
 \eeq
 
+
+
+{\bf Irreducible representations} (irreps)
+are defined in Ch. \ref{ch-reducibility1}.
+
+The {\bf fundamental representation} (fun-rep)
+is defined as the smallest irrep.
+The def-rep equals the fun-rep for
+$SU(n), SO(n), Sp(n)$, but not for $E_8$.
+
+The {\bf regular representation}
+is defined in 
+Chapter \ref{ch-reducibility1}
+for any finite group and in 
+Chapter \ref{ch-young-tableau}
+ for the symmetric group on $n_b$
+letters (or $n_b$ boxes) $S_{n_b}$.
+
+\section{Lie Algebra Representation}
 The {\bf adjoint representation} (adj-rep)
 is defined in terms of the structure constants
 of the Lie Algebra. If the Lie Algebra satisfies
@@ -320,21 +509,92 @@ i x_i f_{ijk}
 \eeq
 
 
-{\bf Irreducible representations} (irreps)
-are defined in Ch. \ref{ch-1}
-reducibility
-The {\bf fundamental representation} (fun-rep)
-is defined as the smallest irrep.
-The def-rep equals the fun-rep for
-$SU(n), SO(n), SP(n)$, but not for $E_8$.
+\beq
+\frac{d}{dX}: L(V)\rarrow L(V), \quad
+\frac{d}{dX}(Y)=[X, Y]
+\eeq
 
-The {\bf regular representation}
-is defined in 
-Chapter \ref{ch-reducibility1}
-for any finite group and in 
-Chapter \ref{ch-young-tableau}
- for the symmetric group on $n_b$
-letters (or $n_b$ boxes) $S_{n_b}$.
+$\frac{d}{dX}= ad[X]$
+
+\begin{claim}
+
+\beq
+\left[\frac{d}{dX_1}, \frac{d}{dX_2}\right]=
+\frac{d}{d[X_1,X_2]}
+\eeq
+
+\end{claim}
+\proof
+
+\beqa
+\left[\frac{d}{dX_1}, \frac{d}{dX_2}\right](Y) &=&
+\frac{d}{dX_1}\frac{d}{dX_2}Y
+-
+\frac{d}{dX_2}\frac{d}{dX_1}Y
+\\
+&=&
+[X_1,[X_2, Y]]-
+[X_2, [X_1, Y]]
+\\
+&=&
+[X_1, [X_2, Y]]
++
+[[X_1, Y], X_2]
+\\
+&=&
+[[X_1, X_2], Y]
+\\
+&=&
+\frac{d}{d[X_1, X_2]}(Y)
+\eeqa
+
+\qed
+
+\beq
+Ad[X]: L(V)\rarrow L(V),
+\quad Ad[X](Y)= e^X Y e^{-X}
+\eeq
+
+Note that
+
+\beqa
+\lim_{\eps\rarrow 0}
+\frac{1}{\eps}\left(Ad[\eps X]-1\right)Y&=&\lim_{\eps\rarrow 0}
+\frac{1}{\eps}[(1+\eps X)Y(1-\eps X)-Y]
+\\
+&=&
+[X, Y]=
+\frac{d}{dX}(Y)=ad[X](Y)
+\eeqa
+
+\beq
+\Omega_{adj}=Ad\circ \Omega
+\eeq
+
+\begin{claim}
+
+\beq
+\Omega_{adj}(g_1)\Omega_{adj}(g_2)=\Omega_{adj}(g_1g_2)
+\eeq
+\end{claim}
+\proof
+
+\beqa
+Ad[\Omega(g_1)]Ad[\Omega(g_2)](X)
+&=&
+\Omega(g_1)\Omega(g_2)X\Omega(g_2^{-1})\Omega{g_1^{-1}}
+\\
+&=&
+\Omega(g_1 g_2)X
+\Omega((g_1 g_2)^{-1})
+\\
+&=&
+Ad[\Omega(g_1  g_2)]X
+\eeqa
+
+\qed
+
+
 
 \section{Dimensions}\label{sec-dimensions}
 In Physics/Math, the term \qt{dimension} can mean
