@@ -543,6 +543,9 @@ letters (or $n_b$ boxes) $S_{n_b}$.
 \adj{X}[(Y)=[X, Y]
 \eeq
 
+\beq
+\adj{X}= [X, \cdot\;]
+\eeq
 
 
 \begin{claim}
@@ -632,7 +635,45 @@ If the generators $\{T^i\in \CC^{n\times n}\mid i=1,2, \ldots N\}$
 of a group $\calg$ satisfy
 
 \beq
-[T^i, T^j]=i\sum_k f_{ijk}T^k
+\begin{array}{l}
+\myboxed{[T^i, T^j]=i\sum_k f_{ijk}T^k}
+\\
+\bcen
+\xymatrix{
+&\ar[l]T_i
+&\ar[l]T_j
+&\ar[l]
+\\
+&\ar@{~}[u]i
+&\ar@{~}[u]j
+&
+}
+\ecen
+-
+\bcen
+\xymatrix{
+&\ar[l]T_j
+&\ar[l]T_i
+&\ar[l]
+\\
+&\ar@{~}[ur]i
+&\ar@{~}[ul]j
+&
+}
+\ecen
+=
+\bcen
+\xymatrix{
+&\ar[l]T_k
+&\ar[l]
+\\
+&\ar@{~}@[green][u]i f
+&
+\\
+\ar@{~}[ru]i&&\ar@{~}[lu]j
+}
+\ecen
+\end{array}
 \eeq
 for $i,j,k=1, 2, \ldots, N$.
 and
@@ -643,7 +684,45 @@ and
 Then
 
 \beq
-[F^i, F^j]= i \sum_k f_{ijk}F^k
+\begin{array}{l}
+\myboxed{[F^i, F^j]= i \sum_k f_{ijk}F^k}
+\\
+\bcen
+\xymatrix{
+&\ar@{~}[l]F_i
+&\ar@{~}[l]F_j
+&\ar@{~}[l]
+\\
+&\ar@{~}[u]i
+&\ar@{~}[u]j
+&
+}
+\ecen
+-
+\bcen
+\xymatrix{
+&\ar@{~}[l]F_j
+&\ar@{~}[l]F_i
+&\ar@{~}[l]
+\\
+&\ar@{~}[ur]i
+&\ar@{~}[ul]j
+&
+}
+\ecen
+=
+\bcen
+\xymatrix{
+&\ar@{~}[l]F_k
+&\ar@{~}[l]
+\\
+&\ar@{~}@[green][u]i f
+&
+\\
+\ar@{~}[ru]i&&\ar@{~}[lu]j
+}
+\ecen
+\end{array}
 \eeq
 
 \end{claim}
