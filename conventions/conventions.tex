@@ -202,6 +202,71 @@ RHS &=
 \end{align}
 \qed
 
+The definition 
+of  a Lie algebra by 
+its commutator relationship
+
+\beq
+[X_i, X_j]=f_{ijk} X_k
+\eeq
+is a consequence of the
+BCH formula. Here is how.
+
+Suppose $\rho: \calg\rarrow \CC^{n\times n}$ is a rep of group $\calg$.
+Suppose $a_i, b_i, c_i\in \RR$
+and
+
+\beq
+A= a_i X_i, \quad B= b_i X_i, \quad C=c_i X_i,
+\quad C'=c'_i X_i
+\eeq
+
+\beq
+\rho(g_1)= e^{tA},\quad
+\rho(g_2)= e^{tB}, \quad
+\rho(g_1g_2)=e^{tC},\quad
+\rho(g_1g_2)=e^{tC'}
+\eeq
+Then
+
+\beq
+\rho(g_1)\rho(g_2)
+=\rho(g_1 g_2)
+\eeq
+implies
+\beq
+[\rho(g_1),\rho(g_2)]
+=
+\rho(g_1g_2)-\rho(g_2 g_1)
+\eeq
+Substituting the exponential
+values of $\rho(g)$ for various $g\in\calg$ gives
+
+\beq
+[e^{tA}, e^{tB}]
+=e^{tC}-e^{tC'}
+\eeq
+so by the BCH formula
+
+\beq
+t^2[A, B] + \calo(t^3)= t(C- C') +\frac{t^2}{2}(C^2-(C')^2)
++\calo(t^3)
+\eeq
+Set
+
+\beq
+C=C' +tH, \quad H= h_i X_i
+\eeq
+Then
+
+\beq
+t^2\underbrace{[A,B]}_{a_i b_j [X_i, X_j]}= t^2\underbrace{H}_{h_k X_k} +\calo(t^3)
+\eeq
+Hence, $[X_i, X_j]$ must be
+a sum of  $X_k$.
+
+
+
 \section{Jacobi identity}
 
 The {\bf Jacobi identity} (JI) is
