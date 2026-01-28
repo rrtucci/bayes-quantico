@@ -71,7 +71,19 @@ X= \bigcup_{a\in X} C(a)
 C(a) \cap C(b)=\emptyset \text{ iff }  C(a) \neq C(b)
 \eeq
 
-\section{Direct Sum and Direct Product of Matrices}
+\section{Direct Sum and Tensor Product of Matrices}
+
+The {\bf Cartesian product} $A\times B$ of two sets $A$ and $B$ (or of two groups or of two vector spaces, if they are being treated as sets) is defined as a set of ordered pairs
+
+\beq
+A\times B =\{(a,b)\mid  a\in A, b\in B\}
+\eeq
+
+Sometimes we want to indicate 
+that $A\times B$ is endowed with an
+operation that is bilinear. In those cases we use the symbol $\otimes$ which is called the {\bf otimes or tensor product or direct product operator}.
+
+
 
 For any square matrices $A$, $B$, $C$ (not necessarily of the same dimension)
 \beq
@@ -87,8 +99,8 @@ a {\bf block diagonal matrix}.
 This is also called the {\bf direct sum}
 of matrices $A_i$.
 
-The {\bf direct product} of two matrices
-$A$ and $B$  is defined as the generalization of the following example
+The {\bf tensor product or direct product} of two rectangular matrices
+$A$ and $B$ of arbitrary size is defined as the generalization of the following example
 to rectangular matrices $A$ and $B$ of any dimensions:
 \beq
 A\otimes B=
@@ -154,6 +166,10 @@ If $A$ and $B$ are square matrices, then
 \beq
 \tr(A\otimes B)=\tr(A)\tr(B)
 \eeq
+
+Besides $A\otimes B$ being used to denote the tensor product of two matrices $A$ and $B$, it is used  to denote
+the tensor product of two operators or two vector spaces. In all cases,
+there is a bilinear tensor operation at play.
 
 \section{Baker-Campbell-Hausdorff  (BCH) formula}
 
@@ -435,10 +451,10 @@ into disjoints subsets (equivalence classes),
 such that all elements of $\calg$ in each disjoint subset 
 are represented by the same matrix.
 
-Given a vector space $V$,  
+Given a vector space $V$,  let
 
-$L(V)$ = the {\bf endomorphisms of $V$}, i.e., the set of all linear maps
-from $V$ to $V$, let 
+$L(V)=End(V)$ = the {\bf endomorphisms of $V$}, i.e., the set of all linear maps
+from $V$ to $V$, 
 
 $GL(V)=
 \{f\in L(V)\mid f \text{ is invertible}\}=$
@@ -598,15 +614,20 @@ Chapter \ref{ch-young-tableau}
 letters (or $n_b$ boxes) $S_{n_b}$.
 
 \section{Adjoint Representation}
+
 \label{sec-adj-rep}
 
-\newcommand{\adj}[1]{{ad\{#1\}}}
-\newcommand{\Adj}[1]{{Ad\{#1\}}}
+Let $L(V)$ denote the set of all
+linear  operators on a vector space $V$.
+
+Define the adjoint  function $\adj{X}$ by
 
 \beq
 \adj{X}: L(V)\rarrow L(V), \quad
 \adj{X}[(Y)=[X, Y]
 \eeq
+Note that $\adj{X}$ can be thought of as
+half a commutator bracket:
 
 \beq
 \adj{X}= [X, \cdot\;]
@@ -647,15 +668,19 @@ letters (or $n_b$ boxes) $S_{n_b}$.
 
 \qed
 
+We can also define the Adjoint (capital \qt{A}) function 
+$\Adj{e^X}$ by
+
 \beq
 \Adj{X}: L(V)\rarrow L(V),
-\quad \Adj{X}(Y)= e^X Y e^{-X}
+\quad \Adj{e^X}(Y)= e^X Y e^{-X}
 \eeq
 
-Note that
+Note that $\adj{X}$ and $\Adj{e^X}$
+are related as follows
 
 \beqa
-\left[\frac{d}{d\lam}\Adj{\lam X}(Y)\right]_{\lam=0}
+\left[\frac{d}{d\lam}\Adj{e^{\lam X}}(Y)\right]_{\lam=0}
 &=&\left[e^{\lam X}XY e^{-\lam X}
 -e^{\lam X}YX e^{-\lam X}
 \right]_{\lam=0}
@@ -667,8 +692,13 @@ Note that
 \adj{X}(Y)
 \eeqa
 
+For any  group $\calg$,
+define 2  rep operators $\Omega$ and $\Omega_{adj}$ so that
+
+
 \beq
 \Omega: \calg \rarrow L(V), \quad
+\Omega(g)=e^X, \quad
 \Omega_{adj}(g)=\Adj{\Omega(g)}
 \eeq
 
@@ -683,7 +713,7 @@ Note that
 \beqa
 \Adj{\Omega(g_1)}\Adj{\Omega(g_2)}(X)
 &=&
-\Omega(g_1)\Omega(g_2)X\Omega(g_2^{-1})\Omega{g_1^{-1}}
+\Omega(g_1)\Omega(g_2)X\Omega(g_2^{-1})\Omega(g_1^{-1})
 \\
 &=&
 \Omega(g_1 g_2)X
@@ -798,6 +828,7 @@ Suppose
 \beq
 F^i =\adj{T^i}
 \eeq
+Then
 
 \beqa
 F^i T^j&=&\adj{T^i}(T^j)
@@ -810,11 +841,12 @@ i\sum_k f_{ijk}T^k
 &=&
 \sum_k T^k(F^i)_{kj}
 \eeqa
+and
 
 \beq
 \tr(T^{k\dagger}F_jF^j)=(F^i)_{kj}
 \eeq
-
+Hence
 
 \beqa
 [F^i, F^j]&=&
@@ -833,9 +865,9 @@ i\sum_kf_{ijk}F^k
 
 \qed
 
-The matrices $\{F^i\mid
+The matrices $\{F^i\in
 \CC^{N\times   N}\mid i=1,2, \ldots, N\}$  generate what is called the {\bf adjoint representation} of the Lie algebra
-$\ger{g}$.
+$\ger{g}$ of group $\calg$.
 
 \section{Dimensions}\label{sec-dimensions}
 In Physics/Math, the term \qt{dimension} can mean
