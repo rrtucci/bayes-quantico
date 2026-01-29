@@ -71,7 +71,7 @@ X= \bigcup_{a\in X} C(a)
 C(a) \cap C(b)=\emptyset \text{ iff }  C(a) \neq C(b)
 \eeq
 
-\section{Direct Sum and Tensor Product of Matrices}
+\section{Direct Sum and Tensor Product of Matrices}\label{sec-direct-sum-prod}
 
 The {\bf Cartesian product} $A\times B$ of two sets $A$ and $B$ (or of two groups or of two vector spaces, if they are being treated as sets) is defined as a set of ordered pairs
 
@@ -98,6 +98,8 @@ If $A_i$ for $i=1,2, \ldots, n$ are square matrices, $A_1\oplus A_2 \oplus \ldot
 a {\bf block diagonal matrix}.
 This is also called the {\bf direct sum}
 of matrices $A_i$.
+
+
 
 The {\bf tensor product or direct product} of two rectangular matrices
 $A$ and $B$ of arbitrary size is defined as the generalization of the following example
@@ -169,7 +171,14 @@ If $A$ and $B$ are square matrices, then
 
 Besides $A\otimes B$ being used to denote the tensor product of two matrices $A$ and $B$, it is used  to denote
 the tensor product of two operators or two vector spaces. In all cases,
-there is a bilinear tensor operation at play.
+there is a bilinear tensor operation at play. But note that\footnote{$\cong$ means
+there is a 1-1 onto map
+between them.}
+
+\beq
+A\times B\cong A\otimes B
+\eeq
+so they are often used indistinguishably.
 
 \section{Baker-Campbell-Hausdorff  (BCH) formula}
 
@@ -218,9 +227,8 @@ RHS &=
 \end{align}
 \qed
 
-The definition 
-of  a Lie algebra by 
-its commutator relationship
+The commutator identity 
+of  a Lie algebra 
 
 \beq
 [X_i, X_j]=f_{ijk} X_k
@@ -246,9 +254,10 @@ A= a_i X_i, \quad B= b_i X_i, \quad C=c_i X_i,
 Then
 
 \beq
-\rho(g_1)\rho(g_2)
-=\rho(g_1 g_2)
+\rho(g)\rho(g')
+=\rho(g g')
 \eeq
+for all $g,g'\in\calg$
 implies
 \beq
 [\rho(g_1),\rho(g_2)]
@@ -259,24 +268,30 @@ Substituting the exponential
 values of $\rho(g)$ for various $g\in\calg$ gives
 
 \beq
-[e^{tA}, e^{tB}]
-=e^{tC}-e^{tC'}
+[e^{tA}, e^{sB}]
+=e^{tsC}-e^{tsC'}
 \eeq
-so by the BCH formula
+By the BCH formula
+
+\begin{align}
+[e^{tA}, e^{sB}] &= \left[1 + tA  + sB+ \frac{1}{2}ts[A,B]\right]-
+\left[1 + tA  + sB+ \frac{1}{2}ts[B,A]\right]
++\calo(3)
+\\
+&=
+ts[A,B] +\calo(t^is^j\mid i+j\geq 3)
+\end{align}
+Hence
 
 \beq
-t^2[A, B] + \calo(t^3)= t(C- C') +\frac{t^2}{2}(C^2-(C')^2)
-+\calo(t^3)
+ts[A, B] = ts(C-C') +\frac{(ts)^2}{2}\left[C^2-(C')^2]\right]
++\calo(t^is^j\mid i+j\geq 3)
 \eeq
-Set
+Hence, we must have
 
 \beq
-C=C' +tH, \quad H= h_i X_i
-\eeq
-Then
-
-\beq
-t^2\underbrace{[A,B]}_{a_i b_j [X_i, X_j]}= t^2\underbrace{H}_{h_k X_k} +\calo(t^3)
+C=-C',\quad 
+\underbrace{[A,B]}_{a_i b_j [X_i, X_j]}= 2\underbrace{C}_{c_k X_k}
 \eeq
 Hence, $[X_i, X_j]$ must be
 a sum of  $X_k$.
@@ -619,11 +634,28 @@ letters (or $n_b$ boxes) $S_{n_b}$.
 
 Let $L(V)$ denote the set of all
 linear  operators on a vector space $V$.
+In this section, we will
+assume the group $\calg$ and
+its Lie algebra $\ger{g}$ are subsets of $L(V)$.
+
+Note that
+
+\beq
+\exp: \ger{g}\rarrow \calg, \quad
+\exp(X) =g
+\eeq
+
+\beq
+D: \calg \rarrow \ger{g}, \quad
+\underbrace{Dg}_{X} = \lim_{t\rarrow 0}\frac{d}{dt}
+\underbrace{g(t)}_{e^{tX}}
+ \eeq
+($Dg =\ln g$ also)
 
 Define the adjoint  function $\adj{X}$ by
 
 \beq
-\adj{X}: L(V)\rarrow L(V), \quad
+\adj{X}: \ger{g}\rarrow L(V), \quad
 \adj{X}[(Y)=[X, Y]
 \eeq
 Note that $\adj{X}$ can be thought of as
@@ -669,14 +701,14 @@ half a commutator bracket:
 \qed
 
 We can also define the Adjoint (capital \qt{A}) function 
-$\Adj{e^X}$ by
+$\Adj{g}$ by
 
 \beq
-\Adj{X}: L(V)\rarrow L(V),
-\quad \Adj{e^X}(Y)= e^X Y e^{-X}
+\Adj{g}: \calg\rarrow L(V),
+\quad \Adj{g}(Y)= g Y g^{-1}
 \eeq
 
-Note that $\adj{X}$ and $\Adj{e^X}$
+Note that $\adj{X}$ and $\Adj{g}$
 are related as follows
 
 \beqa
@@ -692,35 +724,27 @@ are related as follows
 \adj{X}(Y)
 \eeqa
 
-For any  group $\calg$,
-define 2  rep operators $\Omega$ and $\Omega_{adj}$ so that
 
-
-\beq
-\Omega: \calg \rarrow L(V), \quad
-\Omega(g)=e^X, \quad
-\Omega_{adj}(g)=\Adj{\Omega(g)}
-\eeq
 
 \begin{claim}
 
 \beq
-\Omega_{adj}(g_1)\Omega_{adj}(g_2)=\Omega_{adj}(g_1g_2)
+\Adj{g_1}\Adj{g_2}=\Adj{g_1g_2}
 \eeq
 \end{claim}
 \proof
 
 \beqa
-\Adj{\Omega(g_1)}\Adj{\Omega(g_2)}(X)
+\Adj{g_1}\Adj{g_2}(X)
 &=&
-\Omega(g_1)\Omega(g_2)X\Omega(g_2^{-1})\Omega(g_1^{-1})
+g_1g_2Xg_2^{-1}g_1^{-1}
 \\
 &=&
-\Omega(g_1 g_2)X
-\Omega((g_1 g_2)^{-1})
+g_1 g_2X
+(g_1 g_2)^{-1}
 \\
 &=&
-\Adj{\Omega(g_1g_2)}X
+\Adj{g_1g_2}(X)
 \eeqa
 
 \qed

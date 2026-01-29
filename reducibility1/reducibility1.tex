@@ -1201,59 +1201,9 @@ $span\{U\ket{\vec{r}_a}\}_{a=1}^4$ is a vector
 space upon the 8-dim rep $\rho$ is block diagonal
 
 \hrule
-\item (tensor product reps)
+\item (tensor product of reps)
 
-Direct product of two matrices
-\beq
-\begin{pmatrix}a_{11}&a_{12}
-\\
-a_{21}&a_{22}\end{pmatrix}
-\otimes
-\begin{pmatrix}
-b_{11}&b_{12}&b_{13}
-\\
-b_{21}&b_{22}&b_{23}
-\\
-b_{31}&b_{32}&b_{33}
-\end{pmatrix}
-=
-\begin{pmatrix}
-a_{11}
-\begin{pmatrix}
-b_{11}&b_{12}&b_{13}
-\\
-b_{21}&b_{22}&b_{23}
-\\
-b_{31}&b_{32}&b_{33}
-\end{pmatrix}
-&a_{12}
-\begin{pmatrix}
-b_{11}&b_{12}&b_{13}
-\\
-b_{21}&b_{22}&b_{23}
-\\
-b_{31}&b_{32}&b_{33}
-\end{pmatrix}
-\\
-a_{21}
-\begin{pmatrix}
-b_{11}&b_{12}&b_{13}
-\\
-b_{21}&b_{22}&b_{23}
-\\
-b_{31}&b_{32}&b_{33}
-\end{pmatrix}
-&
-a_{22}
-\begin{pmatrix}
-b_{11}&b_{12}&b_{13}
-\\
-b_{21}&b_{22}&b_{23}
-\\
-b_{31}&b_{32}&b_{33}
-\end{pmatrix}
-\end{pmatrix}
-\eeq
+Direct product of two matrices \ref{sec-direct-sum-prod}
 
 \beq
 (A\otimes B)(A'\otimes B')=
@@ -1347,10 +1297,97 @@ m_{\alp\beta\gamma}\right]
 
 \beq
 \av{\psi_{ij}|\rho_1(g)\otimes\rho_2(g)|\psi_{i'j'}}=
-[\av{\psi_i|\rho_1(g)|\psi_{i'}}]\quad
+[\av{\psi_i|\rho_1(g)|\psi_{i'}}]\;
 [\av{\psi_j|\rho_1(g)|\psi_{j'}}]
 \eeq
 
+\item (Rep of Cartesian Product of Groups)
 
+Consider two groups $\calg$ and $\calh$
 
+\beq
+\calh\times \calg=\{(g, h)\mid g\in \calg, h\in\calh\}
+\eeq
+
+\beq
+(g_1, h_1)(g_2, h_2)=
+(g_1 g_2, h_1h_2)
+\eeq
+
+\beq
+\rho^\calg:\calg\rarrow \CC^{n\times n}, \quad
+\rho^\calh:\calh\rarrow \CC^{m\times m}
+\quad
+\rho^{\calg\times \calh}:\calg\times \calh \rarrow \CC^{mn\times mn}
+\eeq
+
+\beq
+\rho^{\calg\times \calh}(g, h)=
+\underbrace{\rho^\calg(g)}_{G}
+\otimes
+\underbrace{\rho^\calh(h)}_{H}
+\eeq
+
+\beq
+(G_1\otimes H_1)(G_2\otimes H_2)
+=
+(G_1 G_2)\otimes(H_1H_2)
+\eeq
+
+\beq
+\tr(A\otimes B)
+=\tr(A)\tr(B)
+\eeq
+
+\beq
+\rho^\calg(1)=\rho^\calg(g^{-1})\otimes
+\rho^\calg(g)
+\implies 
+|\calg|=\sum_{g\in \calg}\chi^{\calg *}(g)
+\chi^{\calg}(g)
+\eeq
+
+\beq
+\rho^\calh(1)=\rho^\calh(h^{-1})\otimes
+\rho^\calh(h)
+\implies 
+|\calh|=\sum_{h\in \calh}\chi^{\calh  *}(h)
+\chi^{\calh}(h)
+\eeq
+
+\beq
+\chi^{\calg\times \calh}(g,h)=\chi^\calg(g)\chi^\calh(h)
+\eeq
+
+\beqa
+|\calg \times \calh|
+&=&
+|\calg|\;|\calh|
+\\
+&=&
+\left[
+\sum_{g\in \calg}\chi^{\calg *}(g)
+\chi^{\calg}(g)
+\right]\;
+\left[
+\sum_{h\in \calh}\chi^{\calh *}(h)
+\chi^{\calh}(h)
+\right]
+\\
+&=&
+\sum_{(g,h)\in \calg\times \calh}
+\chi^{\calg\times \calh *}(g,h)\chi^{\calg\times \calh}(g,h)
+\eeqa
+
+\beq
+\ket{\psi_{ij}}=\ket{\psi_i}\ket{\psi_j}
+=
+\ket{\psi_i}\otimes\ket{\psi_j}
+\eeq
+
+\beq
+\av{\psi_{ij}|\rho^\calg(g)\otimes\rho^\calh(h)|\psi_{i'j'}}=
+\left[\av{\psi_i|\rho^\calg(g)|\psi_{i'}}\right]\;
+\left[\av{\psi_j|\rho^\calh(h)|\psi_{j'}}\right]
+\eeq
 \end{enumerate}
