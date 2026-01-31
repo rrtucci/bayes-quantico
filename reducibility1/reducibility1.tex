@@ -1203,14 +1203,14 @@ at the identity $e$.
 \section{Other Reps}
 \begin{enumerate}
 \hrule
-\item (plane wave 8-dim rep of $\sqgroup$)
+\item (plane-wave 8-dim rep of $\sqgroup$)
 
 $\vec{r} = (p_1x_1,p_2x_2)$
 
 $\vec{k}=(k_1, k_2)$
 
 
-$(G_a)_{a=1}^8=(E, C_4, C_4^3, C_4^2, N_2, N_1, \s_{y=-x}, \s_{y=x})$
+$\calg=\sqgroup=\{G_a\}_{a=1}^8=\{E, C_4, C_4^3, C_4^2, N_2, N_1, \s_{y=-x}, \s_{y=x}\}$
 
 $\vec{r}_a = G_a\vec{r}$
 
@@ -1233,16 +1233,18 @@ $G_a\ket{\vec{r}}=\ket{G_a\vec{r}}=\ket{\vec{r}_a}$
 \delta(\vec{r}_{a_1}-\vec{r}_{a_2})
 \eeqa
 
+Define  a  plane-wave 8-dim
+rep of $\sqgroup$ by $\rho:\calg\rarrow\CC^{8\times 8}$ and
 \beq
 \rho(G_a)_{a_1, a_2}=
 \av{\vec{r}_{a_1} |G_a|\vec{r}_{a_2}}
 =
 \av{\vec{r}_{a_1} |G_aG_{a_2}\vec{r}}
 \eeq
-
+Note that
 
 \beq
-\rho\equiv\rho^{ref}\equiv \bigoplus_\beta m_\beta \rho^\beta
+\rho\equiv\rho^{reg}\equiv \bigoplus_\beta m_\beta \rho^\beta
 =
 \rho^{(1)}
 \oplus \rho^{(2)}
@@ -1274,9 +1276,13 @@ $\vec{r} = (p_1x_1,p_2x_2)$
 
 $\vec{k}=(k_1, k_2)$
 
-$(G_a)_{a=1}^4=(E, C_4, C_4^3, C_4^2)$ 
+$a\in \{1,2, 3, 4\}$, $A\in\{1,2, \ldots, 8\}$
 
-$(G_A)_{A=1}^8=(E, C_4, C_4^3, C_4^2, N_2, N_1, \s_{y=-x}, \s_{y=x})$
+$\calg=\sqgroup=\{G_A\}_{A=1}^8=\{E, C_4, C_4^3, C_4^2, N_2, N_1, \s_{y=-x}, \s_{y=x}\}$
+
+
+$\calh=\{G_a\}_{a=1}^4=\{E, C_4, C_4^3, C_4^2\}$, $\calh$ is a subgroup of $\calg$
+
 
 $\vec{r}_a = G_a\vec{r}$
 
@@ -1299,6 +1305,8 @@ $G_a\ket{\vec{r}}=\ket{G_a\vec{r}}=\ket{\vec{r}_a}$
 \delta(\vec{r}_{a_1}-\vec{r}_{a_2})
 \eeqa
 
+Define  a  plane-wave 4-dim
+rep of $\sqgroup$ by $\rho:\calg\rarrow\CC^{4\times 4}$ and
 \beq
 \rho(G_A)_{a_1, a_2}=
 \av{\vec{r}_{a_1} |G_A|\vec{r}_{a_2}}
@@ -1328,24 +1336,29 @@ $span\{U\ket{\vec{r}_a}\}_{a=1}^4$ is a vector
 space upon the 8-dim rep $\rho$ is block diagonal
 
 \hrule
-\item (tensor product of reps)
+\item {\bf tensor product of reps}
 
-Direct product of two matrices \ref{sec-direct-sum-prod}
+The Kronecker tensor product of two matrices is defined  in \ref{sec-direct-sum-prod}. It satisfies
 
 \beq
 (A\otimes B)(A'\otimes B')=
 (AA')\otimes ( BB')
 \eeq
-
+and 
 \beq
 \tr(A\otimes B)=\tr(A)\tr(B)
 \eeq
+Define the tensor product rep $\rho$ of two reps
+$\rho_i:\calg\rarrow \CC^{n_i\times n_i}$
+for $i=1,2$, by $\rho:\calg\rarrow \CC^{n_1n_2\times n_1n_2}$ and
 
 
 \beq
-\rho(g)=\rho_1(g)\otimes\rho_2(g)
+\rho(g)=\rho_1(g)\otimes\rho_2(g)\quad \forall g\in \calg
+\label{eq-def-tensor-prod-rep}
 \eeq
 
+$\rho$ is a valid rep because
 \beqa
 \rho(g)\rho(h)&=&
 [\rho_1(g)\otimes\rho_2(g)]
@@ -1362,18 +1375,24 @@ Direct product of two matrices \ref{sec-direct-sum-prod}
 &=&
 \rho(gh)
 \eeqa
+Tracing both 
+sides of Eq.(\ref{eq-def-tensor-prod-rep}),
+we get
 
 \beq
-\chi(g) = \chi_1(g)\chi_2(g)
+\chi(g) = \chi_1(g)\chi_2(g) \quad \forall g\in \calg
 \eeq
-for all $g\in \calg$
 
+Note that
 \beq
 \rho^\alp\otimes \rho^\beta
 \equiv \bigoplus_\gamma m_{\alp \beta \gamma}\rho^\gamma
+\label{eq-tensor-rho-alp-rho-beta}
 \eeq
-$m_{\alp\beta\gamma}\in \ZZ_{>0}$
-Example: for $\sqgroup$,
+where $\rho^\alp, \rho^\beta, \rho^\gamma$
+are irreps of $\calg$ and
+$m_{\alp\beta\gamma}\in \ZZ_{>0}$.
+For example,  for $\sqgroup$,
 
 \beq
 \rho^{(1)}\otimes \rho^{(1)}\equiv 
@@ -1394,16 +1413,28 @@ Example: for $\sqgroup$,
 \oplus \rho^{(4)}
 \eeq
 
+Tracing both sides
+of Eq.(\ref{eq-tensor-rho-alp-rho-beta}),
+we get
+
 \beq
 \chi^\alp(g)\chi^\beta(g)=
 \sum_\gamma m_{\alp\beta\gamma}\chi^\gamma(g)
 \eeq
 
+Note that if
+$\rho_1$ and $\rho_2$
+are reps of $\calg$ but not necessarily irreps, 
+whereas $\rho^\alp, \rho^\beta, \rho^\gamma$ are 
+guaranteed to be irreps of $\calg$, then
 \beq
 \rho_1\equiv\bigoplus_\alp m_{1,\alp}\rho^\alp,
 \quad
 \rho_2\equiv\bigoplus_\alp m_{2,\beta}\rho^\beta
 \eeq
+where $m_{1\alp}, m_{2\beta}\in \ZZ_{>0}$.
+Hence
+
 
 \beq
 \rho_1\otimes \rho_2
@@ -1415,12 +1446,16 @@ m_{2\beta}
 m_{\alp\beta\gamma}\right]
 \rho^\gamma
 \eeq
+where $m_{\alp\beta\gamma}\in \ZZ_{>0}$.
 
+The vector space on which the $\calg$ rep $\rho_1\otimes \rho_2$ acts is spanned by\\ $\{\ket{\psi_{i,j}}\}_{i=1,2, \ldots, n_1, j=1,2, \ldots , n_2}$, where
 \beq
 \ket{\psi_{ij}}=\ket{\psi_i}\ket{\psi_j}
 =
 \ket{\psi_i}\otimes\ket{\psi_j}
 \eeq
+
+
 
 \beq
 \av{\psi_{ij}|\rho_1(g)\otimes\rho_2(g)|\psi_{i'j'}}=
@@ -1428,23 +1463,32 @@ m_{\alp\beta\gamma}\right]
 [\av{\psi_j|\rho_1(g)|\psi_{j'}}]
 \eeq
 
-\item (Rep of Cartesian Product of Groups)
+\item {\bf rep of Cartesian product of groups}
 
-Consider two groups $\calg$ and $\calh$
+The Cartesian product two groups $\calg$ and $\calh$
 
 \beq
 \calh\times \calg=\{(g, h)\mid g\in \calg, h\in\calh\}
 \eeq
+becomes a group 
+when endowed with the following group
+multiplication
 
 \beq
 (g_1, h_1)(g_2, h_2)=
 (g_1 g_2, h_1h_2)
 \eeq
 
+for $g_1, g_2\in \calg$ 
+and $h_1, h_2\in \calh$.
+If $\rho^\calg:\calg\rarrow \CC^{n\times n}$
+is a  rep of $\calg$,
+and $\rho^\calh:\calh\rarrow \CC^{m\times m}$ is a rep of $\calh$, then 
+the natural representation $\rho^{\calg\times \calh}$
+of $\calg\times \calh$
+is 
+defined by
 \beq
-\rho^\calg:\calg\rarrow \CC^{n\times n}, \quad
-\rho^\calh:\calh\rarrow \CC^{m\times m}
-\quad
 \rho^{\calg\times \calh}:\calg\times \calh \rarrow \CC^{mn\times mn}
 \eeq
 
@@ -1453,6 +1497,7 @@ Consider two groups $\calg$ and $\calh$
 \underbrace{\rho^\calg(g)}_{G}
 \otimes
 \underbrace{\rho^\calh(h)}_{H}
+\label{eq-rhog-otimes-rhoh}
 \eeq
 
 \beq
@@ -1461,30 +1506,41 @@ Consider two groups $\calg$ and $\calh$
 (G_1 G_2)\otimes(H_1H_2)
 \eeq
 
-\beq
-\tr(A\otimes B)
-=\tr(A)\tr(B)
-\eeq
+Recall that
+$\tr(A\otimes B)
+=\tr(A)\tr(B)$ so
 
 \beq
 \rho^\calg(1)=\rho^\calg(g^{-1})\otimes
-\rho^\calg(g)
+\rho^\calg(g)\quad \forall g\in \calg
 \implies 
 |\calg|=\sum_{g\in \calg}\chi^{\calg *}(g)
 \chi^{\calg}(g)
+\label{eq-chi-gg-sq}
 \eeq
 
 \beq
 \rho^\calh(1)=\rho^\calh(h^{-1})\otimes
-\rho^\calh(h)
+\rho^\calh(h)\quad \forall h\in \calh
 \implies 
 |\calh|=\sum_{h\in \calh}\chi^{\calh  *}(h)
 \chi^{\calh}(h)
+\label{eq-chi-hh-sq}
 \eeq
+
+Taking the trace of
+both sides of Eq.(\ref{eq-rhog-otimes-rhoh})
+gives
 
 \beq
 \chi^{\calg\times \calh}(g,h)=\chi^\calg(g)\chi^\calh(h)
+\label{eq-chi-gh-sq}
 \eeq
+If we now combine
+Eq.(\ref{eq-chi-gg-sq}),
+Eq.(\ref{eq-chi-hh-sq})
+and Eq.(\ref{eq-chi-gh-sq}),
+we get
 
 \beqa
 |\calg \times \calh|
@@ -1505,6 +1561,8 @@ Consider two groups $\calg$ and $\calh$
 \sum_{(g,h)\in \calg\times \calh}
 \chi^{\calg\times \calh *}(g,h)\chi^{\calg\times \calh}(g,h)
 \eeqa
+
+The vector space on which the $\calg\times\calh$ rep $\rho^\calg\otimes \rho^\calh$ acts is spanned by\\ $\{\ket{\psi_{i,j}}\}_{i=1,2, \ldots, n, j=1,2, \ldots , m}$, where
 
 \beq
 \ket{\psi_{ij}}=\ket{\psi_i}\ket{\psi_j}
