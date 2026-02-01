@@ -81,7 +81,8 @@ A\times B =\{(a,b)\mid  a\in A, b\in B\}
 
 Sometimes we want to indicate 
 that $A\times B$ is endowed with an
-operation that is bilinear. In those cases we use the symbol $\otimes$ which is called the {\bf otimes or tensor product or direct product operator}.
+operation that is bilinear. In those cases,
+instead of the {\bf times symbol} $\times$,  we use the  {\bf otimes (a.k.a., tensor product) symbol} $\otimes$.
 
 
 
@@ -236,20 +237,20 @@ of  a Lie algebra
 is a consequence of the
 BCH formula. Here is how.
 
-Suppose $\rho: \calg\rarrow \CC^{n\times n}$ is a rep of group $\calg$.
-Suppose $a_i, b_i, c_i\in \RR$
-and
+Suppose $\rho: \calg\rarrow \CC^{n\times n}$ is a rep of group $\calg$ and $a_i, b_i, c_i,  c_i'\in \RR$.
+Let
 
 \beq
 A= a_i X_i, \quad B= b_i X_i, \quad C=c_i X_i,
 \quad C'=c'_i X_i
 \eeq
+and
 
 \beq
-\rho(g_1)= e^{tA},\quad
+\rho(g_1)= e^{sA},\quad
 \rho(g_2)= e^{tB}, \quad
-\rho(g_1g_2)=e^{tC},\quad
-\rho(g_1g_2)=e^{tC'}
+\rho(g_1g_2)=e^{tsC},\quad
+\rho(g_1g_2)=e^{tsC'}
 \eeq
 Then
 
@@ -268,14 +269,14 @@ Substituting the exponential
 values of $\rho(g)$ for various $g\in\calg$ gives
 
 \beq
-[e^{tA}, e^{sB}]
+[e^{sA}, e^{tB}]
 =e^{tsC}-e^{tsC'}
 \eeq
 By the BCH formula
 
 \begin{align}
-[e^{tA}, e^{sB}] &= \left[1 + tA  + sB+ \frac{1}{2}ts[A,B]\right]-
-\left[1 + tA  + sB+ \frac{1}{2}ts[B,A]\right]
+[e^{sA}, e^{tB}] &= \left[1 + sA  + tB+ \frac{1}{2}ts[A,B]\right]-
+\left[1 + sA  + tB+ \frac{1}{2}ts[B,A]\right]
 +\calo(3)
 \\
 &=
@@ -307,7 +308,7 @@ The {\bf Jacobi identity} (JI) is
 \eeq
 The JI can be easily proven by expanding both sides. 
 In this form, the JI says that $[X,\cdot]$
-acts like a derivative operator on $[Y, Z]$.
+acts like a derivative operator on product $[Y, Z]$.
 
 The JI can be rewritten as 
 
@@ -521,7 +522,8 @@ satisfies
 \eeq
 for all $a\in\calg$.
 This situation  is often described by saying that the group $\calg$
-\qt{acts on} the vector space $V$.
+\qt{acts on} the vector space $V$. One  way to specify a representation is
+to give the effect of each group element $a\in \calg$ on a basis of vectors $\{\ket{1}, \ket{2}, \dots, \ket{n}\}$.
 
 
 In this book, 
@@ -533,8 +535,7 @@ and we will refer to
 $\rho(g)=G_\lam(g)=G_\lam$ as the
 {\bf representation matrix} (rep-matrix) of $g\in\calg$.
 
-One  way to specify a representation is
-to give the effect of each group element $a\in \calg$ on a basis of vectors $\{\ket{1}, \ket{2}, \dots, \ket{n}\}$.
+
 
 
 
@@ -626,7 +627,7 @@ Chapter \ref{ch-reducibility1}
 for any finite group and in 
 Chapter \ref{ch-young-tableau}
  for the symmetric group on $n_b$
-letters (or $n_b$ boxes) $S_{n_b}$.
+letters (or $n_b$ boxes),  $S_{n_b}$.
 
 \section{Adjoint Representation}
 
@@ -652,11 +653,11 @@ D: \calg \rarrow \ger{g}, \quad
  \eeq
 ($Dg =\ln g$ also)
 
-Define the adjoint  function $\adj{X}$ by
+Define the adjoint  function $adj$ by
 
 \beq
-\adj{X}: \ger{g}\rarrow L(V), \quad
-\adj{X}[(Y)=[X, Y]
+adj: \ger{g}\times l9v\rarrow L(V), \quad
+\adj{X}(Y)=[X, Y]
 \eeq
 Note that $\adj{X}$ can be thought of as
 half a commutator bracket:
@@ -701,14 +702,14 @@ half a commutator bracket:
 \qed
 
 We can also define the Adjoint (capital \qt{A}) function 
-$\Adj{g}$ by
+$Adj$ by
 
 \beq
-\Adj{g}: \calg\rarrow L(V),
-\quad \Adj{g}(Y)= g Y g^{-1}
+Adj: \calg\times L(V) \rarrow L(V),
+\quad \Adj{g}(h)= g h g^{-1}
 \eeq
 
-Note that $\adj{X}$ and $\Adj{g}$
+Note that $adj$ and $Adj$
 are related as follows
 
 \beqa
