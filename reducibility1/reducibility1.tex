@@ -87,19 +87,26 @@ any group $\calg$ satisfies  $a\calg=\calg$  for all
 $a\in \calg$.
 
 
-Conjugacy classes (CC) are defined in Chapter  \ref{ch-lagranges-theorem}.
-The CCs of $\sqgroup$ are 
-given in Fig.\ref{fig-cc-sqgroup}.
+
+ Fig.\ref{fig-sq8-cc}
+shows the conjugacy classes (CCs) of $\sqgroup$.
+
+Table \ref{tab-sq8-irreps} shows the irreps of $\sqgroup$.
+
+Table \ref{tab-sq8-char}
+shows the characters of $\sqgroup$.
+
 \begin{figure}[h!]
+\boxed{
 \begin{tabular}{l}
-\\ $CC_1=(E)$
+$CC_1=(E)$
 \\ $CC_2=(N_1 S_{12}, N_2 S_{12})$ (rotations  by $90$ and $270$ degrees)
 \\ $CC_3=(N_1N_2)$ (rotation by 180 degrees)
 \\ $ CC_4=(N_1, N_2)$ (refection about $x$ or $y$ axis)
  \\ $CC_5=(S_{12}, N_1N_2 S_{12})$ (reflection about $y=x$ or $y=-x$ diagonal lines)
-\end{tabular}
-\caption{CCs for $\sqgroup$}
-\label{fig-cc-sqgroup}
+\end{tabular}}
+\caption{CCs for $\sqgroup$. Conjugacy classes (CC) are defined for an arbitrary group in Section  \ref{sec-ortho-chars}.}
+\label{fig-sq8-cc}
 \end{figure}
 
 \begin{table}[h!]
@@ -163,7 +170,7 @@ $\chi^{(5)}$
 \\ \hline
 \end{tabular}
 \caption{Characters of $\sqgroup$. Different color for each CC.
-$\chi^\alp(g)=\tr\rho^\alp$ for all
+$\chi^\alp(g)=\tr\rho^\alp(g)$ for all
 $g\in \calg$.
 Check that $\sum_{g\in\calg}\chi^\alp(g)
 \chi^{\beta*}(g)=|\calg|\delta_{\alp\beta}$.
@@ -323,7 +330,7 @@ the $k$ row of $\rho_1(g)$ would be zero
 for all $g\in\calg$. So all 
 $\rho_1(g)$ would have a zero
 determinant. 
-Then all $\rho(g)$
+Then all $\rho_1(g)$ and $\rho(g)$
 would have a zero determinant and no inverse.
 Then the rep $\rho()$
 that we started with would
@@ -402,9 +409,9 @@ a similarity transformation: $A=SBS^{-1}$}:  for all $g\in \calg$,
 
 \beq
 \rho(g)\equiv
-\bigoplus_\alp x_\alp \rho_\alp(g)
+\bigoplus_\alp m_\alp \rho_\alp(g)
 \eeq
- where $x_\alp\in \ZZ_{>0}$.
+ where $m_\alp\in \ZZ_{>0}$.
 
 \section{Schur's 2 Lemmas}
 
@@ -440,7 +447,7 @@ implies
 which implies
 
 \beq
-P^\dagger \rho(g)=\rho(g)P^\dagger 
+\rho(g)P^\dagger =P^\dagger\rho(g) 
 \quad \forall g\in\calg
 \eeq
 Define
@@ -643,7 +650,7 @@ i&\ar[l]\rho_\alp(g)\ar@{~}[u]&\ar[l]j
 \xymatrix@R=1pc@C=1pc{
 &\beta&
 \\
-j'&\ar[l]\rho_\beta(g)\ar@{~}[u]&\ar[l]i'
+j'&\ar[l]\rho_\beta(g^{-1})\ar@{~}[u]&\ar[l]i'
 }
 \ecen
 =
@@ -660,7 +667,7 @@ i&\ar[l]|\bullet i'
 \end{array}
 \label{eq-ortho-irreps}
 \eeq
-where $d_\alp$ and $d_\beta$ is
+where $d_\alp$ and $d_\beta$ are
 the matrix dimension of  $\rho_\alp$ and $\rho_\beta$.
 \end{claim}
 \proof
@@ -678,7 +685,7 @@ Define
 \Mab= \frac{1}{|\calg|}
 \sum_{g\in\calg}\rho_\alp(g)X\rho_\beta(g^{-1})
 \eeq
-where $X$ is some arbitrary matrix.
+where $X$ is some arbitrary square matrix of the right dimension.
 \hrule
 First assume $\rho_\alp\neq \rho_\beta$.
 
@@ -784,7 +791,7 @@ we get
 
 
 \qed
-\section{Orthogonality  of Characters}
+\section{Orthogonality  of Characters}\label{sec-ortho-chars}
 
 For any rep $\rho^\alp$ 
 of a  group $\calg$, define
@@ -795,7 +802,10 @@ of $g\in \calg$ by
 \chi^\alp(g)=\tr(\rho^\alp(g))=\sum_k
 \rho^\alp(g)_{kk} 
 \eeq
-Define 
+For any two $a,b\in \calg$, define $a\sim b$ if $a=gbg^{-1}$ for some $g\in \calg$. This is an
+equivalence relation that partitions  $\calg$
+into disjoint classes. Now define 
+
 
 $CC(g)=\{hgh^{-1}|h\in \calg\}=$ {\bf conjugacy class (CC) of $g\in \calg$}.
 
@@ -811,13 +821,14 @@ $
 $
 so for any $g,h\in \calg$,
 
-\beq
+\beqa\chi^\alp(hgh^{-1})&=&
 \tr(\rho^\alp(hgh^{-1}))=
 \tr(\rho^\alp(h)\rho^\alp(g)\rho^\alp(h^{-1}))=\tr\rho^\alp(g)
-\eeq
-\beq
-\chi^\alp(hgh^{-1})=\chi^\alp(g)
-\eeq
+\\
+&=&
+\chi^\alp(g)
+\eeqa
+
 Hence, $\chi^\alp:\calg \rarrow \RR$ is the same for
 all the elements $g$ of a CC.
 
@@ -897,11 +908,11 @@ then $CC(g)\subset CC_i\cdot CC_j$
 If $g\in CC_i\cdot CC_j$, then $g=ab$
 where  $a\in CC_i$ and $b\in CC_j$.
 Any element of $CC(g)$ must 
-be of the form $h ab h^{-1}$
+be of the form $h g h^{-1}$
 for some $h\in\calg$.
-But
+Hence
 
-\beq
+\beq h g h^{-1}=
 h ab h^{-1}  =
 (hah^{-1}) (hb h^{-1})\in CC_i\cdot CC_j
 \eeq
@@ -1114,10 +1125,11 @@ is a $|\calg|\times |\calg|$
 matrix with each row and column being one-hot\footnote{A one-hot vector
 has all its components equal to
 zero except one component equal to one.}.
-Each row is one-hot because given $(g, g_1)$, there is only one $g_2$ for which $g=g_1^{-1}g_2$.
+Each row is one-hot because given $(g, g_1)$, there is only one suitable $g_2$ for which $g=g_1^{-1}g_2$.
 Likewise, each column is one-hot because given one $(g, g_2)$,
 there is only one suitable $g_1$.
-Note also that when $g_1=g_2$, 
+
+Note  that when $g_1=g_2$, 
 
 \beq
 \rho^{reg}(g)_{g_1, g_1}=\delta_{g, e}\quad
@@ -1143,7 +1155,7 @@ Note  that
 &=&
 \rho^{reg}(ab)
 \eeqa
-so $\rho^{reg}$  is a true group rep.
+so $\rho^{reg}$  is a valid group rep.
 
 \begin{claim}
 Let
