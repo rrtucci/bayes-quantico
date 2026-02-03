@@ -51,7 +51,7 @@ The first BD step is
 \oplus \rho_2(g) \oplus \ldots \oplus \rho_n(g)
 \eeq
 where  
-$\rho(), \rho_i()$ are reps of $G$.
+$\rho(), \rho_i()$ are reps of $\calg$.
 The second BD step, each $\rho_i(g)$ 
 is block diagonalized to produce
 
@@ -61,7 +61,7 @@ is block diagonalized to produce
 \bigoplus_{i=1}^n \bigoplus_{j=1}^m\rho_{i,j}(g)
 \eeq
 where  
-the $\rho_{ij}()$ are reps of $G$.
+the $\rho_{ij}()$ are reps of $\calg$.
 In general, we can have any number of BD steps,
 not just 2.
 
@@ -97,32 +97,32 @@ f(x)$.
 
 Branching rules via BD 
 are illustrated in Fig.\ref{fig-branching-irreps}.
-Assume $G, H_1, H_2$ are
-groups and $G\supset H_1\supset H_2$.
+Assume $\calg, \calh_1, \calh_2$ are
+groups and $\calg\supset \calh_1\supset \calh_2$.
 The first BD step takes
 \beq
-\{\rho(g)\mid g\in G\}\xymatrix{\ar[r]_{BD}&}\{\rho_1(h_1)
-\oplus \rho_2(h_1) \oplus \ldots \oplus \rho_n(h_1)\mid h_1\in H_1\}
+\{\rho(g)\mid g\in \calg\}\xymatrix{\ar[r]_{BD}&}\{\rho_1(h_1)
+\oplus \rho_2(h_1) \oplus \ldots \oplus \rho_n(h_1)\mid h_1\in \calh_1\}
 \eeq
-where $\rho()$ is an irrep of $G$
+where $\rho()$ is an irrep of $\calg$
 and $\rho_i()$ for $i=1,2, \ldots, n$
-are irreps of  $H_1$.
+are irreps of  $\calh_1$.
 $\rho_i()$ can be obtained by
 block diagonalizing the restriction
-$\rho\downarrow  H_1(h_1)$ for each $h_1\in H_1$.
+$\rho\downarrow  \calh_1(h_1)$ for each $h_1\in \calh_1$.
 
 In the second BD step,
 
 \beq
-\left\{\bigoplus_{i=1}^n \rho_i(h_1)\mid h_1\in H_1\right\}
+\left\{\bigoplus_{i=1}^n \rho_i(h_1)\mid h_1\in \calh_1\right\}
 \xymatrix{\ar[r]_{BD}&}
-\left\{\bigoplus_{i=1}^n \bigoplus_{j=1}^m\rho_{i,j}(h_2)\mid  h\in H_2\right\}
+\left\{\bigoplus_{i=1}^n \bigoplus_{j=1}^m\rho_{i,j}(h_2)\mid  h\in \calh_2\right\}
 \eeq
 where the 
-$\rho_{ij}()$ are irreps of $H_2$.
+$\rho_{ij}()$ are irreps of $\calh_2$.
 $\rho_{ij}()$ can be obtained by
 block diagonalizing the restriction
-$\rho\downarrow  H_2(h_2)$ for each $h_2\in H_2$.
+$\rho\downarrow  \calh_2(h_2)$ for each $h_2\in \calh_2$.
 In general, we can have any number of BD steps,
 not just 2.
 
@@ -146,10 +146,10 @@ difference between Clebsch-Gordan series and branching rules, let's say more
 about the topic of this chapter, branching rules.
 
 Define a
- {\bf tree of reps (TOR)} as a tree wherein each node represents an irrep of $H_j$ and arrows point
-from an irrep of $H_j$ to a direct sum of irreps 
-of $H_{j+1}$ where $H_j\supset H_{j+1}$
-and $H_j,  H_{j+1}$ are subgroups of $G$. 
+ {\bf tree of reps (TOR)} as a tree wherein each node represents an irrep of $\calh_j$ and arrows point
+from an irrep of $\calh_j$ to a direct sum of irreps
+of $\calh_{j+1}$ where $\calh_j\supset \calh_{j+1}$
+and $\calh_j,  \calh_{j+1}$ are subgroups of $\calg$.
 
 As the tree branches out more and more, we get
 
@@ -165,11 +165,11 @@ fewer unbroken generators, smaller multiplets, less degeneracy, lower energy sca
 
 
 {\color{red}If
-the root node irrep of a TOR is the adjoint representation of $G$, then the
+the root node irrep of a TOR is the adjoint representation of $\calg$, then the
 dimension of each irrep in the tree is also the number of generators for that irrep.}
 Hence, we will call
 the TOR for the
-adjoint rep of $G$, a {\bf tree of generators (TOG)}. For 
+adjoint rep of $\calg$, a {\bf tree of generators (TOG)}. For
 example, the octet ($\ul{8}$) irrep of $SU(3)$
 is the adjoint irrep of $SU(3)$,
 and $SU(3)$ has 8 generators.
@@ -184,14 +184,14 @@ then {\color{red}there is a 1--1
 correspondence
 between the  dots of 
 a weight diagram of 
-the adjoint rep of $G$, and the generators of $G$}.
+the adjoint rep of $\calg$, and the generators of $\calg$}.
 \section{Symmetry Breaking}
 
 \begin{itemize}
 \item {\bf Explicit symmetry breaking}: 
 
 $\ger{g}$ = Lie algebra of
-symmetry group $G$.
+symmetry group $\calg$.
 
 In explicit symmetry breaking, we add a small perturbation $\delta \calh$ to the
 Hamiltonian $\calh$ so that
@@ -263,7 +263,7 @@ $V(e^{i\theta}\phi)= V(\phi)$ for $\theta\in \RR$.
 Consider
 
 \beq
-\underbrace{U(1)}_G\supset \underbrace{\{e\}}_H
+\underbrace{U(1)}_\calg\supset \underbrace{\{e\}}_\calh
 \eeq
 
  \beq
@@ -434,10 +434,10 @@ SU(2)_{\text{orbital $\ell$} }\times SU(2)_{\text{spin $1/2$} }\supset
 \item $SO(n)$ $\ul{n}$ rep
 (Explicit Symmetry Breaking)
 
-Let $n=p+q$\footnote{Note that given two groups $G_1$, $G_2$,
-their Cartesian product $G_1\times G_2$ is defined, but 
-not their direct sum $G_1\oplus G_2$
-or direct (Kronecker) product $G_1\otimes G_2$. Direct sums and products are defined for vectors (and vector spaces) and matrices (and matrix  reps).}
+Let $n=p+q$\footnote{Note that given two groups $\calg_1$, $\calg_2$,
+their Cartesian product $\calg_1\times \calg_2$ is defined, but
+not their direct sum $\calg_1\oplus \calg_2$
+or direct (Kronecker) product $\calg_1\otimes \calg_2$. Direct sums and products are defined for vectors (and vector spaces) and matrices (and matrix  reps).}
 
 \beq
 \left\{
